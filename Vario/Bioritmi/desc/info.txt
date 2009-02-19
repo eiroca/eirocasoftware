@@ -1,6 +1,6 @@
-Name       : Bioritmi
-Description: Bioritmi e affinità
+Name       : eMelody
+Description: Some tools to handle old L35 Motorola ring tone format.
 OS         : Win32
-Type       : GUI
+Type       : Console
 Language   : Delphi 2007
-Dependency : eLib, RX
+Dependency : 
