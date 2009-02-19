@@ -1,4 +1,4 @@
-program Bioritmi;
+program Bioritmi2007;
 
 uses
   Forms,
