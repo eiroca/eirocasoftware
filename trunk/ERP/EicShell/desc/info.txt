@@ -1,4 +1,4 @@
-Name       : EicShell
+Name       : eicShell
 Description: Shell di coordimaneto applicazioni
 OS         : Win32
 Type       : GUI
