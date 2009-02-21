@@ -17,7 +17,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 (*
  @author(Enrico Croce)
 *)
-*)
 (* TabaC - Gestione Tabacchi
  * Ultima modifica: 06 nov 1999
  *)
