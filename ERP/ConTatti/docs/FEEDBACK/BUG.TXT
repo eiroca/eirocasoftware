@@ -1,0 +1,4 @@
+Utente  : <inserire qui il proprio nome>
+Versione: <inserire qui la versione di "Con Tatti" utilizzata - ottenibile da Aiuto/About>
+
+Inserire gli errori/suggerimenti riguardanti a "Con Tatti"

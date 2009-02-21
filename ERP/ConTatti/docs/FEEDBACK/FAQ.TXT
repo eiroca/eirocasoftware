@@ -1,0 +1,23 @@
+Risposte alle domande piu' frequenti che si possono riscontrare utilizzando Con Tatti:
+
+D: Non riesco a capire cosa serve ...
+R: Lasciando il mouse sull'oggetto, spesso appare un consiglio che ne chiarifica l'uso senza dover ricorrere all'help
+
+D: A volte si perdono i dati passando da una pagina all'altra nelle schede dei contatti
+R: Prima di tutto questo comportamento E' VOLUTO. La perdita dei dati e' dovuta al fatto che non si è effettuata la conferma dei dati (premendo il tasto che sembra un segno di spunta) e di conseguenza le ultime modifiche vengono annullate. E' possibile far si che al cambio della pagina le modifiche vengano automaticamente confermate agendo sugli opportuni parametri presenti nel pannello di controllo (Menu Opzioni, voce Impostazioni)
+
+D: Premendo Connetti invece di aprire l'URL succede: si apre una directory, parte un programma sbagliato, appare un messagio di servizio non disponibile/configurato, ...
+R: Il problema non risiede in Con Tatti ma in Windows, quando "Con Tatti" deve aprire una URL, lanciare il programma di posta elettronica, ... utilizza le Shell Extension, ossia una serie di servizi offerti da Windows 95, quindi bisogna accertarsi che i singoli programmi di Web browsing, posta, ... siano stati correttamente configurati.
+
+D: E' possibile associare un altro programma per la visualizzazione di URL, per gestire la posta elettronica, ... diverso da quello associato di default con le Shell Extension di Windows?
+R: Attualmente no, ma in caso di forte richiesta da parte di utenti REGISTRATI in future versioni potra' diventare possibile
+
+D: I vari report sono un po "bruttini" sarebbe possibile averli piu' belli?
+R: I report verranno migliorati non appena i soldi raccolti con le registrazioni permetteranno di acquistare il componente QuickReport 2.0
+
+D: Sarebbe possibile avere i grafici delle statistiche?
+R: I grafici verranno implementati non appena i soldi raccolti con le registrazioni permetteranno di acquistare il componente TeeChart
+
+D: Come posso esportare i dati in un file di testo che possa leggere con altri programmi?
+R: Semplicemente "stampando" un report su di un file, questo sara' un semplice file di testo leggibile da tutti i programmi in grado di importare file di testo
+
