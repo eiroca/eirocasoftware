@@ -82,7 +82,7 @@ implementation
 {$R *.DFM}
 
 uses
-  FAbout;
+  FAboutGPL;
 
 procedure TfmMain.FormCreate(Sender: TObject);
 begin
@@ -192,7 +192,7 @@ end;
 
 procedure TfmMain.BitBtn1Click(Sender: TObject);
 begin
-  About(Application.Title);
+  AboutGPL(Application.Title);
 end;
 
 end.
