@@ -69,7 +69,7 @@ uses
   eLibDB, Costanti,
   DContabilita, uOpzioni,
   FEditConConti, FEditConSchemiBilancio, FEditConBilanci, FEditConGiornale,
-  FAbout, FEditAdmUtenti;
+  FAboutGPL, FEditAdmUtenti;
 
 procedure TfmMain.AppEvents1SettingsChanged(Sender: TObject);
 begin
@@ -93,7 +93,7 @@ end;
 
 procedure TfmMain.Informazionisu1Click(Sender: TObject);
 begin
-  About('ConTab');
+  AboutGPL(Application.Title);
 end;
 
 procedure TfmMain.Pianodeiconti1Click(Sender: TObject);
