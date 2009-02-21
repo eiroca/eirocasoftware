@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{1f167ea3-8d0d-4af7-97f6-71727ed03688}</ProjectGuid>
+    <MainSource>TabaC2007.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>..\bin\TabaC2007.exe</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_RangeChecking>True</DCC_RangeChecking>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_ExeOutput>..\bin</DCC_ExeOutput>
+    <DCC_DcuOutput>$(OUTPUT)</DCC_DcuOutput>
+    <DCC_ObjOutput>$(OUTPUT)</DCC_ObjOutput>
+    <DCC_HppOutput>$(OUTPUT)</DCC_HppOutput>
+    <DCC_UnitSearchPath>$(BDS)\Lib;$(BDS)\Lib\Indy10;$(BDS)\Imports;$(LIBRARY)\EicLib\src\lib;$(LIBRARY)\EicLibVCL\src\lib;$(LIBRARY)\EicComp\src\lib;$(LIBRARY)\EicANN\src\lib</DCC_UnitSearchPath>
+    <DCC_ResourcePath>$(BDS)\Lib;$(BDS)\Lib\Indy10;$(BDS)\Imports;$(LIBRARY)\EicLib\src\lib;$(LIBRARY)\EicLibVCL\src\lib;$(LIBRARY)\EicComp\src\lib;$(LIBRARY)\EicANN\src\lib</DCC_ResourcePath>
+    <DCC_ObjPath>$(BDS)\Lib;$(BDS)\Lib\Indy10;$(BDS)\Imports;$(LIBRARY)\EicLib\src\lib;$(LIBRARY)\EicLibVCL\src\lib;$(LIBRARY)\EicComp\src\lib;$(LIBRARY)\EicANN\src\lib</DCC_ObjPath>
+    <DCC_IncludePath>$(BDS)\Lib;$(BDS)\Lib\Indy10;$(BDS)\Imports;$(LIBRARY)\EicLib\src\lib;$(LIBRARY)\EicLibVCL\src\lib;$(LIBRARY)\EicComp\src\lib;$(LIBRARY)\EicANN\src\lib</DCC_IncludePath>
+    <DCC_Define>RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_RangeChecking>True</DCC_RangeChecking>
+    <DCC_ExeOutput>..\bin</DCC_ExeOutput>
+    <DCC_DcuOutput>$(OUTPUT)</DCC_DcuOutput>
+    <DCC_ObjOutput>$(OUTPUT)</DCC_ObjOutput>
+    <DCC_HppOutput>$(OUTPUT)</DCC_HppOutput>
+    <DCC_UnitSearchPath>$(BDS)\Lib;$(BDS)\Lib\Indy10;$(BDS)\Imports;$(LIBRARY)\eLib\src\lib;$(LIBRARY)\eComp\src\lib;$(LIBRARY)\Other\src\lib</DCC_UnitSearchPath>
+    <DCC_ResourcePath>$(BDS)\Lib;$(BDS)\Lib\Indy10;$(BDS)\Imports;$(LIBRARY)\eLib\src\lib;$(LIBRARY)\eComp\src\lib;$(LIBRARY)\Other\src\lib</DCC_ResourcePath>
+    <DCC_ObjPath>$(BDS)\Lib;$(BDS)\Lib\Indy10;$(BDS)\Imports;$(LIBRARY)\eLib\src\lib;$(LIBRARY)\eComp\src\lib;$(LIBRARY)\Other\src\lib</DCC_ObjPath>
+    <DCC_IncludePath>$(BDS)\Lib;$(BDS)\Lib\Indy10;$(BDS)\Imports;$(LIBRARY)\eLib\src\lib;$(LIBRARY)\eComp\src\lib;$(LIBRARY)\Other\src\lib</DCC_IncludePath>
+    <DCC_Define>DEBUG</DCC_Define>
+    <DCC_OutputDRCFile>True</DCC_OutputDRCFile>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">1</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1040</VersionInfo><VersionInfo Name="CodePage">1252</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="CompanyName">di Elio e Enrico Croce</VersionInfoKeys><VersionInfoKeys Name="FileDescription">Gestione magazzino tabacchi</VersionInfoKeys><VersionInfoKeys Name="InternalName">TABA</VersionInfoKeys><VersionInfoKeys Name="LegalCopyright">Copyright © 1984-2000</VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName">Gestione Tabacchi</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys><VersionInfoKeys Name="SpecialBuild">Dimostrativo</VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">TabaC2007.dpr</Source></Source><Language><Language Name="ProjectLang">$00000410</Language></Language><Excluded_Packages>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <Excluded_Packages Name="C:\Documents and Settings\All Users\Documenti\RAD Studio\5.0\Bpl\OverbyteIcsDel110Package.bpl">File C:\Documents and Settings\All Users\Documenti\RAD Studio\5.0\Bpl\OverbyteIcsDel110Package.bpl not found</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\bcboffice2k100.bpl">CodeGear C++Builder Office 2000 Servers Package</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\bcbofficexp100.bpl">CodeGear C++Builder Office XP Servers Package</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\dcloffice2k100.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\dclofficexp100.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+    </Excluded_Packages></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="TabaC2007.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="gui\FGiacEdit.pas">
+      <Form>fmGiacEdit</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FGiacIns.pas">
+      <Form>fmGiacInsert</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FInfo.pas">
+      <Form>fmInfo</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FMain.pas">
+      <Form>fmMain</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FOrdiCon.pas">
+      <Form>fmOrdiCons</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FOrdiEdit.pas">
+      <Form>fmOrdiEdit</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FOrdiIns.pas">
+      <Form>fmOrdiInsert</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FPatName.pas">
+      <Form>fmPateName</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FPatOrdCon.pas">
+      <Form>fmPatOCons</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FPatOrdEdit.pas">
+      <Form>fmPatOEdit</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FPatOrdIns.pas">
+      <Form>fmPatOInsert</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FPrezziEdit.pas">
+      <Form>fmPrezziEdit</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FPrezziIns.pas">
+      <Form>fmPrezziInsert</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FPrezziSel.pas">
+      <Form>fmPrezziSelect</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FPrinterSetup.pas">
+      <Form>fmPrinterSetup</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FSplash.pas">
+      <Form>fmSplash</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FStampaCarichi.pas">
+      <Form>fmStampaCarichi</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FStampaGiacenze.pas">
+      <Form>fmStampaGiacenza</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FStampaModulo.pas">
+      <Form>fmStampaModuli</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FStampaOrdini.pas">
+      <Form>fmStampaOrdinato</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FStampaOrdList.pas">
+      <Form>fmStampaOrdine</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FStampaPatOrd.pas">
+      <Form>fmStampaRichiesto</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FStampaPatOrdLs.pas">
+      <Form>fmStampaRichiestaPatentino</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FStampaPrezzi.pas">
+      <Form>fmStampaListino</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FStampaStatistiche.pas">
+      <Form>fmStampaStatistiche</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FStampaTabacchi.pas">
+      <Form>fmStampaTabacchi</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FStampaTrend.pas">
+      <Form>fmStampaTendenze</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FStatCalc.pas">
+      <Form>fmStatCalc</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FTabaEdit.pas">
+      <Form>fmTabaEdit</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FTabaFind.pas">
+      <Form>fmTabaFind</Form>
+    </DCCReference>
+    <DCCReference Include="gui\FValorizzazione.pas">
+      <Form>fmValorizzazione</Form>
+    </DCCReference>
+    <DCCReference Include="lib\Costanti.pas" />
+    <DCCReference Include="lib\DTabaC.pas">
+      <Form>dmTaba</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="lib\uOpzioni.pas" />
+    <DCCReference Include="util\MakeDB.pas" />
+  </ItemGroup>
+</Project>
