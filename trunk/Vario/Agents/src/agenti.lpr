@@ -26,7 +26,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Classes
-  { add your units here }, uAgents;
+  { add your units here }, uAgents, ProDos;
 
 type
   LogAspect = class
