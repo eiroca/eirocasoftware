@@ -69,7 +69,7 @@ implementation
 
 {$R *.DFM}
 uses
-  FGame, FLetter, FMarketReport, FResult, MessageStr, FHelp, FAbout;
+  FGame, FLetter, FMarketReport, FResult, MessageStr, FHelp, FAboutGPL;
 
 procedure TfmMain.FormShow(Sender: TObject);
 begin
@@ -89,7 +89,7 @@ end;
 
 procedure TfmMain.showAbout(Sender: TObject);
 begin
-  About('WinCorp');
+  AboutGPL(Application.Title);
 end;
 
 procedure TfmMain.teAnim1Timer(Sender: TObject);
