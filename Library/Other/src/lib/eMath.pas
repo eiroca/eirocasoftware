@@ -1,5 +1,4 @@
 (* GPL > 3.0
-EicLib
 Copyright (C) 1996-2008 eIrOcA Enrico Croce & Simona Burzio
 
 This program is free software: you can redistribute it and/or modify
@@ -16,7 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 (*
- Author :  Enrico Croce
+ @author(Enrico Croce)
 *)
 unit eMath;
 (*

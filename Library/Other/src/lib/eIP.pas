@@ -1,5 +1,4 @@
 (* GPL > 3.0
-EicLib
 Copyright (C) 1996-2008 eIrOcA Enrico Croce & Simona Burzio
 
 This program is free software: you can redistribute it and/or modify
@@ -16,16 +15,9 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 (*
- Author :  Enrico Croce
+ @author(Enrico Croce)
 *)
 unit eIP;
-(****************************************************************************)
-(* This source code is copyrighted by Enrico Croce. This source code as a   *)
-(* whole, or parts thereof, cannot be included or used in any kind of       *)
-(* computer programs without the permission granted by the author.          *)
-(* See LICENSE.TXT (or the other documentation) for the complete license    *)
-(* agreement. All comments concerning the program may be sent to the author *)
-(****************************************************************************)
 
 interface
 

@@ -40,10 +40,10 @@ requires
   eComp;
 
 contains
-  XStrGrds in 'lib\XStrGrds.pas',
   dbugintf in 'lib\dbugintf.pas',
   eIP in 'lib\eIP.pas',
   eMath in 'lib\eMath.pas',
+  FAboutBox in 'lib\FAboutBox.pas',
   FDBPack in 'lib\FDBPack.pas',
   FRegist in 'lib\FRegist.pas',
   IceLock in 'lib\IceLock.pas',
@@ -51,6 +51,7 @@ contains
   PrevInstance in 'lib\PrevInstance.pas',
   RgNav in 'lib\RgNav.pas',
   RgNavDB in 'lib\RgNavDB.pas',
-  RgUseful in 'lib\RgUseful.pas';
+  RgUseful in 'lib\RgUseful.pas',
+  XStrGrds in 'lib\XStrGrds.pas';
 
 end.
