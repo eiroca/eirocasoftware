@@ -80,7 +80,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLibDB, eLib, DArtik, MakeDB, FDBPack, FInfo, FAbout, UOpzioni,
+  eLibDB, eLib, DArtik, MakeDB, FDBPack, FInfo, FAboutGPL, UOpzioni,
   FEditIVA, FEditMis, FEditPiaCod, FEditArticoli, FEditForn, FFindArt,
   FEditFattForn, FMakePrezzi;
 
@@ -96,7 +96,7 @@ end;
 
 procedure TfmMain.Informazionisu1Click(Sender: TObject);
 begin
-  About('Artik');
+  AboutGPL(Application.Title);
 end;
 
 procedure TfmMain.FormShow(Sender: TObject);
