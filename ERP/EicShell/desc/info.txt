@@ -1,6 +1,0 @@
-Name       : eicShell
-Description: Shell di coordimaneto applicazioni
-OS         : Win32
-Type       : GUI
-Language   : Delphi 2007
-Dependency : eLib, RX
