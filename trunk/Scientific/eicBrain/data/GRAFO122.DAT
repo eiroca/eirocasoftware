@@ -1,0 +1,12 @@
+Esempio di una matrice
+
+Scrivere commenti ma non usare i due punti che devono essere usati solo dove
+sono presenti in questo file!
+
+Righe: 4
+Colonne: 4
+
+0 1 3 0
+0 0 1 3
+0 1 0 1
+0 0 0 0
