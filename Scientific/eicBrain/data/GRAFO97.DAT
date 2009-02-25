@@ -1,0 +1,21 @@
+Esempio di una matrice
+
+Scrivere commenti ma non usare i due punti che devono essere usati solo dove
+sono presenti in questo file!
+
+Righe: 8
+Colonne: 8
+
+ 0  1  2  0  0  0  0  0
+ 0  0  5  3  3  0  0  0
+ 0  0  0  0  0  2  0  0
+ 0  0  0  0  1  5  0  0
+ 0  0  2  0  0  7  3  0
+ 0  0  0  0  0  0  2  4
+ 0  0  0  2  0  0  0  1
+ 0  0  0  0  0  0  0  0
+
+
+
+
+

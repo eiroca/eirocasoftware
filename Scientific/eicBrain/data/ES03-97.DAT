@@ -1,0 +1,18 @@
+Esempio #3 pagina 97
+
+Variabili: 2
+x1
+x2
+
+Funzione: z
+
+Obiettivo: Max
+
+Termine costante: 0
+
+Costi: 3 -1
+
+Numero Vincoli: 3
+4  -1 <=  4
+5  10 <= 20
+1  -2 >= -2
