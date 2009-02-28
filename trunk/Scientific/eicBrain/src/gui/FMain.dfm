@@ -2,7 +2,7 @@ object fmMain: TfmMain
   Left = 0
   Top = 0
   Caption = 'eicBrain 1.0'
-  ClientHeight = 374
+  ClientHeight = 394
   ClientWidth = 562
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,7 +16,7 @@ object fmMain: TfmMain
   TextHeight = 13
   object sbStatus: TStatusBar
     Left = 0
-    Top = 355
+    Top = 375
     Width = 562
     Height = 19
     Panels = <>
@@ -36,6 +36,12 @@ object fmMain: TfmMain
       Hint = 
         'Procedure Statistiche: Distribuzioni, ANOVA, regressioni, fit, .' +
         '.. '
+      object Distribuzioniteorichediscrete1: TMenuItem
+        Caption = 'Distribuzioni teoriche discrete'
+      end
+      object Distribuzioniteorichecontinue1: TMenuItem
+        Caption = 'Distribuzioni teoriche continue'
+      end
     end
     object eoriadeisistemi1: TMenuItem
       Caption = 'Teoria dei sistemi'
