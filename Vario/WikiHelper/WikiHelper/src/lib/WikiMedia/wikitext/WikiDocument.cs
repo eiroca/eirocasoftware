@@ -104,20 +104,24 @@ namespace WikiHelper.lib.WikiMedia {
     }
     
     public WikiHeader FindHeader(int level, string name) {
-      for (int i = 0; i < headers.Count-1; i++) {
-        WikiHeader header = headers[i];
-        if ((header.level==level) && (header.name.Equals(name))) {
-          return header;
+      if (name!=null) {
+        for (int i = 0; i < headers.Count-1; i++) {
+          WikiHeader header = headers[i];
+          if ((header.level==level) && (name.Equals(header.name))) {
+            return header;
+          }
         }
       }
       return null;
     }
 
     public WikiHeader FindHeader( string name) {
-      for (int i = 0; i < headers.Count-1; i++) {
-        WikiHeader header = headers[i];
-        if (header.name.Equals(name)) {
-          return header;
+      if (name!=null) {
+        for (int i = 0; i < headers.Count-1; i++) {
+          WikiHeader header = headers[i];
+          if (name.Equals(header.name)) {
+            return header;
+          }
         }
       }
       return null;

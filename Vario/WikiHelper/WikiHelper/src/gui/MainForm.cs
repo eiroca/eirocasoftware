@@ -121,6 +121,11 @@ namespace WikiHelper.gui {
       }
     }
     
+    void ConfigurazioneToolStripMenuItemClick(object sender, EventArgs e) {
+      DotBits.Configuration.ConfigEditor c = new  DotBits.Configuration.ConfigEditor();
+      c.ShowDialog(this);
+    }
+    
   }
   
 }

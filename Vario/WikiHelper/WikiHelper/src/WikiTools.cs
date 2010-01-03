@@ -38,6 +38,7 @@ namespace WikiHelper {
     
     [STAThread]
     private static void Main(string[] args) {
+      
       // Configuration dirs
       string basePath;
       basePath = Directory.GetCurrentDirectory()+"\\";
