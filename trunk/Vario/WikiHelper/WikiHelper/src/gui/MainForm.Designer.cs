@@ -37,7 +37,10 @@ namespace WikiHelper.gui {
     {
     	this.meOut = new System.Windows.Forms.RichTextBox();
     	this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-    	this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+    	this.mnFile = new System.Windows.Forms.ToolStripMenuItem();
+    	this.configurazioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+    	this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+    	this.mnWikimedia = new System.Windows.Forms.ToolStripMenuItem();
     	this.buildPagesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
     	this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
     	this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -45,7 +48,6 @@ namespace WikiHelper.gui {
     	this.exportCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
     	this.miAddressBook = new System.Windows.Forms.ToolStripMenuItem();
     	this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-    	this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
     	this.menuStrip1.SuspendLayout();
     	this.SuspendLayout();
     	// 
@@ -61,27 +63,50 @@ namespace WikiHelper.gui {
     	// menuStrip1
     	// 
     	this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-    	    	    	this.fileToolStripMenuItem});
+    	    	    	this.mnFile,
+    	    	    	this.mnWikimedia});
     	this.menuStrip1.Location = new System.Drawing.Point(0, 0);
     	this.menuStrip1.Name = "menuStrip1";
     	this.menuStrip1.Size = new System.Drawing.Size(747, 24);
     	this.menuStrip1.TabIndex = 3;
     	this.menuStrip1.Text = "menuStrip1";
     	// 
-    	// fileToolStripMenuItem
+    	// mnFile
     	// 
-    	this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+    	this.mnFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+    	    	    	this.configurazioneToolStripMenuItem,
+    	    	    	this.toolStripMenuItem1,
+    	    	    	this.closeToolStripMenuItem});
+    	this.mnFile.Name = "mnFile";
+    	this.mnFile.Size = new System.Drawing.Size(35, 20);
+    	this.mnFile.Text = "&File";
+    	// 
+    	// configurazioneToolStripMenuItem
+    	// 
+    	this.configurazioneToolStripMenuItem.Name = "configurazioneToolStripMenuItem";
+    	this.configurazioneToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+    	this.configurazioneToolStripMenuItem.Text = "&Configuration";
+    	this.configurazioneToolStripMenuItem.Click += new System.EventHandler(this.ConfigurazioneToolStripMenuItemClick);
+    	// 
+    	// closeToolStripMenuItem
+    	// 
+    	this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+    	this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+    	this.closeToolStripMenuItem.Text = "&Exit";
+    	this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItemClick);
+    	// 
+    	// mnWikimedia
+    	// 
+    	this.mnWikimedia.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
     	    	    	this.buildPagesToolStripMenuItem1,
     	    	    	this.toolStripMenuItem2,
     	    	    	this.toolStripSeparator1,
     	    	    	this.miExportPage,
     	    	    	this.exportCategoryToolStripMenuItem,
-    	    	    	this.miAddressBook,
-    	    	    	this.toolStripMenuItem1,
-    	    	    	this.closeToolStripMenuItem});
-    	this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-    	this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
-    	this.fileToolStripMenuItem.Text = "&File";
+    	    	    	this.miAddressBook});
+    	this.mnWikimedia.Name = "mnWikimedia";
+    	this.mnWikimedia.Size = new System.Drawing.Size(66, 20);
+    	this.mnWikimedia.Text = "Wiki&Media";
     	// 
     	// buildPagesToolStripMenuItem1
     	// 
@@ -126,14 +151,7 @@ namespace WikiHelper.gui {
     	// toolStripMenuItem1
     	// 
     	this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-    	this.toolStripMenuItem1.Size = new System.Drawing.Size(182, 6);
-    	// 
-    	// closeToolStripMenuItem
-    	// 
-    	this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-    	this.closeToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-    	this.closeToolStripMenuItem.Text = "&Close";
-    	this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItemClick);
+    	this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
     	// 
     	// MainForm
     	// 
@@ -150,15 +168,17 @@ namespace WikiHelper.gui {
     	this.ResumeLayout(false);
     	this.PerformLayout();
     }
+    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem mnFile;
+    private System.Windows.Forms.ToolStripMenuItem mnWikimedia;
+    private System.Windows.Forms.ToolStripMenuItem configurazioneToolStripMenuItem;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     private System.Windows.Forms.ToolStripMenuItem miExportPage;
     private System.Windows.Forms.ToolStripMenuItem miAddressBook;
     private System.Windows.Forms.ToolStripMenuItem buildPagesToolStripMenuItem1;
-    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem exportCategoryToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
     private System.Windows.Forms.MenuStrip menuStrip1;
     private System.Windows.Forms.RichTextBox meOut;
        

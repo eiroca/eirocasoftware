@@ -53,6 +53,8 @@
     <None Include="conf\data\replaces.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Compile Include="src\extlib\ConfigEditor.cs" />
+    <Compile Include="src\extlib\CustomClass.cs" />
     <Compile Include="src\extlib\DotNetWikiBot.cs" />
     <Compile Include="src\extlib\HTML.cs" />
     <Compile Include="src\extlib\HTMLTest.cs" />
@@ -96,6 +98,12 @@
     <Compile Include="src\WikiTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\WikiConf.cs" />
+    <EmbeddedResource Include="src\extlib\ConfigEditor.resx">
+      <DependentUpon>ConfigEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\extlib\CustomClass.resx">
+      <DependentUpon>CustomClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\gui\AddressBookExport.resx">
       <DependentUpon>AddressBookExport.cs</DependentUpon>
     </EmbeddedResource>
