@@ -1061,26 +1061,22 @@ function tpl_img($maxwidth=0,$maxheight=0,$link=true,$img_id=null){
 	global $IMG;
 	$w = tpl_img_getTag('File.Width');
 	$h = tpl_img_getTag('File.Height');
-
 	//resize to given max values
-	$ratio = $w/$h;
 	if ($maxwidth) {
 		if($w > $maxwidth){
+			$h=floor($h * $maxwidth / $w);
 			$w=$maxwidth;
-			$h=floor($maxwidth/$ratio);
 		}
 	}
 	if ($maxheight) {
 		if($h > $maxheight){
+			$w=floor($w * $maxheight / $h);
 			$h=$maxheight;
-			$w=floor($maxheight*$ratio);
 		}
 	}
-
 	//prepare URLs
 	$url=ml($IMG,array('cache'=>$_REQUEST['cache']));
 	$src=ml($IMG,array('cache'=>$_REQUEST['cache'],'w'=>$w,'h'=>$h));
-
 	//prepare attributes
 	$alt=tpl_img_getTag('Simple.Title');
 	$p = array();
