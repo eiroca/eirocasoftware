@@ -1094,9 +1094,14 @@ function tpl_img($maxwidth=0,$maxheight=0,$link=true,$img_id=null){
 		$p['id'] = $img_id;
 	}
 	$p = buildAttributes($p);
-	if($link){print '<a href="'.$url.'">';}
-	print '<img src="'.$src.'" '.$p.'/>';
-	if($link){print '</a>';}
+	$data = array('url'=>($link?$url:null), 'src'=>$src, 'p'=>$p);
+	return trigger_event('TPL_IMG_DISPLAY',$data,'_tpl_img_action',true);
+}
+
+function _tpl_img_action($data, $param=NULL) {
+	if($data['url']){print '<a href="'.$data['url'].'">';}
+	print '<img src="'.$data['src'].'" '.$data['p'].'/>';
+	if($data['url']){print '</a>';}
 	return true;
 }
 
