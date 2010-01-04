@@ -45,6 +45,8 @@ class syntax_plugin_embed extends DokuWiki_Syntax_Plugin {
 
 	function getSort(){ return 500; }
 
+	function getPType() { return 'block'; }
+	
 	function connectTo($mode) {
 		$this->Lexer->addSpecialPattern('<embed\s+[^>]+\s*>.*?</embed>',$mode,'plugin_embed');
 		$this->Lexer->addSpecialPattern('<embed\s+[^/]+\s*/>',$mode,'plugin_embed');
