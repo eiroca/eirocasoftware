@@ -65,11 +65,12 @@ class syntax_plugin_barcode extends DokuWiki_Syntax_Plugin {
 	 */
 	function handle($match, $state, $pos, &$handler) {
 		global $conf;
+		global $ID;
 		$paramsArr = explode('~', $match);
 		$p['mode'] = 0;
 		$p['align'] = 0;
 		$p['size']  = "M";
-		$p['text']  = "";
+		$p['text']  = wl($ID, '', true);
 		$last = count($paramsArr);
 		for ($i = 0; $i < $last; $i++) {
 			$currentParam = $paramsArr[$i];
@@ -158,25 +159,6 @@ class syntax_plugin_barcode extends DokuWiki_Syntax_Plugin {
 		return $param;
 	}
 	/**
-	 * Get Image Alignment
-	 */
-	function getAlign($align) {
-		switch($align) {
-			case 1:
-				$align_mode='align="left"';
-				break;
-			case 2:
-				$align_mode='align="right"';
-				break;
-			case 3:
-				$align_mode='align="center"';
-				break;
-			default:
-				break;
-		}
-		return $align_mode;
-	}
-	/**
 	 http://qrcode.kaywa.com/
 	 */
 	function QR_kaywa($p) {
@@ -184,7 +166,6 @@ class syntax_plugin_barcode extends DokuWiki_Syntax_Plugin {
 		$size = $p['size'];
 		$align= $p['align'];
 		$text = $p['text'];
-		$align_mode = $this->getAlign($align);
 		$resultStr=	'http://qrcode.kaywa.com/img.php?';
 		switch($size) {
 			case 'S':
@@ -216,7 +197,6 @@ class syntax_plugin_barcode extends DokuWiki_Syntax_Plugin {
 		$align= $p['align'];
 		$text = $p['text'];
 		$caption = $p['caption'];
-		$align_mode = $this->getAlign($align);
 		$resultStr = 'http://encode.i-nigma.com/'.$mode.'/img.php?';
 		if ($caption){ $resultStr .= $this->addParam($first, "c=".$caption); }
 		switch($size) {
@@ -248,7 +228,6 @@ class syntax_plugin_barcode extends DokuWiki_Syntax_Plugin {
 		$align= $p['align'];
 		$text = $p['text'];
 		$caption = $p['caption'];
-		$align_mode = $this->getAlign($align);
 		$resultStr = "http://chart.apis.google.com/chart?";
 		$resultStr .= $this->addParam($first, "cht=qr");
 		switch($size) {
