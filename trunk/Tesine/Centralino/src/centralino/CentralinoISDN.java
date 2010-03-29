@@ -1,3 +1,20 @@
+/**
+ * Copyright (C) 1998-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/
+ * 
+ */
 package centralino;
 
 import java.io.FileWriter;
@@ -27,7 +44,7 @@ public class CentralinoISDN {
   // vettore che tiene traccia delle connessioni
   ConnectionData connections[];
   // Array che contiene i threads che ascoltano le linee di ingresso
-  Vector channels;
+  Vector<ChannelListener> channels;
   // File su cui si scrivono i numeri chiamati
   PrintWriter logFile = null;
 
@@ -64,7 +81,7 @@ public class CentralinoISDN {
   }
 
   public void setupChannels(final int numChannels) {
-    channels = new Vector(numChannels);
+    channels = new Vector<ChannelListener>(numChannels);
     for (int i = 0; i < numChannels; i++) {
       channels.addElement(new ChannelListener(this, i + 1));
     }
@@ -73,14 +90,14 @@ public class CentralinoISDN {
   public void startChannels() {
     // Inizia ad ascoltare le linee
     for (int i = 0; i < channels.size(); i++) {
-      ((Thread) channels.elementAt(i)).start();
+      (channels.elementAt(i)).start();
     }
   }
 
   public void stopChannels() {
     // Termina di ascoltare le linee
     for (int i = 0; i < channels.size(); i++) {
-      ((Thread) channels.elementAt(i)).stop();
+      (channels.elementAt(i)).stop();
     }
   }
 
