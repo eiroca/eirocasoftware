@@ -2,8 +2,8 @@ object fmViewMutuo: TfmViewMutuo
   Left = 233
   Top = 157
   Caption = 'Mostra dati mutuo'
-  ClientHeight = 178
-  ClientWidth = 450
+  ClientHeight = 291
+  ClientWidth = 608
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clBlack
@@ -22,11 +22,11 @@ object fmViewMutuo: TfmViewMutuo
   TextHeight = 13
   object dgDati: TRxDrawGrid
     Left = 0
-    Top = 38
-    Width = 450
+    Top = 151
+    Width = 608
     Height = 140
     Align = alBottom
-    ColCount = 7
+    ColCount = 8
     DefaultColWidth = 80
     FixedCols = 0
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goDrawFocusSelected, goColSizing, goEditing]
@@ -38,6 +38,7 @@ object fmViewMutuo: TfmViewMutuo
     OnGetEditAlign = dgDatiGetEditAlign
     ColWidths = (
       54
+      80
       80
       80
       80
