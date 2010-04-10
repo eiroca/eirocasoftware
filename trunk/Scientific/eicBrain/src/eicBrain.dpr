@@ -22,7 +22,6 @@ program eicBrain;
 uses
   Forms,
   FMain in 'gui\FMain.pas' {fmMain},
-  uEconomia in 'lib\uEconomia.pas',
   FValRec in 'gui\Economia\FValRec.pas' {fmValRec},
   FDepositoMinimo in 'gui\Economia\FDepositoMinimo.pas' {fmDepositoMinimo},
   FDepReg in 'gui\Economia\FDepReg.pas' {fmDepReg},
@@ -39,13 +38,11 @@ uses
   FUltRat in 'gui\Economia\FUltRat.pas' {fmUltRat},
   FValDep in 'gui\Economia\FValDep.pas' {fmValDep},
   FValoreIniziale in 'gui\Economia\FValoreIniziale.pas' {fmValoreIniziale},
-  HdError in 'lib\HdError.pas',
-  DISTCOBJ in 'lib\DISTCOBJ.PAS',
-  DISTDOBJ in 'lib\DISTDOBJ.PAS',
-  Distrobj in 'lib\Distrobj.pas',
-  uMathStat in 'lib\uMathStat.pas',
-  MATHTOOL in 'lib\MATHTOOL.PAS',
-  MATHTLS3 in 'lib\MATHTLS3.PAS';
+  uStat in 'lib\uStat.pas',
+  uEconomia in 'lib\uEconomia.pas',
+  uMath in 'lib\uMath.pas',
+  uGrafi in 'lib\uGrafi.pas',
+  uError in 'lib\uError.pas';
 
 {$R *.res}
 
