@@ -85,12 +85,13 @@ begin
   if Row = 0 then begin
     case Col of
       0: dgDati.DrawStr(Rect, '# Pag.',      taCenter);
-      1: dgDati.DrawStr(Rect, 'Capitale',    taCenter);
-      2: dgDati.DrawStr(Rect, 'Interessi',   taCenter);
-      3: dgDati.DrawStr(Rect, 'Saldo',       taCenter);
-      4: dgDati.DrawStr(Rect, 'Extra pag.',  taCenter);
-      5: dgDati.DrawStr(Rect, 'Cumulo cap.', taCenter);
-      6: dgDati.DrawStr(Rect, 'Cumulo int.', taCenter);
+      1: dgDati.DrawStr(Rect, 'Rata',    taCenter);
+      2: dgDati.DrawStr(Rect, 'Capitale',    taCenter);
+      3: dgDati.DrawStr(Rect, 'Interessi',   taCenter);
+      4: dgDati.DrawStr(Rect, 'Saldo',       taCenter);
+      5: dgDati.DrawStr(Rect, 'Extra pag.',  taCenter);
+      6: dgDati.DrawStr(Rect, 'Cumulo cap.', taCenter);
+      7: dgDati.DrawStr(Rect, 'Cumulo int.', taCenter);
     end;
   end
   else begin
@@ -98,18 +99,19 @@ begin
       with (M.Payments[Row-1]) do begin
         case Col of
           0: dgDati.DrawStr(Rect, IntToStr(Row), taRightJustify);
-          1: dgDati.DrawStr(Rect, Format(fmtSoldi, [PayPrincipal]), taRightJustify);
-          2: dgDati.DrawStr(Rect, Format(fmtSoldi, [PayInterest]), taRightJustify);
-          3: dgDati.DrawStr(Rect, Format(fmtSoldi, [Balance]), taRightJustify);
-          4: begin
+          1: dgDati.DrawStr(Rect, Format(fmtSoldi, [PayPrincipal+PayInterest]), taRightJustify);
+          2: dgDati.DrawStr(Rect, Format(fmtSoldi, [PayPrincipal]), taRightJustify);
+          3: dgDati.DrawStr(Rect, Format(fmtSoldi, [PayInterest]), taRightJustify);
+          4: dgDati.DrawStr(Rect, Format(fmtSoldi, [Balance]), taRightJustify);
+          5: begin
             tmp:= '';
             if ExtraPrincipal > 0 then begin
               tmp:= Format(fmtSoldi, [ExtraPrincipal]);
             end;
             dgDati.DrawStr(Rect, tmp, taRightJustify);
           end;
-          5: dgDAti.DrawStr(Rect, Format(fmtSoldi, [CumPrincipal]), taRightJustify);
-          6: dgDAti.DrawStr(Rect, Format(fmtSoldi, [CumInterest]), taRightJustify);
+          6: dgDAti.DrawStr(Rect, Format(fmtSoldi, [CumPrincipal]), taRightJustify);
+          7: dgDAti.DrawStr(Rect, Format(fmtSoldi, [CumInterest]), taRightJustify);
         end;
       end;
     end
@@ -122,7 +124,7 @@ end;
 procedure TfmViewMutuo.dgDatiShowEditor(Sender: TObject; ACol,
   ARow: Longint; var AllowEdit: Boolean);
 begin
-  AllowEdit:= (ACol=4) and (ARow>0);
+  AllowEdit:= (ACol=5) and (ARow>0);
 end;
 
 procedure TfmViewMutuo.dgDatiSetEditText(Sender: TObject; ACol,
@@ -131,7 +133,7 @@ var
   tmp: double;
 begin
   case ACol of
-    4: begin
+    5: begin
       tmp:= StrToFloatDef(Value, 0);
       if tmp<=0.01 then begin
         M.RemoveExtraPrincipal(ARow);
@@ -152,7 +154,7 @@ end;
 procedure TfmViewMutuo.dgDatiGetEditText(Sender: TObject; ACol, ARow: Integer; var Value: String);
 begin
   case ACol of
-    4: Value:= FloatToStr(M.Payments[ARow-1].ExtraPrincipal);
+    5: Value:= FloatToStr(M.Payments[ARow-1].ExtraPrincipal);
   end;
 end;
 
