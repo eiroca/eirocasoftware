@@ -1,3 +1,3 @@
 <?php
 $conf['showfooter'] = false;
-$conf['provider'] = 0;
+$conf['provider'] = "google";
