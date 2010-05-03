@@ -208,9 +208,12 @@ namespace WikiHelper.lib.WikiMedia {
       return null;
     }
 
-    public Header FindHeader( string name) {
+    public Header FindHeader(string name) {
       for (int i = 0; i < headers.Count-1; i++) {
         Header header = headers[i];
+        if (header.name == null) {
+          continue;
+        }
         if (header.name.Equals(name)) {
           return header;
         }
