@@ -14,51 +14,91 @@ using System.Collections.Specialized;
 namespace WikiHelper {
 
   public class WikiConf {
+
+    public bool useLogin {
+      get {
+        string useLoginStr = Get("useLogin");
+        return (String.IsNullOrEmpty(useLoginStr)? false : (!useLoginStr.Equals("0")? true: false));
+      }
+    }
   
-    public string wikiURL;
-    public string wikiDomain;
-    public string wikiDefCategory;
+    public string wikiURL {
+      get {
+        return  Get("wikiURL");
+      }
+    }
+    
+    public string wikiDomain {
+      get {
+       return Get("wikiDomain");
+      }
+    }
+    
+    public string wikiDefCategory {
+      get {
+        return Get("wikiDefCategory");
+      }
+    }
+    
+    public string pptTemplate {
+      get {
+        return Get("PPT_Template");
+      }
+    }
+    
+    public string extractors {
+      get {
+        return Get("extractors");
+      }
+    }
+    
+    public string loginConf {
+      get {
+        return Get("loginConf");
+      }
+    }
+    
+    public string newPage_Template {
+      get {
+        return Get("newPage_Template");
+      }
+    }
+    
+    public string newPage_List {
+      get {
+        return Get("newPage_List");
+      }
+    }
+    
+    public string replace_List {
+      get {
+        return Get("replace_List");
+      }
+    }
 
-    public string pptTemplate;
-    public string extractors;
-
-    public string loginConf;
-
-    public string newPage_Template;
-    public string newPage_List;
-    public string replace_List;
-
-    public string[] categories;
+    public string[] categories {
+      get {
+        string cat = Get("categories");
+        string[] cats = (String.IsNullOrEmpty(cat)? new string[0] : cat.Split(','));
+        for (int i=0; i<cats.Length; i++) {
+          cats[i] = cats[i].Trim();
+        }
+        return cats;
+      }
+    }
     
     private System.Collections.Specialized.NameValueCollection settings;
     
     private string Get(string key) {
       string val = settings[key];
-      return (val!=null? val.ToString() : null);
+      if (String.IsNullOrEmpty(val)) {
+        val = null;
+      }
+      return val;
     }
     
     public WikiConf() {
       settings = ConfigurationManager.AppSettings;
-    
-      wikiURL = Get("wikiURL");
-      wikiDomain = Get("wikiDomain");
-      wikiDefCategory = Get("wikiDefCategory");
-      
-      pptTemplate = Get("PPT_Template");
-      extractors = Get("extractors");
-      
-      loginConf = Get("loginConf");
-      
-      newPage_Template = Get("newPage_Template");
-      newPage_List = Get("newPage_List");
-
-      replace_List = Get("replace_List");
-
-      string cat = Get("categories");
-      categories = (cat!=null? cat.Split(',') : new string[0]);
-      for (int i=0; i<categories.Length; i++) {
-        categories[i] = categories[i].Trim();
-      }
     }
     
   }

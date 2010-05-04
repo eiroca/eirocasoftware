@@ -43,7 +43,12 @@ namespace WikiHelper.lib.WikiMedia {
     }
     
     public void LogIn() {
-      site = new Site(WikiURL, username, password, WikiDomain);
+      if (username!=null) {
+        site = new Site(WikiURL, username, password, WikiDomain);
+      }
+      else {
+        site = new Site(WikiURL, null, null);
+      }
     }
 
     public Page GetPage(string title) {

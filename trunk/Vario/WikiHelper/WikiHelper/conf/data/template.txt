@@ -1,26 +1,9 @@
 ﻿{{{{Template:Firm_Head
 |name={{{{PAGENAME}}}}
-|type=association
+|type=firm
 |country={1}
-|incubator=
 |tag={2}
 }}}}
 = Executive Summary =
-{4}
+{3}
 
-= Attività =
-== News & eventi ==
--
-== Incontri ==
--
-== Followup ==
--
-
-= Catalogo offerte =
-
-= Informazioni Istituzionali =
-
-== Organigramma ==
-
-= Riferimenti e Contatti =
-{0} {3}
