@@ -53,6 +53,7 @@
     <None Include="conf\data\replaces.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\extlib\ConfigEditor.cs" />
     <Compile Include="src\extlib\CustomClass.cs" />
     <Compile Include="src\extlib\DotNetWikiBot.cs" />
@@ -91,12 +92,10 @@
     <Compile Include="src\lib\Contacts.cs" />
     <Compile Include="src\lib\WikiMedia\converter\HTML2Model.cs" />
     <Compile Include="src\lib\WikiMedia\converter\Model2PPT.cs" />
-    <Compile Include="src\lib\WikiMedia\patch\WikiBot.cs" />
     <Compile Include="src\lib\WikiMedia\WikiModel.cs" />
     <Compile Include="src\lib\WikiMedia\WikiMedia.cs" />
     <Compile Include="src\lib\WikiMedia\wikitext\WikiDocument.cs" />
     <Compile Include="src\WikiTools.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\WikiConf.cs" />
     <EmbeddedResource Include="src\extlib\ConfigEditor.resx">
       <DependentUpon>ConfigEditor.cs</DependentUpon>
@@ -131,26 +130,16 @@
     <None Include="conf\data\template.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="conf\extractors\00_Generico.txt">
+    <None Include="conf\extractors\00_ByNum.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="conf\extractors\01_Industria.txt">
+    <None Include="conf\extractors\01_ByName.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="conf\extractors\02_Prodotti.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="conf\login.dat">
+    <None Include="conf\extractors\02_Mixed.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="conf\Template.pot">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="VF\login.dat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="VF\VF.config" />
-    <None Include="VF\Vodafone.pot">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -174,7 +163,6 @@
     <Folder Include="conf" />
     <Folder Include="conf\data" />
     <Folder Include="conf\extractors" />
-    <Folder Include="VF" />
     <Folder Include="src" />
     <Folder Include="src\gui" />
     <Folder Include="src\lib" />

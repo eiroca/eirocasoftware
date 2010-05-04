@@ -23,7 +23,7 @@ namespace WikiHelper.gui {
     WikiMedia wiki;
     bool loggedIn = false;
     WikiConf conf;
-    
+
     public delegate void Export(WikiMedia.ExportNotify notify);
 
     public MainForm(WikiMedia wiki, WikiConf conf) {
@@ -33,25 +33,33 @@ namespace WikiHelper.gui {
     }
 
     bool Login() {
-      if (!loggedIn) {
-        try {
-          if (WikiTools.wikiConf.wikiDomain == null) {
-            loggedIn = true;
-                wiki.LogIn();
-          }
-          else {
-            if (WikiTools.wikiLoginForm.ShowDialog() == DialogResult.OK) {
-              string oldText = this.Text;
-              this.Text = "WAITING ...";
-              Application.DoEvents();
-              wiki.LogIn();
+      if (conf.useLogin) {
+        if (!loggedIn) {
+          try {
+            if (WikiTools.wikiConf.wikiDomain == null) {
               loggedIn = true;
-              this.Text = oldText;
+              wiki.LogIn();
+            }
+            else {
+              if (WikiTools.wikiLoginForm.ShowDialog() == DialogResult.OK) {
+                string oldText = this.Text;
+                this.Text = "WAITING ...";
+                Application.DoEvents();
+                wiki.LogIn();
+                loggedIn = true;
+                this.Text = oldText;
+              }
             }
           }
+          catch {
+          }
         }
-        catch {
-        }
+      }
+      else {
+        loggedIn = true;
+        wiki.username=null;
+        wiki.password=null;
+        wiki.LogIn();
       }
       return loggedIn;
     }
@@ -63,17 +71,27 @@ namespace WikiHelper.gui {
       meOut.Clear();
       action(Print);
     }
-    
+
     public void Print(string msg) {
       meOut.Text += msg + "\t";
-  		Application.DoEvents();
+      Application.DoEvents();
     }
-    
-    void CloseToolStripMenuItemClick(object sender, EventArgs e) {
+
+    void ExportForm(IExporter exporter) {
+      if (!Login()) {
+        return;
+      }
+      meOut.Clear();
+      if (exporter.Setup()) {
+        exporter.Export(Print);
+      }
+    }
+
+    void CloseClick(object sender, EventArgs e) {
       Close();
     }
-    
-    void BuildPagesToolStripMenuItem1Click(object sender, EventArgs e) {
+
+    void BuildPagesClick(object sender, EventArgs e) {
       if (!Login()) {
         return;
       }
@@ -84,30 +102,20 @@ namespace WikiHelper.gui {
         wiki.CreatePages(template, lines, Print);
       }
     }
-    
-    void ExportForm(IExporter exporter) {
-      if (!Login()) {
-        return;
-      }
-      meOut.Clear();
-      if (exporter.Setup()) {
-        exporter.Export(Print);
-      }
-    }
-    
-    void ExportCategoryToolStripMenuItemClick(object sender, EventArgs e) {
+
+    void ExportCategoryClick(object sender, EventArgs e) {
       ExportForm(WikiTools.categoryExport);
     }
-    
-    void MiAddressBookClick(object sender, System.EventArgs e) {
+
+    void ExportAddressBookClick(object sender, System.EventArgs e) {
       ExportForm(WikiTools.addressBookExport);
     }
-   
-    void MiExportPageClick(object sender, EventArgs e) {
+
+    void ExportPageClick(object sender, EventArgs e) {
       ExportForm(WikiTools.pageExport);
     }
-    
-    void ToolStripMenuItem2Click(object sender, EventArgs e) {
+
+    void ReplacesClick(object sender, EventArgs e) {
       if (!Login()) {
         return;
       }
@@ -120,12 +128,13 @@ namespace WikiHelper.gui {
         }
       }
     }
-    
-    void ConfigurazioneToolStripMenuItemClick(object sender, EventArgs e) {
+
+    void ConfigurazioneClick(object sender, EventArgs e) {
       DotBits.Configuration.ConfigEditor c = new  DotBits.Configuration.ConfigEditor();
+      c.
       c.ShowDialog(this);
     }
     
   }
-  
+
 }

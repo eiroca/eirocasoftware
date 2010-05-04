@@ -39,15 +39,15 @@ namespace WikiHelper.gui {
     	this.menuStrip1 = new System.Windows.Forms.MenuStrip();
     	this.mnFile = new System.Windows.Forms.ToolStripMenuItem();
     	this.configurazioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+    	this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
     	this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
     	this.mnWikimedia = new System.Windows.Forms.ToolStripMenuItem();
-    	this.buildPagesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+    	this.miBuildPages = new System.Windows.Forms.ToolStripMenuItem();
     	this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
     	this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
     	this.miExportPage = new System.Windows.Forms.ToolStripMenuItem();
     	this.exportCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
     	this.miAddressBook = new System.Windows.Forms.ToolStripMenuItem();
-    	this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
     	this.menuStrip1.SuspendLayout();
     	this.SuspendLayout();
     	// 
@@ -84,21 +84,26 @@ namespace WikiHelper.gui {
     	// configurazioneToolStripMenuItem
     	// 
     	this.configurazioneToolStripMenuItem.Name = "configurazioneToolStripMenuItem";
-    	this.configurazioneToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+    	this.configurazioneToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
     	this.configurazioneToolStripMenuItem.Text = "&Configuration";
-    	this.configurazioneToolStripMenuItem.Click += new System.EventHandler(this.ConfigurazioneToolStripMenuItemClick);
+    	this.configurazioneToolStripMenuItem.Click += new System.EventHandler(this.ConfigurazioneClick);
+    	// 
+    	// toolStripMenuItem1
+    	// 
+    	this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+    	this.toolStripMenuItem1.Size = new System.Drawing.Size(147, 6);
     	// 
     	// closeToolStripMenuItem
     	// 
     	this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-    	this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+    	this.closeToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
     	this.closeToolStripMenuItem.Text = "&Exit";
-    	this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItemClick);
+    	this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseClick);
     	// 
     	// mnWikimedia
     	// 
     	this.mnWikimedia.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-    	    	    	this.buildPagesToolStripMenuItem1,
+    	    	    	this.miBuildPages,
     	    	    	this.toolStripMenuItem2,
     	    	    	this.toolStripSeparator1,
     	    	    	this.miExportPage,
@@ -108,19 +113,19 @@ namespace WikiHelper.gui {
     	this.mnWikimedia.Size = new System.Drawing.Size(66, 20);
     	this.mnWikimedia.Text = "Wiki&Media";
     	// 
-    	// buildPagesToolStripMenuItem1
+    	// miBuildPages
     	// 
-    	this.buildPagesToolStripMenuItem1.Name = "buildPagesToolStripMenuItem1";
-    	this.buildPagesToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
-    	this.buildPagesToolStripMenuItem1.Text = "Build Pages";
-    	this.buildPagesToolStripMenuItem1.Click += new System.EventHandler(this.BuildPagesToolStripMenuItem1Click);
+    	this.miBuildPages.Name = "miBuildPages";
+    	this.miBuildPages.Size = new System.Drawing.Size(185, 22);
+    	this.miBuildPages.Text = "Build Pages";
+    	this.miBuildPages.Click += new System.EventHandler(this.BuildPagesClick);
     	// 
     	// toolStripMenuItem2
     	// 
     	this.toolStripMenuItem2.Name = "toolStripMenuItem2";
     	this.toolStripMenuItem2.Size = new System.Drawing.Size(185, 22);
     	this.toolStripMenuItem2.Text = "Replace";
-    	this.toolStripMenuItem2.Click += new System.EventHandler(this.ToolStripMenuItem2Click);
+    	this.toolStripMenuItem2.Click += new System.EventHandler(this.ReplacesClick);
     	// 
     	// toolStripSeparator1
     	// 
@@ -132,26 +137,21 @@ namespace WikiHelper.gui {
     	this.miExportPage.Name = "miExportPage";
     	this.miExportPage.Size = new System.Drawing.Size(185, 22);
     	this.miExportPage.Text = "Export page(s)";
-    	this.miExportPage.Click += new System.EventHandler(this.MiExportPageClick);
+    	this.miExportPage.Click += new System.EventHandler(this.ExportPageClick);
     	// 
     	// exportCategoryToolStripMenuItem
     	// 
     	this.exportCategoryToolStripMenuItem.Name = "exportCategoryToolStripMenuItem";
     	this.exportCategoryToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
     	this.exportCategoryToolStripMenuItem.Text = "Export Category...";
-    	this.exportCategoryToolStripMenuItem.Click += new System.EventHandler(this.ExportCategoryToolStripMenuItemClick);
+    	this.exportCategoryToolStripMenuItem.Click += new System.EventHandler(this.ExportCategoryClick);
     	// 
     	// miAddressBook
     	// 
     	this.miAddressBook.Name = "miAddressBook";
     	this.miAddressBook.Size = new System.Drawing.Size(185, 22);
     	this.miAddressBook.Text = "Address Book Export";
-    	this.miAddressBook.Click += new System.EventHandler(this.MiAddressBookClick);
-    	// 
-    	// toolStripMenuItem1
-    	// 
-    	this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-    	this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+    	this.miAddressBook.Click += new System.EventHandler(this.ExportAddressBookClick);
     	// 
     	// MainForm
     	// 
@@ -168,6 +168,7 @@ namespace WikiHelper.gui {
     	this.ResumeLayout(false);
     	this.PerformLayout();
     }
+    private System.Windows.Forms.ToolStripMenuItem miBuildPages;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem mnFile;
     private System.Windows.Forms.ToolStripMenuItem mnWikimedia;
@@ -176,7 +177,6 @@ namespace WikiHelper.gui {
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     private System.Windows.Forms.ToolStripMenuItem miExportPage;
     private System.Windows.Forms.ToolStripMenuItem miAddressBook;
-    private System.Windows.Forms.ToolStripMenuItem buildPagesToolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem exportCategoryToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
     private System.Windows.Forms.MenuStrip menuStrip1;
