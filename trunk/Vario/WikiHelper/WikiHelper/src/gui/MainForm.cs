@@ -131,7 +131,6 @@ namespace WikiHelper.gui {
 
     void ConfigurazioneClick(object sender, EventArgs e) {
       DotBits.Configuration.ConfigEditor c = new  DotBits.Configuration.ConfigEditor();
-      c.
       c.ShowDialog(this);
     }
     
