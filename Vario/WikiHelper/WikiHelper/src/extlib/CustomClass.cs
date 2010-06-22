@@ -1,8 +1,8 @@
-using System;
-using System.ComponentModel;
-using System.Collections;
-
 namespace DotBits.Configuration {
+  using System;
+  using System.Collections;
+  using System.ComponentModel;
+
   /// <summary>
   /// Modified class from the CustomClass originally created by Venu Madhav.
   /// Venu's DataTable and DataColumn objects have been removed and variables and
@@ -16,27 +16,49 @@ namespace DotBits.Configuration {
   /// be added dynamically using AddProperty(string propName, object propValue, string propDesc, 
   /// string propCat,  System.Type propType, bool isReadOnly, bool isExpandable). 
   /// </summary>
-
   [TypeConverter(typeof(ExpandableObjectConverter))]
   public class CustomClass : Component, ICustomTypeDescriptor {
-    
+    #region Fields
     //Private members
-    private PropertyDescriptorCollection propertyCollection;    
+    private PropertyDescriptorCollection propertyCollection;
     //Max length will be used help control the layout of the Windows Form and PropertyGrid
     //or the table of controls in an ASP.Net page. The Form or Webpage layout will be adjusted
     //dynamically depending on length of these values.
     private int _maxLength;
-    public int MaxLength {
-      get { return _maxLength; }
-      set { if (value > _maxLength) _maxLength = value; } }   
-    
+    #endregion Fields
+
+    #region Constructors
     /// <summary>
     /// Constructor of CustomClass which initializes the new PropertyDescriptorCollection.
     /// </summary>
     public CustomClass() {
       propertyCollection = new PropertyDescriptorCollection(new PropertyDescriptor[]{});
     }
+    #endregion Constructors
 
+    #region Properties
+
+    public int MaxLength
+    {
+      get { return _maxLength; }
+              set { if (value > _maxLength) _maxLength = value; }
+    }
+
+    #endregion Properties
+
+    #region Indexers
+    //Indexer for this class - returns a DynamicProperty by index position.
+    public DynamicProperty this[int index] {
+      get { return (DynamicProperty)propertyCollection[index]; }
+    }
+
+    //Overloaded Indexer for this class - returns a DynamicProperty by name.
+    public DynamicProperty this[string name] {
+      get { return (DynamicProperty)propertyCollection[name]; }
+    }
+    #endregion Indexers
+
+    #region Methods
     /// <summary>
     /// Adds a property into the CustomClass.
     /// </summary>
@@ -47,30 +69,12 @@ namespace DotBits.Configuration {
     /// <param name="isReadOnly">Sets the property value to readonly in the property grid.</param>
     /// <param name="isExpandable">Tells the property grid that this property is expandable.</param>
     /// <param name="propType">DataType of the property that needs to be added.</param>
-    public void AddProperty(string propName, object propValue, string propDesc, string propCat, System.Type propType, bool isReadOnly, bool isExpandable) {   
+    public void AddProperty(string propName, object propValue, string propDesc, string propCat, System.Type propType, bool isReadOnly, bool isExpandable) {
       DynamicProperty p = new DynamicProperty(propName, propValue, propDesc, propCat, propType, isReadOnly, isExpandable);
       propertyCollection.Add(p);
       //Set our layout helper value.
       this.MaxLength = propName.Length;
-      this.MaxLength = propValue.ToString().Length;       
-    }
-
-    //Indexer for this class - returns a DynamicProperty by index position.
-    public DynamicProperty this[int index] {
-      get { return (DynamicProperty)propertyCollection[index]; }     
-    }   
-
-    //Overloaded Indexer for this class - returns a DynamicProperty by name.
-    public DynamicProperty this[string name] {
-      get { return (DynamicProperty)propertyCollection[name]; }     
-    }   
-
-    /// <summary>
-    ///
-    /// </summary>
-    /// <returns></returns>
-    public string GetClassName() {
-      return(TypeDescriptor.GetClassName(this, true));
+      this.MaxLength = propValue.ToString().Length;
     }
 
     /// <summary>
@@ -79,6 +83,14 @@ namespace DotBits.Configuration {
     /// <returns></returns>
     public AttributeCollection GetAttributes() {
       return(TypeDescriptor.GetAttributes(this, true));
+    }
+
+    /// <summary>
+    ///
+    /// </summary>
+    /// <returns></returns>
+    public string GetClassName() {
+      return(TypeDescriptor.GetClassName(this, true));
     }
 
     /// <summary>
@@ -166,7 +178,7 @@ namespace DotBits.Configuration {
     public object GetPropertyOwner(PropertyDescriptor pd) {
       return(this);
     }
-    
+
     /// <summary>
     ///     Helper method to return the PropertyDescriptorCollection or our Dynamic Properties
     /// </summary>
@@ -175,7 +187,9 @@ namespace DotBits.Configuration {
     private PropertyDescriptorCollection GetAllProperties() {
       return propertyCollection;
     }
-    
+    #endregion Methods
+
+    #region Nested Types
     /// <summary>
     ///     This is the Property class this will be dynamically added to the class at runtime.
     ///     These classes are returned in the PropertyDescriptorCollection of the GetAllProperties
@@ -184,15 +198,18 @@ namespace DotBits.Configuration {
     /// <param name="pd"></param>
     /// <returns></returns>
     public class DynamicProperty : PropertyDescriptor {
-      private string propName;
-      private object propValue;    
-      private string propDescription;
+      #region Fields
+      private bool isExpandable;
+      private bool isReadOnly;
       private string propCategory;
-      private Type   propType;
-      private bool   isReadOnly;
-      private bool   isExpandable;
+      private string propDescription;
+      private string propName;
+      private Type propType;
+      private object propValue;
+      #endregion Fields
 
-      public DynamicProperty(string pName, object pValue, string pDesc, string pCat, Type pType, bool readOnly, bool expandable): base(pName, new Attribute[]{}) {
+      #region Constructors
+      public DynamicProperty(string pName, object pValue, string pDesc, string pCat, Type pType, bool readOnly, bool expandable) : base(pName, new Attribute[]{}) {
         propName  = pName;
         propValue   = pValue;
         propDescription = pDesc;
@@ -201,13 +218,19 @@ namespace DotBits.Configuration {
         isReadOnly  = readOnly;
         isExpandable    = expandable;
       }
+      #endregion Constructors
+
+      #region Properties
+      public override string Category {
+        get { return propCategory; }
+      }
 
       public override System.Type ComponentType {
         get { return null; }
       }
 
-      public override string Category {
-        get { return propCategory; }
+      public override string Description {
+        get { return propDescription; }
       }
 
       public override bool IsReadOnly {
@@ -217,31 +240,33 @@ namespace DotBits.Configuration {
       public override System.Type PropertyType {
         get { return propType; }
       }
+      #endregion Properties
 
-      public override bool CanResetValue (object component) {
+      #region Methods
+      public override bool CanResetValue(object component) {
         return true;
       }
 
-      public override object GetValue (object component) {
-        return propValue;       
+      public override object GetValue(object component) {
+        return propValue;
       }
 
-      public override void SetValue (object component, object value ) {
+      public override void ResetValue(object component) {
+        propValue = null;
+      }
+
+      public override void SetValue(object component, object value ) {
         propValue = value;
       }
 
-      public override void ResetValue (object component) {
-        propValue = null;       
-      }
-
-      public override bool ShouldSerializeValue (object component) {
+      public override bool ShouldSerializeValue(object component) {
         return false;
       }
-
-      public override string Description {
-        get { return propDescription; }
-      }
+      #endregion Methods
     }
+
+    #endregion Nested Types
+    
   }
   
 }

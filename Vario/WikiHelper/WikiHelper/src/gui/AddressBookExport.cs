@@ -1,3 +1,4 @@
+#region Header
 /**
  * (C) 2006-2009 eIrOcA (eNrIcO Croce & sImOnA Burzio)
  *
@@ -6,44 +7,34 @@
  * Foundation; either version 3 of the License, or (at your option) any later
  * version.
  */
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-
-using WikiHelper.lib.WikiMedia;
-using WikiHelper.lib.WikiMedia.converter;
-
+#endregion Header
 
 namespace WikiHelper.gui {
+  using System;
+  using System.Drawing;
+  using System.Windows.Forms;
+
+  using WikiHelper.lib.WikiMedia;
+  using WikiHelper.lib.WikiMedia.converter;
+
   /// <summary>
   /// Description of CategoryExport.
   /// </summary>
   public partial class AddressBookExport : Form, IExporter {
-    
-    public WikiMedia wiki;
+    #region Fields
     public ContactsHelper contacts;
+    public WikiMedia wiki;
+    #endregion Fields
 
-    public AddressBookExport(WikiMedia wiki, ContactsHelper contacts){
+    #region Constructors
+    public AddressBookExport(WikiMedia wiki, ContactsHelper contacts) {
       InitializeComponent();
       this.wiki = wiki;
       this.contacts = contacts;
     }
-    
-    public void SetCategories(string[] categories) {
-      iCategory.Items.Clear();
-      iCategory.Items.AddRange(categories);
-    }
+    #endregion Constructors
 
-    void NotifyMessage(WikiMedia.ExportNotify notify, string msg) {
-      if (notify!=null) {
-        notify(msg);
-      }
-    }
-    
-    public bool Setup() {
-      return (ShowDialog() == DialogResult.OK);
-    }
-    
+    #region Methods
     public void Export(WikiMedia.ExportNotify notify) {
       string expCategory = "Category:"+iCategory.Text.Trim();
       if (cbContacts.Checked) {
@@ -51,6 +42,22 @@ namespace WikiHelper.gui {
         contacts.Export(notify, expCategory, iContactsName.Text);
       }
     }
+
+    public void SetCategories(string[] categories) {
+      iCategory.Items.Clear();
+      iCategory.Items.AddRange(categories);
+    }
+
+    public bool Setup() {
+      return (ShowDialog() == DialogResult.OK);
+    }
+
+    void NotifyMessage(WikiMedia.ExportNotify notify, string msg) {
+      if (notify!=null) {
+        notify(msg);
+      }
+    }
+    #endregion Methods
     
   }
   

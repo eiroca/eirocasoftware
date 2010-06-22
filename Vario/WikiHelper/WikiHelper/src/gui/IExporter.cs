@@ -1,3 +1,4 @@
+#region Header
 /**
  * (C) 2006-2009 eIrOcA (eNrIcO Croce & sImOnA Burzio)
  *
@@ -6,19 +7,21 @@
  * Foundation; either version 3 of the License, or (at your option) any later
  * version.
  */
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-
-using WikiHelper.lib.WikiMedia;
-using WikiHelper.lib.WikiMedia.converter;
+#endregion Header
 
 namespace WikiHelper.gui {
-  
-  public interface IExporter {
+  using System;
+  using System.Drawing;
+  using System.Windows.Forms;
 
-    bool Setup();
+  using WikiHelper.lib.WikiMedia;
+  using WikiHelper.lib.WikiMedia.converter;
+
+  public interface IExporter {
+    #region Methods
     void Export(WikiMedia.ExportNotify notify);
+    bool Setup();
+    #endregion Methods
     
   }
   
