@@ -1,3 +1,4 @@
+#region Header
 /**
  * (C) 2006-2009 eIrOcA (eNrIcO Croce & sImOnA Burzio)
  *
@@ -6,39 +7,27 @@
  * Foundation; either version 3 of the License, or (at your option) any later
  * version.
  */
-using System;
-using System.IO;
-using System.Web;
-using System.Text;
-
-using Microsoft.Office.Core;
-
-using DotNetWikiBot;
+#endregion Header
 
 namespace WikiHelper.lib.WikiMedia.converter {
+  using System;
+  using System.IO;
+  using System.Text;
+  using System.Web;
 
-  // Convert Document Model into a PowerPoint 
-  
-  //Abstract class for summary builder
-  abstract public class SummaryBuilder {
-    
-		protected Model2PowerPoint converter; 
+  using DotNetWikiBot;
 
-		abstract public void Export(Presentation pres, Document doc, string title);
-
-		virtual public string GetName() {
-		  return this.GetType().ToString();
-		}
-		
-  }
+  using Microsoft.Office.Core;
 
   //Extract PPT with a summary taken form the document model
   public class ExtractSummary : SummaryBuilder {
-
+    #region Fields
+    object[] data;
     string extractorName;
     string[] names;
-    object[] data;
-    
+    #endregion Fields
+
+    #region Constructors
     //Class to extract summary of document model
     public ExtractSummary(Model2PowerPoint converter, string template) {
       this.converter = converter;
@@ -72,13 +61,11 @@ namespace WikiHelper.lib.WikiMedia.converter {
         data[i] = datum;
       }
     }
+    #endregion Constructors
 
-    override public string GetName() {
-		  return extractorName;
-		}
-
+    #region Methods
     //extract a summary form the document model and generate a slide into the presentation
-    override public void Export(Presentation pres, Document doc, string title) {
+    public override void Export(Presentation pres, Document doc, string title) {
       Header[] heads = new  Header[data.Length];
       for (int i=0; i<data.Length; i++) {
         if (data[i]!=null) {
@@ -101,34 +88,38 @@ namespace WikiHelper.lib.WikiMedia.converter {
 
     //Generate a slide with the given header element names
     public void ExportHeaders(Presentation pres, string title, Header[] heads, string[] names, bool firstSpecial) {
-		  PowerPoint.Slide slide = pres.Add(PowerPoint.PpSlideLayout.ppLayoutText, title);
-		  PowerPoint.TextRange textRange;
-		  PowerPoint.TextRange tr1;
-		  textRange = slide.Shapes[2].TextFrame.TextRange;
-		  for (int i=0; i<heads.Length; i++) {
-		    Header header = heads[i];
+      PowerPoint.Slide slide = pres.Add(PowerPoint.PpSlideLayout.ppLayoutText, title);
+      PowerPoint.TextRange textRange;
+      PowerPoint.TextRange tr1;
+      textRange = slide.Shapes[2].TextFrame.TextRange;
+      for (int i=0; i<heads.Length; i++) {
+        Header header = heads[i];
         if (!converter.IsEmptyHeader(header)) {
-		      tr1 = textRange.InsertAfter(names[i]+"\r");
-  		    converter.AddHeader(textRange, header, firstSpecial, 0);
-    		  tr1.Font.Bold = MsoTriState.msoTrue;
-    		  tr1.ParagraphFormat.Bullet.Visible = MsoTriState.msoFalse;
-		    }
-		  }
+          tr1 = textRange.InsertAfter(names[i]+"\r");
+          converter.AddHeader(textRange, header, firstSpecial, 0);
+          tr1.Font.Bold = MsoTriState.msoTrue;
+          tr1.ParagraphFormat.Bullet.Visible = MsoTriState.msoFalse;
+        }
+      }
     }
+
+    public override string GetName() {
+      return extractorName;
+    }
+    #endregion Methods
     
   }
-  
-  //Conver a model into a PowerPoint
-  public class Model2PowerPoint {
 
-    public delegate void ExportProc(Presentation pres, Document doc, string title);
-    
+  //Conver a model into a PowerPoint
+  public class Model2PowerPoint  {
+    #region Fields
+    public string[] SKIPS = {"", "-", "nessuno"};
     private string fBasePath;
     private string fTemplatePath;
-    
-    public string[] SKIPS = {"", "-", "nessuno"};
     WikiMedia wiki;
-     
+    #endregion Fields
+
+    #region Constructors
     public Model2PowerPoint(WikiMedia aWiki, string basePath, string templatePath) {
       this.wiki = aWiki;
       fBasePath = basePath;
@@ -138,6 +129,94 @@ namespace WikiHelper.lib.WikiMedia.converter {
         }
       }
       fTemplatePath = templatePath;
+    }
+    #endregion Constructors
+
+    #region Delegates
+    public delegate void ExportProc(Presentation pres, Document doc, string title);
+    #endregion Delegates
+
+    #region Methods
+    //Convert the first "not empty" header element in a document model into a TextRange
+    //composed by an hyperlink to the page and a summary composed up to "size" charactes.
+    public void AddFirstHeader(PowerPoint.TextRange parent, Document doc, Page page, string title, int size) {
+      PowerPoint.TextRange tr1;
+      tr1 = parent.InsertAfter("\r");
+      tr1.IndentLevel = 1;
+      PowerPoint.Hyperlink link = tr1.ActionSettings[PowerPoint.PpMouseActivation.ppMouseClick].Hyperlink;
+      link.Address = wiki.site.site + wiki.site.indexPath + "index.php?title=" + HttpUtility.UrlEncode(page.title);
+      link.TextToDisplay = title;
+      tr1.InsertAfter(". ");
+      int len = tr1.Text.Length;
+      for (int i=0; i<doc.headers.Count; i++) {
+        Header header = doc.headers[i];
+        if (!IsEmptyHeader(header)) {
+          tr1.InsertAfter(Header2Text(header, 0, size - title.Length, true));
+          break;
+        }
+      }
+      tr1.InsertAfter("\r");
+    }
+
+    //Convert an header element into PowerPoint TextRage
+    public void AddHeader(PowerPoint.TextRange parent, Header header, bool firstSpecial, int maxElems) {
+      PowerPoint.TextRange tr = null;
+      if ( (maxElems<1) || (maxElems>header.elements.Count) ) {
+        maxElems = header.elements.Count;
+      }
+      bool trim = true;
+      for (int i = 0; i < maxElems; i++) {
+        Element e = header.elements[i];
+        if (e is NewLine) {
+          trim = true;
+          tr = parent.InsertAfter("\r");
+          tr = null;
+        }
+        else {
+          string row = e.ToString();
+          if (trim) {
+            row = row.TrimStart();
+          }
+          trim = false;
+          int level = 1;
+          if (!String.IsNullOrEmpty(row))  {
+            if (e is ListItem) {
+              level = (e as ListItem).level+1;
+              tr = parent.InsertAfter(row.Trim()+"\r");
+              tr.IndentLevel = level;
+              trim = true;
+            }
+            else if (e is HyperLink) {
+              HyperLink link = e as HyperLink;
+              if (tr==null) {
+                tr=parent;
+              }
+              tr = tr.InsertAfter(" ");
+              PowerPoint.Hyperlink l = tr.ActionSettings[PowerPoint.PpMouseActivation.ppMouseClick].Hyperlink;
+              string url = link.URL;
+              if (url!= null) {
+                if ((!url.StartsWith("http:")) || (!url.StartsWith("mailto:"))) {
+                  url = wiki.site.site + url;
+                }
+                l.Address = url;
+              }
+              l.TextToDisplay = link.text.ToString();
+            }
+            else {
+              tr = parent.InsertAfter(row);
+              if (e is Text) {
+                CopyFormatting(e as Text, tr);
+              }
+            }
+          }
+        }
+      }
+      if (firstSpecial) {
+        if (header.elements.Count==1) {
+          tr.ParagraphFormat.Bullet.Visible = MsoTriState.msoFalse;
+          tr.Text = '\t'+ tr.Text;
+        }
+      }
     }
 
     public string BuildPath(string relPath) {
@@ -151,6 +230,140 @@ namespace WikiHelper.lib.WikiMedia.converter {
       return path;
     }
 
+    //Try to preserve Text element formatting into the PowerPoint TextRange
+    public void CopyFormatting(Text t, PowerPoint.TextRange tr) {
+      if (t.bold) {
+        tr.Font.Bold = MsoTriState.msoTrue;
+      }
+      else {
+        tr.Font.Bold = MsoTriState.msoFalse;
+      }
+      if (t.italic) {
+        tr.Font.Italic = MsoTriState.msoTrue;
+      }
+      else {
+        tr.Font.Italic = MsoTriState.msoFalse;
+      }
+      if (t.underline) {
+        tr.Font.Underline = MsoTriState.msoTrue;
+      }
+      else {
+        tr.Font.Underline = MsoTriState.msoFalse;
+      }
+    }
+
+    //Export all the pages in a Wiki category into a index presentation, each page
+    //will contain up to expPagining summaries. A summary will be composed up to
+    //descSize characters taken from the first Header of the Page
+    public void ExportIndex(string expCat, string outFileName, int expPaging, int descSize, WikiMedia.ExportNotify expNotify) {
+      PowerPoint.Slide slide = null;
+      PowerPoint.TextRange textRange = null;
+      Presentation pres = new Presentation(fTemplatePath);
+      PageList pl = wiki.GetPages(expCat);
+      int cnt = 0;
+      foreach(Page page in pl) {
+        string title = GetTitle(page);
+        if (title==null) {
+          continue;
+        }
+        cnt++;
+        if ((cnt % expPaging) == 1) {
+          slide = pres.Add(PowerPoint.PpSlideLayout.ppLayoutText, GetTitleName(expCat));
+          textRange = slide.Shapes[2].TextFrame.TextRange;
+        }
+        if (expNotify!=null) {
+          expNotify(page.title);
+        }
+        page.LoadHTML();
+        Document doc =  HTML2Model.Convert(page.text);
+        AddFirstHeader(textRange, doc, page, title, descSize);
+      }
+      pres.Save(fBasePath+outFileName);
+      pres.Close();
+    }
+
+    //Export pages present in a Wiki Category
+    public void ExportPages(string expCat, string expDir, WikiMedia.ExportNotify expNotify) {
+      PageList pl = wiki.GetPages(expCat);
+      string[] pages = new string[pl.Count()];
+      for(int i=0; i < pl.Count(); i++)  {
+        Page page = pl[i];
+        pages[i] = GetTitle(page);
+      }
+      ExportPages(pages, expDir, expNotify);
+    }
+
+    //Export a set of Wiki pages into several Power Point slides (saved into export directory)
+    public void ExportPages(string[] pages, string expDir, WikiMedia.ExportNotify expNotify) {
+      Page page;
+      Document doc;
+      Presentation pres;
+      string outPath = BuildPath(expDir);
+      foreach(string title in pages) {
+        if (String.IsNullOrEmpty(title)) {
+          continue;
+        }
+        if (expNotify!=null) {
+          expNotify(title);
+        }
+        page = wiki.GetPage(title);
+        page.LoadHTML();
+        if (!String.IsNullOrEmpty(page.text)) {
+          doc =  HTML2Model.Convert(page.text);
+          pres = new Presentation(fTemplatePath);
+       		Page2Slide(pres, doc, title, true);
+       		StringBuilder fileName = new StringBuilder(title.Length);
+       		for (int i=0; i<title.Length; i++) {
+       		  char c = title[i];
+       		  if ("\\:/".IndexOf(c)==-1) {
+       		    fileName.Append(c);
+       		  }
+       		}
+       		pres.Save(outPath+fileName.ToString()+".ppt");
+          pres.Close();
+        }
+      }
+    }
+
+    //Export a summary Presentation with all the pages present in a category
+    //The summar is composed by an index (optional) and a slide for each page
+    //the slide content will be detemined by the expDetail delegate
+    public void ExportSummary(string expCat, string outFileName, string expIdxName, int expPaging, ExportProc expDetail, WikiMedia.ExportNotify expNotify) {
+      Presentation pres = new Presentation(fTemplatePath);
+      PageList pl = wiki.GetPages(expCat);
+      if (expIdxName!=null) {
+        Index2Slide(pres, pl, expIdxName, expPaging);
+      }
+      foreach(Page page in pl) {
+        string title = GetTitle(page);
+        if (title==null) {
+          continue;
+        }
+        if (expNotify!=null) {
+          expNotify(page.title);
+        }
+        page.LoadHTML();
+        Document doc =  HTML2Model.Convert(page.text);
+        expDetail(pres, doc, title);
+      }
+      pres.Save(fBasePath+outFileName);
+      pres.Close();
+    }
+
+    public string GetTitle(Page page) {
+      string title = page.title.Trim();
+      if (title.StartsWith("Category:")) {
+        title = null;
+      }
+      else {
+        int pos = title.IndexOf(':');
+        if (pos >= 0) {
+          title = title.Substring(pos+1);
+        }
+      }
+      return title;
+    }
+
     public string GetTitleName(string fullTitle) {
       int p = fullTitle.IndexOf(':');
       if (p!=-1) {
@@ -159,22 +372,8 @@ namespace WikiHelper.lib.WikiMedia.converter {
       return fullTitle;
     }
 
-    public string GetTitle(Page page) {
-  		string title = page.title.Trim();
-		  if (title.StartsWith("Category:")) {
-		    title = null;
-		  }
-  		else {
-  		  int pos = title.IndexOf(':');
-  		  if (pos >= 0) {
-  		    title = title.Substring(pos+1);
-  		  }
-		  }
-  		return title;
-    }
-
     //Convert an header element in a text of a maximum of "size" characters. If original
-    //text is bigger than "size" only the text up to the last "." is taken, if is still 
+    //text is bigger than "size" only the text up to the last "." is taken, if is still
     //to much the text will be truncated and the last word (if possible) and "..." appended.
     public string Header2Text(Header header, int maxElems, int stopAt, bool strongLimit) {
       if (stopAt<=0) {
@@ -221,7 +420,7 @@ namespace WikiHelper.lib.WikiMedia.converter {
         while ((p>=0) && (p>stopAt)) {
           p = res.LastIndexOf('.', p-1);
         }
-        if (p==-1) { // 
+        if (p==-1) { //
           // Still too long, up to last " " and add "...";
           if (stopAt>3) {
             p = res.LastIndexOf(' ', stopAt-3);
@@ -240,151 +439,6 @@ namespace WikiHelper.lib.WikiMedia.converter {
         return res;
       }
       return buf.ToString();
-    }
-
-    //Convert the first "not empty" header element in a document model into a TextRange 
-    //composed by an hyperlink to the page and a summary composed up to "size" charactes. 
-    public void AddFirstHeader(PowerPoint.TextRange parent, Document doc, Page page, string title, int size) {
-		  PowerPoint.TextRange tr1;
-		  tr1 = parent.InsertAfter("\r");
-		  tr1.IndentLevel = 1;
-		  PowerPoint.Hyperlink link = tr1.ActionSettings[PowerPoint.PpMouseActivation.ppMouseClick].Hyperlink;
-		  link.Address = wiki.site.site + wiki.site.indexPath + "index.php?title=" + HttpUtility.UrlEncode(page.title);
-		  link.TextToDisplay = title;
-      tr1.InsertAfter(". ");
-      int len = tr1.Text.Length;
-		  for (int i=0; i<doc.headers.Count; i++) {
-		    Header header = doc.headers[i];
-        if (!IsEmptyHeader(header)) {
-		      tr1.InsertAfter(Header2Text(header, 0, size - title.Length, true));
-    		  break;
-		    }
-		  }
-      tr1.InsertAfter("\r");
-    }
-
-    //Convert an header element into PowerPoint TextRage
-    public void AddHeader(PowerPoint.TextRange parent, Header header, bool firstSpecial, int maxElems) {
-      PowerPoint.TextRange tr = null;
-      if ( (maxElems<1) || (maxElems>header.elements.Count) ) {
-        maxElems = header.elements.Count;
-      }
-      bool trim = true;
-      for (int i = 0; i < maxElems; i++) {
-        Element e = header.elements[i];
-        if (e is NewLine) {
-          trim = true;
-          tr = parent.InsertAfter("\r");
-          tr = null;
-        }
-        else {
-          string row = e.ToString();
-          if (trim) {
-            row = row.TrimStart();
-          }
-          trim = false;
-          int level = 1;
-          if (!String.IsNullOrEmpty(row))  {
-            if (e is ListItem) {
-              level = (e as ListItem).level+1;
-              tr = parent.InsertAfter(row.Trim()+"\r");
-              tr.IndentLevel = level;
-              trim = true;
-            }
-            else if (e is HyperLink) {
-              HyperLink link = e as HyperLink;
-              if (tr==null) { 
-                tr=parent; 
-              }
-              tr = tr.InsertAfter(" ");
-        		  PowerPoint.Hyperlink l = tr.ActionSettings[PowerPoint.PpMouseActivation.ppMouseClick].Hyperlink;
-        		  string url = link.URL;
-        		  if (url!= null) {
-        		    if ((!url.StartsWith("http:")) || (!url.StartsWith("mailto:"))) {
-        		      url = wiki.site.site + url;
-        		    }
-  		          l.Address = url; 
-        		  }
-		          l.TextToDisplay = link.text.ToString();
-            }
-            else {
-              tr = parent.InsertAfter(row);
-              if (e is Text) {
-                CopyFormatting(e as Text, tr);
-              }
-            }
-          }
-        }
-      }
-      if (firstSpecial) {
-        if (header.elements.Count==1) {
-          tr.ParagraphFormat.Bullet.Visible = MsoTriState.msoFalse;
-          tr.Text = '\t'+ tr.Text;
-        }
-      }
-    }
-
-    //Try to preserve Text element formatting into the PowerPoint TextRange
-    public void CopyFormatting(Text t, PowerPoint.TextRange tr) {
-      if (t.bold) {
-        tr.Font.Bold = MsoTriState.msoTrue;
-      }
-      else {
-        tr.Font.Bold = MsoTriState.msoFalse;
-      }
-      if (t.italic) {
-        tr.Font.Italic = MsoTriState.msoTrue;
-      }
-      else {
-        tr.Font.Italic = MsoTriState.msoFalse;
-      }
-      if (t.underline) {
-        tr.Font.Underline = MsoTriState.msoTrue;
-      }
-      else {
-        tr.Font.Underline = MsoTriState.msoFalse;
-      }
-    }
-    
-    //Check if a header element is "empty", that means with out sub elements or
-    //only with a text that should be ignored (presents the SKIPS list)
-    public bool IsEmptyHeader(Header header) {
-      if ((header== null) || (header.elements.Count==0)) {
-        return true;
-      }
-      StringBuilder buf = new StringBuilder();
-      for (int i=0; i<header.elements.Count; i++) {
-        buf.Append(header.elements[i].ToString());
-      }
-      bool empty = (buf.Length==0);
-      if (!empty) {
-        string row = buf.ToString().Trim();
-        for (int i=0; i<SKIPS.Length; i++) {
-          if (row.Equals(SKIPS[i])) {
-            empty = true;
-            break;
-          }
-        }
-      }
-      return empty;
-    }
-    
-    // Converts a wiki page into a set of slide (one for each header)
-    // Exclude header that have only a sentence presente in SKIPS
-    public void Page2Slide(Presentation pres, Document doc, string title, bool skipEmpty) {
-      PowerPoint.Slide slide;
-      PowerPoint.TextRange tr;
- 		  slide = pres.Add(PowerPoint.PpSlideLayout.ppLayoutTitle, title);
-      foreach (Header header in doc.headers) {
- 		    if (skipEmpty) {
- 		      if (IsEmptyHeader(header)) {
- 		        continue;
- 		      }
- 		    }
- 		    slide = pres.Add(PowerPoint.PpSlideLayout.ppLayoutText, header.name);
-        tr = slide.Shapes[2].TextFrame.TextRange;
-        AddHeader(tr, header, true, 0);
-      }
     }
 
     //Create slides with the index of all the pages in a wiki category
@@ -407,121 +461,82 @@ namespace WikiHelper.lib.WikiMedia.converter {
           index2 = idexSlide.Shapes[3].TextFrame.TextRange;
           first = true;
         }
-  		  if ((cnt % 2)==0) {
+        if ((cnt % 2)==0) {
           index = index1;
-  		  }
-  		  else {
+        }
+        else {
           index = index2;
-  		  }
+        }
         if (!first) {
-		      index.Text += Presentation.SEP;
+          index.Text += Presentation.SEP;
         }
-		    index.Text += title;
-  		  if ((cnt % 2)!=0) {
-		      first = false;
-		    }
+        index.Text += title;
+        if ((cnt % 2)!=0) {
+          first = false;
+        }
         cnt++;
       }
     }
 
-    //Export all the pages in a Wiki category into a index presentation, each page
-    //will contain up to expPagining summaries. A summary will be composed up to 
-    //descSize characters taken from the first Header of the Page
-    public void ExportIndex  (string expCat, string outFileName, int expPaging, int descSize, WikiMedia.ExportNotify expNotify) {
-		  PowerPoint.Slide slide = null;
-		  PowerPoint.TextRange textRange = null;
-		  Presentation pres = new Presentation(fTemplatePath);
-      PageList pl = wiki.GetPages(expCat);
-      int cnt = 0;
-      foreach(Page page in pl) {
-  		  string title = GetTitle(page);
-  		  if (title==null) {
-  		    continue;
-  		  }
-        cnt++;
-        if ((cnt % expPaging) == 1) {
-          slide = pres.Add(PowerPoint.PpSlideLayout.ppLayoutText, GetTitleName(expCat));
-		      textRange = slide.Shapes[2].TextFrame.TextRange;
+    //Check if a header element is "empty", that means with out sub elements or
+    //only with a text that should be ignored (presents the SKIPS list)
+    public bool IsEmptyHeader(Header header) {
+      if ((header== null) || (header.elements.Count==0)) {
+        return true;
+      }
+      StringBuilder buf = new StringBuilder();
+      for (int i=0; i<header.elements.Count; i++) {
+        buf.Append(header.elements[i].ToString());
+      }
+      bool empty = (buf.Length==0);
+      if (!empty) {
+        string row = buf.ToString().Trim();
+        for (int i=0; i<SKIPS.Length; i++) {
+          if (row.Equals(SKIPS[i])) {
+            empty = true;
+            break;
+          }
         }
-  		  if (expNotify!=null) {
-  		    expNotify(page.title);
-  		  }
-		    page.LoadHTML();
-		    Document doc =  HTML2Model.Convert(page.text);
-		    AddFirstHeader(textRange, doc, page, title, descSize);
       }
-      pres.Save(fBasePath+outFileName);
-      pres.Close();
-    }
-  
-    //Export a summary Presentation with all the pages present in a category
-    //The summar is composed by an index (optional) and a slide for each page
-    //the slide content will be detemined by the expDetail delegate
-    public void ExportSummary(string expCat, string outFileName, string expIdxName, int expPaging, ExportProc expDetail, WikiMedia.ExportNotify expNotify) {
-      Presentation pres = new Presentation(fTemplatePath);
-      PageList pl = wiki.GetPages(expCat);
-      if (expIdxName!=null) {
-        Index2Slide(pres, pl, expIdxName, expPaging);
-      }
-  		foreach(Page page in pl) {
-  		  string title = GetTitle(page);
-  		  if (title==null) {
-  		    continue;
-  		  }
-  		  if (expNotify!=null) {
-  		    expNotify(page.title);
-  		  }
-		    page.LoadHTML();
-		    Document doc =  HTML2Model.Convert(page.text);
-  		  expDetail(pres, doc, title);
-      }
-      pres.Save(fBasePath+outFileName);
-      pres.Close();
+      return empty;
     }
 
-    //Export pages present in a Wiki Category
-    public void ExportPages  (string expCat, string expDir, WikiMedia.ExportNotify expNotify) {
-      PageList pl = wiki.GetPages(expCat);
-      string[] pages = new string[pl.Count()];
-      for(int i=0; i < pl.Count(); i++)  {
-        Page page = pl[i];
-  		  pages[i] = GetTitle(page);
-      }
-      ExportPages(pages, expDir, expNotify);
-    }
-
-    //Export a set of Wiki pages into several Power Point slides (saved into export directory)
-    public void ExportPages(string[] pages, string expDir, WikiMedia.ExportNotify expNotify) {
-      Page page;
-      Document doc;
-      Presentation pres;
-      string outPath = BuildPath(expDir);
-  		foreach(string title in pages) {
-        if (String.IsNullOrEmpty(title)) {
-  		    continue;
-  		  }
-  		  if (expNotify!=null) {
-  		    expNotify(title);
-  		  }
-        page = wiki.GetPage(title);
-		    page.LoadHTML();
-		    if (!String.IsNullOrEmpty(page.text)) {
-  		    doc =  HTML2Model.Convert(page.text);
-          pres = new Presentation(fTemplatePath);
-       		Page2Slide(pres, doc, title, true);
-       		StringBuilder fileName = new StringBuilder(title.Length);
-       		for (int i=0; i<title.Length; i++) {
-       		  char c = title[i];
-       		  if ("\\:/".IndexOf(c)==-1) {
-       		    fileName.Append(c);
-       		  }
-       		}
-       		pres.Save(outPath+fileName.ToString()+".ppt");
-          pres.Close();
-		    }
+    // Converts a wiki page into a set of slide (one for each header)
+    // Exclude header that have only a sentence presente in SKIPS
+    public void Page2Slide(Presentation pres, Document doc, string title, bool skipEmpty) {
+      PowerPoint.Slide slide;
+      PowerPoint.TextRange tr;
+  	  slide = pres.Add(PowerPoint.PpSlideLayout.ppLayoutTitle, title);
+      foreach (Header header in doc.headers) {
+ 		    if (skipEmpty) {
+ 		      if (IsEmptyHeader(header)) {
+ 		        continue;
+ 		      }
+ 		    }
+ 		    slide = pres.Add(PowerPoint.PpSlideLayout.ppLayoutText, header.name);
+        tr = slide.Shapes[2].TextFrame.TextRange;
+        AddHeader(tr, header, true, 0);
       }
     }
+    #endregion Methods
+    
+  }
 
+  // Convert Document Model into a PowerPoint
+  //Abstract class for summary builder
+  public abstract class SummaryBuilder {
+    #region Fields
+    protected Model2PowerPoint converter;
+    #endregion Fields
+
+    #region Methods
+    public abstract void Export(Presentation pres, Document doc, string title);
+
+    public virtual string GetName() {
+      return this.GetType().ToString();
+    }
+    #endregion Methods
+    
   }
   
 }

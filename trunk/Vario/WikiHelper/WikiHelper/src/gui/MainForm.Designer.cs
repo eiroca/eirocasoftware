@@ -48,6 +48,9 @@ namespace WikiHelper.gui {
     	this.miExportPage = new System.Windows.Forms.ToolStripMenuItem();
     	this.exportCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
     	this.miAddressBook = new System.Windows.Forms.ToolStripMenuItem();
+    	this.experimentalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+    	this.processPagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+    	this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
     	this.menuStrip1.SuspendLayout();
     	this.SuspendLayout();
     	// 
@@ -64,7 +67,8 @@ namespace WikiHelper.gui {
     	// 
     	this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
     	    	    	this.mnFile,
-    	    	    	this.mnWikimedia});
+    	    	    	this.mnWikimedia,
+    	    	    	this.experimentalToolStripMenuItem});
     	this.menuStrip1.Location = new System.Drawing.Point(0, 0);
     	this.menuStrip1.Name = "menuStrip1";
     	this.menuStrip1.Size = new System.Drawing.Size(747, 24);
@@ -84,19 +88,21 @@ namespace WikiHelper.gui {
     	// configurazioneToolStripMenuItem
     	// 
     	this.configurazioneToolStripMenuItem.Name = "configurazioneToolStripMenuItem";
-    	this.configurazioneToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+    	this.configurazioneToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
+    	this.configurazioneToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
     	this.configurazioneToolStripMenuItem.Text = "&Configuration";
     	this.configurazioneToolStripMenuItem.Click += new System.EventHandler(this.ConfigurazioneClick);
     	// 
     	// toolStripMenuItem1
     	// 
     	this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-    	this.toolStripMenuItem1.Size = new System.Drawing.Size(147, 6);
+    	this.toolStripMenuItem1.Size = new System.Drawing.Size(182, 6);
     	// 
     	// closeToolStripMenuItem
     	// 
     	this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-    	this.closeToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+    	this.closeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.X)));
+    	this.closeToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
     	this.closeToolStripMenuItem.Text = "&Exit";
     	this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseClick);
     	// 
@@ -116,42 +122,73 @@ namespace WikiHelper.gui {
     	// miBuildPages
     	// 
     	this.miBuildPages.Name = "miBuildPages";
-    	this.miBuildPages.Size = new System.Drawing.Size(185, 22);
+    	this.miBuildPages.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.B)));
+    	this.miBuildPages.Size = new System.Drawing.Size(241, 22);
     	this.miBuildPages.Text = "Build Pages";
     	this.miBuildPages.Click += new System.EventHandler(this.BuildPagesClick);
     	// 
     	// toolStripMenuItem2
     	// 
     	this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-    	this.toolStripMenuItem2.Size = new System.Drawing.Size(185, 22);
+    	this.toolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.R)));
+    	this.toolStripMenuItem2.Size = new System.Drawing.Size(241, 22);
     	this.toolStripMenuItem2.Text = "Replace";
     	this.toolStripMenuItem2.Click += new System.EventHandler(this.ReplacesClick);
     	// 
     	// toolStripSeparator1
     	// 
     	this.toolStripSeparator1.Name = "toolStripSeparator1";
-    	this.toolStripSeparator1.Size = new System.Drawing.Size(182, 6);
+    	this.toolStripSeparator1.Size = new System.Drawing.Size(238, 6);
     	// 
     	// miExportPage
     	// 
     	this.miExportPage.Name = "miExportPage";
-    	this.miExportPage.Size = new System.Drawing.Size(185, 22);
+    	this.miExportPage.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.P)));
+    	this.miExportPage.Size = new System.Drawing.Size(241, 22);
     	this.miExportPage.Text = "Export page(s)";
     	this.miExportPage.Click += new System.EventHandler(this.ExportPageClick);
     	// 
     	// exportCategoryToolStripMenuItem
     	// 
     	this.exportCategoryToolStripMenuItem.Name = "exportCategoryToolStripMenuItem";
-    	this.exportCategoryToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+    	this.exportCategoryToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
+    	    	    	| System.Windows.Forms.Keys.P)));
+    	this.exportCategoryToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
     	this.exportCategoryToolStripMenuItem.Text = "Export Category...";
     	this.exportCategoryToolStripMenuItem.Click += new System.EventHandler(this.ExportCategoryClick);
     	// 
     	// miAddressBook
     	// 
     	this.miAddressBook.Name = "miAddressBook";
-    	this.miAddressBook.Size = new System.Drawing.Size(185, 22);
+    	this.miAddressBook.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
+    	this.miAddressBook.Size = new System.Drawing.Size(241, 22);
     	this.miAddressBook.Text = "Address Book Export";
     	this.miAddressBook.Click += new System.EventHandler(this.ExportAddressBookClick);
+    	// 
+    	// experimentalToolStripMenuItem
+    	// 
+    	this.experimentalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+    	    	    	this.processPagesToolStripMenuItem,
+    	    	    	this.testToolStripMenuItem});
+    	this.experimentalToolStripMenuItem.Name = "experimentalToolStripMenuItem";
+    	this.experimentalToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
+    	this.experimentalToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+    	this.experimentalToolStripMenuItem.Text = "Experimental";
+    	// 
+    	// processPagesToolStripMenuItem
+    	// 
+    	this.processPagesToolStripMenuItem.Name = "processPagesToolStripMenuItem";
+    	this.processPagesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
+    	this.processPagesToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+    	this.processPagesToolStripMenuItem.Text = "&Process page(s)";
+    	this.processPagesToolStripMenuItem.Click += new System.EventHandler(this.ProcessPagesToolStripMenuItemClick);
+    	// 
+    	// testToolStripMenuItem
+    	// 
+    	this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+    	this.testToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+    	this.testToolStripMenuItem.Text = "Test";
+    	this.testToolStripMenuItem.Click += new System.EventHandler(this.TestToolStripMenuItemClick);
     	// 
     	// MainForm
     	// 
@@ -168,6 +205,9 @@ namespace WikiHelper.gui {
     	this.ResumeLayout(false);
     	this.PerformLayout();
     }
+    private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem processPagesToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem experimentalToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem miBuildPages;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem mnFile;

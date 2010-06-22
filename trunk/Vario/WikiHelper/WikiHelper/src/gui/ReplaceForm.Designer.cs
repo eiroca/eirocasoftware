@@ -34,7 +34,7 @@ namespace WikiHelper.gui {
     /// </summary>
     private void InitializeComponent() {
     	this.bCancel = new System.Windows.Forms.Button();
-    	this.bExport = new System.Windows.Forms.Button();
+    	this.bDoReplace = new System.Windows.Forms.Button();
     	this.lbFrom = new System.Windows.Forms.ListBox();
     	this.bAdd = new System.Windows.Forms.Button();
     	this.bDelete = new System.Windows.Forms.Button();
@@ -58,15 +58,15 @@ namespace WikiHelper.gui {
     	this.bCancel.Text = "Cancel";
     	this.bCancel.UseVisualStyleBackColor = true;
     	// 
-    	// bExport
+    	// bDoReplace
     	// 
-    	this.bExport.DialogResult = System.Windows.Forms.DialogResult.OK;
-    	this.bExport.Location = new System.Drawing.Point(195, 265);
-    	this.bExport.Name = "bExport";
-    	this.bExport.Size = new System.Drawing.Size(75, 23);
-    	this.bExport.TabIndex = 9;
-    	this.bExport.Text = "&Replace";
-    	this.bExport.UseVisualStyleBackColor = true;
+    	this.bDoReplace.DialogResult = System.Windows.Forms.DialogResult.OK;
+    	this.bDoReplace.Location = new System.Drawing.Point(195, 265);
+    	this.bDoReplace.Name = "bDoReplace";
+    	this.bDoReplace.Size = new System.Drawing.Size(75, 23);
+    	this.bDoReplace.TabIndex = 9;
+    	this.bDoReplace.Text = "&Replace";
+    	this.bDoReplace.UseVisualStyleBackColor = true;
     	// 
     	// lbFrom
     	// 
@@ -180,12 +180,13 @@ namespace WikiHelper.gui {
     	this.Controls.Add(this.bAdd);
     	this.Controls.Add(this.lbFrom);
     	this.Controls.Add(this.bCancel);
-    	this.Controls.Add(this.bExport);
+    	this.Controls.Add(this.bDoReplace);
     	this.Name = "ReplaceForm";
     	this.Text = "Replace";
     	this.ResumeLayout(false);
     	this.PerformLayout();
     }
+    private System.Windows.Forms.Button bDoReplace;
     private System.Windows.Forms.ComboBox iCategory;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.ListBox lbTo;
@@ -197,7 +198,6 @@ namespace WikiHelper.gui {
     private System.Windows.Forms.Button bDelete;
     private System.Windows.Forms.Button bAdd;
     private System.Windows.Forms.ListBox lbFrom;
-    private System.Windows.Forms.Button bExport;
     private System.Windows.Forms.Button bCancel;
     
   }

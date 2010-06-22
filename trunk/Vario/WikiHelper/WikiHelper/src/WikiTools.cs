@@ -1,4 +1,5 @@
-﻿/**
+﻿#region Header
+/**
  * (C) 2006-2009 eIrOcA (eNrIcO Croce & sImOnA Burzio)
  *
  * This program is free software; you can redistribute it and/or modify it under
@@ -6,39 +7,38 @@
  * Foundation; either version 3 of the License, or (at your option) any later
  * version.
  */
-using System;
-using System.IO;
-using System.Text;
-using System.Windows.Forms;
-
-using WikiHelper.lib.WikiMedia;
-using WikiHelper.lib.WikiMedia.converter;
-using WikiHelper.gui;
+#endregion Header
 
 namespace WikiHelper {
+  using System;
+  using System.IO;
+  using System.Text;
+  using System.Windows.Forms;
+
+  using WikiHelper.gui;
+  using WikiHelper.lib.WikiMedia;
+  using WikiHelper.lib.WikiMedia.converter;
 
   internal sealed class WikiTools {
-    
-    public static WikiLoginForm wikiLoginForm;
-    public static MainForm mainForm;
-
-    public static PageExport pageExport;
-    public static CategoryExport categoryExport;
+    #region Fields
     public static AddressBookExport addressBookExport;
-    
-    public static ReplaceForm replaceForm;
-    public static CreateForm createForm;
-
-    public static WikiConf wikiConf;
-    public static WikiMedia wiki;
-    public static Model2PowerPoint converter;
+    public static CategoryExport categoryExport;
     public static ContactsHelper contatti;
-    
+    public static Model2PowerPoint converter;
+    public static CreateForm createForm;
     public static SummaryBuilder[] extractors;
-    
+    public static MainForm mainForm;
+    public static PageExport pageExport;
+    public static PageProcess pageProcessForm;
+    public static ReplaceForm replaceForm;
+    public static WikiMedia wiki;
+    public static WikiConf wikiConf;
+    public static WikiLoginForm wikiLoginForm;
+    #endregion Fields
+
+    #region Methods
     [STAThread]
     private static void Main(string[] args) {
-      
       // Configuration dirs
       string basePath;
       basePath = Directory.GetCurrentDirectory()+"\\";
@@ -52,9 +52,9 @@ namespace WikiHelper {
         extractors[i] = new ExtractSummary(converter, extNames[i]);
       }
       string[] lines;
-			if (File.Exists(wikiConf.loginConf) == true) {
+      if (File.Exists(wikiConf.loginConf) == true) {
         lines = File.ReadAllLines(wikiConf.loginConf, Encoding.UTF8);
-		  }
+      }
       else {
         lines = new string[2] {null, null};
       }
@@ -70,9 +70,11 @@ namespace WikiHelper {
       pageExport = new PageExport(wiki, converter);
       replaceForm = new ReplaceForm(wikiConf);
       createForm = new CreateForm(wikiConf);
+      pageProcessForm = new PageProcess(wikiConf, wiki);
       //GO
       Application.Run(mainForm);
     }
+    #endregion Methods
     
   }
   

@@ -1,3 +1,4 @@
+#region Header
 /**
  * (C) 2006-2009 eIrOcA (eNrIcO Croce & sImOnA Burzio)
  *
@@ -6,12 +7,14 @@
  * Foundation; either version 3 of the License, or (at your option) any later
  * version.
  */
-using System;
-using System.IO;
-using System.Net;
-using System.Text;
+#endregion Header
 
 namespace HTML {
+  using System;
+  using System.IO;
+  using System.Net;
+  using System.Text;
+
   /// <summary>
   /// FindLinks is a class that will test the HTML parser.
   /// This short example will prompt for a URL and then
@@ -22,32 +25,7 @@ namespace HTML {
   /// Written by Jeff Heaton (http://www.jeffheaton.com)
   /// </summary>
   class FindLinks {
-    /// <summary>
-    /// The main entry point for the application.
-    /// </summary>
-    [STAThread]
-    static void Run(string[] args) {
-      System.Console.Write("Enter a URL address:");
-      string url = System.Console.ReadLine();
-      System.Console.WriteLine("Scanning hyperlinks at: " + url);
-      string page = GetPage(url);
-      if (page==null) {
-        System.Console.WriteLine("Can't process that type of file, please specify an HTML file URL.");
-        return;
-      }
-      HTMLParser parser = new HTMLParser();
-      parser.Source = page;
-      while (!parser.Eof()) {
-        Object ch = parser.Next();
-        if (ch is Tag) {
-          Tag tag = ch as Tag;
-          if (tag["href"]!=null)
-            System.Console.WriteLine("Found link: " + tag["href"].Value);
-        }
-      }
-    }
-
-
+    #region Methods
     public static string GetPage(string url) {
       WebResponse response = null;
       Stream stream = null;
@@ -79,6 +57,32 @@ namespace HTML {
         if (response!=null) response.Close();
       }
     }
-  }
 
+    /// <summary>
+    /// The main entry point for the application.
+    /// </summary>
+    [STAThread]
+    static void Run(string[] args) {
+      System.Console.Write("Enter a URL address:");
+      string url = System.Console.ReadLine();
+      System.Console.WriteLine("Scanning hyperlinks at: " + url);
+      string page = GetPage(url);
+      if (page==null) {
+        System.Console.WriteLine("Can't process that type of file, please specify an HTML file URL.");
+        return;
+      }
+      HTMLParser parser = new HTMLParser();
+      parser.Source = page;
+      while (!parser.Eof()) {
+        Object ch = parser.Next();
+        if (ch is Tag) {
+          Tag tag = ch as Tag;
+          if (tag["href"]!=null) System.Console.WriteLine("Found link: " + tag["href"].Value);
+        }
+      }
+    }
+    #endregion Methods
+    
+  }
+  
 }

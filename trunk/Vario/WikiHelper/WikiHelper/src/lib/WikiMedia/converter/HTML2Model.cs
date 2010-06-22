@@ -1,3 +1,4 @@
+#region Header
 /**
  * (C) 2006-2009 eIrOcA (eNrIcO Croce & sImOnA Burzio)
  *
@@ -6,240 +7,84 @@
  * Foundation; either version 3 of the License, or (at your option) any later
  * version.
  */
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-using HTML;
+#endregion Header
 
 namespace WikiHelper.lib.WikiMedia.converter {
+  using System;
+  using System.Collections.Generic;
+  using System.Text;
+
+  using HTML;
 
   /**
    * Convert a HTML pages created with WikiMedia and Modern Style into a
    * object model that could be processed by a coputer
    */
   public class HTML2Model {
-    
+    #region Fields
+    public const string ATR_CLASS = "class";
+    public const string ATR_HREF = "href";
+    public const string ATR_ID = "id";
+    public const string ATR_NAME = "name";
+    public const string CAT_LINKS = "catlinks";
+
+    //marker to the content in order to exclude header/footer in a safe and fast way
+    public const string MARKER_CONTENTBEGIN = "<!-- BEGIN-CONTENT -->";
+    public const string MARKER_CONTENTEND = "<!-- END-CONTENT -->";
+    public const string TAG_A = "a";
+    public const string TAG_B = "b";
+    public const string TAG_BR = "br";
+    public const string TAG_DD = "dd";
+    public const string TAG_DIV = "div";
+    public const string TAG_H = "h";
+    public const string TAG_I = "i";
+    public const string TAG_LI = "li";
+    public const string TAG_P = "p";
+
+    // TAG to be converted
+    public const string TAG_REMARK = "!--";
+    public const string TAG_SCRIPT = "script";
+    public const string TAG_SPAN = "span";
+    public const string TAG_TABLE = "table";
+    public const string TAG_U = "u";
+    public const string VAL_EDIT = "editsection";
+    public const string VAL_HEADLINE = "mw-headline";
+    public const string VAL_TOC = "toc";
+
     // style class that could be safly ingnored in the conversion
     public string[] IGNORECLASS = {
-      "mw-topboxes", 
-      "printfooter", 
-      "contentSub", 
-      "jump-to-nav", 
-      "printfooter", 
+      "mw-topboxes",
+      "printfooter",
+      "contentSub",
+      "jump-to-nav",
+      "printfooter",
       "mw_clear"
     };
 
-    public const string CAT_LINKS = "catlinks";
-      
-    //marker to the content in order to exclude header/footer in a safe and 
-    //fast way
-    public const string MARKER_CONTENTBEGIN = "<!-- BEGIN-CONTENT -->";
-    public const string MARKER_CONTENTEND = "<!-- END-CONTENT -->";
-    
-    // TAG to be converted
-    public const string TAG_REMARK = "!--";
-    public const string TAG_TABLE = "table";
-    public const string TAG_SCRIPT = "script";
-    public const string TAG_DIV = "div";
-    public const string TAG_SPAN = "span";
-    public const string TAG_BR = "br";
-    public const string TAG_H = "h";
-    public const string TAG_A = "a";
-    public const string TAG_DD = "dd";
-    public const string TAG_LI = "li";
-    public const string TAG_I = "i";
-    public const string TAG_B = "b";
-    public const string TAG_U = "u";
-    public const string TAG_P = "p";
-    public const string ATR_ID = "id";
-    public const string ATR_CLASS = "class";
-    public const string ATR_NAME = "name";
-    public const string ATR_HREF = "href";
-    public const string VAL_TOC = "toc";
-    public const string VAL_EDIT = "editsection";
-    public const string VAL_HEADLINE = "mw-headline";
-    
+    private const int ST_NORMAL = 0;
+    private const int ST_TITLE = 1;
+
     private Document doc = null;
-
-    private HTMLParser parser;
     private Header header = null;
-    private Text txt;
-
-    private const int ST_NORMAL = 0;    
-    private const int ST_TITLE  = 1;
-    
+    private HTMLParser parser;
     private int state = 0;
+    private Text txt;
+    #endregion Fields
 
-    //Convert an HTML page into a document Model
-    public static Document Convert(string html) {
-      HTML2Model conv = new HTML2Model(html);
-      return conv.doc;
-    }
-    
-    
+    #region Constructors
     private HTML2Model(string html) {
       doc = new Document();
       txt = new Text();
       state = 0;
       Parse(ExtractContent(html));
     }
+    #endregion Constructors
 
-    // Extract the content from the page, content is the text between
-    // begin and end marker (MARKER_CONTENT) or the whole page if they are absent
-    public string ExtractContent(string html) {
-      int start = html.IndexOf(MARKER_CONTENTBEGIN);
-      if (start<0) {
-        start = 0;
-      }
-      else {
-        start += MARKER_CONTENTBEGIN.Length;
-      }
-      int end = html.IndexOf(MARKER_CONTENTEND);
-      if (end<0) {
-        end = html.Length;
-      }
-      return html.Substring(start, end-start);
-    }
-
-    // Check if an HTML TAG could be ignored (e.g. scripts, remarks, ...)
-    public Tag Ignorable(Tag tag) {
-      Tag res = tag;
-      string name = tag.Name.ToLower();
-      // Remove comments
-      if (name.StartsWith(TAG_REMARK)) {
-        res = null;
-      }
-      // Remove Scripts
-      else if (name.Equals(TAG_SCRIPT)) {
-        SkipToEnd(TAG_SCRIPT);
-        res = null;
-      }
-      // Remove Table of Contents
-      else if (name.Equals(TAG_TABLE)) {
-        string val = GetValue(tag, ATR_ID);
-        if ((val!=null) && (val.Equals(VAL_TOC))) {
-          SkipToEnd(TAG_TABLE);
-          res = null;
-         }
-      }
-      // Remove unuseful div section
-      else if (name.Equals(TAG_DIV)) {
-        string val = GetValue(tag, ATR_CLASS);
-        if (val==null) {
-          val = GetValue(tag, ATR_ID);
-        }
-        if (val!=null) {
-          bool ignored = false;
-          for (int i=0; i<IGNORECLASS.Length; i++) {
-            if (val.Equals(IGNORECLASS[i])) {
-              SkipToEnd(TAG_DIV);
-              ignored = true;
-              break;
-            }
-          }
-          if (val.Equals(CAT_LINKS)) {
-            //TODO gestione Categorie
-            SkipToEnd(TAG_DIV); 
-            ignored = true;
-          }
-          if (ignored) {
-            res = null;
-          }
-        }
-      }
-      // Remove Name place anchor
-      else if (name.Equals(TAG_A)) {
-        string val = GetValue(tag, ATR_NAME);
-        if ((val!=null)) {
-          SkipToEnd(TAG_A);
-          res = null;
-        }
-      }
-      // Remove edit action
-      else if (name.Equals(TAG_SPAN)) {
-        string val = GetValue(tag, ATR_CLASS);
-        if ((val!=null) && (val.Equals(VAL_EDIT))) {
-          SkipToEnd(TAG_SPAN);
-          res = null;
-         }
-      }
-      return res;
-    }
-    
-    // Parse the HTML page
-    public void Parse(string html) {
-      Tag tag;
-      Object ch;
-      parser = new HTMLParser();
-      parser.Source = html;
-      while (!parser.Eof()) {
-        ch = parser.Next();
-        if (ch is Tag) {
-          tag = ch as Tag;
-          tag = Ignorable(tag);
-          if (tag!=null) {
-            AddElement(tag);
-          }
-        }
-        else {
-          string s = ch as string;
-          if (s.Length>0) {
-            txt.Append(s);
-          }
-        }
-      }
-      Flush();
-    }
-    
-    //Get the value of an attribute of the tag or null if absent
-    public string GetValue(Tag tag, string attributeName) {
-      HTML.Attribute id = tag[attributeName];
-      string val = (id!=null? id.Value : null);
-      return val;
-    }
-
-    //Skip text until the close of a tag, handle also nested tags
-    public void SkipToEnd(string tagName) {
-      Object ch;
-      Tag tag;
-      tagName = tagName.ToLower();
-      int level = 1;
-      while (!parser.Eof()) {
-        ch = parser.Next();
-        if (ch is Tag) {
-          tag = ch as Tag;
-          if (tag.Name.ToLower().Equals(tagName)) {
-            if (tag.Opening) {
-              level++; 
-            }
-            if (tag.Closing) {
-              level--;
-              if (level==0) {
-                break;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    //Add an element into the current model
-    public void AddIt(Element e) {
-      if (header!=null) {
-        header.elements.Add(e);
-      }
-      else {
-        doc.elements.Add(e);
-      }
-    }
-
-    // Add current Text (if present) into the document model
-    public void Flush() {
-      if ((txt!=null) && (txt.text.Length>0)){
-        AddIt(txt);
-      }
-      txt = new Text();
+    #region Methods
+    //Convert an HTML page into a document Model
+    public static Document Convert(string html) {
+      HTML2Model conv = new HTML2Model(html);
+      return conv.doc;
     }
 
     //Convert a Tag into a model elemtn
@@ -288,7 +133,7 @@ namespace WikiHelper.lib.WikiMedia.converter {
           }
         }
       }
-      // Convert <dd> tag into ListItem element 
+      // Convert <dd> tag into ListItem element
       //TODO Handling of nested element
       else if (name.Equals(TAG_DD)) {
         Flush();
@@ -296,7 +141,7 @@ namespace WikiHelper.lib.WikiMedia.converter {
           txt = new ListItem();
         }
       }
-      // Convert <li> tag into ListItem element 
+      // Convert <li> tag into ListItem element
       //TODO Handling of nested element
       else if (name.Equals(TAG_LI)) {
         Flush();
@@ -359,7 +204,165 @@ namespace WikiHelper.lib.WikiMedia.converter {
         if (tag.Closing) { ; }
       }
     }
-        
-  }
 
+    //Add an element into the current model
+    public void AddIt(Element e) {
+      if (header!=null) {
+        header.elements.Add(e);
+      }
+      else {
+        doc.elements.Add(e);
+      }
+    }
+
+    // Extract the content from the page, content is the text between
+    // begin and end marker (MARKER_CONTENT) or the whole page if they are absent
+    public string ExtractContent(string html) {
+      int start = html.IndexOf(MARKER_CONTENTBEGIN);
+      if (start<0) {
+        start = 0;
+      }
+      else {
+        start += MARKER_CONTENTBEGIN.Length;
+      }
+      int end = html.IndexOf(MARKER_CONTENTEND);
+      if (end<0) {
+        end = html.Length;
+      }
+      return html.Substring(start, end-start);
+    }
+
+    // Add current Text (if present) into the document model
+    public void Flush() {
+      if ((txt!=null) && (txt.text.Length>0)) {
+        AddIt(txt);
+      }
+      txt = new Text();
+    }
+
+    //Get the value of an attribute of the tag or null if absent
+    public string GetValue(Tag tag, string attributeName) {
+      HTML.Attribute id = tag[attributeName];
+      string val = (id!=null? id.Value : null);
+      return val;
+    }
+
+    // Check if an HTML TAG could be ignored (e.g. scripts, remarks, ...)
+    public Tag Ignorable(Tag tag) {
+      Tag res = tag;
+      string name = tag.Name.ToLower();
+      // Remove comments
+      if (name.StartsWith(TAG_REMARK)) {
+        res = null;
+      }
+      // Remove Scripts
+      else if (name.Equals(TAG_SCRIPT)) {
+        SkipToEnd(TAG_SCRIPT);
+        res = null;
+      }
+      // Remove Table of Contents
+      else if (name.Equals(TAG_TABLE)) {
+        string val = GetValue(tag, ATR_ID);
+        if ((val!=null) && (val.Equals(VAL_TOC))) {
+          SkipToEnd(TAG_TABLE);
+          res = null;
+         }
+      }
+      // Remove unuseful div section
+      else if (name.Equals(TAG_DIV)) {
+        string val = GetValue(tag, ATR_CLASS);
+        if (val==null) {
+          val = GetValue(tag, ATR_ID);
+        }
+        if (val!=null) {
+          bool ignored = false;
+          for (int i=0; i<IGNORECLASS.Length; i++) {
+            if (val.Equals(IGNORECLASS[i])) {
+              SkipToEnd(TAG_DIV);
+              ignored = true;
+              break;
+            }
+          }
+          if (val.Equals(CAT_LINKS)) {
+            //TODO gestione Categorie
+            SkipToEnd(TAG_DIV);
+            ignored = true;
+          }
+          if (ignored) {
+            res = null;
+          }
+        }
+      }
+      // Remove Name place anchor
+      else if (name.Equals(TAG_A)) {
+        string val = GetValue(tag, ATR_NAME);
+        if ((val!=null)) {
+          SkipToEnd(TAG_A);
+          res = null;
+        }
+      }
+      // Remove edit action
+      else if (name.Equals(TAG_SPAN)) {
+        string val = GetValue(tag, ATR_CLASS);
+        if ((val!=null) && (val.Equals(VAL_EDIT))) {
+          SkipToEnd(TAG_SPAN);
+          res = null;
+        }
+      }
+      return res;
+    }
+
+    // Parse the HTML page
+    public void Parse(string html) {
+      Tag tag;
+      Object ch;
+      parser = new HTMLParser();
+      parser.Source = html;
+      while (!parser.Eof()) {
+        ch = parser.Next();
+        if (ch is Tag) {
+          tag = ch as Tag;
+          tag = Ignorable(tag);
+          if (tag!=null) {
+            AddElement(tag);
+          }
+        }
+        else {
+          string s = ch as string;
+          if (s.Length>0) {
+            txt.Append(s);
+          }
+        }
+      }
+      Flush();
+    }
+
+    //Skip text until the close of a tag, handle also nested tags
+    public void SkipToEnd(string tagName) {
+      Object ch;
+      Tag tag;
+      tagName = tagName.ToLower();
+      int level = 1;
+      while (!parser.Eof()) {
+        ch = parser.Next();
+        if (ch is Tag) {
+          tag = ch as Tag;
+          if (tag.Name.ToLower().Equals(tagName)) {
+            if (tag.Opening) {
+              level++;
+            }
+            if (tag.Closing) {
+              level--;
+              if (level==0) {
+                break;
+              }
+            }
+          }
+        }
+      }
+    }
+    #endregion Methods
+    
+  }
+  
 }
