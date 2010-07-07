@@ -229,7 +229,7 @@ table.inline td {
   text-align: right;
 }
 
-.toc, .footerinc, .header, .bar, .user {display:none}
+.toc, .footerinc, .header, .bar, .user, .sidebar, .plugin_uparrow, .tags, .meta {display:none}
 
 
 /**
