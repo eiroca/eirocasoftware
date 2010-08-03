@@ -4,7 +4,7 @@
  * base upon Slides.php Copyright (C) 2006 by Tels http://bloodgate.com
  * @author Enrico Croce & Simona Burzio (staff@eiroca.net)
  * @copyright Copyright (C) 2009-2010 eIrOcA - Enrico Croce & Simona Burzio
- * @license GPL >=3 (http://www.gnu.org/licenses/)
+ * @license GPL v2 (http://www.gnu.org/licenses/)
  * @version 1.0.0
  * @link http://www.eiroca.net
  */
