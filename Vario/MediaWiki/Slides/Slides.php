@@ -137,44 +137,43 @@ function renderNavigation($sInput, $sParams, $parser=null) {
 	if ($lIndex) { $output .= '<td style="vertical-align:top">'._build_link($sBasePath, $lIndex, $param).':&nbsp;</td>'; }
 	$output .= '<td>';
 	# we need two passes, in the first one we find the curren topic and subtopic:
-	$sCurTopic = '';
-	$sCurSubTopic = '';
-	$sLastTopic = '';
 	# index of current topic
-	$iCurr = -1;
+	$iLastL0 = -1;
+	$iCur = -1;
+	$iCurL0 = -1;
 	# find the current topic
 	for ($i=0; $i<count($aLinks); $i++) {
 		# convert all spaces to underscores
 		$aTitle = _explode($aLinks[$i]);
 		if (preg_match('/^\*/', $aTitle[0])) {
 			# subtopic equals current article?
-			if (strcmp('*'.$sCurrent, $aTitle[0]) == 0) {
-				# remove the leading '*'
-				$sCurTopic = $sLastTopic;
-				$sCurSubTopic = preg_replace('/^\*/', '', $aTitle[0]);
-				$iCurr = $i;
+			$iPos = strlen(trim($aTitle[0]))-strlen($sCurrent);
+			if ($iPos>=0) {
+				if (strpos($aTitle[0], $sCurrent) === $iPos) {
+					$iCurL0 = $iLastL0;
+					$iCur = $i;
+					break;
+				}
 			}
 		}
 		else {
+			$iLastL0 = $i;
 			# topic equals current article?
-			if (strcmp($sCurrent, $aTitle[0]) == 0) {
-				$sCurTopic = $aTitle[0];
-				$sCurSubTopic = '';
-				$iCurr = $i;
-			}
-			$sLastTopic = $aTitle[0];
+			if (strcmp($sCurrent, $aTitle[0]) === 0) { $iCur = $i; break; }
 		}
-	}
+  }
 	#No current item, disable compact mode
-	if ($iCurr==-1) {
+	if ($iCur==-1) {
 		$bCompact=false;
-		$iCurr=0;
+		$iCur=0;
 	}
 	# second pass, build the output
 	$iFirstSub = 0;
+	$bCurrent = false;
+	$outL0 = '';
+	$outL1 = '';
 	for ($i=0; $i<count($aLinks); $i++) {
 		$sLink = $aLinks[$i];
-		$bSubtopic = false;
 		if (preg_match('/^\*/', $sLink)) {
 			$bSubtopic = true;
 			# if we aren't in the current topic, supress the subtopic
@@ -182,50 +181,42 @@ function renderNavigation($sInput, $sParams, $parser=null) {
 			# for each subtopic, count up
 			$iFirstSub++;
 			# remove the leading '*'
-			$sLink = preg_replace('/^\*/', '', $sLink);
+			$sLink = preg_replace('/^\*\s*/', '', $sLink);
 		}
 		else {
-			# reset
+  		$bSubtopic = false;
 			$iFirstSub = 0;
 			$bCurrent=false;
 		}
+    if ($i==$iCurL0) { $bCurrent = true; }
 		# Article name|Navbar name|Mouseover
 		$aTitle = _explode($sLink);
-		# for topics, compare against $sCurTopic
-		$sCmp = $sCurTopic;
-		if ($bSubtopic)  { $sCmp = $sCurSubTopic; }
-		$sBold = '';
-		$sBold1 = '';
-		$bBuildLink = true;
-		if (strcmp($aTitle[0], $sCmp) == 0) {
-			$sBold = '<b>';
-			$sBold1 = '</b>';
-			# the current page is a topic header?
-			if ($bSubtopic || $sCurSubTopic == '') { $bBuildLink = false; }
-			if (!$bSubtopic) { $sSubTopics = '<span style="font-size: 90%">'; }
-			$bCurrent = true;
+		$sOutL0='';
+		$sOutL1='';
+		if (!$bSubtopic) {
+		  if ($i==$iCur) { $sOutL0 = '<b>' . $aTitle[1] . '</b>';	}
+			else if (!$bCompact) { $sOutL0 = _build_link($sPath, $sLink, $param); }
 		}
-		else if (!$bSubtopic) { $bCurrent = false; }
-		if (!$bBuildLink) { $sOut = '<b>' . $aTitle[1] . '</b>'; }
-		else { $sOut = $sBold . _build_link($sPath, $sLink, $param) . $sBold1; }
-		if ($i != 0 && $iFirstSub != 1 && !$bCompact) { $sOut = '&nbsp;- ' . $sOut; }
-		# and add it to the navbar
-		if ($bSubtopic) { $sSubTopics .= $sOut; }
-		else if ((!$bCompact)||($i == $iCurr)) { $output .= $sOut; }
+		else {
+		  if (($iFirstSub==1)&&($iCurL0>=0)) { $sOutL0 = _build_link($sPath, $aLinks[$iCurL0], $param);	}
+			if ($i==$iCur) { $sOutL1 = '<b>' . $aTitle[1] . '</b>'; }
+			else { $sOutL1 = _build_link($sPath, $sLink, $param); }
+		}
+		$sL0 = _addIt($sL0, $sOutL0);
+		$sL1 = _addIt($sL1, $sOutL1);
 	}
-	if ($sSubTopics != '') { $sSubTopics = '<br />' . $sSubTopics . '</span>'; }
-	$aTitle = _explode($aLinks[0]);
-	$bOnFirstPage = false;
-	if (strcmp($sCurrent,$aTitle[0]) == 0) { $bOnFirstPage = true; }
-	$aTitle = _explode($aLinks[count($aLinks)-1]);
-	$bOnLastPage = false;
-	if (strcmp($sCurrent,$aTitle[0]) == 0) { $bOnLastPage = true; }
+	if ($sL0<>'') {$output.=$sL0;}
+	if ($sL1<>'') {$output.='<br /><span style="font-size: 90%">'.$sL1.'</span>'; }
+	$output .= '</td></tr></table>';
 	# generate next/prev links
 	$sButtons = '';
 	# only include buttons if not editing the template
-	if (($sCurTopic != '') && $bShowButtons) {
-		if (!$bOnFirstPage) { $sButtons = _build_link($sPath, $aLinks[0], $param, '|&lt;', 'First page') . '&nbsp;' . _build_link($sPath, $aLinks[$iCurr-1], $param, '&lt;&lt;', 'Previous page');  }
-		if (!$bOnLastPage) { $sButtons .= '&nbsp;&nbsp;' . _build_link($sPath, $aLinks[$iCurr+1], $param, '&gt;&gt;', 'Next page', ' ') . '&nbsp;' . _build_link($sPath, $aLinks[count($aLinks)-1], $param, '&gt;|', 'Last page'); }
+	$bOnFirstPage = ($iCur==0);
+  $bOnLastPage = ($iCur==(count($aLinks)-1));
+	if ($bShowButtons) {
+		if (!$bOnFirstPage) { 
+		  $sButtons  = _build_link($sPath, $aLinks[0], $param, '|&lt;', 'First page') . '&nbsp;' . _build_link($sPath, $aLinks[$iCur-1], $param, '&lt;&lt;', 'Previous page');  }
+		if (!$bOnLastPage) { $sButtons .= '&nbsp;&nbsp;' . _build_link($sPath, $aLinks[$iCur+1], $param, '&gt;&gt;', 'Next page', ' ') . '&nbsp;' . _build_link($sPath, $aLinks[count($aLinks)-1], $param, '&gt;|', 'Last page'); }
 		if ($sButtons != '') { $sButtons = "<span style=\"float:right;\">$sButtons&nbsp;</span>"; }
 	}
 	# generate style to suppress the different elements
@@ -238,21 +229,24 @@ function renderNavigation($sInput, $sParams, $parser=null) {
 	if ($bHideFooter)  { $aStyles[] = '#footer'; }
 	$sStyles = '';
 	# on the first page, or if no topic (like when editing the template), do not hide anything
-	if ( $bOnFirstPage || ($sCurTopic == '') ) {
+	if ($bOnFirstPage) {
 		$aStyles = array();
 		$sMoreStyles = '';
 	}
 	# hide the heading, even on the first page
 	if ($bHideHeading)  { $aStyles[] = '.firstHeading'; }
 	# maybe we need to set the fontsize
-	if (($sFontSize != '') && ($sCurTopic != '')) { $sMoreStyles .= "#bodyContent{font-size: $sFontSize}"; }
+	if ($sFontSize != '') { $sMoreStyles .= "#bodyContent{font-size: $sFontSize}"; }
 	# do we need to set some styles?
 	if ( (count($aStyles) > 0) || ($sMoreStyles != '') ) {
 		# and we are not in preview ($bPrewview) )
 		if (count($aStyles) > 0) { $sStyles = join(',',$aStyles) . "{display:none}"; }
 		$sStyles = '<style type="text/css">' . "$sStyles$sMoreStyles</style>";
 	}
-	return "<div id=\"slides-navbar\" style=\"$sDivStyle\">$sStyles$sButtons$output$sSubTopics</td></tr></table></div>";
+	return "<div id=\"slides-navbar\" style=\"$sDivStyle\">$sStyles$sButtons$output</div>";
+}
+function _addIt(&$out, &$new) {
+  return ($new==''? $out : ($out=='' ? $new : $out . '&nbsp;- ' . $new));
 }
 function _build_link($sPath, $sTheLink, $param='', $sOptionalText = '', $sOptionalTitle = '', $sAccessKey = '') {
 	# build a link from the prefix and one entry in the link-array
@@ -263,7 +257,7 @@ function _build_link($sPath, $sTheLink, $param='', $sOptionalText = '', $sOption
 	if ($sOptionalText != '') { $sText = $sOptionalText; }
 	if ($sOptionalTitle != '') { $sTitle = $sOptionalTitle; }
 	# remove the leading '*' from article names
-	$sLink = preg_replace('/^\*/', '', $sLink);
+	$sLink = preg_replace('/^\*_*/', '', $sLink);
 	if ($sTitle != '') { $sTitle = ' title="' . $sTitle . '"'; }
 	if ($sAccessKey != '') { $sAccessKey = ' accesskey="' . $sAccessKey . '"'; }
 	# build the link
