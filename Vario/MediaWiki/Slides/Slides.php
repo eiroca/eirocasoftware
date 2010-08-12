@@ -1,9 +1,9 @@
 <?php
 /**
  * Extension: Slides (presentation) WikiMedia extension
- * base upon Slides.php Copyright (C) 2006 by Tels http://bloodgate.com
+ * base upon Slides.php Copyright (c) 2006 by Tels http://bloodgate.com
  * @author Enrico Croce & Simona Burzio (staff@eiroca.net)
- * @copyright Copyright (C) 2009-2010 eIrOcA - Enrico Croce & Simona Burzio
+ * @copyright Copyright (c) 2009-2010 eIrOcA - Enrico Croce & Simona Burzio
  * @license GPL v2 (http://www.gnu.org/licenses/)
  * @version 1.0.0
  * @link http://www.eiroca.net
@@ -11,7 +11,7 @@
 $wgExtensionFunctions[] = "wfSlidesExtension";
 function wfSlidesExtension() {
 	global $wgParser;
-	$wgParser->setHook( "slides", "renderNavigation" );
+	$wgParser->setHook( "slides", "efSlideRender" );
 }
 # for Special::Version:
 $wgExtensionCredits['parserhook'][] = array(
@@ -21,103 +21,71 @@ $wgExtensionCredits['parserhook'][] = array(
   'version' => 'v1.0.0',
 );
 # The callback function for outputting the HTML code
-function renderNavigation($sInput, $sParams, $parser=null) {
+function efSlideRender($sInput, $sParams, $parser=null, $frame=null) {
+	if (!$parser) { die("Extension Slides: Mediawiki is too old, please upgrade to version 1.5 or higher."); 	}
 	global $wgArticlePath;
 	global $wgScript;
-	# if we didn't get the parser passed in, we are running under an older mediawiki
-	if (!$parser) $parser = &$_GLOBALS['wgParser'];
 	# Find out whether we are currently rendering for a preview, or the final
 	# XXX TODO: unreliable and unused yet
 	global $action;
 	if ($action == 'submit') { $bPreview = true; } else { $bPreview = false; }
-	# all the entries in the navbar
-	$aLinks = array();
-	# the presentation name
-	$sIndex  = '';
+	# Presentation ID
+	$conf["id"] = null;
+	# the presentation index page
+	$conf["index"] = ''; 
 	# prefix for presentation slides
-	$sPrefix = '';
-	# stopped parsing options?
-	$bArticles = false;
+	$conf["prefix"] = ''; 
 	# set a new font size for the body?
-	$sFontSize = '';
-	# hide first-level headline?
-	$bHideHeading = true;
-	# hide left menu-column?
-	$bHideMenu = true;
-	# hide footer?
-	$bHideFooter = true;
+	$conf["fontsize"] = ''; 
+	# Navigation bar style
+	$conf["style"] = "background: #ffffe0; border: 1px dashed black; padding: 0.2em 0.2em 0.2em 0.5em; margin: 0.5em 0 1em 0;";
 	# show nav buttons (|< << >> >|)
-	$bShowButtons = true;
+	$conf["showbuttons"] = true;
+	# hide first-level headline?
+	$conf["hideheading"] = true;
+	# hide left menu-column?
+	$conf["hidemenu"] = true;
+	# hide footer?
+	$conf["hidefooter"] = true;
 	# show only the current page (not the full index)
-	$bCompact = false;
-	$sPresID = null;
+	$conf["compact"] = false;
 	global $_REQUEST;
 	$sReqID = $_REQUEST["_E_PID"];
 	$sSmall = '85%';
-	$sDivStyle = "background: #ffffe0; border: 1px dashed black; padding: 0.2em 0.2em 0.2em 0.5em; margin: 0.5em 0 1em 0;";
-	# Parse the parameters, stop at first "Invalid" looking one
+	# Parse the parameters
+	foreach ($sParams as $nam => $val) {
+	  if ($val=="false") { $val = false; }
+	  else if ($val=="true") { $val = true; }
+	  $conf[$nam] = $val;
+	}
+	# It's the correct presentation?
+	if ($sReqID!=null) {
+		// This is not the wanted presentation
+		if ($conf["id"]!=$sReqID) { return; }
+	}
+	if ($conf["id"]!=null) {
+		$sReqID = $conf["id"];
+		$_REQUEST["_E_PID"] = $sReqID;
+		$param = "_E_PID=".$sReqID;
+	}
+	# all the entries in the navbar
+	$aLinks = array();
+  # Parse slides
 	$aParams = explode("\n", $sInput);
 	foreach ($aParams as $sCur) {
 		$sCur = trim($sCur);
-		# skip empty lines
 		if ($sCur == '') { continue; }
-		$aCur = explode("=", $sCur);
-		if (count($aCur) == 2) {
-			$sType = trim($aCur[0]);
-			$sVal = trim($aCur[1]);
-			switch ($sType) {
-				case 'index': $lIndex = $sVal; break;
-				case 'style': $sDivStyle = $sVal; break;
-				case 'id': $sPresID = $sVal; break;
-				case 'name': $sPrefix = $sVal; break;
-				case 'prefix': $sPrefix = $sVal; break;
-				case 'fontsize': if (preg_match('/^\d+%$/',$sVal)) { $sFontSize = $sVal; } break;
-				case 'showButtons': if ($sVal == 'false') { $bShowButtons = false; } break;
-				case 'hideMenu': if ($sVal == 'false') { $bHideMenu = false; } break;
-				case 'compact': if ($sVal == 'true') { $bCompact = true; } break;
-				case 'hideFooter': if ($sVal == 'false') { $bHideFooter = false; } break;
-				case 'hideHeading': if ($sVal == 'false') { $bHideHeading = false; } break;
-				case 'hideAll':
-					# true is the default
-					if ($sVal == 'false') {
-						$bHideMenu = false;
-						$bHideFooter = false;
-						$bHideHeading = false;
-					}
-					else if ($sVal == 'true') {
-						$bHideMenu = true;
-						$bHideFooter = true;
-						$bHideHeading = true;
-					}
-					break;
-				default:
-					$bArticles = true;
-			}
-		}
-		# Not exactly one "=", so stop parsing options and begin with articles
-		else { $bArticles = true; }
-		# store the Article reference as-is (e.g. '*Name|Foo|Click here')
-		if ($bArticles) { $aLinks[] = $sCur; }
+		$aLinks[] = $sCur;
 	}
-	if ($sReqID!=null) {
-		// This is not the wanted presentation
-		if ($sPresID!=$sReqID) { return; }
-	}
-	if ($sPresID!=null) {
-		$_REQUEST["_E_PID"] = $sPresID;
-		$sReqID = $sPresID;
-		$param = "_E_PID=".$sPresID;
-	}
-	# build the path for article links
+	# build the path for article links, "index.php?title=$1" => "index.php?title="
 	$sBasePath = $wgArticlePath;
 	if ($sBasePath == '') { $sBasePath = $wgScript . '/'; }
-	# "index.php?title=$1" => "index.php?title="
 	$sBasePath = preg_replace('/\$1/', '', $sBasePath);
 	# the page we are currently on from the Parser member mTitle, to make it different
 	$sCurrent = $parser->getTitle();
 	# turn spaces into underscores
 	$sCurrent = preg_replace('/ /', '_', $sCurrent);
-	$sPrefix = preg_replace('/ /', '_', $sPrefix);
+	$sPrefix = preg_replace('/ /', '_', $conf["prefix"]);
 	$sTitlePrefix = $sPrefix;
 	if ($sTitlePrefix!='') { $iColPos = strpos(':', $sTitlePrefix); }
 	if ($iColPos>0) { $sTitlePrefix = substr($sTitlePrefix, $iColPos+1); }
@@ -126,15 +94,9 @@ function renderNavigation($sInput, $sParams, $parser=null) {
 	# "/wiki/index.php?title="  =>  "/wiki/index.php?title=My_Presentation"
 	$sPath = $sBasePath . $sPrefix;
 	# finally generate the HTML output
-	# the lower nav bar with the subtopics
-	$sSubTopics = '';
-	# the last seen topic was the current one
-	$bCurrent = false;
-	# we see currently a subtopic
-	$bSubtopic = false;
 	# Format the navbar as table (would love to do that as CSS, tho)
 	$output = '<table style="font-size:'.$sSmall.';border:none;background:transparent"><tr>';
-	if ($lIndex) { $output .= '<td style="vertical-align:top">'._build_link($sBasePath, $lIndex, $param).':&nbsp;</td>'; }
+	if ($conf["index"]) { $output .= '<td style="vertical-align:top">'._build_link($sBasePath, $conf["index"], $param).':&nbsp;</td>'; }
 	$output .= '<td>';
 	# we need two passes, in the first one we find the curren topic and subtopic:
 	# index of current topic
@@ -159,17 +121,28 @@ function renderNavigation($sInput, $sParams, $parser=null) {
 		else {
 			$iLastL0 = $i;
 			# topic equals current article?
-			if (strcmp($sCurrent, $aTitle[0]) === 0) { $iCur = $i; break; }
+			if (strcmp($sCurrent, $aTitle[0]) === 0) { 
+			  $iCurL0 = $i; 
+				$iCur = $i; 
+				break; 
+			}
 		}
   }
-	#No current item, disable compact mode
-	if ($iCur==-1) {
-		$bCompact=false;
+	#No current item, disable compact mode and do not hide anything
+  $bIndex = ($iCur==-1);
+  if (($bIndex)||($bPreview)) { 
+		$conf["compact"]=false;
+		$conf["hidemenu"]=false;
+		$conf["hidefooter"]=false;
+		$conf["hideheading"]=false;
+		$conf["showbuttons"]=false;
 		$iCur=0;
 	}
+	else { $bIndex = false; }
 	# second pass, build the output
-	$iFirstSub = 0;
 	$bCurrent = false;
+	$bSubtopic = false;
+	$iFirstSub = 0;
 	$outL0 = '';
 	$outL1 = '';
 	for ($i=0; $i<count($aLinks); $i++) {
@@ -194,12 +167,12 @@ function renderNavigation($sInput, $sParams, $parser=null) {
 		$sOutL0='';
 		$sOutL1='';
 		if (!$bSubtopic) {
-		  if ($i==$iCur) { $sOutL0 = '<b>' . $aTitle[1] . '</b>';	}
-			else if (!$bCompact) { $sOutL0 = _build_link($sPath, $sLink, $param); }
+		  if (($i==$iCur)&&(!$bIndex)) { $sOutL0 = '<b>' . $aTitle[1] . '</b>';	}
+		  else if ($i==$iCurL0) { $sOutL0 = _build_link($sPath, $aLinks[$iCurL0], $param);	}
+			else if (!$conf["compact"]) { $sOutL0 = _build_link($sPath, $sLink, $param); }
 		}
 		else {
-		  if (($iFirstSub==1)&&($iCurL0>=0)) { $sOutL0 = _build_link($sPath, $aLinks[$iCurL0], $param);	}
-			if ($i==$iCur) { $sOutL1 = '<b>' . $aTitle[1] . '</b>'; }
+			if (($i==$iCur)&&(!$bIndex)) { $sOutL1 = '<b>' . $aTitle[1] . '</b>'; }
 			else { $sOutL1 = _build_link($sPath, $sLink, $param); }
 		}
 		$sL0 = _addIt($sL0, $sOutL0);
@@ -213,37 +186,29 @@ function renderNavigation($sInput, $sParams, $parser=null) {
 	# only include buttons if not editing the template
 	$bOnFirstPage = ($iCur==0);
   $bOnLastPage = ($iCur==(count($aLinks)-1));
-	if ($bShowButtons) {
-		if (!$bOnFirstPage) { 
-		  $sButtons  = _build_link($sPath, $aLinks[0], $param, '|&lt;', 'First page') . '&nbsp;' . _build_link($sPath, $aLinks[$iCur-1], $param, '&lt;&lt;', 'Previous page');  }
+	if ($conf["showbuttons"]) {
+		if (!$bOnFirstPage) { $sButtons  = _build_link($sPath, $aLinks[0], $param, '|&lt;', 'First page') . '&nbsp;' . _build_link($sPath, $aLinks[$iCur-1], $param, '&lt;&lt;', 'Previous page');  }
 		if (!$bOnLastPage) { $sButtons .= '&nbsp;&nbsp;' . _build_link($sPath, $aLinks[$iCur+1], $param, '&gt;&gt;', 'Next page', ' ') . '&nbsp;' . _build_link($sPath, $aLinks[count($aLinks)-1], $param, '&gt;|', 'Last page'); }
 		if ($sButtons != '') { $sButtons = "<span style=\"float:right;\">$sButtons&nbsp;</span>"; }
 	}
 	# generate style to suppress the different elements
 	$aStyles = array();
 	$sMoreStyles = '';
-	if ($bHideMenu) {
+	if ($conf["hidemenu"]) {
 		$aStyles[] = '#p-logo,#p-navigation,#p-search,#p-tb';
 		$sMoreStyles = '#column-content{ margin: 0 0 0.6em -1em}#content{margin: 2.8em 0 0 1em;}#p-actions{margin-left: 1em;}';
 	}
-	if ($bHideFooter)  { $aStyles[] = '#footer'; }
-	$sStyles = '';
-	# on the first page, or if no topic (like when editing the template), do not hide anything
-	if ($bOnFirstPage) {
-		$aStyles = array();
-		$sMoreStyles = '';
-	}
-	# hide the heading, even on the first page
-	if ($bHideHeading)  { $aStyles[] = '.firstHeading'; }
+	if ($conf["hidefooter"]) { $aStyles[] = '#footer'; }
+	if ($conf["hideheading"]) { $aStyles[] = '.firstHeading'; }
 	# maybe we need to set the fontsize
-	if ($sFontSize != '') { $sMoreStyles .= "#bodyContent{font-size: $sFontSize}"; }
+	if ($conf["fontsize"] != '') { $sMoreStyles .= "#bodyContent{font-size:".$conf["fontsize"]."}"; }
 	# do we need to set some styles?
 	if ( (count($aStyles) > 0) || ($sMoreStyles != '') ) {
 		# and we are not in preview ($bPrewview) )
-		if (count($aStyles) > 0) { $sStyles = join(',',$aStyles) . "{display:none}"; }
+		if (count($aStyles) > 0) { $sStyles = join(',',$aStyles) . "{display:none}"; } else { $sStyles = ''; }
 		$sStyles = '<style type="text/css">' . "$sStyles$sMoreStyles</style>";
 	}
-	return "<div id=\"slides-navbar\" style=\"$sDivStyle\">$sStyles$sButtons$output</div>";
+	return "<div id=\"slides-navbar\" style=\"".$conf["style"]."\">$sStyles$sButtons$output</div>";
 }
 function _addIt(&$out, &$new) {
   return ($new==''? $out : ($out=='' ? $new : $out . '&nbsp;- ' . $new));
@@ -269,8 +234,7 @@ function _build_link($sPath, $sTheLink, $param='', $sOptionalText = '', $sOption
 	return "<a href=\"$url\"$sTitle$sAccessKey>$sText</a>";
 }
 function _explode($sLink) {
-	# split into the three components, with defaults (page_name|page name|)
-	# Article page_name|display name|Mouseover text
+	# split into the three components (page_name|display name|Mouseover text), with defaults (page_name|page name|)  
 	$aTitle = explode('|',$sLink);
 	if (count($aTitle) == 0) { $aTitle[0] = $sLink; }
 	$aTitle[0] = preg_replace('/ /', '_', $aTitle[0]);
