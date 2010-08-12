@@ -1,11 +1,10 @@
-Takes text between <slides> </slides> tags, and splits it into individual
+Takes text between <slides attribute="value" attribute="value" >Article references</slides> tags, and splits it into individual
 lines. Each of the lines is either one of the following options, or treated
 as a topic (article/slide) name, or a sub-topic name (starting with '*'):
 
-Optional options:
+Optional Attributes:
 index=Name of presentation (link|display|mouseover)
 prefix=Prefix for the slides of the presentation (remove "name - " prefix from articles)
-hideAll=true/false    (sets hideMenu/hideFooter/hideHeading to true/false)
 hideMenu=true/false    (default: true, hide the left menu column)
 hideFooter=true/false    (default: true, hide the footer)
 hideHeading=true/false  (default: true, hide the first-level headline)
@@ -13,9 +12,6 @@ fontsize=120%      (default: 100%, the fontsize for the body, in %)
 showButtons=true    (default: true, show |< << >> >| buttons on the navbar)
 id=   (default:null id of presentation slide to differentiate slides that belongs to multiple presentations)
 style (stile of the div)
-
-The "hide" options are only in effect in subsequent pages, this allows you
-to "break out" of the presentation by going to the very first page.
 
 Article reference:
 Name1|Text in Navbar|Mouseover title
@@ -26,13 +22,13 @@ Name3
 *Subarticle3
 
 Example:
-prefix=My Presentation
-index=Presentation summary
+<slides prefix="My Presentation" index="Presentation summary">
 Start
 *Intro
 *About
 How to
 Contact
+</slides>
 
 Install: Copy this file into the extensions/ directory of your wiki, and then
 add at the bottom of LocalSettings.php, but before the "? >", the following:
