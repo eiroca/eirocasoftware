@@ -60,21 +60,18 @@ function tpl_content_core(){
 		case 'show':
 			html_show();
 			break;
-		case 'preview':
-			html_edit($TEXT);
-			html_show($TEXT);
-			break;
-		case 'recover':
-			html_edit($TEXT);
-			break;
+		case 'locked':
+			html_locked();
 		case 'edit':
+		case 'recover':
 			html_edit();
+			break;
+		case 'preview':
+			html_edit();
+			html_show($TEXT);
 			break;
 		case 'draft':
 			html_draft();
-			break;
-		case 'wordblock':
-			html_edit($TEXT,'wordblock');
 			break;
 		case 'search':
 			html_search();
@@ -104,10 +101,6 @@ function tpl_content_core(){
 			html_conflict(con($PRE,$TEXT,$SUF),$SUM);
 			html_diff(con($PRE,$TEXT,$SUF),false);
 			break;
-		case 'locked':
-			html_locked();
-			html_edit();
-			break;
 		case 'login':
 			html_login();
 			break;
@@ -125,6 +118,9 @@ function tpl_content_core(){
 			break;
 		case 'admin':
 			tpl_admin();
+			break;
+		case 'subscribe':
+			tpl_subscribe();
 			break;
 		default:
 			$evt = new Doku_Event('TPL_ACT_UNKNOWN',$ACT);
@@ -186,7 +182,7 @@ function tpl_toc($return=false){
 		}
 	}
 
-	trigger_event('TPL_TOC_RENDER', $toc, NULL, false);
+	trigger_event('TPL_TOC_RENDER', $toc, null, false);
 	$html = html_TOC($toc);
 	if($return) return $html;
 	echo $html;
@@ -259,41 +255,41 @@ function tpl_metaheaders($alt=true){
 	}
 
 	// the usual stuff
-	$head['meta'][] = array( 'name'=>'generator', 'content'=>'DokuWiki '.getVersion() );
+	$head['meta'][] = array( 'name'=>'generator', 'content'=>'DokuWiki');
 	$head['link'][] = array( 'rel'=>'search', 'type'=>'application/opensearchdescription+xml',
-                           'href'=>DOKU_BASE.'lib/exe/opensearch.php', 'title'=>$conf['title'] );
+            'href'=>DOKU_BASE.'lib/exe/opensearch.php', 'title'=>$conf['title'] );
 	$head['link'][] = array( 'rel'=>'start', 'href'=>DOKU_BASE );
 	if(actionOK('index')){
 		$head['link'][] = array( 'rel'=>'contents', 'href'=> wl($ID,'do=index',false,'&'),
-                           'title'=>$lang['btn_index'] );
+                'title'=>$lang['btn_index'] );
 	}
 
 	if($alt){
 		$head['link'][] = array( 'rel'=>'alternate', 'type'=>'application/rss+xml',
-                             'title'=>'Recent Changes', 'href'=>DOKU_BASE.'feed.php');
+                'title'=>'Recent Changes', 'href'=>DOKU_BASE.'feed.php');
 		$head['link'][] = array( 'rel'=>'alternate', 'type'=>'application/rss+xml',
-                             'title'=>'Current Namespace',
-                             'href'=>DOKU_BASE.'feed.php?mode=list&ns='.$INFO['namespace']);
+                'title'=>'Current Namespace',
+                'href'=>DOKU_BASE.'feed.php?mode=list&ns='.$INFO['namespace']);
 		if(($ACT == 'show' || $ACT == 'search') && $INFO['writable']){
 			$head['link'][] = array( 'rel'=>'edit',
-                                 'title'=>$lang['btn_edit'],
-                                 'href'=> wl($ID,'do=edit',false,'&'));
+                    'title'=>$lang['btn_edit'],
+                    'href'=> wl($ID,'do=edit',false,'&'));
 		}
 
 		if($ACT == 'search'){
 			$head['link'][] = array( 'rel'=>'alternate', 'type'=>'application/rss+xml',
-                               'title'=>'Search Result',
-                               'href'=>DOKU_BASE.'feed.php?mode=search&q='.$QUERY);
+                    'title'=>'Search Result',
+                    'href'=>DOKU_BASE.'feed.php?mode=search&q='.$QUERY);
 		}
 
 		if(actionOK('export_xhtml')){
 			$head['link'][] = array( 'rel'=>'alternate', 'type'=>'text/html', 'title'=>'Plain HTML',
-                               'href'=>exportlink($ID, 'xhtml', '', false, '&'));
+                    'href'=>exportlink($ID, 'xhtml', '', false, '&'));
 		}
 
 		if(actionOK('export_raw')){
 			$head['link'][] = array( 'rel'=>'alternate', 'type'=>'text/plain', 'title'=>'Wiki Markup',
-                               'href'=>exportlink($ID, 'raw', '', false, '&'));
+                    'href'=>exportlink($ID, 'raw', '', false, '&'));
 		}
 	}
 
@@ -334,26 +330,25 @@ function tpl_metaheaders($alt=true){
 	}
 
 	// load stylesheets
-//	$head['link'][] = array('rel'=>'stylesheet', 'media'=>'all', 'type'=>'text/css', 'href'=>DOKU_BASE.'lib/exe/css.php?s=all&t='.$conf['template'].'&tseed='.$tseed);
-	$head['link'][] = array('rel'=>'stylesheet', 'media'=>'screen', 'type'=>'text/css', 'href'=>DOKU_BASE.'lib/exe/css.php?t='.$conf['template'].'&tseed='.$tseed);
-	$head['link'][] = array('rel'=>'stylesheet', 'media'=>'print', 'type'=>'text/css', 'href'=>DOKU_BASE.'lib/exe/css.php?s=print&t='.$conf['template'].'&tseed='.$tseed);
+	$head['link'][] = array('rel'=>'stylesheet', 'media'=>'screen', 'type'=>'text/css',
+            'href'=>DOKU_BASE.'lib/exe/css.php?t='.$conf['template'].'&tseed='.$tseed);
+	$head['link'][] = array('rel'=>'stylesheet', 'media'=>'all', 'type'=>'text/css',
+            'href'=>DOKU_BASE.'lib/exe/css.php?s=all&t='.$conf['template'].'&tseed='.$tseed);
+	$head['link'][] = array('rel'=>'stylesheet', 'media'=>'print', 'type'=>'text/css',
+            'href'=>DOKU_BASE.'lib/exe/css.php?s=print&t='.$conf['template'].'&tseed='.$tseed);
 
 	// make $INFO and other vars available to JavaScripts
-	require_once(DOKU_INC.'inc/JSON.php');
 	$json = new JSON();
 	$script = "var NS='".$INFO['namespace']."';";
 	if($conf['useacl'] && $_SERVER['REMOTE_USER']){
-		require_once(DOKU_INC.'inc/toolbar.php');
 		$script .= "var SIG='".toolbar_signature()."';";
 	}
 	$script .= 'var JSINFO = '.$json->encode($JSINFO).';';
-	$head['script'][] = array( 'type'=>'text/javascript', 'charset'=>'utf-8',
-                               '_data'=> $script);
+	$head['script'][] = array( 'type'=>'text/javascript', '_data'=> $script);
 
 	// load external javascript
 	$head['script'][] = array( 'type'=>'text/javascript', 'charset'=>'utf-8', '_data'=>'',
-                             'src'=>DOKU_BASE.'lib/exe/js.php'.'?tseed='.$tseed);
-
+            'src'=>DOKU_BASE.'lib/exe/js.php'.'?tseed='.$tseed);
 
 	// trigger event here
 	trigger_event('TPL_METAHEADER_OUTPUT',$head,'_tpl_metaheaders_action',true);
@@ -380,7 +375,7 @@ function _tpl_metaheaders_action($data){
 				if($tag == 'script' && $attr['_data'])
 				$attr['_data'] = "<!--//--><![CDATA[//><!--\n".
 				$attr['_data'].
-                             "\n//--><!]]>";
+                        "\n//--><!]]>";
 
 				echo '>',$attr['_data'],'</',$tag,'>';
 			}else{
@@ -414,7 +409,7 @@ function tpl_link($url,$name,$more='',$return=false){
  *
  * @author Andreas Gohr <andi@splitbrain.org>
  */
-function tpl_pagelink($id,$name=NULL){
+function tpl_pagelink($id,$name=null){
 	print html_wikilink($id,$name);
 	return true;
 }
@@ -443,327 +438,198 @@ function tpl_getparent($id){
 /**
  * Print one of the buttons
  *
- * Available Buttons are
- *
- *  edit        - edit/create/show/draft button
- *  history     - old revisions
- *  recent      - recent changes
- *  login       - login/logout button - if ACL enabled
- *  profile     - user profile button (if logged in)
- *  index       - The index
- *  admin       - admin page - if enough rights
- *  top         - a back to top button
- *  back        - a back to parent button - if available
- *  backlink    - links to the list of backlinks
- *  subscription- subscribe/unsubscribe button
- *
- * @author Andreas Gohr <andi@splitbrain.org>
- * @author Matthias Grimm <matthiasgrimm@users.sourceforge.net>
+ * @author Adrian Lang <mail@adrianlang.de>
+ * @see    tpl_get_action
  */
 function tpl_button($type,$return=false){
-	global $ACT;
-	global $ID;
-	global $REV;
-	global $NS;
-	global $INFO;
-	global $conf;
-	global $auth;
-
-	// check disabled actions and fix the badly named ones
-	$ctype = $type;
-	if($type == 'history') $ctype='revisions';
-	if(!actionOK($ctype)) return false;
-
-	$out = '';
-	switch($type){
-		case 'edit':
-			#most complicated type - we need to decide on current action
-			if($ACT == 'show' || $ACT == 'search'){
-				if($INFO['writable']){
-					if(!empty($INFO['draft'])){
-						$out .= html_btn('draft',$ID,'e',array('do' => 'draft'),'post');
-					}else{
-						if($INFO['exists']){
-							$out .= html_btn('edit',$ID,'e',array('do' => 'edit','rev' => $REV),'post');
-						}else{
-							$out .= html_btn('create',$ID,'e',array('do' => 'edit','rev' => $REV),'post');
-						}
-					}
-				}else{
-					if(!actionOK('source')) return false; //pseudo action
-					$out .= html_btn('source',$ID,'v',array('do' => 'edit','rev' => $REV),'post');
-				}
-			}else{
-				$out .= html_btn('show',$ID,'v',array('do' => 'show'));
-			}
-			break;
-		case 'history':
-			if(actionOK('revisions'))
-			$out .= html_btn('revs',$ID,'o',array('do' => 'revisions'));
-			break;
-		case 'recent':
-			if(actionOK('recent'))
-			$out .= html_btn('recent',$ID,'r',array('do' => 'recent'));
-			break;
-		case 'index':
-			if(actionOK('index'))
-			$out .= html_btn('index',$ID,'x',array('do' => 'index'));
-			break;
-		case 'back':
-			if ($parent = tpl_getparent($ID)) {
-				$out .= html_btn('back',$parent,'b',array('do' => 'show'));
-			}
-			break;
-		case 'top':
-			$out .= html_topbtn();
-			break;
-		case 'login':
-			if($conf['useacl'] && $auth){
-				if(isset($_SERVER['REMOTE_USER'])){
-					$out .= html_btn('logout',$ID,'',array('do' => 'logout', 'sectok' => getSecurityToken()));
-				}else{
-					$out .= html_btn('login',$ID,'',array('do' => 'login', 'sectok' => getSecurityToken()));
-				}
-			}
-			break;
-		case 'admin':
-			if($INFO['ismanager']){
-				$out .= html_btn('admin',$ID,'',array('do' => 'admin'));
-			}
-			break;
-		case 'revert':
-			if($INFO['ismanager'] && $REV && $INFO['writable'] && actionOK('revert')){
-				$out .= html_btn('revert',$ID,'',array('do' => 'revert', 'rev' => $REV, 'sectok' => getSecurityToken()));
-			}
-			break;
-		case 'subscribe':
-		case 'subscription':
-			if($conf['useacl'] && $auth && $ACT == 'show' && $conf['subscribers'] == 1){
-				if($_SERVER['REMOTE_USER']){
-					if($INFO['subscribed']){
-						if(actionOK('unsubscribe'))
-						$out .= html_btn('unsubscribe',$ID,'',array('do' => 'unsubscribe',));
-					} else {
-						if(actionOK('subscribe'))
-						$out .= html_btn('subscribe',$ID,'',array('do' => 'subscribe',));
-					}
-				}
-			}
-			if($type == 'subscribe') break;
-			// else: fall through for backward compatibility
-		case 'subscribens':
-			if($conf['useacl'] && $auth && $ACT == 'show' && $conf['subscribers'] == 1){
-				if($_SERVER['REMOTE_USER']){
-					if($INFO['subscribedns']){
-						if(actionOK('unsubscribens'))
-						$out .= html_btn('unsubscribens',$ID,'',array('do' => 'unsubscribens',));
-					} else {
-						if(actionOK('subscribens'))
-						$out .= html_btn('subscribens',$ID,'',array('do' => 'subscribens',));
-					}
-				}
-			}
-			break;
-		case 'backlink':
-			if(actionOK('backlink'))
-			$out .= html_btn('backlink',$ID,'',array('do' => 'backlink'));
-			break;
-		case 'profile':
-			if($conf['useacl'] && isset($_SERVER['REMOTE_USER']) && $auth &&
-			$auth->canDo('Profile') && ($ACT!='profile')){
-				$out .= html_btn('profile',$ID,'',array('do' => 'profile'));
-			}
-			break;
-		default:
-			$out .= '[unknown button type]';
-			break;
+	$data = tpl_get_action($type);
+	if ($data === false) {
+		return false;
+	} elseif (!is_array($data)) {
+		$out = sprintf($data, 'button');
+	} else {
+		extract($data);
+		if ($id === '#dokuwiki__top') {
+			$out = html_topbtn();
+		} else {
+			$out = html_btn($type, $id, $accesskey, $params, $method);
+		}
 	}
 	if ($return) return $out;
-	print $out;
-	return $out ? true : false;
+	echo $out;
+	return true;
 }
 
 /**
  * Like the action buttons but links
  *
- * Available links are
+ * @author Adrian Lang <mail@adrianlang.de>
+ * @see    tpl_get_action
+ */
+function tpl_actionlink($type,$pre='',$suf='',$inner='',$return=false){
+	global $lang;
+	$data = tpl_get_action($type);
+	if ($data === false) {
+		return false;
+	} elseif (!is_array($data)) {
+		$out = sprintf($data, 'link');
+	} else {
+		extract($data);
+		if (strpos($id, '#') === 0) {
+			$linktarget = $id;
+		} else {
+			$linktarget = wl($id, $params);
+		}
+		$caption = $lang['btn_' . $type];
+		$out = tpl_link($linktarget, $pre.(($inner)?$inner:$caption).$suf,
+                        'class="action ' . $type . '" ' .
+                        'accesskey="' . $accesskey . '" rel="nofollow" ' .
+                        'title="' . hsc($caption) . '"', 1);
+	}
+	if ($return) return $out;
+	echo $out;
+	return true;
+}
+
+/**
+ * Check the actions and get data for buttons and links
  *
- *  edit    - edit/create/show link
- *  history - old revisions
- *  recent  - recent changes
- *  login   - login/logout link - if ACL enabled
- *  profile - user profile link (if logged in)
- *  index   - The index
- *  admin   - admin page - if enough rights
- *  top     - a back to top link
- *  back    - a back to parent link - if available
- *  backlink - links to the list of backlinks
- *  subscribe/subscription - subscribe/unsubscribe link
+ * Available actions are
+ *
+ *  edit        - edit/create/show/draft
+ *  history     - old revisions
+ *  recent      - recent changes
+ *  login       - login/logout - if ACL enabled
+ *  profile     - user profile (if logged in)
+ *  index       - The index
+ *  admin       - admin page - if enough rights
+ *  top         - back to top
+ *  back        - back to parent - if available
+ *  backlink    - links to the list of backlinks
+ *  subscribe/subscription- subscribe/unsubscribe
  *
  * @author Andreas Gohr <andi@splitbrain.org>
  * @author Matthias Grimm <matthiasgrimm@users.sourceforge.net>
- * @see    tpl_button
+ * @author Adrian Lang <mail@adrianlang.de>
  */
-function tpl_actionlink($type,$pre='',$suf='',$inner='',$return=false){
+function tpl_get_action($type) {
 	global $ID;
 	global $INFO;
 	global $REV;
 	global $ACT;
 	global $conf;
-	global $lang;
 	global $auth;
 
 	// check disabled actions and fix the badly named ones
-	$ctype = $type;
-	if($type == 'history') $ctype='revisions';
-	if(!actionOK($ctype)) return false;
+	if($type == 'history') $type='revisions';
+	if(!actionOK($type)) return false;
 
-	$out = '';
+	$accesskey = null;
+	$id        = $ID;
+	$method    = 'get';
+	$params    = array('do' => $type);
 	switch($type){
 		case 'edit':
-			#most complicated type - we need to decide on current action
+			// most complicated type - we need to decide on current action
 			if($ACT == 'show' || $ACT == 'search'){
+				$method = 'post';
 				if($INFO['writable']){
+					$accesskey = 'e';
 					if(!empty($INFO['draft'])) {
-						$out .= tpl_link(wl($ID,'do=draft'),
-						$pre.(($inner)?$inner:$lang['btn_draft']).$suf,
-                       'class="action edit" accesskey="e" rel="nofollow"',1);
+						$type = 'draft';
+						$params['do'] = 'draft';
 					} else {
-						if($INFO['exists']){
-							$out .= tpl_link(wl($ID,'do=edit&amp;rev='.$REV),
-							$pre.(($inner)?$inner:$lang['btn_edit']).$suf,
-                       'class="action edit" accesskey="e" rel="nofollow"',1);
-						}else{
-							$out .= tpl_link(wl($ID,'do=edit&amp;rev='.$REV),
-							$pre.(($inner)?$inner:$lang['btn_create']).$suf,
-                       'class="action create" accesskey="e" rel="nofollow"',1);
+						$params['rev'] = $REV;
+						if(!$INFO['exists']){
+							$type   = 'create';
 						}
 					}
 				}else{
-					if(actionOK('source')) //pseudo action
-					$out .= tpl_link(wl($ID,'do=edit&amp;rev='.$REV),
-					$pre.(($inner)?$inner:$lang['btn_source']).$suf,
-                   'class="action source" accesskey="v" rel="nofollow"',1);
+					if(!actionOK('source')) return false; //pseudo action
+					$params['rev'] = $REV;
+					$type = 'source';
+					$accesskey = 'v';
 				}
 			}else{
-				$out .= tpl_link(wl($ID,'do=show'),
-				$pre.(($inner)?$inner:$lang['btn_show']).$suf,
-                   'class="action show" accesskey="v" rel="nofollow"',1);
+				$params = '';
+				$type = 'show';
+				$accesskey = 'v';
 			}
 			break;
-		case 'history':
-			if(actionOK('revisions'))
-			$out .= tpl_link(wl($ID,'do=revisions'),
-			$pre.(($inner)?$inner:$lang['btn_revs']).$suf,
-               'class="action revisions" accesskey="o" rel="nofollow"',1);
+		case 'revisions':
+			$type = 'revs';
+			$accesskey = 'o';
 			break;
 		case 'recent':
-			if(actionOK('recent'))
-			$out .= tpl_link(wl($ID,'do=recent'),
-			$pre.(($inner)?$inner:$lang['btn_recent']).$suf,
-              'class="action recent" accesskey="r" rel="nofollow"',1);
+			$accesskey = 'r';
 			break;
 		case 'index':
-			if(actionOK('index'))
-			$out .= tpl_link(wl($ID,'do=index'),
-			$pre.(($inner)?$inner:$lang['btn_index']).$suf,
-              'class="action index" accesskey="x" rel="nofollow"',1);
+			$accesskey = 'x';
 			break;
 		case 'top':
-			$out .= '<a href="#dokuwiki__top" class="action top" accesskey="x">'.
-			$pre.(($inner)?$inner:$lang['btn_top']).$suf.'</a>';
+			$accesskey = 'x';
+			$params = '';
+			$id = '#dokuwiki__top';
 			break;
 		case 'back':
-			if ($parent = tpl_getparent($ID)) {
-				$out .= tpl_link(wl($parent,'do=show'),
-				$pre.(($inner)?$inner:$lang['btn_back']).$suf,
-        'class="action back" accesskey="b" rel="nofollow"',1);
+			$parent = tpl_getparent($ID);
+			if (!$parent) {
+				return false;
 			}
+			$id = $parent;
+			$params = '';
+			$accesskey = 'b';
 			break;
 		case 'login':
-			if($conf['useacl'] && $auth){
-				if($_SERVER['REMOTE_USER']){
-					$out .= tpl_link(wl($ID,'do=logout&amp;sectok='.getSecurityToken()),
-					$pre.(($inner)?$inner:$lang['btn_logout']).$suf,
-                   'class="action logout" rel="nofollow"',1);
-				}else{
-					$out .= tpl_link(wl($ID,'do=login&amp;sectok='.getSecurityToken()),
-					$pre.(($inner)?$inner:$lang['btn_login']).$suf,
-                   'class="action login" rel="nofollow"',1);
+			if(!$conf['useacl'] || !$auth){
+				return false;
+			}
+			$params['sectok'] = getSecurityToken();
+			if(isset($_SERVER['REMOTE_USER'])){
+				if (!$auth->canDo('logout')) {
+					return false;
 				}
+				$params['do'] = 'logout';
+				$type = 'logout';
 			}
 			break;
 		case 'admin':
-			if($INFO['ismanager']){
-				$out .= tpl_link(wl($ID,'do=admin'),
-				$pre.(($inner)?$inner:$lang['btn_admin']).$suf,
-                 'class="action admin" rel="nofollow"',1);
+			if(!$INFO['ismanager']){
+				return false;
 			}
 			break;
 		case 'revert':
-			if($INFO['ismanager'] && $REV && $INFO['writable'] && actionOK('revert')){
-				$out .= tpl_link(wl($ID,array('do' => 'revert', 'rev' => $REV, 'sectok' => getSecurityToken())),
-				$pre.(($inner)?$inner:$lang['btn_revert']).$suf,
-                 'class="action revert" rel="nofollow"',1);
+			if(!$INFO['ismanager'] || !$REV || !$INFO['writable']) {
+				return false;
 			}
+			$params['rev'] = $REV;
+			$params['sectok'] = getSecurityToken();
 			break;
-		case 'subscribe':
 		case 'subscription':
-			if($conf['useacl'] && $auth && $ACT == 'show' && $conf['subscribers'] == 1){
-				if($_SERVER['REMOTE_USER']){
-					if($INFO['subscribed']) {
-						if(actionOK('unsubscribe'))
-						$out .= tpl_link(wl($ID,'do=unsubscribe'),
-						$pre.(($inner)?$inner:$lang['btn_unsubscribe']).$suf,
-                     'class="action unsubscribe" rel="nofollow"',1);
-					} else {
-						if(actionOK('subscribe'))
-						$out .= tpl_link(wl($ID,'do=subscribe'),
-						$pre.(($inner)?$inner:$lang['btn_subscribe']).$suf,
-                     'class="action subscribe" rel="nofollow"',1);
-					}
-				}
-			}
-			if($type == 'subscribe') break;
-			// else: fall through for backward compatibility
-		case 'subscribens':
-			if($conf['useacl'] && $auth && $ACT == 'show' && $conf['subscribers'] == 1){
-				if($_SERVER['REMOTE_USER']){
-					if($INFO['subscribedns']) {
-						if(actionOK('unsubscribens'))
-						$out .= tpl_link(wl($ID,'do=unsubscribens'),
-						$pre.(($inner)?$inner:$lang['btn_unsubscribens']).$suf,
-                     'class="action unsubscribens" rel="nofollow"',1);
-					} else {
-						if(actionOK('subscribens'))
-						$out .= tpl_link(wl($ID,'do=subscribens'),
-						$pre.(($inner)?$inner:$lang['btn_subscribens']).$suf,
-                     'class="action subscribens" rel="nofollow"',1);
-					}
-				}
+			$type = 'subscribe';
+			$params['do'] = 'subscribe';
+		case 'subscribe':
+			if(!$conf['useacl'] || !$auth || $ACT !== 'show' || !$conf['subscribers'] || !$_SERVER['REMOTE_USER']){
+				return false;
 			}
 			break;
 		case 'backlink':
-			if(actionOK('backlink'))
-			$out .= tpl_link(wl($ID,'do=backlink'),
-			$pre.(($inner)?$inner:$lang['btn_backlink']).$suf,
-               'class="action backlink" rel="nofollow"',1);
 			break;
 		case 'profile':
-			if($conf['useacl'] && $auth && $_SERVER['REMOTE_USER'] &&
-			$auth->canDo('Profile') && ($ACT!='profile')){
-				$out .= tpl_link(wl($ID,'do=profile'),
-				$pre.(($inner)?$inner:$lang['btn_profile']).$suf,
-                 'class="action profile" rel="nofollow"',1);
+			if(!$conf['useacl'] || !$auth || !isset($_SERVER['REMOTE_USER']) ||
+			!$auth->canDo('Profile') || ($ACT=='profile')){
+				return false;
 			}
 			break;
+		case 'subscribens':
+			// Superseeded by subscribe/subscription
+			return '';
+			break;
 		default:
-			$out .= '[unknown link type]';
+			return '[unknown %s type]';
 			break;
 	}
-	if ($return) return $out;
-	print $out;
-	return $out ? true : false;
+	return compact('accesskey', 'type', 'id', 'method', 'params');
 }
 
 /**
@@ -802,7 +668,7 @@ function tpl_searchform($ajax=true,$autocomplete=true){
 	// don't print the search form if search action has been disabled
 	if (!actionOk('search')) return false;
 
-	print '<form action="'.wl().'" accept-charset="utf-8" class="search" id="dw__search"><div class="no">';
+	print '<form action="'.wl().'" accept-charset="utf-8" class="search" id="dw__search" method="get"><div class="no">';
 	print '<input type="hidden" name="do" value="search" />';
 	print '<input type="text" ';
 	if($ACT == 'search') print 'value="'.htmlspecialchars($QUERY).'" ';
@@ -930,7 +796,7 @@ function tpl_userinfo(){
 	global $lang;
 	global $INFO;
 	if(isset($_SERVER['REMOTE_USER'])){
-		print $lang['loggedinas'].': '.$INFO['userinfo']['name'].' ('.$_SERVER['REMOTE_USER'].')';
+		print $lang['loggedinas'].': '.hsc($INFO['userinfo']['name']).' ('.hsc($_SERVER['REMOTE_USER']).')';
 		return true;
 	}
 	return false;
@@ -1053,8 +919,13 @@ function tpl_img_getTag($tags,$alt='',$src=null){
  * Prints the image with a link to the full sized version
  *
  * Only allowed in: detail.php
+ *
+ * @param $maxwidth  int - maximal width of the image
+ * @param $maxheight int - maximal height of the image
+ * @param $link bool     - link to the orginal size?
+ * @param $params array  - additional image attributes
  */
-function tpl_img($maxwidth=0,$maxheight=0,$link=true,$img_id=null){
+function tpl_img($maxwidth=0,$maxheight=0,$link=true,$params=null){
 	global $IMG;
 	$w = tpl_img_getTag('File.Width');
 	$h = tpl_img_getTag('File.Height');
@@ -1072,33 +943,40 @@ function tpl_img($maxwidth=0,$maxheight=0,$link=true,$img_id=null){
 		}
 	}
 	//prepare URLs
-	$url=ml($IMG,array('cache'=>$_REQUEST['cache']));
-	$src=ml($IMG,array('cache'=>$_REQUEST['cache'],'w'=>$w,'h'=>$h));
+	$url=ml($IMG,array('cache'=>$_REQUEST['cache']),true,'&');
+	$src=ml($IMG,array('cache'=>$_REQUEST['cache'],'w'=>$w,'h'=>$h),true,'&');
+
 	//prepare attributes
 	$alt=tpl_img_getTag('Simple.Title');
-	$p = array();
+	if(is_null($params)){
+		$p = array();
+	}else{
+		$p = $params;
+	}
 	if($w) $p['width']  = $w;
 	if($h) $p['height'] = $h;
 	$p['class']  = 'img_detail';
 	if($alt){
 		$p['alt']   = $alt;
 		$p['title'] = $alt;
-	}
-	else{
+	}else{
 		$p['alt'] = '';
 	}
-	if ($img_id) {
-		$p['id'] = $img_id;
-	}
-	$p = buildAttributes($p);
-	$data = array('url'=>($link?$url:null), 'src'=>$src, 'p'=>$p);
+	$p['src'] = $src;
+
+	$data = array('url'=>($link?$url:null), 'params'=>$p);
 	return trigger_event('TPL_IMG_DISPLAY',$data,'_tpl_img_action',true);
 }
 
+/**
+ * Default action for TPL_IMG_DISPLAY
+ */
 function _tpl_img_action($data, $param=NULL) {
-	if($data['url']){print '<a href="'.$data['url'].'">';}
-	print '<img src="'.$data['src'].'" '.$data['p'].'/>';
-	if($data['url']){print '</a>';}
+	$p = buildAttributes($data['params']);
+
+	if($data['url']) print '<a href="'.hsc($data['url']).'">';
+	print '<img '.$p.'/>';
+	if($data['url']) print '</a>';
 	return true;
 }
 
@@ -1118,7 +996,7 @@ function tpl_indexerWebBug(){
 
 	$p = array();
 	$p['src']    = DOKU_BASE.'lib/exe/indexer.php?id='.rawurlencode($ID).
-                 '&'.time();
+        '&'.time();
 	$p['width']  = 1;
 	$p['height'] = 1;
 	$p['alt']    = '';
@@ -1135,7 +1013,7 @@ function tpl_indexerWebBug(){
  */
 function tpl_getConf($id){
 	global $conf;
-	global $tpl_configloaded;
+	static $tpl_configloaded = false;
 
 	$tpl = $conf['template'];
 
@@ -1169,6 +1047,29 @@ function tpl_loadConfig(){
 	include($file);
 
 	return $conf;
+}
+
+// language methods
+/**
+ * tpl_getLang($id)
+ *
+ * use this function to access template language variables
+ */
+function tpl_getLang($id){
+	static $lang = array();
+
+	if (count($lang) === 0){
+		$path = DOKU_TPLINC.'lang/';
+
+		$lang = array();
+
+		global $conf;            // definitely don't invoke "global $lang"
+		// don't include once
+		@include($path.'en/lang.php');
+		if ($conf['lang'] != 'en') @include($path.$conf['lang'].'/lang.php');
+	}
+
+	return $lang[$id];
 }
 
 /**
@@ -1264,8 +1165,7 @@ function tpl_actiondropdown($empty='',$button='&gt;'){
 	global $lang;
 	global $auth;
 
-
-	echo '<form method="post" accept-charset="utf-8">'; #FIXME action
+	echo '<form action="' . DOKU_SCRIPT . '" method="post" accept-charset="utf-8">';
 	echo '<input type="hidden" name="id" value="'.$ID.'" />';
 	if($REV) echo '<input type="hidden" name="rev" value="'.$REV.'" />';
 	echo '<input type="hidden" name="sectok" value="'.getSecurityToken().'" />';
@@ -1274,74 +1174,39 @@ function tpl_actiondropdown($empty='',$button='&gt;'){
 	echo '<option value="">'.$empty.'</option>';
 
 	echo '<optgroup label=" &mdash; ">';
-	// 'edit' - most complicated type, we need to decide on current action
-	if($ACT == 'show' || $ACT == 'search'){
-		if($INFO['writable']){
-			if(!empty($INFO['draft'])) {
-				echo '<option value="edit">'.$lang['btn_draft'].'</option>';
-			} else {
-				if($INFO['exists']){
-					echo '<option value="edit">'.$lang['btn_edit'].'</option>';
-				}else{
-					echo '<option value="edit">'.$lang['btn_create'].'</option>';
-				}
-			}
-		}else if(actionOK('source')) { //pseudo action
-			echo '<option value="edit">'.$lang['btn_source'].'</option>';
-		}
-	}else{
-		echo '<option value="show">'.$lang['btn_show'].'</option>';
-	}
+	$act = tpl_get_action('edit');
+	if($act) echo '<option value="'.$act['params']['do'].'">'.$lang['btn_'.$act['type']].'</option>';
 
-	echo '<option value="revisions">'.$lang['btn_revs'].'</option>';
-	if($INFO['ismanager'] && $REV && $INFO['writable'] && actionOK('revert')){
-		echo '<option value="revert">'.$lang['btn_revert'].'</option>';
-	}
-	echo '<option value="backlink">'.$lang['btn_backlink'].'</option>';
+	$act = tpl_get_action('revisions');
+	if($act) echo '<option value="'.$act['params']['do'].'">'.$lang['btn_'.$act['type']].'</option>';
+
+	$act = tpl_get_action('revert');
+	if($act) echo '<option value="'.$act['params']['do'].'">'.$lang['btn_'.$act['type']].'</option>';
+
+	$act = tpl_get_action('backlink');
+	if($act) echo '<option value="'.$act['params']['do'].'">'.$lang['btn_'.$act['type']].'</option>';
 	echo '</optgroup>';
 
 	echo '<optgroup label=" &mdash; ">';
-	echo '<option value="recent">'.$lang['btn_recent'].'</option>';
-	echo '<option value="index">'.$lang['btn_index'].'</option>';
+	$act = tpl_get_action('recent');
+	if($act) echo '<option value="'.$act['params']['do'].'">'.$lang['btn_'.$act['type']].'</option>';
+
+	$act = tpl_get_action('index');
+	if($act) echo '<option value="'.$act['params']['do'].'">'.$lang['btn_'.$act['type']].'</option>';
 	echo '</optgroup>';
 
 	echo '<optgroup label=" &mdash; ">';
-	if($conf['useacl'] && $auth){
-		if($_SERVER['REMOTE_USER']){
-			echo '<option value="logout">'.$lang['btn_logout'].'</option>';
-		}else{
-			echo '<option value="login">'.$lang['btn_login'].'</option>';
-		}
-	}
+	$act = tpl_get_action('login');
+	if($act) echo '<option value="'.$act['params']['do'].'">'.$lang['btn_'.$act['type']].'</option>';
 
-	if($conf['useacl'] && $auth && $_SERVER['REMOTE_USER'] &&
-	$auth->canDo('Profile') && ($ACT!='profile')){
-		echo '<option value="profile">'.$lang['btn_profile'].'</option>';
-	}
+	$act = tpl_get_action('profile');
+	if($act) echo '<option value="'.$act['params']['do'].'">'.$lang['btn_'.$act['type']].'</option>';
 
-	if($conf['useacl'] && $auth && $ACT == 'show' && $conf['subscribers'] == 1){
-		if($_SERVER['REMOTE_USER']){
-			if($INFO['subscribed']) {
-				echo '<option value="unsubscribe">'.$lang['btn_unsubscribe'].'</option>';
-			} else {
-				echo '<option value="subscribe">'.$lang['btn_subscribe'].'</option>';
-			}
-		}
-	}
+	$act = tpl_get_action('subscribe');
+	if($act) echo '<option value="'.$act['params']['do'].'">'.$lang['btn_'.$act['type']].'</option>';
 
-	if($conf['useacl'] && $auth && $ACT == 'show' && $conf['subscribers'] == 1){
-		if($_SERVER['REMOTE_USER']){
-			if($INFO['subscribedns']) {
-				echo '<option value="unsubscribens">'.$lang['btn_unsubscribens'].'</option>';
-			} else {
-				echo '<option value="subscribens">'.$lang['btn_subscribens'].'</option>';
-			}
-		}
-	}
-
-	if($INFO['ismanager']){
-		echo '<option value="admin">'.$lang['btn_admin'].'</option>';
-	}
+	$act = tpl_get_action('admin');
+	if($act) echo '<option value="'.$act['params']['do'].'">'.$lang['btn_'.$act['type']].'</option>';
 	echo '</optgroup>';
 
 	echo '</select>';
@@ -1369,14 +1234,14 @@ function tpl_license($img='badge',$imgonly=false,$return=false){
 		$src = license_img($img);
 		if($src){
 			$out .= '<a href="'.$lic['url'].'" rel="license"';
-			if($conf['target']['external']) $out .= ' target="'.$conf['target']['external'].'"';
+			if($conf['target']['extern']) $out .= ' target="'.$conf['target']['extern'].'"';
 			$out .= '><img src="'.DOKU_BASE.$src.'" class="medialeft lic'.$img.'" alt="'.$lic['name'].'" /></a> ';
 		}
 	}
 	if(!$imgonly) {
 		$out .= $lang['license'];
 		$out .= '<a href="'.$lic['url'].'" rel="license" class="urlextern"';
-		if(isset($conf['target']['external'])) $out .= ' target="'.$conf['target']['external'].'"';
+		if($conf['target']['extern']) $out .= ' target="'.$conf['target']['extern'].'"';
 		$out .= '>'.$lic['name'].'</a>';
 	}
 	$out .= '</div>';
@@ -1401,6 +1266,90 @@ function tpl_include_page($pageid,$print=true){
 	if(!$print) return $html;
 	echo $html;
 }
+
+/**
+ * Display the subscribe form
+ *
+ * @author Adrian Lang <lang@cosmocode.de>
+ */
+function tpl_subscribe() {
+	global $INFO;
+	global $ID;
+	global $lang;
+	global $conf;
+	$stime_days = $conf['subscribe_time']/60/60/24;
+
+	echo p_locale_xhtml('subscr_form');
+	echo '<h2>' . $lang['subscr_m_current_header'] . '</h2>';
+	echo '<div class="level2">';
+	if ($INFO['subscribed'] === false) {
+		echo '<p>' . $lang['subscr_m_not_subscribed'] . '</p>';
+	} else {
+		echo '<ul>';
+		foreach($INFO['subscribed'] as $sub) {
+			echo '<li><div class="li">';
+			if ($sub['target'] !== $ID) {
+				echo '<code class="ns">'.hsc(prettyprint_id($sub['target'])).'</code>';
+			} else {
+				echo '<code class="page">'.hsc(prettyprint_id($sub['target'])).'</code>';
+			}
+			$sstl = sprintf($lang['subscr_style_'.$sub['style']], $stime_days);
+			if(!$sstl) $sstl = hsc($sub['style']);
+			echo ' ('.$sstl.') ';
+
+			echo '<a href="' . wl($ID,
+			array('do'=>'subscribe',
+                                        'sub_target'=>$sub['target'],
+                                        'sub_style'=>$sub['style'],
+                                        'sub_action'=>'unsubscribe',
+                                        'sectok' => getSecurityToken())) .
+                 '" class="unsubscribe">'.$lang['subscr_m_unsubscribe'] .
+                 '</a></div></li>';
+		}
+		echo '</ul>';
+	}
+	echo '</div>';
+
+	// Add new subscription form
+	echo '<h2>' . $lang['subscr_m_new_header'] . '</h2>';
+	echo '<div class="level2">';
+	$ns = getNS($ID).':';
+	$targets = array(
+	$ID => '<code class="page">'.prettyprint_id($ID).'</code>',
+	$ns => '<code class="ns">'.prettyprint_id($ns).'</code>',
+	);
+	$styles = array(
+            'every'  => $lang['subscr_style_every'],
+            'digest' => sprintf($lang['subscr_style_digest'], $stime_days),
+            'list' => sprintf($lang['subscr_style_list'], $stime_days),
+	);
+
+	$form = new Doku_Form(array('id' => 'subscribe__form'));
+	$form->startFieldset($lang['subscr_m_subscribe']);
+	$form->addRadioSet('sub_target', $targets);
+	$form->startFieldset($lang['subscr_m_receive']);
+	$form->addRadioSet('sub_style', $styles);
+	$form->addHidden('sub_action', 'subscribe');
+	$form->addHidden('do', 'subscribe');
+	$form->addHidden('id', $ID);
+	$form->endFieldset();
+	$form->addElement(form_makeButton('submit', 'subscribe', $lang['subscr_m_subscribe']));
+	html_form('SUBSCRIBE', $form);
+	echo '</div>';
+}
+
+/**
+ * Tries to send already created content right to the browser
+ *
+ * Wraps around ob_flush() and flush()
+ *
+ * @author Andreas Gohr <andi@splitbrain.org>
+ */
+function tpl_flush(){
+	ob_flush();
+	flush();
+}
+
 
 //Setup VIM: ex: et ts=4 enc=utf-8 :
 
