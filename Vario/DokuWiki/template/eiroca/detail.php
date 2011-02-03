@@ -30,7 +30,7 @@ echo "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"" . $conf['lang'] 
   </div>
   <?php if($ERROR){ print $ERROR; }else{ ?>
    <div class="page_img">
-    <div class="img_big"><a href="#" onclick="history.go(-1)"><?php tpl_img(0,0,false,"img_id") ?></a></div>
+    <div class="img_big"><a href="#" onclick="history.go(-1)"><?php tpl_img(0,0,false,array(id=>"img_id")) ?></a></div>
    </div>
    <div class="img_detail">
     <p>&larr; <?php echo $lang['img_backto']?> <?php tpl_pagelink($ID)?></p>

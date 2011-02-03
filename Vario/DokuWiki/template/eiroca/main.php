@@ -27,7 +27,7 @@ echo "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"" . $conf['lang'] 
    <div class="header">
     <div class="logo"><a href="/wiki/" accesskey="h" title="[ALT+H]"><img src="/static/eiroca.png" alt="eIrOcA" width="180" height="35" /></a></div>
     <div class="pagename"><?php global $__name; tpl_link(wl($ID,'do=backlink'),$__name); ?></div>
-    <div class="translate"><?php $translation = &plugin_load('helper','translation'); echo $translation->showTranslations(); ?></div>
+    <div class="translate"><?php $translation_plugin = &plugin_load('syntax','translation'); if ( $translation_plugin ) { if ( !plugin_isdisabled($translation_plugin->getPluginName() ) ) { print $translation_plugin->_showTranslations(); }} ?></div>
    </div>
    <div class="commands">
     <div class="breadcrumbs"><?php ($conf['youarehere'] != 1) ? tpl_breadcrumbs() : tpl_youarehere(); ?></div>
