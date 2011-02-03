@@ -4,23 +4,13 @@
  * @author Enrico Croce & Simona Burzio (staff@eiroca.net)
  * @copyright Copyright (C) 2009-2010 eIrOcA - Enrico Croce & Simona Burzio
  * @license GPL >=3 (http://www.gnu.org/licenses/)
- * @version 1.0.0
+ * @version 1.0.1
  * @link http://www.eiroca.net
  */
 if (!defined('DOKU_INC')) die();
 if (!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN', DOKU_INC.'lib/plugins/');
 require_once (DOKU_PLUGIN.'syntax.php');
 class syntax_plugin_orgapp extends DokuWiki_Syntax_Plugin {
-	function getInfo() {
-		return array (
-			'author'=>'eIrOcA',
-			'email'=>'staff@eiroca.net',
-			'date'=>'2010-04-19',
-			'name'=>'orgapp -- OrgApp Plugin',
-			'url'=>'http://www.eiroca.net/orgapp',
-			'desc'=>'Generate HTML code to integrate OrgApp applet (see http://www.eiroca.net/orgapp).'
-			);
-	}
 	function getType() { return 'disabled';}
 	function getSort() { return 150; }
 	function connectTo($mode) { $this->Lexer->addEntryPattern('<orgapp.*?>(?=.*?</orgapp>)',$mode,'plugin_orgapp'); }
