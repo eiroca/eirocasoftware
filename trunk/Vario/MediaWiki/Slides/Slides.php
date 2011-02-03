@@ -32,11 +32,11 @@ function efSlideRender($sInput, $sParams, $parser=null, $frame=null) {
 	# Presentation ID
 	$conf["id"] = null;
 	# the presentation index page
-	$conf["index"] = ''; 
+	$conf["index"] = '';
 	# prefix for presentation slides
-	$conf["prefix"] = ''; 
+	$conf["prefix"] = '';
 	# set a new font size for the body?
-	$conf["fontsize"] = ''; 
+	$conf["fontsize"] = '';
 	# Navigation bar style
 	$conf["style"] = "background: #ffffe0; border: 1px dashed black; padding: 0.2em 0.2em 0.2em 0.5em; margin: 0.5em 0 1em 0;";
 	# show nav buttons (|< << >> >|)
@@ -54,9 +54,9 @@ function efSlideRender($sInput, $sParams, $parser=null, $frame=null) {
 	$sSmall = '85%';
 	# Parse the parameters
 	foreach ($sParams as $nam => $val) {
-	  if ($val=="false") { $val = false; }
-	  else if ($val=="true") { $val = true; }
-	  $conf[$nam] = $val;
+		if ($val=="false") { $val = false; }
+		else if ($val=="true") { $val = true; }
+		$conf[$nam] = $val;
 	}
 	# It's the correct presentation?
 	if ($sReqID!=null) {
@@ -70,7 +70,7 @@ function efSlideRender($sInput, $sParams, $parser=null, $frame=null) {
 	}
 	# all the entries in the navbar
 	$aLinks = array();
-  # Parse slides
+	# Parse slides
 	$aParams = explode("\n", $sInput);
 	foreach ($aParams as $sCur) {
 		$sCur = trim($sCur);
@@ -121,16 +121,16 @@ function efSlideRender($sInput, $sParams, $parser=null, $frame=null) {
 		else {
 			$iLastL0 = $i;
 			# topic equals current article?
-			if (strcmp($sCurrent, $aTitle[0]) === 0) { 
-			  $iCurL0 = $i; 
-				$iCur = $i; 
-				break; 
+			if (strcmp($sCurrent, $aTitle[0]) === 0) {
+				$iCurL0 = $i;
+				$iCur = $i;
+				break;
 			}
 		}
-  }
+	}
 	#No current item, disable compact mode and do not hide anything
-  $bIndex = ($iCur==-1);
-  if (($bIndex)||($bPreview)) { 
+	$bIndex = ($iCur==-1);
+	if (($bIndex)||($bPreview)) {
 		$conf["compact"]=false;
 		$conf["hidemenu"]=false;
 		$conf["hidefooter"]=false;
@@ -157,18 +157,18 @@ function efSlideRender($sInput, $sParams, $parser=null, $frame=null) {
 			$sLink = preg_replace('/^\*\s*/', '', $sLink);
 		}
 		else {
-  		$bSubtopic = false;
+			$bSubtopic = false;
 			$iFirstSub = 0;
 			$bCurrent=false;
 		}
-    if ($i==$iCurL0) { $bCurrent = true; }
+		if ($i==$iCurL0) { $bCurrent = true; }
 		# Article name|Navbar name|Mouseover
 		$aTitle = _explode($sLink);
 		$sOutL0='';
 		$sOutL1='';
 		if (!$bSubtopic) {
-		  if (($i==$iCur)&&(!$bIndex)) { $sOutL0 = '<b>' . $aTitle[1] . '</b>';	}
-		  else if ($i==$iCurL0) { $sOutL0 = _build_link($sPath, $aLinks[$iCurL0], $param);	}
+			if (($i==$iCur)&&(!$bIndex)) { $sOutL0 = '<b>' . $aTitle[1] . '</b>';	}
+			else if ($i==$iCurL0) { $sOutL0 = _build_link($sPath, $aLinks[$iCurL0], $param);	}
 			else if (!$conf["compact"]) { $sOutL0 = _build_link($sPath, $sLink, $param); }
 		}
 		else {
@@ -185,7 +185,7 @@ function efSlideRender($sInput, $sParams, $parser=null, $frame=null) {
 	$sButtons = '';
 	# only include buttons if not editing the template
 	$bOnFirstPage = ($iCur==0);
-  $bOnLastPage = ($iCur==(count($aLinks)-1));
+	$bOnLastPage = ($iCur==(count($aLinks)-1));
 	if ($conf["showbuttons"]) {
 		if (!$bOnFirstPage) { $sButtons  = _build_link($sPath, $aLinks[0], $param, '|&lt;', 'First page') . '&nbsp;' . _build_link($sPath, $aLinks[$iCur-1], $param, '&lt;&lt;', 'Previous page');  }
 		if (!$bOnLastPage) { $sButtons .= '&nbsp;&nbsp;' . _build_link($sPath, $aLinks[$iCur+1], $param, '&gt;&gt;', 'Next page', ' ') . '&nbsp;' . _build_link($sPath, $aLinks[count($aLinks)-1], $param, '&gt;|', 'Last page'); }
@@ -211,7 +211,7 @@ function efSlideRender($sInput, $sParams, $parser=null, $frame=null) {
 	return "<div id=\"slides-navbar\" style=\"".$conf["style"]."\">$sStyles$sButtons$output</div>";
 }
 function _addIt(&$out, &$new) {
-  return ($new==''? $out : ($out=='' ? $new : $out . '&nbsp;- ' . $new));
+	return ($new==''? $out : ($out=='' ? $new : $out . '&nbsp;- ' . $new));
 }
 function _build_link($sPath, $sTheLink, $param='', $sOptionalText = '', $sOptionalTitle = '', $sAccessKey = '') {
 	# build a link from the prefix and one entry in the link-array
@@ -234,7 +234,7 @@ function _build_link($sPath, $sTheLink, $param='', $sOptionalText = '', $sOption
 	return "<a href=\"$url\"$sTitle$sAccessKey>$sText</a>";
 }
 function _explode($sLink) {
-	# split into the three components (page_name|display name|Mouseover text), with defaults (page_name|page name|)  
+	# split into the three components (page_name|display name|Mouseover text), with defaults (page_name|page name|)
 	$aTitle = explode('|',$sLink);
 	if (count($aTitle) == 0) { $aTitle[0] = $sLink; }
 	$aTitle[0] = preg_replace('/ /', '_', $aTitle[0]);
