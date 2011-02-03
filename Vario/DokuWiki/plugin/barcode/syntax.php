@@ -4,7 +4,7 @@
  * @author Enrico Croce & Simona Burzio (staff@eiroca.net)
  * @copyright Copyright (C) 2009-2010 eIrOcA - Enrico Croce & Simona Burzio
  * @license GPL >=3 (http://www.gnu.org/licenses/)
- * @version 1.0.0
+ * @version 1.0.1
  * @link http://www.eiroca.net
  */
 if (!defined('DOKU_INC')) die();
@@ -28,16 +28,6 @@ class QRProvider {
 	}
 }
 class syntax_plugin_barcode extends DokuWiki_Syntax_Plugin {
-	function getInfo() {
-		return array (
-			'author'=>'eIrOcA',
-			'email'=>'staff@eiroca.net',
-			'date'=>'20010-04-20',
-			'name'=>'barcode -- 2D-Barcode Plugin',
-			'url'=>'http://www.eiroca.net',
-			'desc'=>'2D-Barcode Plugin. Syntax: ~~BARCODE~id=css_id~class=css_class~mode=0~size=M~caption=x~url=http://myurl.com~~'
-			);
-	}
 	function getType() { return 'substition'; }
 	function getPType() { return 'normal'; }
 	function getSort() { return 999; }
@@ -91,7 +81,7 @@ class syntax_plugin_barcode extends DokuWiki_Syntax_Plugin {
 		if ($mode == 'xhtml') {
 			$renderer->doc .= $data;
 			if ($this->getConf('showfooter')) {
-				$lang=$conf["lang"];
+				$lang = $conf["lang"];
 				$fn = DOKU_PLUGIN . "barcode/footer_".$lang.".txt";
 				if (!file_exists($fn)) $fn = DOKU_PLUGIN . 'barcode/footer.txt';
 				$renderer->doc .= @file_get_contents($fn);
