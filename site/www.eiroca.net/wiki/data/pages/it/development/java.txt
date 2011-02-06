@@ -1,0 +1,20 @@
+====== Software scritto in Java ======
+
+===== J2ME =====
+  * [[..:Software:Bubblet|{{ico:eng.png|ENG}}]] [[..:Software:Bubblet|{{ico:ita.png|ITA}}]] [[..:Software:Bubblet|Bubblet]] è un gioco di logica.
+  * [[..:Software:libJ2ME|{{ico:eng.png|ENG}}]] [[..:Software:libJ2ME|libJ2ME]] varie librerie per applicazioni J2ME.
+  * [[..:Software:MeBis|{{ico:eng.png|ENG}}]] [[..:Software:MeBis|{{ico:ita.png|ITA}}]] [[..:Software:MeBis|MeBis]] è un semplice clone di Tetris.
+  * [[..:Software:Mine Sweeper|{{ico:eng.png|ENG}}]] [[..:Software:Mine Sweeper|{{ico:ita.png|ITA}}]] [[..:Software:Mine Sweeper|Mine Sweeper]] è un semplice clone di Mine Sweeper.
+  * [[..:Software:News Reader|{{ico:eng.png|ENG}}]] [[..:Software:News Reader|{{ico:ita.png|ITA}}]] [[..:Software:News Reader|News Reader]] è un lettore di notizie RSS.
+  * [[..:Software:PacMan|{{ico:eng.png|ENG}}]] [[..:Software:PacMan|{{ico:ita.png|ITA}}]] [[..:Software:PacMan|PacMan]] è un semplice clone di Pac Man.
+  * [[..:Software:Reversi|{{ico:eng.png|ENG}}]] [[..:Software:Reversi|{{ico:ita.png|ITA}}]] [[..:Software:Reversi|Reversi]] è un gioco da tavolo anche noto con il nome di Othello.
+  * [[..:Software:Secure SMS|{{ico:eng.png|ENG}}]] [[..:Software:Secure SMS|{{ico:ita.png|ITA}}]] [[..:Software:Secure SMS|Secure SMS]] consente di inviare SMS cifrati tra due device compatibili con J2ME (cellulari, PDA, ...).
+  * [[..:Software:Test Suite|{{ico:eng.png|ENG}}]] [[..:Software:Test Suite|{{ico:ita.png|ITA}}]] [[..:Software:Test Suite|Test Suite]] è una raccolta di tools Java a sopporto degli sviluppatori di applicazioni J2ME. Gli strumenti consento di mostrare le capacità e le limitazioni dei cellulari (o di qualunque dispositivo compatibile con J2ME) al fine di supportare correttamente e al meglio il terminale.
+
+===== J2SE =====
+  * [[..:Software:OrgApp|{{ico:eng.png|ENG}}]] [[..:Software:OrgApp|OrgApp]] è una applicazione Java (library, applet e applicazione) per gestire e disegnare dei semplici organigrammi.
+
+===== J2EE =====
+  * [[..:Software:Assembler Proxy|{{ico:eng.png|ENG}}]] [[..:Software:Assembler Proxy|Assembler Proxy]] è una Servlet Java che consente di "assemblare" parti di pagine che provengono da siti differenti in un'unica pagina (semza usare frame o iframe).
+
+{{tag>Java J2ME J2SE J2EE}}

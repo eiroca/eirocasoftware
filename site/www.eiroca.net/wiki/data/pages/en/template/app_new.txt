@@ -1,0 +1,25 @@
+====== <label Name>Name</label> ======
+
+===== Status =====
+<label Status>Status</label>
+
+===== Description =====
+<label Description>Description</label>
+
+===== Download =====
+<embed en:template:sf>
+  <label name><label Repository>Repository</label></label>
+  <label ID></label>
+</embed>
+
+===== Metrics =====
+[[en:Development:metrics#<label MetricID>MetricID</label>|Software metrics]].
+
+===== Programming Language =====
+<label Language>Language</label>
+
+====== Licence & Copyright ======
+<embed en:template:GPL3>
+  <label author><label Copyright>Copyright</label></label>
+  <label post></label>
+</embed>

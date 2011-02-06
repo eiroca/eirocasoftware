@@ -1,0 +1,102 @@
+Torna alla pagina con tutti i report della [[..:handset_report|Test Suite]].
+
+^  SonyEricsson K800  ^^^^
+^TestSuite|//Version//||<nowiki>1.0.5</nowiki>|
+^System|//Platform//|Name|<nowiki>SonyEricssonK800</nowiki>|
+^ ::: |//Memory//|Total memory|5177344|
+^ ::: | ::: |Free memory|2777792|
+^Environment|//CLDC//|Configuration|<nowiki>CDLC1.1</nowiki>|
+^ ::: | ::: |Char encoding|<nowiki>ISO-8859-1</nowiki>|
+^ ::: |//MIDP//|JSR-118 (MIDP2.x) supported|true|
+^ ::: | ::: |Profiles|<nowiki>MIDP2.0</nowiki>|
+^ ::: | ::: |Locale|<nowiki>en_US</nowiki>|
+^Graphics|//Screen//|Screen (full) height|300|
+^ ::: | ::: |Screen (full) width|240|
+^ ::: | ::: |Screen (normal) height|300|
+^ ::: | ::: |Screen (normal) width|240|
+^ ::: | ::: |Is Color|true|
+^ ::: | ::: |Color Depth|65536|
+^ ::: | ::: |Alpha Levels|256|
+^ ::: | ::: |Screen buffered|true|
+^ ::: |//Canvas//|Font Default Height|18|
+^ ::: | ::: |Font Small Height|18|
+^ ::: | ::: |Font Small Bold Height|18|
+^ ::: | ::: |Font Medium Height|20|
+^ ::: | ::: |Font Medium Bold Height|20|
+^ ::: | ::: |Font Large Height|23|
+^ ::: | ::: |Font Large Bold Height|23|
+^ ::: |//Mobile Media//|JSR-135 MMAPI supported|true|
+^ ::: | ::: |JSR-135 Video supported|true|
+^ ::: | ::: |Mobile Media version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |Supports mixing|true|
+^ ::: | ::: |Audio capture|false|
+^ ::: | ::: |Video capture|false|
+^ ::: | ::: |Supports recording|false|
+^ ::: |//Multimedia//|Device-tone|<nowiki>audio/midi audio/x-midi audio/x-wav audio/wav audio/x-tone-seq audio/amr</nowiki>|
+^ ::: |//3D Graphics//|JSR-184 supported|true|
+^ ::: | ::: |M3G version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |3D - coreID|<nowiki>@KEmulator LWJ-OpenGL-M3G @liang.wu</nowiki>|
+^ ::: | ::: |3D - max Lights|8|
+^ ::: | ::: |3D - max Sprite Crop Dimension|1024|
+^ ::: | ::: |3D - max Texture Dimension|1024|
+^ ::: | ::: |3D - max Transforms Per Vertex|1000|
+^ ::: | ::: |3D - max Viewport Dimension|2048|
+^ ::: | ::: |3D - max Viewport Height|2048|
+^ ::: | ::: |3D - max Viewport Width|2048|
+^ ::: | ::: |3D - num Texture Units|10|
+^ ::: | ::: |3D - support Antialiasing|true|
+^ ::: | ::: |3D - support Dithering|true|
+^ ::: | ::: |3D - support Local Camera Lighting|true|
+^ ::: | ::: |3D - support Mipmapping|true|
+^ ::: | ::: |3D - support Perspective Correction|true|
+^ ::: | ::: |3D - support TrueColor|true|
+^Comms|//Wireless Messaging//|JSR-120 (Messaging 1.1) supported|true|
+^ ::: | ::: |JSR-205 (Messaging 2.0) supported|true|
+^ ::: | ::: |MMSC Address|<nowiki>http://mmsc</nowiki>|
+^ ::: | ::: |SMSC Address|9|
+^ ::: |//Bluetooth//|JSR-082 Bluetooth supported|false|
+^ ::: | ::: |JSR-082 OBEX supported|false|
+^ ::: |//SIP//|JSR-180 supported|false|
+^Personal Information|//PIM & File//|JSR-075 Filesystem supported|true|
+^ ::: | ::: |JSR-075 PIM supported|false|
+^ ::: | ::: |PIM version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |FileConnection version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |File Separator|<nowiki>\\</nowiki>|
+^ ::: |//Location//|JSR-179 supported|false|
+^Application connectivity|//Web Services//|JSR-172 supported|true|
+^Security & Commerce|//Security & Trust Services//|JSR-177 supported|true|
+^API|//Other//|Motorola - RC|false|
+^ ::: | ::: |Nokia - Graphics|true|
+^ ::: | ::: |Nokia - Sound|true|
+^ ::: | ::: |Nokia - UI|true|
+^ ::: | ::: |Samsung - Acceleration|false|
+^ ::: | ::: |Samsung - Vibration|true|
+^ ::: | ::: |Siemens - graphics|false|
+^ ::: | ::: |Siemens - UI|false|
+^Platform|//Control//|Has key-held events|true|
+^ ::: | ::: |Has motion events|true|
+^ ::: | ::: |Has pointer events|true|
+^ ::: |//Keyboard//|Key DOWN|<nowiki>Down</nowiki>|
+^ ::: | ::: |Key FIRE|<nowiki>Select</nowiki>|
+^ ::: | ::: |Key GAME A|1|
+^ ::: | ::: |Key GAME B|3|
+^ ::: | ::: |Key GAME C|7|
+^ ::: | ::: |Key GAME D|9|
+^ ::: | ::: |Key LEFT|<nowiki>Left</nowiki>|
+^ ::: | ::: |Key RIGHT|<nowiki>Right</nowiki>|
+^ ::: | ::: |Key UP|<nowiki>Up</nowiki>|
+^ ::: |//Settings//|Available Time Zone|<nowiki>Etc/GMT 12 Etc/GMT 11 MIT Pacific/Apia Pacific/Midway Pacific/Niue Pacific/Pago_Pago Pacific/Samoa US/Samoa America/Adak America/Atka Etc/GMT 10 HST Pacific/Fakaofo Pacific/Honolulu Pacific/Johnston Pacific/Rarotonga Pacific/Tahiti SystemV/HST10 US/Aleutian US/Hawaii Pacific/Marquesas AST America/Anchorage America/Juneau America/Nome America/Yakutat Etc/GMT 9 Pacific/Gambier SystemV/YST9 SystemV/YST9YDT US/Alaska America/Dawson America/Ensenada America/Los_Angeles America/Tijuana America/Vancouver America/Whitehorse Canada/Pacific Canada/Yukon Etc/GMT 8 Mexico/BajaNorte PST PST8PDT Pacific/Pitcairn SystemV/PST8 SystemV/PST8PDT US/Pacific US/Pacific-New America/Boise America/Cambridge_Bay America/Chihuahua America/Dawson_Creek America/Denver America/Edmonton America/Hermosillo America/Inuvik America/Mazatlan America/Phoenix America/Shiprock America/Yellowknife Canada/Mountain Etc/GMT 7 MST MST7MDT Mexico/BajaSur Navajo PNT SystemV/MST7 SystemV/MST7MDT US/Arizona US/Mountain America/Belize America/Cancun America/Chicago America/Costa_Rica America/El_Salvador America/Guatemala America/Indiana/Knox America/Indiana/Petersburg America/Indiana/Vincennes America/Knox_IN America/Managua America/Menominee America/Merida America/Mexico_City America/Monterrey America/North_Dakota/Center America/North_Dakota/New_Salem America/Rainy_River America/Rankin_Inlet America/Regina America/Swift_Current America/Tegucigalpa America/Winnipeg CST CST6CDT Canada/Central Canada/East-Saskatchewan Canada/Saskatchewan Chile/EasterIsland Etc/GMT 6 Mexico/General Pacific/Easter Pacific/Galapagos SystemV/CST6 SystemV/CST6CDT US/Central US/Indiana-Starke America/Atikokan America/Bogota America/Cayman America/Coral_Harbour America/Detroit America/Eirunepe America/Fort_Wayne America/Grand_Turk America/Guayaquil America/Havana America/Indiana/Indianapolis America/Indiana/Marengo America/Indiana/Vevay America/Indianapolis America/Iqaluit America/Jamaica America/Kentucky/Louisville America/Kentucky/Monticello America/Lima America/Louisville America/Montreal America/Nassau America/New_York America/Nipigon America/Panama America/Pangnirtung America/Port-au-Prince America/Porto_Acre America/Rio_Branco America/Thunder_Bay America/Toronto Brazil/Acre Canada/Eastern Cuba EST EST5EDT Etc/GMT 5 IET Jamaica SystemV/EST5 SystemV/EST5EDT US/East-Indiana US/Eastern US/Michigan America/Anguilla America/Antigua America/Aruba America/Asuncion America/Barbados America/Blanc-Sablon America/Boa_Vista America/Campo_Grande America/Caracas America/Cuiaba America/Curacao America/Dominica America/Glace_Bay America/Goose_Bay America/Grenada America/Guadeloupe America/Guyana America/Halifax America/La_Paz America/Manaus America/Martinique America/Moncton America/Montserrat America/Port_of_Spain America/Porto_Velho America/Puerto_Rico America/Santiago America/Santo_Domingo America/St_Kitts America/St_Lucia America/St_Thomas America/St_Vincent America/Thule America/Tortola America/Virgin Antarctica/Palmer Atlantic/Bermuda Atlantic/Stanley Brazil/West Canada/Atlantic Chile/Continental Etc/GMT 4 PRT SystemV/AST4 SystemV/AST4ADT America/St_Johns CNT Canada/Newfoundland AGT America/Araguaina America/Argentina/Buenos_Aires America/Argentina/Catamarca America/Argentina/ComodRivadavia America/Argentina/Cordoba America/Argentina/Jujuy America/Argentina/La_Rioja America/Argentina/Mendoza America/Argentina/Rio_Gallegos America/Argentina/San_Juan America/Argentina/Tucuman America/Argentina/Ushuaia America/Bahia America/Belem America/Buenos_Aires America/Catamarca America/Cayenne America/Cordoba America/Fortaleza America/Godthab America/Jujuy America/Maceio America/Mendoza America/Miquelon America/Montevideo America/Paramaribo America/Recife America/Rosario America/Sao_Paulo Antarctica/Rothera BET Brazil/East Etc/GMT 3 America/Noronha Atlantic/South_Georgia Brazil/DeNoronha Etc/GMT 2 America/Scoresbysund Atlantic/Azores Atlantic/Cape_Verde Etc/GMT 1 Africa/Abidjan Africa/Accra Africa/Bamako Africa/Banjul Africa/Bissau Africa/Casablanca Africa/Conakry Africa/Dakar Africa/El_Aaiun Africa/Freetown Africa/Lome Africa/Monrovia Africa/Nouakchott Africa/Ouagadougou Africa/Sao_Tome Africa/Timbuktu America/Danmarkshavn Atlantic/Canary Atlantic/Faeroe Atlantic/Faroe Atlantic/Madeira Atlantic/Reykjavik Atlantic/St_Helena Eire Etc/GMT Etc/GMT 0 Etc/GMT-0 Etc/GMT0 Etc/Greenwich Etc/UCT Etc/UTC Etc/Universal Etc/Zulu Europe/Belfast Europe/Dublin Europe/Guernsey Europe/Isle_of_Man Europe/Jersey Europe/Lisbon Europe/London GB GB-Eire GMT GMT0 Greenwich Iceland Portugal UCT UTC Universal WET Zulu Africa/Algiers Africa/Bangui Africa/Brazzaville Africa/Ceuta Africa/Douala Africa/Kinshasa Africa/Lagos Africa/Libreville Africa/Luanda Africa/Malabo Africa/Ndjamena Africa/Niamey Africa/Porto-Novo Africa/Tunis Africa/Windhoek Arctic/Longyearbyen Atlantic/Jan_Mayen CET ECT Etc/GMT-1 Europe/Amsterdam Europe/Andorra Europe/Belgrade Europe/Berlin Europe/Bratislava Europe/Brussels Europe/Budapest Europe/Copenhagen Europe/Gibraltar Europe/Ljubljana Europe/Luxembourg Europe/Madrid Europe/Malta Europe/Monaco Europe/Oslo Europe/Paris Europe/Podgorica Europe/Prague Europe/Rome Europe/San_Marino Europe/Sarajevo Europe/Skopje Europe/Stockholm Europe/Tirane Europe/Vaduz Europe/Vatican Europe/Vienna Europe/Warsaw Europe/Zagreb Europe/Zurich MET Poland ART Africa/Blantyre Africa/Bujumbura Africa/Cairo Africa/Gaborone Africa/Harare Africa/Johannesburg Africa/Kigali Africa/Lubumbashi Africa/Lusaka Africa/Maputo Africa/Maseru Africa/Mbabane Africa/Tripoli Asia/Amman Asia/Beirut Asia/Damascus Asia/Gaza Asia/Istanbul Asia/Jerusalem Asia/Nicosia Asia/Tel_Aviv CAT EET Egypt Etc/GMT-2 Europe/Athens Europe/Bucharest Europe/Chisinau Europe/Helsinki Europe/Istanbul Europe/Kaliningrad Europe/Kiev Europe/Mariehamn Europe/Minsk Europe/Nicosia Europe/Riga Europe/Simferopol Europe/Sofia Europe/Tallinn Europe/Tiraspol Europe/Uzhgorod Europe/Vilnius Europe/Zaporozhye Israel Libya Turkey Africa/Addis_Ababa Africa/Asmara Africa/Asmera Africa/Dar_es_Salaam Africa/Djibouti Africa/Kampala Africa/Khartoum Africa/Mogadishu Africa/Nairobi Antarctica/Syowa Asia/Aden Asia/Baghdad Asia/Bahrain Asia/Kuwait Asia/Qatar Asia/Riyadh EAT Etc/GMT-3 Europe/Moscow Europe/Volgograd Indian/Antananarivo Indian/Comoro Indian/Mayotte W-SU Asia/Riyadh87 Asia/Riyadh88 Asia/Riyadh89 Mideast/Riyadh87 Mideast/Riyadh88 Mideast/Riyadh89 Asia/Tehran Iran Asia/Baku Asia/Dubai Asia/Muscat Asia/Tbilisi Asia/Yerevan Etc/GMT-4 Europe/Samara Indian/Mahe Indian/Mauritius Indian/Reunion NET Asia/Kabul Asia/Aqtau Asia/Aqtobe Asia/Ashgabat Asia/Ashkhabad Asia/Dushanbe Asia/Karachi Asia/Oral Asia/Samarkand Asia/Tashkent Asia/Yekaterinburg Etc/GMT-5 Indian/Kerguelen Indian/Maldives PLT Asia/Calcutta Asia/Colombo IST Asia/Katmandu Antarctica/Mawson Antarctica/Vostok Asia/Almaty Asia/Bishkek Asia/Dacca Asia/Dhaka Asia/Novosibirsk Asia/Omsk Asia/Qyzylorda Asia/Thimbu Asia/Thimphu BST Etc/GMT-6 Indian/Chagos Asia/Rangoon Indian/Cocos Antarctica/Davis Asia/Bangkok Asia/Hovd Asia/Jakarta Asia/Krasnoyarsk Asia/Phnom_Penh Asia/Pontianak Asia/Saigon Asia/Vientiane Etc/GMT-7 Indian/Christmas VST Antarctica/Casey Asia/Brunei Asia/Chongqing Asia/Chungking Asia/Harbin Asia/Hong_Kong Asia/Irkutsk Asia/Kashgar Asia/Kuala_Lumpur Asia/Kuching Asia/Macao Asia/Macau Asia/Makassar Asia/Manila Asia/Shanghai Asia/Singapore Asia/Taipei Asia/Ujung_Pandang Asia/Ulaanbaatar Asia/Ulan_Bator Asia/Urumqi Australia/Perth Australia/West CTT Etc/GMT-8 Hongkong PRC Singapore Australia/Eucla Asia/Choibalsan Asia/Dili Asia/Jayapura Asia/Pyongyang Asia/Seoul Asia/Tokyo Asia/Yakutsk Etc/GMT-9 JST Japan Pacific/Palau ROK ACT Australia/Adelaide Australia/Broken_Hill Australia/Darwin Australia/North Australia/South Australia/Yancowinna AET Antarctica/DumontDUrville Asia/Sakhalin Asia/Vladivostok Australia/ACT Australia/Brisbane Australia/Canberra Australia/Currie Australia/Hobart Australia/Lindeman Australia/Melbourne Australia/NSW Australia/Queensland Australia/Sydney Australia/Tasmania Australia/Victoria Etc/GMT-10 Pacific/Guam Pacific/Port_Moresby Pacific/Saipan Pacific/Truk Pacific/Yap Australia/LHI Australia/Lord_Howe Asia/Magadan Etc/GMT-11 Pacific/Efate Pacific/Guadalcanal Pacific/Kosrae Pacific/Noumea Pacific/Ponape SST Pacific/Norfolk Antarctica/McMurdo Antarctica/South_Pole Asia/Anadyr Asia/Kamchatka Etc/GMT-12 Kwajalein NST NZ Pacific/Auckland Pacific/Fiji Pacific/Funafuti Pacific/Kwajalein Pacific/Majuro Pacific/Nauru Pacific/Tarawa Pacific/Wake Pacific/Wallis NZ-CHAT Pacific/Chatham Etc/GMT-13 Pacific/Enderbury Pacific/Tongatapu Etc/GMT-14 Pacific/Kiritimati</nowiki>|
+^ ::: | ::: |Default Time Zone|<nowiki>Asia/Shanghai</nowiki>|
+^Benchmark|//Math//|Math Add array|62|
+^ ::: | ::: |Math Add local|15|
+^ ::: | ::: |Math Add instance|31|
+^ ::: | ::: |Math Add static|16|
+^ ::: | ::: |Math Div array|390|
+^ ::: | ::: |Math Div local|454|
+^ ::: | ::: |Math Div instance|343|
+^ ::: | ::: |Math Div static|297|
+^ ::: | ::: |Math Mul array|78|
+^ ::: | ::: |Math Mul local|31|
+^ ::: | ::: |Math Mul instance|79|
+^ ::: | ::: |Math Mul static|31|
+^ ::: |//Timer//|Sleep precision|16|

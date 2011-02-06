@@ -1,0 +1,97 @@
+Torna alla pagina con tutti i report della [[..:handset_report|Test Suite]].
+
+^  LG-KP500  ^^^^
+^TestSuite|//Version//||<nowiki>1.0.5</nowiki>|
+^System|//Platform//|Name|<nowiki>LG-KP500 Teleca/WAP2.0 MIDP-2.0/CLDC-1.1</nowiki>|
+^ ::: |//Memory//|Total memory|5242880|
+^ ::: | ::: |Free memory|4222296|
+^Environment|//CLDC//|Configuration|<nowiki>CLDC-1.1</nowiki>|
+^ ::: | ::: |Char encoding|<nowiki>UTF_8</nowiki>|
+^ ::: |//MIDP//|JSR-118 (MIDP2.x) supported|true|
+^ ::: | ::: |Profiles|<nowiki>MIDP-2.1</nowiki>|
+^ ::: | ::: |Locale|<nowiki>cs-CZ</nowiki>|
+^ ::: | ::: |Serial ports|<nowiki>COM1</nowiki>|
+^Graphics|//Screen//|Screen (full) height|298|
+^ ::: | ::: |Screen (full) width|240|
+^ ::: | ::: |Screen (normal) height|258|
+^ ::: | ::: |Screen (normal) width|240|
+^ ::: | ::: |Is Color|true|
+^ ::: | ::: |Color Depth|65536|
+^ ::: | ::: |Alpha Levels|256|
+^ ::: | ::: |Screen buffered|true|
+^ ::: |//Canvas//|Font Default Height|24|
+^ ::: | ::: |Font Small Height|22|
+^ ::: | ::: |Font Small Bold Height|20|
+^ ::: | ::: |Font Medium Height|24|
+^ ::: | ::: |Font Medium Bold Height|22|
+^ ::: | ::: |Font Large Height|26|
+^ ::: | ::: |Font Large Bold Height|24|
+^ ::: |//Mobile Media//|JSR-135 MMAPI supported|true|
+^ ::: | ::: |JSR-135 Video supported|true|
+^ ::: | ::: |Mobile Media version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |Supports mixing|false|
+^ ::: | ::: |Audio capture|false|
+^ ::: | ::: |Video capture|false|
+^ ::: | ::: |Supports recording|false|
+^ ::: | ::: |Video snapshot encodings|jpeg|
+^ ::: |//3D Graphics//|JSR-184 supported|true|
+^ ::: | ::: |M3G version|<nowiki>1.1</nowiki>|
+^ ::: |//SVG//|M2G version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |SVG version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |SVG profile|<nowiki>tiny</nowiki>|
+^Comms|//Wireless Messaging//|JSR-120 (Messaging 1.1) supported|true|
+^ ::: | ::: |JSR-205 (Messaging 2.0) supported|true|
+^ ::: | ::: |MMSC Address|<nowiki>http://mms</nowiki>|
+^ ::: | ::: |SMSC Address|420608005681|
+^ ::: |//Bluetooth//|JSR-082 Bluetooth supported|false|
+^ ::: | ::: |JSR-082 OBEX supported|false|
+^ ::: |//SIP//|JSR-180 supported|false|
+^Personal Information|//PIM & File//|JSR-075 Filesystem supported|true|
+^ ::: | ::: |JSR-075 PIM supported|true|
+^ ::: | ::: |PIM version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |FileConnection version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |File Separator|<nowiki>/</nowiki>|
+^ ::: | ::: |Directory of photos name|<nowiki>Obrázky</nowiki>|
+^ ::: | ::: |Directory of photos path|<nowiki>file:///Images/</nowiki>|
+^ ::: | ::: |Directory of videos name|<nowiki>Video</nowiki>|
+^ ::: | ::: |Directory of videos path|<nowiki>file:///Videos/</nowiki>|
+^ ::: | ::: |Directory of graphics name|<nowiki>Obrázky</nowiki>|
+^ ::: | ::: |Directory of graphics path|<nowiki>file:///Images/</nowiki>|
+^ ::: | ::: |Directory of tones name|<nowiki>Zvuky</nowiki>|
+^ ::: | ::: |Directory of tones path|<nowiki>file:///Sounds/</nowiki>|
+^ ::: | ::: |Directory of music name|<nowiki>Zvuky</nowiki>|
+^ ::: | ::: |Directory of music path|<nowiki>file:///Sounds/</nowiki>|
+^ ::: | ::: |Directory of recordings name|<nowiki>Video</nowiki>|
+^ ::: | ::: |Directory of recordings path|<nowiki>file:///Videos/</nowiki>|
+^ ::: | ::: |Directory of private name|<nowiki>Soukromé</nowiki>|
+^ ::: | ::: |Directory of private path|<nowiki>file:///Private/</nowiki>|
+^ ::: | ::: |Directory of memorycard name|<nowiki>Karta</nowiki>|
+^ ::: | ::: |Directory of memorycard path|<nowiki>file:///Card/</nowiki>|
+^ ::: | ::: |Directory of roots names|<nowiki>Obrázky;Video;Zvuky;Ostatní;Java/zvuk;Soukromé;Karta</nowiki>|
+^ ::: |//Location//|JSR-179 supported|false|
+^Application connectivity|//Web Services//|JSR-172 supported|false|
+^ ::: |//Content Handler//|Content Handler version|<nowiki>1.0</nowiki>|
+^Security & Commerce|//Security & Trust Services//|JSR-177 supported|false|
+^API|//Other//|Motorola - RC|false|
+^ ::: | ::: |Nokia - Graphics|true|
+^ ::: | ::: |Nokia - Sound|true|
+^ ::: | ::: |Nokia - UI|true|
+^ ::: | ::: |Samsung - Acceleration|false|
+^ ::: | ::: |Samsung - Vibration|false|
+^ ::: | ::: |Siemens - graphics|false|
+^ ::: | ::: |Siemens - UI|false|
+^ ::: | ::: |JTWI version|<nowiki>1.0</nowiki>|
+^Platform|//Control//|Has key-held events|true|
+^ ::: | ::: |Has motion events|true|
+^ ::: | ::: |Has pointer events|true|
+^ ::: |//Keyboard//|Key DOWN|<nowiki>DOWN</nowiki>|
+^ ::: | ::: |Key FIRE|<nowiki>SELECT</nowiki>|
+^ ::: | ::: |Key GAME A|7|
+^ ::: | ::: |Key GAME B|9|
+^ ::: | ::: |Key GAME C|<nowiki>*</nowiki>|
+^ ::: | ::: |Key GAME D|<nowiki>#</nowiki>|
+^ ::: | ::: |Key LEFT|<nowiki>LEFT</nowiki>|
+^ ::: | ::: |Key RIGHT|<nowiki>RIGHT</nowiki>|
+^ ::: | ::: |Key UP|<nowiki>UP</nowiki>|
+^ ::: |//Settings//|Available Time Zone|GMT UTC GMT:0 ... |
+^ ::: | ::: |Default Time Zone|<nowiki>GMT 10:00</nowiki>|

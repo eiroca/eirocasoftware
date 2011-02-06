@@ -1,0 +1,23 @@
+====== Software scritto in Pascal ======
+  * [[..:Software:Agents|{{ico:eng.png|ENG}}]] [[..:Software:Agents|Agents]] Un agente è un pezzo di software in grado di funzionare in un ambiente dinamico.
+  * [[..:Software:Apple2 Graphic|{{ico:eng.png|ENG}}]] [[..:Software:Apple2 Graphic|Apple][ Graphic]] è un programma (e delle librerie di programmazione) per disegnare immagini nei vecchi formati supportati dall'Apple ][. Sono supportati i formati: HGR, DHGR, il formato $C1 dell'Apple 2 ed inotre il formato “shape”. Le immagini possono essere esportate nel formato BMP.
+  * [[..:Software:Artik |{{ico:ita.png|ITA}}]] [[..:Software:Artik|Artik]] Gestione articoli.
+  * [[..:Software:Bioritmi|{{ico:ita.png|ITA}}]] [[..:Software:Bioritmi|Bioritmi]] Bioritmi e affinità.
+  * [[..:Software:ConTab|{{ico:ita.png|ITA}}]] [[..:Software:ConTab|ConTab]] Contabilità generale.
+  * [[..:Software:ConTatti|{{ico:ita.png|ITA}}]] [[..:Software:ConTatti|Con Tatti]] è una versione informatizzata della rubrica.
+  * [[..:Software:Delphi Library|{{ico:eng.png|ENG}}]] [[..:Software:Delphi Library|Delphi Library]] Varie liberie per Delphi.
+  * [[..:Software:eANN|{{ico:eng.png|ENG}}]] [[..:Software:eANN|eANN]] è un'implementazione di diverse tiplogie di reti neurali scritte con un codice OOP volutamente semplice e chiaro. È anche presente una shell grafica alle principali operazioni eseguibili con una rete neurale.
+  * [[..:Software:eFractals|{{ico:eng.png|ENG}}]] [[..:Software:eFractals|eFractals]] è un programma (e delle librerie di programmazione) per disegnare frattali. Il programma consente di disegnare alberi, terreni, frattali DLA, …
+  * [[..:Software:eicShell|{{ico:ita.png|ITA}}]] [[..:Software:eicShell|eicShell]] Shell di coordimaneto applicazioni.
+  * [[..:Software:eLib|{{ico:eng.png|ENG}}]] [[..:Software:eLib|eLib]]raccolta di componenti e librerie Delphi. Include: Matrici, Operazioni matematiche sulle matrici, librerie matematiche e statistiche, gestione CSV, URL, contatori, gestione di directory e file, gestione file/string/…, progress bar, …
+  * [[..:Software:eMelody|{{ico:eng.png|ENG}}]] [[..:Software:eMelody|eMelody]] Alcuni strumenti per gestire il vecchio formato delle suonerie del Motorola L35.
+  * [[..:Software:eUtilities|{{ico:eng.png|ENG}}]] [[..:Software:eUtilities|eUtilities]] è una raccolta di semplici strumenti a linea di comando.
+  * [[..:Software:Mutui|{{ico:ita.png|ITA}}]] [[..:Software:Mutui|Mutui]] Piano ammortamento mutui.
+  * [[..:Software:OldNN|{{ico:eng.png|ENG}}]] [[..:Software:OldNN|OldNN]] vecchio software per reti neurali, surclassato da [[..:Software:eANN|eANN]].
+  * [[..:Software:ProDiskGUI|{{ico:eng.png|ENG}}]] [[..:Software:ProDiskGUI|ProDiskGUI]] shell grafica importa/esporta file da Windows a immagini di HD ProDos usati dagli emulatori di Apple2 come ad esempio ApplePC.
+  * [[..:Software:ProDisk|{{ico:eng.png|ENG}}]] [[..:Software:ProDisk|ProDisk]] importa/esporta file da Windows a immagini di HD ProDos usati dagli emulatori di Apple2 come ad esempio ApplePC.
+  * [[..:Software:TabaC|{{ico:ita.png|ITA}}]] [[..:Software:TabaC|TabaC]] Gestione magazzino tabacchi.
+  * [[..:Software:WinCorp|{{ico:eng.png|ENG}}]] [[..:Software:WinCorp|WinCorp]] un piccolo gioco di simulazione di affari.
+  * [[..:Software:WURFL2PHP|{{ico:eng.png|ENG}}]] [[..:Software:WURFL2PHP|WURFL2PHP]] converte un file wurfl.xml in un insieme di classi PHP. Queste classi consentono di gestire molto più rapidamente la device reconigtion e richiedono molta meno memoria che parsificare ad ogni richiesta il file xml. Non è richiesto nessun database, ma è richiesto il framework [[..:Software:EPS|EPS]].
+
+{{tag>Pascal Delphi}}

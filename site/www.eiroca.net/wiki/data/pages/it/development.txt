@@ -1,0 +1,28 @@
+====== Programmazione ======
+Strumenti di programmazione e librerie sviluppate e mantenute da eIrOcA. 
+
+===== Librerie software =====
+{{ home:lib.png|Library}}
+  * [[.:Software:eANN|{{ico:eng.png|ENG}}]] [[.:Software:eANN|eANN]] è un'implementazione di diverse tiplogie di reti neurali scritte con un codice OOP volutamente semplice e chiaro. È anche presente una shell grafica alle principali operazioni eseguibili con una rete neurale.
+  * [[.:Software:libJ2ME|{{ico:eng.png|ENG}}]] [[.:Software:libJ2ME|libJ2ME]] varie librerie per applicazioni J2ME.
+  * [[.:Software:eLib|{{ico:eng.png|ENG}}]] [[.:Software:eLib|eLib]] raccolta di componenti e librerie Delphi. Include: Matrici, Operazioni matematiche sulle matrici, librerie matematiche e statistiche, gestione CSV, URL, contatori, gestione di directory e file, gestione file/string/..., progress bar, ...
+  * [[.:Software:Delphi Library|{{ico:eng.png|ENG}}]] [[.:Software:Delphi Library|Delphi Library]] Varie liberie per Delphi.
+
+===== Strumenti di programmazione =====
+{{ home:tools.png|Tools}}
+  * [[.:Software:Test Suite|{{ico:eng.png|ENG}}]] [[.:Software:Test Suite|{{ico:ita.png|ITA}}]] [[.:Software:Test Suite|Test Suite]] è una raccolta di tools Java a sopporto degli sviluppatori di applicazioni J2ME. Gli strumenti consento di mostrare le capacità e le limitazioni dei cellulari (o di qualunque dispositivo compatibile con J2ME) al fine di supportare correttamente e al meglio il terminale.
+  * [[.:Software:WURFL2PHP|{{ico:eng.png|ENG}}]] [[.:Software:WURFL2PHP|WURFL2PHP]] converte un file wurfl.xml in un insieme di classi PHP. Queste classi consentono di gestire molto più rapidamente la device reconigtion e richiedono molta meno memoria che parsificare ad ogni richiesta il file xml. Non è richiesto nessun database, ma è richiesto il framework [[it:Software:EPS|EPS]].
+
+===== Software =====
+Elenco delle applicazioni sviluppate utilizzando:
+  * [[.:Development:Pascal|Delphi & FreePascal]]
+  * [[.:Development:PHP   |PHP]]
+  * [[.:Development:Java  |Java]]
+  * [[.:Development:CSharp|C#]]
+
+===== Miscellanea =====
+  * [[.:Development:metrics|Metriche]] delle applicazioni sviluppate da eIrOcA (by Ohloh).
+  * [[.:Development:Technology cross]] è un modello per comparare software o tecnologie.
+  * [[.:Development:Handset Report|Report]] di terminali ottenuti con [[.:software:Test Suite|MobileSuite - Test Suite]].
+
+{{tag>Sviluppo Programmazione}}

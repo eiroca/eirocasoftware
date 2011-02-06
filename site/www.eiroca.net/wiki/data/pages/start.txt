@@ -1,0 +1,16 @@
+Questa è una **pagina**
+((a))
+
+:-) ⊕
+ --- //[[eiroca@vodafone.it|eIrOcA]] 2009/11/26 21:10//
+
+[[pagina]] 
+
+[[en:pippo]]
+
+
+[[sez:pluto]]
+
+{{rss>http://slashdot.org/index.rss 50 author date 1h }}
+
+{{rss>http://slashdot.org/index.rss 50 author date 1h }}

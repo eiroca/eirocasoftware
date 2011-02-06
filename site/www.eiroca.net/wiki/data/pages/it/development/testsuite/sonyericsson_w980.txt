@@ -1,0 +1,159 @@
+Torna alla pagina con tutti i report della [[..:handset_report|Test Suite]].
+
+^  SonyEricsson W980  ^^^^
+^TestSuite|//Version//||<nowiki>1.0.5</nowiki>|
+^System|//Platform//|Name|<nowiki>SonyEricssonW980/R3EG004</nowiki>|
+^ ::: | ::: |Platform Type|true|
+^ ::: |//IMEI//|IMEI|true|
+^ ::: |//Memory//|Total memory|1048576|
+^ ::: | ::: |Free memory|828544|
+^Environment|//CLDC//|Configuration|<nowiki>CLDC-1.1</nowiki>|
+^ ::: | ::: |Char encoding|<nowiki>ISO-8859-1</nowiki>|
+^ ::: |//MIDP//|JSR-118 (MIDP2.x) supported|true|
+^ ::: | ::: |Profiles|<nowiki>MIDP-2.1</nowiki>|
+^ ::: | ::: |Locale|<nowiki>zh-CN</nowiki>|
+^ ::: | ::: |Serial ports|<nowiki>USB1</nowiki>|
+^ ::: |//Mobile i18n//|i18n version|<nowiki>1.0</nowiki>|
+^Graphics|//Screen//|Screen (full) height|320|
+^ ::: | ::: |Screen (full) width|240|
+^ ::: | ::: |Screen (normal) height|266|
+^ ::: | ::: |Screen (normal) width|240|
+^ ::: | ::: |Is Color|true|
+^ ::: | ::: |Color Depth|65536|
+^ ::: | ::: |Alpha Levels|256|
+^ ::: | ::: |Screen buffered|true|
+^ ::: |//Canvas//|Font Default Height|22|
+^ ::: | ::: |Font Small Height|18|
+^ ::: | ::: |Font Small Bold Height|18|
+^ ::: | ::: |Font Medium Height|22|
+^ ::: | ::: |Font Medium Bold Height|22|
+^ ::: | ::: |Font Large Height|26|
+^ ::: | ::: |Font Large Bold Height|26|
+^ ::: |//Mobile Media//|JSR-135 MMAPI supported|true|
+^ ::: | ::: |JSR-135 Video supported|true|
+^ ::: | ::: |Mobile Media version|<nowiki>1.2</nowiki>|
+^ ::: | ::: |Supports mixing|true|
+^ ::: | ::: |Audio capture|true|
+^ ::: | ::: |Video capture|true|
+^ ::: | ::: |Supports recording|true|
+^ ::: | ::: |Audio encoding|<nowiki>encoding=amr encoding=amr-nb encoding=pcm</nowiki>|
+^ ::: | ::: |Video encodings|<nowiki>encoding=mpeg4&width=320&height=240</nowiki>|
+^ ::: | ::: |Video snapshot encodings|<nowiki>encoding=jpeg&width=640&height=480 encoding=jpeg&width=1280&height=960 encoding=jpeg&width=1632&height=1224 encoding=jpeg&width=2048&height=1536</nowiki>|
+^ ::: | ::: |Streamable contents|<nowiki>audio/x-pn-realaudio video/x-pn-realvideo audio/mp4a-latm video/mp4v-es video/h263-2000</nowiki>|
+^ ::: |//Multimedia//|Capture|<nowiki>image/jpeg audio/amr video/3gpp video/mpeg4 video/mp4 radio</nowiki>|
+^ ::: | ::: |Device|<nowiki>audio/midi audio/mid audio/sp-midi audio/x-midi audio/x-tone-seq audio/tone</nowiki>|
+^ ::: | ::: |File|<nowiki>audio/midi audio/mid audio/sp-midi audio/x-midi audio/x-tone-seq audio/tone audio/imelody audio/amr audio/amr-wb audio/mpeg audio/mp3 audio/x-mp3 audio/mpg audio/mpg3 audio/x-mpg audio/x-mpeg audio/x-wav audio/wav video/mp4v-es video/mpeg video/h264 video/3gpp video/mpeg4 video/mp4 audio/nokia_ringing_tones audio/pmr audio/mp4a-latm audio/3gp audio/mpeg4 audio/3gpp audio/m4a audio/mp4 audio/x-m4a audio/xmf image/gif audio/x-pn-realaudio video/x-pn-realvideo audio/x-ms-wma video/x-ms-wmv audio/aac</nowiki>|
+^ ::: | ::: |HTTP|<nowiki>audio/midi audio/mid audio/sp-midi audio/x-midi audio/x-tone-seq audio/tone audio/imelody audio/amr audio/amr-wb audio/mpeg audio/mp3 audio/x-mp3 audio/mpg audio/mpg3 audio/x-mpg audio/x-mpeg audio/x-wav audio/wav video/mp4v-es video/mpeg video/h264 video/3gpp video/mpeg4 video/mp4 audio/nokia_ringing_tones audio/pmr audio/mp4a-latm audio/3gp audio/mpeg4 audio/3gpp audio/m4a audio/mp4 audio/x-m4a audio/xmf image/gif video/x-pn-realvideo audio/x-pn-realaudio video/x-ms-wmv audio/x-ms-wma audio/aac</nowiki>|
+^ ::: | ::: |RTSP|<nowiki>video/mp4v-es video/mpeg video/h264 video/3gpp video/mpeg4 video/mp4 audio/mp4a-latm audio/3gp audio/mpeg4 audio/3gpp audio/m4a audio/mp4 audio/x-m4a video/x-pn-realvideo audio/x-pn-realaudio video/x-ms-wmv audio/x-ms-wma audio/aac rtsp</nowiki>|
+^ ::: |//3D Graphics//|JSR-184 supported|true|
+^ ::: | ::: |M3G version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |3D - hybrid M3G Version|<nowiki>2.3.1</nowiki>|
+^ ::: | ::: |3D - max Lights|8|
+^ ::: | ::: |3D - max Sprite Crop Dimension|256|
+^ ::: | ::: |3D - max Texture Dimension|256|
+^ ::: | ::: |3D - max Transforms Per Vertex|4|
+^ ::: | ::: |3D - max Viewport Dimension|2048|
+^ ::: | ::: |3D - max Viewport Height|2048|
+^ ::: | ::: |3D - max Viewport Width|2048|
+^ ::: | ::: |3D - num Texture Units|2|
+^ ::: | ::: |3D - support Antialiasing|false|
+^ ::: | ::: |3D - support Dithering|false|
+^ ::: | ::: |3D - support Local Camera Lighting|false|
+^ ::: | ::: |3D - support Mipmapping|true|
+^ ::: | ::: |3D - support Perspective Correction|true|
+^ ::: | ::: |3D - support TrueColor|false|
+^ ::: |//SVG//|M2G version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |SVG version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |SVG profile|<nowiki>tiny</nowiki>|
+^Comms|//Wireless Messaging//|JSR-120 (Messaging 1.1) supported|true|
+^ ::: | ::: |JSR-205 (Messaging 2.0) supported|true|
+^ ::: | ::: |MMSC Address|<nowiki>http://mmsc.monternet.com</nowiki>|
+^ ::: | ::: |SMSC Address|8613800270500|
+^ ::: |//Bluetooth//|JSR-082 Bluetooth supported|true|
+^ ::: | ::: |JSR-082 OBEX supported|true|
+^ ::: | ::: |Bluetooth version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |The maximum ReceiveMTU size|672|
+^ ::: | ::: |The maximum number of connected devices|7|
+^ ::: | ::: |Is inquiry allowed during a connection|true|
+^ ::: | ::: |Is paging allowed during a connection|true|
+^ ::: | ::: |Is inquiry scanning allowed during a connection|true|
+^ ::: | ::: |Is page scanning allowed during a connection|true|
+^ ::: | ::: |Is master/slave switch allowed|true|
+^ ::: | ::: |Max number of concurrent service discovery transactions|1|
+^ ::: | ::: |Max number of service attributes to be retrieved per service record|256|
+^ ::: |//SIP//|JSR-180 supported|true|
+^ ::: | ::: |SIP version|<nowiki>1.0.1</nowiki>|
+^Personal Information|//PIM & File//|JSR-075 Filesystem supported|true|
+^ ::: | ::: |JSR-075 PIM supported|true|
+^ ::: | ::: |PIM version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |FileConnection version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |File Separator|<nowiki>/</nowiki>|
+^ ::: | ::: |Directory of photos name|<nowiki>??</nowiki>|
+^ ::: | ::: |Directory of photos path|<nowiki>file:///c:/camera/</nowiki>|
+^ ::: | ::: |Directory of videos name|<nowiki>??</nowiki>|
+^ ::: | ::: |Directory of videos path|<nowiki>file:///c:/videos/</nowiki>|
+^ ::: | ::: |Directory of graphics name|<nowiki>??</nowiki>|
+^ ::: | ::: |Directory of graphics path|<nowiki>file:///c:/pictures/</nowiki>|
+^ ::: | ::: |Directory of tones name|<nowiki>??</nowiki>|
+^ ::: | ::: |Directory of tones path|<nowiki>file:///c:/music/</nowiki>|
+^ ::: | ::: |Directory of music name|<nowiki>??</nowiki>|
+^ ::: | ::: |Directory of music path|<nowiki>file:///c:/music/</nowiki>|
+^ ::: | ::: |Directory of recordings name|<nowiki>??</nowiki>|
+^ ::: | ::: |Directory of recordings path|<nowiki>file:///c:/music/</nowiki>|
+^ ::: | ::: |Directory of private name|<nowiki>??</nowiki>|
+^ ::: | ::: |Directory of private path|<nowiki>file:///c:/system/9AF5345D20F947d8997111B01574A37F/jf88ee1a417da401c0427a30f76e9f2f72751d078/</nowiki>|
+^ ::: | ::: |Directory of roots names|<nowiki>?????;???</nowiki>|
+^ ::: |//Location//|JSR-179 supported|true|
+^ ::: | ::: |Location version|<nowiki>1.0</nowiki>|
+^Application connectivity|//Web Services//|JSR-172 supported|true|
+^ ::: |//Content Handler//|Content Handler version|<nowiki>1.0</nowiki>|
+^Security & Commerce|//Security & Trust Services//|JSR-177 supported|true|
+^ ::: | ::: |Smartcard slots|<nowiki>0C</nowiki>|
+^API|//Other//|Motorola - RC|false|
+^ ::: | ::: |Nokia - Graphics|true|
+^ ::: | ::: |Nokia - Sound|true|
+^ ::: | ::: |Nokia - UI|true|
+^ ::: | ::: |Samsung - Acceleration|false|
+^ ::: | ::: |Samsung - Vibration|false|
+^ ::: | ::: |Siemens - graphics|false|
+^ ::: | ::: |Siemens - UI|false|
+^ ::: | ::: |JTWI version|<nowiki>1.0</nowiki>|
+^Platform|//Control//|Has key-held events|true|
+^ ::: | ::: |Has motion events|false|
+^ ::: | ::: |Has pointer events|false|
+^ ::: |//Keyboard//|Key DOWN|<nowiki>??</nowiki>|
+^ ::: | ::: |Key FIRE|<nowiki>??</nowiki>|
+^ ::: | ::: |Key GAME A|7|
+^ ::: | ::: |Key GAME B|9|
+^ ::: | ::: |Key GAME C|<nowiki>*</nowiki>|
+^ ::: | ::: |Key GAME D|<nowiki>#</nowiki>|
+^ ::: | ::: |Key LEFT|<nowiki>??</nowiki>|
+^ ::: | ::: |Key RIGHT|<nowiki>??</nowiki>|
+^ ::: | ::: |Key UP|<nowiki>??</nowiki>|
+^ ::: |//Carrier//|MSISDN|true|
+^ ::: |//Hardware//|Jackknife open (SonyEricsson)|true|
+^ ::: | ::: |Status (SonyEricsson )|true|
+^ ::: | ::: |Flip Open (SonyEricsson)|true|
+^ ::: |//Network//|Cell ID|true|
+^ ::: | ::: |CMCC|true|
+^ ::: | ::: |CMNC|true|
+^ ::: | ::: |Is On Home PLMN|true|
+^ ::: | ::: |LAC|true|
+^ ::: | ::: |MCC|true|
+^ ::: | ::: |MNC|true|
+^ ::: | ::: |RAT|true|
+^ ::: |//Settings//|Available Time Zone|<nowiki>GMT 08:00 GMT UTC</nowiki>|
+^ ::: | ::: |Default Time Zone|<nowiki>GMT 08:00</nowiki>|
+^Benchmark|//Math//|Math Add array|8590|
+^ ::: | ::: |Math Add local|12954|
+^ ::: | ::: |Math Add instance|9410|
+^ ::: | ::: |Math Add static|18166|
+^ ::: | ::: |Math Div array|2115|
+^ ::: | ::: |Math Div local|2460|
+^ ::: | ::: |Math Div instance|1944|
+^ ::: | ::: |Math Div static|2708|
+^ ::: | ::: |Math Mul array|24168|
+^ ::: | ::: |Math Mul local|584|
+^ ::: | ::: |Math Mul instance|594|
+^ ::: | ::: |Math Mul static|706|
+^ ::: |//Timer//|Sleep precision|213|

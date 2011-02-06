@@ -1,0 +1,16 @@
+<label author>(c) eIrOcA</label>
+
+Questo programma è software **libero**, è possibile ridistribuirlo e/o modificarlo secondo i termini della [[http://www.gnu.org/licenses/old-licenses/gpl-2.0.html|GNU General Public License]] pubblicata dalla [[http://www.fsf.org/|Free Software Foundation]]; nella versione 2 o (a propria scelta) qualunque versione successiva.
+
+**Questo programma è distribuito nella speranza che possa essere utile, ma SENZA ALCUNA GARANZIA implicita o esplicita di COMMERCIABILITÀ o IDONEITÀ PER UN PARTICOLARE SCOPO**. Vedere la [[http://www.gnu.org/licenses/old-licenses/gpl-2.0.html|GNU General Public License]] per maggiori dettagli.
+
+Insieme al programma ci dovrebbe essere una copia della GNU General Public License, se no, scrivere per ottenerla a:\\
+
+''
+Free Software Foundation, Inc.\\
+59 Temple Place, Suite 330\\
+Boston, MA\\
+02111-1307 USA\\
+''
+
+<label post></label>

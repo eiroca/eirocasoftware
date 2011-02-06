@@ -1,0 +1,22 @@
+<embed en:template:app_serv>
+  <label Name>Assembler Proxy</label>
+  <label Description>
+Assembler Proxy is a Java Servlet that can be used to "assemble" contents coming form different sites into a single page (without frame usage).
+  </label>
+  <label More></label>
+  <label Documentation>
+===== Requirements =====
+Java Servlets 2.x container.
+  </label>
+  <label Development>
+===== Changes log =====
+**Version 0.1.0**
+  * First public release
+  </label>
+  <label Repository>serverapps</label>
+  <label MetricID>server_apps</label>
+  <label Copyright>Copyright (c) 2006-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)</label>
+  <label MoreCopyright></label>
+</embed>
+
+{{tag>Assembler_Proxy Server_applications J2EE Proxy}}

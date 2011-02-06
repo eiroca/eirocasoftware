@@ -1,0 +1,14 @@
+~~NOTOC~~
+|<90% 33% 33% ->|
+^  [[Viaggi|{{ home:bag.png?120x110 |Travels}}]]  ^  [[Software|{{ home:apps.png?120x110 |Software}}]]  ^  [[http://www.eiroca.net/mobile|{{ home:mobile.png?120x110 |Mobile}}]]  ^
+|eIrOcA's [[Viaggi|Travels]]: \\ [[en:Viaggi:Messico|{{ico:messico.png?32x32|Mexico}}]][[en:Viaggi:Messico|Mexico]] \\ [[en:Viaggi:Tunisia|{{ico:tunisia.png?32x32|Tunisia}}]][[en:Viaggi:Tunisia]] |Section dedicated to: \\ {{home:tools.png?32x32}}[[Software|applications]] \\ {{home:sw.png?32x32}} [[Development|development]]|eIrOcA is available on mobile devices (phones, PDA, ...) in optimized vesion at http://www.eiroca.net/mobile/|
+
+\\
+
+
+**eIrOcA supports:**
+
+|  [[http://www.legambiente.eu|{{banner:legambiente.png?160x222|Legambiente}}]] | [[http://www.greenpeace.org/|{{banner:greenpeace.png?160x120|Greenpeace}}]] | [[http://www.wwf.org/|{{banner:wwf.png?160x120|WWF}}]] |
+| ::: | [[http://wikimediafoundation.org/wiki/Support_Wikipedia/en|{{banner:wikipedia.png?160x120|Wikipedia Affiliate Button}}]] | [[http://boincstats.com/|{{banner:boinc.png?155x119|BoincStats}}]] |
+
+~~CLEARFLOAT~~

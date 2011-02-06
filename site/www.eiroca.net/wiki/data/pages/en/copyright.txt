@@ -1,0 +1,19 @@
+The site uses [[http://wiki.splitbrain.org/wiki:dokuwiki|DokuWiki]], 2004-2009 (c) Andreas Gohr.
+
+Mobile site and part of the Web one use [[en:software:eps|EPS - "eIrOcA Portal System"]], a GPL library to build portal optimized for mobile devices that uses [[http://wurfl.sourceforge.net/|WURFL]] for the device detection.
+
+Portion of code:
+  * [[http://image-toolbox.sourceforge.net/|Image_Toolbox]] - Copyright (c) 2003 Martin Theimer
+  * [[http://www.smarty.net/|Smarty]] - Copyright (c) 2001-2005 New Digital Group, Inc.
+  * [[http://magpierss.sourceforge.net/|MagpieRSS]] - Kellan Elliott-McCrea
+  * [[http://orgapp.sourceforge.net/|OrgApp]] - Copyright (c) 2005 Frédéric Bergeron
+
+Some icons from [[http://tango.freedesktop.org/Tango_Desktop_Project|Tango!]] project under [[http://creativecommons.org/licenses/by-sa/2.5/"|Creative Commons Attribution Share-Alike]] license.
+
+All the contents are (c) 2002-2010 by Enrico Croce & Simona Burzio unless different mentioned.
+
+[[http://wiki.splitbrain.org/wiki:dokuwiki|{{button:dw.png?80x15|Driven by DokuWiki}}]]
+[[http://www.mozilla.org/firefox/|{{button:firefox.png?80x15|Do yourself a favour and use a real browser - get FireFox!}}]]
+[[http://jigsaw.w3.org/css-validator/check/referer|{{button:css.png?80x15|Valid CSS}}]]
+[[http://validator.w3.org/check/referer|{{button:xhtml.png?80x15|Valid XHTML 1.0}}]]
+[[http://www.ohloh.net|{{button:ohloh.png?80x15|Code Stats by Ohloh}}]]

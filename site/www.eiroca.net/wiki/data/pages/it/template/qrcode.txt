@@ -1,0 +1,3 @@
+~~BARCODE~class=barcode_right~url=http://www.eiroca.net/mobile/service.php?s=DS&d=000~size=M~margin=50~bgcolor=EEE8F7~~
+
+L'applicazione può essere scaricata nella sezione "<label Section>download</label>" del [[http://www.eiroca.net/mobile/module.php?s=DS|portale Web]] o via celluare all'indirizzo [[http://www.eiroca.net/mobile/index.php?s=DS|http://www.eiroca.net/mobile/]].

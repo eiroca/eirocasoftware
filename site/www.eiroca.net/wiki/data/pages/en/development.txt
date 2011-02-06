@@ -1,0 +1,28 @@
+====== Development ======
+Programming tools and libraries produced and maintained by eIrOcA. 
+
+===== Programming library =====
+{{ home:lib.png|Library}}
+  * [[.:Software:eANN|{{ico:eng.png|ENG}}]] [[.:Software:eANN|eANN]] is an implementation of several kind of neural networks that was written with the intention of providing a (hopefully) easy to use, and easy to modify, OOP source code. It's also included a graphical shell.
+  * [[.:Software:libJ2ME|{{ico:eng.png|ENG}}]] [[.:Software:libJ2ME|libJ2ME]] is a J2ME library.
+  * [[.:Software:eLib|{{ico:eng.png|ENG}}]] [[.:Software:eLib|eLib]] is a set of Delphi units and components. Library for: Matrix, Matrix Math, Math & statistic, CSV, URL, Counters, dir/file scanning, file/string/... utils, progress bar, ...
+  * [[.:Software:Delphi Library|{{ico:eng.png|ENG}}]] [[.:Software:Delphi Library|Delphi Library]] Various components and unit.
+
+===== Programming tools =====
+{{ home:tools.png|Tools}}
+  * [[.:Software:Test Suite|{{ico:eng.png|ENG}}]] [[.:Software:Test Suite|{{ico:ita.png|ITA}}]] [[.:Software:Test Suite|Test Suite]] is a suite of Java utilities that can be used by developers in the creation of new J2ME software for mobile devices. They give a developer a good way to explore the capabilities and limitations of phones and other devices, and come up to speed quickly with new devices.
+  * [[.:Software:WURFL2PHP|{{ico:eng.png|ENG}}]] [[.:Software:WURFL2PHP|WURFL2PHP]] converts a wurfl.xml into a set of PHP classes. PHP classes are faster to parse than the xml as only the strict needed data will be load and executed by PHP interpreter. No database is needed. In order to run PHP classes need [[en:Software:EPS|EPS]] framework.
+
+===== Software =====
+Developed software for programming environment:
+  * [[.:Development:Pascal|Delphi & FreePascal]]
+  * [[.:Development:PHP   |PHP]]
+  * [[.:Development:Java  |Java]]
+  * [[.:Development:CSharp|C#]]
+
+===== Miscellanea =====
+  * [[.:Development:metrics|Metrics]] of eIrOcA software provided by Ohloh.
+  * [[.:Development:Technology cross]] is a model to compare different software or technologies.
+  * [[.:Development:Handset Report|Handset reports]] produced by [[.:software:Test Suite|MobileSuite - Test Suite]]
+
+{{tag>Development Programming}}

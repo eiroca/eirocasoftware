@@ -1,0 +1,72 @@
+====== eIrOca Software ======
+Software sviluppato e mantenuto da eIrOcA.
+
+===== Mobile Suite =====
+{{ home:mobile.png?120x100|Mobile Suite}} 
+Mobile Suite è una raccolta di applicazioni J2ME con una user interface omogenea. Le applicazioni sono raggruppate in:
+  * giochi:
+    * [[.:Software:Bubblet|{{ico:eng.png?32x16|ENG}}]] [[.:Software:Bubblet|{{ico:ita.png?32x16|ITA}}]] [[.:Software:Bubblet|Bubblet]] è un gioco di logica.
+    * [[.:Software:MeBis|{{ico:eng.png?32x16|ENG}}]] [[.:Software:MeBis|{{ico:ita.png?32x16|ITA}}]] [[.:Software:MeBis|MeBis]] è un semplice clone di Tetris.
+    * [[.:Software:Mine Sweeper|{{ico:eng.png?32x16|ENG}}]] [[.:Software:Mine Sweeper|{{ico:ita.png?32x16|ITA}}]] [[.:Software:Mine Sweeper|Mine Sweeper]] è un semplice clone di Mine Sweeper.
+    * [[.:Software:PacMan|{{ico:eng.png?32x16|ENG}}]] [[.:Software:PacMan|{{ico:ita.png?32x16|ITA}}]] [[.:Software:PacMan|PacMan]] è un semplice clone di Pac Man.
+    * [[.:Software:Reversi|{{ico:eng.png?32x16|ENG}}]] [[.:Software:Reversi|{{ico:ita.png?32x16|ITA}}]] [[.:Software:Reversi|Reversi]] è un gioco da tavolo anche noto con il nome di Othello.
+  * applicazioni:
+    * [[.:Software:News Reader|{{ico:eng.png?32x16|ENG}}]] [[.:Software:News Reader|{{ico:ita.png?32x16|ITA}}]] [[.:Software:News Reader|News Reader]] è un lettore di notizie RSS.
+    * [[.:Software:Secure SMS|{{ico:eng.png?32x16|ENG}}]] [[.:Software:Secure SMS|{{ico:ita.png?32x16|ITA}}]] [[.:Software:Secure SMS|Secure SMS]] consente di inviare SMS cifrati tra due device compatibili con J2ME (cellulari, PDA, ...).
+    * [[.:Software:Test Suite|{{ico:eng.png?32x16|ENG}}]] [[.:Software:Test Suite|{{ico:ita.png?32x16|ITA}}]] [[.:Software:Test Suite|Test Suite]] è una raccolta di tools Java a sopporto degli sviluppatori di applicazioni J2ME. Gli strumenti consento di mostrare le capacità e le limitazioni dei cellulari (o di qualunque dispositivo compatibile con J2ME) al fine di supportare correttamente e al meglio il terminale.
+
+Alla pagina [[.:Software:compatibility|compatibilità]] c'è il rapporto sul funzionamento delle applicazioni su vari telefoni reali.
+
+Una delle ragioni di questo progetto è che ci sono parecchi progetti J2ME in uno stato "//dormiente//" i cui autori originari non sono più interessati a mantenere l'applicazione aggiornata (es. SecureMessenger, jtReversi, ...) o a rendere le applicazioni omogenee tra di loro (es. supporto multilingua, UI simile, ...). 
+Un'altro beneficio di aver unificato varie applicazione è stato quello di riuscire ad avere un insieme base di funzionalità e librerie base ottimizzate per l'ambiente J2ME che consentono, soprattuto quando ci sono più applicazioni raggruppate in un unica distribuzione, una notevole riduzione di memoria occupata. 
+Le applicazioni sono inoltre state testate su device reali.
+
+===== Desktop Applications =====
+{{ home:desk.png?120x100|Desktop Applications}}
+Desktop Applications è una raccolta di strumenti software ed applicazioni.\\
+  * [[.:Software:eFractals|{{ico:eng.png?32x16|ENG}}]] [[.:Software:eFractals|eFractals]] è un programma (e delle librerie di programmazione) per disegnare frattali. Il programma consente di disegnare alberi, terreni, frattali DLA, ... 
+  * [[.:Software:Apple2 Graphic|{{ico:eng.png?32x16|ENG}}]] [[.:Software:Apple2 Graphic|Apple][ Graphic]] è un programma (e delle librerie di programmazione) per disegnare immagini nei vecchi formati supportati dall'Apple ][. Sono supportati i formati: HGR, DHGR, il formato $C1 dell'Apple 2 ed inotre il formato "shape". Le immagini possono essere esportate nel formato BMP.
+  * [[.:Software:eUtilities|{{ico:eng.png?32x16|ENG}}]] [[.:Software:eUtilities|eUtilities]] è una raccolta di semplici strumenti a linea di comando.
+  * [[.:Software:eANN|{{ico:eng.png?32x16|ENG}}]] [[.:Software:eANN|eANN]] è un'implementazione di diverse tiplogie di reti neurali scritte con un codice OOP volutamente semplice e chiaro. È anche presente una shell grafica alle principali operazioni eseguibili con una rete neurale.
+  * [[.:Software:OrgApp|{{ico:eng.png?32x16|ENG}}]] [[.:Software:OrgApp|OrgApp]] è una applicazione Java (library, applet e applicazione) per gestire e disegnare dei semplici organigrammi.
+
+===== Server Applications =====
+{{ home:server.png?120x100|Server Applications}}
+Server Applications è una raccolta di strumenti e di applicazioni server spesso orientate a tematiche "mobile".\\
+  * [[.:Software:EPS|{{ico:eng.png?32x16|ENG}}]] [[.:Software:EPS|eIrOcA Portal System]] (EPS) è un framework Model-Delegate per servizi e portali ottimizzato per client //mobile// (WAP, XHTML, ...). L'infrastruttura EPS gira su un qualunque server [[wp>XAMPP]] ed include un framework in grado di gestire la diversità dei terminali (utilizza WURFL per conoscere le capacità dei singoli client). Sono incluse alcune applicazioni, tra cui: portale mobile, photo gallery mobile , download server, ...
+  * [[.:Software:Assembler Proxy|{{ico:eng.png?32x16|ENG}}]] [[.:Software:Assembler Proxy|Assembler Proxy]] è una Servlet Java che consente di "assemblare" parti di pagine che provengono da siti differenti in un'unica pagina (semza usare frame o iframe).
+
+====== eIrOcA Pout Pourri ======
+eIrOcA Software pout pourri è una raccolta che funge da incubatore per i progetti non ancora rilasciati, i progetti possono variare da dei semplici concept a delle applicazioni perfettamente funzionanti (ma non ancora rilasciate come progetto a se stante).
+
+===== Artificial Neural Networks =====
+  * [[.:Software:OldNN|{{ico:eng.png?32x16|ENG}}]] [[.:Software:OldNN|OldNN]] vecchio software per reti neurali, surclassato da [[.:Software:eANN|eANN]].
+
+===== Apple ][ =====
+  * [[.:Software:ProDisk|{{ico:eng.png?32x16|ENG}}]] [[.:Software:ProDisk|ProDisk]] importa/esporta file da Windows a immagini di HD ProDos usati dagli emulatori di Apple2 come ad esempio ApplePC.
+  * [[.:Software:ProDiskGUI|{{ico:eng.png?32x16|ENG}}]] [[.:Software:ProDiskGUI|ProDiskGUI]] shell grafica importa/esporta file da Windows a immagini di HD ProDos usati dagli emulatori di Apple2 come ad esempio ApplePC.
+
+===== Gestionali =====
+  * [[.:Software:Artik |{{ico:ita.png?32x16|ITA}}]] [[.:Software:Artik|Artik]] Gestione magazzino articoli.
+  * [[.:Software:ConTab|{{ico:ita.png?32x16|ITA}}]] [[.:Software:ConTab|ConTab]] Contabilità generale.
+  * [[.:Software:ConTatti|{{ico:ita.png?32x16|ITA}}]] [[.:Software:ConTatti|Con Tatti]] è una versione informatizzata della rubrica.
+  * [[.:Software:eicShell|{{ico:ita.png?32x16|ITA}}]] [[.:Software:eicShell|eicShell]] Shell di coordimaneto applicazioni.
+  * [[.:Software:TabaC|{{ico:ita.png?32x16|ITA}}]] [[.:Software:TabaC|TabaC]] Gestione magazzino tabacchi.
+
+===== Finanziari =====
+  * [[.:Software:Mutui|{{ico:ita.png?32x16|ITA}}]] [[.:Software:Mutui|Mutui]] Piano ammortamento mutui.
+
+===== Games =====
+  * [[.:Software:WinCorp|{{ico:eng.png?32x16|ENG}}]] [[.:Software:WinCorp|WinCorp]] è un piccolo gioco di simulazione di affari.
+
+===== Misc =====
+  * [[.:Software:Bioritmi|{{ico:ita.png?32x16|ITA}}]] [[.:Software:Bioritmi|Bioritmi]] Bioritmi e affinità.
+  * [[.:Software:eMelody|{{ico:eng.png?32x16|ENG}}]] [[.:Software:eMelody|eMelody]] Alcuni strumenti per gestire il vecchio formato delle suonerie del Motorola L35.
+  * [[.:Software:Agents|{{ico:eng.png?32x16|ENG}}]] [[.:Software:Agents|Agents]] Un agente è un pezzo di software in grado di funzionare in un ambiente dinamico.
+  * [[.:Software:Tesine|{{ico:ita.png?32x16|ITA}}]] [[.:Software:Tesine|Tesine]] Varie tesine.
+
+===== Wiki =====
+  * [[.:Software:WikiHelper|{{ico:eng.png?32x16|ENG}}]] [[.:Software:WikiHelper|WikiHelper]] è una raccolta di tool per la gestione dei Wiki (in formato Wikimedia). Alcune funzionalità: creazione batch di pagine, replace di stringhe, export in PowerPoint PPT delle pagine, export in Powerpoint della pagine di una categoria, …
+  * [[.:Software:DokuWiki|{{ico:eng.png?32x16|ENG}}]] [[.:Software:DokuWiki|DokuWiki]] è una raccolta di tool e plugin per i Wiki in formato [[http://www.dokuwiki.org/|DokuWiki]].
+
+{{tag>Applicazioni Mobile_Suite Desktop_Applications Server_Applications}}

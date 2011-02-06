@@ -1,0 +1,29 @@
+<embed en:template:app_new>
+  <label Name>Con Tatti</label>
+  <label Status>Working</label>
+<label Description>
+"Con Tatti" is a computerized version of the address book suitable for the management of contacts.
+
+First you need to define what is a contact, a contact is simply a person, company, entity, … for which you are intent on keeping track of certain information in order to facilitate the normal course of social relations with that contact.
+
+With "Con Tatti" is thus possible to manage information such as addresses, phone numbers, … various contacts to facilitate their research and use. The program does not just manage this information for so-called "classic", but also allows you to manage a different set of information, such as communications sent/received by the contact, membership groups, the nicknames… Last thing to note is the fact that "Con Tatti" has been designed keeping in mind the Internet and the new frontiers of "electronic" communications and thus offer the possibility to manage e-mail addresses, Web addresses, offer special services to IRC users, …
+
+È utile sottolineare cosa "" NON è o non offre:
+  * "Con Tatti" NON è una agenda (ossia un pianificatore degli impegni di una persona)
+  * "Con Tatti" NON è un programma di posta elettronica, di IRC, … "Con Tatti" offre i servizi per un loro migliore utilizzo, ma richiede la loro presenza per l'effettivo utilizzo.
+
+It is worth emphasizing what "Con Tatti" is not:
+  * "Con Tatti" is not an agenda (scheduling commitments of a person)
+  * "Con Tatti" is not an email program, IRC, … "Con Tatti" provides the services for a better usage, but requires their presence for actual use.
+
+while:
+  * "Con Tatti" is an extension of the address book
+  * "Con Tatti" is highly integrated with Windows, allowing you to send mails, display pictures, … through a collaboration of services offered by Windows itself
+</label>
+  <label Repository>eirocasoftware</label>
+  <label MetricID>eiroca_software_pout_pourri</label>
+  <label Language>Delphi</label>
+  <label Copyright>Copyright (c) 1996-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)</label>
+</embed>
+
+{{tag>ConTatti Applications Pascal ERP Address_book}}

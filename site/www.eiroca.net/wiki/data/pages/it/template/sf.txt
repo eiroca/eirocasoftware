@@ -1,0 +1,7 @@
+<columns>
+[[http://sourceforge.net/projects/<label name>name</label>|{{ico:sf.png|SourceForge Logo}}]]
+<newcolumn>
+La distribuzione completa dell'applicativo, incluso il codice sorgente, è disponibile [[http://sourceforge.net/projects/<label name>name</label>/files/|qui]].
+
+Informazioni e risorse addizionali si possono trovare presso [[http://sourceforge.net/projects/<label name>name</label>|Source Forge]].
+</columns>

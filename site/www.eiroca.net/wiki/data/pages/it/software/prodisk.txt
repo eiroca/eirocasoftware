@@ -1,0 +1,11 @@
+<embed it:template:app_new>
+  <label Name>ProDisk </label>
+  <label Status>Rilasciato</label>
+  <label Description>ProDisk importa/esporta file da Windows a immagini di HD ProDos usati dagli emulatori di Apple2 come ad esempio ApplePC.</label>
+  <label Repository>eirocasoftware</label>
+  <label MetricID>eiroca_software_pout_pourri</label>
+  <label Language>FreePascal</label>
+  <label Copyright>Copyright (c) 1996-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)</label>
+</embed>
+
+{{tag>ProDisk Applicazioni Pascal Apple][ Apple2}}

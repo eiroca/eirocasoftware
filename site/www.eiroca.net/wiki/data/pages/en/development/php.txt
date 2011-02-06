@@ -1,0 +1,6 @@
+====== Software written in PHP ======
+  * [[..:Software:EPS|{{ico:eng.png|ENG}}]] [[..:Software:EPS|eIrOcA Portal System]] (EPS) is a portal framework and services optimized for mobile. EPS applications are XAMP based, share a common framework and provide handset definitions (based upon WURFL). Same applications are: mobile portal, mobile picture gallery, ...
+  * [[..:Software:WURFL2PHP|{{ico:eng.png|ENG}}]] [[..:Software:WURFL2PHP|WURFL2PHP]] converts a wurfl.xml into a set of PHP classes. PHP classes are faster to parse than the xml as only the strict needed data will be load and executed by PHP interpreter. No database is needed. In order to run PHP classes need EPS framework.
+  * [[..:Software:DokuWiki|{{ico:eng.png|ENG}}]] [[..:Software:DokuWiki|DokuWiki]] is a collection of tools and plugins for Wikis in [[http://www.dokuwiki.org/|DokuWiki]] format.
+
+{{tag>PHP}}

@@ -1,0 +1,88 @@
+====== Plugin - barcode ======
+[[doku>start|Dokuwiki]] plugin to create 2D-Barcodes using different providers; the plug-in is present in the [[..:dokuwiki|Dokuwiki tools]] collection.
+
+===== Documentation =====
+Barcode generates 2D barcodes using different providers, currently:
+  * [[http://code.google.com/intl/it-IT/apis/chart/types.html#qrcodes|Google Charts]]
+  * [[http://qrcode.kaywa.com/|Kaywa]]
+  * [[http://www.i-nigma.com/CreateBarcodes.html|I-nigma]]
+  * [[http://qrserver.com/api/documentation/create-qr-code/|QRServer]]
+Layout of the barcode can be definited by CSS styles.
+
+==== Syntax ====
+  ~~BARCODE~attribute1=value1~attribute2=value2~~
+
+Possible optional attributes:
+
+^ Name        ^ Description ^
+| **id**      |id to assign to the barcode img tag|
+| **class**   |class to assign to the barcode img tag, possible value:|
+| :::         |barcode_left -> barcode is left aligned |
+| :::         |barcode_right -> barcode is right aligned |
+| :::         |barcode_center -> barcode is centered |
+| **mode**    |Valid only for I-nigma provider, 0 is QR Code, 1 for DataMatrix code |
+| **size**    |Size of the barcode, allowed: S, M, L, XL |
+
+The payload is described by one, and only one, of theese attributes:
+^ Name         ^ Description ^
+| **url**      |payload is an URL, e.g. url=http:/www.eiroca.net |
+| **sms**      |payload is a SMS, e.g. sms=+391234567890=A Message |
+| **tel**      |payload is an telephone number, e.g. tel=+391234567890 |
+| **contact**  |payload is a contact, e.g. contact=Name=+123432324=my@address.com |
+| **text**     |payload is a text, e.g. text=MAILTO:my@address.com |
+If no payload attribute is given a barcode that points to the cointaner page is generated.
+
+Using **id** and **class** it's possible to control, via CSS, the behavior of the rendered image.
+
+It is possible ti set any specific attributes of individual providers, such as:
+^ Name         ^ Description ^
+| **caption** |Valid only for I-nigma, caption to be used on the bottom of the barcode |
+| **bgcolor** |Valid only for QRServer, background color of the barcode |
+See the site of the single provider for specific documentation.
+
+==== Examples ====
+~~BARCODE~class=barcode_left~url=http://www.eiroca.net/dokuwiki~size=S~~
+~~BARCODE~class=barcode_right~url=http://www.eiroca.net/dokuwiki~size=S~~
+~~BARCODE~class=barcode_center~size=M~~
+
+~~CLEARFLOAT~~
+Here the code:
+
+  ~~BARCODE~class=barcode_left~url=http://www.eiroca.net/dokuwiki~size=S~~
+  ~~BARCODE~class=barcode_right~url=http://www.eiroca.net/dokuwiki~size=S~~
+  ~~BARCODE~class=barcode_center~size=M~~
+
+==== History ====
+**Version 2011/02/03**
+  * Support for DokuWiki "Anteater"
+
+**Version 2010/04/20**
+  * The footer can be translated into multiple languages
+  * New provider architecture
+  * New provider (QRserver)
+  * Easier administration
+
+**Version 2010/01/20**
+  * Simpler syntax to generate a barcode that points to the page that contains it
+  * Removing //death code// 
+
+**Version 2010/01/05**
+  * First version
+
+===== Administration =====
+Inside dokuwiki plugin administration is possible to configure:
+  * The provider of the barcode generator
+  * If a hint to suggest the download of a mobile barcode reader has to be displayed
+
+The hint messages can be configured changingin the files //footer.txt// inside the barcode plugin directory. To add a new languages, not currently present, you should create a file footer_XX.txt where XX is the code of the language.
+
+===== Installation =====
+Download and install the plugin using the [[doku>plugin:plugin|Plugin Manager]] using the following [[http://www.eiroca.net/apps/dokuwiki/barcode.zip|URL]]. Refer to [[doku>Plugins]] on how to install plugins manually using code donwload [[..:dokuwiki#download|here]] that is always up to date.
+
+====== Licence & Copyright ======
+<embed en:template:GPL3>
+  <label author>Copyright (c) 2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)</label>
+  <label post></label>
+</embed>
+
+{{tag>DokuWiki barcode QRCode}}

@@ -1,0 +1,36 @@
+<embed it:template:app_mobi>
+  <label Name>MobileSuite - Mine Sweeper</label>
+  <label Description>
+Mine Sweeper è un semplice clone di Mine Sweeper.
+  </label>
+  <label More>
+===== Immagini =====
+{{gallery>software:minesweeper?240x320&direct }}
+  </label>
+  <label Documentation>
+===== Requisiti =====
+Il gioco necessita di un cellulare compatibile con MIDP2.0. In questa [[compatibility|pagina]] c'è un elenco di terminali che sono stati testati.
+
+Lingue supportate: {{ico:eng.png|ENG}} {{ico:ita.png|ITA}}
+  </label>
+  <label Development>
+===== To Do =====
+  * Supporto multigiocatore
+
+===== Ultimi cambiamenti =====
+**Versione 1.1.0**
+  * Allineato con la versione 1.1.0 di [[libJ2ME]]
+
+**Versione 1.0.0**
+  * Prima versione
+  </label>
+  <label QRSection>Games</label>
+  <label QRName>Mine Sweeper</label>
+  <label QRURL>http://www.eiroca.net/mobile/download.php?n=1_2&c=000</label>
+  <label Repository>mobilesuite</label>
+  <label MetricID>mobile_suite</label>
+  <label Copyright>Copyright (c) 2006-2010 M. Jumari & eIrOcA (eNrIcO Croce & sImOnA Burzio)</label>
+  <label MoreCopyright>Mine Sweeper deriva da [[http://sourceforge.net/projects/j2minesweeper/|J2ME Minesweeper]] scritto da M. Jumari.</label>
+</embed>
+
+{{tag>Mine_Sweeper MobileSuite Giochi J2ME}}

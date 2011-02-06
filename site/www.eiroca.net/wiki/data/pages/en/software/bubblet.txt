@@ -1,0 +1,37 @@
+<embed en:template:app_mobi>
+  <label Name>MobileSuite - Bubblet</label>
+  <label Description>
+Bubblet is a small puzzle game. You can move a cursor across the screen and dissolve fields that have at least one neighbouring field with the same colour. If you dissolve fields, all fields above that position will fall down. However, there is a Highscore. For two contiguous fields the Score is 2, for 3 it's 9, for 4 it's 16 - you get the idea. If there are no more neighbouring fields the game is over and your high score is saved.
+  </label>
+  <label More>
+===== Screenshots =====
+{{gallery>software:bubblet?240x320&direct }}
+  </label>
+  <label Documentation>
+===== Requirements =====
+The game needs a MIDP2.0 compatible handset. See [[compatibility|compatibility]] with real devices.
+
+Supported languages: {{ico:eng.png|ENG}} {{ico:ita.png|ITA}}
+  </label>
+  <label Development>
+===== To Do =====
+  * Multiplayer support
+  * Scoring based upon space released
+
+===== Changes log =====
+**Version 1.1.0**
+  * Aligned with [[libJ2ME]] 1.1.0
+
+**Version 1.0.0**
+  * First public release
+  </label>
+  <label QRSection>Games</label>
+  <label QRName>Bubblet</label>
+  <label QRURL>http://www.eiroca.net/mobile/download.php?n=1_0&c=000</label>
+  <label Repository>mobilesuite</label>
+  <label MetricID>mobile_suite</label>
+  <label Copyright>Copyright (c) 2004-2010 Juan Antonio Agudo & eIrOcA (eNrIcO Croce & sImOnA Burzio)</label>
+  <label MoreCopyright>Bubblet is based upon [[http://keyboardsamurais.de/?s=bubblet|Bubblet]] game written by Juan Antonio Agudo.</label>
+</embed>
+
+{{tag>Bubblet MobileSuite Games J2ME}}

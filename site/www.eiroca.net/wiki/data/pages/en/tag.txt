@@ -1,0 +1,7 @@
+List of content tags:
+~~TAGCLOUD:999~~
+
+----
+
+List of most frequent words:
+~~CLOUD:100~~

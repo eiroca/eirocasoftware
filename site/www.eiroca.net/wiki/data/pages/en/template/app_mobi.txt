@@ -1,0 +1,29 @@
+====== <label Name>Name</label> ======
+<label Description>Description</label>
+
+<label More></label>
+
+<label Documentation></label>
+
+===== Download =====
+<embed en:template:QRCode>
+  <label Section><label QRSection>QRSection</label></label>
+  <label Name><label QRName>QRName</label></label>
+  <label URL><label QRURL>QRURL</label></label>
+</embed>
+<embed en:template:sf>
+  <label name><label Repository>Repository</label></label>
+  <label ID></label>
+</embed>
+
+====== Development ======
+<label Development></label>
+
+===== Metrics =====
+[[en:Development:metrics#<label MetricID>MetricID</label>|Software metrics]].
+
+====== Licence & Copyright ======
+<embed en:template:GPL2>
+  <label author><label Copyright>Copyright</label></label>
+  <label post><label MoreCopyright></label></label>
+</embed>

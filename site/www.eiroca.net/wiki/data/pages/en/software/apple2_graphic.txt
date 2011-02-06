@@ -1,0 +1,28 @@
+<embed en:template:app_desk>
+  <label Name>eFractals</label>
+  <label Description>
+Programs and library to draw old Apple ][ graphics formats. Support for HGR, DHGR and Apple 2 GS $C1 format with export to BMP. Support also for apple shape.
+  </label>
+  <label More>
+===== Screenshots =====
+{{gallery>software:apple2graphic?320x240 }}
+  </label>
+  <label Documentation>
+===== Requirements =====
+Supported languages: {{ico:eng.png|ENG}}
+
+Supported OS: {{ico:win.png|Windows}}
+  </label>
+  <label Development>
+===== Changes log =====
+**Version 1.0.0**
+  * First public release
+  </label>
+  <label Repository>apple2graphic</label>
+  <label MetricID>apple_graphic</label>
+  <label Copyright>Copyright (c) 1996-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)</label>
+  <label MoreCopyright>
+  </label>
+</embed>
+
+{{tag>Apple][_Graphic Applications Pascal Apple][ Apple2}}

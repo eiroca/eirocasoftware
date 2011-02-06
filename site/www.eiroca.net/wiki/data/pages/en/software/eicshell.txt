@@ -1,0 +1,11 @@
+<embed en:template:app_new>
+  <label Name>eicShell</label>
+  <label Status>Incomplete</label>
+  <label Description>Shell to coordinate multiple applications.</label>
+  <label Repository>eirocasoftware</label>
+  <label MetricID>eiroca_software_pout_pourri</label>
+  <label Language>Delphi</label>
+  <label Copyright>Copyright (c) 1996-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)</label>
+</embed>
+
+{{tag>eicShell Applicazioni Pascal Utility}}

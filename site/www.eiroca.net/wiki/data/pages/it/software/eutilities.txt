@@ -1,0 +1,29 @@
+<embed it:template:app_desk>
+  <label Name>eUtilities</label>
+  <label Description>
+^ Nome ^ Lingua ^ Descrizione ^
+^ConvertForm | {{ico:eng.png|ENG}} |Convertitore di file DFM Delphi dal formato binario a quello testuale e vice versa |
+^Find        | {{ico:eng.png|ENG}} |Cerca file duplicati (o mancanti) all'interno di due directories |
+^HTTPGet     | {{ico:eng.png|ENG}} |HTTPGet scarica un insieme di URL |
+^Purge       | {{ico:eng.png|ENG}} |Rimuove i file duplicati all'interno di un alberatura di directory |
+^Rename      | {{ico:eng.png|ENG}} |Rinomina tutti i file di una directory secondo lo schema IDGruppo_numeroSequenza, dove gruppo è l'insieme dei file che che iniziano con "IDGruppo_" |
+  </label>
+  <label More>
+  </label>
+  <label Documentation>
+===== Requisiti =====
+Sistemi operativi supportati: {{ico:win.png|Windows}}
+  </label>
+  <label Development>
+===== Ultimi cambiamenti =====
+**Versione 1.0.0**
+  * Prima versione
+  </label>
+  <label Repository>eutilities</label>
+  <label MetricID>eutilities</label>
+  <label Copyright>Copyright (c) 1996-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)</label>
+  <label MoreCopyright>
+  </label>
+</embed>
+
+{{tag>Applicazioni Utility Pascal}}

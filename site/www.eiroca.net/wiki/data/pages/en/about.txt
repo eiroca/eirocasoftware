@@ -1,0 +1,19 @@
+<html>
+<table><tr>
+<td class="COL1"><b>E</b></td>
+<td class="COL2"><b>N</b></td>
+<td class="COL1"><b>R</b></td>
+<td class="COL2"><b>I</b></td>
+<td class="COL1"><b>C</b></td>
+<td class="COL2"><b>O</b></td>
+</tr>
+<tr>
+<td class="COL2"><b>S</b></td>
+<td class="COL1"><b>I</b></td>
+<td class="COL2"><b>M</b></td>
+<td class="COL1"><b>O</b></td>
+<td class="COL2"><b>N</b></td>
+<td class="COL1"><b>A</b></td>
+</tr>
+</table>
+</html>

@@ -1,0 +1,61 @@
+<embed en:template:app_mobi>
+  <label Name>MobileSuite - Test Suite</label>
+  <label Description>
+The TestSuite is a suite of Java utilities that can be used by developers in the creation of new J2ME software for mobile devices. 
+They give a developer a good way to explore the capabilities and limitations of phones and other devices, and come up to speed quickly with new devices.
+
+The //Phone specs// section can be used to quickly check the "vital statistics" of a new device. It shows the screen dimensions and colour depth, the standard system properties (platform etc.), the Canvas properties, an estimate of the smallest timer resolution (e.g. the shortest time you can practically set a timer for), and reports on which JSRs have been implemented. 
+If you've never seen a device before, and have the chance to run only one app on it, then this would be it.
+
+The //Keys// section is an interactive tool for finding out how the phone keypad behaves. 
+As user-input is vital for most applications that implement the Canvas object (including almost every game!), this is extremely useful information to get.
+With this tool, you can test which keys can generate concurrent events (e.g. can a user move and shoot at the same time?), find out if every key generates every necessary event (not all devices implement the Repeated event), establish which keys correspond to what game keys, and get the key codes for the non-standard keys on the device.
+
+The //Class browser// section provides much more detail than Specs. 
+It utilises a database of many known Midlet classes to probe the device for which classes are present. You can browse through the hierarchy of classes found to find out the extent of support for different features, which proprietary libraries exist, and potentially discover undocumented features. 
+Some features of a device are not exposed in classes, but many are, so this is a good way to find most of them.
+  </label>
+  <label More>
+===== Test Suite Report =====
+[[..:Development:Handset Report|See handset reports]].
+
+===== Screenshots =====
+{{gallery>software:testsuite?240x320&3&direct }}
+  </label>
+  <label Documentation>
+===== Requirements =====
+The application needs a MIDP2.0 compatible handset. See [[compatibility|compatibility]] with real devices.
+
+Supported languages: {{ico:eng.png|ENG}} {{ico:ita.png|ITA}}
+  </label>
+  <label Development>
+===== To Do =====
+  * Better UI
+  * More tests
+
+===== Changes log =====
+**Version 1.1.0**
+  * Aligned with [[libJ2ME]] 1.1.0
+  * Test result renamed
+  * Result mapping updated
+  * More specific tests (Motorola, Samsung, Nokia, SonyEricsson)
+  * Command handling optimizations
+  * Send data in multiple posts
+  * TestSuite post data
+  * Optional tests
+  * Benchmark refactory
+  * Refactory. Inspector intruduced
+
+**Version 1.0.0**
+  * First public release
+  </label>
+  <label QRSection>Applications</label>
+  <label QRName>Test Suite</label>
+  <label QRURL>http://www.eiroca.net/mobile/download.php?n=0_2&c=000</label>
+  <label Repository>mobilesuite</label>
+  <label MetricID>mobile_suite</label>
+  <label Copyright>Copyright (c) 2004-2010 Andrew Scott & eIrOcA (eNrIcO Croce & sImOnA Burzio)</label>
+  <label MoreCopyright>Test Suite is based upon [[http://mobiledevtools.sourceforge.net/|Mobile Device Tools]] application written by Andrew Scott.</label>
+</embed>
+
+{{tag>Test_Suite MobileSuite Applications J2ME}}

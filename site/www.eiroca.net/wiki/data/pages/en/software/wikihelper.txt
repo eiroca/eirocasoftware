@@ -1,0 +1,23 @@
+<embed en:template:app_new>
+  <label Name>WikiHelper</label>
+  <label Status>Working</label>
+  <label Description>
+WikiHelper is a collection of tools for managing the Wiki.
+
+Supports the following formats:
+  * Wikimedia
+
+Features implemented:
+  * batch creation of pages
+  * replace strings over multiple pages
+  * export to PowerPoint PPT of one or more pages
+  * export of Table of contents in PowerPoint format according to pages in a category
+  * converting wiki pages in CSV compatible with Outlook contacts import
+  </label>
+  <label Repository>eirocasoftware</label>
+  <label MetricID>eiroca_software_pout_pourri</label>
+  <label Language>Delphi</label>
+  <label Copyright>Copyright (c) 1996-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)</label>
+</embed>
+
+{{tag>WikiHelper Wiki WikiMedia Utility}}

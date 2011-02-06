@@ -1,0 +1,24 @@
+<embed it:template:app_new>
+  <label Name>Con Tatti</label>
+  <label Status>Funzionante</label>
+<label Description>
+"Con Tatti" è una versione informatizzata dell'ormai obsoleta rubrica atta alla gestione dei contatti.
+
+Prima di tutto occorre definire che cos'è un contatto, un contatto è semplicemente una persona, una società, un'ente,... di cui si intente tenere traccia di alcune informazioni al fine di agevolare il normale svolgersi delle relazioni sociali con tale contatto.
+
+Con "Con Tatti" è quindi possibile gestire informazioni quali gli indirizzi, i numeri di telefono,... dei vari contatti agevolandone la ricerca e l'utilizzo. Il programma non si limita a gestire queste informazioni per così dire "classiche", ma permette di gestire anche tutta un'altra serie di informazioni, come ad esempio le comunicazioni fatte/ricevute dal contatto, l'appartenenza a gruppi, i soprannomi,... tutti argomenti che verranno spiegati dettagliamente in apposite sezioni di questa guida. Ultima cosa da sottolineare è il fatto che "Con Tatti" è stato pensato avendo presente Internet, e le nuove frontiere delle comunicazioni "elettroniche" offrendo quindi la possibilità di gestire indirizzi di posta elettronica, indirizzi Web, offrire servizi particolari agli utilizzatori di IRC, …
+
+È utile sottolineare cosa "Con Tatti" NON è o non offre:
+  * "Con Tatti" NON è una agenda (ossia un pianificatore degli impegni di una persona)
+  * "Con Tatti" NON è un programma di posta elettronica, di IRC, … "Con Tatti" offre i servizi per un loro migliore utilizzo, ma richiede la loro presenza per l'effettivo utilizzo.
+mentre:
+  * "Con Tatti" è un'estensione informatica di una agenda
+  * "Con Tatti" è altamente integrato con Windows, consentendo di spedire posta, mostrare immagini, … tramite una collaborazioni dei servizi offerti da Windows stesso
+</label>
+  <label Repository>eirocasoftware</label>
+  <label MetricID>eiroca_software_pout_pourri</label>
+  <label Language>Delphi</label>
+  <label Copyright>Copyright (c) 1996-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)</label>
+</embed>
+
+{{tag>ConTatti Applicazioni Pascal ERP Rubrica}}

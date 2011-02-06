@@ -1,0 +1,165 @@
+====== OrgApp ======
+OrgApp is a Java library to handle and draw organization charts (organigrams).
+
+The library has also an applet and a Swing Java client able to view an organization chart read from a file, in different formats (one of them based upon XML).
+
+The applet supports charts with different layouts and boxes with hyperlinks, customizable colors, sizes, positions, ... and it is easy to embed in an HTML page.
+
+<orgapp height=300 width="45%" url="/apps/orgapp/data1.sof" target="_blank"></orgapp>
+<orgapp height=300 width="45%" url="/apps/orgapp/data2.sof" target="_blank"></orgapp>
+
+To view the applet, you need a browser supporting Java Plug-in.
+
+===== Requirements =====
+Supported OS: {{ico:java.png|100% Java}}
+
+===== Download =====
+<embed en:template:sf>
+  <label name>orgapp</label>
+  <label ID></label>
+</embed>
+
+OrgApp is also supported by: [[http://www.fbergeron.com|{{banner:fbergeron.png}}]]
+
+====== Documentation ======
+===== Organigram Applet =====
+OrgApplet.jar is the applet to view the charts, the applet requires a browser supporting Java Plug-in (with a Java version higher than 1.5). The syntax is:
+
+  <applet name="Organigram" code="OrganigramApplet.class" archive="URLTO_OrgApplet.jar">
+    <param name="DataSource" value="URLTO_organigram.xml" />
+    <param name="Target" value="_blank" />
+    <param name="Data" value="embedded organization chart definition" />
+    <param name="DataType" value="type of the definition" />
+  </applet>
+
+The parameters meaning is:
+  * **DataSource** is the URL of the resource that contains the definition of the orgnanigram in any of the supported formats.
+  * **Target** is the target used in links (unless a more specific will be present in the definition of the organigram node). 
+  * **Data**, if DataSource is not defined this fileds holds the embedded definition of the chart in one of the supported format.
+  * **DataType** is the type of the embedded definition (0=SOF, 1=TXT, 2=sitemap).
+
+Check the source page to see a real usage.
+
+===== Organigram Application =====
+OrgApp.jar is a stand alone Java application to view the organization charts, that can be launched with the syntax:
+
+  java -jar OrgApp.jar path_to_organigram.xml
+
+where //path_to_organigram.xml// is obviously the path to the organigram in any of the supported format (format used is autodetected).
+
+===== Organigram Converter =====
+Convert.jar is a tool to transform an organization chart file from a format to another, the syntax:
+
+  java -jar Convert.jar input_file output_type
+
+//input_file// is the path of the input organigram
+
+//output_type// is the type of the output organigram, with the following encoding: 0 simple organigram format, 1 text organigram, 2 sitemap.
+
+The output will be printed to the screen, but can be redirected to a file (adding //> path_to_output// to the command).
+
+The conversion form SOF format to another format can loose lot of information...
+
+===== Organigram File format =====
+OrgApp support three organigram file formats.
+
+  * **SOF**, Simple Organigram Format is a XML based file format
+  * **Text Format**, is a format where each raw is a node of the organigram
+  * **Sitemap format**, as described in http://www.sitemaps.org
+
+See data file of the [[http://www.eiroca.net/apps/orgapp/data1.xml|first organigram]] and of the [[http://www.eiroca.net/apps/orgapp/data2.xml|second one]] for examples of the file format or the SOF file format documentation present inside the //doc// directory of the distribution.
+
+===== Server side helpers =====
+The distribution contains server side library to easly integrate the applet.
+
+//OrgApp.inc// is a PHP script to easly generate the HTML code necessary to draw the organization chart. Sample code:
+
+  require_once("lib\OrgApp.inc");
+  $OC = new OrgApp();
+  //Set the dimension of the chats $OC->width=400;
+  $OC->height=300;
+  //Generate a chart, the data is a URL
+  $OC->emitRef('data.xml');
+  //Generate a chart, the data is read from a file and embedded in the html page
+  $OC->emitFile('data.xml', 0);
+  //Generate a chart with the data given
+  $OC->emitData('<organigram><unit name="Doe, John" department="CEO" role="H"/></organigram>', 0);
+
+==== Dokuwiki ====
+It's also available a Dokuwiki plugin [[..:software:dokuwiki:orgapp|here]].
+
+===== Screenshoots ===== 
+{{gallery>software:orgapp?320x200&2&direct }}
+
+====== Development ======
+
+===== To Do =====
+  * Hyperlinks on box lines
+  * Offscreen (?)
+  * MouseOver effect
+  * Search
+  * Graph editor (?)
+  * Images on the node and in general flexible layout of the node
+  * Staff drawing
+  * Matrix dependencies
+
+  
+             B
+             |-S
+          -----------
+          |     |   |
+          B     B.. |
+          |-O     ..M
+          |-O......
+  
+
+===== Changes log =====
+**Version 0.4.0**
+  * PHP script to easly generate the applet tag to embed the chart
+  * New layouts: TOP (e.g. organization chart), LEFT (e.g. classic tree chart), BOTTOM (e.g. family tree), RIGHT (e.g. direct elimination matches)
+  * It is possible to specify line mode (direct or connector) and use name instead of numbers (e.g. mode="grow" instead of mode="2")
+  * Applet can take the chart definition from "Data" and "DataType" parameters
+  * Collapsible nodes
+  * Added handling of collapsed flag in the GUI (right click toggles it)
+  * Colors now can be expressed also with HTML color notation
+
+**Version 0.3.0**
+  * Compact aligment
+  * Reading/writing organigram from sitemap.xml
+  * Target of the link can be specified
+  * Bugs fixing
+
+**Version 0.2.0**
+  * XML file format refactory
+  * Writing organigram in XML format
+  * Reading/writing organigram in text format
+  * Adding Layout support (vertical/horizzontal)
+  * //Box mode// introduced in layout manager in order to take less room to display the boxes. There are three modes:
+    * MAX, where all boxes have the same size
+    * MIN, where the boxes have the minimum size (granted that all boxes on the same row/col have the same size)
+    * GROW, that grants that "boss" boxes are not lower than operative
+  * Metadata handling including box type (boss highlight)
+  * Individual box colors
+  * Individual line font
+  * Adding compact visualization
+
+**Version 0.1.0**
+  * 2005/11/20 - Improved scrollbars management.
+  * 2005/11/20 - Improved the layout management and moved it to a dedicated class.
+  * 2005/11/20 - Implemented basic individual line font management and horizontal alignment.
+  * 2005/11/20 - Implemented cursor and tooltip update for boxes with a defined link.
+  * 2005/11/13 - Implemented box hyperlinks (not on lines yet).
+  * 2005/11/06 - Began to implement color, font and style for box lines.
+  * 2005/11/06 - Introduced scrollbars.
+  * 2005/10/30 - Added link tag for box lines.
+
+===== Metrics =====
+[[..:development:metrics#OrgApp|Software metrics]].
+
+====== Licence & Copyright ======
+<embed en:template:LGPL3>
+  <label author>Copyright (c) 2005-2010 Frédéric Bergeron & eIrOcA (eNrIcO Croce & sImOnA Burzio)</label>
+  <label post></label>
+</embed>
+
+{{tag>OrgApp Applications J2SE Organigram Organization_chart}}
