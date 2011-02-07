@@ -1,10 +1,11 @@
 <?php
 /**
  * @file       divalign2/syntax/center.php
- * @brief      Enables center alignment for divalign2 plugin.
+ * @brief      Center alignment component for divalign2 plugin.
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * @version    2.0
- * @author     Luis Machuca B. <luis.machuca[at]gulix.cl>
+ * @version    2.2B
+ * @date       2010-11-11
+ * @author     Luis Machuca Bezzaza <luis [dot] machuca [at] gulix [dot] cl>
  */
 
 /**
@@ -15,55 +16,52 @@
 // must be run within DokuWiki
 if(!defined('DOKU_INC')) die();
 if(!defined('DW_LF')) define('DW_LF',"\n");
- 
+
 if(!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
 require_once(DOKU_PLUGIN.'syntax.php');
- 
+require_once(DOKU_PLUGIN. 'divalign2/common.php'); // for common functions
+
 /**
  * All DokuWiki plugins to extend the parser/rendering mechanism
  * need to inherit from this class
  */
 class syntax_plugin_divalign2_center extends DokuWiki_Syntax_Plugin {
- 
-    function getInfo(){
-        return array(
-            'author' => 'Luis Machuca B.',
-            'email'  => 'luis.machuca[at]gulix.cl',
-            'date'   => @file_get_contents(DOKU_PLUGIN.'divalign2/VERSION'),
-            'name'   => 'divalign2',
-            'desc'   => "Set center alignment with ;#; content ;#;",
-            'url'    => 'http://www.dokuwiki.org/plugin:divalign2',
-        );
+    var $DIVALIGN= 'center';
+
+    function getInfo() {
+        return DW_common_divalign2::getInfo($this->DIVALIGN);
     }
- 
+
     function getSort() { 
-      return 157; 
+        return DW_common_divalign2::getSort(); 
     }
+
     function getType() { 
-      return 'container'; 
+        return DW_common_divalign2::getType(); 
     }
+
     function getAllowedTypes() { 
-      return array( 
-             'container', 'substition', 'protected', 
-             'disabled', 'formatting', 'paragraphs'); 
+        return DW_common_divalign2::getAllowedTypes();
     }
-    
+
     function getPType() {
-      return 'block';
+        return DW_common_divalign2::getPType();
     }
  
     function connectTo($mode) {
-        $this->Lexer->addEntryPattern(';#;(?=.+\n;#;)',    
-               $mode,'plugin_divalign2_center');
+        $this->Lexer->addEntryPattern(';#;(?=.+\n;#;)',
+            $mode,'plugin_divalign2_'.$this->DIVALIGN);
     }
+
     function postConnect() {
-        $this->Lexer->addExitPattern('\n;#;','plugin_divalign2_center');
+        $this->Lexer->addExitPattern('\n;#;',
+            'plugin_divalign2_'.$this->DIVALIGN);
     }
- 
+
     function handle($match, $state, $pos, &$handler){
         switch ( $state ) {
           case DOKU_LEXER_ENTER: {
-            $align = 'center';
+            $align = $this->DIVALIGN;
             break;
             }
           case DOKU_LEXER_UNMATCHED: {
@@ -73,67 +71,8 @@ class syntax_plugin_divalign2_center extends DokuWiki_Syntax_Plugin {
         }
         return array($align,$state,$pos);
     }
- 
+
     function render($mode, &$renderer, $data) {
- 
-        if ($mode == 'xhtml'){
- 
-          list($align,$state,$pos) = $data;
-          switch ($state) {
-            case DOKU_LEXER_ENTER: {
-              if ($align) { 
-                $renderer->doc .= '<div class="divalign-'.$align.'">'; 
-                }
-              break;
-              }
-            case DOKU_LEXER_EXIT : {
-              $renderer->doc .= '</div>'. DW_LF;
-              break;
-              }
-          } // end switch
-          return true;
-        } // end if ($mode == 'xhtml')
-
-        if ($mode == 'odt' ){
-          list($align,$state,$pos) = $data;
-          static $center_defined= false;
-          $st = '
-          <style:style style:name="Text.Divalign.Center" style:display-name="Text.Divalign.Center" style:family="paragraph" style:parent-style-name="Text_20_body">
-               <style:paragraph-properties fo:text-align="center" style:justify-single-word="false"/>
-          </style:style>';
-          $renderer->autostyles['Text.Divalign.Center']= $st;
-          $center_defined= true;
-          switch ($state) {
-            case DOKU_LEXER_ENTER: {
-              $renderer->doc.= '<text:p ';
-              $renderer->doc.= 'text:style-name="Text.Divalign.Center">';
-              break;
-              }
-            case DOKU_LEXER_EXIT: {
-              $renderer->doc.= '</text:p>';
-              break;
-              }
-
-            } // end switch
-          return true;
-        }
-        if ($mode == 'text' ) {
-          list($align,$state,$pos) = $data;
-          switch ($state) {
-            case DOKU_LEXER_ENTER: {
-              $renderer->doc .= DW_LF;
-              }
-            case DOKU_LEXER_EXIT : {
-              $renderer->doc .= DW_LF;
-              break;
-              }
-          } // end switch
-          return true;
-        } // end if ($mode == 'text')
-
-        // no more rendering modes available
-        return false;
+        DW_common_divalign2::render ($mode, $renderer, $data);
     }
- 
 }
- 

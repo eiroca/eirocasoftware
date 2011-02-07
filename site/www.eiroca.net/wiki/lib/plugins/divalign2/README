@@ -2,19 +2,25 @@
 
 This plugin is a fork of the Divalign Plugin, and incorporates those 
 corrections and feature requests posted from 2005 to 2008 which saw
-no further implementation.
+no further implementation. It also incorporates support for the
+ODT and text-mode renderers, as well as a toolbar picker.
 
 All documentation for this Plugin is available online at:
-http://wiki.splitbrain.org/plugin:divalign2
+http://www.dokuwiki.org/plugin:divalign2
 
 Demo page is available at:
-https://informatica.temuco.udelmar.cl/~lmachuca/dokuwiki-lucho/desarrollo/informatica/dokuwiki/plugin-divalign2
+http://ryan.gulix.cl/dw/desarrollo/dokuwiki/plugin-divalign2
 
 This plugin conflicts with the following plugins:
 
-  * Divalign Plugin  http://wiki.splitbrain.org/plugin:divalign
+  * Divalign Plugin  http://www.dokuwiki.org/plugin:divalign
 
-Divalign Plugin (c) 2005 - 2008 by Jason Byrne <jbyrne@floridascale.com>
-Divalign2 Plugin (c) 2008 -2009 by Luis Machuca B. <luis.machuca@gulix.cl>
+This plugin can be used in conjunction with:
+
+  * ODT Plugin       http://www.dokuwiki.org/plugin:odt
+  * Text Plugin      http://www.dokuwiki.org/plugin:text
+
+Divalign Plugin (c) 2005 - 2008 by Jason Byrne <jbyrne [at] floridascale.com>
+Divalign2 Plugin (c) 2008 -2010 by Luis Machuca Bezzaza <luis.machuca [at] gulix.cl>
 
 See COPYING for license info.
