@@ -1,0 +1,9 @@
+/**
+ * CSS for DokuWiki Plugin Uparrow
+ * @author Michael Klier phpchi@chinux.de
+ */
+div.dokuwiki div.plugin_uparrow {
+  margin-top:10px;
+  margin-bottom:10px;
+  text-align:right;
+}

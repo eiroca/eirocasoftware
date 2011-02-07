@@ -1,0 +1,25 @@
+/**
+ * @file   divalign2/style.css
+ * @brief  Base stylesheet for divalign2 plugin
+ * @author Luis Machuca B.
+ */
+
+
+div.divalign-left {
+  text-align:left;
+  }
+
+div.divalign-center {
+  text-align:center;
+  margin:0 auto;
+}
+
+div.divalign-right {
+  text-align:right;
+  }
+
+div.divalign-justify {
+  text-align:justify;
+  }
+
+/* end of file */
