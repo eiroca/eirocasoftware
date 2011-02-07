@@ -27,3 +27,4 @@ class action_plugin_barcode extends DokuWiki_Action_Plugin {
 		);
 	}
 }
+?>
