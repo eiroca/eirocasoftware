@@ -73,6 +73,15 @@ function tpl_sidebar($pos) {
 	}
 }
 
+function tpl_homepage() {
+	global $ID;
+	print "/wiki/";
+	$path  = explode(':', $ID);
+	if (count($path)>1) {
+		if ($path[0]) { print "doku.php?id=".$path[0].":start"; }
+	}
+}
+
 /**
  * Dispatches the given sidebar type to return the right content
  *
@@ -90,6 +99,11 @@ function tpl_sidebar_dispatch($sb,$pos) {
 	switch($sb) {
 		case 'main':
 			$main_sb = $pname;
+			$path  = explode(':', $svID);
+			$main_sb .= "_".$path[0];
+			if(!@page_exists($main_sb)) {
+				$main_sb = $pname;
+			}
 			if(@page_exists($main_sb) && auth_quickaclcheck($main_sb) >= AUTH_READ) {
 				$always = tpl_getConf('main_sidebar_always');
 				if($always or (!$always && !getNS($ID))) {
