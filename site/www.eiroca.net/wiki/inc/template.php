@@ -87,13 +87,14 @@ function tpl_content_core(){
             if (is_array($_REQUEST['first'])) {
                 $_REQUEST['first'] = array_keys($_REQUEST['first']);
                 $_REQUEST['first'] = $_REQUEST['first'][0];
+
             }
             $first = is_numeric($_REQUEST['first']) ? intval($_REQUEST['first']) : 0;
             html_recent($first);
             break;
         case 'index':
             html_index($IDX); #FIXME can this be pulled from globals? is it sanitized correctly?
-                break;
+            break;
         case 'backlink':
             html_backlinks();
             break;
@@ -155,15 +156,17 @@ function tpl_toc($return=false){
         $toc = $TOC;
     }elseif(($ACT == 'show' || substr($ACT,0,6) == 'export') && !$REV && $INFO['exists']){
         // get TOC from metadata, render if neccessary
-        $meta = p_get_metadata($ID, false, true);
+        $meta = p_get_metadata($ID, false, METADATA_RENDER_USING_CACHE);
         if(isset($meta['internal']['toc'])){
             $tocok = $meta['internal']['toc'];
         }else{
             $tocok = true;
+
         }
         $toc   = $meta['description']['tableofcontents'];
         if(!$tocok || !is_array($toc) || !$conf['tocminheads'] || count($toc) < $conf['tocminheads']){
             $toc = array();
+
         }
     }elseif($ACT == 'admin'){
         // try to load admin plugin TOC FIXME: duplicates code from tpl_admin
@@ -173,12 +176,15 @@ function tpl_toc($return=false){
             if (in_array($_REQUEST['page'], $pluginlist)) {
                 // attempt to load the plugin
                 $plugin =& plugin_load('admin',$_REQUEST['page']);
+
+
             }
         }
         if ( ($plugin !== null) &&
                 (!$plugin->forAdminOnly() || $INFO['isadmin']) ){
             $toc = $plugin->getTOC();
             $TOC = $toc; // avoid later rebuild
+
         }
     }
 
@@ -205,18 +211,19 @@ function tpl_admin(){
 
             // attempt to load the plugin
             $plugin =& plugin_load('admin',$_REQUEST['page']);
+
         }
     }
 
     if ($plugin !== null){
-        if($plugin->forAdminOnly() && !$INFO['isadmin']){
-            msg('For admins only',-1);
-            html_admin();
-        }else{
-            if(!is_array($TOC)) $TOC = $plugin->getTOC(); //if TOC wasn't requested yet
-            if($INFO['prependTOC']) tpl_toc();
-            $plugin->html();
-        }
+
+
+
+
+        if(!is_array($TOC)) $TOC = $plugin->getTOC(); //if TOC wasn't requested yet
+        if($INFO['prependTOC']) tpl_toc();
+        $plugin->html();
+
     }else{
         html_admin();
     }
@@ -274,22 +281,26 @@ function tpl_metaheaders($alt=true){
             $head['link'][] = array( 'rel'=>'edit',
                     'title'=>$lang['btn_edit'],
                     'href'=> wl($ID,'do=edit',false,'&'));
+
         }
 
         if($ACT == 'search'){
             $head['link'][] = array( 'rel'=>'alternate', 'type'=>'application/rss+xml',
                     'title'=>'Search Result',
                     'href'=>DOKU_BASE.'feed.php?mode=search&q='.$QUERY);
+
         }
 
         if(actionOK('export_xhtml')){
             $head['link'][] = array( 'rel'=>'alternate', 'type'=>'text/html', 'title'=>'Plain HTML',
                     'href'=>exportlink($ID, 'xhtml', '', false, '&'));
+
         }
 
         if(actionOK('export_raw')){
             $head['link'][] = array( 'rel'=>'alternate', 'type'=>'text/plain', 'title'=>'Wiki Markup',
                     'href'=>exportlink($ID, 'raw', '', false, '&'));
+
         }
     }
 
@@ -301,10 +312,12 @@ function tpl_metaheaders($alt=true){
                 $head['meta'][] = array( 'name'=>'robots', 'content'=>'index,follow');
             }else{
                 $head['meta'][] = array( 'name'=>'robots', 'content'=>'noindex,nofollow');
+
             }
             $head['link'][] = array( 'rel'=>'canonical', 'href'=>wl($ID,'',true,'&') );
         }else{
             $head['meta'][] = array( 'name'=>'robots', 'content'=>'noindex,follow');
+
         }
     }elseif(defined('DOKU_MEDIADETAIL')){
         $head['meta'][] = array( 'name'=>'robots', 'content'=>'index,follow');
@@ -319,6 +332,7 @@ function tpl_metaheaders($alt=true){
             $head['meta'][] = array( 'name'=>'date', 'content'=>date('Y-m-d\TH:i:sO',$REV));
         }else{
             $head['meta'][] = array( 'name'=>'date', 'content'=>date('Y-m-d\TH:i:sO',$INFO['lastmod']));
+
         }
 
         // keywords (explicit or implicit)
@@ -326,6 +340,7 @@ function tpl_metaheaders($alt=true){
             $head['meta'][] = array( 'name'=>'keywords', 'content'=>join(',',$INFO['meta']['subject']));
         }else{
             $head['meta'][] = array( 'name'=>'keywords', 'content'=>str_replace(':',',',$ID));
+
         }
     }
 
@@ -380,8 +395,10 @@ function _tpl_metaheaders_action($data){
                 echo '>',$attr['_data'],'</',$tag,'>';
             }else{
                 echo '/>';
+
             }
             echo "\n";
+
         }
     }
 }
@@ -453,6 +470,7 @@ function tpl_button($type,$return=false){
             $out = html_topbtn();
         } else {
             $out = html_btn($type, $id, $accesskey, $params, $method);
+
         }
     }
     if ($return) return $out;
@@ -479,6 +497,7 @@ function tpl_actionlink($type,$pre='',$suf='',$inner='',$return=false){
             $linktarget = $id;
         } else {
             $linktarget = wl($id, $params);
+
         }
         $caption = $lang['btn_' . $type];
         $out = tpl_link($linktarget, $pre.(($inner)?$inner:$caption).$suf,
@@ -542,6 +561,8 @@ function tpl_get_action($type) {
                         $params['rev'] = $REV;
                         if(!$INFO['exists']){
                             $type   = 'create';
+
+
                         }
                     }
                 }else{
@@ -549,11 +570,13 @@ function tpl_get_action($type) {
                     $params['rev'] = $REV;
                     $type = 'source';
                     $accesskey = 'v';
+
                 }
             }else{
                 $params = '';
                 $type = 'show';
                 $accesskey = 'v';
+
             }
             break;
         case 'revisions':
@@ -575,32 +598,47 @@ function tpl_get_action($type) {
             $parent = tpl_getparent($ID);
             if (!$parent) {
                 return false;
+
             }
             $id = $parent;
             $params = '';
             $accesskey = 'b';
             break;
         case 'login':
-            if(!$conf['useacl'] || !$auth){
-                return false;
-            }
+
+
+
             $params['sectok'] = getSecurityToken();
             if(isset($_SERVER['REMOTE_USER'])){
-                if (!$auth->canDo('logout')) {
+                if (!actionOK('logout')) {
                     return false;
+
                 }
                 $params['do'] = 'logout';
                 $type = 'logout';
+
+            }
+            break;
+        case 'register':
+            if($_SERVER['REMOTE_USER']){
+                return false;
+            }
+            break;
+        case 'resendpwd':
+            if($_SERVER['REMOTE_USER']){
+                return false;
             }
             break;
         case 'admin':
             if(!$INFO['ismanager']){
                 return false;
+
             }
             break;
         case 'revert':
             if(!$INFO['ismanager'] || !$REV || !$INFO['writable']) {
                 return false;
+
             }
             $params['rev'] = $REV;
             $params['sectok'] = getSecurityToken();
@@ -609,20 +647,23 @@ function tpl_get_action($type) {
             $type = 'subscribe';
             $params['do'] = 'subscribe';
         case 'subscribe':
-            if(!$conf['useacl'] || !$auth || $ACT !== 'show' || !$conf['subscribers'] || !$_SERVER['REMOTE_USER']){
+
+            if(!$_SERVER['REMOTE_USER']){
                 return false;
+
             }
             break;
         case 'backlink':
             break;
         case 'profile':
-            if(!$conf['useacl'] || !$auth || !isset($_SERVER['REMOTE_USER']) ||
-                    !$auth->canDo('Profile') || ($ACT=='profile')){
+            if(!isset($_SERVER['REMOTE_USER'])){
+
                 return false;
+
             }
             break;
         case 'subscribens':
-            // Superseeded by subscribe/subscription
+            // Superseded by subscribe/subscription
             return '';
             break;
         default:
@@ -685,7 +726,7 @@ function tpl_searchform($ajax=true,$autocomplete=true){
  *
  * @author Andreas Gohr <andi@splitbrain.org>
  */
-function tpl_breadcrumbs($sep='&raquo;'){
+function tpl_breadcrumbs($sep='&bull;'){
     global $lang;
     global $conf;
 
@@ -733,54 +774,61 @@ function tpl_youarehere($sep=' &raquo; '){
     global $ID;
     global $lang;
 
+
+
+
+
+
     // check if enabled
     if(!$conf['youarehere']) return false;
+
+
+
 
     $parts = explode(':', $ID);
     $count = count($parts);
 
-    if($GLOBALS['ACT'] == 'search')
-    {
-        $parts = array($conf['start']);
-        $count = 1;
-    }
 
     echo '<span class="bchead">'.$lang['youarehere'].': </span>';
 
     // always print the startpage
-    $title = useHeading('navigation') ? p_get_first_heading($conf['start']) : $conf['start'];
-    if(!$title) $title = $conf['start'];
-    tpl_link(wl($conf['start']),hsc($title),'title="'.$conf['start'].'"');
+
+
+
+    tpl_pagelink(':'.$conf['start']);
 
     // print intermediate namespace links
     $part = '';
     for($i=0; $i<$count - 1; $i++){
         $part .= $parts[$i].':';
         $page = $part;
-        resolve_pageid('',$page,$exists);
+
         if ($page == $conf['start']) continue; // Skip startpage
 
         // output
         echo $sep;
-        if($exists){
-            $title = useHeading('navigation') ? p_get_first_heading($page) : $parts[$i];
-            tpl_link(wl($page),hsc($title),'title="'.$page.'"');
-        }else{
-            tpl_link(wl($page),$parts[$i],'title="'.$page.'" class="wikilink2" rel="nofollow"');
-        }
+
+
+
+
+
+
+        tpl_pagelink($page);
     }
 
     // print current page, skipping start page, skipping for namespace index
+    resolve_pageid('',$page,$exists);
     if(isset($page) && $page==$part.$parts[$i]) return;
     $page = $part.$parts[$i];
     if($page == $conf['start']) return;
     echo $sep;
-    if(page_exists($page)){
-        $title = useHeading('navigation') ? p_get_first_heading($page) : $parts[$i];
-        tpl_link(wl($page),hsc($title),'title="'.$page.'"');
-    }else{
-        tpl_link(wl($page),$parts[$i],'title="'.$page.'" class="wikilink2" rel="nofollow"');
-    }
+
+
+
+
+
+
+    tpl_pagelink($page);
     return true;
 }
 
@@ -823,6 +871,7 @@ function tpl_pageinfo($ret=false){
             $fn = str_replace(fullpath($conf['olddir']).'/','',$fn);
         }else{
             $fn = str_replace(fullpath($conf['datadir']).'/','',$fn);
+
         }
     }
     $fn = utf8_decodeFN($fn);
@@ -841,18 +890,21 @@ function tpl_pageinfo($ret=false){
             $out .= editorinfo($INFO['editor']);
         }else{
             $out .= ' ('.$lang['external_edit'].')';
+
         }
         if($INFO['locked']){
             $out .= ' &middot; ';
             $out .= $lang['lockedby'];
             $out .= ': ';
             $out .= editorinfo($INFO['locked']);
+
         }
         if($ret){
             return $out;
         }else{
             echo $out;
             return true;
+
         }
     }
     return false;
@@ -929,6 +981,33 @@ function tpl_img($maxwidth=0,$maxheight=0,$link=true,$params=null){
     global $IMG;
     $w = tpl_img_getTag('File.Width');
     $h = tpl_img_getTag('File.Height');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	//resize to given max values
 	if ($maxwidth) {
 		if($w > $maxwidth){
@@ -942,6 +1021,8 @@ function tpl_img($maxwidth=0,$maxheight=0,$link=true,$params=null){
 			$h=$maxheight;
 		}
 	}
+
+
     //prepare URLs
     $url=ml($IMG,array('cache'=>$_REQUEST['cache']),true,'&');
     $src=ml($IMG,array('cache'=>$_REQUEST['cache'],'w'=>$w,'h'=>$h),true,'&');
@@ -992,12 +1073,12 @@ function tpl_indexerWebBug(){
     global $INFO;
     if(!$INFO['exists']) return false;
 
-    if(isHiddenPage($ID)) return false; //no need to index hidden pages
+
 
     $p = array();
     $p['src']    = DOKU_BASE.'lib/exe/indexer.php?id='.rawurlencode($ID).
         '&'.time();
-    $p['width']  = 1;
+    $p['width']  = 2;
     $p['height'] = 1;
     $p['alt']    = '';
     $att = buildAttributes($p);
@@ -1023,8 +1104,10 @@ function tpl_getConf($id){
             foreach ($tconf as $key => $value){
                 if (isset($conf['tpl'][$tpl][$key])) continue;
                 $conf['tpl'][$tpl][$key] = $value;
+
             }
             $tpl_configloaded = true;
+
         }
     }
 
@@ -1106,6 +1189,7 @@ function tpl_mediaContent($fromajax=false){
             $do = 'filesinuse';
         }else{
             $do = 'filelist';
+
         }
     }
 
@@ -1125,6 +1209,7 @@ function tpl_mediaContent($fromajax=false){
             media_searchlist($_REQUEST['q'],$NS,$AUTH);
         }else{
             msg('Unknown action '.hsc($do),-1);
+
         }
     }
     $evt->advise_after();
@@ -1170,7 +1255,7 @@ function tpl_actiondropdown($empty='',$button='&gt;'){
     if($REV) echo '<input type="hidden" name="rev" value="'.$REV.'" />';
     echo '<input type="hidden" name="sectok" value="'.getSecurityToken().'" />';
 
-    echo '<select name="do" id="action__selector" class="edit">';
+    echo '<select name="do" class="edit quickselect">';
     echo '<option value="">'.$empty.'</option>';
 
     echo '<optgroup label=" &mdash; ">';
@@ -1210,7 +1295,7 @@ function tpl_actiondropdown($empty='',$button='&gt;'){
     echo '</optgroup>';
 
     echo '</select>';
-    echo '<input type="submit" value="'.$button.'" id="action__selectorbtn" />';
+    echo '<input type="submit" value="'.$button.'" />';
     echo '</form>';
 }
 
@@ -1236,11 +1321,12 @@ function tpl_license($img='badge',$imgonly=false,$return=false){
             $out .= '<a href="'.$lic['url'].'" rel="license"';
             if($conf['target']['extern']) $out .= ' target="'.$conf['target']['extern'].'"';
             $out .= '><img src="'.DOKU_BASE.$src.'" class="medialeft lic'.$img.'" alt="'.$lic['name'].'" /></a> ';
+
         }
     }
     if(!$imgonly) {
         $out .= $lang['license'];
-        $out .= '<a href="'.$lic['url'].'" rel="license" class="urlextern"';
+        $out .= ' <a href="'.$lic['url'].'" rel="license" class="urlextern"';
         if($conf['target']['extern']) $out .= ' target="'.$conf['target']['extern'].'"';
         $out .= '>'.$lic['name'].'</a>';
     }
@@ -1292,6 +1378,7 @@ function tpl_subscribe() {
                 echo '<code class="ns">'.hsc(prettyprint_id($sub['target'])).'</code>';
             } else {
                 echo '<code class="page">'.hsc(prettyprint_id($sub['target'])).'</code>';
+
             }
             $sstl = sprintf($lang['subscr_style_'.$sub['style']], $stime_days);
             if(!$sstl) $sstl = hsc($sub['style']);
@@ -1305,6 +1392,7 @@ function tpl_subscribe() {
                                         'sectok' => getSecurityToken())) .
                  '" class="unsubscribe">'.$lang['subscr_m_unsubscribe'] .
                  '</a></div></li>';
+
         }
         echo '</ul>';
     }
@@ -1351,5 +1439,25 @@ function tpl_flush(){
 }
 
 
-//Setup VIM: ex: et ts=4 enc=utf-8 :
+
+/**
+ * Use favicon.ico from data/media root directory if it exists, otherwise use
+ * the one in the template's image directory.
+ *
+ * @author Anika Henke <anika@selfthinker.org>
+ */
+function tpl_getFavicon($abs=false) {
+    if (file_exists(mediaFN('favicon.ico'))) {
+        return ml('favicon.ico', '', true, '', $abs);
+    }
+
+    if($abs) {
+        return DOKU_URL.substr(DOKU_TPL.'images/favicon.ico', strlen(DOKU_REL));
+    }
+
+    return DOKU_TPL.'images/favicon.ico';
+}
+
+
+//Setup VIM: ex: et ts=4 :
 
