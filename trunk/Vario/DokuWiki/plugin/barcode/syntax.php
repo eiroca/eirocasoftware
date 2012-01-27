@@ -41,7 +41,7 @@ class syntax_plugin_barcode extends DokuWiki_Syntax_Plugin {
 					$p['text'] = "SMSTO:".$param[1].":".$param[2];
 					break;
 				case 'contact':
-					$p['text'] = "BEGIN:VCARD\nN:".$param[1]."\nTEL:".$param[2]."\nEMAIL".$param[3]."\nEND:VCARD";
+					$p['text'] = "BEGIN:VCARD\nN:".$param[1]."\nTEL:".$param[2]."\nEMAIL:".$param[3]."\nEND:VCARD";
 					break;
 				case 'text':
 					$p['text'] = substr($currentParam,5);
