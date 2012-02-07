@@ -1,5 +1,5 @@
 ====== OrgApp ======
-OrgApp is a Java library to handle and draw organization charts (organigrams).
+{{:ico:orgapp.png |}}OrgApp is a Java library to handle and draw organization charts (organigrams).
 
 The library has also an applet and a Swing Java client able to view an organization chart read from a file, in different formats (one of them based upon XML).
 
@@ -115,7 +115,7 @@ It's also available a Dokuwiki plugin [[..:software:dokuwiki:orgapp|here]].
 
 ===== Changes log =====
 **Version 0.4.0**
-  * PHP script to easly generate the applet tag to embed the chart
+  * PHP script to easly generate the applet in a HTML page
   * New layouts: TOP (e.g. organization chart), LEFT (e.g. classic tree chart), BOTTOM (e.g. family tree), RIGHT (e.g. direct elimination matches)
   * It is possible to specify line mode (direct or connector) and use name instead of numbers (e.g. mode="grow" instead of mode="2")
   * Applet can take the chart definition from "Data" and "DataType" parameters

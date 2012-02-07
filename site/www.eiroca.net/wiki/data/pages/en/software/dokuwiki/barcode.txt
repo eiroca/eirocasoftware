@@ -1,7 +1,7 @@
 ====== Plugin - barcode ======
 [[doku>start|Dokuwiki]] plugin to create 2D-Barcodes using different providers; the plug-in is present in the [[..:dokuwiki|Dokuwiki tools]] collection.
 
-===== Documentation =====
+===== Plugin usage =====
 Barcode generates 2D barcodes using different providers, currently:
   * [[http://code.google.com/intl/it-IT/apis/chart/types.html#qrcodes|Google Charts]]
   * [[http://qrcode.kaywa.com/|Kaywa]]
@@ -52,8 +52,19 @@ Here the code:
   ~~BARCODE~class=barcode_right~url=http://www.eiroca.net/dokuwiki~size=S~~
   ~~BARCODE~class=barcode_center~size=M~~
 
-==== History ====
+===== Installation =====
+Download and install the plugin using the [[doku>plugin:plugin|Plugin Manager]] using the following [[http://www.eiroca.net/apps/dokuwiki/barcode.zip|URL]]. Refer to [[doku>Plugins]] on how to install plugins manually using code donwload [[..:dokuwiki#download|here]] that is always up to date.
+
+==== Administration ====
+Inside dokuwiki plugin administration is possible to configure:
+  * The provider of the barcode generator
+  * If a hint to suggest the download of a mobile barcode reader has to be displayed
+
+The hint messages can be configured changingin the files //footer.txt// inside the barcode plugin directory. To add a new languages, not currently present, you should create a file footer_XX.txt where XX is the code of the language.
+
+===== History =====
 **Version 2011/02/03**
+  * Added button in the edit toolbar
   * Support for DokuWiki "Anteater"
 
 **Version 2010/04/20**
@@ -68,16 +79,6 @@ Here the code:
 
 **Version 2010/01/05**
   * First version
-
-===== Administration =====
-Inside dokuwiki plugin administration is possible to configure:
-  * The provider of the barcode generator
-  * If a hint to suggest the download of a mobile barcode reader has to be displayed
-
-The hint messages can be configured changingin the files //footer.txt// inside the barcode plugin directory. To add a new languages, not currently present, you should create a file footer_XX.txt where XX is the code of the language.
-
-===== Installation =====
-Download and install the plugin using the [[doku>plugin:plugin|Plugin Manager]] using the following [[http://www.eiroca.net/apps/dokuwiki/barcode.zip|URL]]. Refer to [[doku>Plugins]] on how to install plugins manually using code donwload [[..:dokuwiki#download|here]] that is always up to date.
 
 ====== Licence & Copyright ======
 <embed en:template:GPL3>

@@ -1,7 +1,7 @@
 ====== Plugin - orgapp ======
 Plugin per [[doku>start|Dokuwiki]] per disegnare organigrammi, appartenente alla collezione di [[..:dokuwiki|tool per Dokuwiki]].
 
-===== Documentazione =====
+===== Utilizzo del plugin =====
 Genera degli organigrammi utilizzando l'applet [[..:orgapp]].
 
 ==== Sintassi ====
@@ -55,14 +55,10 @@ genera il seguente risultato:
 
 <orgapp width="100%" url="/apps/orgapp/data2.xml"></orgapp>
 
-==== Versioni ====
-**Versione 2011/02/03**
-  * Supporto a DokuWiki "Anteater"
+===== Istallazione =====
+Scaricare e installare il plugin tramite il [[doku>plugin:plugin|Plugin Manager]] usando il seguente [[http://www.eiroca.net/apps/dokuwiki/orgapp.zip|URL]]. Oppure installarlo manualmente (Vedere [[doku>Plugins]]) usando il codice, sempre aggiornato, che si ottiene dalla sezione [[..:dokuwiki#Scarica!]].
 
-**Versione 2010/04/19**
-  * Prima versione
-
-===== Amministrazione =====
+==== Amministrazione ====
 I valori di default della generazione dell'organigramma possono essere cambiati da pannello di controllo. 
 
 E' consigliabile, ma non necessario, spostare il file OrgApplet.jar in una cartella del Web dedicata a servire risorse statiche e modificare la relativa URL nel campo //**Archive**// del pannello di amministrazione. 
@@ -70,9 +66,15 @@ E' consigliabile, ma non necessario, spostare il file OrgApplet.jar in una carte
 **ATTENZIONE** se l'applet non si carica controllare:
   * che sul PC sia stato installato correttamente un [[http://java.com/it/download/index.jsp|runtime java]] (versione 6 preferibile)
   * che il parametro //**Archive**// contenga l'URL corretto del file //OrgApplet.jar//
+  * di non aver attivato la funzionalità nice URL di dokuwiki. Se si vuole utilizzare tale funzionalità occorre spostare il file //OrgApplet.jar// in una cartella di risorse statiche esterna alla parte di sito gestita da dokuwiki.
 
-===== Istallazione =====
-Scaricare e installare il plugin tramite il [[doku>plugin:plugin|Plugin Manager]] usando il seguente [[http://www.eiroca.net/apps/dokuwiki/orgapp.zip|URL]]. Oppure installarlo manualmente (Vedere [[doku>Plugins]]) usando il codice, sempre aggiornato, che si ottiene dalla sezione [[..:dokuwiki#Scarica!]].
+===== Versioni =====
+**Versione 2011/02/03**
+  * Aggiunto bottone nella toolbar di editing
+  * Supporto a DokuWiki "Anteater"
+
+**Versione 2010/04/19**
+  * Prima versione
 
 ====== Licenza & Copyright ======
 <embed it:template:GPL3>

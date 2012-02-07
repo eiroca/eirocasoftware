@@ -1,7 +1,7 @@
 ====== Plugin - orgapp ======
 [[doku>start|Dokuwiki]] plugin to draw organization charts; the plug-in is present in the [[..:dokuwiki|Dokuwiki tools]] collection.
 
-===== Documentation =====
+===== Plugin usage =====
 Generates charts using the applet [[..:orgapp]].
 
 ==== Syntax ====
@@ -55,24 +55,26 @@ generates the following result:
 
 <orgapp width="100%" url="/apps/orgapp/data2.xml"></orgapp>
 
-==== History ====
-**Version 2011/02/03**
-  * Support for DokuWiki "Anteater"
+===== Installation =====
+Download and install the plugin using the [[doku>plugin:plugin|Plugin Manager]] using the following [[http://www.eiroca.net/apps/dokuwiki/orgapp.zip|URL]]. Refer to [[doku>Plugins]] on how to install plugins manually using code donwload [[..:dokuwiki#download|here]] that is always up to date.
 
-**Version 2010/04/19**
-  * First version
-
-===== Administration =====
+==== Administration ====
 The default values used in  the generation of the organization chart can be changed from the control panel.
 
 It is advisable, but not necessary, move the OrgApplet.jar file in the Web server directory serving static resources and change the URL in the field //**Archive**// of the administration panel.
 
 **WARNING** if the applet does not load, you should control:
   * [[http://java.com/it/download/index.jsp|Java runtime]] is properly installed in the PC (version 6 or higher)
-  * That //**Archive**// field contains the correct URL of the file //OrgApplet.jar//
+  * that //**Archive**// field contains the correct URL of the file //OrgApplet.jar//
+  * to have disabled the nice URL dokuwiki feature. If you want to use nice URL you need to move the //OrgApplet.jar// file to a static resources folder outside the control of dokuwiki rewrite rules.
 
-===== Installation =====
-Download and install the plugin using the [[doku>plugin:plugin|Plugin Manager]] using the following [[http://www.eiroca.net/apps/dokuwiki/orgapp.zip|URL]]. Refer to [[doku>Plugins]] on how to install plugins manually using code donwload [[..:dokuwiki#download|here]] that is always up to date.
+===== History =====
+**Version 2011/02/03**
+  * Added button in the edit toolbar
+  * Support for DokuWiki "Anteater"
+
+**Version 2010/04/19**
+  * First version
 
 ====== Licence & Copyright ======
 <embed en:template:GPL3>

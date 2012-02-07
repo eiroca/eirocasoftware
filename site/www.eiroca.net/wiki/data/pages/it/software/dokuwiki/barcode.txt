@@ -1,7 +1,7 @@
 ====== Plugin - barcode ======
 Plugin [[doku>start|Dokuwiki]] per creare codici a barre 2D con diversi providers, appartenente alla collezione di [[..:dokuwiki|tool per Dokuwiki]].
 
-===== Documentazione =====
+===== Utilizzo del plugin =====
 Genera dei barcode 2D utilizzando:
   * [[http://code.google.com/intl/it-IT/apis/chart/types.html#qrcodes|Google Charts]]
   * [[http://qrcode.kaywa.com/|Kaywa]]
@@ -52,8 +52,19 @@ Si ottengono con il seguente codice:
   ~~BARCODE~class=barcode_right~url=http://www.eiroca.net/dokuwiki~size=S~~
   ~~BARCODE~class=barcode_center~size=M~~
 
-==== Versioni ====
+===== Istallazione =====
+Scaricare e installare il plugin tramite il [[doku>plugin:plugin|Plugin Manager]] usando il seguente [[http://www.eiroca.net/apps/dokuwiki/barcode.zip|URL]]. Oppure installarlo manualmente (Vedere [[doku>Plugins]]) usando il codice, sempre aggiornato, che si ottiene dalla sezione [[..:dokuwiki#Scarica!]].
+
+==== Amministrazione ====
+Tramite il pannello di gestione Plugin è possibile configurare:
+  * Il provider da usare per generare il barcode
+  * Se mostrare un messagio che suggerisce un reader mobile per leggere il barcode
+
+I testi dei messagi puossono essere configurato modificando i file //footer.txt// presenti nella directory del plugin. Per aggiungere eventuali nuove lingue non ancora presenti occorre creare un file footer_XX.txt dove XX è il codice della nuova lingua.
+
+===== Versioni =====
 **Versione 2011/02/03**
+  * Aggiunto bottone nella toolbar di editing
   * Supporto a DokuWiki "Anteater"
 
 **Versione 2010/04/20**
@@ -68,16 +79,6 @@ Si ottengono con il seguente codice:
 
 **Versione 2010/01/05**
   * Prima versione
-
-===== Amministrazione =====
-Tramite il pannello di gestione Plugin è possibile configurare:
-  * Il provider da usare per generare il barcode
-  * Se mostrare un messagio che suggerisce un reader mobile per leggere il barcode
-
-I testi dei messagi puossono essere configurato modificando i file //footer.txt// presenti nella directory del plugin. Per aggiungere eventuali nuove lingue non ancora presenti occorre creare un file footer_XX.txt dove XX è il codice della nuova lingua.
-
-===== Istallazione =====
-Scaricare e installare il plugin tramite il [[doku>plugin:plugin|Plugin Manager]] usando il seguente [[http://www.eiroca.net/apps/dokuwiki/barcode.zip|URL]]. Oppure installarlo manualmente (Vedere [[doku>Plugins]]) usando il codice, sempre aggiornato, che si ottiene dalla sezione [[..:dokuwiki#Scarica!]].
 
 ====== Licenza & Copyright ======
 <embed it:template:GPL3>

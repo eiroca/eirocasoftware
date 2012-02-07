@@ -13,6 +13,8 @@ PHP classes generated need [[eps|EPS framework]] in order to run.
   * Tons of things
 
 ===== Changes log =====
+**Version 1.0.1**
+  * Updated to new WURFL format
 **Version 1.0.0**
   * First public release
   </label>

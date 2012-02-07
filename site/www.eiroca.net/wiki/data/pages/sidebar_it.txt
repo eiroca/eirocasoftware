@@ -9,4 +9,8 @@ Supporta **eIrOcA** con una donazione:
 <img alt="" border="0" src="https://www.paypal.com/it_IT/i/scr/pixel.gif" width="1" height="1">
 </form>
 
+<br/>
+Oppure, diffondi eIrOcA:<br/>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<g:plusone></g:plusone>
 </html>

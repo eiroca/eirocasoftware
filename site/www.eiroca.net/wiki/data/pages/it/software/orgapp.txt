@@ -1,11 +1,9 @@
 ====== OrgApp ======
-OrgApp è una librarua Java per gestire e disegnare degli organigrammi.
+{{:ico:orgapp.png |}}OrgApp è una libreria Java per gestire e disegnare degli organigrammi.
 
-La libreria include un applet e un'applicazione Swing in grado di disegnare l'organigramma in base a una definizione letta da un file XML, da un file di testo o da un file che segue lo standard sitemap.xml.
+La libreria include un'applet e un'applicazione Swing in grado di disegnare l'organigramma in base a una definizione letta da un file XML, da un file di testo o da un file che segue lo standard sitemap.xml.
 
-The library has also an applet and a Swing Java client able to view an organization chart read from a file, in different formats (one of them based upon XML).
-
-La libreria supporta grafici con differenti layout e box con con hyperlink, colori, dimensioni definiti dall'utente... ed è molto facile da includere all'interno di una pagina HTML. 
+La libreria supporta grafici con differenti layout e box con hyperlink, colori, dimensioni definiti dall'utente... ed è molto facile da includere all'interno di una pagina HTML. 
 
 <orgapp height=300 width="45%" url="/apps/orgapp/data1.sof" target="_blank"></orgapp>
 <orgapp height=300 width="45%" url="/apps/orgapp/data2.sof" target="_blank"></orgapp>
@@ -25,7 +23,7 @@ OrgApp è anche supportato da: [[http://www.fbergeron.com|{{banner:fbergeron.png
 
 ====== Documentazione ======
 ===== Organigram Applet =====
-OrgApplet.jar è l'applet per visualizzare l'organigramma e richiede un browser che supporti i Java Plug-in (e una versione di Java superiori alla 1.5). La sintassi è la seguente:
+OrgApplet.jar è l'applet per visualizzare l'organigramma e richiede un browser che supporti i Java Plug-in (e una versione i Java superiori alla 1.5). La sintassi è la seguente:
 
   <applet name="Organigram" code="OrganigramApplet.class" archive="URLTO_OrgApplet.jar">
     <param name="DataSource" value="URLTO_organigram.xml" />
@@ -104,7 +102,6 @@ E' anche disponibile un plugin per Dokuwiki al seguente [[..:software:dokuwiki:o
   * Box a Staff 
   * Dipendenze a matrice
 
-  
              B
              |-S
           -----------
@@ -112,7 +109,6 @@ E' anche disponibile un plugin per Dokuwiki al seguente [[..:software:dokuwiki:o
           B     B.. |
           |-O     ..M
           |-O......
-  
 
 ===== Ultimi cambiamenti =====
 **Versione 0.4.0**
