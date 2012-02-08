@@ -18,7 +18,7 @@
 ## Not all installations will require the following line.  If you do, 
 ## change "/dokuwiki" to the path to your dokuwiki directory relative
 ## to your document root.
-#RewriteBase /dokuwiki
+RewriteBase /wiki
 #
 ## If you enable DokuWikis XML-RPC interface, you should consider to
 ## restrict access to it over HTTPS only! Uncomment the following two
@@ -26,11 +26,11 @@
 #RewriteCond %{HTTPS} !=on
 #RewriteRule ^lib/exe/xmlrpc.php$      https://%{SERVER_NAME}%{REQUEST_URI} [L,R=301]
 #
-#RewriteRule ^_media/(.*)              lib/exe/fetch.php?media=$1  [QSA,L]
-#RewriteRule ^_detail/(.*)             lib/exe/detail.php?media=$1  [QSA,L]
-#RewriteRule ^_export/([^/]+)/(.*)     doku.php?do=export_$1&id=$2  [QSA,L]
-#RewriteRule ^$                        doku.php  [L]
-#RewriteCond %{REQUEST_FILENAME}       !-f
-#RewriteCond %{REQUEST_FILENAME}       !-d
-#RewriteRule (.*)                      doku.php?id=$1  [QSA,L]
-#RewriteRule ^index.php$               doku.php
+RewriteRule ^_media/(.*)              lib/exe/fetch.php?media=$1  [QSA,L]
+RewriteRule ^_detail/(.*)             lib/exe/detail.php?media=$1  [QSA,L]
+RewriteRule ^_export/([^/]+)/(.*)     doku.php?do=export_$1&id=$2  [QSA,L]
+RewriteRule ^$                        doku.php  [L]
+RewriteCond %{REQUEST_FILENAME}       !-f
+RewriteCond %{REQUEST_FILENAME}       !-d
+RewriteRule (.*)                      doku.php?id=$1  [QSA,L]
+RewriteRule ^index.php$               doku.php
