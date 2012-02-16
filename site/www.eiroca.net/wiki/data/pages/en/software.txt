@@ -29,7 +29,6 @@ Desktop Applications is a set of applications and tools.\\
   * [[.:Software:eANN|{{ico:eng.png?32x16|ENG}}]] [[.:Software:eANN|eANN]] is an implementation of several kind of neural networks that was written with the intention of providing a (hopefully) easy to use, and easy to modify, OOP source code. It's also included a graphical shell.
   * [[.:Software:OrgApp|{{ico:eng.png?32x16|ENG}}]] [[.:Software:OrgApp|OrgApp]] is a Java applet, application and library to handle and draw simple organigrams.
  
-
 ===== Server Applications =====
 {{ home:server.png?120x100|Server Applications}}
 Server Applications is a set of server applications and tools that also covers "mobile" clients aspects.\\
