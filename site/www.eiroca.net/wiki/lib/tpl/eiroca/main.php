@@ -45,7 +45,7 @@ echo "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"" . $conf['lang'] 
    </div>
    <div class="clearer"></div>
    <div align="center" class="footerinc">
-   <?php global $__lang; tpl_pagelink($__lang."copyright", "Copyright (c) eIrOcA 2001-2011") ?>
+   <?php global $__lang; tpl_pagelink($__lang."copyright", "Copyright (c) eIrOcA 2001-2012") ?>
    </div>
   </div>
  </div>
