@@ -1,5 +1,5 @@
 <?php
 
-header("Location: /wiki/doku.php");
+header("Location: /start");
 
 ?>
