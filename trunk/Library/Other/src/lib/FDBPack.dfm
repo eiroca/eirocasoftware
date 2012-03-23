@@ -19,7 +19,7 @@ object fmDBPack: TfmDBPack
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 23
-  object RxLabel1: TRxLabel
+  object RxLabel1: TJvLabel
     Left = 0
     Top = 0
     Width = 300
@@ -33,6 +33,13 @@ object fmDBPack: TfmDBPack
     Font.Name = 'Times New Roman'
     Font.Style = []
     ParentFont = False
+    Transparent = True
+    HotTrackFont.Charset = DEFAULT_CHARSET
+    HotTrackFont.Color = clWindowText
+    HotTrackFont.Height = -37
+    HotTrackFont.Name = 'Times New Roman'
+    HotTrackFont.Style = []
+    ExplicitWidth = 171
   end
   object Timer: TTimer
     Enabled = False

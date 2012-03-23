@@ -483,13 +483,13 @@ begin
       s:= HostName+#0;
       IPAddress:= WinSock.Inet_Addr(@s[1]);  (* try a xxx.xxx.xxx.xx first *)
     (*$else *)
-      IPAddress:= WinSock.Inet_Addr(PChar(HostName));  (* try a xxx.xxx.xxx.xx first *)
+      IPAddress:= WinSock.Inet_Addr(PAnsiChar(HostName));  (* try a xxx.xxx.xxx.xx first *)
     (*$endif *)
     if IPAddress=SOCKET_ERROR then begin
       (*$ifdef ver80 *)
         RemoteHost:= WinSock.GetHostByName(@s[1]);
       (*$else *)
-        RemoteHost:= WinSock.GetHostByName(PChar(HostName));
+        RemoteHost:= WinSock.GetHostByName(PAnsiChar(HostName));
       (*$endif *)
       if (RemoteHost=nil) or (RemoteHost^.h_length<=0) then begin
         Result:= IPAddress;

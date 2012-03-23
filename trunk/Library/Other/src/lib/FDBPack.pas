@@ -23,14 +23,14 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, eDB, RXCtrls, ExtCtrls, DBTables;
+  Forms, Dialogs, eDB, ExtCtrls, DBTables, JvExControls, JvLabel;
 
 type
   MakeProcedure = procedure (dbDatabase: TDatabase);
 
 type
   TfmDBPack = class(TForm)
-    RxLabel1: TRxLabel;
+    RxLabel1: TJvLabel;
     Timer: TTimer;
     procedure FormShow(Sender: TObject);
     procedure TimerTimer(Sender: TObject);
@@ -54,7 +54,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib;
+  eLibCore;
 
 procedure MakeDir(Dir: string);
 var
