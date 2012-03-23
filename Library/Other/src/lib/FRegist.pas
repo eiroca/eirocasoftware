@@ -63,7 +63,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, FAboutBox;
+  eLibCore, FAboutBox;
 
 const
   MsgBadName: string = 'Inserire un nome valido';

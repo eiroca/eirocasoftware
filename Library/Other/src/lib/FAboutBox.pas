@@ -23,7 +23,7 @@ interface
 
 uses
   WinTypes, WinProcs, Classes, SysUtils, Graphics, Forms, Controls,
-  RxVerInf, Buttons, StdCtrls, ExtCtrls, IceLock, LabelEffect, RXCtrls;
+  Buttons, StdCtrls, ExtCtrls, IceLock, LabelEffect, JvExControls, JvLabel, JvVersionInfo;
 
 type
   TfmAbout = class(TForm)
@@ -31,10 +31,10 @@ type
     imAbout: TImage;
     lbVersion: TLabel;
     btOk: TBitBtn;
-    lbProduct: TRxLabel;
+    lbProduct: TJvLabel;
     lbCopyrig: TLabel;
     lbCompany: TLabel;
-    lbBuild: TRxLabel;
+    lbBuild: TJvLabel;
     btRegister: TBitBtn;
     gbLicenza: TGroupBox;
     Label1: TLabel;
@@ -58,14 +58,14 @@ type
 procedure About(aIL: TIceLock; aMagic: word; aSbloc: boolean);
 
 var
-  Info: TVersionInfo;
+  Info: TJvVersionInfo;
 
 implementation
 
 {$R *.DFM}
 
 uses
-  eLib, FRegist;
+  eLibCore, FRegist;
 
 procedure TfmAbout.FormCreate(Sender: TObject);
 var
@@ -207,7 +207,7 @@ begin
 end;
 
 initialization
-  Info:= TVersionInfo.Create(ParamStr(0));
+  Info:= TJvVersionInfo.Create(ParamStr(0));
   AddExitProc(OnExit);
 end.
 

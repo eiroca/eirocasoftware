@@ -880,7 +880,7 @@ object fmAbout: TfmAbout
       Font.Style = []
       ParentFont = False
     end
-    object lbProduct: TRxLabel
+    object lbProduct: TJvLabel
       Left = 161
       Top = 17
       Width = 168
@@ -896,8 +896,13 @@ object fmAbout: TfmAbout
       ParentFont = False
       Transparent = True
       WordWrap = True
+      HotTrackFont.Charset = DEFAULT_CHARSET
+      HotTrackFont.Color = clWindowText
+      HotTrackFont.Height = -21
+      HotTrackFont.Name = 'Times New Roman'
+      HotTrackFont.Style = []
     end
-    object lbBuild: TRxLabel
+    object lbBuild: TJvLabel
       Left = 11
       Top = 57
       Width = 141
@@ -912,6 +917,11 @@ object fmAbout: TfmAbout
       ParentShowHint = False
       ShowHint = True
       Transparent = True
+      HotTrackFont.Charset = DEFAULT_CHARSET
+      HotTrackFont.Color = clWindowText
+      HotTrackFont.Height = -27
+      HotTrackFont.Name = 'Times New Roman'
+      HotTrackFont.Style = []
     end
   end
   object btOk: TBitBtn
@@ -921,8 +931,6 @@ object fmAbout: TfmAbout
     Height = 25
     Caption = 'Ok'
     Default = True
-    ModalResult = 1
-    TabOrder = 1
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -937,8 +945,10 @@ object fmAbout: TfmAbout
       05555555555555777FF5555555555557905555555555555777FF555555555555
       5990555555555555577755555555555555555555555555555555}
     Margin = 5
+    ModalResult = 1
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 1
   end
   object btRegister: TBitBtn
     Left = 245
@@ -947,9 +957,9 @@ object fmAbout: TfmAbout
     Height = 25
     Caption = 'Registrazione'
     Default = True
-    TabOrder = 2
-    OnClick = btRegisterClick
     NumGlyphs = 2
     Spacing = 0
+    TabOrder = 2
+    OnClick = btRegisterClick
   end
 end
