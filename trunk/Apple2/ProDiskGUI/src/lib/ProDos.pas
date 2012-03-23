@@ -32,7 +32,7 @@ type
   end;
 
   PProDosName = ^TProDosName;
-  TProDosName = packed array[1..15] of char;
+  TProDosName = packed array[1..15] of AnsiChar;
 
   PProDosItem = ^TProDosItem;
   TProDosItem = packed record
