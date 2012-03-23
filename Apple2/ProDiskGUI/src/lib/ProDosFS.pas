@@ -585,7 +585,7 @@ begin
       for i:= 1 to Length(Nam) do begin
         Nam[i]:= UpCase(Nam[i]);
         if Nam[i] in ['A'..'Z','0'..'9','.'] then FileName[i]:= Nam[i]
-        else FileName[i]:='.';
+        else FileName[i]:= '.';
       end;
       PosBlk  := VBM.GetFreeBlock;
       VBM.MarkBlock(PosBlk, false);
