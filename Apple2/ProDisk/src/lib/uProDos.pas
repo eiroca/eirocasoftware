@@ -19,12 +19,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  Unit: ProDos
  Do general I/O with Prodos Harddisk images
 *)
-unit ProDos;
+unit uProDos;
 
 interface
-
-uses
-  Dos, Crt;
 
 const
   SizeOfBlock = 512;
@@ -34,6 +31,11 @@ const
   ErrBadBlkMrk   = 4;
 
 type
+
+  PathStr = string;
+  DirStr = string;
+  NameStr = string;
+  ExtStr = string;
 
   PProBlock = ^TProBlock;
   TProBlock = packed array[0..511] of byte;
@@ -48,7 +50,7 @@ type
   TProDate   = packed array[0..1] of word;
 
   PProName = ^TProName;
-  TProName = packed array[1..15] of char;
+  TProName = packed array[1..15] of AnsiChar;
 
   PNameStr = ^TNameStr;
   TNameStr = string[15];
@@ -156,8 +158,8 @@ const
   af_Write  =   2;
   af_Read   =   1;
 
-procedure WaitReturn;
-function  FileExist(var FileName: PathStr): boolean;
+procedure SplitFileName(fileName: string; var dir, nam, ext: string);
+
 procedure MakeDir(Dir: PathStr);
 procedure GotoDir(Dir: PathStr);
 
@@ -188,13 +190,22 @@ function  MsDosName(Name: TNameStr; Kind: byte): PathStr;
 procedure ExportFile (var Disk: TProDosDisk; var Item: TFileItem; var OutName: PathStr);
 procedure ExportDir  (var Disk: TProDosDisk);
 procedure ImportFile (var Disk: TProDosDisk; var InName: PathStr);
-procedure ImportFiles(var Disk: TProDosDisk);
+procedure ImportFiles(var Disk: TProDosDisk; FN: PathStr);
 
 implementation
+
+uses SysUtils;
 
 const
   HexStr: array[0..15] of char = '0123456789ABCDEF';
   BitMask: array[0..7] of byte = (128,64,32,16,8,4,2,1);
+
+procedure SplitFileName(fileName: string; var dir, nam, ext: string);
+begin
+  Dir:= ExtractFileDir(fileName);
+  Nam:= ExtractFileName(fileName);
+  Ext:= ExtractFileExt(fileName);
+end;
 
 (* General function *)
 function LongMul(X, Y: integer): longint;
@@ -215,40 +226,19 @@ begin
 end;
 
 procedure WaitReturn;
-var
-  y: integer;
 begin
-  y:= WhereY;
-  GotoXY(1,y); ClrEol; Write('Press any key');
-  if ReadKey = #0 then ReadKey;
-  GotoXY(1,y); ClrEol;
-end;
-
-function FileExist(var FileName: PathStr): boolean;
-var
-  TmpFile: TExt;
-  Attrib: word;
-begin
-  if FileName='' then begin
-    FileExist:= false;
-    exit;
-  end;
-  Assign(TmpFile,FileName);
-  GetFAttr(TmpFile,Attrib);
-  FileExist:= (DosError=0);
+  readln;
 end;
 
 procedure MakeDir(Dir: PathStr);
 var
-  cd, cc, ds, mk: DirStr;
-  fn: NameStr;
-  es: ExtStr;
+  cd, ds, mk: DirStr;
   i: integer;
 begin
   GetDir(0, cd);
   for i:= 1 to Length(Dir) do if Dir[i] ='/' then Dir[i]:= '\';
   if Dir[Length(Dir)] <> '\' then Dir:= Dir+'\';
-  FSplit(Dir, ds, fn, es);
+  ds:= ExtractFileDir(Dir);
   {$I-} ChDir(ds); {$I+}
   if IOResult <> 0 then begin
     if ds[2] = ':' then begin
@@ -274,8 +264,8 @@ procedure GotoDir(Dir: PathStr);
 var
   i: integer;
 begin
-  if Dir[Length(Dir)] = '\' then Dec(byte(Dir[0]));
-  {$I-} ChDir(FExpand(Dir)); {$I+}
+  if Dir[Length(Dir)] = '\' then SetLength(Dir, Length(Dir)-1);
+  {$I-} ChDir(ExpandFileName (Dir)); {$I+}
   i:= IOResult;
   if i = 3 then begin
     (* se non hai trovato il path prova aggiungendo un '\',
@@ -290,40 +280,27 @@ end;
 (* General printing/coversion functions *)
 function Print2(a: word): string;
 begin
- if a<10 then Write('0',a) else Write(a);
- Print2:= '';
-end;
-
-function PrintHex4(wr: word): string;
-var tmp: string;
-begin
-  tmp:= HexStr[(wr shr 12) and $F]
-       +HexStr[(wr shr  8) and $F]
-       +HexStr[(wr shr  4) and $F]
-       +HexStr[(wr       ) and $F];
-  PrintHex4:= tmp;
+ if a<10 then Result:= '0'+IntToStr(a) else Result:= IntToStr(a);
 end;
 
 function PrintAccess(Access: byte): string;
 begin
-  if (Access and af_Delete) <> 0 then Write('+d') else Write('-d');
-  if (Access and af_Rename) <> 0 then Write('+n') else Write('-n');
-  if (Access and af_Modify) <> 0 then Write('+a') else Write('-a');
-  if (Access and af_Write ) <> 0 then Write('+w') else Write('-w');
-  if (Access and af_Read  ) <> 0 then Write('+r') else Write('-r');
-  PrintAccess:= '';
+  if (Access and af_Delete) <> 0 then Result:= '+d' else Result:= '-d';
+  if (Access and af_Rename) <> 0 then Result:= '+n' else Result:= '-n';
+  if (Access and af_Modify) <> 0 then Result:= '+a' else Result:= '-a';
+  if (Access and af_Write ) <> 0 then Result:= '+w' else Result:= '-w';
+  if (Access and af_Read  ) <> 0 then Result:= '+r' else Result:= '-r';
 end;
 
 function PrintDate(Date: TProDate): string;
 begin
   if (Date[0] = 0) and (Date[1] = 0) then begin
-    Write('<NO DATE>        ');
+    Result:= '<NO DATE>        ';
   end
   else begin
-    Write(Print2(Date[0] and $1F),'-',Print2((Date[0] shr 5) and $0F), '-',1900+Date[0] shr 9,' ');
-    Write(Print2(Date[1] shr 8),':',Print2(Date[1] and $FF),' ');
+    Result:= Print2(Date[0] and $1F)+'-'+Print2((Date[0] shr 5) and $0F)+'-'+IntToStr(1900+Date[0] shr 9)+' '+
+       Print2(Date[1] shr 8)+':'+Print2(Date[1] and $FF)+' ';
   end;
-  PrintDate:= '';
 end;
 
 function PrintKnd(Knd: byte): string;
@@ -373,7 +350,11 @@ var
 begin
   with Itm^ do begin
     FillChar(Name, SizeOf(Name),' ');
-    if Trim then Name[0]:= Chr(KndLen and $0F) else Name[0]:= #15;
+    if Trim then begin
+     SetLength(Name, KndLen and $0F)
+    end else begin
+      SetLength(Name, 15);
+    end;
     Move(FileName, Name[1], KndLen and $0F);
   end;
   GetName:= Name;
@@ -452,7 +433,7 @@ begin
       Writeln('Prodos Vers. : ', VerPro);
       Writeln('Min Prodos   : ', MinPro);
       Writeln('Access flag  : ', PrintAccess(Access));
-      Writeln('Aux. Bits    : $', PrintHex4(AuxBit));
+      Writeln('Aux. Bits    : $', IntToHex(AuxBit, 4));
       Writeln('Num. Block   : ', NumBlk);
       WaitReturn;
     end
@@ -460,7 +441,7 @@ begin
       if (KndLen and $F0) = 0 then exit;
       if (Access and 2) = 0 then Write('*') else Write(' ');
       Writeln(Name,' ',Knd2Ext(Kind),SizBlk:5,' ',PrintDate(ModiDate),' ',
-        PrintDate(CreaDate),' ',Siz:8,' $',PrintHex4(AuxBit));
+        PrintDate(CreaDate),' ',Siz:8,' $',IntToHex(AuxBit, 4));
     end;
   end;
 end;
@@ -486,7 +467,7 @@ begin
       Writeln('Prodos Vers. : ', VerPro);
       Writeln('Min Prodos   : ', MinPro);
       Writeln('Access flag  : ', PrintAccess(Access));
-      Writeln('Aux. Bits    : $', PrintHex4(AuxBit));
+      Writeln('Aux. Bits    : $', IntToHex(AuxBit, 4));
       Writeln('Num. Block   : ', NumBlk);
       WaitReturn;
     end
@@ -501,7 +482,7 @@ end;
 
 (* Low level disk function *)
 procedure ReadBlock(var Dsk: file; Blk: word; var Buf);
-var rd: word;
+var rd: integer;
 begin
   Seek(Dsk, LongMul(Blk, SizeOfBlock));
   BlockRead(Dsk, Buf, SizeOfBlock, rd);
@@ -509,7 +490,7 @@ begin
 end;
 
 procedure WriteBlock(var Dsk: file; Blk: word; var Buf);
-var wr: word;
+var wr: integer;
 begin
   Seek(Dsk, LongMul(Blk, SizeOfBlock));
   BlockWrite(Dsk, Buf, SizeOfBlock, wr);
@@ -622,14 +603,12 @@ end;
 (* disk functions *)
 procedure OpenDisk(var Disk: TProDosDisk; FN: PathStr);
 var
-  DirNam: DirStr;
-  Nam: NameStr;
   Ext: ExtStr;
   Buf: TProBlock;
 begin
   with Disk do begin
-    FilNam:= FExpand(FN);
-    FSplit(FilNam, DirNam, Nam, Ext);
+    FilNam:= ExpandFileName(FN);
+    Ext:= ExtractFileExt(FilNam);
     if Ext = '.dsk' then VolBlk:= 4 else VolBlk:= 2;
     Assign(Dsk, FilNam);
     Reset(Dsk, 1);
@@ -750,42 +729,38 @@ end;
 
 function MsDosName(Name: TNameStr; Kind: byte): PathStr;
 var
-  tmp: PathStr;
   ps: integer;
 begin
-  for ps:= 1 to Length(Name) do if Name[ps]='.' then Delete(Name,ps,1);
-  if Length(Name)>8 then Name[0]:= #8;
-  tmp:=Name+'.'+Knd2Ext(Kind);
-  if FileExist(tmp) then begin
-    ps:= Length(Name)+1; if ps > 8 then ps:= 8;
-    Name[0]:= Chr(ps);
-    Name[ps]:= '0';
-    tmp:=Name+'.'+Knd2Ext(Kind);
-    while FileExist(tmp) do Inc(tmp[ps]);
+  Result:= Name+'.'+Knd2Ext(Kind);
+  if FileExists(Result) then begin
+    ps:= 0;
+    repeat
+      inc(ps);
+      Result:=Name+'_'+IntToStr(ps)+'.'+Knd2Ext(Kind);
+    until not FileExists(Result);
   end;
-  MsDosName:= tmp;
 end;
 
 procedure ExportFile(var Disk: TProDosDisk; var Item: TFileItem; var OutName: PathStr);
 var
   MsDir: DirStr;
   Nam: NameStr;
-  Ext: ExtStr;
   Siz : longint;
   i, j, Ps, Bs: integer;
-  Err: word;
+  Err: integer;
   Buf : TProBlock;
   Ent, Ent1: TBlockArr;
   Out: file;
   ch: char;
 begin
-  OutName:= FExpand(OutName);
-  FSplit(OutName, MsDir, Nam, Ext);
-  OutName:= MsDir+Nam+Ext;
+  OutName:= ExpandFileName(OutName);
+  MsDir:= ExtractFileDir(OutName);
+  Nam:= ExtractFileName(OutName);
+  OutName:= MsDir+'\'+Nam;
   MakeDir(MsDir);
-  if FileExist(OutName) then begin
+  if FileExists(OutName) then begin
     Write('File exists. Overwrite? '); Readln(ch);
-    if not (UpCase(ch) in ['Y','S','J']) then exit;
+    if not CharInSet(UpCase(ch), ['Y','S','J']) then exit;
   end;
   Assign(Out, OutName);
   Rewrite(Out, 1);
@@ -868,23 +843,25 @@ procedure ImportFile(var Disk: TProDosDisk; var InName: PathStr);
 var
   Inp: file;
   Item: TFileItem;
-  MsDir: DirStr;
   Name: NameStr;
   Nam: string[12];
   Ext: ExtStr;
   Siz: longint;
   i,j: integer;
-  Err, Pos, Blk,
+  Err: integer;
+  Pos, Blk,
   NewBlk, Attr: word;
   Knd: byte;
+  hh, mm, se, ms: word;
   Year, Month, Day, DayOfWeek: word;
   Ent, Ent1: TBlockArr;
   Buf: TProBlock;
   Lnk: array[0..1] of word Absolute Buf;
 begin
-  if not FileExist(InName) then exit;
-  FSplit(InName, MsDir, Name, Ext);
-  Nam:= Name+Ext;
+  if not FileExists(InName) then exit;
+  Name:= ExtractFileName(InName);
+  Ext:= ExtractFileExt(InName);
+  Nam:= Name;
   Assign(Inp, InName);
   Reset(Inp, 1);
   Siz:= FileSize(Inp);
@@ -893,7 +870,7 @@ begin
   else Knd:= 3;
   with Item, Disk do begin
     Kind:= Ext2Knd(Ext);
-    if Length(Nam) >15 then Nam[0]:= #15; (* redundant *)
+    if Length(Nam) >15 then SetLength(Nam, 15);
     KndLen  := Knd*16+Length(Nam);
     FillChar(FileName, 15, 0);
     for i:= 1 to Length(Nam) do begin
@@ -916,15 +893,15 @@ begin
     Size[2]:= Siz shr 16;
     VerPro  := 0;
     MinPro  := 0;
-    GetFAttr(Inp, Attr);
+    Attr:= FileGetAttr(InName);
     Access  := af_Delete+af_Rename+af_Write+af_Read;
-    if (Attr and ReadOnly) <> 0 then Access:= Access and (not (af_Delete+af_Write));
-    if (Attr and Archive ) <> 0 then Access:= Access or af_Modify;
+    if (Attr and faReadOnly) <> 0 then Access:= Access and (not (af_Delete+af_Write));
+    if (Attr and faArchive ) <> 0 then Access:= Access or af_Modify;
     if Kind = $FF then AuxBit:= $2000 else AuxBit:= 0;
-    GetDate(Year, Month, Day, DayOfWeek);
+    DecodeDate(Date, Year, Month, Day);
     CreaDate[0]:= ((Year-1900) mod 127) shl 9 + Month shl 5 + Day;
-    GetTime(Year, Month, Day, DayOfWeek);
-    CreaDate[1]:= Year shl 8 + Month;
+    DecodeTime(Time, hh, mm, se, ms);
+    CreaDate[1]:= hh shl 8 + mm;
     ModiDate:= CreaDate;
     ReadBlock(Dsk, DirBlk, Buf);
     Dir:= PSubItem(@Buf[4])^;
@@ -1012,26 +989,23 @@ begin
   Close(Inp);
 end;
 
-procedure ImportFiles(var Disk: TProDosDisk);
+procedure ImportFiles(var Disk: TProDosDisk; FN: PathStr);
 var
-  FN: PathStr;
   MsDir: DirStr;
-  Nam: NameStr;
-  Ext: ExtStr;
-  DirInfo: SearchRec;
+  DirInfo: TSearchRec;
+  Err: integer;
 begin
-  Write('Which file? '); Readln(FN);
-  FN:= FExpand(FN);
-  FSplit(FN, MsDir, Nam, Ext);
-  FindFirst(FN, AnyFile and (not (SysFile or Directory or VolumeID)), DirInfo);
-  while DosError = 0 do begin
+  MsDir:= ExtractFileDir(FN);
+  Err:= FindFirst(FN, faAnyFile and (not (faSysFile or faDirectory or faVolumeID)), DirInfo);
+  while Err = 0 do begin
     with DirInfo do begin
       Writeln('Importing... ', Name);
-      FN:= MsDir+Name;
+      FN:= MsDir+'\'+Name;
       ImportFile(Disk, FN);
     end;
-    FindNext(DirInfo);
+    Err:= FindNext(DirInfo);
   end;
+  FindClose(DirInfo);
   WriteVBM(Disk);
 end;
 
