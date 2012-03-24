@@ -54,7 +54,7 @@ REQUIREMENTS
   Windows compatible OS
 
  For recompilation is required:
-  Free Pascal 2.x
+  Delphi XE2
   Working knowledge of Pascal
 
 ===============================================================================

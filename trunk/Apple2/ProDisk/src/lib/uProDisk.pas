@@ -19,17 +19,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  Program: ProDisk -
  C.L.I., shows Prodos HD, does file(s) import/exeport
 *)
-program ProDisk;
+unit uProDisk;
 
-{$mode objfpc}{$H+}
+interface
+
+procedure Main;
+
+implementation
 
 uses
-  {$IFDEF UNIX}{$IFDEF UseCThreads}
-  cthreads,
-  {$ENDIF}{$ENDIF}
-  Classes
-  { you can add units after this },
-  Crt, Dos, ProDos;
+  SysUtils, uProDos;
 
 var
   ExitFlag: boolean;
@@ -44,7 +43,7 @@ type
   end;
 
 const
-  NumCmds = 18;
+  NumCmds = 15;
 
 const
 
@@ -60,10 +59,9 @@ const
   cmDire =  5;
   cmPref =  6;
   cmStat =  7;
-  cmClea =  8;
-  cmExpF =  9;
-  cmExpD = 10;
-  cmImpo = 11;
+  cmExpF =  8;
+  cmExpD =  9;
+  cmImpo = 10;
 
   Cmds : array[1..NumCmds] of TCmd = (
     (Tokn: cmExit; Name: 'exit';    Parm: ''),
@@ -78,54 +76,33 @@ const
     (Tokn: cmPref; Name: 'cd';      Parm: '[$p|..|/]'),
     (Tokn: cmPref; Name: 'prefix';  Parm: '$p'),
     (Tokn: cmStat; Name: 'stat';    Parm: ''),
-    (Tokn: cmClea; Name: 'clrscr';  Parm: ''),
-    (Tokn: cmClea; Name: 'cls';     Parm: ''),
-    (Tokn: cmClea; Name: 'home';    Parm: ''),
     (Tokn: cmExpF; Name: 'export';  Parm: '$p $m'),
     (Tokn: cmExpD; Name: 'exportdir'; Parm: '$m'),
     (Tokn: cmImpo; Name: 'import';  Parm: '$m*.*')
   );
 
-function ForceExt(tmp: PathStr; Exte: ExtStr): PathStr;
-var
-  Dir: DirStr;
-  Nam: NameStr;
-  Ext: ExtStr;
-begin
-  FSplit(tmp, Dir, Nam, Ext);
-  if Ext='' then Ext:=Exte;
-  ForceExt:= Dir+Nam+Ext;
-end;
-
-
-procedure LoCase(var ch: char);
-begin
-  if ch in ['A'..'Z'] then ch:= Chr(ord(ch)+32);
-end;
-
 function GetToken(var CmdStr: string): integer;
 var
-  tkn, i, len: integer;
+  i, len: integer;
 begin
-  for i:= 1 to Length(CmdStr) do LoCase(CmdStr[i]);
-  tkn:= cmNone;
+  Result:= cmNone;
   if CmdStr = '' then exit;
+  CmdStr:= LowerCase(CmdStr);
   for i:= 1 to NumCmds do begin
     if CmdStr = Cmds[i].Name then begin
-      tkn:= Cmds[i].Tokn;
+      Result:= Cmds[i].Tokn;
       break;
     end;
   end;
-  if tkn = cmNone then begin
+  if Result = cmNone then begin
     len:= Length(CmdStr);
     for i:= 1 to NumCmds do begin
       if CmdStr = Copy(Cmds[i].Name,1,len) then begin
-        tkn:= Cmds[i].Tokn;
+        Result:= Cmds[i].Tokn;
         break;
       end;
     end;
   end;
-  GetToken:= tkn;
 end;
 
 procedure Trim(var str: string);
@@ -158,14 +135,13 @@ end;
 function GetParm(var prm: string; opr: integer): string;
 var
   tmp, New: string;
-  i: integer;
 begin
   SplitStr(prm, tmp, New);
   prm:= New;
   if tmp <> '' then begin
     case opr of
-      DoUpCase: for i:= 1 to Length(tmp) do tmp[i]:= UpCase(tmp[i]);
-      DoLoCase: for i:= 1 to Length(tmp) do LoCase(tmp[i]);
+      DoUpCase: tmp:= UpperCase(tmp);
+      DoLoCase: tmp:= LowerCase(tmp);
     end;
   end;
   GetParm:= tmp;
@@ -179,23 +155,12 @@ end;
 
 procedure Execute(Tokn: integer; var Cmd, prm: string);
   procedure DoHelp;
-  var i, j: integer;
+  var i: integer;
   begin
-    for i:= 1 to NumCmds div 4 do begin
-      for j:= 1 to 4 do begin
-        GotoXY((j-1)*20+1, WhereY);
-        with Cmds[4*(i-1)+j] do Write(Name,' ',Parm);
-      end;
-      Writeln;
+    for i:= 1 to NumCmds do begin
+      with Cmds[i] do Writeln(Name,' ',Parm);
     end;
-    i:= (NumCmds mod 4);
-    if i > 0 then begin
-      for j:= 1 to i do begin
-        GotoXY((j-1)*20+1, WhereY);
-        with Cmds[(NumCmds div 4)*4+j] do Write(Name,' ',Parm);
-      end;
-      Writeln;
-    end;
+    Writeln;
     Writeln('$p = Prodos filename, $m = MsDos filename');
     Writeln;
   end;
@@ -203,11 +168,12 @@ procedure Execute(Tokn: integer; var Cmd, prm: string);
   var
     FN: PathStr;
   begin
-    FN:= ForceExt(GetParm(prm, DoNothing),'.hdv');
+    FN:= GetParm(prm, DoUpCase);
     if FN = '' then begin
       Write('Prodos Disk file = '); Readln(FN);
     end;
-    if not FileExist(FN) then begin
+    if not FileExists(FN) then FN:= ChangeFileExt(FN, '.hdv');
+    if not FileExists(FN) then begin
       Error('file do not exit.');
       exit;
     end;
@@ -276,10 +242,6 @@ procedure Execute(Tokn: integer; var Cmd, prm: string);
       Writeln;
     end;
   end;
-  procedure DoClear;
-  begin
-    ClrScr;
-  end;
   procedure DoExportFile;
   var
     Name: TNameStr;
@@ -299,8 +261,19 @@ procedure Execute(Tokn: integer; var Cmd, prm: string);
     ExportDir(Disk);
   end;
   procedure DoImportFiles;
+  var
+    FN: PathStr;
   begin
-    ImportFiles(Disk);
+    FN:= GetParm(prm, DoUpCase);
+    if (FN='') then begin
+      Write('Which file? ');
+      Readln(FN);
+    end;
+    FN:= ExpandFileName(FN);
+    if (DirectoryExists(FN)) then begin
+      FN:= FN+'\*.*';
+    end;
+    ImportFiles(Disk, FN);
   end;
 var
   Name: TNameStr;
@@ -320,7 +293,6 @@ begin
     cmExpF: if not DiskOpen then Error('disk not open!') else DoExportFile;
     cmExpD: if not DiskOpen then Error('disk not open!') else DoExportDir;
     cmImpo: if not DiskOpen then Error('disk not open!') else DoImportFiles;
-    cmClea: DoClear;
     else begin
       if DiskOpen then begin
         prm:= Cmd+prm;
@@ -342,11 +314,11 @@ begin
   end;
 end;
 
+procedure Main;
 var
   Raw, Cmd, prm: string;
   Tokn: integer;
 begin
-  ClrScr;
   Writeln('Prodos disk mini command line interpeter v1.0. Type help for help.');
   Writeln;
   ExitFlag:= false;
@@ -362,5 +334,7 @@ begin
     Tokn:= GetToken(Cmd);
     Execute(Tokn, Cmd, prm);
   until ExitFlag;
+end;
+
 end.
 
