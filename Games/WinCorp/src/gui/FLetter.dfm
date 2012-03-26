@@ -34,7 +34,7 @@ object fmLetter: TfmLetter
     ExplicitLeft = 454
     ExplicitWidth = 6
   end
-  object lbLetTit: TRxLabel
+  object lbLetTit: TJvLabel
     Left = 0
     Top = 0
     Width = 460
@@ -50,7 +50,12 @@ object fmLetter: TfmLetter
     Font.Style = []
     ParentFont = False
     ShadowColor = 14811135
-    ShadowPos = spRightBottom
+    Transparent = True
+    HotTrackFont.Charset = DEFAULT_CHARSET
+    HotTrackFont.Color = clWindowText
+    HotTrackFont.Height = -29
+    HotTrackFont.Name = 'Times New Roman'
+    HotTrackFont.Style = []
   end
   object lbLetter4: TLabel
     Left = 0
@@ -98,8 +103,6 @@ object fmLetter: TfmLetter
     Width = 446
     Height = 30
     Caption = 'x'
-    TabOrder = 0
-    OnClick = btOkClick
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -114,5 +117,7 @@ object fmLetter: TfmLetter
       EE33337F333377F3337F33EEEEEE00EEEE33337F33337733337F33EEEEEEEEEE
       EE33337FFFFFFFFFFF7F33EEEEEEEEEEEE333377777777777773}
     NumGlyphs = 2
+    TabOrder = 0
+    OnClick = btOkClick
   end
 end

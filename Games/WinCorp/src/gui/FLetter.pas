@@ -23,13 +23,13 @@ interface
 
 uses
   SysUtils, Windows, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, RXCtrls, StdCtrls, Buttons, WidgetGame;
+  Forms, Dialogs, JvCtrls, StdCtrls, Buttons, WidgetGame, JvExControls, JvLabel;
 
 type
   TfmLetter = class(TForm)
     btOk: TBitBtn;
     lbSign: TLabel;
-    lbLetTit: TRxLabel;
+    lbLetTit: TJvLabel;
     lbLetter4: TLabel;
     lbLetter1: TLabel;
     lbLetter2: TLabel;
