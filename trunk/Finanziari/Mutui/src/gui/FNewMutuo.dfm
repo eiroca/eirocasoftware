@@ -43,7 +43,7 @@ object fmNewMutuo: TfmNewMutuo
     Height = 13
     Caption = 'Periodi in un anno'
   end
-  object iPrincipal: TCurrencyEdit
+  object iPrincipal: TJvValidateEdit
     Left = 105
     Top = 10
     Width = 121
@@ -51,11 +51,12 @@ object fmNewMutuo: TfmNewMutuo
     Margins.Left = 1
     Margins.Top = 1
     AutoSize = False
-    FormatOnEditing = True
+    CriticalPoints.MaxValueIncluded = False
+    CriticalPoints.MinValueIncluded = False
+    EditText = '10000'
     TabOrder = 0
-    Value = 10000.000000000000000000
   end
-  object iInterest: TRxSpinEdit
+  object iInterest: TJvSpinEdit
     Left = 105
     Top = 40
     Width = 121
@@ -66,7 +67,7 @@ object fmNewMutuo: TfmNewMutuo
     Value = 5.000000000000000000
     TabOrder = 1
   end
-  object iPeriods: TRxSpinEdit
+  object iPeriods: TJvSpinEdit
     Left = 105
     Top = 70
     Width = 121
@@ -82,18 +83,20 @@ object fmNewMutuo: TfmNewMutuo
     Top = 135
     Width = 89
     Height = 25
-    TabOrder = 3
     Kind = bkOK
+    NumGlyphs = 2
+    TabOrder = 3
   end
   object BitBtn2: TBitBtn
     Left = 125
     Top = 135
     Width = 89
     Height = 25
-    TabOrder = 4
     Kind = bkCancel
+    NumGlyphs = 2
+    TabOrder = 4
   end
-  object iPerInYear: TRxSpinEdit
+  object iPerInYear: TJvSpinEdit
     Left = 105
     Top = 100
     Width = 121
