@@ -18,7 +18,7 @@ object fmMain: TfmMain
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 15
-  object lbMain: TRxLabel
+  object lbMain: TJvLabel
     Left = 0
     Top = -10
     Width = 572
@@ -34,9 +34,13 @@ object fmMain: TfmMain
     ParentFont = False
     ShadowColor = clAqua
     ShadowSize = 3
-    ShadowPos = spRightBottom
     Transparent = True
     OnClick = showAbout
+    HotTrackFont.Charset = DEFAULT_CHARSET
+    HotTrackFont.Color = clWindowText
+    HotTrackFont.Height = -80
+    HotTrackFont.Name = 'Times New Roman'
+    HotTrackFont.Style = []
   end
   object imMain: TImage
     Left = 0
@@ -366,8 +370,6 @@ object fmMain: TfmMain
     Width = 120
     Height = 30
     Caption = 'x'
-    TabOrder = 0
-    OnClick = btPlayClick
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -382,6 +384,8 @@ object fmMain: TfmMain
       113333377377773FF7F333BB333BB7011B33337733377F7777FF3BB3333BB333
       3BB3377333377F33377FBB33333BB33333BB7733333773333377}
     NumGlyphs = 2
+    TabOrder = 0
+    OnClick = btPlayClick
   end
   object btExit: TBitBtn
     Left = 445
@@ -389,8 +393,6 @@ object fmMain: TfmMain
     Width = 120
     Height = 30
     Caption = 'x'
-    TabOrder = 1
-    OnClick = btExitClick
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000130B0000130B00001000000000000000000000000000
@@ -405,6 +407,8 @@ object fmMain: TfmMain
       99333773FF777F777733339993707339933333773FF7FFF77333333999999999
       3333333777333777333333333999993333333333377777333333}
     NumGlyphs = 2
+    TabOrder = 1
+    OnClick = btExitClick
   end
   object btHelp: TBitBtn
     Left = 319
@@ -412,8 +416,6 @@ object fmMain: TfmMain
     Width = 120
     Height = 30
     Caption = 'x'
-    TabOrder = 2
-    OnClick = btHelpClick
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -428,21 +430,24 @@ object fmMain: TfmMain
       FB33373F37777733373333BFBF999FBFB3333373FF77733F7333333BFBFBFBFB
       3333333773FFFF77333333333FBFBF3333333333377777333333}
     NumGlyphs = 2
+    TabOrder = 2
+    OnClick = btHelpClick
   end
-  object tlTimers: TRxTimerList
+  object tlTimers: TJvTimerList
     Active = True
+    Events = <
+      item
+        OnTimer = teAnim1Timer
+      end
+      item
+        Interval = 750
+        OnTimer = teAnim2Timer
+      end
+      item
+        Interval = 500
+        OnTimer = teAnim3Timer
+      end>
     Left = 45
     Top = 100
-    object teAnim1: TRxTimerEvent
-      OnTimer = teAnim1Timer
-    end
-    object teAnim2: TRxTimerEvent
-      Interval = 500
-      OnTimer = teAnim2Timer
-    end
-    object teAnim3: TRxTimerEvent
-      Interval = 750
-      OnTimer = teAnim3Timer
-    end
   end
 end

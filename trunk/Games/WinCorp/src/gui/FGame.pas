@@ -23,7 +23,7 @@ interface
 
 uses
   WidgetGame, SysUtils, Windows, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, Menus, ExtCtrls, StdCtrls, Mask, RXSpin, Buttons;
+  Forms, Dialogs, Menus, ExtCtrls, StdCtrls, Mask, Buttons, JvExMask, JvSpin;
 
 type
   TfmGame = class(TForm)
@@ -43,11 +43,11 @@ type
     lbAdv: TLabel;
     lbPri: TLabel;
     lbPay: TLabel;
-    ilPric: TRxSpinEdit;
-    ilProd: TRxSpinEdit;
-    ilPayr: TRxSpinEdit;
-    ilAdve: TRxSpinEdit;
-    ilReDe: TRxSpinEdit;
+    ilPric: TJvSpinEdit;
+    ilProd: TJvSpinEdit;
+    ilPayr: TJvSpinEdit;
+    ilAdve: TJvSpinEdit;
+    ilReDe: TJvSpinEdit;
     lbMarRep: TLabel;
     lbMarRepCst: TLabel;
     lbQtr: TLabel;

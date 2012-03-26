@@ -264,7 +264,7 @@ object fmGame: TfmGame
       TabOrder = 0
       OnClick = btMarRepClick
     end
-    object ilPric: TRxSpinEdit
+    object ilPric: TJvSpinEdit
       Left = 10
       Top = 35
       Width = 76
@@ -276,7 +276,7 @@ object fmGame: TfmGame
       Value = 0.500000000000000000
       TabOrder = 1
     end
-    object ilProd: TRxSpinEdit
+    object ilProd: TJvSpinEdit
       Left = 95
       Top = 35
       Width = 76
@@ -286,8 +286,8 @@ object fmGame: TfmGame
       MaxValue = 10000.000000000000000000
       TabOrder = 2
     end
-    object ilPayr: TRxSpinEdit
-      Left = 10
+    object ilPayr: TJvSpinEdit
+      Left = 6
       Top = 80
       Width = 76
       Height = 23
@@ -296,9 +296,9 @@ object fmGame: TfmGame
       MaxValue = 100000.000000000000000000
       TabOrder = 3
     end
-    object ilAdve: TRxSpinEdit
-      Left = 92
-      Top = 84
+    object ilAdve: TJvSpinEdit
+      Left = 88
+      Top = 80
       Width = 76
       Height = 23
       Decimal = 0
@@ -306,7 +306,7 @@ object fmGame: TfmGame
       MaxValue = 100000.000000000000000000
       TabOrder = 4
     end
-    object ilReDe: TRxSpinEdit
+    object ilReDe: TJvSpinEdit
       Left = 180
       Top = 80
       Width = 76
@@ -322,8 +322,6 @@ object fmGame: TfmGame
       Width = 90
       Height = 46
       Caption = 'x'
-      TabOrder = 6
-      OnClick = btExecuteClick
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000120B0000120B00001000000000000000000000000000
@@ -339,6 +337,8 @@ object fmGame: TfmGame
         5555555775FFFF77555555555C4CCC5555555555577777555555}
       Layout = blGlyphTop
       NumGlyphs = 2
+      TabOrder = 6
+      OnClick = btExecuteClick
     end
   end
   object gbOpRe: TGroupBox

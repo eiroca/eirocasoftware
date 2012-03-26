@@ -23,7 +23,7 @@ interface
 
 uses
   WidgetGame, SysUtils, Windows, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, StdCtrls, Buttons, rxTimerlst, ExtCtrls, RXCtrls;
+  Forms, Dialogs, StdCtrls, Buttons, JvTimerList, ExtCtrls, JvCtrls, JvExControls, JvLabel;
 
 type
   TfmMain = class(TForm)
@@ -31,17 +31,14 @@ type
     btPlay: TBitBtn;
     btExit: TBitBtn;
     btHelp: TBitBtn;
-    lbMain: TRxLabel;
+    lbMain: TJvLabel;
     imAnim1b: TImage;
     imAnim1a: TImage;
-    tlTimers: TRxTimerList;
-    teAnim1: TRxTimerEvent;
+    tlTimers: TJvTimerList;
     imAnim2a: TImage;
     imAnim2b: TImage;
-    teAnim2: TRxTimerEvent;
     imAnim3a: TImage;
     imAnim3b: TImage;
-    teAnim3: TRxTimerEvent;
     lbCopyright: TLabel;
     lbMain2: TLabel;
     procedure teAnim1Timer(Sender: TObject);

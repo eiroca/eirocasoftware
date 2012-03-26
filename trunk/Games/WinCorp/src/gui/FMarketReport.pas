@@ -23,15 +23,15 @@ interface
 
 uses
   SysUtils, Windows, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, ExtCtrls, RXCtrls, StdCtrls, Buttons, WidgetGame,
-  RXSlider;
+  Forms, Dialogs, ExtCtrls, JvCtrls, StdCtrls, Buttons, WidgetGame,
+  JvSlider, JvExControls, JvLabel;
 
 type
   TfmMarketReport = class(TForm)
     gbPI: TGroupBox;
     gbRI: TGroupBox;
     btOk: TBitBtn;
-    lbMarRepTit: TRxLabel;
+    lbMarRepTit: TJvLabel;
     Image1: TImage;
     lbQtr: TLabel;
     Image2: TImage;
@@ -42,7 +42,7 @@ type
     lbQty2: TLabel;
     lbCst2: TLabel;
     lbChange: TLabel;
-    slMix: TRxSlider;
+    slMix: TJvSlider;
     lbMix1: TLabel;
     lbMIx2: TLabel;
     lbPC: TLabel;
@@ -103,7 +103,7 @@ begin
     end;
     lbRD.Caption:= tmp1;
     lbRI.Caption:= tmp2;
-    slMix.Value:= trunc(PA_D * 100);
+    slMix.Position:= trunc(PA_D * 100);
   end;
 end;
 

@@ -17,7 +17,7 @@ object fmMarketReport: TfmMarketReport
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 15
-  object lbMarRepTit: TRxLabel
+  object lbMarRepTit: TJvLabel
     Left = 0
     Top = 0
     Width = 373
@@ -32,8 +32,13 @@ object fmMarketReport: TfmMarketReport
     Font.Style = []
     ParentFont = False
     ShadowColor = clAqua
-    ShadowPos = spRightBottom
-    ExplicitHeight = 24
+    Transparent = True
+    HotTrackFont.Charset = DEFAULT_CHARSET
+    HotTrackFont.Color = clWindowText
+    HotTrackFont.Height = -21
+    HotTrackFont.Name = 'Times New Roman'
+    HotTrackFont.Style = []
+    ExplicitWidth = 12
   end
   object Image1: TImage
     Left = 340
@@ -222,8 +227,6 @@ object fmMarketReport: TfmMarketReport
     Width = 361
     Height = 30
     Caption = 'x'
-    ModalResult = 1
-    TabOrder = 2
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -237,7 +240,9 @@ object fmMarketReport: TfmMarketReport
       FFF077F3333FFFF73FF7E0FBFB00000F000077FF337777737777E00FBFBFB0FF
       0FF07773FFFFF7337F37003000000FFF0F037737777773337F7333330FFFFFFF
       003333337FFFFFFF773333330000000003333333777777777333}
+    ModalResult = 1
     NumGlyphs = 2
+    TabOrder = 2
   end
   object gbAI: TGroupBox
     Left = 125
@@ -314,15 +319,12 @@ object fmMarketReport: TfmMarketReport
       Height = 15
       Caption = 'x'
     end
-    object slMix: TRxSlider
+    object slMix: TJvSlider
       Left = 20
       Top = 15
-      Width = 86
-      Height = 25
+      Width = 85
       Enabled = False
-      Options = []
       TabOrder = 0
-      Value = 50
     end
   end
 end
