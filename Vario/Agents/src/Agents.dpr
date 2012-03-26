@@ -17,16 +17,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 (*
  @author(Enrico Croce)
 *)
-program agenti;
+program Agents;
 
-{$mode objfpc}{$H+}
+{$APPTYPE CONSOLE}
+
+{$R *.res}
 
 uses
-  {$IFDEF UNIX}{$IFDEF UseCThreads}
-  cthreads,
-  {$ENDIF}{$ENDIF}
-  Classes
-  { add your units here }, uAgents;
+  System.SysUtils,
+  uAgents in 'lib\uAgents.pas';
 
 type
   LogAspect = class
@@ -58,14 +57,16 @@ begin
   writeln('Notify');
   AgentNotify(os);
 
-  
-  os.onAction:= @log.LogActionNotify;
-  os.doCreate:= @log.LogCreateCall;
+
+  os.onAction:= log.LogActionNotify;
+  os.doCreate:= log.LogCreateCall;
+
 (*
-  os.doSuspend:= @log.LogActionCall;
-  os.doActivate:= @log.LogActionCall;
-  os.doDestroy:= @log.LogActionCall;
+  os.doSuspend:= log.LogActionCall;
+  os.doActivate:= log.LogActionCall;
+  os.doDestroy:= Log.LogActionCall;
 *)
+
   AgentOn(os);
   AgentOff(os);
   os.Free;

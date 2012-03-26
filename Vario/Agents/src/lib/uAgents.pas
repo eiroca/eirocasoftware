@@ -19,8 +19,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 unit uAgents;
 
-{$mode Objfpc}{$H+}
-
 interface
 
 uses
@@ -107,7 +105,7 @@ type
      property onAction: ActionNotify read FActionNotify  write FActionNotify;
      procedure iNotifyAction(const target: Agent; const action: string); virtual;
     public
-      constructor Create(aOwner: TComponent);
+      constructor Create(aOwner: TComponent); override;
       destructor Destroy; override;
   end;
 
@@ -196,11 +194,11 @@ begin
   inherited Create(aOwner);
   FAgentName:= 'Agent';
   FAgentStatus:= asDestroyed;
-  doCreate:= @iCreate;
-  doActivate:= @iActivate;
-  doSuspend:= @iSuspend;
-  doDestroy:= @iDestroy;
-  onAction:= @iNotifyAction;
+  doCreate:= iCreate;
+  doActivate:= iActivate;
+  doSuspend:= iSuspend;
+  doDestroy:= iDestroy;
+  onAction:= iNotifyAction;
 end;
 
 destructor Agent.Destroy;
@@ -228,7 +226,6 @@ Var
   I,J : Longint;
   len: integer;
   PP : PPropList;
-  prI : PPropInfo;
 begin
   len:= length(what);
   PI:=target.ClassInfo;

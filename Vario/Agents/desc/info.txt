@@ -2,6 +2,6 @@ Name       : Agents
 Description: An agent is a piece of software able to run in a dynamic environment.
 OS         : -
 Type       : Console
-Language   : Lazaurs/FreePascal
+Language   : Delphi XE2
 Dependency : -
 
