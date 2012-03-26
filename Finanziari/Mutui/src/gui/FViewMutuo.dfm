@@ -20,7 +20,7 @@ object fmViewMutuo: TfmViewMutuo
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object dgDati: TRxDrawGrid
+  object dgDati: TJvDrawGrid
     Left = 0
     Top = 151
     Width = 608
@@ -34,6 +34,7 @@ object fmViewMutuo: TfmViewMutuo
     OnDrawCell = dgDatiDrawCell
     OnGetEditText = dgDatiGetEditText
     OnSetEditText = dgDatiSetEditText
+    DrawButtons = False
     OnShowEditor = dgDatiShowEditor
     OnGetEditAlign = dgDatiGetEditAlign
     ColWidths = (

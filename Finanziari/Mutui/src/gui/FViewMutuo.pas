@@ -24,14 +24,14 @@ interface
 uses
   SysUtils, Windows, Messages, Classes, Graphics, Controls,
   uMortgage,
-  Forms, Dialogs, Grids, RXGrids;
+  Forms, Dialogs, Grids, JvGrids, JvExGrids;
 
 const
   fmtSoldi = '%10m';
 
 type
   TfmViewMutuo = class(TForm)
-    dgDati: TRxDrawGrid;
+    dgDati: TJvDrawGrid;
     procedure FormCreate(Sender: TObject);
     procedure dgDatiDrawCell(Sender: TObject; Col, Row: Longint; Rect: TRect; State: TGridDrawState);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -85,7 +85,7 @@ begin
   if Row = 0 then begin
     case Col of
       0: dgDati.DrawStr(Rect, '# Pag.',      taCenter);
-      1: dgDati.DrawStr(Rect, 'Rata',    taCenter);
+      1: dgDati.DrawStr(Rect, 'Rata annua',  taCenter);
       2: dgDati.DrawStr(Rect, 'Capitale',    taCenter);
       3: dgDati.DrawStr(Rect, 'Interessi',   taCenter);
       4: dgDati.DrawStr(Rect, 'Saldo',       taCenter);

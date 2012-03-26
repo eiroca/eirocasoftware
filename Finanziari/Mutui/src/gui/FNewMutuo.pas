@@ -24,19 +24,20 @@ interface
 uses
   SysUtils, Windows, Messages, Classes, Graphics, Controls,
   uMortgage,
-  Forms, Dialogs, StdCtrls, Buttons, RXSpin, Mask, rxToolEdit, rxCurrEdit;
+  Forms, Dialogs, StdCtrls, Buttons, JvSpin, Mask, JvToolEdit,
+  JvExMask, JvExStdCtrls, JvEdit, JvValidateEdit;
 
 type
   TfmNewMutuo = class(TForm)
     Label1: TLabel;
-    iPrincipal: TCurrencyEdit;
+    iPrincipal: TJvValidateEdit;
     Label2: TLabel;
-    iInterest: TRxSpinEdit;
+    iInterest: TJvSpinEdit;
     Label3: TLabel;
-    iPeriods: TRxSpinEdit;
+    iPeriods: TJVSpinEdit;
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
-    iPerInYear: TRxSpinEdit;
+    iPerInYear: TJvSpinEdit;
     Label5: TLabel;
   private
     { Private declarations }
