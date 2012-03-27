@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 (*
  @author(Enrico Croce)
 *)
-program Bioritmi2007;
+program Bioritmi;
 
 uses
   Forms,

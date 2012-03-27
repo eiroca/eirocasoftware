@@ -23,14 +23,16 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  eLib, uBioritmi,
-  rxPlacemnt, StdCtrls, Buttons, eGauge, ComCtrls, Mask, rxToolEdit, RXSpin;
+  eLibCore, uBioritmi,
+  StdCtrls, Buttons, eGauge, ComCtrls, Mask,
+  JvComponentBase, JvFormPlacement, JvExMask, JvToolEdit, JvExControls, JvSpin,
+  JvAppStorage, JvAppIniStorage;
 
 type
   TfmMain = class(TForm)
     gbLui: TGroupBox;
-    iData1: TDateEdit;
-    iOggi: TDateEdit;
+    iData1: TJvDateEdit;
+    iOggi: TJvDateEdit;
     Label1: TLabel;
     Label3: TLabel;
     Label4: TLabel;
@@ -39,9 +41,9 @@ type
     tbFisico1: TTrackBar;
     tbIntellettivo1: TTrackBar;
     Label2: TLabel;
-    RxSpinButton1: TRxSpinButton;
+    RxSpinButton1: TJvSpinButton;
     GroupBox1: TGroupBox;
-    iData2: TDateEdit;
+    iData2: TJvDateEdit;
     Label6: TLabel;
     tbEmotivo2: TTrackBar;
     tbFisico2: TTrackBar;
@@ -55,12 +57,13 @@ type
     lbLui: TLabel;
     lbLei: TLabel;
     lbAff2: TLabel;
-    fsMain: TFormStorage;
+    fsMain: TJvFormStorage;
     Label10: TLabel;
     lbLuiG: TLabel;
     lbLeiG: TLabel;
     Label11: TLabel;
     BitBtn1: TBitBtn;
+    apStorage: TJvAppIniFileStorage;
     procedure FormCreate(Sender: TObject);
     procedure iOggiChange(Sender: TObject);
     procedure RxSpinButton1BottomClick(Sender: TObject);
@@ -87,7 +90,7 @@ uses
 procedure TfmMain.FormCreate(Sender: TObject);
 begin
   DateUtil.SetLongYear;
-  fsMain.INIFileName:= ChangeFileExt(ParamStr(0), '.INI');
+  apStorage.FileName:= ChangeFileExt(ParamStr(0), '.INI');
   Lui:= TBioritmo.Create;
   Lei:= TBioritmo.Create;
   iOggi.Date:= Date;

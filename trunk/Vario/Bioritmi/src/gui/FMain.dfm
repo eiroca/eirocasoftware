@@ -23,11 +23,9 @@ object fmMain: TfmMain
     Height = 13
     Caption = 'Previsioni del'
   end
-  object RxSpinButton1: TRxSpinButton
+  object RxSpinButton1: TJvSpinButton
     Left = 200
-    Top = 5
-    Width = 20
-    Height = 20
+    Top = 9
     FocusControl = iOggi
     OnBottomClick = RxSpinButton1BottomClick
     OnTopClick = RxSpinButton1TopClick
@@ -88,12 +86,13 @@ object fmMain: TfmMain
       Height = 13
       Caption = 'lbLuiG'
     end
-    object iData1: TDateEdit
+    object iData1: TJvDateEdit
       Left = 65
       Top = 20
       Width = 101
       Height = 21
       NumGlyphs = 2
+      WeekendColor = clHighlight
       TabOrder = 0
       OnButtonClick = iOggiChange
       OnChange = iOggiChange
@@ -135,15 +134,14 @@ object fmMain: TfmMain
       TickMarks = tmBoth
     end
   end
-  object iOggi: TDateEdit
-    Left = 75
-    Top = 5
+  object iOggi: TJvDateEdit
+    Left = 73
+    Top = 8
     Width = 121
     Height = 21
     DefaultToday = True
     NumGlyphs = 2
     TabOrder = 0
-    Text = '14/10/2008'
     OnButtonClick = iOggiChange
     OnChange = iOggiChange
   end
@@ -203,7 +201,7 @@ object fmMain: TfmMain
       Height = 13
       Caption = 'Sei nata il'
     end
-    object iData2: TDateEdit
+    object iData2: TJvDateEdit
       Left = 65
       Top = 20
       Width = 111
@@ -302,8 +300,6 @@ object fmMain: TfmMain
     Width = 75
     Height = 28
     Caption = 'About...'
-    TabOrder = 4
-    OnClick = BitBtn1Click
     Glyph.Data = {
       66010000424D6601000000000000760000002800000014000000140000000100
       040000000000F000000000000000000000001000000010000000000000000000
@@ -320,14 +316,26 @@ object fmMain: TfmMain
     Layout = blGlyphRight
     Margin = 5
     Spacing = -1
+    TabOrder = 4
+    OnClick = BitBtn1Click
   end
-  object fsMain: TFormStorage
-    UseRegistry = False
+  object fsMain: TJvFormStorage
+    AppStorage = apStorage
+    AppStoragePath = '%FORM_NAME%'
     StoredProps.Strings = (
       'iData1.Text'
       'iData2.Text')
-    StoredValues = <>
-    Left = 225
-    Top = 45
+    StoredValues = <
+      item
+      end>
+    Left = 273
+    Top = 133
+  end
+  object apStorage: TJvAppIniFileStorage
+    StorageOptions.BooleanStringTrueValues = 'TRUE, YES, Y'
+    StorageOptions.BooleanStringFalseValues = 'FALSE, NO, N'
+    SubStorages = <>
+    Left = 272
+    Top = 80
   end
 end
