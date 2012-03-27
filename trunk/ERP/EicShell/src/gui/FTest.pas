@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 (*
  @author(Enrico Croce)
 *)
-unit Ftest;
+unit FTest;
 
 interface
 
@@ -56,7 +56,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, ShellServ;
+  eLibCore, ShellServ;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin

@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 (*
  @author(Enrico Croce)
 *)
-unit UOpzioni;
+unit uOpzioni;
 
 interface
 
@@ -49,7 +49,7 @@ var
 implementation
 
 uses
-  eLib, Costanti;
+  eLibCore, Costanti;
 
 constructor TOpzioni.Create;
 var

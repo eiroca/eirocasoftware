@@ -31,8 +31,9 @@ object fmInfo: TfmInfo
     Height = 27
     Hint = 'Annulla gli eventuali cambiamenti effettuati'
     Caption = 'Annulla'
-    TabOrder = 0
     Kind = bkCancel
+    NumGlyphs = 2
+    TabOrder = 0
   end
   object btOk: TBitBtn
     Left = 45
@@ -41,9 +42,10 @@ object fmInfo: TfmInfo
     Height = 27
     Hint = 'Memorizza le preferenze'
     Caption = '&Ok'
+    Kind = bkOK
+    NumGlyphs = 2
     TabOrder = 1
     OnClick = btOkClick
-    Kind = bkOK
   end
   object iDefaultDB: TEdit
     Left = 115

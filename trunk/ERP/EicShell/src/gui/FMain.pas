@@ -17,14 +17,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 (*
  @author(Enrico Croce)
 *)
-unit Fmain;
+unit FMain;
 
 interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls, Dialogs,
   Forms, Menus, DB, DBTables,
-  StdCtrls, ShellServ, RxLogin, eDB, rxDBSecur, PrevInstance;
+  StdCtrls, ShellServ, eDB, PrevInstance, JvBaseDlg, JvLoginForm,
+  JvBDESecurity, JvComponentBase, JvAppStorage, JvAppIniStorage;
 
 type
   TEicShellMenu = class(TForm)
@@ -40,7 +41,7 @@ type
     miExit: TMenuItem;
     Aiuto1: TMenuItem;
     Informazionisu1: TMenuItem;
-    DBSec: TDBSecurity;
+    DBSec: TJvDBSecurity;
     tbUsers: TTable;
     DB: TeDataBase;
     tbUsersCodUsr: TIntegerField;
@@ -50,6 +51,7 @@ type
     DBConnection: TDBConnectionLink;
     Programmi1: TMenuItem;
     miEditUser: TMenuItem;
+    apStorage: TJvAppIniFileStorage;
     procedure FormCreate(Sender: TObject);
     function DBSecChangePassword(UsersTable: TTable; const OldPassword,
       NewPassword: String): Boolean;
@@ -95,7 +97,7 @@ implementation
 {$R *.DFM}
 
 uses
-  MakeDB, eLib, Costanti, uOpzioni, FDBPack, FEditUser;
+  MakeDB, eLibCore, Costanti, uOpzioni, FDBPack, FEditUser;
 
 (* ---------------- Messaggi ------------------------ *)
 procedure TEicShellMenu.WMGetUserName(var Msg: TMessage);
@@ -142,7 +144,7 @@ var
 begin
   case Msg.WParam of
     0: begin
-      if CheckPassword(User, StrPas(pointer(Msg.LParam))) then begin
+      if CheckPassword(User, StrPas(PAnsiChar(Msg.LParam))) then begin
         Msg.Result:= 1;
       end
       else begin
@@ -187,7 +189,7 @@ begin
   FourDigitYear:= true;
 *)
   DBConnection.Active:= true;
-  DBSec.INIFileName:= Opzioni.LocalINI;
+  apStorage.FileName:= Opzioni.LocalINI;
   Session.AddPassword('Shell');
 end;
 
