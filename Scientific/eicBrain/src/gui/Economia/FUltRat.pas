@@ -51,7 +51,7 @@ implementation
 {$R *.dfm}
 
 uses
-  eLib, uEconomia;
+  eLibCore, uEconomia;
 
 procedure TfmUltRat.btCalcClick(Sender: TObject);
 var

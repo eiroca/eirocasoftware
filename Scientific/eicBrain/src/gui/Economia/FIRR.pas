@@ -49,7 +49,7 @@ implementation
 {$R *.dfm}
 
 uses
-  eLib, uEconomia;
+  eLibCore, uEconomia;
 
 procedure TfmIRR.btCalcClick(Sender: TObject);
 var

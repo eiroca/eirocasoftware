@@ -48,7 +48,7 @@ implementation
 {$R *.dfm}
 
 uses
-  eLib, uEconomia;
+  eLibCore, uEconomia;
 
 procedure TfmTasRen.btCalcClick(Sender: TObject);
 var
