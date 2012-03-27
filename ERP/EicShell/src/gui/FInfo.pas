@@ -23,7 +23,7 @@ interface
 
 uses
   WinTypes, WinProcs, Classes, Graphics, Forms, Controls, StdCtrls,
-  Printers, Dialogs, DB, DBTables, Buttons, RXSpin, RXLookup, TabNotBk;
+  Printers, Dialogs, DB, DBTables, Buttons, TabNotBk;
 
 type
   TfmInfo = class(TForm)
@@ -46,7 +46,7 @@ implementation
 {$R *.DFM}
 
 uses
-  Costanti, eLib, SysUtils, UOpzioni;
+  Costanti, eLibCore, SysUtils, UOpzioni;
 
 function SetupInfo: TModalResult;
 var

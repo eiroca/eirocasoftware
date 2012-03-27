@@ -17,20 +17,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 (*
  @author(Enrico Croce)
 *)
-program EicShell2007;
+program EicShell;
 
 uses
   Forms,
-  FTest in 'gui\FTest.pas' {Form1},
-  ShellServ in 'lib\ShellServ.pas',
+  uOpzioni in 'lib\uOpzioni.pas',
   Costanti in 'lib\Costanti.pas',
-  uOpzioni in 'lib\uOpzioni.pas';
+  FEditUser in 'gui\FEditUser.pas' {fmEditUser},
+  FInfo in 'gui\FInfo.pas' {fmInfo},
+  FMain in 'gui\FMain.pas' {EicShellMenu},
+  MakeDB in 'util\MakeDB.pas',
+  ShellServ in 'lib\ShellServ.pas';
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.Title := 'Test 2007';
-  Application.CreateForm(TForm1, Form1);
+  Application.Title := 'eicShell';
+  Application.CreateForm(TEicShellMenu, EicShellMenu);
   Application.Run;
 end.

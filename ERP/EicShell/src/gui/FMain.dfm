@@ -1,7 +1,7 @@
 object EicShellMenu: TEicShellMenu
   Left = 244
   Top = 146
-  Caption = 'Contabilit'#224
+  Caption = 'eicShell'
   ClientHeight = 246
   ClientWidth = 427
   Color = clBtnFace
@@ -72,21 +72,22 @@ object EicShellMenu: TEicShellMenu
       end
     end
   end
-  object DBSec: TDBSecurity
+  object DBSec: TJvDBSecurity
     LoginNameField = 'Nome'
     UsersTableName = 'USERS.DB'
+    AppStorage = apStorage
     MaxPasswordLen = 16
     OnCheckUser = DBSecCheckUser
     OnChangePassword = DBSecChangePassword
     AfterLogin = DBSecAfterLogin
     OnUnlock = DBSecUnlock
-    Left = 160
+    Left = 232
     Top = 10
   end
   object tbUsers: TTable
     DatabaseName = 'DB'
     TableName = 'USERS.DB'
-    Left = 195
+    Left = 299
     Top = 10
     object tbUsersCodUsr: TIntegerField
       FieldName = 'CodUsr'
@@ -104,7 +105,6 @@ object EicShellMenu: TEicShellMenu
     end
   end
   object DB: TeDataBase
-    Connected = True
     DatabaseName = 'DB'
     DriverName = 'STANDARD'
     Params.Strings = (
@@ -114,7 +114,7 @@ object EicShellMenu: TEicShellMenu
     SessionName = 'Default'
     Signature = 'EicShellDB 1.0a'
     OnValidate = DBValidate
-    Left = 80
+    Left = 96
     Top = 10
   end
   object DBConnection: TDBConnectionLink
@@ -122,7 +122,15 @@ object EicShellMenu: TEicShellMenu
     DataBase = DB
     OnConnect = DBConnectionConnect
     OnDisconnect = DBConnectionConnect
-    Left = 125
+    Left = 157
     Top = 10
+  end
+  object apStorage: TJvAppIniFileStorage
+    StorageOptions.BooleanStringTrueValues = 'TRUE, YES, Y'
+    StorageOptions.BooleanStringFalseValues = 'FALSE, NO, N'
+    DefaultSection = 'main'
+    SubStorages = <>
+    Left = 232
+    Top = 64
   end
 end
