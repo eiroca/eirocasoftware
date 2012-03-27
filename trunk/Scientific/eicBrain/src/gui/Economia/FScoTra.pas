@@ -52,7 +52,7 @@ implementation
 {$R *.dfm}
 
 uses
-  eLib, uEconomia;
+  eLibCore, uEconomia;
 
 procedure TfmScoTra.btCalcClick(Sender: TObject);
 var

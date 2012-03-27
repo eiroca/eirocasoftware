@@ -75,8 +75,9 @@ object fmTassoRendimento: TfmTassoRendimento
     Top = 39
     Width = 75
     Height = 25
-    TabOrder = 5
     Kind = bkCancel
+    NumGlyphs = 2
+    TabOrder = 5
   end
   object btCalc: TBitBtn
     Left = 268
@@ -85,8 +86,6 @@ object fmTassoRendimento: TfmTassoRendimento
     Height = 25
     Caption = 'Calcola'
     Default = True
-    TabOrder = 4
-    OnClick = btCalcClick
     Glyph.Data = {
       DE010000424DDE01000000000000760000002800000024000000120000000100
       0400000000006801000000000000000000001000000000000000000000000000
@@ -105,6 +104,8 @@ object fmTassoRendimento: TfmTassoRendimento
       333A333333333333333338330000333333333333333333333333333333333333
       0000}
     NumGlyphs = 2
+    TabOrder = 4
+    OnClick = btCalcClick
   end
   object iFV: TLabeledEdit
     Left = 192

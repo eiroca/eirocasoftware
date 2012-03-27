@@ -50,7 +50,7 @@ implementation
 {$R *.dfm}
 
 uses
-  eLib, uEconomia;
+  eLibCore, uEconomia;
 
 procedure TfmSomPre.btCalcClick(Sender: TObject);
 var

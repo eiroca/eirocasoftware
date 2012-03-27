@@ -61,7 +61,7 @@ implementation
 {$R *.dfm}
 
 uses
-  eLib;
+  eLibCore;
 
 procedure TfmAnnuity.WriteOutput;
 begin

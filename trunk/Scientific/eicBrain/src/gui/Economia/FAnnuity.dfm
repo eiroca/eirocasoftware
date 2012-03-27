@@ -45,8 +45,9 @@ object fmAnnuity: TfmAnnuity
     Top = 282
     Width = 75
     Height = 25
-    TabOrder = 11
     Kind = bkCancel
+    NumGlyphs = 2
+    TabOrder = 11
   end
   object iPV: TLabeledEdit
     Left = 170
@@ -123,8 +124,6 @@ object fmAnnuity: TfmAnnuity
     Height = 25
     Caption = 'Calcola'
     Default = True
-    TabOrder = 6
-    OnClick = btCalcPVClick
     Glyph.Data = {
       DE010000424DDE01000000000000760000002800000024000000120000000100
       0400000000006801000000000000000000001000000000000000000000000000
@@ -143,6 +142,8 @@ object fmAnnuity: TfmAnnuity
       333A333333333333333338330000333333333333333333333333333333333333
       0000}
     NumGlyphs = 2
+    TabOrder = 6
+    OnClick = btCalcPVClick
   end
   object btCalcFV: TBitBtn
     Tag = 1
@@ -152,8 +153,6 @@ object fmAnnuity: TfmAnnuity
     Height = 25
     Caption = 'Calcola'
     Default = True
-    TabOrder = 7
-    OnClick = btCalcPVClick
     Glyph.Data = {
       DE010000424DDE01000000000000760000002800000024000000120000000100
       0400000000006801000000000000000000001000000000000000000000000000
@@ -172,6 +171,8 @@ object fmAnnuity: TfmAnnuity
       333A333333333333333338330000333333333333333333333333333333333333
       0000}
     NumGlyphs = 2
+    TabOrder = 7
+    OnClick = btCalcPVClick
   end
   object btCalcR: TBitBtn
     Tag = 2
@@ -181,8 +182,6 @@ object fmAnnuity: TfmAnnuity
     Height = 25
     Caption = 'Calcola'
     Default = True
-    TabOrder = 8
-    OnClick = btCalcPVClick
     Glyph.Data = {
       DE010000424DDE01000000000000760000002800000024000000120000000100
       0400000000006801000000000000000000001000000000000000000000000000
@@ -201,6 +200,8 @@ object fmAnnuity: TfmAnnuity
       333A333333333333333338330000333333333333333333333333333333333333
       0000}
     NumGlyphs = 2
+    TabOrder = 8
+    OnClick = btCalcPVClick
   end
   object btCalcN: TBitBtn
     Tag = 3
@@ -210,8 +211,6 @@ object fmAnnuity: TfmAnnuity
     Height = 25
     Caption = 'Calcola'
     Default = True
-    TabOrder = 9
-    OnClick = btCalcPVClick
     Glyph.Data = {
       DE010000424DDE01000000000000760000002800000024000000120000000100
       0400000000006801000000000000000000001000000000000000000000000000
@@ -230,6 +229,8 @@ object fmAnnuity: TfmAnnuity
       333A333333333333333338330000333333333333333333333333333333333333
       0000}
     NumGlyphs = 2
+    TabOrder = 9
+    OnClick = btCalcPVClick
   end
   object btCalcPMT: TBitBtn
     Tag = 4
@@ -239,8 +240,6 @@ object fmAnnuity: TfmAnnuity
     Height = 25
     Caption = 'Calcola'
     Default = True
-    TabOrder = 10
-    OnClick = btCalcPVClick
     Glyph.Data = {
       DE010000424DDE01000000000000760000002800000024000000120000000100
       0400000000006801000000000000000000001000000000000000000000000000
@@ -259,5 +258,7 @@ object fmAnnuity: TfmAnnuity
       333A333333333333333338330000333333333333333333333333333333333333
       0000}
     NumGlyphs = 2
+    TabOrder = 10
+    OnClick = btCalcPVClick
   end
 end
