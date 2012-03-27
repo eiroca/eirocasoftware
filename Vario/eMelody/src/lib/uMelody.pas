@@ -62,7 +62,7 @@ procedure CorrectMel(const path, Mask: string);
 implementation
 
 uses
-  eLib;
+  eLibCore;
 
 constructor TNota.Create;
 begin
