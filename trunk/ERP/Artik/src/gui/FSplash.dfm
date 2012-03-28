@@ -1421,7 +1421,7 @@ object fmSplash: TfmSplash
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFF}
     end
-    object LabelEffect1: TRxLabel
+    object LabelEffect1: TJvLabel
       Left = 0
       Top = 155
       Width = 246
@@ -1437,10 +1437,14 @@ object fmSplash: TfmSplash
       Font.Style = [fsItalic]
       ParentColor = False
       ParentFont = False
-      ShadowPos = spRightBottom
       Transparent = True
+      HotTrackFont.Charset = DEFAULT_CHARSET
+      HotTrackFont.Color = clWindowText
+      HotTrackFont.Height = -21
+      HotTrackFont.Name = 'Times New Roman'
+      HotTrackFont.Style = []
     end
-    object LabelEffect2: TRxLabel
+    object LabelEffect2: TJvLabel
       Left = 0
       Top = 5
       Width = 246
@@ -1456,8 +1460,12 @@ object fmSplash: TfmSplash
       Font.Style = []
       ParentColor = False
       ParentFont = False
-      ShadowPos = spRightBottom
       Transparent = True
+      HotTrackFont.Charset = DEFAULT_CHARSET
+      HotTrackFont.Color = clWindowText
+      HotTrackFont.Height = -32
+      HotTrackFont.Name = 'Times New Roman'
+      HotTrackFont.Style = []
     end
   end
 end

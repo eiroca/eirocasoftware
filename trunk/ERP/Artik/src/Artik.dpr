@@ -17,10 +17,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 (*
  @author(Enrico Croce)
 *)
-program Artik2007;
+program Artik;
 
 uses
-  Forms,
+  Vcl.Forms,
   FEditArticoli in 'gui\FEditArticoli.pas' {fmEditArticoli},
   FEditFattForn in 'gui\FEditFattForn.pas' {fmEditFatFor},
   FEditForn in 'gui\FEditForn.pas' {fmEditForn},
@@ -48,6 +48,7 @@ uses
 begin
   Application.Initialize;
   Application.Title := 'Artik';
+  Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfmMain, fmMain);
   Application.CreateForm(TfmInfo, fmInfo);
   Application.CreateForm(TfmMakePrezzi, fmMakePrezzi);

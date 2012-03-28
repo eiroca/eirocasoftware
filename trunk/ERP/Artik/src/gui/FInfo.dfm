@@ -23,8 +23,9 @@ object fmInfo: TfmInfo
     Width = 90
     Height = 27
     Caption = 'Annulla'
-    TabOrder = 1
     Kind = bkCancel
+    NumGlyphs = 2
+    TabOrder = 1
   end
   object btOk: TBitBtn
     Left = 10
@@ -32,9 +33,10 @@ object fmInfo: TfmInfo
     Width = 90
     Height = 27
     Caption = '&Ok'
+    Kind = bkOK
+    NumGlyphs = 2
     TabOrder = 2
     OnClick = btOkClick
-    Kind = bkOK
   end
   object nbInfo: TTabbedNotebook
     Left = 5
@@ -52,6 +54,8 @@ object fmInfo: TfmInfo
       Left = 4
       Top = 24
       Caption = 'Generali'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label1: TLabel
         Left = 10
         Top = 15
@@ -73,6 +77,8 @@ object fmInfo: TfmInfo
       Left = 4
       Top = 24
       Caption = 'Stampante'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object btSetup: TSpeedButton
         Left = 235
         Top = 9
@@ -110,7 +116,7 @@ object fmInfo: TfmInfo
         Alignment = taRightJustify
         Caption = 'Font utilizzato'
       end
-      object eFontSize: TRxSpinEdit
+      object eFontSize: TJvSpinEdit
         Left = 210
         Top = 48
         Width = 61
@@ -123,7 +129,6 @@ object fmInfo: TfmInfo
         Width = 166
         Height = 21
         Style = csDropDownList
-        ItemHeight = 13
         TabOrder = 1
         OnChange = cbPrinterChange
       end
@@ -132,7 +137,6 @@ object fmInfo: TfmInfo
         Top = 48
         Width = 131
         Height = 21
-        ItemHeight = 13
         Sorted = True
         TabOrder = 2
         Text = 'cbFonts'

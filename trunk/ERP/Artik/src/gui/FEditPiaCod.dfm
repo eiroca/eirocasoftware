@@ -102,7 +102,7 @@ object fmEditPiaCod: TfmEditPiaCod
       TabOrder = 2
       Text = '1234567890'
     end
-    object iRicMin: TRxSpinEdit
+    object iRicMin: TJvSpinEdit
       Left = 10
       Top = 140
       Width = 45
@@ -113,7 +113,7 @@ object fmEditPiaCod: TfmEditPiaCod
       ValueType = vtFloat
       TabOrder = 3
     end
-    object iRicMax: TRxSpinEdit
+    object iRicMax: TJvSpinEdit
       Left = 60
       Top = 140
       Width = 45

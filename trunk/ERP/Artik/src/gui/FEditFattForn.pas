@@ -23,9 +23,10 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, StdCtrls, DBTables, DB, DBCtrls, RXDBCtrl,
+  Forms, Dialogs, StdCtrls, DBTables, DB, DBCtrls,
   Mask, ExtCtrls, RgNav, RgNavDB, Grids, DBGrids, TabNotBk, XStrGrds,
-  rxToolEdit, rxCurrEdit, ComCtrls;
+  ComCtrls, JvExDBGrids, JvDBGrid, JvDBControls, JvToolEdit, JvExMask,
+  JvBaseEdits;
 
 type
   TfmEditFatFor = class(TForm)
@@ -88,23 +89,23 @@ type
     tbFatForSpIVA: TCurrencyField;
     tbFattura: TTabbedNotebook;
     DBGrid1: TDBGrid;
-    dgDati: TRxDBGrid;
+    dgDati: TJvDBGrid;
     Nav: TRGNavigator;
     tbFatForMvIVA: TCurrencyField;
     ScrollBox1: TScrollBox;
     sgTotali: TXStrGrid;
-    RxDBCalcEdit2: TRxDBCalcEdit;
-    DBDateEdit1: TDBDateEdit;
+    RxDBCalcEdit2: TJvDBCalcEdit;
+    DBDateEdit1: TJvDBDateEdit;
     DBEdit2: TDBEdit;
     DBEdit1: TDBEdit;
     Label2: TLabel;
     Label3: TLabel;
     Label1: TLabel;
-    RxDBComboEdit1: TRxDBComboEdit;
+    RxDBComboEdit1: TJvDBComboEdit;
     Label6: TLabel;
     Label4: TLabel;
     Label7: TLabel;
-    RxDBCalcEdit3: TRxDBCalcEdit;
+    RxDBCalcEdit3: TJvDBCalcEdit;
     DBCheckBox1: TDBCheckBox;
     tbFatForLsPreventivo: TBooleanField;
     DBText1: TDBText;
@@ -140,7 +141,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, FFindFor, FFindArt, eLibDB, DTabelle;
+  eLibCore, FFindFor, FFindArt, eLibDB, DTabelle;
 
 procedure EditFatFor;
 var

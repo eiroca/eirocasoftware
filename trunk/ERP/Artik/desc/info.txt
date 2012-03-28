@@ -2,5 +2,5 @@ Name       : Artik
 Description: Gestione articoli
 OS         : Win32
 Type       : GUI
-Language   : Delphi 2007
-Dependency : eLib, RX
+Language   : Delphi XE2
+Dependency : eLib, Jedi

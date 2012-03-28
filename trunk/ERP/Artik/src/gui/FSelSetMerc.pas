@@ -56,7 +56,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib;
+  eLibCore;
 
 function SelectSetMer(var CodAlf: string; Leaf: boolean): boolean;
 var

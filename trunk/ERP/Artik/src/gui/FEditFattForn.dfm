@@ -117,19 +117,20 @@ object fmEditFatFor: TfmEditFatFor
           OnGetAlignment = sgTotaliGetAlignment
           Grid3D = False
         end
-        object RxDBCalcEdit2: TRxDBCalcEdit
+        object RxDBCalcEdit2: TJvDBCalcEdit
           Left = 90
           Top = 100
           Width = 100
           Height = 21
           Margins.Left = 1
           Margins.Top = 1
-          DataField = 'TotaleImp'
-          DataSource = dsFatForLs
           NumGlyphs = 2
           TabOrder = 4
+          DecimalPlacesAlwaysShown = False
+          DataField = 'TotaleImp'
+          DataSource = dsFatForLs
         end
-        object DBDateEdit1: TDBDateEdit
+        object DBDateEdit1: TJvDBDateEdit
           Left = 235
           Top = 50
           Width = 121
@@ -157,7 +158,7 @@ object fmEditFatFor: TfmEditFatFor
           DataSource = dsFatForLs
           TabOrder = 1
         end
-        object RxDBComboEdit1: TRxDBComboEdit
+        object RxDBComboEdit1: TJvDBComboEdit
           Left = 60
           Top = 20
           Width = 86
@@ -176,21 +177,21 @@ object fmEditFatFor: TfmEditFatFor
             8F80088F00DDD0000000D4FFFFFFFFFF4DDDD0000000D444444444444DDDD000
             0000D474474474474DDDD0000000D444444444444DDDD0000000DDDDDDDDDDDD
             DDDDD0000000}
-          NumGlyphs = 1
           TabOrder = 0
           OnButtonClick = RxDBComboEdit1ButtonClick
         end
-        object RxDBCalcEdit3: TRxDBCalcEdit
+        object RxDBCalcEdit3: TJvDBCalcEdit
           Left = 255
           Top = 100
           Width = 100
           Height = 21
           Margins.Left = 1
           Margins.Top = 1
-          DataField = 'TotaleIVA'
-          DataSource = dsFatForLs
           NumGlyphs = 2
           TabOrder = 5
+          DecimalPlacesAlwaysShown = False
+          DataField = 'TotaleIVA'
+          DataSource = dsFatForLs
         end
         object DBCheckBox1: TDBCheckBox
           Left = 155
@@ -229,14 +230,13 @@ object fmEditFatFor: TfmEditFatFor
       Left = 4
       Top = 24
       Caption = '&Voci fattura'
-      object dgDati: TRxDBGrid
+      object dgDati: TJvDBGrid
         Left = 0
         Top = 0
         Width = 518
         Height = 343
         Align = alClient
         DataSource = dsFatForMv
-        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clBlack
@@ -245,6 +245,12 @@ object fmEditFatFor: TfmEditFatFor
         TitleFont.Style = []
         OnColExit = dgDatiColExit
         OnKeyPress = dgDatiKeyPress
+        SelectColumnsDialogStrings.Caption = 'Select columns'
+        SelectColumnsDialogStrings.OK = '&OK'
+        SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+        EditControls = <>
+        RowsHeight = 17
+        TitleRowHeight = 17
       end
     end
   end

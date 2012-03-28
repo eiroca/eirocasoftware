@@ -53,11 +53,12 @@ object fmGetUnusedCode: TfmGetUnusedCode
     Width = 75
     Height = 25
     Caption = 'Ok'
-    TabOrder = 1
-    OnClick = btOkClick
     Kind = bkOK
     Margin = 5
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 1
+    OnClick = btOkClick
   end
   object btCancel: TBitBtn
     Left = 105
@@ -65,9 +66,10 @@ object fmGetUnusedCode: TfmGetUnusedCode
     Width = 75
     Height = 25
     Caption = 'Annulla'
-    TabOrder = 2
     Kind = bkCancel
     Margin = 5
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 2
   end
 end
