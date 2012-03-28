@@ -17,7 +17,7 @@ object fmPatOInsert: TfmPatOInsert
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object dgCons: TRxDrawGrid
+  object dgCons: TJvDrawGrid
     Left = 0
     Top = 86
     Width = 447
@@ -36,6 +36,7 @@ object fmPatOInsert: TfmPatOInsert
     OnGetEditText = dgConsGetEditText
     OnSelectCell = dgConsSelectCell
     OnSetEditText = dgConsSetEditText
+    DrawButtons = False
     OnGetEditAlign = dgConsGetEditAlign
     ColWidths = (
       41
@@ -95,7 +96,6 @@ object fmPatOInsert: TfmPatOInsert
       Width = 106
       Height = 21
       Style = csDropDownList
-      ItemHeight = 0
       TabOrder = 0
       OnChange = DoSetupIndex
     end
@@ -110,7 +110,7 @@ object fmPatOInsert: TfmPatOInsert
       TabOrder = 6
       OnClick = DoSetupIndex
     end
-    object iDataPatO: TDateEdit
+    object iDataPatO: TJvDateEdit
       Left = 250
       Top = 6
       Width = 96
@@ -127,8 +127,6 @@ object fmPatOInsert: TfmPatOInsert
       Width = 75
       Height = 25
       Caption = 'Inserisci'
-      TabOrder = 4
-      OnClick = btAddClick
       Glyph.Data = {
         DE010000424DDE01000000000000760000002800000024000000120000000100
         0400000000006801000000000000000000001000000000000000000000000000
@@ -149,6 +147,8 @@ object fmPatOInsert: TfmPatOInsert
       Margin = 4
       NumGlyphs = 2
       Spacing = -1
+      TabOrder = 4
+      OnClick = btAddClick
     end
     object btCancel: TBitBtn
       Left = 360
@@ -157,8 +157,6 @@ object fmPatOInsert: TfmPatOInsert
       Height = 25
       Cancel = True
       Caption = '&Annulla'
-      TabOrder = 5
-      OnClick = btCancelClick
       Glyph.Data = {
         DE010000424DDE01000000000000760000002800000024000000120000000100
         0400000000006801000000000000000000001000000000000000000000000000
@@ -179,6 +177,8 @@ object fmPatOInsert: TfmPatOInsert
       Margin = 4
       NumGlyphs = 2
       Spacing = -1
+      TabOrder = 5
+      OnClick = btCancelClick
     end
     object cbQta: TComboBox
       Left = 65
@@ -187,7 +187,6 @@ object fmPatOInsert: TfmPatOInsert
       Height = 21
       Style = csDropDownList
       Ctl3D = True
-      ItemHeight = 13
       ParentCtl3D = False
       TabOrder = 1
       OnChange = cbQtaChange
@@ -197,12 +196,11 @@ object fmPatOInsert: TfmPatOInsert
         'stecche'
         'KgC')
     end
-    object cbCodPat: TRxDBLookupCombo
+    object cbCodPat: TJvDBLookupCombo
       Left = 250
       Top = 29
       Width = 96
       Height = 21
-      DropDownCount = 8
       LookupField = 'CODP'
       LookupDisplay = 'NOME'
       LookupSource = dsPate

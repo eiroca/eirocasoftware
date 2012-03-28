@@ -27,8 +27,8 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   DTabaC,
-  Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, RXSpin, Mask,
-  eReport, rxToolEdit;
+  Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, Mask,
+  eReport, JvExMask, JvToolEdit;
 
 type
   TfmStampaStatistiche = class(TForm)
@@ -55,8 +55,8 @@ type
     cbSoloAttivi: TCheckBox;
     Label1: TLabel;
     Label3: TLabel;
-    iDataI: TDateEdit;
-    iDataF: TDateEdit;
+    iDataI: TJvDateEdit;
+    iDataF: TJvDateEdit;
     procedure FormCreate(Sender: TObject);
     procedure ReportPageHeader(Rep: TeLineReport);
     procedure ReportSetupDevice(Rep: TeLineReport; Dev: TOutputDevice);
@@ -87,7 +87,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, UOpzioni;
+  eLibCore, UOpzioni;
 
 procedure StampaStatistiche;
 var

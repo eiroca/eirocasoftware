@@ -36,10 +36,11 @@ object fmStampaOrdine: TfmStampaOrdine
     Width = 89
     Height = 25
     Caption = 'Annulla'
-    TabOrder = 1
     Kind = bkCancel
     Margin = 5
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 1
   end
   object btExport: TBitBtn
     Left = 126
@@ -47,8 +48,6 @@ object fmStampaOrdine: TfmStampaOrdine
     Width = 89
     Height = 25
     Caption = '&Esporta'
-    TabOrder = 3
-    OnClick = PrintReport
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000130B0000130B00001000000000000000000000000000
@@ -65,6 +64,8 @@ object fmStampaOrdine: TfmStampaOrdine
     Margin = 5
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 3
+    OnClick = PrintReport
   end
   object btPrint: TBitBtn
     Left = 11
@@ -72,8 +73,6 @@ object fmStampaOrdine: TfmStampaOrdine
     Width = 89
     Height = 25
     Caption = '&Stampa'
-    TabOrder = 0
-    OnClick = PrintReport
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000130B0000130B00001000000000000000000000000000
@@ -90,6 +89,8 @@ object fmStampaOrdine: TfmStampaOrdine
     Margin = 5
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 0
+    OnClick = PrintReport
   end
   object btPreview: TBitBtn
     Left = 11
@@ -97,8 +98,6 @@ object fmStampaOrdine: TfmStampaOrdine
     Width = 89
     Height = 25
     Caption = '&Anteprima'
-    TabOrder = 2
-    OnClick = PrintReport
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -115,6 +114,8 @@ object fmStampaOrdine: TfmStampaOrdine
     Margin = 5
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 2
+    OnClick = PrintReport
   end
   object Report: TeLineReport
     AutoCR = False

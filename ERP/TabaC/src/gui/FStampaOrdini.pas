@@ -27,7 +27,7 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   DTabaC,
-  Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, RXSpin, eReport;
+  Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, eReport;
 
 type
   TfmStampaOrdinato = class(TForm)
@@ -97,7 +97,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, UOpzioni;
+  eLibCore, uOpzioni;
 
 procedure StampaOrdinato;
 var

@@ -26,9 +26,9 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  StdCtrls, Forms, Dialogs, DB, DBTables, DBLookup, DBCtrls, Mask, RXSpin,
+  StdCtrls, Forms, Dialogs, DB, DBTables, DBLookup, DBCtrls, Mask, 
   eWait,
-  Buttons, ExtCtrls, RgNav, RgNavDB;
+  Buttons, ExtCtrls, RgNav, RgNavDB, JvExControls, JvSpin;
 
 type
   TfmTabaEdit = class(TForm)
@@ -67,11 +67,11 @@ type
     tbTabaTipo: TTable;
     tbTabaProd: TTable;
     dsTaba: TDataSource;
-    sbQtaS: TRxSpinButton;
-    sbQtaC: TRxSpinButton;
-    sbDifr: TRxSpinButton;
-    sbQtaM: TRxSpinButton;
-    sbMulI: TRxSpinButton;
+    sbQtaS: TJvSpinButton;
+    sbQtaC: TJvSpinButton;
+    sbDifr: TJvSpinButton;
+    sbQtaM: TJvSpinButton;
+    sbMulI: TJvSpinButton;
     lbPrezzo: TLabel;
     tbTabaCODI: TSmallintField;
     tbTabaCODS: TStringField;
@@ -110,7 +110,7 @@ type
     procedure tbTabaAfterPost(DataSet: TDataSet);
   private
     { private declarations }
-    procedure Processa(Spin: TRxSpinButton; const F: TField; sgn: integer; min: integer);
+    procedure Processa(Spin: TJvSpinButton; const F: TField; sgn: integer; min: integer);
   public
     { public declarations }
   end;
@@ -122,7 +122,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, eLibDB, FTabaFind, DTabaC, FStampaTabacchi;
+  eLibCore, eLibDB, FTabaFind, DTabaC, FStampaTabacchi;
 
 procedure TfmTabaEdit.FormShow(Sender: TObject);
 begin
@@ -160,7 +160,7 @@ begin
   end;
 end;
 
-procedure TfmTabaEdit.Processa(Spin: TRxSpinButton; const F: TField; sgn: integer; min: integer);
+procedure TfmTabaEdit.Processa(Spin: TJVSpinButton; const F: TField; sgn: integer; min: integer);
 var
   v: longint;
 begin

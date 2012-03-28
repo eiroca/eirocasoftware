@@ -27,8 +27,8 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   DTabaC, eWait,
-  Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, RXSpin, Grids,
-  DBGrids, Mask, eReport, rxToolEdit;
+  Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, Grids,
+  DBGrids, Mask, eReport, JvExMask, JvToolEdit;
 
 type
   TfmStampaCarichi = class(TForm)
@@ -56,9 +56,9 @@ type
     qryDettagliDataPrez: TDateField;
     qryDettagliPrez: TCurrencyField;
     qryDettagliSumCar: TFloatField;
-    iDataI: TDateEdit;
+    iDataI: TJvDateEdit;
     Label1: TLabel;
-    iDataF: TDateEdit;
+    iDataF: TJvDateEdit;
     Label3: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure ReportPageHeader(Rep: TeLineReport);
@@ -83,7 +83,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, UOpzioni;
+  eLibCore, uOpzioni;
 
 procedure StampaCarichi;
 var

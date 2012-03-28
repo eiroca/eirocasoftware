@@ -32,10 +32,11 @@ object fmStampaOrdinato: TfmStampaOrdinato
     Width = 89
     Height = 25
     Caption = 'Annulla'
-    TabOrder = 2
     Kind = bkCancel
     Margin = 5
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 2
   end
   object cbOrder: TComboBox
     Left = 75
@@ -43,7 +44,6 @@ object fmStampaOrdinato: TfmStampaOrdinato
     Width = 110
     Height = 21
     Style = csDropDownList
-    ItemHeight = 0
     TabOrder = 0
     OnChange = cbOrderChange
   end
@@ -53,8 +53,6 @@ object fmStampaOrdinato: TfmStampaOrdinato
     Width = 89
     Height = 25
     Caption = '&Esporta'
-    TabOrder = 4
-    OnClick = PrintReport
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000130B0000130B00001000000000000000000000000000
@@ -71,6 +69,8 @@ object fmStampaOrdinato: TfmStampaOrdinato
     Margin = 5
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 4
+    OnClick = PrintReport
   end
   object btPrint: TBitBtn
     Left = 11
@@ -78,8 +78,6 @@ object fmStampaOrdinato: TfmStampaOrdinato
     Width = 89
     Height = 25
     Caption = '&Stampa'
-    TabOrder = 1
-    OnClick = PrintReport
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000130B0000130B00001000000000000000000000000000
@@ -96,6 +94,8 @@ object fmStampaOrdinato: TfmStampaOrdinato
     Margin = 5
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 1
+    OnClick = PrintReport
   end
   object btPreview: TBitBtn
     Left = 11
@@ -103,8 +103,6 @@ object fmStampaOrdinato: TfmStampaOrdinato
     Width = 89
     Height = 25
     Caption = '&Anteprima'
-    TabOrder = 3
-    OnClick = PrintReport
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -121,6 +119,8 @@ object fmStampaOrdinato: TfmStampaOrdinato
     Margin = 5
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 3
+    OnClick = PrintReport
   end
   object cbFullOrder: TCheckBox
     Left = 15

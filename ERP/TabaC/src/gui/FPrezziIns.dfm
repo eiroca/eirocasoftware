@@ -24,7 +24,7 @@ object fmPrezziInsert: TfmPrezziInsert
     Align = alClient
     Caption = 'Panel1'
     TabOrder = 1
-    object dgPrez: TRxDrawGrid
+    object dgPrez: TJvDrawGrid
       Left = 1
       Top = 1
       Width = 371
@@ -43,6 +43,7 @@ object fmPrezziInsert: TfmPrezziInsert
       OnGetEditText = dgPrezGetEditText
       OnSelectCell = dgPrezSelectCell
       OnSetEditText = dgPrezSetEditText
+      DrawButtons = False
       OnAcceptEditKey = dgPrezAcceptEditKey
       ColWidths = (
         41
@@ -100,7 +101,7 @@ object fmPrezziInsert: TfmPrezziInsert
       TabOrder = 0
       OnClick = DoSetupIndex
     end
-    object iDate: TDateEdit
+    object iDate: TJvDateEdit
       Left = 65
       Top = 65
       Width = 96
@@ -117,9 +118,6 @@ object fmPrezziInsert: TfmPrezziInsert
       Width = 89
       Height = 25
       Caption = 'Inserisci'
-      ModalResult = 1
-      TabOrder = 4
-      OnClick = btAddClick
       Glyph.Data = {
         DE010000424DDE01000000000000760000002800000024000000120000000100
         0400000000006801000000000000000000001000000000000000000000000000
@@ -138,8 +136,11 @@ object fmPrezziInsert: TfmPrezziInsert
         333A333333333333333338330000333333333333333333333333333333333333
         0000}
       Margin = 4
+      ModalResult = 1
       NumGlyphs = 2
       Spacing = -1
+      TabOrder = 4
+      OnClick = btAddClick
     end
     object btCancel: TBitBtn
       Left = 270
@@ -147,11 +148,12 @@ object fmPrezziInsert: TfmPrezziInsert
       Width = 89
       Height = 25
       Caption = '&Annulla'
-      TabOrder = 5
-      OnClick = btCancelClick
       Kind = bkCancel
       Margin = 4
+      NumGlyphs = 2
       Spacing = -1
+      TabOrder = 5
+      OnClick = btCancelClick
     end
     object iNota: TEdit
       Left = 205

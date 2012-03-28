@@ -24,7 +24,7 @@ object fmPatOCons: TfmPatOCons
     Height = 37
     Align = alTop
     TabOrder = 0
-    object iDataCons: TDateEdit
+    object iDataCons: TJvDateEdit
       Left = 145
       Top = 7
       Width = 91
@@ -38,8 +38,6 @@ object fmPatOCons: TfmPatOCons
       Width = 131
       Height = 25
       Caption = 'Consegnato il'
-      TabOrder = 1
-      OnClick = btConsegnaClick
       Glyph.Data = {
         06020000424D0602000000000000760000002800000028000000140000000100
         0400000000009001000000000000000000001000000000000000000000000000
@@ -61,6 +59,8 @@ object fmPatOCons: TfmPatOCons
       Margin = 5
       NumGlyphs = 2
       Spacing = -1
+      TabOrder = 1
+      OnClick = btConsegnaClick
     end
   end
   object Panel2: TPanel
@@ -179,7 +179,7 @@ object fmPatOCons: TfmPatOCons
       Required = True
     end
   end
-  object ftPatOLst: TRxDBFilter
+  object ftPatOLst: TJvDBFilter
     DataSource = dsPatOLst
     Filter.Strings = (
       'DATA = null')

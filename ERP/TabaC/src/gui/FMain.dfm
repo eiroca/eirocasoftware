@@ -2,8 +2,8 @@ object fmMain: TfmMain
   Left = 200
   Top = 110
   Caption = 'Gestione Tabacchi'
-  ClientHeight = 43
-  ClientWidth = 314
+  ClientHeight = 68
+  ClientWidth = 344
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -185,16 +185,23 @@ object fmMain: TfmMain
       end
     end
   end
-  object fsForm: TFormStorage
-    UseRegistry = False
+  object fsForm: TJvFormStorage
+    AppStoragePath = '%FORM_NAME%\'
     OnRestorePlacement = fsFormRestorePlacement
     StoredValues = <>
     Left = 10
     Top = 5
   end
-  object AppEvents1: TAppEvents
+  object AppEvents1: TJvAppEvents
     OnSettingsChanged = AppEvents1SettingsChanged
     Left = 80
     Top = 5
+  end
+  object apStorage: TJvAppIniFileStorage
+    StorageOptions.BooleanStringTrueValues = 'TRUE, YES, Y'
+    StorageOptions.BooleanStringFalseValues = 'FALSE, NO, N'
+    SubStorages = <>
+    Left = 152
+    Top = 8
   end
 end

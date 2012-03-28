@@ -32,7 +32,7 @@ object fmStampaModuli: TfmStampaModuli
     Height = 13
     Caption = 'Ordina per'
   end
-  object iCopie: TRxSpinEdit
+  object iCopie: TJvSpinEdit
     Left = 115
     Top = 10
     Width = 61
@@ -49,10 +49,11 @@ object fmStampaModuli: TfmStampaModuli
     Width = 89
     Height = 25
     Caption = 'Annulla'
-    TabOrder = 3
     Kind = bkCancel
     Margin = 5
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 3
   end
   object cbOrder: TComboBox
     Left = 68
@@ -60,7 +61,6 @@ object fmStampaModuli: TfmStampaModuli
     Width = 110
     Height = 21
     Style = csDropDownList
-    ItemHeight = 0
     TabOrder = 1
     OnChange = cbOrderChange
   end
@@ -70,8 +70,6 @@ object fmStampaModuli: TfmStampaModuli
     Width = 89
     Height = 25
     Caption = '&Stampa'
-    TabOrder = 2
-    OnClick = btPrintClick
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000130B0000130B00001000000000000000000000000000
@@ -88,6 +86,8 @@ object fmStampaModuli: TfmStampaModuli
     Margin = 5
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 2
+    OnClick = btPrintClick
   end
   object Report: TeLineReport
     AutoCR = False
@@ -99,13 +99,13 @@ object fmStampaModuli: TfmStampaModuli
     DeviceKind = 'Printer'
     OnPageHeader = ReportPageHeader
     OnSetupDevice = ReportSetupDevice
-    Left = 90
+    Left = 82
     Top = 20
   end
   object tbTaba: TTable
     DatabaseName = 'DB'
     TableName = 'TABACCHI.DB'
-    Left = 70
+    Left = 38
     Top = 20
     object tbTabaCODI: TSmallintField
       FieldName = 'CODI'

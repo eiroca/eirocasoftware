@@ -27,7 +27,7 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   StdCtrls, Forms, Grids, ExtCtrls, Dialogs, Buttons, Db, DBTables, DBGrids,
-  RXSplit, RgNav, RgNavDB;
+  RgNav, RgNavDB, JvExExtCtrls, JvSplitter;
 
 type
   TfmGiacEdit = class(TForm)                   
@@ -60,7 +60,7 @@ type
     tbTabaQTAC: TSmallintField;
     navGiac: TRGNavigator;
     tbGiacMovGiacKG: TFloatField;
-    RxSplitter1: TRxSplitter;
+    RxSplitter1: TJvSplitter;
     procedure AbortOperation(DataSet: TDataset);
     procedure tbGiacMovCalcFields(DataSet: TDataset);
     procedure FormShow(Sender: TObject);
@@ -87,7 +87,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLibDB, eLib, DTabaC, FStampaGiacenze;
+  eLibDB, eLibCore, DTabaC, FStampaGiacenze;
 
 procedure GiacEdit;
 var

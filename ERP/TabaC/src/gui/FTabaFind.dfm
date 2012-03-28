@@ -66,7 +66,6 @@ object fmTabaFind: TfmTabaFind
     Width = 207
     Height = 21
     Style = csDropDownList
-    ItemHeight = 0
     TabOrder = 0
     OnChange = cbOrderChange
   end
@@ -76,11 +75,12 @@ object fmTabaFind: TfmTabaFind
     Width = 89
     Height = 25
     Caption = '&Ok'
-    TabOrder = 3
-    OnClick = btOkClick
     Kind = bkOK
     Margin = 5
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 3
+    OnClick = btOkClick
   end
   object btCancel: TBitBtn
     Left = 280
@@ -88,10 +88,11 @@ object fmTabaFind: TfmTabaFind
     Width = 89
     Height = 25
     Caption = '&Annulla'
-    TabOrder = 4
     Kind = bkCancel
     Margin = 5
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 4
   end
   object tbTaba: TTable
     OnCalcFields = tbTabaCalcFields
@@ -135,7 +136,7 @@ object fmTabaFind: TfmTabaFind
     Left = 85
     Top = 105
   end
-  object rxFilter: TRxDBFilter
+  object rxFilter: TJvDBFilter
     DataSource = dsTaba
     OnFiltering = rxFilterFiltering
     Left = 95

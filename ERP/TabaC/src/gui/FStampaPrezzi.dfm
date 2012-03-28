@@ -44,10 +44,11 @@ object fmStampaListino: TfmStampaListino
     Width = 89
     Height = 25
     Caption = 'Annulla'
-    TabOrder = 3
     Kind = bkCancel
     Margin = 5
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 3
   end
   object cbOrder: TComboBox
     Left = 73
@@ -55,7 +56,6 @@ object fmStampaListino: TfmStampaListino
     Width = 110
     Height = 21
     Style = csDropDownList
-    ItemHeight = 0
     TabOrder = 0
     OnChange = cbOrderChange
   end
@@ -75,8 +75,6 @@ object fmStampaListino: TfmStampaListino
     Width = 89
     Height = 25
     Caption = '&Esporta'
-    TabOrder = 5
-    OnClick = PrintReport
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000130B0000130B00001000000000000000000000000000
@@ -93,6 +91,8 @@ object fmStampaListino: TfmStampaListino
     Margin = 5
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 5
+    OnClick = PrintReport
   end
   object btPrint: TBitBtn
     Left = 8
@@ -100,8 +100,6 @@ object fmStampaListino: TfmStampaListino
     Width = 89
     Height = 25
     Caption = '&Stampa'
-    TabOrder = 2
-    OnClick = PrintReport
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000130B0000130B00001000000000000000000000000000
@@ -118,6 +116,8 @@ object fmStampaListino: TfmStampaListino
     Margin = 5
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 2
+    OnClick = PrintReport
   end
   object btPreview: TBitBtn
     Left = 8
@@ -125,8 +125,6 @@ object fmStampaListino: TfmStampaListino
     Width = 89
     Height = 25
     Caption = '&Anteprima'
-    TabOrder = 4
-    OnClick = PrintReport
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -143,6 +141,8 @@ object fmStampaListino: TfmStampaListino
     Margin = 5
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 4
+    OnClick = PrintReport
   end
   object cbFormat: TComboBox
     Left = 10
@@ -150,7 +150,6 @@ object fmStampaListino: TfmStampaListino
     Width = 186
     Height = 21
     Style = csDropDownList
-    ItemHeight = 13
     TabOrder = 6
     OnChange = cbOrderChange
     Items.Strings = (

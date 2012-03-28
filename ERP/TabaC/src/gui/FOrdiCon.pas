@@ -27,7 +27,7 @@ interface
 uses                            
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   Forms, Dialogs, Db, DBTables, Grids, DBGrids, StdCtrls, Mask,
-  Buttons, ExtCtrls, rxdbfilter, rxToolEdit;
+  Buttons, ExtCtrls, JvComponentBase, JvBDEFilter, JvExMask, JvToolEdit;
 
 type
   TfmOrdiCons = class(TForm)
@@ -42,9 +42,9 @@ type
     tbOrdiLstDATAPREZ: TDateField;
     tbOrdiLstKGC: TFloatField;
     tbOrdiLstVAL: TCurrencyField;
-    ftOrdiLst: TRxDBFilter;
+    ftOrdiLst: TJvDBFilter;
     btConsegna: TBitBtn;
-    iDataCons: TDateEdit;
+    iDataCons: TJvDateEdit;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure dgOrdiDblClick(Sender: TObject);
@@ -63,7 +63,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLibDB, eLib, DTabaC;
+  eLibDB, eLibCore, DTabaC;
 
 procedure TfmOrdiCons.FormShow(Sender: TObject);
 begin

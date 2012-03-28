@@ -26,7 +26,8 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Forms,
-  Dialogs, StdCtrls, Menus, Db, DBTables, rxAppEvent, rxPlacemnt;
+  Dialogs, StdCtrls, Menus, Db, DBTables, JvAppEvent, JvComponentBase,
+  JvFormPlacement, JvAppStorage, JvAppIniStorage;
 
 type
   TfmMain = class(TForm)
@@ -66,8 +67,8 @@ type
     miHelp: TMenuItem;
     miHelpAbout: TMenuItem;
     miHelpHelp: TMenuItem;
-    AppEvents1: TAppEvents;
-    fsForm: TFormStorage;
+    AppEvents1: TJvAppEvents;
+    fsForm: TJvFormStorage;
     N1: TMenuItem;
     N2: TMenuItem;
     N3: TMenuItem;
@@ -78,6 +79,7 @@ type
     Stampastatistiche1: TMenuItem;
     StampaTendenze1: TMenuItem;
     StampaOrdinato1: TMenuItem;
+    apStorage: TJvAppIniFileStorage;
     procedure miTabaExitClick(Sender: TObject);
     procedure miTabaPrezSelectClick(Sender: TObject);
     procedure miPateRichInsertClick(Sender: TObject);
@@ -126,7 +128,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, FAboutGPL, FDBPack, uOpzioni, MakeDB,
+  eLibCore, FAboutGPL, FDBPack, uOpzioni, MakeDB,
   DTabaC, FInfo, FValorizzazione,
   FStatCalc,
   FTabaEdit, FTabaFind,
@@ -201,7 +203,7 @@ end;
 
 procedure TfmMain.fsFormRestorePlacement(Sender: TObject);
 begin
-  fsForm.INIFileName:= Opzioni.BasePath+'conf\layout.ini';
+  apStorage.FileName:= Opzioni.BasePath+'conf\layout.ini';
 end;
 
 procedure TfmMain.miTabaUtilPackDBClick(Sender: TObject);

@@ -27,7 +27,8 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   StdCtrls, Forms, DBCtrls, DB, DBGrids, DBTables, Grids, ExtCtrls,
-  Dialogs, Buttons, RgNav, RgNavDB, RXSplit, rxdbfilter;
+  Dialogs, Buttons, RgNav, RgNavDB, JvComponentBase, JvBDEFilter, JvExExtCtrls,
+  JvSplitter;
 
 type
   TfmOrdiEdit = class(TForm)
@@ -59,11 +60,11 @@ type
     tbOrdiLstVAL: TCurrencyField;
     tbOrdiMovPCAR: TIntegerField;
     tbOrdiMovCARI: TIntegerField;
-    ftOrdiLst: TRxDBFilter;
+    ftOrdiLst: TJvDBFilter;
     cbDaRice: TCheckBox;
     tbOrdiMovCariKG: TFloatField;
     navOrdi: TRGNavigator;
-    RxSplitter1: TRxSplitter;
+    RxSplitter1: TJvSplitter;
     procedure AbortOperation(DataSet: TDataset);
     procedure tbOrdiMovCalcFields(DataSet: TDataset);
     procedure FormShow(Sender: TObject);
@@ -92,7 +93,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLibDB, eLib, DTabaC, FStampaOrdList;
+  eLibDB, eLibCore, DTabaC, FStampaOrdList;
 
 procedure OrdiEdit(DaRice: boolean);
 var

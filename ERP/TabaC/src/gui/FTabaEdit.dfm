@@ -52,7 +52,6 @@ object fmTabaEdit: TfmTabaEdit
       Width = 110
       Height = 21
       Style = csDropDownList
-      ItemHeight = 0
       TabOrder = 0
       OnChange = cbOrderChange
     end
@@ -80,8 +79,6 @@ object fmTabaEdit: TfmTabaEdit
       Width = 75
       Height = 25
       Caption = 'Rinumera'
-      TabOrder = 2
-      OnClick = BitBtn1Click
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000130B0000130B00001000000000000000000000000000
@@ -96,6 +93,8 @@ object fmTabaEdit: TfmTabaEdit
         333333333333333333FF33333333333330003333333333333777333333333333
         3000333333333333377733333333333333333333333333333333}
       NumGlyphs = 2
+      TabOrder = 2
+      OnClick = BitBtn1Click
     end
   end
   object Panel2: TPanel
@@ -206,48 +205,38 @@ object fmTabaEdit: TfmTabaEdit
         Caption = 'Differenziale'
         FocusControl = iDIFR
       end
-      object sbQtaS: TRxSpinButton
+      object sbQtaS: TJvSpinButton
         Tag = 10000
         Left = 185
         Top = 100
-        Width = 20
-        Height = 20
         OnBottomClick = sbQtaSBottomClick
         OnTopClick = sbQtaSTopClick
       end
-      object sbQtaC: TRxSpinButton
+      object sbQtaC: TJvSpinButton
         Tag = 1000
         Left = 185
         Top = 125
-        Width = 20
-        Height = 20
         OnBottomClick = sbQtaCBottomClick
         OnTopClick = sbQtaCTopClick
       end
-      object sbDifr: TRxSpinButton
+      object sbDifr: TJvSpinButton
         Tag = 1000
         Left = 185
         Top = 150
-        Width = 20
-        Height = 20
         OnBottomClick = sbDifrBottomClick
         OnTopClick = sbDifrTopClick
       end
-      object sbQtaM: TRxSpinButton
+      object sbQtaM: TJvSpinButton
         Tag = 10000
         Left = 397
         Top = 100
-        Width = 20
-        Height = 20
         OnBottomClick = sbQtaMBottomClick
         OnTopClick = sbQtaMTopClick
       end
-      object sbMulI: TRxSpinButton
+      object sbMulI: TJvSpinButton
         Tag = 100
         Left = 397
         Top = 130
-        Width = 20
-        Height = 20
         OnBottomClick = sbMulIBottomClick
         OnTopClick = sbMulITopClick
       end

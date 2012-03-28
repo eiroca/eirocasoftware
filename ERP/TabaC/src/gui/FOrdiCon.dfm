@@ -30,8 +30,6 @@ object fmOrdiCons: TfmOrdiCons
       Width = 131
       Height = 25
       Caption = 'Consegnato il'
-      TabOrder = 0
-      OnClick = btConsegnaClick
       Glyph.Data = {
         06020000424D0602000000000000760000002800000028000000140000000100
         0400000000009001000000000000000000001000000000000000000000000000
@@ -53,8 +51,10 @@ object fmOrdiCons: TfmOrdiCons
       Margin = 5
       NumGlyphs = 2
       Spacing = -1
+      TabOrder = 0
+      OnClick = btConsegnaClick
     end
-    object iDataCons: TDateEdit
+    object iDataCons: TJvDateEdit
       Left = 150
       Top = 7
       Width = 91
@@ -118,16 +118,16 @@ object fmOrdiCons: TfmOrdiCons
   end
   object dsOrdiLst: TDataSource
     DataSet = tbOrdiLst
-    Left = 162
-    Top = 60
+    Left = 98
+    Top = 68
   end
   object tbOrdiLst: TTable
     BeforeInsert = AbortOperation
     BeforeDelete = AbortOperation
     DatabaseName = 'DB'
     TableName = 'CARILIST.DB'
-    Left = 125
-    Top = 60
+    Left = 45
+    Top = 68
     object tbOrdiLstPCAR: TIntegerField
       FieldName = 'PCAR'
       Visible = False
@@ -158,11 +158,11 @@ object fmOrdiCons: TfmOrdiCons
       FieldName = 'VAL'
     end
   end
-  object ftOrdiLst: TRxDBFilter
+  object ftOrdiLst: TJvDBFilter
     DataSource = dsOrdiLst
     Filter.Strings = (
       'DATA = null')
-    Left = 190
-    Top = 61
+    Left = 150
+    Top = 69
   end
 end

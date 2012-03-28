@@ -54,7 +54,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib;
+  eLibCore;
 
 procedure PrezziSelect;
 var

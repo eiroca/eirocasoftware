@@ -18,6 +18,14 @@ object fmOrdiEdit: TfmOrdiEdit
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
+  object RxSplitter1: TJvSplitter
+    Left = 0
+    Top = 141
+    Width = 442
+    Height = 3
+    Cursor = crVSplit
+    Align = alTop
+  end
   object pnOrdi: TPanel
     Left = 0
     Top = 0
@@ -217,15 +225,6 @@ object fmOrdiEdit: TfmOrdiEdit
         end>
     end
   end
-  object RxSplitter1: TRxSplitter
-    Left = 0
-    Top = 141
-    Width = 442
-    Height = 3
-    ControlFirst = pnOrdiList
-    ControlSecond = pnOrdiMovi
-    Align = alTop
-  end
   object dsOrdiLst: TDataSource
     DataSet = tbOrdiLst
     Left = 172
@@ -352,7 +351,7 @@ object fmOrdiEdit: TfmOrdiEdit
       FieldName = 'QTAC'
     end
   end
-  object ftOrdiLst: TRxDBFilter
+  object ftOrdiLst: TJvDBFilter
     DataSource = dsOrdiLst
     Filter.Strings = (
       'DATA = null')

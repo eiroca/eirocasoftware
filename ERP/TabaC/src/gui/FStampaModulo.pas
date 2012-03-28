@@ -26,12 +26,13 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, RXSpin, eReport, Mask;
+  Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, eReport, Mask, JvExMask,
+  JvSpin;
 
 type
   TfmStampaModuli = class(TForm)
     Label1: TLabel;
-    iCopie: TRxSpinEdit;
+    iCopie: TJvSpinEdit;
     btCancel: TBitBtn;
     Report: TeLineReport;
     tbTaba: TTable;
@@ -71,7 +72,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, UOpzioni, DTabaC;
+  eLibCore, UOpzioni, DTabaC;
 
 procedure StampaModuloInventario;
 var

@@ -27,7 +27,7 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   StdCtrls, Forms, DBCtrls, DB, DBGrids, DBTables, Grids, ExtCtrls,
-  Dialogs, Buttons, RgNav, RgNavDB, RXSplit;
+  Dialogs, Buttons, RgNav, RgNavDB, JvExExtCtrls, JvSplitter;
 
 type
   TfmPrezziEdit = class(TForm)
@@ -56,7 +56,7 @@ type
     tbPrezLstDESC: TStringField;
     tbPrezMovPREZ: TCurrencyField;
     navPrez: TRGNavigator;
-    RxSplitter1: TRxSplitter;
+    RxSplitter1: TJvSplitter;
     procedure AbortOperation(DataSet: TDataset);
     procedure tbPrezMovCalcFields(DataSet: TDataset);
     procedure FormShow(Sender: TObject);
@@ -83,7 +83,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLibDB, eLib, DTabaC, FStampaPrezzi;
+  eLibDB, eLibCore, DTabaC, FStampaPrezzi;
 
 procedure PrezziEdit;
 var

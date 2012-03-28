@@ -62,7 +62,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, DTabaC;
+  eLibCore, DTabaC;
 
 procedure ShowInfo;
 var

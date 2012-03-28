@@ -24,8 +24,6 @@ object fmStatCalc: TfmStatCalc
     Height = 27
     Caption = '&Calcola'
     Default = True
-    TabOrder = 0
-    OnClick = OKBtnClick
     Glyph.Data = {
       DE010000424DDE01000000000000760000002800000024000000120000000100
       0400000000006801000000000000000000001000000000000000000000000000
@@ -46,6 +44,8 @@ object fmStatCalc: TfmStatCalc
     Margin = 4
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 0
+    OnClick = OKBtnClick
     IsControl = True
   end
   object btCancel: TBitBtn
@@ -54,10 +54,11 @@ object fmStatCalc: TfmStatCalc
     Width = 77
     Height = 27
     Caption = '&Annulla'
-    TabOrder = 1
     Kind = bkCancel
     Margin = 4
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 1
     IsControl = True
   end
   object GroupBox1: TGroupBox

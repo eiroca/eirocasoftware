@@ -18,6 +18,14 @@ object fmPrezziEdit: TfmPrezziEdit
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
+  object RxSplitter1: TJvSplitter
+    Left = 0
+    Top = 141
+    Width = 373
+    Height = 3
+    Cursor = crVSplit
+    Align = alTop
+  end
   object Panel1: TPanel
     Left = 0
     Top = 0
@@ -190,15 +198,6 @@ object fmPrezziEdit: TfmPrezziEdit
           Visible = True
         end>
     end
-  end
-  object RxSplitter1: TRxSplitter
-    Left = 0
-    Top = 141
-    Width = 373
-    Height = 3
-    ControlFirst = pnList
-    ControlSecond = pnMovs
-    Align = alTop
   end
   object dsPrezLst: TDataSource
     DataSet = tbPrezLst
