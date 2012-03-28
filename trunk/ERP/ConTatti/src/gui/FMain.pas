@@ -24,7 +24,8 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls, Forms,
   Dialogs, Menus, ExtCtrls, Grids,
-  DB, DBTables, eDB, rxAppEvent, rxPlacemnt, rxSpeedbar, PrevInstance;
+  DB, DBTables, eDB, PrevInstance, JvAppStorage, JvAppIniStorage, JvAppEvent,
+  JvComponentBase, JvFormPlacement, JvSpeedbar, JvExExtCtrls, JvExtComponent;
 
 type
   TfmMain = class(TForm)
@@ -35,42 +36,43 @@ type
     N1: TMenuItem;
     miOptsSetup: TMenuItem;
     Visualizza1: TMenuItem;
-    fsMain: TFormStorage;
+    fsMain: TJvFormStorage;
     Aiuto1: TMenuItem;
     miAbout: TMenuItem;
     miOptsPwd: TMenuItem;
-    sbMain: TSpeedBar;
-    SpeedbarSection1: TSpeedbarSection;
-    SpeedItem1: TSpeedItem;
-    SpeedItem2: TSpeedItem;
-    SpeedbarSection2: TSpeedbarSection;
-    SpeedItem3: TSpeedItem;
-    SpeedItem4: TSpeedItem;
+    sbMain: TJvSpeedBar;
+    SpeedbarSection1: TJvSpeedbarSection;
+    SpeedItem1: TJvSpeedItem;
+    SpeedItem2: TJvSpeedItem;
+    SpeedbarSection2: TJvSpeedbarSection;
+    SpeedItem3: TJvSpeedItem;
+    SpeedItem4: TJvSpeedItem;
     miOptsSpdBar: TMenuItem;
     miContEditGrup: TMenuItem;
-    SpeedbarSection3: TSpeedbarSection;
+    SpeedbarSection3: TJvSpeedbarSection;
     Opzioni1: TMenuItem;
     miInfoTelef: TMenuItem;
-    SpeedItem5: TSpeedItem;
-    SpeedItem6: TSpeedItem;
+    SpeedItem5: TJvSpeedItem;
+    SpeedItem6: TJvSpeedItem;
     miInfoIndir: TMenuItem;
-    SpeedItem7: TSpeedItem;
+    SpeedItem7: TJvSpeedItem;
     N2: TMenuItem;
     miInfoGrup: TMenuItem;
-    SpeedItem8: TSpeedItem;
+    SpeedItem8: TJvSpeedItem;
     miInfoStat: TMenuItem;
-    SpeedItem9: TSpeedItem;
-    AppEvents: TAppEvents;
+    SpeedItem9: TJvSpeedItem;
+    AppEvents: TJvAppEvents;
     miContPack: TMenuItem;
     PrevInst: TMgPrevInstance;
     miNewCont: TMenuItem;
-    SpeedItem10: TSpeedItem;
+    SpeedItem10: TJvSpeedItem;
     miInfoNick: TMenuItem;
-    SpeedItem11: TSpeedItem;
+    SpeedItem11: TJvSpeedItem;
     miInfoPrint: TMenuItem;
-    SpeedItem12: TSpeedItem;
+    SpeedItem12: TJvSpeedItem;
     N3: TMenuItem;
     Aiuto2: TMenuItem;
+    apStorage: TJvAppIniFileStorage;
     procedure miExitClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure miContEditClick(Sender: TObject);
@@ -78,7 +80,6 @@ type
     procedure FormShow(Sender: TObject);
     procedure miAboutClick(Sender: TObject);
     procedure miOptsPwdClick(Sender: TObject);
-    procedure fsMainRestorePlacement(Sender: TObject);
     procedure sbMainDblClick(Sender: TObject);
     procedure SpeedItem1Click(Sender: TObject);
     procedure SpeedItem2Click(Sender: TObject);
@@ -123,7 +124,7 @@ implementation
 {$R *.DFM}
 
 uses
-  ContComm, eLib, eLibDB, eLibSystem,
+  ContComm, eLibCore, eLibDB, eLibSystem,
   uOpzioni, DContat,
   FSplash, FInfo, FAboutBox, MakeDB,
   FContat, FChkUsr, FManom, FChgPwd, FEdtGrp, FNewCont,
@@ -136,7 +137,7 @@ end;
 
 procedure TfmMain.FormCreate(Sender: TObject);
 begin
-  fsMain.INIFileName:= Opzioni.ProgPath+Opzioni.ProgName+'.INI';
+  apStorage.FileName:= Opzioni.ProgPath+Opzioni.ProgName+'.INI';
 (*
   SetLongYear;
   FourDigitYear:= true;
@@ -249,11 +250,6 @@ end;
 procedure TfmMain.miOptsPwdClick(Sender: TObject);
 begin
   ChangePasswordDialog(16, true);
-end;
-
-procedure TfmMain.fsMainRestorePlacement(Sender: TObject);
-begin
-  fsMain.INIFileName:= Opzioni.ProgPath+Opzioni.ProgName+'.INI';
 end;
 
 procedure TfmMain.sbMainDblClick(Sender: TObject);

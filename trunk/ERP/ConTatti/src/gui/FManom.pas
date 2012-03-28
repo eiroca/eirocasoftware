@@ -68,7 +68,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, FAboutBox, FChkUsr, FRegist;
+  eLibCore, FAboutBox, FChkUsr, FRegist;
 
 function SbloccaManomissione(IL: TIceLock; Magic: word; MinTime: integer): boolean;
 var

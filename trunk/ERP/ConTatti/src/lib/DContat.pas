@@ -83,7 +83,7 @@ implementation
 {$R *.dfm}
 
 uses
-  Costanti, eLibDB, eLib, ContComm, MakePrIn, eLibSystem,
+  Costanti, eLibDB, eLibCore, ContComm, MakePrIn, eLibSystem,
   FChkUsr, FRegist;
 
 procedure TdmContatti.DataModuleCreate(Sender: TObject);

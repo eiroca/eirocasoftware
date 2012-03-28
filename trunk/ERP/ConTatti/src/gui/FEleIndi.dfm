@@ -20,7 +20,7 @@ object fmEleIndi: TfmEleIndi
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object SpeedBar1: TSpeedBar
+  object SpeedBar1: TJvSpeedBar
     Left = 0
     Top = 0
     Width = 444
@@ -45,7 +45,6 @@ object fmEleIndi: TfmEleIndi
       Height = 21
       Hint = 'Tipo di indirizzi da visualizzare'
       Style = csDropDownList
-      ItemHeight = 13
       TabOrder = 0
       OnChange = cbTipoIndChange
     end
@@ -59,13 +58,12 @@ object fmEleIndi: TfmEleIndi
       TabOrder = 1
       OnClick = cbFiltContClick
     end
-    object lcContatti: TRxDBLookupCombo
+    object lcContatti: TJvDBLookupCombo
       Left = 65
       Top = 4
       Width = 135
       Height = 21
       Hint = 'Contatto di cui si vogliono '#13#10'visualizzare gli indirizzi'
-      DropDownCount = 8
       DisplayEmpty = '<< tutti >>'
       ListStyle = lsDelimited
       LookupField = 'CodCon'
@@ -85,14 +83,14 @@ object fmEleIndi: TfmEleIndi
       OnClick = cbFiltTipoClick
     end
   end
-  object dgIndir: TRxDBGrid
+  object dgIndir: TJvDBGrid
     Left = 0
     Top = 29
     Width = 444
     Height = 237
     Align = alClient
     DataSource = dsIndir
-    Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+    Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clBlack
@@ -103,6 +101,12 @@ object fmEleIndi: TfmEleIndi
     TitleButtons = True
     OnCheckButton = dgIndirCheckButton
     OnGetCellParams = dgIndirGetCellParams
+    SelectColumnsDialogStrings.Caption = 'Select columns'
+    SelectColumnsDialogStrings.OK = '&OK'
+    SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+    EditControls = <>
+    RowsHeight = 17
+    TitleRowHeight = 17
   end
   object dsIndir: TDataSource
     DataSet = qbeEleInd
@@ -110,7 +114,7 @@ object fmEleIndi: TfmEleIndi
     Left = 195
     Top = 155
   end
-  object flIndir: TRxDBFilter
+  object flIndir: TJvDBFilter
     DataSource = dsIndir
     OnFiltering = flIndirFiltering
     Left = 195
@@ -161,7 +165,7 @@ object fmEleIndi: TfmEleIndi
     Left = 120
     Top = 95
   end
-  object qbeEleInd: TQBEQuery
+  object qbeEleInd: TJvQBEQuery
     OnCalcFields = qbeEleIndCalcFields
     DatabaseName = 'DB'
     QBE.Strings = (
@@ -263,9 +267,9 @@ object fmEleIndi: TfmEleIndi
       Visible = False
     end
   end
-  object fpEleTel: TFormStorage
-    UseRegistry = False
-    OnRestorePlacement = fpEleTelRestorePlacement
+  object fpEleTel: TJvFormStorage
+    AppStorage = fmMain.apStorage
+    AppStoragePath = '%FORM_NAME%'
     StoredValues = <>
     Left = 50
     Top = 145

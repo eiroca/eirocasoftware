@@ -46,7 +46,7 @@ object fmElenco: TfmElenco
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object dgContat: TRxDBGrid
+  object dgContat: TJvDBGrid
     Left = 0
     Top = 86
     Width = 427
@@ -56,7 +56,7 @@ object fmElenco: TfmElenco
       'el criterio'
     Align = alBottom
     DataSource = dsContatti
-    Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+    Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     PopupMenu = pmAction
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
@@ -70,6 +70,12 @@ object fmElenco: TfmElenco
     OnCheckButton = dgContatCheckButton
     OnGetBtnParams = dgContatGetBtnParams
     OnTitleBtnClick = dgContatTitleBtnClick
+    SelectColumnsDialogStrings.Caption = 'Select columns'
+    SelectColumnsDialogStrings.OK = '&OK'
+    SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+    EditControls = <>
+    RowsHeight = 17
+    TitleRowHeight = 17
   end
   object tbContatti: TTable
     OnCalcFields = tbContattiCalcFields

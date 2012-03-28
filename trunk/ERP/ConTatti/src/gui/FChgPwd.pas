@@ -62,7 +62,7 @@ implementation
 {$R *.DFM}
 
 uses
-  Consts, eLib, RXDConst, FChkUsr;
+  Consts, eLibCore, FChkUsr;
 
 function ChangePasswordDialog(MaxPwdLen: Integer; EnableEmptyPassword: Boolean): Boolean;
 var

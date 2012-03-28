@@ -97,7 +97,7 @@ implementation
 {$R *.DFM}
 
 uses
-  DContat, uOpzioni, ContComm, eLib, FContat;
+  DContat, uOpzioni, ContComm, eLibCore, FContat;
 
 procedure TfmNewCont.FormCreate(Sender: TObject);
 begin

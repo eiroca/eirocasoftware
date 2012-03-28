@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 (*
  @author(Enrico Croce)
 *)
-program ConTatti2007;
+program ConTatti;
 
 uses
   Forms,
@@ -51,8 +51,8 @@ uses
 begin
   Application.Initialize;
   Application.Title := 'Con Tatti 2007';
+  Application.CreateForm(TfmMain, fmMain);
   Application.CreateForm(TdmContatti, dmContatti);
   Application.CreateForm(TfmElenco, fmElenco);
-  Application.CreateForm(TfmMain, fmMain);
   Application.Run;
 end.

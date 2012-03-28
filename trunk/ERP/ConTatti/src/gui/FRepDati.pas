@@ -128,7 +128,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, SysUtils, ContComm, Costanti, DContat;
+  eLibCore, SysUtils, ContComm, Costanti, DContat;
 
 procedure TrepDatiContatto.ShowContat(Flag: boolean);
 begin

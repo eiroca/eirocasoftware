@@ -20,7 +20,7 @@ object fmMain: TfmMain
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object sbMain: TSpeedBar
+  object sbMain: TJvSpeedBar
     Left = 0
     Top = 0
     Width = 522
@@ -41,16 +41,16 @@ object fmMain: TfmMain
     TabOrder = 0
     OnDblClick = sbMainDblClick
     InternalVer = 1
-    object SpeedbarSection1: TSpeedbarSection
+    object SpeedbarSection1: TJvSpeedBarSection
       Caption = 'Generali'
     end
-    object SpeedbarSection2: TSpeedbarSection
+    object SpeedbarSection2: TJvSpeedBarSection
       Caption = 'Contatti'
     end
-    object SpeedbarSection3: TSpeedbarSection
+    object SpeedbarSection3: TJvSpeedBarSection
       Caption = 'Elenchi/Viste'
     end
-    object SpeedItem1: TSpeedItem
+    object SpeedItem1: TJvSpeedItem
       Caption = 'Impostazioni generali'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
@@ -74,7 +74,7 @@ object fmMain: TfmMain
       OnClick = SpeedItem1Click
       SectionName = 'Generali'
     end
-    object SpeedItem2: TSpeedItem
+    object SpeedItem2: TJvSpeedItem
       Caption = 'Cambia la password'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
@@ -96,7 +96,7 @@ object fmMain: TfmMain
       OnClick = SpeedItem2Click
       SectionName = 'Generali'
     end
-    object SpeedItem3: TSpeedItem
+    object SpeedItem3: TJvSpeedItem
       Caption = 'Termina il programma'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
@@ -118,7 +118,7 @@ object fmMain: TfmMain
       OnClick = SpeedItem3Click
       SectionName = 'Generali'
     end
-    object SpeedItem4: TSpeedItem
+    object SpeedItem4: TJvSpeedItem
       Caption = 'Scheda contatti'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
@@ -142,7 +142,7 @@ object fmMain: TfmMain
       OnClick = SpeedItem4Click
       SectionName = 'Contatti'
     end
-    object SpeedItem5: TSpeedItem
+    object SpeedItem5: TJvSpeedItem
       Caption = 'Modifca gruppi'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
@@ -166,7 +166,7 @@ object fmMain: TfmMain
       OnClick = SpeedItem5Click
       SectionName = 'Contatti'
     end
-    object SpeedItem10: TSpeedItem
+    object SpeedItem10: TJvSpeedItem
       Caption = 'Inserimento rapido'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
@@ -188,7 +188,7 @@ object fmMain: TfmMain
       OnClick = SpeedItem10Click
       SectionName = 'Contatti'
     end
-    object SpeedItem6: TSpeedItem
+    object SpeedItem6: TJvSpeedItem
       Caption = 'Elenco telefonico'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
@@ -212,7 +212,7 @@ object fmMain: TfmMain
       OnClick = SpeedItem6Click
       SectionName = 'Elenchi/Viste'
     end
-    object SpeedItem7: TSpeedItem
+    object SpeedItem7: TJvSpeedItem
       Caption = 'Elenco indirizzi'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
@@ -236,7 +236,7 @@ object fmMain: TfmMain
       OnClick = SpeedItem7Click
       SectionName = 'Elenchi/Viste'
     end
-    object SpeedItem11: TSpeedItem
+    object SpeedItem11: TJvSpeedItem
       Caption = 'Soprannomi / Vista IRC'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
@@ -260,7 +260,7 @@ object fmMain: TfmMain
       OnClick = SpeedItem11Click
       SectionName = 'Elenchi/Viste'
     end
-    object SpeedItem8: TSpeedItem
+    object SpeedItem8: TJvSpeedItem
       Caption = 'Associazioni contatto/gruppo'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
@@ -284,7 +284,7 @@ object fmMain: TfmMain
       OnClick = SpeedItem8Click
       SectionName = 'Elenchi/Viste'
     end
-    object SpeedItem12: TSpeedItem
+    object SpeedItem12: TJvSpeedItem
       Caption = 'Stampa dati contatti'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
@@ -308,7 +308,7 @@ object fmMain: TfmMain
       OnClick = SpeedItem12Click
       SectionName = 'Elenchi/Viste'
     end
-    object SpeedItem9: TSpeedItem
+    object SpeedItem9: TJvSpeedItem
       Caption = 'Statistiche contatti'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
@@ -432,14 +432,14 @@ object fmMain: TfmMain
       end
     end
   end
-  object fsMain: TFormStorage
-    UseRegistry = False
-    OnRestorePlacement = fsMainRestorePlacement
+  object fsMain: TJvFormStorage
+    AppStorage = apStorage
+    AppStoragePath = '%FORM_NAME%\'
     StoredValues = <>
     Left = 50
     Top = 35
   end
-  object AppEvents: TAppEvents
+  object AppEvents: TJvAppEvents
     Left = 120
     Top = 35
   end
@@ -448,5 +448,12 @@ object fmMain: TfmMain
     FoundAction = mgfaRestoreAndQuit
     Left = 15
     Top = 35
+  end
+  object apStorage: TJvAppIniFileStorage
+    StorageOptions.BooleanStringTrueValues = 'TRUE, YES, Y'
+    StorageOptions.BooleanStringFalseValues = 'FALSE, NO, N'
+    SubStorages = <>
+    Left = 160
+    Top = 32
   end
 end

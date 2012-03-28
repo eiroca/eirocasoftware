@@ -27,8 +27,6 @@ object fmInfo: TfmInfo
     Hint = 'Annulla gli eventuali cambiamenti effettuati'
     Cancel = True
     Caption = 'Annulla'
-    ModalResult = 2
-    TabOrder = 0
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000130B0000130B00001000000000000000000000000000
@@ -43,8 +41,10 @@ object fmInfo: TfmInfo
       99333773FF777F777733339993707339933333773FF7FFF77333333999999999
       3333333777333777333333333999993333333333377777333333}
     Margin = 5
+    ModalResult = 2
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 0
   end
   object btOk: TBitBtn
     Left = 25
@@ -54,9 +54,6 @@ object fmInfo: TfmInfo
     Hint = 'Memorizza le preferenze'
     Caption = '&Ok'
     Default = True
-    ModalResult = 1
-    TabOrder = 1
-    OnClick = btOkClick
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -71,8 +68,11 @@ object fmInfo: TfmInfo
       05555555555555777FF5555555555557905555555555555777FF555555555555
       5990555555555555577755555555555555555555555555555555}
     Margin = 5
+    ModalResult = 1
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 1
+    OnClick = btOkClick
   end
   object tbInfo: TTabbedNotebook
     Left = 10
@@ -91,6 +91,8 @@ object fmInfo: TfmInfo
       Left = 4
       Top = 24
       Caption = 'Personali'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label1: TLabel
         Left = 15
         Top = 130
@@ -135,13 +137,12 @@ object fmInfo: TfmInfo
           Height = 13
           Caption = 'Io sono'
         end
-        object lcYourSelf: TRxDBLookupCombo
+        object lcYourSelf: TJvDBLookupCombo
           Left = 80
           Top = 15
           Width = 291
           Height = 22
           Hint = 'Nome del utente'
-          DropDownCount = 8
           ListStyle = lsDelimited
           LookupField = 'CodCon'
           LookupDisplay = 'Nome_Main;Nome_Pre1'
@@ -173,6 +174,8 @@ object fmInfo: TfmInfo
       Left = 4
       Top = 24
       Caption = 'Visualizzazioni'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox1: TGroupBox
         Left = 10
         Top = 110
@@ -217,10 +220,10 @@ object fmInfo: TfmInfo
           Top = 20
           Width = 196
           Height = 17
-          Caption = 'Mostra solo le prime                   righe'
+          Caption = 'Mostra solo le prime righe'
           TabOrder = 1
         end
-        object iRigheInd: TRxSpinEdit
+        object iRigheInd: TJvSpinEdit
           Left = 305
           Top = 16
           Width = 41
@@ -260,6 +263,8 @@ object fmInfo: TfmInfo
       Left = 4
       Top = 24
       Caption = 'Stampante'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox6: TGroupBox
         Left = 10
         Top = 5
@@ -312,7 +317,7 @@ object fmInfo: TfmInfo
           Alignment = taRightJustify
           Caption = 'in corpo'
         end
-        object eFontSize: TRxSpinEdit
+        object eFontSize: TJvSpinEdit
           Left = 295
           Top = 48
           Width = 61
@@ -326,7 +331,6 @@ object fmInfo: TfmInfo
           Width = 136
           Height = 21
           Hint = 'Risultati migliori si ottengono con un font a spaziatura fissa'
-          ItemHeight = 13
           Sorted = True
           TabOrder = 1
           Text = 'cbFonts'
@@ -338,7 +342,6 @@ object fmInfo: TfmInfo
           Width = 161
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 2
           OnChange = cbPrinterChange
         end
@@ -357,7 +360,7 @@ object fmInfo: TfmInfo
           Height = 13
           Caption = 'Numero di righe  in una pagina di report'
         end
-        object iRigheRep: TRxSpinEdit
+        object iRigheRep: TJvSpinEdit
           Left = 230
           Top = 15
           Width = 61
@@ -373,6 +376,8 @@ object fmInfo: TfmInfo
       Left = 4
       Top = 24
       Caption = 'Preferenze'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox2: TGroupBox
         Left = 10
         Top = 5

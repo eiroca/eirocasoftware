@@ -716,7 +716,7 @@ object fmSplash: TfmSplash
         0000000000000000000000000000000000000000000000000000000000000000
         0000}
     end
-    object RxLabel2: TRxLabel
+    object RxLabel2: TJvLabel
       Left = 5
       Top = 155
       Width = 241
@@ -733,12 +733,16 @@ object fmSplash: TfmSplash
       ParentColor = False
       ParentFont = False
       ShadowColor = clBlack
-      ShadowPos = spRightBottom
       Transparent = True
+      HotTrackFont.Charset = DEFAULT_CHARSET
+      HotTrackFont.Color = clWindowText
+      HotTrackFont.Height = -21
+      HotTrackFont.Name = 'Times New Roman'
+      HotTrackFont.Style = []
     end
-    object RxLabel1: TRxLabel
-      Left = 5
-      Top = 10
+    object RxLabel1: TJvLabel
+      Left = 6
+      Top = 4
       Width = 240
       Height = 33
       Alignment = taCenter
@@ -753,8 +757,12 @@ object fmSplash: TfmSplash
       ParentColor = False
       ParentFont = False
       ShadowColor = clSilver
-      ShadowPos = spRightBottom
       Transparent = True
+      HotTrackFont.Charset = DEFAULT_CHARSET
+      HotTrackFont.Color = clWindowText
+      HotTrackFont.Height = -29
+      HotTrackFont.Name = 'Times New Roman'
+      HotTrackFont.Style = []
     end
   end
 end

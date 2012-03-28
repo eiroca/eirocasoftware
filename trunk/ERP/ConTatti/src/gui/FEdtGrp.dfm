@@ -17,24 +17,29 @@ object fmEditGruppi: TfmEditGruppi
   Scaled = False
   ShowHint = True
   OnClose = FormClose
-  OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object RxDBGrid1: TRxDBGrid
+  object RxDBGrid1: TJvDBGrid
     Left = 10
     Top = 30
     Width = 251
     Height = 201
     Hint = 'Gruppi presenti'
     DataSource = dsGruppi
-    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgCancelOnExit]
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clBlack
     TitleFont.Height = -11
     TitleFont.Name = 'MS Sans Serif'
     TitleFont.Style = []
+    SelectColumnsDialogStrings.Caption = 'Select columns'
+    SelectColumnsDialogStrings.OK = '&OK'
+    SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+    EditControls = <>
+    RowsHeight = 17
+    TitleRowHeight = 17
   end
   object btOk: TBitBtn
     Left = 6
@@ -49,9 +54,6 @@ object fmEditGruppi: TfmEditGruppi
     Font.Height = -11
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
-    ModalResult = 1
-    ParentFont = False
-    TabOrder = 1
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -66,8 +68,11 @@ object fmEditGruppi: TfmEditGruppi
       05555555555555777FF5555555555557905555555555555777FF555555555555
       5990555555555555577755555555555555555555555555555555}
     Margin = 5
+    ModalResult = 1
     NumGlyphs = 2
+    ParentFont = False
     Spacing = -1
+    TabOrder = 1
     IsControl = True
   end
   object DBNavigator1: TDBNavigator
@@ -77,12 +82,13 @@ object fmEditGruppi: TfmEditGruppi
     Height = 25
     DataSource = dsGruppi
     VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbEdit, nbPost, nbCancel]
+    Kind = dbnHorizontal
     ConfirmDelete = False
     TabOrder = 2
   end
-  object fpEdtGrp: TFormPlacement
-    UseRegistry = False
-    OnRestorePlacement = fpEdtGrpRestorePlacement
+  object fpEdtGrp: TJvFormPlacement
+    AppStorage = fmMain.apStorage
+    AppStoragePath = '%FORM_NAME%'
     Left = 30
     Top = 135
   end

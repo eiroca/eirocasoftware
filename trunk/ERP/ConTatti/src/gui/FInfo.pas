@@ -24,7 +24,8 @@ interface
 uses
   WinTypes, WinProcs, Classes, Graphics, Forms, Controls, StdCtrls,
   {$IFDEF WIN32} ComCtrls, {$ENDIF}
-  Printers, Dialogs, DB, DBTables, Buttons, RXSpin, RXLookup, TabNotBk, Mask;
+  Printers, Dialogs, DB, DBTables, Buttons, TabNotBk, Mask, JvExMask, JvSpin,
+  JvExControls, JvDBLookup;
 
 type
   TfmInfo = class(TForm)
@@ -50,7 +51,7 @@ type
     Indirizzi: TGroupBox;
     rbIndMode1: TRadioButton;
     rbIndMode2: TRadioButton;
-    iRigheInd: TRxSpinEdit;
+    iRigheInd: TJvSpinEdit;
     tbTelef: TTable;
     tbTelefCodTel: TIntegerField;
     tbTelefCodCon: TIntegerField;
@@ -64,7 +65,7 @@ type
     iDataImpoNota: TEdit;
     GroupBox3: TGroupBox;
     GroupBox4: TGroupBox;
-    lcYourSelf: TRxDBLookupCombo;
+    lcYourSelf: TJvDBLookupCombo;
     Label3: TLabel;
     iDefPrefix2: TEdit;
     iDefPrefix1: TEdit;
@@ -80,7 +81,7 @@ type
     tbContatNome_Pre2: TStringField;
     Label2: TLabel;
     GroupBox6: TGroupBox;
-    eFontSize: TRxSpinEdit;
+    eFontSize: TJvSpinEdit;
     cbFonts: TComboBox;
     Label5: TLabel;
     Label4: TLabel;
@@ -88,7 +89,7 @@ type
     SpeedButton1: TSpeedButton;
     Label7: TLabel;
     GroupBox7: TGroupBox;
-    iRigheRep: TRxSpinEdit;
+    iRigheRep: TJvSpinEdit;
     Label16: TLabel;
     procedure FormShow(Sender: TObject);
     procedure btOkClick(Sender: TObject);
@@ -110,7 +111,7 @@ implementation
 {$R *.DFM}
 
 uses
-  Costanti, ContComm, eLib, SysUtils, uOpzioni;
+  Costanti, ContComm, eLibCore, SysUtils, uOpzioni;
 
 function SetupInfo: TModalResult;
 var

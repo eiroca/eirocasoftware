@@ -9,8 +9,8 @@ object dmContatti: TdmContatti
     DriverName = 'STANDARD'
     Params.Strings = (
       
-        'PATH=G:\develop\shared\delphi\projects\Converted\ConTatti2007\' +
-        'bin\data'
+        'PATH=G:\develop\shared\delphi\projects\Converted\ConTatti2007\bi' +
+        'n\data'
       '')
     SessionName = 'Default'
     Signature = 'ContattiDB 1.0a'
