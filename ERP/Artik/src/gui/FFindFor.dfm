@@ -58,11 +58,12 @@ object fmFindFor: TfmFindFor
     Width = 75
     Height = 25
     Caption = '&Ok'
-    TabOrder = 2
-    OnClick = btOkClick
     Kind = bkOK
     Margin = 5
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 2
+    OnClick = btOkClick
   end
   object btCancel: TBitBtn
     Left = 270
@@ -70,10 +71,11 @@ object fmFindFor: TfmFindFor
     Width = 75
     Height = 25
     Caption = '&Annulla'
-    TabOrder = 3
     Kind = bkCancel
     Margin = 5
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 3
   end
   object BitBtn1: TBitBtn
     Left = 10
@@ -115,7 +117,7 @@ object fmFindFor: TfmFindFor
     Left = 85
     Top = 105
   end
-  object rxFilter: TRxDBFilter
+  object rxFilter: TJvDBFilter
     DataSource = dsFornitori
     OnFiltering = rxFilterFiltering
     Left = 95

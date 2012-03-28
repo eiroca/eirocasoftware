@@ -22,9 +22,9 @@ unit FFindFor;
 interface
 
 uses
-  SysUtils, WinProcs, WinTypes, Messages, Classes, Graphics, 
+  SysUtils, WinProcs, WinTypes, Messages, Classes, Graphics,
   Forms, Dialogs, DArtik, DB, DBTables, StdCtrls, Buttons,
-  Controls, Grids, DBGrids, Mask, rxdbfilter;
+  Controls, Grids, DBGrids, Mask, JvComponentBase, JvBDEFilter;
 
 type
   TfmFindFor = class(TForm)
@@ -35,7 +35,7 @@ type
     btCancel: TBitBtn;
     tbFornitori: TTable;
     dsFornitori: TDataSource;
-    rxFilter: TRxDBFilter;
+    rxFilter: TJvDBFilter;
     BitBtn1: TBitBtn;
     qrArtic: TQuery;
     cbPotenziali: TCheckBox;

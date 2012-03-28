@@ -53,7 +53,7 @@ implementation
 {$R *.DFM}
 
 uses
-  DArtik, eLib;
+  DArtik, eLibCore;
 
 function GetUnusedCode(const aCodAlf: string; var Code: char): boolean;
 var

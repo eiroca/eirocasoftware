@@ -457,12 +457,11 @@ object fmEditArticoli: TfmEditArticoli
         DataSource = dsArticoli
         TabOrder = 20
       end
-      object RxDBLookupCombo1: TRxDBLookupCombo
+      object RxDBLookupCombo1: TJvDBLookupCombo
         Left = 50
         Top = 70
         Width = 101
         Height = 21
-        DropDownCount = 8
         DataField = 'CodIVA'
         DataSource = dsArticoli
         ListStyle = lsDelimited
@@ -471,12 +470,11 @@ object fmEditArticoli: TfmEditArticoli
         LookupSource = dsCodIVA
         TabOrder = 21
       end
-      object RxDBLookupCombo2: TRxDBLookupCombo
+      object RxDBLookupCombo2: TJvDBLookupCombo
         Left = 205
         Top = 70
         Width = 101
         Height = 21
-        DropDownCount = 8
         DataField = 'CodMis'
         DataSource = dsArticoli
         LookupField = 'CodMis'
@@ -496,7 +494,7 @@ object fmEditArticoli: TfmEditArticoli
         ValueChecked = 'True'
         ValueUnchecked = 'False'
       end
-      object iCodAlf: TRxDBComboEdit
+      object iCodAlf: TJvDBComboEdit
         Left = 5
         Top = 20
         Width = 51
@@ -515,7 +513,6 @@ object fmEditArticoli: TfmEditArticoli
           8F80088F00DDD0000000D4FFFFFFFFFF4DDDD0000000D444444444444DDDD000
           0000D474474474474DDDD0000000D444444444444DDDD0000000DDDDDDDDDDDD
           DDDDD0000000}
-        NumGlyphs = 1
         TabOrder = 24
         OnButtonClick = iCodAlfButtonClick
         OnChange = iCodAlfChange

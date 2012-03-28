@@ -25,7 +25,7 @@ uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   DArtik, uCodici,
   Forms, Dialogs, Grids, DBGrids, DB, DBTables, Outline, StdCtrls,
-  RXSpin, Buttons, ExtCtrls, Menus, Mask;
+  Buttons, ExtCtrls, Menus, Mask, JvExMask, JvSpin;
 
 type
   TfmEditPiaCod = class(TForm)
@@ -41,9 +41,9 @@ type
     Label3: TLabel;
     iPreDes: TEdit;
     Label4: TLabel;
-    iRicMin: TRxSpinEdit;
+    iRicMin: TJVSpinEdit;
     Label5: TLabel;
-    iRicMax: TRxSpinEdit;
+    iRicMax: TJvSpinEdit;
     btDefault: TBitBtn;
     btAggiorna: TBitBtn;
     pmAction: TPopupMenu;
@@ -83,7 +83,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, FGetUnCod;
+  eLibCore, FGetUnCod;
 
 function LastLetter(s: string): string;
 begin

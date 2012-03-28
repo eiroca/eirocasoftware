@@ -23,8 +23,8 @@ interface
 
 uses
   WinTypes, WinProcs, SysUtils, Classes, Graphics, Forms, Controls, StdCtrls,
-  Buttons, ExtCtrls, Mask, Printers, RXSpin, Dialogs, TabNotBk,
-  DB, DBTables, RXCtrls, RXLookup, ComCtrls;
+  Buttons, ExtCtrls, Mask, Printers, JvSpin, Dialogs, TabNotBk,
+  DB, DBTables, JvCtrls, ComCtrls, JvExMask;
 
 type
   TfmInfo = class(TForm)
@@ -35,7 +35,7 @@ type
     Label1: TLabel;
     iDefaultDB: TEdit;
     btSetup: TSpeedButton;
-    eFontSize: TRxSpinEdit;
+    eFontSize: TJvSpinEdit;
     cbPrinter: TComboBox;
     cbFonts: TComboBox;
     Label4: TLabel;

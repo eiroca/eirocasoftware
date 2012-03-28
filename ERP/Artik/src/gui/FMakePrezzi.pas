@@ -24,13 +24,13 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   Forms, Dialogs, DBTables, DB, Grids, DBGrids, ExtCtrls, RgNav,
-  RgNavDB, StdCtrls, rxdbfilter;
+  RgNavDB, StdCtrls, JvComponentBase, JvBDEFilter;
 
 type
   TfmMakePrezzi = class(TForm)
     tbFatForMv: TTable;
     dsFatForMv: TDataSource;
-    flFatForMv: TRxDBFilter;
+    flFatForMv: TJvDBFilter;
     tbFatForMvCodMov: TIntegerField;
     tbFatForMvCodFatFor: TIntegerField;
     tbFatForMvCodAlf: TStringField;

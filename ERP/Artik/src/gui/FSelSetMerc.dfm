@@ -36,10 +36,11 @@ object fmSelSetMer: TfmSelSetMer
     Width = 100
     Height = 25
     Caption = 'Seleziona'
-    TabOrder = 0
     Kind = bkOK
     Margin = 5
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 0
   end
   object btCancel: TBitBtn
     Left = 147
@@ -47,10 +48,11 @@ object fmSelSetMer: TfmSelSetMer
     Width = 100
     Height = 25
     Caption = 'Annulla'
-    TabOrder = 1
     Kind = bkCancel
     Margin = 5
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 1
   end
   object olSettori: TOutline
     Left = 5

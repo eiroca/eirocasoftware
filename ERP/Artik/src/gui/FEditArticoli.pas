@@ -23,8 +23,8 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls, Forms,
-  DBCtrls, DB, DBTables, Mask, ExtCtrls, RXLookup, RgNav, RgNavDB, 
-  RXDBCtrl, StdCtrls, rxToolEdit;
+  DBCtrls, DB, DBTables, Mask, ExtCtrls, JvExMask, JvToolEdit, JvDBControls,
+  Vcl.StdCtrls, JvExControls, JvDBLookup, RgNav, RgNavDB;
 
 type
   TfmEditArticoli = class(TForm)
@@ -80,10 +80,10 @@ type
     tbArticoli: TTable;
     tbCodIVA: TTable;
     tbCodMis: TTable;
-    RxDBLookupCombo1: TRxDBLookupCombo;
+    RxDBLookupCombo1: TJvDBLookupCombo;
     dsCodIVA: TDataSource;
     dsCodMis: TDataSource;
-    RxDBLookupCombo2: TRxDBLookupCombo;
+    RxDBLookupCombo2: TJvDBLookupCombo;
     tbCodIVACodIVA: TSmallintField;
     tbCodIVAAlq: TFloatField;
     tbCodIVADesc: TStringField;
@@ -115,7 +115,7 @@ type
     DBCheckBox1: TDBCheckBox;
     tbArticoliAttv: TBooleanField;
     RGNavigator1: TRGNavigator;
-    iCodAlf: TRxDBComboEdit;
+    iCodAlf: TJvDBComboEdit;
     DBText1: TDBText;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);

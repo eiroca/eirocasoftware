@@ -25,7 +25,7 @@ uses
   SysUtils, WinProcs, WinTypes, Messages, Classes, Graphics, Forms, Dialogs, 
   DArtik,  
   Controls, Grids, DBGrids, Mask, DBTables, DB,
-  StdCtrls, Buttons, rxdbfilter, rxToolEdit;
+  StdCtrls, Buttons, JvComponentBase, JvBDEFilter, JvExMask, JvToolEdit;
 
 type
   TfmFindArti = class(TForm)
@@ -37,7 +37,7 @@ type
     btCancel: TBitBtn;
     tbArtic: TTable;
     dsTaba: TDataSource;
-    rxFilter: TRxDBFilter;
+    rxFilter: TJvDBFilter;
     tbArticCodAlf: TStringField;
     tbArticCodNum: TSmallintField;
     tbArticDesc: TStringField;
@@ -51,7 +51,7 @@ type
     qrArticCodAlf: TStringField;
     qrArticCodNum: TSmallintField;
     qrArticDesc: TStringField;
-    iSet: TComboEdit;
+    iSet: TJvComboEdit;
     procedure iSearchKeyPress(Sender: TObject; var Key: Char);
     procedure iSearchChange(Sender: TObject);
     procedure FormShow(Sender: TObject);

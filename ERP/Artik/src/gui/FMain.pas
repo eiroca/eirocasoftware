@@ -80,7 +80,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLibDB, eLib, DArtik, MakeDB, FDBPack, FInfo, FAboutGPL, UOpzioni,
+  eLibDB, eLibCore, DArtik, MakeDB, FDBPack, FInfo, FAboutGPL, UOpzioni,
   FEditIVA, FEditMis, FEditPiaCod, FEditArticoli, FEditForn, FFindArt,
   FEditFattForn, FMakePrezzi;
 

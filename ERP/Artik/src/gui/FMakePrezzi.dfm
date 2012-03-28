@@ -94,7 +94,7 @@ object fmMakePrezzi: TfmMakePrezzi
     Left = 330
     Top = 75
   end
-  object flFatForMv: TRxDBFilter
+  object flFatForMv: TJvDBFilter
     Active = True
     DataSource = dsFatForMv
     Filter.Strings = (

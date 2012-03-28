@@ -158,7 +158,7 @@ implementation
 {$R *.DFM}
 
 uses
-  Costanti, UOpzioni, eLibDB, eLib;
+  Costanti, UOpzioni, eLibDB, eLibCore;
 
 constructor EArticoli.Create(const aCodAlf: string; const aCodNum: integer);
 begin
