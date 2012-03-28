@@ -45,10 +45,11 @@ object fmStampaStatistiche: TfmStampaStatistiche
     Width = 89
     Height = 25
     Caption = 'Annulla'
-    TabOrder = 2
     Kind = bkCancel
     Margin = 5
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 2
   end
   object cbOrder: TComboBox
     Left = 95
@@ -56,7 +57,6 @@ object fmStampaStatistiche: TfmStampaStatistiche
     Width = 110
     Height = 21
     Style = csDropDownList
-    ItemHeight = 0
     TabOrder = 0
     OnChange = cbOrderChange
   end
@@ -66,8 +66,6 @@ object fmStampaStatistiche: TfmStampaStatistiche
     Width = 89
     Height = 25
     Caption = '&Esporta'
-    TabOrder = 4
-    OnClick = PrintReport
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000130B0000130B00001000000000000000000000000000
@@ -84,6 +82,8 @@ object fmStampaStatistiche: TfmStampaStatistiche
     Margin = 5
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 4
+    OnClick = PrintReport
   end
   object btPrint: TBitBtn
     Left = 21
@@ -91,8 +91,6 @@ object fmStampaStatistiche: TfmStampaStatistiche
     Width = 89
     Height = 25
     Caption = '&Stampa'
-    TabOrder = 1
-    OnClick = PrintReport
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000130B0000130B00001000000000000000000000000000
@@ -109,6 +107,8 @@ object fmStampaStatistiche: TfmStampaStatistiche
     Margin = 5
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 1
+    OnClick = PrintReport
   end
   object btPreview: TBitBtn
     Left = 21
@@ -116,8 +116,6 @@ object fmStampaStatistiche: TfmStampaStatistiche
     Width = 89
     Height = 25
     Caption = '&Anteprima'
-    TabOrder = 3
-    OnClick = PrintReport
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -134,6 +132,8 @@ object fmStampaStatistiche: TfmStampaStatistiche
     Margin = 5
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 3
+    OnClick = PrintReport
   end
   object cbSoloAttivi: TCheckBox
     Left = 20
@@ -143,7 +143,7 @@ object fmStampaStatistiche: TfmStampaStatistiche
     Caption = 'Stampa solo tabacchi attivi'
     TabOrder = 5
   end
-  object iDataI: TDateEdit
+  object iDataI: TJvDateEdit
     Left = 95
     Top = 5
     Width = 111
@@ -151,7 +151,7 @@ object fmStampaStatistiche: TfmStampaStatistiche
     NumGlyphs = 2
     TabOrder = 6
   end
-  object iDataF: TDateEdit
+  object iDataF: TJvDateEdit
     Left = 95
     Top = 35
     Width = 111
@@ -170,14 +170,14 @@ object fmStampaStatistiche: TfmStampaStatistiche
     OnHeader = ReportHeader
     OnPageHeader = ReportPageHeader
     OnSetupDevice = ReportSetupDevice
-    Left = 61
-    Top = 150
+    Left = 125
+    Top = 14
   end
   object tbTaba: TTable
     DatabaseName = 'DB'
     TableName = 'TABACCHI.DB'
-    Left = 136
-    Top = 150
+    Left = 120
+    Top = 70
     object tbTabaCODI: TSmallintField
       FieldName = 'CODI'
       Required = True

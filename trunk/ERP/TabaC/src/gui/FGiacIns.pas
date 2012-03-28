@@ -27,8 +27,9 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   DTabaC, eLibMath,
-  Forms, Dialogs, DBTables, DB, Grids, RXCtrls, RXGrids, StdCtrls,
-  Buttons, Mask, ExtCtrls, rxPlacemnt, rxToolEdit;
+  Forms, Dialogs, DBTables, DB, Grids, StdCtrls,
+  Buttons, Mask, ExtCtrls, JvComponentBase, JvFormPlacement, JvExMask,
+  JvToolEdit, JvExGrids, JvGrids;
 
 type
   TGiacenza = class
@@ -58,7 +59,7 @@ type
     tbTabaCODS: TStringField;
     tbTabaDESC: TStringField;
     tbTabaATTV: TBooleanField;
-    dgGiac: TRxDrawGrid;
+    dgGiac: TJvDrawGrid;
     tbTabaTIPO: TSmallintField;
     tbTabaPROD: TSmallintField;
     tbTabaCRIT: TSmallintField;
@@ -92,11 +93,11 @@ type
     lbTot: TLabel;
     cbOrder: TComboBox;
     cbAttivi: TCheckBox;
-    iDataGiac: TDateEdit;
+    iDataGiac: TJvDateEdit;
     btAdd: TBitBtn;
     btCancel: TBitBtn;
     cbQta: TComboBox;
-    fsForm: TFormStorage;
+    fsForm: TJvFormStorage;
     lbDataPrezzi: TLabel;
     procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -119,7 +120,6 @@ type
     procedure dgGiacGetEditAlign(Sender: TObject; ACol, ARow: Integer;
       var Alignment: TAlignment);
     procedure btCancelClick(Sender: TObject);
-    procedure fsFormRestorePlacement(Sender: TObject);
   private
     { Private declarations }
     Showing: boolean;
@@ -150,7 +150,7 @@ implementation
 {$R *.DFM}
 
 uses
-  UOpzioni, Costanti, eLib;
+  UOpzioni, Costanti, eLibCore;
 
 procedure GiacInsert(Data: TDateTime);
 var
@@ -547,13 +547,6 @@ begin
     ModalResult:= mrCancel;
   end;
 end;
-
-procedure TfmGiacInsert.fsFormRestorePlacement(Sender: TObject);
-begin
-  fsForm.INIFileName:= Opzioni.BasePath+'conf\layout.ini';
-end;
-
-
 
 end.
 

@@ -45,10 +45,11 @@ object fmStampaCarichi: TfmStampaCarichi
     Width = 89
     Height = 25
     Caption = 'Annulla'
-    TabOrder = 2
     Kind = bkCancel
     Margin = 5
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 2
   end
   object cbOrder: TComboBox
     Left = 75
@@ -56,7 +57,6 @@ object fmStampaCarichi: TfmStampaCarichi
     Width = 110
     Height = 21
     Style = csDropDownList
-    ItemHeight = 0
     TabOrder = 0
     OnChange = cbOrderChange
   end
@@ -66,8 +66,6 @@ object fmStampaCarichi: TfmStampaCarichi
     Width = 89
     Height = 25
     Caption = '&Esporta'
-    TabOrder = 4
-    OnClick = PrintReport
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000130B0000130B00001000000000000000000000000000
@@ -84,6 +82,8 @@ object fmStampaCarichi: TfmStampaCarichi
     Margin = 5
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 4
+    OnClick = PrintReport
   end
   object btPrint: TBitBtn
     Left = 11
@@ -91,8 +91,6 @@ object fmStampaCarichi: TfmStampaCarichi
     Width = 89
     Height = 25
     Caption = '&Stampa'
-    TabOrder = 1
-    OnClick = PrintReport
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000130B0000130B00001000000000000000000000000000
@@ -109,6 +107,8 @@ object fmStampaCarichi: TfmStampaCarichi
     Margin = 5
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 1
+    OnClick = PrintReport
   end
   object btPreview: TBitBtn
     Left = 11
@@ -116,8 +116,6 @@ object fmStampaCarichi: TfmStampaCarichi
     Width = 89
     Height = 25
     Caption = '&Anteprima'
-    TabOrder = 3
-    OnClick = PrintReport
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -134,8 +132,10 @@ object fmStampaCarichi: TfmStampaCarichi
     Margin = 5
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 3
+    OnClick = PrintReport
   end
-  object iDataI: TDateEdit
+  object iDataI: TJvDateEdit
     Left = 75
     Top = 30
     Width = 111
@@ -143,7 +143,7 @@ object fmStampaCarichi: TfmStampaCarichi
     NumGlyphs = 2
     TabOrder = 5
   end
-  object iDataF: TDateEdit
+  object iDataF: TJvDateEdit
     Left = 75
     Top = 55
     Width = 111
@@ -161,8 +161,8 @@ object fmStampaCarichi: TfmStampaCarichi
     DeviceKind = 'Preview'
     OnPageHeader = ReportPageHeader
     OnSetupDevice = ReportSetupDevice
-    Left = 31
-    Top = 100
+    Left = 79
+    Top = 4
   end
   object qryDettagli: TQuery
     DatabaseName = 'DB'
@@ -193,8 +193,8 @@ object fmStampaCarichi: TfmStampaCarichi
       ''
       'ORDER BY'
       '  PreLst.DATA, PreMov.PREZ')
-    Left = 65
-    Top = 100
+    Left = 121
+    Top = 4
     ParamData = <
       item
         DataType = ftDate
@@ -236,8 +236,8 @@ object fmStampaCarichi: TfmStampaCarichi
   object tbTaba: TTable
     DatabaseName = 'DB'
     TableName = 'TABACCHI.DB'
-    Left = 91
-    Top = 95
+    Left = 179
+    Top = 65535
     object tbTabaCODI: TSmallintField
       FieldName = 'CODI'
       Required = True

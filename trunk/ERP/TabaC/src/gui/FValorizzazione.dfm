@@ -62,12 +62,11 @@ object fmValorizzazione: TfmValorizzazione
     Height = 13
     Caption = 'Prezzi del'
   end
-  object lcDataGiac: TRxDBLookupCombo
+  object lcDataGiac: TJvDBLookupCombo
     Left = 205
     Top = 46
     Width = 111
     Height = 21
-    DropDownCount = 8
     ListStyle = lsDelimited
     LookupField = 'DATA'
     LookupDisplay = 'DATA'

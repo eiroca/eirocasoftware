@@ -27,7 +27,8 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   DTabaC,
-  Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, RXSpin, eReport, Mask;
+  Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, eReport, Mask, JvExMask,
+  JvSpin;
 
 type
   TfmStampaTendenze = class(TForm)
@@ -53,7 +54,7 @@ type
     btPreview: TBitBtn;
     cbSoloAttivi: TCheckBox;
     Label1: TLabel;
-    iPeri: TRxSpinEdit;
+    iPeri: TJvSpinEdit;
     procedure FormCreate(Sender: TObject);
     procedure ReportPageHeader(Rep: TeLineReport);
     procedure ReportSetupDevice(Rep: TeLineReport; Dev: TOutputDevice);
@@ -76,7 +77,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, UOpzioni;
+  eLibCore, uOpzioni;
 
 procedure StampaTendenze;
 var

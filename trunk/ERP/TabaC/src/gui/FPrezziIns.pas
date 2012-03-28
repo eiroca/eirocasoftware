@@ -27,8 +27,8 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   DTabaC, eLibMath,
-  Forms, Dialogs, DBTables, DB, Grids, RXCtrls, RXGrids, StdCtrls,
-  Buttons, Mask, ExtCtrls, rxToolEdit;
+  Forms, Dialogs, DBTables, DB, Grids, StdCtrls,
+  Buttons, Mask, ExtCtrls, JvExMask, JvToolEdit, JvExGrids, JvGrids;
 
 type
   TPrezzo = class
@@ -60,14 +60,14 @@ type
     tbPrezMovCODI: TSmallintField;
     tbPrezMovPREZ: TCurrencyField;
     Panel1: TPanel;
-    dgPrez: TRxDrawGrid;
+    dgPrez: TJvDrawGrid;
     Panel2: TPanel;
     Label4: TLabel;
     Label1: TLabel;
     Label2: TLabel;
     cbOrder: TComboBox;
     cbAttivi: TCheckBox;
-    iDate: TDateEdit;
+    iDate: TJvDateEdit;
     btAdd: TBitBtn;
     btCancel: TBitBtn;
     iNota: TEdit;
@@ -107,7 +107,7 @@ implementation
 {$R *.DFM}
 
 uses
-  Costanti, eLib;
+  Costanti, eLibCore;
 
 procedure PrezziInsert;
 var

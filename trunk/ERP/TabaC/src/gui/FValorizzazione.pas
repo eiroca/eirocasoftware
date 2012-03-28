@@ -26,7 +26,7 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Db, DBTables, Grids, XStrGrds, RxLookup, StdCtrls;
+  Forms, Db, DBTables, Grids, XStrGrds, StdCtrls, JvExControls, JvDBLookup;
 
 type
   TfmValorizzazione = class(TForm)
@@ -37,7 +37,7 @@ type
     tbGiacDateKGC: TFloatField;
     tbGiacDateVAL: TCurrencyField;
     dsGiacDate: TDataSource;
-    lcDataGiac: TRxDBLookupCombo;
+    lcDataGiac: TJvDBLookupCombo;
     sgValo: TXStrGrid;
     lbInfo: TLabel;
     lbTotOrdi: TLabel;
@@ -65,7 +65,7 @@ implementation
 {$R *.DFM}
 
 uses
-  DTabaC, eLib;
+  DTabaC, eLibCore;
 
 procedure TfmValorizzazione.FormCreate(Sender: TObject);
 begin

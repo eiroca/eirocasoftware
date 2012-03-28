@@ -370,7 +370,7 @@ object fmPatOEdit: TfmPatOEdit
       FieldName = 'QTAC'
     end
   end
-  object ftPatOLst: TRxDBFilter
+  object ftPatOLst: TJvDBFilter
     DataSource = dsPatOLst
     Filter.Strings = (
       'DATA = null')

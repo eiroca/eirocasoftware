@@ -48,9 +48,6 @@ object fmPrezziSelect: TfmPrezziSelect
     Width = 75
     Height = 25
     Caption = '&Ok'
-    ModalResult = 1
-    TabOrder = 1
-    OnClick = btOkClick
     Glyph.Data = {
       DE010000424DDE01000000000000760000002800000024000000120000000100
       0400000000006801000000000000000000001000000000000000000000000000
@@ -69,8 +66,11 @@ object fmPrezziSelect: TfmPrezziSelect
       333A333333333333333338330000333333333333333333333333333333333333
       0000}
     Margin = 5
+    ModalResult = 1
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 1
+    OnClick = btOkClick
   end
   object cbListDate: TComboBox
     Left = 120
@@ -78,7 +78,6 @@ object fmPrezziSelect: TfmPrezziSelect
     Width = 105
     Height = 21
     Style = csDropDownList
-    ItemHeight = 0
     TabOrder = 0
     OnChange = cbListDateChange
   end
@@ -89,8 +88,6 @@ object fmPrezziSelect: TfmPrezziSelect
     Height = 25
     Cancel = True
     Caption = 'Annulla'
-    ModalResult = 2
-    TabOrder = 2
     Glyph.Data = {
       CE070000424DCE07000000000000360000002800000024000000120000000100
       1800000000009807000000000000000000000000000000000000007F7F007F7F
@@ -156,8 +153,10 @@ object fmPrezziSelect: TfmPrezziSelect
       7F7F007F7F007F7F007F7F007F7F007F7F007F7F007F7F007F7F007F7F007F7F
       007F7F007F7F007F7F007F7F007F7F007F7F}
     Margin = 5
+    ModalResult = 2
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 2
   end
   object btHelp: TBitBtn
     Left = 168
@@ -165,9 +164,10 @@ object fmPrezziSelect: TfmPrezziSelect
     Width = 75
     Height = 25
     Caption = '&Aiuto'
-    TabOrder = 4
     Kind = bkHelp
     Margin = 5
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 4
   end
 end

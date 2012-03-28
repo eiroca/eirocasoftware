@@ -65,7 +65,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib;
+  eLibCore;
 
 procedure StatCalc;
 var

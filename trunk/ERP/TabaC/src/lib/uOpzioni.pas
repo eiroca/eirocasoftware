@@ -70,7 +70,7 @@ var
 implementation
 
 uses
-  eLib, Costanti;
+  eLibCore, Costanti;
 
 constructor TOpzioni.Create;
 var

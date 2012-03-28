@@ -23,10 +23,11 @@ object fmInfo: TfmInfo
     Width = 77
     Height = 27
     Caption = '&Ok'
-    TabOrder = 0
     Kind = bkOK
     Margin = 2
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 0
     IsControl = True
   end
   object pnInfo: TPanel

@@ -24,10 +24,11 @@ object fmPrinterSetup: TfmPrinterSetup
     Width = 90
     Height = 27
     Hint = 'Annulla gli eventuali cambiamenti effettuati'
-    TabOrder = 0
     Kind = bkCancel
     Margin = 5
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 0
   end
   object btOk: TBitBtn
     Left = 10
@@ -36,11 +37,12 @@ object fmPrinterSetup: TfmPrinterSetup
     Height = 27
     Hint = 'Memorizza le preferenze'
     Caption = '&Ok'
-    TabOrder = 1
-    OnClick = btOkClick
     Kind = bkOK
     Margin = 5
+    NumGlyphs = 2
     Spacing = -1
+    TabOrder = 1
+    OnClick = btOkClick
   end
   object GroupBox7: TGroupBox
     Left = 10
@@ -84,7 +86,7 @@ object fmPrinterSetup: TfmPrinterSetup
       Height = 13
       Caption = 'Riserva margine BOTTOM'
     end
-    object iRigheRep: TRxSpinEdit
+    object iRigheRep: TJvSpinEdit
       Left = 230
       Top = 15
       Width = 61
@@ -94,7 +96,7 @@ object fmPrinterSetup: TfmPrinterSetup
       Value = 9999.000000000000000000
       TabOrder = 0
     end
-    object iOffTop: TRxSpinEdit
+    object iOffTop: TJvSpinEdit
       Left = 125
       Top = 45
       Width = 61
@@ -104,7 +106,7 @@ object fmPrinterSetup: TfmPrinterSetup
       Value = 9999.000000000000000000
       TabOrder = 1
     end
-    object iOffLeft: TRxSpinEdit
+    object iOffLeft: TJvSpinEdit
       Left = 125
       Top = 75
       Width = 61
@@ -114,7 +116,7 @@ object fmPrinterSetup: TfmPrinterSetup
       Value = 9999.000000000000000000
       TabOrder = 2
     end
-    object iOffRight: TRxSpinEdit
+    object iOffRight: TJvSpinEdit
       Left = 325
       Top = 75
       Width = 61
@@ -124,7 +126,7 @@ object fmPrinterSetup: TfmPrinterSetup
       Value = 9999.000000000000000000
       TabOrder = 3
     end
-    object iOffBottom: TRxSpinEdit
+    object iOffBottom: TJvSpinEdit
       Left = 325
       Top = 45
       Width = 61
@@ -189,7 +191,7 @@ object fmPrinterSetup: TfmPrinterSetup
       Alignment = taRightJustify
       Caption = 'in corpo'
     end
-    object eFontSize: TRxSpinEdit
+    object eFontSize: TJvSpinEdit
       Left = 295
       Top = 48
       Width = 61
@@ -203,7 +205,6 @@ object fmPrinterSetup: TfmPrinterSetup
       Width = 136
       Height = 21
       Hint = 'Risultati migliori si ottengono con un font a spaziatura fissa'
-      ItemHeight = 13
       Sorted = True
       TabOrder = 1
       Text = 'cbFonts'
@@ -215,7 +216,6 @@ object fmPrinterSetup: TfmPrinterSetup
       Width = 161
       Height = 21
       Style = csDropDownList
-      ItemHeight = 13
       TabOrder = 2
       OnChange = cbPrinterChange
     end

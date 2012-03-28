@@ -16,7 +16,7 @@ object fmGiacInsert: TfmGiacInsert
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object dgGiac: TRxDrawGrid
+  object dgGiac: TJvDrawGrid
     Left = 0
     Top = 66
     Width = 627
@@ -35,6 +35,7 @@ object fmGiacInsert: TfmGiacInsert
     OnGetEditText = dgGiacGetEditText
     OnSelectCell = dgGiacSelectCell
     OnSetEditText = dgGiacSetEditText
+    DrawButtons = False
     OnGetEditAlign = dgGiacGetEditAlign
     ColWidths = (
       41
@@ -98,7 +99,6 @@ object fmGiacInsert: TfmGiacInsert
       Width = 106
       Height = 21
       Style = csDropDownList
-      ItemHeight = 0
       TabOrder = 2
       OnChange = DoSetupIndex
     end
@@ -113,7 +113,7 @@ object fmGiacInsert: TfmGiacInsert
       TabOrder = 0
       OnClick = DoSetupIndex
     end
-    object iDataGiac: TDateEdit
+    object iDataGiac: TJvDateEdit
       Left = 255
       Top = 8
       Width = 96
@@ -130,8 +130,6 @@ object fmGiacInsert: TfmGiacInsert
       Width = 75
       Height = 25
       Caption = 'Inserisci'
-      TabOrder = 4
-      OnClick = btAddClick
       Glyph.Data = {
         DE010000424DDE01000000000000760000002800000024000000120000000100
         0400000000006801000000000000000000001000000000000000000000000000
@@ -152,6 +150,8 @@ object fmGiacInsert: TfmGiacInsert
       Margin = 4
       NumGlyphs = 2
       Spacing = -1
+      TabOrder = 4
+      OnClick = btAddClick
     end
     object btCancel: TBitBtn
       Left = 440
@@ -160,8 +160,6 @@ object fmGiacInsert: TfmGiacInsert
       Height = 25
       Cancel = True
       Caption = '&Annulla'
-      TabOrder = 5
-      OnClick = btCancelClick
       Glyph.Data = {
         DE010000424DDE01000000000000760000002800000024000000120000000100
         0400000000006801000000000000000000001000000000000000000000000000
@@ -182,6 +180,8 @@ object fmGiacInsert: TfmGiacInsert
       Margin = 4
       NumGlyphs = 2
       Spacing = -1
+      TabOrder = 5
+      OnClick = btCancelClick
     end
     object cbQta: TComboBox
       Left = 255
@@ -190,7 +190,6 @@ object fmGiacInsert: TfmGiacInsert
       Height = 21
       Style = csDropDownList
       Ctl3D = True
-      ItemHeight = 13
       ParentCtl3D = False
       TabOrder = 3
       OnChange = cbQtaChange
@@ -205,7 +204,7 @@ object fmGiacInsert: TfmGiacInsert
     DatabaseName = 'DB'
     TableName = 'TABACCHI.DB'
     Left = 180
-    Top = 160
+    Top = 120
     object tbTabaCODI: TSmallintField
       DisplayLabel = 'Cod.'
       DisplayWidth = 5
@@ -258,8 +257,8 @@ object fmGiacInsert: TfmGiacInsert
   object tbGiacMov: TTable
     DatabaseName = 'DB'
     TableName = 'GIACMOVS.DB'
-    Left = 310
-    Top = 195
+    Left = 334
+    Top = 123
     object tbGiacMovPGIA: TIntegerField
       FieldName = 'PGIA'
       Required = True
@@ -277,7 +276,7 @@ object fmGiacInsert: TfmGiacInsert
     DatabaseName = 'DB'
     TableName = 'GIACLIST.DB'
     Left = 280
-    Top = 195
+    Top = 123
     object tbGiacLstPGIA: TIntegerField
       FieldName = 'PGIA'
     end
@@ -298,8 +297,8 @@ object fmGiacInsert: TfmGiacInsert
   object tbMTaba: TTable
     DatabaseName = 'DB'
     TableName = 'TABASTAT.DB'
-    Left = 245
-    Top = 160
+    Left = 229
+    Top = 120
     object tbMTabaCODI: TSmallintField
       FieldName = 'CODI'
       Required = True
@@ -323,11 +322,11 @@ object fmGiacInsert: TfmGiacInsert
       FieldName = 'MAX0'
     end
   end
-  object fsForm: TFormStorage
-    UseRegistry = False
-    OnRestorePlacement = fsFormRestorePlacement
+  object fsForm: TJvFormStorage
+    AppStorage = fmMain.apStorage
+    AppStoragePath = '%FORM_NAME%\'
     StoredValues = <>
-    Left = 75
+    Left = 107
     Top = 115
   end
 end

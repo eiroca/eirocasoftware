@@ -27,8 +27,9 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   DTabaC, eLibMath,
-  Forms, Dialogs, DBTables, DB, Grids, RXCtrls, RXGrids, StdCtrls,
-  Buttons, Mask, ExtCtrls, RxLookup, rxToolEdit;
+  Forms, Dialogs, DBTables, DB, Grids, StdCtrls,
+  Buttons, Mask, ExtCtrls, JvExControls, JvDBLookup, JvExMask, JvToolEdit,
+  JvExGrids, JvGrids;
 
 type
   TRichiesta = class
@@ -53,7 +54,7 @@ type
     tbTabaCODS: TStringField;
     tbTabaDESC: TStringField;
     tbTabaATTV: TBooleanField;
-    dgCons: TRxDrawGrid;
+    dgCons: TJvDrawGrid;
     tbTabaTIPO: TSmallintField;
     tbTabaPROD: TSmallintField;
     tbTabaCRIT: TSmallintField;
@@ -71,12 +72,12 @@ type
     lbTot: TLabel;
     cbOrder: TComboBox;
     cbAttivi: TCheckBox;
-    iDataPatO: TDateEdit;
+    iDataPatO: TJvDateEdit;
     btAdd: TBitBtn;
     btCancel: TBitBtn;
     cbQta: TComboBox;
     Label3: TLabel;
-    cbCodPat: TRxDBLookupCombo;
+    cbCodPat: TJvDBLookupCombo;
     tbPate: TTable;
     tbPateCODP: TAutoIncField;
     tbPateNOME: TStringField;
@@ -141,7 +142,7 @@ implementation
 {$R *.DFM}
 
 uses
-  UOpzioni, Costanti, eLib;
+  UOpzioni, Costanti, eLibCore;
 
 procedure PatOInsert(Data: TDateTime);
 var

@@ -27,7 +27,7 @@ interface
 uses                                              
   SysUtils, WinProcs, WinTypes, Messages, Classes, Graphics, 
   Forms, Dialogs, DTabaC, DB, DBTables, StdCtrls, Buttons,
-  Controls, Grids, DBGrids, rxdbfilter;
+  Controls, Grids, DBGrids, JvComponentBase, JvBDEFilter;
   
 type
   TfmTabaFind = class(TForm)
@@ -44,7 +44,7 @@ type
     tbTabaCODS: TStringField;
     tbTabaDESC: TStringField;
     tbTabaPREZ: TCurrencyField;
-    rxFilter: TRxDBFilter;
+    rxFilter: TJvDBFilter;
     tbTabaATTV: TBooleanField;
     procedure cbOrderChange(Sender: TObject);
     procedure iSearchKeyPress(Sender: TObject; var Key: Char);
@@ -71,7 +71,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib;
+  eLibCore;
 
 var
   fmTabaFind: TfmTabaFind;

@@ -26,7 +26,7 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, RXSpin, eReport;
+  Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, eReport;
 
 type
   TfmStampaTabacchi = class(TForm)
@@ -72,7 +72,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, UOpzioni, DTabaC;
+  eLibCore, uOpzioni, DTabaC;
 
 procedure StampaTabacchi;
 var

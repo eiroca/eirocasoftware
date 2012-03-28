@@ -27,7 +27,7 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   StdCtrls, Forms, DBCtrls, DB, DBGrids, DBTables, Grids, ExtCtrls,
-  Dialogs, Buttons, RgNav, RgNavDB, rxdbfilter;
+  Dialogs, Buttons, RgNav, RgNavDB, JvComponentBase, JvBDEFilter;
 
 type
   TfmPatOEdit = class(TForm)
@@ -50,7 +50,7 @@ type
     btPack: TSpeedButton;
     tbTabaATTV: TBooleanField;
     tbTabaQTAC: TSmallintField;
-    ftPatOLst: TRxDBFilter;
+    ftPatOLst: TJvDBFilter;
     cbDaRice: TCheckBox;
     tbPatName: TTable;
     tbPatNameCODP: TIntegerField;
@@ -97,7 +97,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLibDB, eLib, DTabaC, FStampaPatOrdLs;
+  eLibDB, eLibCore, DTabaC, FStampaPatOrdLs;
 
 procedure TfmPatOEdit.AbortOperation(DataSet: TDataset);
 begin

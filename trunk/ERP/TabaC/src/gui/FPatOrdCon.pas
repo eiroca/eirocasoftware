@@ -27,7 +27,7 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   StdCtrls, Forms, Dialogs, Db, DBTables, Grids, DBGrids,
-  Buttons, Mask, ExtCtrls, rxdbfilter, rxToolEdit;
+  Buttons, Mask, ExtCtrls, JvComponentBase, JvBDEFilter, JvExMask, JvToolEdit;
 
 type
   TfmPatOCons = class(TForm)
@@ -36,8 +36,8 @@ type
     dsPatOLst: TDataSource;
     Panel2: TPanel;
     tbPatOLst: TTable;
-    ftPatOLst: TRxDBFilter;
-    iDataCons: TDateEdit;
+    ftPatOLst: TJvDBFilter;
+    iDataCons: TJVDateEdit;
     tbPatOLstPPCO: TIntegerField;
     tbPatOLstCODP: TIntegerField;
     tbPatOLstDATA: TDateField;
@@ -69,7 +69,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLibDB, eLib, DTabaC;
+  eLibDB, eLibCore, DTabaC;
 
 procedure TfmPatOCons.FormShow(Sender: TObject);
 begin

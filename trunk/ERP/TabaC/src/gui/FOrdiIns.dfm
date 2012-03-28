@@ -16,7 +16,7 @@ object fmOrdiInsert: TfmOrdiInsert
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object dgOrdi: TRxDrawGrid
+  object dgOrdi: TJvDrawGrid
     Left = 0
     Top = 91
     Width = 627
@@ -35,7 +35,10 @@ object fmOrdiInsert: TfmOrdiInsert
     OnGetEditText = dgOrdiGetEditText
     OnSelectCell = dgOrdiSelectCell
     OnSetEditText = dgOrdiSetEditText
+    DrawButtons = False
     OnGetEditAlign = dgOrdiGetEditAlign
+    ExplicitLeft = 16
+    ExplicitTop = 92
     ColWidths = (
       35
       50
@@ -102,7 +105,6 @@ object fmOrdiInsert: TfmOrdiInsert
       Width = 106
       Height = 21
       Style = csDropDownList
-      ItemHeight = 0
       TabOrder = 1
       OnChange = DoSetupIndex
     end
@@ -117,7 +119,7 @@ object fmOrdiInsert: TfmOrdiInsert
       TabOrder = 7
       OnClick = DoSetupIndex
     end
-    object iDataOrdi: TDateEdit
+    object iDataOrdi: TJvDateEdit
       Left = 230
       Top = 35
       Width = 96
@@ -134,8 +136,6 @@ object fmOrdiInsert: TfmOrdiInsert
       Width = 89
       Height = 25
       Caption = 'Inserisci'
-      TabOrder = 5
-      OnClick = btAddClick
       Glyph.Data = {
         DE010000424DDE01000000000000760000002800000024000000120000000100
         0400000000006801000000000000000000001000000000000000000000000000
@@ -156,6 +156,8 @@ object fmOrdiInsert: TfmOrdiInsert
       Margin = 4
       NumGlyphs = 2
       Spacing = -1
+      TabOrder = 5
+      OnClick = btAddClick
     end
     object btCancel: TBitBtn
       Left = 435
@@ -164,8 +166,6 @@ object fmOrdiInsert: TfmOrdiInsert
       Height = 25
       Cancel = True
       Caption = '&Annulla'
-      TabOrder = 6
-      OnClick = btCancelClick
       Glyph.Data = {
         DE010000424DDE01000000000000760000002800000024000000120000000100
         0400000000006801000000000000000000001000000000000000000000000000
@@ -186,6 +186,8 @@ object fmOrdiInsert: TfmOrdiInsert
       Margin = 4
       NumGlyphs = 2
       Spacing = -1
+      TabOrder = 6
+      OnClick = btCancelClick
     end
     object cbQta: TComboBox
       Left = 225
@@ -194,7 +196,6 @@ object fmOrdiInsert: TfmOrdiInsert
       Height = 21
       Style = csDropDownList
       Ctl3D = True
-      ItemHeight = 13
       ParentCtl3D = False
       TabOrder = 0
       OnChange = cbQtaChange
@@ -204,7 +205,7 @@ object fmOrdiInsert: TfmOrdiInsert
         'stecche'
         'KgC')
     end
-    object iScorta1: TRxSpinEdit
+    object iScorta1: TJvSpinEdit
       Left = 60
       Top = 65
       Width = 56
@@ -218,7 +219,7 @@ object fmOrdiInsert: TfmOrdiInsert
       TabOrder = 3
       OnChange = iScortaChange
     end
-    object iScorta2: TRxSpinEdit
+    object iScorta2: TJvSpinEdit
       Left = 130
       Top = 65
       Width = 56
@@ -232,7 +233,7 @@ object fmOrdiInsert: TfmOrdiInsert
       TabOrder = 4
       OnChange = iScortaChange
     end
-    object iScorta3: TRxSpinEdit
+    object iScorta3: TJvSpinEdit
       Left = 200
       Top = 65
       Width = 56
@@ -251,8 +252,8 @@ object fmOrdiInsert: TfmOrdiInsert
     AutoCalcFields = False
     DatabaseName = 'DB'
     TableName = 'TABACCHI.DB'
-    Left = 180
-    Top = 160
+    Left = 132
+    Top = 120
     object tbTabaCODI: TSmallintField
       DisplayLabel = 'Cod.'
       DisplayWidth = 5
@@ -305,8 +306,8 @@ object fmOrdiInsert: TfmOrdiInsert
   object tbOrdiMov: TTable
     DatabaseName = 'DB'
     TableName = 'CARIMOVS.DB'
-    Left = 310
-    Top = 160
+    Left = 318
+    Top = 120
     object tbOrdiMovPCAR: TIntegerField
       FieldName = 'PCAR'
       Required = True
@@ -323,8 +324,8 @@ object fmOrdiInsert: TfmOrdiInsert
   object tbOrdiLst: TTable
     DatabaseName = 'DB'
     TableName = 'CARILIST.DB'
-    Left = 280
-    Top = 160
+    Left = 248
+    Top = 120
     object tbOrdiLstPCAR: TIntegerField
       FieldName = 'PCAR'
     end
@@ -349,8 +350,8 @@ object fmOrdiInsert: TfmOrdiInsert
   object tbMTaba: TTable
     DatabaseName = 'DB'
     TableName = 'TABASTAT.DB'
-    Left = 245
-    Top = 160
+    Left = 197
+    Top = 120
     object tbMTabaCODI: TSmallintField
       FieldName = 'CODI'
       Required = True
@@ -374,9 +375,9 @@ object fmOrdiInsert: TfmOrdiInsert
       FieldName = 'MAX0'
     end
   end
-  object fsForm: TFormStorage
-    UseRegistry = False
-    OnRestorePlacement = fsFormRestorePlacement
+  object fsForm: TJvFormStorage
+    AppStorage = fmMain.apStorage
+    AppStoragePath = '%FORM_NAME%'
     StoredValues = <>
     Left = 75
     Top = 115

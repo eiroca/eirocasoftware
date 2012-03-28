@@ -26,7 +26,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  eLibMath, eLib,
+  eLibMath, eLibCore,
   DBTables, Db, eDB, eReport;
 
 const

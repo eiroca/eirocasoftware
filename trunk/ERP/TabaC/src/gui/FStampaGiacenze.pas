@@ -27,7 +27,7 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   DTabaC,
-  Forms, Dialogs, DBTables, DB,  StdCtrls, Buttons, RXSpin, eReport;
+  Forms, Dialogs, DBTables, DB,  StdCtrls, Buttons, eReport;
 
 type
   TfmStampaGiacenza = class(TForm)
@@ -78,7 +78,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, UOpzioni;
+  eLibCore, UOpzioni;
 
 procedure StampaGiacenza(Data: TDateTime);
 var

@@ -27,8 +27,9 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   DTabaC, eLibMath,
-  Forms, Dialogs, DBTables, DB, Grids, RXCtrls, StdCtrls,
-  Buttons, Mask, RXSpin, RXGrids, ExtCtrls, rxPlacemnt, rxToolEdit;
+  Forms, Dialogs, DBTables, DB, Grids, StdCtrls,
+  Buttons, Mask, ExtCtrls, JvComponentBase, JvFormPlacement, JvSpin, JvExMask,
+  JvToolEdit, JvExGrids, JvGrids;
 
 const
   LowMed = 0.8;
@@ -68,7 +69,7 @@ type
     tbTabaCODS: TStringField;
     tbTabaDESC: TStringField;
     tbTabaATTV: TBooleanField;
-    dgOrdi: TRxDrawGrid;
+    dgOrdi: TJvDrawGrid;
     tbTabaTIPO: TSmallintField;
     tbTabaPROD: TSmallintField;
     tbTabaCRIT: TSmallintField;
@@ -104,14 +105,14 @@ type
     Label7: TLabel;
     cbOrder: TComboBox;
     cbAttivi: TCheckBox;
-    iDataOrdi: TDateEdit;
+    iDataOrdi: TJvDateEdit;
     btAdd: TBitBtn;
     btCancel: TBitBtn;
     cbQta: TComboBox;
-    iScorta1: TRxSpinEdit;
-    iScorta2: TRxSpinEdit;
-    iScorta3: TRxSpinEdit;
-    fsForm: TFormStorage;
+    iScorta1: TJvSpinEdit;
+    iScorta2: TJvSpinEdit;
+    iScorta3: TJvSpinEdit;
+    fsForm: TJvFormStorage;
     lbDataPrezzi: TLabel;
     procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -135,7 +136,6 @@ type
     procedure btCancelClick(Sender: TObject);
     procedure dgOrdiGetEditAlign(Sender: TObject; ACol, ARow: Integer;
       var Alignment: TAlignment);
-    procedure fsFormRestorePlacement(Sender: TObject);
   private
     { Private declarations }
     Showing: boolean;
@@ -168,7 +168,7 @@ implementation
 {$R *.DFM}
 
 uses
-  UOpzioni, Costanti, eLib;
+  uOpzioni, Costanti, eLibCore;
 
 procedure OrdiInsert(Data: TDateTime);
 var
@@ -640,13 +640,6 @@ procedure TfmOrdiInsert.dgOrdiGetEditAlign(Sender: TObject; ACol,
 begin
   Alignment:= taRightJustify;
 end;
-
-
-procedure TfmOrdiInsert.fsFormRestorePlacement(Sender: TObject);
-begin
-  fsForm.INIFileName:= Opzioni.BasePath+'conf\layout.ini';
-end;
-
 
 end.
 

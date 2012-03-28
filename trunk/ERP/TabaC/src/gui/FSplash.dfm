@@ -26,7 +26,7 @@ object fmSplash: TfmSplash
     BevelInner = bvLowered
     BevelWidth = 2
     TabOrder = 0
-    object LabelEffect1: TRxLabel
+    object LabelEffect1: TJvLabel
       Left = 0
       Top = 155
       Width = 250
@@ -43,8 +43,12 @@ object fmSplash: TfmSplash
       ParentColor = False
       ParentFont = False
       ShadowColor = clBlack
-      ShadowPos = spRightBottom
       Transparent = True
+      HotTrackFont.Charset = DEFAULT_CHARSET
+      HotTrackFont.Color = clWindowText
+      HotTrackFont.Height = -21
+      HotTrackFont.Name = 'Times New Roman'
+      HotTrackFont.Style = []
     end
     object Image1: TImage
       Left = 80
@@ -390,7 +394,7 @@ object fmSplash: TfmSplash
         0707070707070707070707070707070707070707070707070707070707070707
         070707070707070707070707070707070000}
     end
-    object LabelEffect3: TRxLabel
+    object LabelEffect3: TJvLabel
       Left = 0
       Top = 4
       Width = 250
@@ -409,8 +413,12 @@ object fmSplash: TfmSplash
       ParentFont = False
       ShadowColor = clAqua
       ShadowSize = 2
-      ShadowPos = spRightBottom
       Transparent = True
+      HotTrackFont.Charset = DEFAULT_CHARSET
+      HotTrackFont.Color = clWindowText
+      HotTrackFont.Height = -27
+      HotTrackFont.Name = 'Times New Roman'
+      HotTrackFont.Style = []
     end
   end
 end

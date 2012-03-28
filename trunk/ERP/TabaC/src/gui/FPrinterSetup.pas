@@ -27,7 +27,7 @@ interface
 uses
   WinTypes, WinProcs, Classes, Graphics, Forms, Controls, StdCtrls,
   {$IFDEF WIN32} ComCtrls, {$ENDIF}
-  Printers, Dialogs, DB, DBTables, Buttons, RXSpin, RXLookup, TabNotBk, Mask;
+  Printers, Dialogs, DB, DBTables, Buttons, TabNotBk, Mask, JvExMask, JvSpin;
 
 type
   TfmPrinterSetup = class(TForm)
@@ -36,23 +36,23 @@ type
     sdPrinter: TPrinterSetupDialog;
     GroupBox7: TGroupBox;
     Label16: TLabel;
-    iRigheRep: TRxSpinEdit;
+    iRigheRep: TJvSpinEdit;
     GroupBox6: TGroupBox;
     Label5: TLabel;
     Label4: TLabel;
     sbSetting: TSpeedButton;
     Label7: TLabel;
-    eFontSize: TRxSpinEdit;
+    eFontSize: TJvSpinEdit;
     cbFonts: TComboBox;
     cbPrinter: TComboBox;
     Label1: TLabel;
-    iOffTop: TRxSpinEdit;
+    iOffTop: TJvSpinEdit;
     Label2: TLabel;
-    iOffLeft: TRxSpinEdit;
+    iOffLeft: TJvSpinEdit;
     Label3: TLabel;
-    iOffRight: TRxSpinEdit;
+    iOffRight: TJvSpinEdit;
     Label6: TLabel;
-    iOffBottom: TRxSpinEdit;
+    iOffBottom: TJvSpinEdit;
     aa: TPrintDialog;
     procedure FormShow(Sender: TObject);
     procedure btOkClick(Sender: TObject);
@@ -72,7 +72,7 @@ implementation
 {$R *.DFM}
 
 uses
-  Costanti, SysUtils, UOpzioni;
+  Costanti, SysUtils, uOpzioni;
 
 function PrinterSetup: TModalResult;
 var
