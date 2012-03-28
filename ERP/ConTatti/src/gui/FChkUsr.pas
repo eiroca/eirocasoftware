@@ -57,7 +57,7 @@ implementation
 {$R *.DFM}
 
 uses
-  Costanti, eLib, uOpzioni, DContat, FAboutBox;
+  Costanti, eLibCore, uOpzioni, DContat, FAboutBox;
 
 procedure GetMagic(var Magic: longint; var Old, New: string);
 var

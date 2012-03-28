@@ -16,7 +16,6 @@ object fmGruppi: TfmGruppi
   Scaled = False
   ShowHint = True
   OnClose = FormClose
-  OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
@@ -70,8 +69,6 @@ object fmGruppi: TfmGruppi
     Height = 25
     Hint = 'Mostra i gruppi a cui i vari '#13#10'contatti appartengono '
     Caption = 'Contatti'
-    TabOrder = 2
-    OnClick = btContattiClick
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -87,6 +84,8 @@ object fmGruppi: TfmGruppi
       333373F773333333333330033333333333333773333333333333}
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 2
+    OnClick = btContattiClick
   end
   object btGruppi: TBitBtn
     Left = 220
@@ -95,8 +94,6 @@ object fmGruppi: TfmGruppi
     Height = 25
     Hint = 'Mostra i contatti che appartengono '#13#10'ai vari gruppi'
     Caption = 'Gruppi'
-    TabOrder = 3
-    OnClick = btGruppiClick
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -112,6 +109,8 @@ object fmGruppi: TfmGruppi
       333373F773333333333330033333333333333773333333333333}
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 3
+    OnClick = btGruppiClick
   end
   object btSave: TBitBtn
     Left = 220
@@ -120,8 +119,6 @@ object fmGruppi: TfmGruppi
     Height = 25
     Hint = 'Salva le modifiche effettuate'
     Caption = 'Salva'
-    TabOrder = 4
-    OnClick = btSaveClick
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000130B0000130B00001000000000000000000000000000
@@ -137,6 +134,8 @@ object fmGruppi: TfmGruppi
       93337FFFF7737777733300000033333333337777773333333333}
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 4
+    OnClick = btSaveClick
   end
   object btClose: TBitBtn
     Left = 305
@@ -144,8 +143,6 @@ object fmGruppi: TfmGruppi
     Width = 80
     Height = 25
     Hint = 'Chiude la finestra'
-    ModalResult = 1
-    TabOrder = 5
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
       04000000000000010000120B0000120B00001000000000000000000000000000
@@ -159,8 +156,10 @@ object fmGruppi: TfmGruppi
       555555555555777FF5555555555559905555555555555777FF55555555555579
       05555555555555777FF5555555555557905555555555555777FF555555555555
       5990555555555555577755555555555555555555555555555555}
+    ModalResult = 1
     NumGlyphs = 2
     Spacing = -1
+    TabOrder = 5
   end
   object tbInGruppo: TTable
     DatabaseName = 'DB'
@@ -249,9 +248,9 @@ object fmGruppi: TfmGruppi
     Left = 135
     Top = 80
   end
-  object fpGruppi: TFormPlacement
-    UseRegistry = False
-    OnRestorePlacement = fpGruppiRestorePlacement
+  object fpGruppi: TJvFormPlacement
+    AppStorage = fmMain.apStorage
+    AppStoragePath = '%FORM_NAME%'
     Left = 55
     Top = 75
   end

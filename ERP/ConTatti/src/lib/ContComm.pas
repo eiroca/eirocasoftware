@@ -68,7 +68,7 @@ function SplitInd(Ind: string; S: TStrings): boolean;
 implementation
 
 uses
-  uOpzioni, eLib, StdCtrls;
+  uOpzioni, eLibCore, StdCtrls;
 
 procedure Add(var s: string; const Frst, Pre, tmp, Suf: string);
 begin

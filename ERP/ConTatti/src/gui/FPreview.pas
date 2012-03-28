@@ -55,7 +55,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib;
+  eLibCore;
 
 const
   MoreWidth  =  60;

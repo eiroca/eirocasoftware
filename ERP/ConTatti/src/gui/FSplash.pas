@@ -32,7 +32,7 @@ unit FSplash;
 interface
 
 uses
-  Forms, Classes, Controls, ExtCtrls, RXCtrls, Graphics;
+  Forms, Classes, Controls, ExtCtrls, Graphics, JvExControls, JvLabel;
 
 const
 {$IFDEF WIN32}
@@ -45,8 +45,8 @@ type
   TfmSplash = class(TForm)
     Panel1: TPanel;
     Image1: TImage;
-    RxLabel2: TRxLabel;
-    RxLabel1: TRxLabel;
+    RxLabel2: TJvLabel;
+    RxLabel1: TJvLabel;
     procedure FormDeactivate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   end;

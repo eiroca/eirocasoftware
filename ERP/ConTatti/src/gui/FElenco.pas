@@ -23,7 +23,8 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, Grids, DBGrids, RXDBCtrl, DB, DBTables, Menus, eDB;
+  Forms, Dialogs, Grids, DBGrids, DB, DBTables, Menus, eDB, JvExDBGrids,
+  JvDBGrid;
 
 type
   TfmElenco = class(TForm)
@@ -40,7 +41,7 @@ type
     tbContattiNote: TMemoField;
     tbContattiTipo: TIntegerField;
     dsContatti: TDataSource;
-    dgContat: TRxDBGrid;
+    dgContat: TJvDBGrid;
     pmAction: TPopupMenu;
     mpContEdit: TMenuItem;
     mpContTel: TMenuItem;
@@ -84,7 +85,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, ContComm,
+  eLibCore, ContComm,
   DContat, uOpzioni,
   FContat, FEleTele, FEleIndi;
 

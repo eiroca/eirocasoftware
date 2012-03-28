@@ -126,7 +126,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, eLibDB, ContComm,
+  eLibCore, eLibDB, ContComm,
   DContat;
 
 var

@@ -24,7 +24,7 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   Forms, Dialogs, StdCtrls, DBTables, DB, Grids, Outline, Buttons,
-  DBGrids, rxPlacemnt;
+  DBGrids, JvComponentBase, JvFormPlacement;
 
 type
   TfmGruppi = class(TForm)
@@ -57,7 +57,7 @@ type
     btSave: TBitBtn;
     btClose: TBitBtn;
     lbWhat: TLabel;
-    fpGruppi: TFormPlacement;
+    fpGruppi: TJvFormPlacement;
     procedure olSchemaDragOver(Sender, Source: TObject; X, Y: Integer;
       State: TDragState; var Accept: Boolean);
     procedure lbChoiceDragOver(Sender, Source: TObject; X, Y: Integer;
@@ -73,8 +73,6 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure btSaveClick(Sender: TObject);
-    procedure fpGruppiRestorePlacement(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
     FChanged: boolean;
@@ -431,16 +429,6 @@ begin
   end;
   tbInGruppo.Close;
   Changed:= false;
-end;
-
-procedure TfmGruppi.fpGruppiRestorePlacement(Sender: TObject);
-begin
-  fpGruppi.INIFileName:= Opzioni.ProgPath+Opzioni.ProgName+'.INI';
-end;
-
-procedure TfmGruppi.FormCreate(Sender: TObject);
-begin
-  fpGruppi.INIFileName:= Opzioni.ProgPath+Opzioni.ProgName+'.INI';
 end;
 
 end.

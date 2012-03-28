@@ -62,8 +62,6 @@ object fmContatti: TfmContatti
       Left = 0
       Top = 0
       Caption = 'Contatti'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object pnContat: TPanel
         Left = 0
         Top = 0
@@ -110,7 +108,6 @@ object fmContatti: TfmContatti
           Width = 145
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
           TabOrder = 1
           OnChange = cbOrderChange
           Items.Strings = (
@@ -167,12 +164,17 @@ object fmContatti: TfmContatti
           Height = 13
           Caption = 'Soprannomi'
         end
-        object RxSpeedButton1: TRxSpeedButton
+        object RxSpeedButton1: TJvSpeedButton
           Left = 305
           Top = 100
           Width = 27
           Height = 20
           DropDownMenu = pmNickName
+          HotTrackFont.Charset = DEFAULT_CHARSET
+          HotTrackFont.Color = clWindowText
+          HotTrackFont.Height = -11
+          HotTrackFont.Name = 'MS Sans Serif'
+          HotTrackFont.Style = []
           NumGlyphs = 2
           Transparent = True
         end
@@ -203,7 +205,7 @@ object fmContatti: TfmContatti
           DataSource = dsContat
           TabOrder = 3
         end
-        object cbTipoCont: TRxDBComboBox
+        object cbTipoCont: TJvDBComboBox
           Left = 10
           Top = 69
           Width = 131
@@ -218,6 +220,11 @@ object fmContatti: TfmContatti
           Values.Strings = (
             '0'
             '1')
+          ListSettings.OutfilteredValueFont.Charset = DEFAULT_CHARSET
+          ListSettings.OutfilteredValueFont.Color = clRed
+          ListSettings.OutfilteredValueFont.Height = -11
+          ListSettings.OutfilteredValueFont.Name = 'Tahoma'
+          ListSettings.OutfilteredValueFont.Style = []
           OnChange = cbTipoContChange
         end
         object pnContAzie: TPanel
@@ -249,7 +256,6 @@ object fmContatti: TfmContatti
             Height = 21
             DataField = 'Nome_Suf'
             DataSource = dsContat
-            ItemHeight = 13
             Items.Strings = (
               ''
               'D.I.'
@@ -270,13 +276,13 @@ object fmContatti: TfmContatti
             TabOrder = 0
           end
         end
-        object dgNickName: TRxDBGrid
+        object dgNickName: TJvDBGrid
           Left = 305
           Top = 120
           Width = 176
           Height = 110
           DataSource = dsNickName
-          Options = [dgEditing, dgColumnResize, dgColLines, dgRowLines, dgConfirmDelete]
+          Options = [dgEditing, dgColumnResize, dgColLines, dgRowLines, dgConfirmDelete, dgTitleClick, dgTitleHotTrack]
           PopupMenu = pmNickName
           TabOrder = 6
           TitleFont.Charset = DEFAULT_CHARSET
@@ -285,6 +291,12 @@ object fmContatti: TfmContatti
           TitleFont.Name = 'MS Sans Serif'
           TitleFont.Style = []
           OnEnter = dgNickNameEnter
+          SelectColumnsDialogStrings.Caption = 'Select columns'
+          SelectColumnsDialogStrings.OK = '&OK'
+          SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+          EditControls = <>
+          RowsHeight = 17
+          TitleRowHeight = 17
         end
         object pnContPers: TPanel
           Left = 5
@@ -365,8 +377,6 @@ object fmContatti: TfmContatti
       Left = 0
       Top = 0
       Caption = 'Indirizzi'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object pnIndir: TPanel
         Left = 0
         Top = 0
@@ -502,8 +512,6 @@ object fmContatti: TfmContatti
             Width = 75
             Height = 25
             Caption = 'Connetti'
-            TabOrder = 0
-            OnClick = btConnectClick
             Glyph.Data = {
               76010000424D7601000000000000760000002800000020000000100000000100
               04000000000000010000120B0000120B00001000000000000000000000000000
@@ -518,15 +526,17 @@ object fmContatti: TfmContatti
               BBB73373333377F37F3737333777BB777B9B3733333377F337F7333333777B77
               77BB3333333337333377333333333777337B3333333333333337}
             NumGlyphs = 2
+            TabOrder = 0
+            OnClick = btConnectClick
           end
         end
-        object DBGrid4: TRxDBGrid
+        object DBGrid4: TJvDBGrid
           Left = 15
           Top = 139
           Width = 461
           Height = 90
           DataSource = dsIndir
-          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
           TabOrder = 3
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clBlack
@@ -535,6 +545,12 @@ object fmContatti: TfmContatti
           TitleFont.Style = []
           OnDblClick = DBGrid4DblClick
           OnGetCellParams = DBGrid4GetCellParams
+          SelectColumnsDialogStrings.Caption = 'Select columns'
+          SelectColumnsDialogStrings.OK = '&OK'
+          SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+          EditControls = <>
+          RowsHeight = 17
+          TitleRowHeight = 17
         end
         object DBMemo1: TDBMemo
           Left = 101
@@ -545,7 +561,7 @@ object fmContatti: TfmContatti
           DataSource = dsIndir
           TabOrder = 2
         end
-        object cbTipoIndir: TRxDBComboBox
+        object cbTipoIndir: TJvDBComboBox
           Left = 90
           Top = 9
           Width = 131
@@ -560,6 +576,11 @@ object fmContatti: TfmContatti
           Values.Strings = (
             '0'
             '1')
+          ListSettings.OutfilteredValueFont.Charset = DEFAULT_CHARSET
+          ListSettings.OutfilteredValueFont.Color = clRed
+          ListSettings.OutfilteredValueFont.Height = -11
+          ListSettings.OutfilteredValueFont.Name = 'Tahoma'
+          ListSettings.OutfilteredValueFont.Style = []
           OnChange = cbTipoIndirChange
         end
         object DBEdit1: TDBEdit
@@ -577,8 +598,6 @@ object fmContatti: TfmContatti
       Left = 0
       Top = 0
       Caption = 'Telefoni'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object pnTelef: TPanel
         Left = 0
         Top = 0
@@ -628,20 +647,26 @@ object fmContatti: TfmContatti
           DataSource = dsTelef
         end
       end
-      object DBGrid2: TRxDBGrid
+      object DBGrid2: TJvDBGrid
         Left = 0
         Top = 116
         Width = 491
         Height = 162
         Align = alClient
         DataSource = dsTelef
-        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
         TabOrder = 1
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clBlack
         TitleFont.Height = -11
         TitleFont.Name = 'MS Sans Serif'
         TitleFont.Style = []
+        SelectColumnsDialogStrings.Caption = 'Select columns'
+        SelectColumnsDialogStrings.OK = '&OK'
+        SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+        EditControls = <>
+        RowsHeight = 17
+        TitleRowHeight = 17
       end
       object Panel1: TPanel
         Left = 0
@@ -693,7 +718,7 @@ object fmContatti: TfmContatti
           Height = 13
           Caption = 'Altri numeri telefonici'
         end
-        object RxDBComboBox1: TRxDBComboBox
+        object RxDBComboBox1: TJvDBComboBox
           Left = 340
           Top = 5
           Width = 140
@@ -712,6 +737,11 @@ object fmContatti: TfmContatti
             '1'
             '2'
             '3')
+          ListSettings.OutfilteredValueFont.Charset = DEFAULT_CHARSET
+          ListSettings.OutfilteredValueFont.Color = clRed
+          ListSettings.OutfilteredValueFont.Height = -11
+          ListSettings.OutfilteredValueFont.Name = 'Tahoma'
+          ListSettings.OutfilteredValueFont.Style = []
         end
         object DBEdit10: TDBEdit
           Left = 300
@@ -756,8 +786,6 @@ object fmContatti: TfmContatti
       Left = 0
       Top = 0
       Caption = 'Date Importanti'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object pnDateImpo: TPanel
         Left = 0
         Top = 0
@@ -807,7 +835,7 @@ object fmContatti: TfmContatti
           DataSource = dsDateImpo
         end
       end
-      object DBGrid3: TRxDBGrid
+      object DBGrid3: TJvDBGrid
         Left = 0
         Top = 36
         Width = 491
@@ -820,14 +848,18 @@ object fmContatti: TfmContatti
         TitleFont.Height = -11
         TitleFont.Name = 'MS Sans Serif'
         TitleFont.Style = []
+        SelectColumnsDialogStrings.Caption = 'Select columns'
+        SelectColumnsDialogStrings.OK = '&OK'
+        SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+        EditControls = <>
+        RowsHeight = 17
+        TitleRowHeight = 17
       end
     end
     object TPage
       Left = 0
       Top = 0
       Caption = 'Referenti'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object pnRefer: TPanel
         Left = 0
         Top = 0
@@ -861,12 +893,11 @@ object fmContatti: TfmContatti
           TabOrder = 0
           OnClick = BitBtn1Click
         end
-        object lcNewRef: TRxDBLookupCombo
+        object lcNewRef: TJvDBLookupCombo
           Left = 185
           Top = 41
           Width = 191
           Height = 22
-          DropDownCount = 8
           LookupField = 'CodCon'
           LookupDisplay = 'Nome'
           LookupSource = dsContatti2
@@ -897,20 +928,26 @@ object fmContatti: TfmContatti
           DataSource = dsRefer
         end
       end
-      object DBGrid1: TRxDBGrid
+      object DBGrid1: TJvDBGrid
         Left = 0
         Top = 71
         Width = 491
         Height = 89
         Align = alClient
         DataSource = dsRefer
-        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clBlack
         TitleFont.Height = -11
         TitleFont.Name = 'MS Sans Serif'
         TitleFont.Style = []
+        SelectColumnsDialogStrings.Caption = 'Select columns'
+        SelectColumnsDialogStrings.OK = '&OK'
+        SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+        EditControls = <>
+        RowsHeight = 17
+        TitleRowHeight = 17
       end
       object Panel2: TPanel
         Left = 0
@@ -927,20 +964,26 @@ object fmContatti: TfmContatti
           Height = 13
           Caption = 'Il contatto '#232' un referente di'
         end
-        object DBGrid5: TRxDBGrid
+        object DBGrid5: TJvDBGrid
           Left = 0
           Top = 35
           Width = 491
           Height = 83
           Align = alBottom
           DataSource = dsReferDi
-          Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+          Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
           TabOrder = 0
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clBlack
           TitleFont.Height = -11
           TitleFont.Name = 'MS Sans Serif'
           TitleFont.Style = []
+          SelectColumnsDialogStrings.Caption = 'Select columns'
+          SelectColumnsDialogStrings.OK = '&OK'
+          SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+          EditControls = <>
+          RowsHeight = 17
+          TitleRowHeight = 17
         end
       end
     end
@@ -948,8 +991,6 @@ object fmContatti: TfmContatti
       Left = 0
       Top = 0
       Caption = 'Comunicazioni'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object pnComunic: TPanel
         Left = 0
         Top = 0
@@ -1081,7 +1122,7 @@ object fmContatti: TfmContatti
           DataSource = dsConnessi
           TabOrder = 1
         end
-        object DBDateEdit1: TDBDateEdit
+        object DBDateEdit1: TJvDBDateEdit
           Left = 50
           Top = 0
           Width = 111
@@ -1092,21 +1133,27 @@ object fmContatti: TfmContatti
           NumGlyphs = 2
           TabOrder = 2
         end
-        object RxDBGrid2: TRxDBGrid
+        object RxDBGrid2: TJvDBGrid
           Left = 15
           Top = 135
           Width = 461
           Height = 96
           DataSource = dsConnessi
-          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
           TabOrder = 3
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clBlack
           TitleFont.Height = -11
           TitleFont.Name = 'MS Sans Serif'
           TitleFont.Style = []
+          SelectColumnsDialogStrings.Caption = 'Select columns'
+          SelectColumnsDialogStrings.OK = '&OK'
+          SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+          EditControls = <>
+          RowsHeight = 17
+          TitleRowHeight = 17
         end
-        object cbTipoConn: TRxDBComboBox
+        object cbTipoConn: TJvDBComboBox
           Left = 40
           Top = 85
           Width = 111
@@ -1123,6 +1170,11 @@ object fmContatti: TfmContatti
             '0'
             '1'
             '2')
+          ListSettings.OutfilteredValueFont.Charset = DEFAULT_CHARSET
+          ListSettings.OutfilteredValueFont.Color = clRed
+          ListSettings.OutfilteredValueFont.Height = -11
+          ListSettings.OutfilteredValueFont.Name = 'Tahoma'
+          ListSettings.OutfilteredValueFont.Style = []
           OnChange = cbTipoConnChange
         end
         object pnURL: TPanel
@@ -1132,7 +1184,7 @@ object fmContatti: TfmContatti
           Height = 31
           Caption = 'pnURL'
           TabOrder = 5
-          object btOpenURL: TRxSpeedButton
+          object btOpenURL: TJvSpeedButton
             Left = 296
             Top = 0
             Width = 25
@@ -1151,10 +1203,15 @@ object fmContatti: TfmContatti
               C4C575F7755F777FF5755CCCCC3333334C5557F5FF777777F7F554C333333333
               CC55575777777777F755553333CC3C33C555557777557577755555533CC4C4CC
               5555555775FFFF77555555555C4CCC5555555555577777555555}
+            HotTrackFont.Charset = DEFAULT_CHARSET
+            HotTrackFont.Color = clWindowText
+            HotTrackFont.Height = -11
+            HotTrackFont.Name = 'MS Sans Serif'
+            HotTrackFont.Style = []
             NumGlyphs = 2
             OnClick = btOpenURLClick
           end
-          object btPreview: TRxSpeedButton
+          object btPreview: TJvSpeedButton
             Left = 271
             Top = 0
             Width = 25
@@ -1173,6 +1230,11 @@ object fmContatti: TfmContatti
               33003777737777333377333080333333333333F7373333333333300803333333
               33333773733333333333088033333333333373F7F33333333333308033333333
               3333373733333333333333033333333333333373333333333333}
+            HotTrackFont.Charset = DEFAULT_CHARSET
+            HotTrackFont.Color = clWindowText
+            HotTrackFont.Height = -11
+            HotTrackFont.Name = 'MS Sans Serif'
+            HotTrackFont.Style = []
             NumGlyphs = 2
             OnClick = btPreviewClick
           end
@@ -1183,7 +1245,7 @@ object fmContatti: TfmContatti
             Height = 13
             Caption = 'URL'
           end
-          object btLocate: TRxSpeedButton
+          object btLocate: TJvSpeedButton
             Left = 246
             Top = 0
             Width = 25
@@ -1202,6 +1264,11 @@ object fmContatti: TfmContatti
               55557F557777557F55550BFBFBFBFB0555557F555555557F55550FBFBFBFBF05
               55557FFFFFFFFF7555550000000000555555777777777755555550FBFB055555
               5555575FFF755555555557000075555555555577775555555555}
+            HotTrackFont.Charset = DEFAULT_CHARSET
+            HotTrackFont.Color = clWindowText
+            HotTrackFont.Height = -11
+            HotTrackFont.Name = 'MS Sans Serif'
+            HotTrackFont.Style = []
             NumGlyphs = 2
             OnClick = btLocateClick
           end
@@ -1222,8 +1289,6 @@ object fmContatti: TfmContatti
       Left = 0
       Top = 0
       Caption = 'Gruppi'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object pnGruppi: TPanel
         Left = 0
         Top = 0
@@ -1273,13 +1338,13 @@ object fmContatti: TfmContatti
           DataSource = dsGruppi
         end
       end
-      object dgGruppi: TRxDBGrid
+      object dgGruppi: TJvDBGrid
         Left = 15
         Top = 40
         Width = 236
         Height = 231
         DataSource = dsGruppi
-        Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgCancelOnExit]
+        Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
         TabOrder = 1
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clBlack
@@ -1288,14 +1353,18 @@ object fmContatti: TfmContatti
         TitleFont.Style = []
         OnDblClick = dgGruppiDblClick
         OnKeyPress = dgGruppiKeyPress
+        SelectColumnsDialogStrings.Caption = 'Select columns'
+        SelectColumnsDialogStrings.OK = '&OK'
+        SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+        EditControls = <>
+        RowsHeight = 17
+        TitleRowHeight = 17
       end
     end
     object TPage
       Left = 0
       Top = 0
       Caption = 'Dati Azienda'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object pnAziend: TPanel
         Left = 0
         Top = 0
@@ -1420,7 +1489,7 @@ object fmContatti: TfmContatti
           DataSource = dsAziende
           TabOrder = 5
         end
-        object DBDateEdit2: TDBDateEdit
+        object DBDateEdit2: TJvDBDateEdit
           Left = 350
           Top = 5
           Width = 121
@@ -1457,7 +1526,7 @@ object fmContatti: TfmContatti
           DataSource = dsAziende
           TabOrder = 4
         end
-        object RxDBComboBox3: TRxDBComboBox
+        object RxDBComboBox3: TJvDBComboBox
           Left = 95
           Top = 4
           Width = 141
@@ -1476,6 +1545,11 @@ object fmContatti: TfmContatti
             '1'
             '2'
             '3')
+          ListSettings.OutfilteredValueFont.Charset = DEFAULT_CHARSET
+          ListSettings.OutfilteredValueFont.Color = clRed
+          ListSettings.OutfilteredValueFont.Height = -11
+          ListSettings.OutfilteredValueFont.Name = 'Tahoma'
+          ListSettings.OutfilteredValueFont.Style = []
         end
       end
     end
@@ -1920,9 +1994,9 @@ object fmContatti: TfmContatti
       Size = 40
     end
   end
-  object fpContat: TFormPlacement
-    UseRegistry = False
-    OnRestorePlacement = fpContatRestorePlacement
+  object fpContat: TJvFormPlacement
+    AppStorage = fmMain.apStorage
+    AppStoragePath = '%FORM_NAME%'
     Left = 90
     Top = 51
   end
@@ -2024,11 +2098,11 @@ object fmContatti: TfmContatti
     Left = 215
     Top = 180
   end
-  object flInGruppo: TRxDBFilter
+  object flInGruppo: TJvDBFilter
     DataSource = dsInGruppo
     OnFiltering = flInGruppoFiltering
-    Left = 215
-    Top = 190
+    Left = 391
+    Top = 22
   end
   object tbNickName: TTable
     DatabaseName = 'DB'

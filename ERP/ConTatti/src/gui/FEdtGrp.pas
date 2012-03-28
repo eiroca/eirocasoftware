@@ -23,23 +23,21 @@ interface
 
 uses
   WinTypes, WinProcs, SysUtils, Classes, Graphics, Forms, Controls, StdCtrls,
-  Dialogs, Buttons, ExtCtrls, DBTables, DB, Grids, DBGrids, RXDBCtrl,
-  DBCtrls, rxPlacemnt;
+  Dialogs, Buttons, ExtCtrls, DBTables, DB, Grids, DBGrids, DBCtrls,
+  JvComponentBase, JvFormPlacement, JvExDBGrids, JvDBGrid;
 
 type
   TfmEditGruppi = class(TForm)
-    fpEdtGrp: TFormPlacement;
+    fpEdtGrp: TJvFormPlacement;
     tbGruppi: TTable;
     dsGruppi: TDataSource;
-    RxDBGrid1: TRxDBGrid;
+    RxDBGrid1: TJvDBGrid;
     tbGruppiCodGrp: TIntegerField;             
     tbGruppiDesc: TStringField;
     tbGruppiCanc: TStringField;
     tbInGruppo: TTable;
     btOk: TBitBtn;
     DBNavigator1: TDBNavigator;
-    procedure fpEdtGrpRestorePlacement(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
     procedure tbGruppiCalcFields(DataSet: TDataset);
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -57,7 +55,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, uOpzioni;
+  eLibCore, uOpzioni;
 
 procedure EditGruppi;
 var
@@ -70,16 +68,6 @@ begin
   finally
     fmEditGruppi.Free;
   end;
-end;
-
-procedure TfmEditGruppi.fpEdtGrpRestorePlacement(Sender: TObject);
-begin
-  fpEdtGrp.INIFileName:= Opzioni.LocalINI;
-end;
-
-procedure TfmEditGruppi.FormCreate(Sender: TObject);
-begin
-  fpEdtGrp.INIFileName:= Opzioni.LocalINI;
 end;
 
 procedure TfmEditGruppi.tbGruppiCalcFields(DataSet: TDataset);

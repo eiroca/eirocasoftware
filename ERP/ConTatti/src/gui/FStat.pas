@@ -24,7 +24,7 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, Grids, ExtCtrls,
-  rxPlacemnt, CWXTab;
+  CWXTab, JvComponentBase, JvFormPlacement;
 
 type
   TfmStatistiche = class(TForm)
@@ -47,13 +47,12 @@ type
     tbContatClasse: TStringField;
     tbContatSettore: TStringField;
     tbContatNote: TMemoField;
-    fsStat: TFormStorage;
+    fsStat: TJvFormStorage;
     sdExport: TSaveDialog;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BitBtn1Click(Sender: TObject);
-    procedure fsStatRestorePlacement(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
   private
     { Private declarations }
@@ -68,7 +67,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLib, uOpzioni;
+  eLibCore, uOpzioni;
 
 procedure Statistiche;
 var
@@ -97,8 +96,7 @@ procedure TfmStatistiche.FormCreate(Sender: TObject);
     cb.Items.EndUpdate;
   end;
 begin
-  fsStat.INIFileName:= Opzioni.ProgPath+Opzioni.ProgName+'.INI';
-  Setup(cbRow); 
+  Setup(cbRow);
   Setup(cbCol); 
   cbRow.ItemIndex:= cbRow.Items.IndexOf('Classe');
   cbCol.ItemIndex:= cbCol.Items.IndexOf('Settore');
@@ -125,11 +123,6 @@ begin
   ctContat.CrossTab.RowField:= GetName(cbRow);
   ctContat.CrossTab.ColumnField:= GetName(cbCol);
   ctContat.Execute;
-end;
-
-procedure TfmStatistiche.fsStatRestorePlacement(Sender: TObject);
-begin
-  fsStat.INIFileName:= Opzioni.ProgPath+Opzioni.ProgName+'.INI';
 end;
 
 procedure TfmStatistiche.BitBtn2Click(Sender: TObject);

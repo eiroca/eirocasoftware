@@ -23,22 +23,23 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, Grids, DBGrids, RXDBCtrl,
-  ExtCtrls, Menus, RXLookup, DBLookup,
-  rxPlacemnt, rxDBQBE, rxdbfilter, rxSpeedbar;
+  Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, Grids, DBGrids, 
+  ExtCtrls, Menus, DBLookup, JvFormPlacement, JvBDEQBE, JvComponentBase,
+  JvBDEFilter, JvExControls, JvDBLookup, JvExExtCtrls, JvExtComponent,
+  JvSpeedbar, JvExDBGrids, JvDBGrid;
 
 type
   TfmEleTelef = class(TForm)
-    dgTelef: TRxDBGrid;
+    dgTelef: TJvDBGrid;
     dsTelef: TDataSource;
-    flTelef: TRxDBFilter;
+    flTelef: TJvDBFilter;
     MainMenu1: TMainMenu;
     Operazioni1: TMenuItem;
-    SpeedBar1: TSpeedBar;
+    SpeedBar1: TJvSpeedBar;
     miExit: TMenuItem;
     cbTipoTel: TComboBox;           
     cbFiltCont: TCheckBox;
-    lcContatti: TRxDBLookupCombo;
+    lcContatti: TJvDBLookupCombo;
     cbFiltTipo: TCheckBox;
     tbContat: TTable;
     dsContat: TDataSource;
@@ -48,7 +49,7 @@ type
     N2: TMenuItem;
     miIntPref: TMenuItem;
     miSelfPref: TMenuItem;
-    qbeEleTel1: TQBEQuery;
+    qbeEleTel1: TJvQBEQuery;
     qbeEleTel1Nome_Tit: TStringField;
     qbeEleTel1Nome_Pre1: TStringField;
     qbeEleTel1Nome_Pre2: TStringField;
@@ -66,8 +67,8 @@ type
     qbeEleTel1Contat: TStringField;
     qbeEleTel1TelefTipo: TStringField;
     qbeEleTel1Tel: TStringField;
-    fpEleTel: TFormStorage;
-    qbeEleTel2: TQBEQuery;
+    fpEleTel: TJVFormStorage;
+    qbeEleTel2: TJvQBEQuery;
     StringField1: TStringField;
     StringField2: TStringField;
     StringField3: TStringField;
@@ -103,17 +104,16 @@ type
     procedure qbeEleTelCalcFields(DataSet: TDataset);
     procedure dgTelefTitleBtnClick(Sender: TObject; ACol: Longint;
       Field: TField);
-    procedure fpEleTelRestorePlacement(Sender: TObject);
     procedure miEleTelClick(Sender: TObject);
     procedure dgTelefGetBtnParams(Sender: TObject; Field: TField;
       AFont: TFont; var Background: TColor; var SortMarker: TSortMarker;
       IsDown: Boolean);
   private
     { Private declarations }
-    qry: TQBEQuery;
+    qry: TJvQBEQuery;
     CurSortFld: integer;
     procedure SelectQuery(Num: integer);
-    procedure SetupDataSource(qbe: TQBEQuery);
+    procedure SetupDataSource(qbe: TJvQBEQuery);
     procedure ShowAll;
     procedure ShowSome(ACodCon: integer);
   public
@@ -129,7 +129,7 @@ implementation
 {$R *.DFM}
 
 uses
-  uOpzioni, eLib, DContat, ContComm;
+  uOpzioni, eLibCore, DContat, ContComm;
 
 function ElencoTelefonico(CodCon: integer): boolean;
 var
@@ -152,7 +152,7 @@ end;
 
 procedure TfmEleTelef.SelectQuery(Num: integer);
 var
-  QBE: TQBEQuery;
+  QBE: TJvQBEQuery;
 begin
   case Num of
     0: begin
@@ -172,7 +172,7 @@ begin
   end;
 end;
 
-procedure TfmEleTelef.SetupDataSource(qbe: TQBEQuery);
+procedure TfmEleTelef.SetupDataSource(qbe: TJvQBEQuery);
 begin
   if Qry <> nil then begin
     flTelef.Active:= false;
@@ -237,7 +237,6 @@ var
   i: integer;
 begin
   Qry:= nil;
-  fpEleTel.INIFileName:= Opzioni.LocalINI;
   cbTipoTel.Clear;
   for i:= ctTelPrimo to ctTelUltimo do begin
     cbTipoTel.Items.AddObject(TeleDesc[i], pointer(i));
@@ -339,11 +338,6 @@ procedure TfmEleTelef.dgTelefTitleBtnClick(Sender: TObject; ACol: Longint;
 begin
   dgTelef.Tag:= ACol;
   SelectQuery(dgTelef.Tag);
-end;
-
-procedure TfmEleTelef.fpEleTelRestorePlacement(Sender: TObject);
-begin
-  fpEleTel.INIFileName:= Opzioni.LocalINI;
 end;
 
 procedure TfmEleTelef.miEleTelClick(Sender: TObject);

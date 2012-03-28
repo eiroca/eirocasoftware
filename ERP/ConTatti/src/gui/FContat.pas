@@ -24,9 +24,11 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   Forms, Dialogs, DContat,                                    
-  Menus, DBTables, DB, RXDBCtrl, RXLookup,
-  StdCtrls, Buttons, Grids, DBGrids, DBCtrls, RxDBComb, Mask, RXCtrls, RgNav,
-  RgNavDB, ExtCtrls, Tabs, eDB, rxdbfilter, rxPlacemnt, rxToolEdit;
+JvDBCombobox, JvDBGrid,
+  Menus, DBTables, DB, StdCtrls, Buttons, Grids, DBGrids, DBCtrls, Mask, RgNav,
+  RgNavDB, ExtCtrls, Tabs, eDB, JvBDEFilter, JvComponentBase, JvFormPlacement,
+  JvExMask, JvToolEdit, JvDBControls, JvExControls, JvDBLookup, JvExDBGrids,
+  JvExStdCtrls, JvCombobox, JvSpeedButton;
 
 { IFDEF FREEONCLOSE}  
 
@@ -118,7 +120,7 @@ type
     EditSettore: TDBEdit;
     DBMemo2: TDBMemo;
     DBEdit2: TDBEdit;
-    cbTipoCont: TRxDBComboBox;
+    cbTipoCont: TJvDBComboBox;
     pnContAzie: TPanel;
     lbNome_Suf: TLabel;
     lbNome_Main: TLabel;
@@ -131,11 +133,11 @@ type
     pnTelef: TPanel;
     lbTelef: TLabel;
     txTelef: TDBText;
-    DBGrid2: TRxDBGrid;
+    DBGrid2: TJvDBGrid;
     pnDateImpo: TPanel;
     lbDateImpo: TLabel;
     txDateImpo: TDBText;
-    DBGrid3: TRxDBGrid;
+    DBGrid3: TJvDBGrid;
     pnAziend: TPanel;
     ScrollBox3: TScrollBox;
     Label19: TLabel;
@@ -147,13 +149,13 @@ type
     Label25: TLabel;
     DBEdit5: TDBEdit;
     DBMemo4: TDBMemo;
-    DBDateEdit2: TDBDateEdit;
+    DBDateEdit2: TJvDBDateEdit;
     DBEdit6: TDBEdit;
     DBMemo5: TDBMemo;
     DBEdit7: TDBEdit;
-    RxDBComboBox3: TRxDBComboBox;
+    RxDBComboBox3: TJvDBComboBox;
     pnComunic: TPanel;
-    DBGrid1: TRxDBGrid;
+    DBGrid1: TJvDBGrid;
     pnRefer: TPanel;
     lbRefer: TLabel;
     txRefer: TDBText;
@@ -169,14 +171,14 @@ type
     tbIndir2Indirizzo: TMemoField;
     tbIndir2Note: TStringField;
     BitBtn1: TBitBtn;
-    lcNewRef: TRxDBLookupCombo;
-    fpContat: TFormPlacement;
+    lcNewRef: TJvDBLookupCombo;
+    fpContat: TJvFormPlacement;
     Label2: TLabel;
-    DBGrid4: TRxDBGrid;
+    DBGrid4: TJvDBGrid;
     DBMemo1: TDBMemo;
     Label15: TLabel;
     Label16: TLabel;
-    cbTipoIndir: TRxDBComboBox;
+    cbTipoIndir: TJvDBComboBox;
     Label14: TLabel;
     DBEdit1: TDBEdit;
     pnIndiTrad: TPanel;
@@ -186,7 +188,7 @@ type
     pnIndiElet: TPanel;
     Label6: TLabel;
     Panel1: TPanel;
-    RxDBComboBox1: TRxDBComboBox;
+    RxDBComboBox1: TJvDBComboBox;
     Label26: TLabel;
     Label27: TLabel;
     DBEdit10: TDBEdit;
@@ -201,7 +203,7 @@ type
     tbTelefTelefTipo: TStringField;
     Panel2: TPanel;
     Label32: TLabel;
-    DBGrid5: TRxDBGrid;
+    DBGrid5: TJvDBGrid;
     tbReferDi: TTable;
     tbReferDiRefer: TStringField;
     tbReferDiNote: TStringField;
@@ -218,7 +220,7 @@ type
     pnGruppi: TPanel;
     Label34: TLabel;
     txGruppi: TDBText;
-    dgGruppi: TRxDBGrid;
+    dgGruppi: TJvDBGrid;
     tbGruppi: TTable;
     dsGruppi: TDataSource;
     tbInGruppo: TTable;
@@ -229,17 +231,17 @@ type
     tbGruppiIn: TStringField;
     dsInGruppo: TDataSource;
     tbGruppiDesc: TStringField;
-    flInGruppo: TRxDBFilter;
+    flInGruppo: TJvDBFilter;
     tbNickName: TTable;
     tbNickNameProg: TIntegerField;
     tbNickNameCodCon: TIntegerField;
-    dgNickName: TRxDBGrid;
+    dgNickName: TJvDBGrid;
     dsNickName: TDataSource;
     Label36: TLabel;
     btConnect: TBitBtn;
     DBConnection: TDBConnectionLink;
     DBMessage: TDBMessageLink;
-    RxSpeedButton1: TRxSpeedButton;
+    RxSpeedButton1: TJvSpeedButton;
     pmNickName: TPopupMenu;
     miNickAdd: TMenuItem;
     miNickDel: TMenuItem;
@@ -270,14 +272,14 @@ type
     Label37: TLabel;
     DBEdit4: TDBEdit;
     DBMemo3: TDBMemo;
-    DBDateEdit1: TDBDateEdit;
-    RxDBGrid2: TRxDBGrid;
-    cbTipoConn: TRxDBComboBox;
+    DBDateEdit1: TJvDBDateEdit;
+    RxDBGrid2: TJvDBGrid;
+    cbTipoConn: TJvDBComboBox;
     pnURL: TPanel;
-    btOpenURL: TRxSpeedButton;
-    btPreview: TRxSpeedButton;
+    btOpenURL: TJvSpeedButton;
+    btPreview: TJvSpeedButton;
     lbURL: TLabel;
-    btLocate: TRxSpeedButton;
+    btLocate: TJvSpeedButton;
     iURL: TDBEdit;
     Label38: TLabel;
     cbOrder: TComboBox;
@@ -301,7 +303,6 @@ type
     procedure tbTelefCalcFields(DataSet: TDataset);
     procedure FormActivate(Sender: TObject);
     procedure tbReferDiCalcFields(DataSet: TDataset);
-    procedure fpContatRestorePlacement(Sender: TObject);
     procedure FormDeactivate(Sender: TObject);
     procedure tbContatAfterPost(DataSet: TDataset);
     procedure FormResize(Sender: TObject);
@@ -363,7 +364,7 @@ implementation
 {$R *.DFM}
 
 uses
-  uOpzioni, eLib, ContComm, eLibDB, FPreview, eLibSystem;
+  uOpzioni, eLibCore, ContComm, eLibDB, FPreview, eLibSystem;
 
 var
   fmContatti: TfmContatti;
@@ -429,7 +430,6 @@ end;
 procedure TfmContatti.FormCreate(Sender: TObject);
 begin
   Posting:= false;
-  fpContat.INIFileName:= Opzioni.LocalINI;
   OldWidth:= Width;
   OldHeight:= Height;
   pnContAzie.BevelInner:= bvNone; pnContAzie.BevelOuter:= bvNone;
@@ -700,11 +700,6 @@ begin
   tbContatti2.Locate('CodCon', DataSet.FieldByName('CodCon').AsInteger, []);
   tbReferDiNote.Value:= tbContatti2Settore.Value;
   tbReferDiRefer.Value:= _DecodeNome(tbContatti2);
-end;
-
-procedure TfmContatti.fpContatRestorePlacement(Sender: TObject);
-begin
-  fpContat.INIFileName:= Opzioni.LocalINI;
 end;
 
 procedure TfmContatti.Post(ds: TDataSource);

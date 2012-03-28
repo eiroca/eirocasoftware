@@ -20,7 +20,7 @@ object fmEleTelef: TfmEleTelef
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object dgTelef: TRxDBGrid
+  object dgTelef: TJvDBGrid
     Left = 0
     Top = 29
     Width = 444
@@ -28,7 +28,7 @@ object fmEleTelef: TfmEleTelef
     Hint = 'Elenco telefonico'#13#10'Clicca sul titolo per cambiare ordinamento'
     Align = alClient
     DataSource = dsTelef
-    Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+    Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clBlack
@@ -39,8 +39,14 @@ object fmEleTelef: TfmEleTelef
     OnCheckButton = dgTelefCheckButton
     OnGetBtnParams = dgTelefGetBtnParams
     OnTitleBtnClick = dgTelefTitleBtnClick
+    SelectColumnsDialogStrings.Caption = 'Select columns'
+    SelectColumnsDialogStrings.OK = '&OK'
+    SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+    EditControls = <>
+    RowsHeight = 17
+    TitleRowHeight = 17
   end
-  object SpeedBar1: TSpeedBar
+  object SpeedBar1: TJvSpeedBar
     Left = 0
     Top = 0
     Width = 444
@@ -65,7 +71,6 @@ object fmEleTelef: TfmEleTelef
       Height = 21
       Hint = 'Tipo di telefono che si '#13#10'desidera visualizzato'
       Style = csDropDownList
-      ItemHeight = 13
       TabOrder = 0
       OnChange = cbTipoTelChange
     end
@@ -79,13 +84,12 @@ object fmEleTelef: TfmEleTelef
       TabOrder = 1
       OnClick = cbFiltContClick
     end
-    object lcContatti: TRxDBLookupCombo
+    object lcContatti: TJvDBLookupCombo
       Left = 65
       Top = 4
       Width = 135
       Height = 21
       Hint = 'Contatto di cui interessano'#13#10'i numeri telefonici'
-      DropDownCount = 8
       DisplayEmpty = '<< tutti >>'
       ListStyle = lsDelimited
       LookupField = 'CodCon'
@@ -110,7 +114,7 @@ object fmEleTelef: TfmEleTelef
     Left = 195
     Top = 155
   end
-  object flTelef: TRxDBFilter
+  object flTelef: TJvDBFilter
     DataSource = dsTelef
     OnFiltering = flTelefFiltering
     Left = 195
@@ -165,7 +169,7 @@ object fmEleTelef: TfmEleTelef
     Left = 120
     Top = 95
   end
-  object qbeEleTel1: TQBEQuery
+  object qbeEleTel1: TJvQBEQuery
     OnCalcFields = qbeEleTelCalcFields
     DatabaseName = 'DB'
     AuxiliaryTables = False
@@ -293,16 +297,16 @@ object fmEleTelef: TfmEleTelef
       Size = 40
     end
   end
-  object fpEleTel: TFormStorage
-    UseRegistry = False
-    OnRestorePlacement = fpEleTelRestorePlacement
+  object fpEleTel: TJvFormStorage
+    AppStorage = fmMain.apStorage
+    AppStoragePath = '%FORM_NAME%'
     StoredProps.Strings = (
       'dgTelef.Tag')
     StoredValues = <>
     Left = 50
     Top = 145
   end
-  object qbeEleTel2: TQBEQuery
+  object qbeEleTel2: TJvQBEQuery
     OnCalcFields = qbeEleTelCalcFields
     DatabaseName = 'DB'
     AuxiliaryTables = False

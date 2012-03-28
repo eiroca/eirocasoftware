@@ -23,28 +23,29 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, Grids, DBGrids, RXDBCtrl,
-  ExtCtrls, Menus, RXLookup, DBLookup,
-  rxPlacemnt, rxDBQBE, rxdbfilter, rxSpeedbar;
+  Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, Grids, DBGrids, 
+  ExtCtrls, Menus, DBLookup, JvFormPlacement, JvBDEQBE, JvComponentBase,
+  JvBDEFilter, JvExDBGrids, JvDBGrid, JvExControls, JvDBLookup, JvExExtCtrls,
+  JvExtComponent, JvSpeedbar;
 
 type
   TfmEleIndi = class(TForm)
     dsIndir: TDataSource;
-    flIndir: TRxDBFilter;
+    flIndir: TJvDBFilter;
     MainMenu1: TMainMenu;
     Operazioni1: TMenuItem;
-    SpeedBar1: TSpeedBar;
+    SpeedBar1: TJvSpeedBar;
     miClose: TMenuItem;
     cbTipoInd: TComboBox;
     cbFiltCont: TCheckBox;         
-    lcContatti: TRxDBLookupCombo;
+    lcContatti: TJvDBLookupCombo;
     cbFiltTipo: TCheckBox;
     tbContat: TTable;
     dsContat: TDataSource;
-    qbeEleInd: TQBEQuery;
+    qbeEleInd: TJvQBEQuery;
     qbeEleIndNote: TStringField;
     qbeEleIndContat: TStringField;
-    fpEleTel: TFormStorage;
+    fpEleTel: TJvFormStorage;
     qbeEleIndTipo: TIntegerField;
     qbeEleIndCodCon: TIntegerField;
     qbeEleIndTipoCont: TIntegerField;
@@ -60,7 +61,7 @@ type
     qbeEleIndCodInd: TIntegerField;
     miConnect: TMenuItem;
     N1: TMenuItem;
-    dgIndir: TRxDBGrid;
+    dgIndir: TJvDBGrid;
     N2: TMenuItem;
     miEleIndScrn: TMenuItem;
     miEleIndPrnt: TMenuItem;
@@ -78,7 +79,6 @@ type
     procedure cbTipoIndChange(Sender: TObject);
     procedure dgIndirCheckButton(Sender: TObject; ACol: Longint;
       Field: TField; var Enabled: Boolean);
-    procedure fpEleTelRestorePlacement(Sender: TObject);
     procedure qbeEleIndCalcFields(DataSet: TDataset);
     procedure dgIndirGetCellParams(Sender: TObject; Field: TField;
       AFont: TFont; var Background: TColor; Highlight: Boolean);
@@ -104,7 +104,7 @@ implementation
 {$R *.DFM}
 
 uses
-  uOpzioni, eLib, DContat, ContComm;
+  uOpzioni, eLibCore, DContat, ContComm;
 
 function ElencoIndirizzi(CodCon: integer): boolean;
 var
@@ -188,7 +188,6 @@ procedure TfmEleIndi.FormCreate(Sender: TObject);
 var
   i: integer;
 begin
-  fpEleTel.INIFileName:= Opzioni.LocalINI;
   cbTipoInd.Clear;
   for i:= ctIndPrimo to ctIndUltimo do begin
     cbTipoInd.Items.AddObject(IndiDesc[i], pointer(i));
@@ -258,11 +257,6 @@ procedure TfmEleIndi.dgIndirCheckButton(Sender: TObject; ACol: Longint;
   Field: TField; var Enabled: Boolean);
 begin
   Enabled:= false;
-end;
-
-procedure TfmEleIndi.fpEleTelRestorePlacement(Sender: TObject);
-begin
-  fpEleTel.INIFileName:= Opzioni.LocalINI;
 end;
 
 procedure TfmEleIndi.qbeEleIndCalcFields(DataSet: TDataset);

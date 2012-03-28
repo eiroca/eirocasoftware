@@ -47,7 +47,6 @@ object fmStatistiche: TfmStatistiche
       Height = 21
       Hint = 'Variabile da utilizzare come '#13#10'raggruppamento sulle righe'
       Style = csDropDownList
-      ItemHeight = 13
       TabOrder = 0
       Items.Strings = (
         'Denominazione'
@@ -63,7 +62,6 @@ object fmStatistiche: TfmStatistiche
       Height = 21
       Hint = 'Variabile da utilizzare come '#13#10'raggruppamento sulle righe'
       Style = csDropDownList
-      ItemHeight = 0
       TabOrder = 1
     end
     object BitBtn1: TBitBtn
@@ -73,8 +71,6 @@ object fmStatistiche: TfmStatistiche
       Height = 23
       Hint = 'Effettua l'#39'indagine statistica'
       Caption = 'Esegui indagine'
-      TabOrder = 2
-      OnClick = BitBtn1Click
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000120B0000120B00001000000000000000000000000000
@@ -91,6 +87,8 @@ object fmStatistiche: TfmStatistiche
       Margin = 10
       NumGlyphs = 2
       Spacing = -1
+      TabOrder = 2
+      OnClick = BitBtn1Click
     end
     object BitBtn2: TBitBtn
       Left = 270
@@ -101,8 +99,6 @@ object fmStatistiche: TfmStatistiche
         'Esposta i risulati ottenuti al fine '#13#10'di rielaborarli con altri ' +
         'programmi'
       Caption = 'Salva i risultati'
-      TabOrder = 3
-      OnClick = BitBtn2Click
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000130B0000130B00001000000000000000000000000000
@@ -119,6 +115,8 @@ object fmStatistiche: TfmStatistiche
       Margin = 10
       NumGlyphs = 2
       Spacing = -1
+      TabOrder = 3
+      OnClick = BitBtn2Click
     end
   end
   object ctContat: TcwXTab
@@ -197,9 +195,9 @@ object fmStatistiche: TfmStatistiche
       Size = 100
     end
   end
-  object fsStat: TFormStorage
-    UseRegistry = False
-    OnRestorePlacement = fsStatRestorePlacement
+  object fsStat: TJvFormStorage
+    AppStorage = fmMain.apStorage
+    AppStoragePath = '%FORM_NAME%\'
     StoredValues = <>
     Left = 60
     Top = 125
