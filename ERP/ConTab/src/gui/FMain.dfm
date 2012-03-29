@@ -12,7 +12,6 @@ object fmMain: TfmMain
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = True
-  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object MainMenu1: TMainMenu
@@ -58,10 +57,5 @@ object fmMain: TfmMain
         OnClick = Informazionisu1Click
       end
     end
-  end
-  object AppEvents1: TAppEvents
-    OnSettingsChanged = AppEvents1SettingsChanged
-    Left = 20
-    Top = 10
   end
 end

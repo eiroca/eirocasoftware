@@ -4,64 +4,57 @@ object dmEditConGiornale: TdmEditConGiornale
   OnDestroy = DataModuleDestroy
   Height = 335
   Width = 353
-  object tbConGiornale: TADOTable
+  object tbConGiornale: TZTable
     Connection = dmContabilita.dbContabilita
     TableName = 'ConGiornale'
     Left = 40
     Top = 5
-    object tbConGiornaleCodScr: TAutoIncField
+    object tbConGiornaleCodScr: TIntegerField
       FieldName = 'CodScr'
+      ReadOnly = True
     end
-    object tbConGiornaleDataScr: TDateTimeField
+    object tbConGiornaleDataScr: TDateField
       FieldName = 'DataScr'
-      Required = True
+      ReadOnly = True
     end
-    object tbConGiornaleDataOpe: TDateTimeField
+    object tbConGiornaleDataOpe: TDateField
       FieldName = 'DataOpe'
-      Required = True
+      ReadOnly = True
     end
-    object tbConGiornaleDesc: TStringField
+    object tbConGiornaleDesc: TWideStringField
       FieldName = 'Desc'
-      Required = True
+      ReadOnly = True
       Size = 40
+    end
+    object tbConGiornaleTipoScr: TSmallintField
+      FieldName = 'TipoScr'
+      ReadOnly = True
     end
     object tbConGiornaleUfficiale: TBooleanField
       FieldName = 'Ufficiale'
-      Required = True
+      ReadOnly = True
     end
   end
-  object tbConGiornaleDett: TADOTable
+  object tbConGiornaleDett: TZTable
     Connection = dmContabilita.dbContabilita
-    IndexFieldNames = 'CodScr'
+    SortedFields = 'CodScr'
+    TableName = 'ConGiornaleDett'
     MasterFields = 'CodScr'
     MasterSource = dsConGiornale
-    TableName = 'ConGiornaleDett'
+    IndexFieldNames = 'CodScr Asc'
     Left = 41
     Top = 55
     object tbConGiornaleDettCodScr: TIntegerField
       FieldName = 'CodScr'
-      Required = True
-      Visible = False
+      ReadOnly = True
     end
     object tbConGiornaleDettCodCon: TIntegerField
       FieldName = 'CodCon'
-      Required = True
-      Visible = False
+      ReadOnly = True
     end
-    object tbConGiornaleDettCodConDett: TStringField
-      DisplayLabel = 'Codice Conto'
-      FieldKind = fkLookup
-      FieldName = 'CodConDett'
-      LookupDataSet = tbConConti
-      LookupKeyFields = 'CodCon'
-      LookupResultField = 'Desc'
-      KeyFields = 'CodCon'
-      Size = 30
-      Lookup = True
-    end
-    object tbConGiornaleDettImporto: TCurrencyField
+    object tbConGiornaleDettImporto: TFloatField
       FieldName = 'Importo'
-      Required = True
+      ReadOnly = True
     end
   end
   object dsConGiornale: TDataSource
@@ -74,10 +67,41 @@ object dmEditConGiornale: TdmEditConGiornale
     Left = 143
     Top = 58
   end
-  object tbConConti: TADOTable
+  object tbConConti: TZTable
     Connection = dmContabilita.dbContabilita
     TableName = 'ConConti'
     Left = 40
     Top = 115
+    object tbConContiCodCon: TIntegerField
+      FieldName = 'CodCon'
+      ReadOnly = True
+    end
+    object tbConContiAlias: TWideStringField
+      FieldName = 'Alias'
+      ReadOnly = True
+      Size = 12
+    end
+    object tbConContiDesc: TWideStringField
+      FieldName = 'Desc'
+      ReadOnly = True
+      Size = 30
+    end
+    object tbConContiGruppo: TBooleanField
+      FieldName = 'Gruppo'
+      ReadOnly = True
+    end
+    object tbConContiTipiMovi: TSmallintField
+      FieldName = 'TipiMovi'
+      ReadOnly = True
+    end
+    object tbConContiLivDett: TSmallintField
+      FieldName = 'LivDett'
+      ReadOnly = True
+    end
+    object tbConContiNote: TWideMemoField
+      FieldName = 'Note'
+      ReadOnly = True
+      BlobType = ftWideMemo
+    end
   end
 end

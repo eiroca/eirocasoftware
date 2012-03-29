@@ -4,18 +4,41 @@ object dmEditConBilanci: TdmEditConBilanci
   OnDestroy = DataModuleDestroy
   Height = 335
   Width = 353
-  object tbConBilanci: TADOTable
+  object tbConBilanci: TZTable
     Connection = dmContabilita.dbContabilita
-    CursorType = ctStatic
     TableName = 'ConBilanci'
     Left = 40
     Top = 5
-    object tbConBilanciCodBil: TAutoIncField
+    object tbConBilanciCodBil: TIntegerField
       FieldName = 'CodBil'
+      ReadOnly = True
     end
     object tbConBilanciCodSch: TIntegerField
       FieldName = 'CodSch'
-      Required = True
+      ReadOnly = True
+    end
+    object tbConBilanciAlias: TWideStringField
+      FieldName = 'Alias'
+      ReadOnly = True
+      Size = 12
+    end
+    object tbConBilanciDesc: TWideStringField
+      FieldName = 'Desc'
+      ReadOnly = True
+      Size = 30
+    end
+    object tbConBilanciData: TDateField
+      FieldName = 'Data'
+      ReadOnly = True
+    end
+    object tbConBilanciNote: TWideMemoField
+      FieldName = 'Note'
+      ReadOnly = True
+      BlobType = ftWideMemo
+    end
+    object tbConBilanciUfficiale: TBooleanField
+      FieldName = 'Ufficiale'
+      ReadOnly = True
     end
     object tbConBilanciCodSchDett: TStringField
       FieldKind = fkLookup
@@ -24,65 +47,29 @@ object dmEditConBilanci: TdmEditConBilanci
       LookupKeyFields = 'CodSch'
       LookupResultField = 'Desc'
       KeyFields = 'CodSch'
-      Size = 30
       Lookup = True
     end
-    object tbConBilanciAlias: TStringField
-      FieldName = 'Alias'
-      Required = True
-      Size = 12
-    end
-    object tbConBilanciDesc: TStringField
-      FieldName = 'Desc'
-      Required = True
-      Size = 30
-    end
-    object tbConBilanciData: TDateTimeField
-      FieldName = 'Data'
-      Required = True
-    end
-    object tbConBilanciNote: TMemoField
-      FieldName = 'Note'
-      BlobType = ftMemo
-    end
-    object tbConBilanciUfficiale: TBooleanField
-      FieldName = 'Ufficiale'
-    end
   end
-  object tbConBilanciDett: TADOTable
+  object tbConBilanciDett: TZTable
     Connection = dmContabilita.dbContabilita
-    CursorType = ctStatic
-    IndexFieldNames = 'CodBil'
+    SortedFields = 'CodBil'
+    TableName = 'ConBilanciDett'
     MasterFields = 'CodBil'
     MasterSource = dsConBilanci
-    TableName = 'ConBilanciDett'
+    IndexFieldNames = 'CodBil Asc'
     Left = 41
     Top = 55
     object tbConBilanciDettCodBil: TIntegerField
       FieldName = 'CodBil'
-      Required = True
-      Visible = False
+      ReadOnly = True
     end
     object tbConBilanciDettCodCon: TIntegerField
       FieldName = 'CodCon'
-      Required = True
-      Visible = False
+      ReadOnly = True
     end
-    object tbConBilanciDettCodConDett: TStringField
-      DisplayLabel = 'Codice Conto'
-      FieldKind = fkLookup
-      FieldName = 'CodConDett'
-      LookupDataSet = tbConConti
-      LookupKeyFields = 'CodCon'
-      LookupResultField = 'Desc'
-      KeyFields = 'CodCon'
-      Size = 30
-      Lookup = True
-    end
-    object tbConBilanciDettSaldo: TCurrencyField
-      DisplayLabel = 'Saldo a bilancio'
+    object tbConBilanciDettSaldo: TFloatField
       FieldName = 'Saldo'
-      Required = True
+      ReadOnly = True
     end
   end
   object dsConBilanci: TDataSource
@@ -95,16 +82,14 @@ object dmEditConBilanci: TdmEditConBilanci
     Left = 143
     Top = 58
   end
-  object tbConConti: TADOTable
+  object tbConConti: TZTable
     Connection = dmContabilita.dbContabilita
-    CursorType = ctStatic
     TableName = 'ConConti'
     Left = 40
     Top = 115
   end
-  object tbConSchemiBilancio: TADOTable
+  object tbConSchemiBilancio: TZTable
     Connection = dmContabilita.dbContabilita
-    CursorType = ctStatic
     TableName = 'ConSchemiBilancio'
     Left = 40
     Top = 175

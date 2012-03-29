@@ -23,23 +23,24 @@ interface
 
 uses
   SysUtils, Windows, Classes, Graphics, Controls,
-  Forms, Dialogs, DB, DBTables, ADODB;
+  Forms, Dialogs, DB, DBTables, ADODB, ZAbstractRODataset, ZAbstractDataset,
+  ZAbstractTable, ZDataset;
 
 type
   TdmEditConConti = class(TDataModule)
     dsConConti: TDataSource;
-    tbConConti: TADOTable;
-    tbSysCon_TipiMovi: TADOTable;
-    tbSysCon_LivDett: TADOTable;
-    tbConContiTipiMoviDesc: TStringField;
-    tbConContiCodCon: TAutoIncField;
-    tbConContiAlias: TStringField;
-    tbConContiDesc: TStringField;
+    tbConConti: TZTable;
+    tbSysCon_TipiMovi: TZTable;
+    tbSysCon_LivDett: TZTable;
+    tbConContiCodCon: TIntegerField;
+    tbConContiAlias: TWideStringField;
+    tbConContiDesc: TWideStringField;
     tbConContiGruppo: TBooleanField;
     tbConContiTipiMovi: TSmallintField;
     tbConContiLivDett: TSmallintField;
+    tbConContiNote: TWideMemoField;
+    tbConContiTipiMoviDesc: TStringField;
     tbConContiLivDettDesc: TStringField;
-    tbConContiNote: TMemoField;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private

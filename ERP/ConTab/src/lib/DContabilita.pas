@@ -23,11 +23,11 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  DBTables, DB, ADODB;
+  DBTables, DB, ADODB, ZAbstractConnection, ZConnection;
 
 type
   TdmContabilita = class(TDataModule)
-    dbContabilita: TADOConnection;
+    dbContabilita: TZConnection;
   private
     { Private declarations }
   public

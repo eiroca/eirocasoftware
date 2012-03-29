@@ -22,15 +22,14 @@ unit FSplash;
 interface
 
 uses
-  Forms, Classes, Controls, ExtCtrls, StdCtrls, Graphics,
-  RXCtrls;
+  Forms, Classes, Controls, ExtCtrls, StdCtrls, Graphics, JvExControls, JvLabel;
 
 type
   TfmSplash = class(TForm)
     Panel1: TPanel;
     Image1: TImage;
-    LabelEffect1: TRxLabel;
-    LabelEffect2: TRxLabel;
+    LabelEffect1: TJvLabel;
+    LabelEffect2: TJvLabel;
     procedure FormDeactivate(Sender: TObject);
   end;
 
