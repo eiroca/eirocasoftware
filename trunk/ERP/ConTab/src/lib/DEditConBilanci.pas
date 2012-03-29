@@ -23,28 +23,28 @@ interface
 
 uses
   SysUtils, Windows, Classes, Graphics, Controls,
-  Forms, Dialogs, DB, DBTables, ADODB;
+  Forms, Dialogs, DB, DBTables, ADODB, ZAbstractRODataset, ZAbstractDataset,
+  ZAbstractTable, ZDataset;
 
 type
   TdmEditConBilanci = class(TDataModule)
-    tbConBilanci: TADOTable;
-    tbConBilanciDett: TADOTable;
+    tbConBilanci: TZTable;
+    tbConBilanciDett: TZTable;
     dsConBilanci: TDataSource;
     dsConBilanciDett: TDataSource;
-    tbConConti: TADOTable;
-    tbConBilanciCodBil: TAutoIncField;
+    tbConConti: TZTable;
+    tbConSchemiBilancio: TZTable;
+    tbConBilanciCodBil: TIntegerField;
     tbConBilanciCodSch: TIntegerField;
-    tbConBilanciAlias: TStringField;
-    tbConBilanciData: TDateTimeField;
-    tbConBilanciNote: TMemoField;
+    tbConBilanciAlias: TWideStringField;
+    tbConBilanciDesc: TWideStringField;
+    tbConBilanciData: TDateField;
+    tbConBilanciNote: TWideMemoField;
     tbConBilanciUfficiale: TBooleanField;
     tbConBilanciDettCodBil: TIntegerField;
     tbConBilanciDettCodCon: TIntegerField;
-    tbConBilanciDettSaldo: TCurrencyField;
-    tbConBilanciDettCodConDett: TStringField;
-    tbConSchemiBilancio: TADOTable;
+    tbConBilanciDettSaldo: TFloatField;
     tbConBilanciCodSchDett: TStringField;
-    tbConBilanciDesc: TStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private

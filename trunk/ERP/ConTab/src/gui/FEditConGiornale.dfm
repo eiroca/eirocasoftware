@@ -134,7 +134,7 @@ object fmEditConGiornale: TfmEditConGiornale
         ValueChecked = 'True'
         ValueUnchecked = 'False'
       end
-      object DBDateEdit1: TDBDateEdit
+      object DBDateEdit1: TJvDBDateEdit
         Left = 97
         Top = 55
         Width = 121
@@ -144,7 +144,7 @@ object fmEditConGiornale: TfmEditConGiornale
         NumGlyphs = 2
         TabOrder = 2
       end
-      object DBDateEdit2: TDBDateEdit
+      object DBDateEdit2: TJvDBDateEdit
         Left = 97
         Top = 80
         Width = 121

@@ -23,28 +23,26 @@ interface
 
 uses
   SysUtils, Windows, Classes, Graphics, Controls,
-  Forms, Dialogs, DB, DBTables, ADODB;
+  Forms, Dialogs, DB, DBTables, ADODB, ZAbstractRODataset, ZAbstractDataset,
+  ZAbstractTable, ZDataset;
 
 type
   TdmEditConSchemiBilancio = class(TDataModule)
-    tbConSchemiBilancio: TADOTable;
-    tbConSchemiBilancioDett: TADOTable;
+    tbConSchemiBilancio: TZTable;
+    tbConSchemiBilancioDett: TZTable;
     dsConSchemiBilancio: TDataSource;
     dsConSchemiBilancioDett: TDataSource;
-    tbConConti: TADOTable;
-    tbSysCon_Posizione: TADOTable;
-    tbConSchemiBilancioCodSch: TAutoIncField;
-    tbConSchemiBilancioAlias: TStringField;
-    tbConSchemiBilancioDesc: TStringField;
-    tbConSchemiBilancioNote: TMemoField;
+    tbConConti: TZTable;
+    tbSysCon_Posizione: TZTable;
+    tbConSchemiBilancioCodSch: TIntegerField;
+    tbConSchemiBilancioAlias: TWideStringField;
+    tbConSchemiBilancioDesc: TWideStringField;
+    tbConSchemiBilancioNote: TWideMemoField;
     tbConSchemiBilancioDettCodSch: TIntegerField;
     tbConSchemiBilancioDettCodCon: TIntegerField;
     tbConSchemiBilancioDettParent: TIntegerField;
-    tbConSchemiBilancioDettPosizione: TIntegerField;
-    tbConSchemiBilancioDettPosizioneDett: TStringField;
     tbConSchemiBilancioDettOrder: TIntegerField;
-    tbConSchemiBilancioDettCodConDett: TStringField;
-    tbConSchemiBilancioDettParentDett: TStringField;
+    tbConSchemiBilancioDettPosizione: TSmallintField;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private

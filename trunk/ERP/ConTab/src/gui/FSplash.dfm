@@ -28,8 +28,8 @@ object fmSplash: TfmSplash
     object Image1: TImage
       Left = 4
       Top = 4
-      Width = 242
-      Height = 179
+      Width = 240
+      Height = 180
       Align = alClient
       AutoSize = True
       Center = True
@@ -1419,8 +1419,10 @@ object fmSplash: TfmSplash
         E8E9E8E9E8E9E8E9E8ED45FF45FF4B454B45E9E8E9E8E9FFE8E9E8E9E84B4B4B
         974B97979797972119212197974B4B45FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFF}
+      ExplicitWidth = 242
+      ExplicitHeight = 179
     end
-    object LabelEffect1: TRxLabel
+    object LabelEffect1: TJvLabel
       Left = 0
       Top = 160
       Width = 246
@@ -1437,10 +1439,14 @@ object fmSplash: TfmSplash
       ParentColor = False
       ParentFont = False
       ShadowColor = clBlack
-      ShadowPos = spRightBottom
       Transparent = True
+      HotTrackFont.Charset = DEFAULT_CHARSET
+      HotTrackFont.Color = clWindowText
+      HotTrackFont.Height = -21
+      HotTrackFont.Name = 'Times New Roman'
+      HotTrackFont.Style = []
     end
-    object LabelEffect2: TRxLabel
+    object LabelEffect2: TJvLabel
       Left = 5
       Top = 0
       Width = 245
@@ -1457,8 +1463,12 @@ object fmSplash: TfmSplash
       ParentColor = False
       ParentFont = False
       ShadowColor = clBlack
-      ShadowPos = spRightBottom
       Transparent = True
+      HotTrackFont.Charset = DEFAULT_CHARSET
+      HotTrackFont.Color = clWindowText
+      HotTrackFont.Height = -35
+      HotTrackFont.Name = 'Times New Roman'
+      HotTrackFont.Style = []
     end
   end
 end

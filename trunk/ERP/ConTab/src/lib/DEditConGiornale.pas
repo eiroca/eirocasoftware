@@ -23,24 +23,32 @@ interface
 
 uses
   SysUtils, Windows, Classes, Graphics, Controls,
-  Forms, Dialogs, DB, DBTables, ADODB;
+  Forms, Dialogs, DB, DBTables, ADODB, ZDataset, ZAbstractRODataset,
+  ZAbstractDataset, ZAbstractTable;
 
 type
   TdmEditConGiornale = class(TDataModule)
-    tbConGiornale: TADOTable;
-    tbConGiornaleDett: TADOTable;
+    tbConGiornale: TZTable;
+    tbConGiornaleDett: TZTable;
     dsConGiornale: TDataSource;
     dsConGiornaleDett: TDataSource;
-    tbConConti: TADOTable;
-    tbConGiornaleCodScr: TAutoIncField;
-    tbConGiornaleDataScr: TDateTimeField;
-    tbConGiornaleDataOpe: TDateTimeField;
+    tbConConti: TZTable;
+    tbConGiornaleCodScr: TIntegerField;
+    tbConGiornaleDataScr: TDateField;
+    tbConGiornaleDataOpe: TDateField;
+    tbConGiornaleDesc: TWideStringField;
+    tbConGiornaleTipoScr: TSmallintField;
     tbConGiornaleUfficiale: TBooleanField;
     tbConGiornaleDettCodScr: TIntegerField;
     tbConGiornaleDettCodCon: TIntegerField;
-    tbConGiornaleDettImporto: TCurrencyField;
-    tbConGiornaleDettCodConDett: TStringField;
-    tbConGiornaleDesc: TStringField;
+    tbConGiornaleDettImporto: TFloatField;
+    tbConContiCodCon: TIntegerField;
+    tbConContiAlias: TWideStringField;
+    tbConContiDesc: TWideStringField;
+    tbConContiGruppo: TBooleanField;
+    tbConContiTipiMovi: TSmallintField;
+    tbConContiLivDett: TSmallintField;
+    tbConContiNote: TWideMemoField;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private

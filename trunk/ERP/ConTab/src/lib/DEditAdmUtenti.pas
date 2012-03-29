@@ -23,16 +23,17 @@ interface
 
 uses
   SysUtils, Windows, Classes, Graphics, Controls,
-  Forms, Dialogs, DB, DBTables, DContabilita, ADODB;
+  Forms, Dialogs, DB, DBTables, DContabilita, ADODB,
+  ZAbstractRODataset, ZAbstractDataset, ZAbstractTable, ZDataset;
 
 type
   TdmEditAdmUtenti = class(TDataModule)
     dsAdmUtenti: TDataSource;
-    tbAdmUtenti: TADOTable;
-    tbAdmUtentiCodUsr: TAutoIncField;
+    tbAdmUtenti: TZTable;
+    tbAdmUtentiCodUsr: TIntegerField;
+    tbAdmUtentiUserName: TWideStringField;
+    tbAdmUtentiPassword: TWideStringField;
     tbAdmUtentiSuperUser: TBooleanField;
-    tbAdmUtentiUserName: TStringField;
-    tbAdmUtentiPassword: TStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private

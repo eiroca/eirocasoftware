@@ -4,99 +4,59 @@ object dmEditConSchemiBilancio: TdmEditConSchemiBilancio
   OnDestroy = DataModuleDestroy
   Height = 335
   Width = 353
-  object tbConSchemiBilancio: TADOTable
+  object tbConSchemiBilancio: TZTable
     Connection = dmContabilita.dbContabilita
     TableName = 'ConSchemiBilancio'
     Left = 40
     Top = 5
-    object tbConSchemiBilancioCodSch: TAutoIncField
+    object tbConSchemiBilancioCodSch: TIntegerField
       FieldName = 'CodSch'
       ReadOnly = True
     end
-    object tbConSchemiBilancioAlias: TStringField
+    object tbConSchemiBilancioAlias: TWideStringField
       FieldName = 'Alias'
-      Required = True
+      ReadOnly = True
       Size = 12
     end
-    object tbConSchemiBilancioDesc: TStringField
+    object tbConSchemiBilancioDesc: TWideStringField
       FieldName = 'Desc'
-      Required = True
+      ReadOnly = True
       Size = 30
     end
-    object tbConSchemiBilancioNote: TMemoField
+    object tbConSchemiBilancioNote: TWideMemoField
       FieldName = 'Note'
-      BlobType = ftMemo
+      ReadOnly = True
+      BlobType = ftWideMemo
     end
   end
-  object tbConSchemiBilancioDett: TADOTable
+  object tbConSchemiBilancioDett: TZTable
     Connection = dmContabilita.dbContabilita
-    IndexFieldNames = 'CodSch'
+    SortedFields = 'CodSch'
+    TableName = 'ConSchemiBilancioDett'
     MasterFields = 'CodSch'
     MasterSource = dsConSchemiBilancio
-    TableName = 'ConSchemiBilancioDett'
+    IndexFieldNames = 'CodSch Asc'
     Left = 41
     Top = 55
     object tbConSchemiBilancioDettCodSch: TIntegerField
-      DisplayLabel = 'Codice Schema'
       FieldName = 'CodSch'
-      Required = True
-      Visible = False
+      ReadOnly = True
     end
     object tbConSchemiBilancioDettCodCon: TIntegerField
-      DisplayLabel = 'Codice Conto'
       FieldName = 'CodCon'
-      Required = True
-      Visible = False
+      ReadOnly = True
     end
     object tbConSchemiBilancioDettParent: TIntegerField
-      DisplayLabel = 'Conto di aggregazione'
       FieldName = 'Parent'
-      Visible = False
-    end
-    object tbConSchemiBilancioDettParentDett: TStringField
-      DisplayLabel = 'Aggrega a'
-      DisplayWidth = 23
-      FieldKind = fkLookup
-      FieldName = 'ParentDett'
-      LookupDataSet = tbConConti
-      LookupKeyFields = 'CodCon'
-      LookupResultField = 'Desc'
-      KeyFields = 'Parent'
-      Size = 30
-      Lookup = True
-    end
-    object tbConSchemiBilancioDettCodConDett: TStringField
-      DisplayLabel = 'Codice Conto'
-      DisplayWidth = 17
-      FieldKind = fkLookup
-      FieldName = 'CodConDett'
-      LookupDataSet = tbConConti
-      LookupKeyFields = 'CodCon'
-      LookupResultField = 'Desc'
-      KeyFields = 'CodCon'
-      Size = 30
-      Lookup = True
+      ReadOnly = True
     end
     object tbConSchemiBilancioDettOrder: TIntegerField
-      DisplayLabel = 'Ordine'
-      DisplayWidth = 7
       FieldName = 'Order'
+      ReadOnly = True
     end
-    object tbConSchemiBilancioDettPosizioneDett: TStringField
-      DisplayLabel = 'Posizionamento'
-      DisplayWidth = 17
-      FieldKind = fkLookup
-      FieldName = 'PosizioneDett'
-      LookupDataSet = tbSysCon_Posizione
-      LookupKeyFields = 'Posizione'
-      LookupResultField = 'Descrizione'
-      KeyFields = 'Posizione'
-      Size = 30
-      Lookup = True
-    end
-    object tbConSchemiBilancioDettPosizione: TIntegerField
+    object tbConSchemiBilancioDettPosizione: TSmallintField
       FieldName = 'Posizione'
-      Visible = False
+      ReadOnly = True
     end
   end
   object dsConSchemiBilancio: TDataSource
@@ -109,13 +69,13 @@ object dmEditConSchemiBilancio: TdmEditConSchemiBilancio
     Left = 168
     Top = 53
   end
-  object tbConConti: TADOTable
+  object tbConConti: TZTable
     Connection = dmContabilita.dbContabilita
     TableName = 'ConConti'
     Left = 40
     Top = 165
   end
-  object tbSysCon_Posizione: TADOTable
+  object tbSysCon_Posizione: TZTable
     Connection = dmContabilita.dbContabilita
     TableName = 'SysCon_Posizione'
     Left = 40

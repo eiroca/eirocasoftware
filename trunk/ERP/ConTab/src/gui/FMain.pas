@@ -22,11 +22,11 @@ unit FMain;
 interface
 
 uses     
-  eLib,
+  eLibCore,
   Windows, Messages, Graphics, Controls, Forms, Dialogs,
   SysUtils, Classes,
-  RxLogin, Menus, RXCtrls, StdCtrls, ExtCtrls, Db, DBTables,
-   rxAppEvent;
+  Menus, StdCtrls, ExtCtrls, Db, DBTables,
+   JvComponentBase, JvAppEvent;
 
 type
   TfmMain = class(TForm)
@@ -37,16 +37,13 @@ type
     Aiuto1: TMenuItem;
     Informazionisu1: TMenuItem;
     ContGenerale1: TMenuItem;
-    AppEvents1: TAppEvents;
     Pianodeiconti1: TMenuItem;
     Schemidibilancio1: TMenuItem;
     Bilanci1: TMenuItem;
     Scritture1: TMenuItem;
     Utenti1: TMenuItem;
     procedure miExitClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
     procedure Informazionisu1Click(Sender: TObject);
-    procedure AppEvents1SettingsChanged(Sender: TObject);
     procedure Pianodeiconti1Click(Sender: TObject);
     procedure Schemidibilancio1Click(Sender: TObject);
     procedure Bilanci1Click(Sender: TObject);
@@ -71,24 +68,9 @@ uses
   FEditConConti, FEditConSchemiBilancio, FEditConBilanci, FEditConGiornale,
   FAboutGPL, FEditAdmUtenti;
 
-procedure TfmMain.AppEvents1SettingsChanged(Sender: TObject);
-begin
-(*
-  SetLongYear;
-*)
-end;
-
 procedure TfmMain.miExitClick(Sender: TObject);
 begin
   Close;
-end;
-
-procedure TfmMain.FormCreate(Sender: TObject);
-begin
-(*
-  SetLongYear;
-  FourDigitYear:= true;
-*)
 end;
 
 procedure TfmMain.Informazionisu1Click(Sender: TObject);
