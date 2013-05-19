@@ -1,6 +1,0 @@
-Name       : eicShell
-Description: Shell di coordimaneto applicazioni
-OS         : Win32
-Type       : GUI
-Language   : Delphi XE2
-Dependency : eLib, Jedi
