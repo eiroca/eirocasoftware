@@ -1,6 +1,0 @@
-Name       : ConTatti
-Description: Gestione contatti
-OS         : Win32
-Type       : GUI
-Language   : Delphi XE2
-Dependency : eLib, Jedi

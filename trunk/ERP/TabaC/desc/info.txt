@@ -1,6 +1,0 @@
-Name       : TabaC
-Description: Gestione magazzino tabacchi
-OS         : Win32
-Type       : GUI
-Language   : Delphi XE2
-Dependency : eLib, Jedi
