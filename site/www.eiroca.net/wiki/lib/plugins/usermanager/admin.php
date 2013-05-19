@@ -73,13 +73,12 @@ class admin_plugin_usermanager extends DokuWiki_Admin_Plugin {
      * handle user request
      */
     function handle() {
-        global $ID;
-
+        global $INPUT;
         if (is_null($this->_auth)) return false;
 
         // extract the command and any specific parameters
         // submit button name is of the form - fn[cmd][param(s)]
-        $fn   = $_REQUEST['fn'];
+        $fn   = $INPUT->param('fn');
 
         if (is_array($fn)) {
             $cmd = key($fn);
@@ -90,8 +89,7 @@ class admin_plugin_usermanager extends DokuWiki_Admin_Plugin {
         }
 
         if ($cmd != "search") {
-          if (!empty($_REQUEST['start']))
-            $this->_start = $_REQUEST['start'];
+          $this->_start = $INPUT->int('start', 0);
           $this->_filter = $this->_retrieveFilter();
         }
 
@@ -149,10 +147,11 @@ class admin_plugin_usermanager extends DokuWiki_Admin_Plugin {
         }
         ptln("<form action=\"".wl($ID)."\" method=\"post\">");
         formSecurityToken();
+        ptln("  <div class=\"table\">");
         ptln("  <table class=\"inline\">");
         ptln("    <thead>");
         ptln("      <tr>");
-        ptln("        <th>&nbsp;</th><th>".$this->lang["user_id"]."</th><th>".$this->lang["user_name"]."</th><th>".$this->lang["user_mail"]."</th><th>".$this->lang["user_groups"]."</th>");
+        ptln("        <th>&#160;</th><th>".$this->lang["user_id"]."</th><th>".$this->lang["user_name"]."</th><th>".$this->lang["user_mail"]."</th><th>".$this->lang["user_groups"]."</th>");
         ptln("      </tr>");
 
         ptln("      <tr>");
@@ -206,6 +205,7 @@ class admin_plugin_usermanager extends DokuWiki_Admin_Plugin {
         ptln("      </td></tr>");
         ptln("    </tbody>");
         ptln("  </table>");
+        ptln("  </div>");
 
         ptln("</form>");
         ptln("</div>");
@@ -256,6 +256,7 @@ class admin_plugin_usermanager extends DokuWiki_Admin_Plugin {
 
         ptln("<form action=\"".wl($ID)."\" method=\"post\">",$indent);
         formSecurityToken();
+        ptln("  <div class=\"table\">",$indent);
         ptln("  <table class=\"inline\">",$indent);
         ptln("    <thead>",$indent);
         ptln("      <tr><th>".$this->lang["field"]."</th><th>".$this->lang["value"]."</th></tr>",$indent);
@@ -295,6 +296,7 @@ class admin_plugin_usermanager extends DokuWiki_Admin_Plugin {
         ptln("      </tr>",$indent);
         ptln("    </tbody>",$indent);
         ptln("  </table>",$indent);
+        ptln("  </div>",$indent);
 
         foreach ($notes as $note)
           ptln("<div class=\"fn\">".$note."</div>",$indent);
@@ -304,7 +306,6 @@ class admin_plugin_usermanager extends DokuWiki_Admin_Plugin {
 
     function _htmlInputField($id, $name, $label, $value, $cando, $indent=0) {
         $class = $cando ? '' : ' class="disabled"';
-        $disabled = $cando ? '' : ' disabled="disabled"';
         echo str_pad('',$indent);
 
         if($name == 'userpass'){
@@ -344,6 +345,7 @@ class admin_plugin_usermanager extends DokuWiki_Admin_Plugin {
     }
 
     function _addUser(){
+        global $INPUT;
         if (!checkSecurityToken()) return false;
         if (!$this->_auth->canDo('addUser')) return false;
 
@@ -352,7 +354,7 @@ class admin_plugin_usermanager extends DokuWiki_Admin_Plugin {
 
         if ($this->_auth->canDo('modPass')){
           if (empty($pass)){
-            if(!empty($_REQUEST['usernotify'])){
+            if($INPUT->has('usernotify')){
               $pass = auth_pwgen();
             } else {
               msg($this->lang['add_fail'], -1);
@@ -392,7 +394,7 @@ class admin_plugin_usermanager extends DokuWiki_Admin_Plugin {
 
           msg($this->lang['add_ok'], 1);
 
-          if (!empty($_REQUEST['usernotify']) && $pass) {
+          if ($INPUT->has('usernotify') && $pass) {
             $this->_notifyUser($user,$pass);
           }
         } else {
@@ -406,13 +408,13 @@ class admin_plugin_usermanager extends DokuWiki_Admin_Plugin {
      * Delete user
      */
     function _deleteUser(){
-        global $conf;
+        global $conf, $INPUT;
 
         if (!checkSecurityToken()) return false;
         if (!$this->_auth->canDo('delUser')) return false;
 
-        $selected = $_REQUEST['delete'];
-        if (!is_array($selected) || empty($selected)) return false;
+        $selected = $INPUT->arr('delete');
+        if (empty($selected)) return false;
         $selected = array_keys($selected);
 
         if(in_array($_SERVER['REMOTE_USER'], $selected)) {
@@ -462,13 +464,13 @@ class admin_plugin_usermanager extends DokuWiki_Admin_Plugin {
      * Modify user (modified user data has been recieved)
      */
     function _modifyUser(){
-        global $conf;
+        global $conf, $INPUT;
 
         if (!checkSecurityToken()) return false;
         if (!$this->_auth->canDo('UserMod')) return false;
 
         // get currently valid  user data
-        $olduser = cleanID(preg_replace('/.*:/','',$_REQUEST['userid_old']));
+        $olduser = cleanID(preg_replace('/.*:/','',$INPUT->str('userid_old')));
         $oldinfo = $this->_auth->getUserData($olduser);
 
         // get new user data subject to change
@@ -493,7 +495,7 @@ class admin_plugin_usermanager extends DokuWiki_Admin_Plugin {
         }
 
         // generate password if left empty and notification is on
-        if(!empty($_REQUEST['usernotify']) && empty($newpass)){
+        if($INPUT->has('usernotify') && empty($newpass)){
             $newpass = auth_pwgen();
         }
 
@@ -509,7 +511,7 @@ class admin_plugin_usermanager extends DokuWiki_Admin_Plugin {
         if ($ok = $this->_auth->triggerUserMod('modify', array($olduser, $changes))) {
           msg($this->lang['update_ok'],1);
 
-          if (!empty($_REQUEST['usernotify']) && $newpass) {
+          if ($INPUT->has('usernotify') && $newpass) {
             $notify = empty($changes['user']) ? $olduser : $newuser;
             $this->_notifyUser($notify,$newpass);
           }
@@ -545,16 +547,17 @@ class admin_plugin_usermanager extends DokuWiki_Admin_Plugin {
     /**
      * retrieve & clean user data from the form
      *
-     * @return  array(user, password, full name, email, array(groups))
+     * @return array (user, password, full name, email, array(groups))
      */
     function _retrieveUser($clean=true) {
         global $auth;
+        global $INPUT;
 
-        $user[0] = ($clean) ? $auth->cleanUser($_REQUEST['userid']) : $_REQUEST['userid'];
-        $user[1] = $_REQUEST['userpass'];
-        $user[2] = $_REQUEST['username'];
-        $user[3] = $_REQUEST['usermail'];
-        $user[4] = explode(',',$_REQUEST['usergroups']);
+        $user[0] = ($clean) ? $auth->cleanUser($INPUT->str('userid')) : $INPUT->str('userid');
+        $user[1] = $INPUT->str('userpass');
+        $user[2] = $INPUT->str('username');
+        $user[3] = $INPUT->str('usermail');
+        $user[4] = explode(',',$INPUT->str('usergroups'));
 
         $user[4] = array_map('trim',$user[4]);
         if($clean) $user[4] = array_map(array($auth,'cleanGroup'),$user[4]);
@@ -580,9 +583,9 @@ class admin_plugin_usermanager extends DokuWiki_Admin_Plugin {
     }
 
     function _retrieveFilter() {
+        global $INPUT;
 
-        $t_filter = $_REQUEST['filter'];
-        if (!is_array($t_filter)) return array();
+        $t_filter = $INPUT->arr('filter');
 
         // messy, but this way we ensure we aren't getting any additional crap from malicious users
         $filter = array();

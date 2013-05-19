@@ -38,10 +38,10 @@ class admin_plugin_config extends DokuWiki_Admin_Plugin {
      * handle user request
      */
     function handle() {
-      global $ID;
+      global $ID, $INPUT;
 
       if (!$this->_restore_session()) return $this->_close_session();
-      if (!isset($_REQUEST['save']) || ($_REQUEST['save'] != 1)) return $this->_close_session();
+      if ($INPUT->int('save') != 1) return $this->_close_session();
       if (!checkSecurityToken()) return $this->_close_session();
 
       if (is_null($this->_config)) { $this->_config = new configuration($this->_file); }
@@ -49,7 +49,7 @@ class admin_plugin_config extends DokuWiki_Admin_Plugin {
       // don't go any further if the configuration is locked
       if ($this->_config->_locked) return $this->_close_session();
 
-      $this->_input = $_REQUEST['config'];
+      $this->_input = $INPUT->arr('config');
 
       while (list($key) = each($this->_config->setting)) {
         $input = isset($this->_input[$key]) ? $this->_input[$key] : NULL;
@@ -65,8 +65,10 @@ class admin_plugin_config extends DokuWiki_Admin_Plugin {
         // save state & force a page reload to get the new settings to take effect
         $_SESSION['PLUGIN_CONFIG'] = array('state' => 'updated', 'time' => time());
         $this->_close_session();
-        header("Location: ".wl($ID,array('do'=>'admin','page'=>'config'),true,'&'));
+        send_redirect(wl($ID,array('do'=>'admin','page'=>'config'),true,'&'));
         exit();
+      } elseif(!$this->_error) {
+          $this->_config->touch_settings(); // just touch to refresh cache
       }
 
       $this->_close_session();
@@ -118,6 +120,7 @@ class admin_plugin_config extends DokuWiki_Admin_Plugin {
           // config setting group
           if ($in_fieldset) {
             ptln('  </table>');
+            ptln('  </div>');
             ptln('  </fieldset>');
           } else {
             $in_fieldset = true;
@@ -131,6 +134,7 @@ class admin_plugin_config extends DokuWiki_Admin_Plugin {
           }
           ptln('  <fieldset id="'.$setting->_key.'">');
           ptln('  <legend>'.$setting->prompt($this).'</legend>');
+          ptln('  <div class="table">');
           ptln('  <table class="inline">');
         } else {
           // config settings
@@ -151,6 +155,7 @@ class admin_plugin_config extends DokuWiki_Admin_Plugin {
       }
 
       ptln('  </table>');
+      ptln('  </div>');
       if ($in_fieldset) {
         ptln('  </fieldset>');
       }
@@ -161,6 +166,7 @@ class admin_plugin_config extends DokuWiki_Admin_Plugin {
         usort($undefined_settings, '_setting_natural_comparison');
         $this->_print_h1('undefined_settings', $this->getLang('_header_undefined'));
         ptln('<fieldset>');
+        ptln('<div class="table">');
         ptln('<table class="inline">');
         $undefined_setting_match = array();
         foreach($undefined_settings as $setting) {
@@ -175,6 +181,7 @@ class admin_plugin_config extends DokuWiki_Admin_Plugin {
           ptln('  </tr>');
         }
         ptln('</table>');
+        ptln('</div>');
         ptln('</fieldset>');
       }
 
@@ -270,10 +277,10 @@ class admin_plugin_config extends DokuWiki_Admin_Plugin {
       // the same for the active template
       $tpl = $conf['template'];
 
-      if (@file_exists(DOKU_TPLINC.$enlangfile)){
+      if (@file_exists(tpl_incdir().$enlangfile)){
         $lang = array();
-        @include(DOKU_TPLINC.$enlangfile);
-        if ($conf['lang'] != 'en') @include(DOKU_TPLINC.$langfile);
+        @include(tpl_incdir().$enlangfile);
+        if ($conf['lang'] != 'en') @include(tpl_incdir().$langfile);
         foreach ($lang as $key => $value){
           $this->lang['tpl'.CM_KEYMARKER.$tpl.CM_KEYMARKER.$key] = $value;
         }
@@ -346,7 +353,7 @@ class admin_plugin_config extends DokuWiki_Admin_Plugin {
     }
 
     function _print_h1($id, $text) {
-      ptln('<h1><a name="'.$id.'" id="'.$id.'">'.$text.'</a></h1>');
+      ptln('<h1 id="'.$id.'">'.$text.'</h1>');
     }
 
 

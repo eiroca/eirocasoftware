@@ -32,19 +32,13 @@ echo "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"" . $conf['lang'] 
    <div class="page_img">
     <div class="img_big"><a href="#" onclick="history.go(-1)"><?php tpl_img(0,0,false,array(id=>"img_id")) ?></a></div>
    </div>
+  <?php } ?>
    <div class="img_detail">
     <p>&larr; <?php echo $lang['img_backto']?> <?php tpl_pagelink($ID)?></p>
    </div>
-  <?php } ?>
-  <div align="center" class="footerinc">
-   <?php global $__lang; tpl_pagelink($__lang."copyright", "Copyright (c) eIrOcA 2002-2010") ?><br/>
-   <a target="_blank" href="<?php echo DOKU_BASE?>feed.php" title="Recent changes RSS feed"><img src="<?php echo DOKU_TPL?>images/button-rss.png" width="80" height="15" alt="Recent changes RSS feed" border="0" /></a>
-   <a target="_blank" href="http://wiki.splitbrain.org/wiki:dokuwiki" title="Driven by DokuWiki"><img src="<?php echo DOKU_TPL?>images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" border="0" /></a>
-   <a target="_blank" href="http://www.firefox-browser.de" title="do yourself a favour and use a real browser - get firefox"><img src="<?php echo DOKU_TPL?>images/button-firefox.png" width="80" height="15" alt="do yourself a favour and use a real browser - get firefox!!" border="0" /></a>
-   <a target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer" title="Valid CSS"><img src="<?php echo DOKU_TPL?>images/button-css.png" width="80" height="15" alt="Valid CSS" border="0" /></a>
-   <a target="_blank" href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0"><img src="<?php echo DOKU_TPL?>images/button-xhtml.png" width="80" height="15" alt="Valid XHTML 1.0" border="0" /></a>
-   <a target="_blank" href="http://www.ohloh.net"><img src="http://www.ohloh.net/images/badges/mini.gif" width="80" height="15" alt="Ohloh" /></a>
-  </div>
+   <div align="center" class="footerinc">
+   <?php global $__lang; tpl_pagelink($__lang."copyright", "Copyright (c) eIrOcA 2001-2013") ?>
+   </div>
 </div>
 <script type="text/javascript" ><!--//--><![CDATA[//><!--
 NoClick();

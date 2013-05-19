@@ -2,13 +2,14 @@
 if(!defined('DOKU_INC')) define('DOKU_INC',dirname(__FILE__).'/../../');
 define('DOKU_MEDIADETAIL',1);
 require_once(DOKU_INC.'inc/init.php');
+trigger_event('DETAIL_STARTED', $tmp=array());
 //close session
 session_write_close();
 
 $IMG  = getID('media');
-$ID   = cleanID($_REQUEST['id']);
+$ID   = cleanID($INPUT->str('id'));
 
-if($conf['allowdebug'] && $_REQUEST['debug']){
+if($conf['allowdebug'] && $INPUT->has('debug')){
     print '<pre>';
     foreach(explode(' ','basedir userewrite baseurl useslash') as $x){
         print '$'."conf['$x'] = '".$conf[$x]."';\n";
@@ -30,7 +31,7 @@ if($AUTH >= AUTH_READ){
     $SRC = mediaFN($IMG);
     if(!@file_exists($SRC)){
         //doesn't exist!
-        header("HTTP/1.0 404 File not Found");
+        http_status(404);
         $ERROR = 'File not found';
     }
 }else{

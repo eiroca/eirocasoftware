@@ -44,15 +44,16 @@ class admin_plugin_revert extends DokuWiki_Admin_Plugin {
      * output appropriate html
      */
     function html() {
+        global $INPUT;
 
-        echo $this->plugin_locale_xhtml('intro');
+        echo $this->locale_xhtml('intro');
 
         $this->_searchform();
 
-        if(is_array($_REQUEST['revert']) && checkSecurityToken()){
-            $this->_revert($_REQUEST['revert'],$_REQUEST['filter']);
-        }elseif(isset($_REQUEST['filter'])){
-            $this->_list($_REQUEST['filter']);
+        if(is_array($INPUT->param('revert')) && checkSecurityToken()){
+            $this->_revert($INPUT->arr('revert'),$INPUT->str('filter'));
+        }elseif($INPUT->has('filter')){
+            $this->_list($INPUT->str('filter'));
         }
     }
 
@@ -60,11 +61,11 @@ class admin_plugin_revert extends DokuWiki_Admin_Plugin {
      * Display the form for searching spam pages
      */
     function _searchform(){
-        global $lang;
+        global $lang, $INPUT;
         echo '<form action="" method="post"><div class="no">';
         echo '<label>'.$this->getLang('filter').': </label>';
-        echo '<input type="text" name="filter" class="edit" value="'.hsc($_REQUEST['filter']).'" />';
-        echo '<input type="submit" class="button" value="'.$lang['btn_search'].'" />';
+        echo '<input type="text" name="filter" class="edit" value="'.hsc($INPUT->str('filter')).'" />';
+        echo ' <input type="submit" class="button" value="'.$lang['btn_search'].'" />';
         echo ' <span>'.$this->getLang('note1').'</span>';
         echo '</div></form><br /><br />';
     }
@@ -73,8 +74,6 @@ class admin_plugin_revert extends DokuWiki_Admin_Plugin {
      * Start the reversion process
      */
     function _revert($revert,$filter){
-        global $conf;
-
         echo '<hr /><br />';
         echo '<p>'.$this->getLang('revstart').'</p>';
 
@@ -134,7 +133,7 @@ class admin_plugin_revert extends DokuWiki_Admin_Plugin {
             echo ($recent['type']===DOKU_CHANGE_TYPE_MINOR_EDIT) ? '<li class="minor">' : '<li>';
             echo '<div class="li">';
             echo '<input type="checkbox" name="revert[]" value="'.hsc($recent['id']).'" checked="checked" id="revert__'.$cnt.'" />';
-            echo '<label for="revert__'.$cnt.'">'.$date.'</label> ';
+            echo ' <label for="revert__'.$cnt.'">'.$date.'</label> ';
 
             echo '<a href="'.wl($recent['id'],"do=diff").'">';
             $p = array();
@@ -159,7 +158,7 @@ class admin_plugin_revert extends DokuWiki_Admin_Plugin {
             echo '</a> ';
 
             echo html_wikilink(':'.$recent['id'],(useHeading('navigation'))?NULL:$recent['id']);
-            echo ' &ndash; '.htmlspecialchars($recent['sum']);
+            echo ' – '.htmlspecialchars($recent['sum']);
 
             echo ' <span class="user">';
                 echo $recent['user'].' '.$recent['ip'];
