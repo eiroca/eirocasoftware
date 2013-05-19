@@ -1,3 +1,0 @@
-Extracts Origins & Funding
-Origins	Origins section
-Funding	Funding section
