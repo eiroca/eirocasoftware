@@ -1,0 +1,24 @@
+Esercizio E2 pagina 151
+
+Variabili: 3
+x1
+x2
+x3
+
+Funzione: z
+
+Obiettivo: Min
+
+Termine costante: 0
+
+Costi: 1 1 1
+
+Numero Vincoli: 3
+1 -3  4 = 5
+1 -2  0 ó 3
+0  2 -1 ò 4
+
+Dominio:
+1 +
+2 +
+3 ?

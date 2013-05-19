@@ -1,0 +1,6 @@
+Name       : Bioritmi
+Description: Bioritmi e affinità
+OS         : Win32
+Type       : GUI
+Language   : Delphi XE2
+Dependency : eLib, Jedi

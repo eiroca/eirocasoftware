@@ -1,0 +1,18 @@
+Esercizion #1 pagina 119
+
+Variabili: 2
+x1
+x2
+
+Funzione: z
+
+Obiettivo: Max
+
+Termine costante: 0
+
+Costi: 750 1000
+
+Numero Vincoli: 3
+3.0  2.5 <= 440
+0.5  1.0 <= 120
+2.0  0.5 <= 240

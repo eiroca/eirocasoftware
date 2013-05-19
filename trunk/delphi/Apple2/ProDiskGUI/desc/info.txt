@@ -1,0 +1,6 @@
+Name       : ProDisk GUI
+Description: ProDisk - GUI shows Prodos HD, does file(s) import/exeport.
+OS         : -
+Type       : GUI
+Language   : Delphi
+Dependency : -
