@@ -1,0 +1,18 @@
+Esercizion #1 pagina 119
+
+Variabili: 3
+x1
+x2
+x3
+
+Funzione: z
+
+Obiettivo: Min
+
+Termine costante: 0
+
+Costi: 10 5 4
+
+Numero Vincoli: 2
+3 2 -3 >=  3
+4 2  0 >= 10

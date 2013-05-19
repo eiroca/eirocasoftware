@@ -1,0 +1,6 @@
+Name       : eMelody
+Description: Some tools to handle old L35 Motorola ring tone format.
+OS         : Win32
+Type       : Console
+Language   : Delphi XE2
+Dependency : 

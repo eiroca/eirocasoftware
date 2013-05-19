@@ -1,0 +1,6 @@
+Name       : ProDisk
+Description: ProDisk - C.L.I., shows Prodos HD, does file(s) import/exeport.
+OS         : -
+Type       : Console
+Language   : Delphi XE2
+Dependency : -

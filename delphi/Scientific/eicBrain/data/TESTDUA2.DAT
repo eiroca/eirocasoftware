@@ -1,0 +1,21 @@
+Esercizio E2 pagina 152
+
+Variabili: 2
+x1
+x2
+
+Funzione: z
+
+Obiettivo: Max
+
+Termine costante: 0
+
+Costi: 1 2
+
+Numero Vincoli: 2
+ 1 -4 > 2
+-5 -7 = 4
+
+Domini:
+1  ó
+2 +

@@ -1,0 +1,7 @@
+Name       : ConTab
+Description: Contabilità generale
+OS         : Win32
+Type       : GUI
+Language   : Delphi XE2
+Dependency : eLib, Zeos
+Database   : ZEos (MDB)

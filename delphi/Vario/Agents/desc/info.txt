@@ -1,0 +1,7 @@
+Name       : Agents
+Description: An agent is a piece of software able to run in a dynamic environment.
+OS         : -
+Type       : Console
+Language   : Delphi XE2
+Dependency : -
+
