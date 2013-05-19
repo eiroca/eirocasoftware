@@ -1,0 +1,38 @@
+Takes text between <slides attribute="value" attribute="value" >Article references</slides> tags, and splits it into individual
+lines. Each of the lines is either one of the following options, or treated
+as a topic (article/slide) name, or a sub-topic name (starting with '*'):
+
+Optional Attributes:
+index=Name of presentation (link|display|mouseover)
+prefix=Prefix for the slides of the presentation (remove "name - " prefix from articles)
+hideMenu=true/false    (default: true, hide the left menu column)
+hideFooter=true/false    (default: true, hide the footer)
+hideHeading=true/false  (default: true, hide the first-level headline)
+fontsize=120%      (default: 100%, the fontsize for the body, in %)
+showButtons=true    (default: true, show |< << >> >| buttons on the navbar)
+id=   (default:null id of presentation slide to differentiate slides that belongs to multiple presentations)
+style (stile of the div)
+
+Article reference:
+Name1|Text in Navbar|Mouseover title
+Name2|Text in Navbar
+Name3
+*Subarticle1|Text in Navbar|Mouseover    (belongs to last normal topic "Name3")
+*Subarticle2|Text in Navbar
+*Subarticle3
+
+Example:
+<slides prefix="My Presentation" index="Presentation summary">
+Start
+*Intro
+*About
+How to
+Contact
+</slides>
+
+Install: Copy this file into the extensions/ directory of your wiki, and then
+add at the bottom of LocalSettings.php, but before the "? >", the following:
+require_once("extensions/Slides.php");
+
+For full documentation please see: http://www.eiroca.net
+

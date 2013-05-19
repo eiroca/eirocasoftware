@@ -1,0 +1,14 @@
+img.barcode_center {
+	display: block;
+	margin: 0 auto;
+}
+
+img.barcode_left {
+	display: inline;
+	float: left;
+}
+
+img.barcode_right {
+	display: inline;
+	float: right;
+}
