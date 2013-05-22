@@ -3,12 +3,12 @@
 
   <target name="Delphi" description="generate Delphi distributions">
     <property name="delphi" value="../../../DelphiXE2" />
-    <ant dir="${delphi}/shared/ANN/NNShell" />
+    <ant dir="${delphi}/projects/eANN/NNShell" />
   </target>
 
   <target name="Eclipse" description="generate Eclipse distributions">
-    <property name="eclipse" value="../.." />
-    <ant dir="${eclipse}/shared/Projects/OrgApp" />
+    <property name="eclipse" value="../../../Eclipse" />
+    <ant dir="${eclipse}/projects/OrgApp" />
   </target>
 
   <target name="dist" description="generate the distributions" depends="Delphi, Eclipse" />
