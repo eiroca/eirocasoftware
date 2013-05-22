@@ -1,0 +1,16 @@
+<project name="Build distribution for SF" default="dist" basedir=".">
+  <description>Crea pacchetti rilasci</description>
+
+  <target name="Delphi" description="generate Delphi distributions">
+    <property name="delphi" value="../../../DelphiXE2" />
+    <ant dir="${delphi}/shared/ANN/NNShell" />
+  </target>
+
+  <target name="Eclipse" description="generate Eclipse distributions">
+    <property name="eclipse" value="../.." />
+    <ant dir="${eclipse}/shared/Projects/OrgApp" />
+  </target>
+
+  <target name="dist" description="generate the distributions" depends="Delphi, Eclipse" />
+
+</project>
