@@ -75,11 +75,9 @@ function tpl_sidebar($pos) {
 
 function tpl_homepage() {
 	global $ID;
-	print "/wiki/";
 	$path  = explode(':', $ID);
-	if (count($path)>1) {
-		if ($path[0]) { print "doku.php?id=".$path[0].":start"; }
-	}
+	if (count($path)>1) { $id=$path[0].":start"; } else {$id="start"; }
+	print wl($id);
 }
 
 /**

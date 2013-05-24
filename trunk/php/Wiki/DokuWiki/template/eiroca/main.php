@@ -5,17 +5,16 @@ if (!defined('DOKU_INC')) die();
 require_once(dirname(__FILE__).'/tpl_functions.php');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
 <?php
-global $__name; $nam = tpl_pagetitle($ID, true); $pos = strpos($nam, ":");
+global $__name; $nam = tpl_pagetitle($ID, true); $pos = strpos($nam, ":"); 
 global $__lang;
 if ($pos===false) { $__name = $nam; $__lang = "";} else { $__name = substr($nam, $pos+1); $__lang = substr($nam, 0, $pos).":"; }
 $__name = ucwords(str_replace(":", " ", str_replace("_", " ", $__name)));
-echo "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"" . $conf['lang'] . "\" lang=\"" . $conf['lang'] . "\" dir=\"" . $lang['direction'] ."\">\n";
+echo "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"" . $conf['lang'] . "\" lang=\"" . $conf['lang'] . "\" dir=\"" . $lang['direction'] ."\">\n"; 
 ?>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>
+  <title>  
     <?php global $__name; echo strip_tags($conf['title']) ." - ". $__name; ?>
   </title>
   <?php tpl_metaheaders()?>
@@ -46,7 +45,7 @@ echo "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"" . $conf['lang'] 
    </div>
    <div class="clearer"></div>
    <div align="center" class="footerinc">
-   <?php global $__lang; tpl_pagelink($__lang."copyright", "Copyright (c) eIrOcA 2001-2011") ?>
+   <?php global $__lang; tpl_pagelink($__lang."copyright", "Copyright (c) eIrOcA 2001-2013") ?>
    </div>
   </div>
  </div>
