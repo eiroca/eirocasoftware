@@ -1,8 +1,0 @@
-  * [[en:start|eIrOcA]]
-  * [[en:Software]]
-    * [[en:Software#Mobile Suite|Mobile Suite]]
-    * [[en:Software#Desktop Applications|Desktop Applications]]
-    * [[en:Software#Server Applications|Server Applications]]
-    * [[en:Software#eIrOcA Pout Pourri|eIrOcA Pout Pourri]]
-  * [[en:Development|Development]]
-  * [[en:Tag|Map of contents]] 

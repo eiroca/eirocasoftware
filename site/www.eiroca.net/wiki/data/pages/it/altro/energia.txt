@@ -1,4 +1,0 @@
-^Società^Sito^Elettricità^GAS^Produttore^RECS^Società collegate^Nucleare^Nucleare estero^Inceneritore^Consumer^Business^Locale^RECS^Nucleare^Inceneritore^ 
-|AGSM|http://www.agsm.it|Y|Y|Y|Y|ex. Mucipalizzata Verona|N|N|Y, rotto|Y|Y|N|http://www.agsm.it/notizia.asp?IDCategoria=124&IDNotizia=2139|http://www.agsm.it/notizia.asp?IDCategoria=111&IDNotizia=552|-| 
-|Sorgenia|http://www.sorgenia.it|Y|Y|Y|P, solo business|CIR Verbund|?|N|N|Y|Y|N|||http://www.milanofinanza.it/news/dettaglio_news.asp?id=201002151431314740&chkAgenzie=TMFI|
-|e.ON|http://www.eon-italia.com|Y|Y|Y|Y||?|Y|N|Y|Y|N|http://www.eon-energia.com/e-on_vendita/sito/locator.cfm?SectionID=276|http://www.eon-italia.com/cms/it/1170.jsp| | 

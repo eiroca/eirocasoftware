@@ -1,7 +1,0 @@
-<columns>
-[[http://sourceforge.net/projects/<label name>name</label>|{{ico:sf.png|SourceForge Logo}}]]
-<newcolumn>
-The full distribution, including source code, can be downloaded [[http://sourceforge.net/projects/<label name>name</label>/files/|here]].
-
-Additional project resources are hosted in a [[http://sourceforge.net/projects/<label name>name</label>|Source Forge Repository]].
-</columns>

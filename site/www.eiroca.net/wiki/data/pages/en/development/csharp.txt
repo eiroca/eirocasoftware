@@ -1,4 +1,0 @@
-====== Software written in C# ======
-  * [[..:Software:WikiHelper|{{ico:eng.png|ENG}}]] [[..:Software:WikiHelper|WikiHelper]] is a collection of tools for managing the Wiki (in Wikimedia format). Some features: batch creation of pages, replace strings, export pages to PowerPoint PPT, Powerpoint table of contents of the pages in a category, …
-
-{{tag>CSharp}}
