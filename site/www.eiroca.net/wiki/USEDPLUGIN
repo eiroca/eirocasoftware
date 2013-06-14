@@ -1,0 +1,33 @@
+Direttive:
+~~NOTOC~~
+
+
+Plugin:
+- Include   			(modificato: testi, taggtopic>namespace:tag, readmore)
+- Templater 			()
+- Gallery				()
+- GoogleAnalytics		()
+- Tag					()
+- SearchIndex Manager	()
+- OrgApp				()
+- QRcode				()
+- ImageBox				(style.css)
+- PageList				()
+- ClearFloat			()
+- Color					()
+- Config				()
+
+
+
+NOT USED (and removed)
+
+authad
+authldap
+authmysql
+authpgsql
+info
+label
+columns
+tablewidth
+embed
+UPArrow

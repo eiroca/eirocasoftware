@@ -1,0 +1,381 @@
+/* Defaults */
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,ol,ul,li,form,label,legend,caption,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {
+ margin: 0;
+ padding: 0;
+ border: 0;
+ outline: 0;
+ font-weight: inherit;
+ font-style: inherit;
+ font-size: 100%;
+ font-family: inherit;
+ vertical-align: baseline;
+}
+
+a img {
+ border: none
+}
+
+aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+ display: block
+}
+
+/* Global styles */
+html,body {
+ font-family: __font_family__;
+ width: 100%;
+ font-size: 13px;
+ color: __text__;
+ margin: 0 0 1px;
+ line-height: 1.6;
+ background: __site_background__ url(res/background.png) repeat left top;
+}
+
+a,p a {
+ text-decoration: none;
+ color: __link__;
+}
+
+a:hover {
+ color: __link_over__;
+ text-decoration: underline;
+}
+
+a:visited,a:active {
+ text-decoration: underline;
+ color: __link__;
+}
+
+h1,h2,h3,h4,h5,h6 {
+ font-family: __font_family__;
+ font-weight: normal;
+ position: relative;
+ color: __text__;
+ text-align: left;
+ clear: left;
+}
+
+h1 {
+ font-size: 32px;
+ line-height: 2;
+ margin-bottom: 16px;
+ border-bottom: 1px dotted __text__;
+}
+
+h2 {
+ font-size: 22px;
+ line-height: 1.8;
+ padding-top: 12px;
+ margin-bottom: 8px;
+ border-bottom: 1px dotted __text__;
+}
+
+h3,h4,h5,h6 {
+ font-size: 18px;
+ line-height: 1.7;
+ padding-top: 8px;
+ margin-bottom: 8px;
+}
+
+/* Variation */
+.smooth_border {
+ -webkit-border-radius: .5em;
+ -moz-border-radius: .5em;
+ border-radius: .5em;
+ -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+ -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+ box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+/* Specific */
+.container {
+ position: relative;
+ clear: both;
+ width: 100%;
+ float: left;
+ text-align: left;
+ display: block;
+ background-color: __background__;
+}
+
+.page {
+ position: relative;
+ top: 0px;
+ left: 0px;
+ width: 95%;
+ float: none;
+ overflow: hidden;
+ padding: 0.5em 1em;
+ -moz-box-shadow: 0 0 5px 5px __site_background__;
+ -webkit-box-shadow: 0 0 5px 5px __site_background__;
+ box-shadow: 0 0 5px 5px __site_background__;
+ margin: 1em auto;
+ width: 95%;
+}
+
+.header {
+ padding: 0;
+ margin: 0;
+ position: relative;
+}
+
+.logo {
+ float: left;
+ width: 25%;
+ min-height: 2em;
+ text-align: center;
+}
+
+.tagline {
+ display: block;
+ color: #FBA818;
+ width: 90%;
+ text-align: center;
+ margin: 0.1em auto 0.5em;
+ font-weight: bold;
+}
+
+.navigation {
+ display: inline;
+ float: right;
+ width: 70%;
+ text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+ background: __background_neu__;
+ min-height: 36px;
+}
+
+.navigation .menu {
+ position: relative;
+ top: 3px;
+ left: 6px;
+ display: inline;
+ text-align: left;
+ line-height: normal;
+}
+
+.menu .item {
+ display: inline;
+ white-space: nowrap;
+}
+
+.menu a {
+ font-size: 18px;
+ color: __text_neu__;
+ font-weight: normal;
+ padding: 6px 8px 8px 8px;
+ background-color: transparent;
+ text-decoration: none;
+}
+
+.menu a:hover {
+ color: __highlight_neu__;
+}
+
+.menu a.current {
+ background-color: __highlight_neu__;
+ cursor: default;
+}
+
+.menu a.current:hover {
+ color: __text_neu__;
+}
+
+.message {
+ clear: both;
+ background-color: __background_alt__;
+ width: 95%;
+ margin: 1em auto;
+ float: none;
+ padding: 0.5em;
+}
+
+.content {
+ padding: 0.5em;
+}
+
+.WikiData {
+ position: relative;
+ float: left;
+ clear: both;
+ width: 70%;
+ margin-top: 0em;
+}
+
+.WikiDetail {
+ position: relative;
+ float: left;
+ clear: both;
+ width: 100%;
+ margin-top: 0em;
+}
+
+.WikiDetail .image {
+ text-align: center;
+}
+
+.docData {
+ display: inline;
+}
+
+.sidebar {
+ float: right;
+ width: 25%;
+ padding: 0.5em;
+ margin-right: 0.5em;
+ background-color: __background_alt__;
+ border: 2px solid __highlight_alt__;
+}
+
+.footer {
+ background-color: __background_neu__;
+ color: __text_neu__;
+ padding: 0.25em 0em 0.5em 0em;
+ position: fixed;
+ bottom: 0px;
+ z-index: 100;
+}
+
+.footer a:visited {
+ text-decoration: underline;
+ color: __highlight_neu__;
+}
+
+.footer a:hover {
+ text-decoration: underline;
+ color: __highlight_neu__;
+}
+
+.docInfo {
+ display: block;
+ text-align: left;
+ padding: 0em 0.5em;
+ text-align: left;
+}
+
+[dir=rtl] .docInfo {
+ text-align: right;
+}
+
+.docID {
+ font-size: 0.875em;
+ color: __text_alt__;
+ display: block;
+ overflow: hidden;
+ padding: 0.15em .15em;
+ text-align: center;
+ text-decoration: underline;
+}
+
+.tools {
+ height: 2.1em;
+ line-height: 2.1em;
+ overflow: visible;
+ display: block;
+ float: right;
+}
+
+.tools form {
+ display: inline;
+}
+
+.tools select {
+ padding: .3em .1em;
+}
+
+.actionTop {
+ display: inline;
+}
+
+.youarehere {
+ display: block;
+ float: left;
+ clear: left;
+ padding: 0em 0.5em;
+}
+
+.breadcrumb {
+ display: block;
+ float: left;
+ clear: left;
+ padding: 0em 0.5em;
+}
+
+.user {
+ display: block;
+ float: left;
+ clear: left;
+ padding: 0em 0.5em;
+}
+
+.licence {
+ display: block;
+ clear: both;
+ text-align: center;
+}
+
+.footer .buttons {
+ text-align: center;
+}
+
+ul,ol {
+ padding: 0 0 0 1.5em;
+}
+
+[dir=rtl]  ul,[dir=rtl] ol {
+ padding: 0 1.5em 0 0;
+}
+
+li,dd {
+ padding: 0;
+ margin: 0 0 0 1.5em;
+}
+
+[dir=rtl] li,[dir=rtl]  dd {
+ margin: 0 1.5em 0 0;
+}
+
+dt {
+ font-weight: bold;
+ margin: 0;
+ padding: 0;
+}
+
+li ul,li ol,li dl,dl ul,dl ol,dl dl {
+ margin-bottom: 0;
+ padding: 0;
+}
+
+li li {
+ font-size: 100%;
+}
+
+ul {
+ list-style: square outside;
+}
+
+ol {
+ list-style: decimal outside;
+}
+
+ol ol {
+ list-style-type: lower-alpha;
+}
+
+ol ol ol {
+ list-style-type: upper-roman;
+}
+
+ol ol ol ol {
+ list-style-type: upper-alpha;
+}
+
+ol ol ol ol ol {
+ list-style-type: lower-roman;
+}
+
+.COL1 {
+ color: __highlight_alt__;
+}
+
+.COL2 {
+ color: __background_alt__;
+}
