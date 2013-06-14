@@ -28,18 +28,46 @@ import java.io.StringReader;
  */
 public class RemoveComments {
 
+  /** The EXT. */
+  public static String EXT = ".java";
+
   /**
-   * Read.
+   * The main method.
    * 
-   * @param reader the reader
-   * @return the int
+   * @param args the arguments
    */
-  public static int read(BufferedReader reader) {
-    try {
-      return reader.read();
-    }
-    catch (IOException e) {
-      return -1;
+  public static void main(final String[] args) {
+    final String pathIn1 = "./in1";
+    final String pathIn2 = "./in2";
+    final String pathOut = "./out";
+    final File f = new File(pathIn1);
+    File fin1;
+    File fin2;
+    File fout1;
+    File fout2;
+    final String[] files = f.list();
+    for (final String path : files) {
+      if (!path.endsWith(RemoveComments.EXT)) {
+        continue;
+      }
+      try {
+        fin1 = new File(pathIn1 + "/" + path);
+        fin2 = new File(pathIn2 + "/" + path);
+        fout1 = new File(pathOut + "/" + path.substring(0, path.length() - RemoveComments.EXT.length()) + ".1");
+        fout2 = new File(pathOut + "/" + path.substring(0, path.length() - RemoveComments.EXT.length()) + ".2");
+        if (fin2.exists()) {
+          System.out.println(path);
+          fout2.createNewFile();
+          RemoveComments.parse(fin2, fout2);
+          if (fin1.exists()) {
+            fout1.createNewFile();
+            RemoveComments.parse(fin1, fout1);
+          }
+        }
+      }
+      catch (final Exception e) {
+        e.printStackTrace();
+      }
     }
   }
 
@@ -50,35 +78,35 @@ public class RemoveComments {
    * @param fout the fout
    * @throws FileNotFoundException the file not found exception
    */
-  public static void parse(File fin, File fout) throws FileNotFoundException {
+  public static void parse(final File fin, final File fout) throws FileNotFoundException {
     BufferedReader reader = new BufferedReader(new FileReader(fin));
-    CharArrayWriter writer = new CharArrayWriter();
+    final CharArrayWriter writer = new CharArrayWriter();
     // Remove comments
     int curr = 0;
     int prev = 0;
     int status = 0;
     while (true) {
-      curr = read(reader);
+      curr = RemoveComments.read(reader);
       if (curr == -1) {
         break;
       }
       switch (status) {
         case 1: // 'characters'
           writer.write(curr);
-          if (curr == '\'' && prev != '\\') {
+          if ((curr == '\'') && (prev != '\\')) {
             status = 0;
           }
-          prev = (prev == '\\' && curr == '\\') ? '\0' : curr;
+          prev = ((prev == '\\') && (curr == '\\')) ? '\0' : curr;
           break;
         case 2: // "string"
           writer.write(curr);
-          if (curr == '\"' && prev != '\\') {
+          if ((curr == '\"') && (prev != '\\')) {
             status = 0;
           }
-          prev = (prev == '\\' && curr == '\\') ? '\0' : curr;
+          prev = ((prev == '\\') && (curr == '\\')) ? '\0' : curr;
           break;
         case 3: // /* comment */
-          if (curr == '/' && prev == '*') { /* comment ends */
+          if ((curr == '/') && (prev == '*')) { /* comment ends */
             prev = '\0';
             status = 0;
           }
@@ -91,7 +119,7 @@ public class RemoveComments {
             if (curr == '/') { // end of line comment
               writer.write('\n');
               prev = '\0';
-              while (read(reader) != '\n') {
+              while (RemoveComments.read(reader) != '\n') {
               }
             }
             else if (curr == '*') { /* comment starts */
@@ -116,7 +144,7 @@ public class RemoveComments {
                 status = 2;
               }
             }
-            prev = (prev == '\\' && curr == '\\') ? 0 : curr;
+            prev = ((prev == '\\') && (curr == '\\')) ? 0 : curr;
           }
           break;
       }
@@ -124,28 +152,28 @@ public class RemoveComments {
     try {
       reader.close();
     }
-    catch (IOException e) {
+    catch (final IOException e) {
       e.printStackTrace();
     }
     writer.close();
     // Remove empty lines and convert tab in spaces
     reader = new BufferedReader(new StringReader(writer.toString()));
-    PrintWriter writ = new PrintWriter(fout);
+    final PrintWriter writ = new PrintWriter(fout);
     String l;
     while (true) {
       try {
         l = reader.readLine();
       }
-      catch (IOException e) {
+      catch (final IOException e) {
         l = null;
       }
       if (l == null) {
         break;
       }
       if (l.trim().length() > 0) {
-        StringBuffer sb = new StringBuffer(l.length());
+        final StringBuffer sb = new StringBuffer(l.length());
         for (int i = 0; i < l.length(); i++) {
-          char ch = l.charAt(i);
+          final char ch = l.charAt(i);
           if (ch == '\t') {
             sb.append("  ");
           }
@@ -159,46 +187,18 @@ public class RemoveComments {
     writ.close();
   }
 
-  /** The EXT. */
-  public static String EXT = ".java";
-
   /**
-   * The main method.
+   * Read.
    * 
-   * @param args the arguments
+   * @param reader the reader
+   * @return the int
    */
-  public static void main(final String[] args) {
-    final String pathIn1 = "./in1";
-    final String pathIn2 = "./in2";
-    final String pathOut = "./out";
-    File f = new File(pathIn1);
-    File fin1;
-    File fin2;
-    File fout1;
-    File fout2;
-    final String[] files = f.list();
-    for (final String path : files) {
-      if (!path.endsWith(EXT)) {
-        continue;
-      }
-      try {
-        fin1 = new File(pathIn1 + "/" + path);
-        fin2 = new File(pathIn2 + "/" + path);
-        fout1 = new File(pathOut + "/" + path.substring(0, path.length() - EXT.length()) + ".1");
-        fout2 = new File(pathOut + "/" + path.substring(0, path.length() - EXT.length()) + ".2");
-        if (fin2.exists()) {
-          System.out.println(path);
-          fout2.createNewFile();
-          parse(fin2, fout2);
-          if (fin1.exists()) {
-            fout1.createNewFile();
-            parse(fin1, fout1);
-          }
-        }
-      }
-      catch (final Exception e) {
-        e.printStackTrace();
-      }
+  public static int read(final BufferedReader reader) {
+    try {
+      return reader.read();
+    }
+    catch (final IOException e) {
+      return -1;
     }
   }
 
