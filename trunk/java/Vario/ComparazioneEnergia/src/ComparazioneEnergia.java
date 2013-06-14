@@ -27,17 +27,16 @@ public class ComparazioneEnergia {
 
   private static final String ADDRESS_FILE = "bin/estrazione.csv";
 
-  public static void main(String[] args) throws IOException {
+  public static void main(final String[] args) throws IOException {
 
-    StringWriter sw = new StringWriter();
+    final StringWriter sw = new StringWriter();
 
-    CSVWriter writer = new CSVWriter(sw, '\t', '"');
-    CSVReader reader = new CSVReader(new FileReader(ADDRESS_FILE));
-
+    final CSVWriter writer = new CSVWriter(sw, '\t', '"');
+    final CSVReader reader = new CSVReader(new FileReader(ComparazioneEnergia.ADDRESS_FILE));
     String[] nextLine;
     boolean first = true;
     while ((nextLine = reader.readNext()) != null) {
-      String[] line = new String[9];
+      final String[] line = new String[9];
       if (first) {
         first = false;
         line[0] = "Name";
@@ -49,10 +48,10 @@ public class ComparazioneEnergia {
 
       }
       else {
-        String name = nextLine[0];
-        String what = nextLine[5];
-        String sito = nextLine[2];
-        StringTokenizer st = new StringTokenizer(name, "\n");
+        final String name = nextLine[0];
+        final String what = nextLine[5];
+        final String sito = nextLine[2];
+        final StringTokenizer st = new StringTokenizer(name, "\n");
         line[0] = st.nextToken();
         if (sito.equals("")) {
           line[1] = "";
@@ -76,6 +75,7 @@ public class ComparazioneEnergia {
     }
     System.out.println("\n\nGenerated CSV File:\n\n");
     System.out.println(sw.toString());
-
+    writer.close();
+    reader.close();
   }
 }
