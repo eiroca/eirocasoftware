@@ -1,0 +1,38 @@
+====== eLib ======
+With Secure SMS you can send crypted SMS between J2ME-enabled devices (mobile phones, PDAs, ...).
+
+===== Screenshots =====
+{{gallery>software:securesms }}
+
+===== Requirements =====
+{{template>en:inc:midp|ver=MIDP2.0|}}
+
+Supported languages: {{ico:eng.png|ENG}} {{ico:ita.png|ITA}}
+
+===== Download =====
+{{template>en:inc:qrcode|Section=Applications|Name=Secure SMS|URL=http://www.eiroca.net/mobile/download.php?n=0_1&c=000|}}
+
+{{template>en:inc:sf|Repository=mobilesuite|}}
+
+====== Development ======
+===== To Do =====
+  * Better UI
+  * SMS compression
+
+===== Changes log =====
+**Version 1.1.0**
+  * Aligned with version 1.1.0 of [[en:Projects:Development:lib:libJ2ME|libJ2ME]]
+  * Added PIN lock
+
+**Version 1.0.0**
+  * First public release
+
+{{template>en:inc:info|ID=mobile_suite|Status=Release|Language=Java|}}
+
+====== Licence & Copyright ======
+{{template>en:inc:gpl2
+|Author=Copyright (c) 2002-2010 Eugene Morozov & eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+Secure SMS is based upon [[http://securesms.sourceforge.net/|SecureMessenger]] application written by Eugene Morozov.
+
+{{tag>Secure_SMS MobileSuite Software Java}}

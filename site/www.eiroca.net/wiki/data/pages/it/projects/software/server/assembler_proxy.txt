@@ -1,0 +1,22 @@
+====== Assembler Proxy ======
+Assembler Proxy è una Servlet Java che consente di "assemblare" parti di pagine che provengono da siti differenti in un'unica pagina (semza usare frame o iframe).
+
+===== Requisiti =====
+Un qualunque container in grado di eseguire Java Servlets 2.x.
+
+===== Scarica! =====
+{{template>it:inc:sf|Repository=serverapps|}}
+
+====== Informazioni sullo sviluppo ======
+===== Ultimi cambiamenti =====
+**Versione 0.1.0**
+  * Prima versione
+
+{{template>it:inc:info|ID=Server Apps|Status=Release|Language=Java|}}
+
+====== Licenza & Copyright ======
+{{template>it:inc:gpl3
+|Author=Copyright (c) 2006-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+
+{{tag>Assembler_Proxy Applicazione_Server Java Proxy}}

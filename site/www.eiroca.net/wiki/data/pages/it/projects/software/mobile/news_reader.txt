@@ -1,0 +1,37 @@
+====== MobileSuite - News Reader ======
+News Reader è un lettore di notizie RSS.
+
+===== Immagini =====
+{{gallery>software:newsreader }}
+
+===== Requisiti =====
+{{template>it:inc:midp|ver=MIDP2.0|}}
+
+Lingue supportate: {{ico:eng.png|ENG}} {{ico:ita.png|ITA}}
+
+===== Scarica! =====
+{{template>it:inc:qrcode|Section=Applications|Name=News Reader|URL=http://www.eiroca.net/mobile/download.php?n=0_0&c=000|}}
+
+{{template>it:inc:sf|Repository=mobilesuite|}}
+
+====== Informazioni sullo sviluppo ======
+===== To Do =====
+  * Migliorare l'interfaccia utente
+
+===== Ultimi cambiamenti =====
+**Versione 1.1.0**
+  * Allineato con la versione 1.1.0 di [[it:Projects:Development:lib:libJ2ME|libJ2ME]]
+  * Aggiunto il supporto alle redirezioni HTTP
+
+**Versione 1.0.0**
+  * Prima versione
+
+{{template>it:inc:info|ID=mobile_suite|Status=Release|Language=Java|}}
+
+====== Licenza & Copyright ======
+{{template>it:inc:gpl2
+|Author=Copyright (c) 2006-2010 Gösta Jonasson & eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+News Reader deriva da RSS Reader MIDlet scritto da Gösta Jonasson.
+
+{{tag>News_Reader MobileSuite Applicazioni Java}}

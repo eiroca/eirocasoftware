@@ -1,0 +1,5 @@
+[[en:projects:start|Projects]]
+[[en:archive:start|Archive]]
+[[en:blog:start|Blog]]
+[[http://www.eiroca.net/mobile|Mobile]]
+[[en:about|About]]

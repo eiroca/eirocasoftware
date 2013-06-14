@@ -1,0 +1,1 @@
+The game needs a MIDP2.0 compatible handset. See [[en:Projects:Software:Mobile:compatibility|compatibility]] with real devices.

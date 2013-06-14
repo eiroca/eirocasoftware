@@ -1,0 +1,41 @@
+====== eANN ======
+eANN è un'implementazione di diverse tiplogie di reti neurali scritte con un codice OOP volutamente semplice e chiaro. È anche presente una shell grafica alle principali operazioni eseguibili con una rete neurale.
+
+È possibile avere attive anche reti di tipologia e dimensione differenti, ognuna indipendente dall'altra oppure concatenandone gli input e gli output. 
+È anche possibile modificare il comportamento della rete al fine di definire regole speciali per i neuroni (singoli o di tutto il layers) al fine di crearli o cancellarli durante le operazioni di addestramento, realizzando così delle reti dal comportamento dinamico.
+
+Reti neurali implementate:
+  * Multi Layer Neural Network with Backpropagation
+  * Competitive Neural Network
+  * Radial Basis Neural Network
+  * Progressive Radial Neural Network
+  * Progressive Learning Neural Network
+
+===== Immagini =====
+{{gallery>software:eANN }}
+
+===== Requisiti =====
+Lingue supportate: {{ico:eng.png|ENG}}
+
+Sistemi operativi supportati: {{ico:win.png|Windows}}
+
+===== Scarica! =====
+{{template>it:inc:sf|Repository=eann|}}
+
+====== Informazioni sullo sviluppo ======
+===== Ultimi cambiamenti =====
+**Versione 1.0.0**
+  * Prima versione
+  * Aggiunta la proprietà //Status//
+  * Class reengineering (aggiunti o modificati): Info, Query, SupportedOper
+  * reengineering delle classi per supportare a pieno Delphi
+  * Aggiunti: FindCluster, ResetTraining, ANNMsg e altre migliorie minori
+
+{{template>it:inc:info|ID=eann|Status=Release|Language=Pascal|}}
+
+====== Licenza & Copyright ======
+{{template>it:inc:gpl3
+|Author=Copyright (c) 1996-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+
+{{tag>eANN Applicazioni Pascal Reti_neurali}}

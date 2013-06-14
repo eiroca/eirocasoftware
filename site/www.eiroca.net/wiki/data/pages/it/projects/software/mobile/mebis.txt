@@ -1,0 +1,37 @@
+====== MobileSuite - Mebis ======
+MeBis è un semplice clone di Tetris.
+
+===== Immagini =====
+{{gallery>software:mebis }}
+
+===== Requisiti =====
+{{template>it:inc:midp|ver=MIDP2.0|}}
+\\
+Lingue supportate: {{ico:eng.png|ENG}} {{ico:ita.png|ITA}}
+
+===== Scarica! =====
+{{template>it:inc:qrcode|Section=Games|Name=Mebis|URL=http://www.eiroca.net/mobile/download.php?n=1_1&c=000|}}
+\\
+{{template>it:inc:sf|Repository=mobilesuite|}}
+
+====== Informazioni sullo sviluppo ======
+===== To Do =====
+  * Supporto multigiocatore
+  * Migliorare la grafica
+
+===== Ultimi cambiamenti =====
+**Versione 1.1.0**
+  * Allineato con la versione 1.1.0 di [[it:Projects:Development:lib:libJ2ME|libJ2ME]]
+
+**Versione 1.0.0**
+  * Prima versione
+
+{{template>it:inc:info|ID=mobile_suite|Status=Release|Language=Java|}}
+
+====== Licenza & Copyright ======
+{{template>it:inc:gpl2
+|Author=Copyright (c) 2005-2010 Michael "ScriptKiller" Arndt & eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+Mebis deriva da [[http://scriptkiller.de/scriptris_j2me_multiplayer_tetris.php|scriptris]] scritto da Michael Arndt.
+  
+{{tag>Mebis MobileSuite Giochi Java}}

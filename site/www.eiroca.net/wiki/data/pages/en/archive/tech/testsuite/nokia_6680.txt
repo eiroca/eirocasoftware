@@ -1,0 +1,136 @@
+Back to [[..:handset_report|Test Suite]] report's page.
+
+^  Nokia 6680  ^^^^
+^TestSuite|//Version//||<nowiki>1.0.5</nowiki>|
+^System|//Platform//|Name|<nowiki>Nokia6680/5.04.07</nowiki>|
+^ ::: |//Memory//|Total memory|409600|
+^ ::: | ::: |Free memory|126312|
+^Environment|//CLDC//|Configuration|<nowiki>CLDC-1.1</nowiki>|
+^ ::: | ::: |Char encoding|<nowiki>ISO8859_1</nowiki>|
+^ ::: |//MIDP//|JSR-118 (MIDP2.x) supported|true|
+^ ::: | ::: |Profiles|<nowiki>MIDP-2.0</nowiki>|
+^ ::: | ::: |Locale|<nowiki>it</nowiki>|
+^ ::: | ::: |Hostname|<nowiki>localhost</nowiki>|
+^Graphics|//Screen//|Screen (full) height|208|
+^ ::: | ::: |Screen (full) width|176|
+^ ::: | ::: |Screen (normal) height|144|
+^ ::: | ::: |Screen (normal) width|176|
+^ ::: | ::: |Is Color|true|
+^ ::: | ::: |Color Depth|16777216|
+^ ::: | ::: |Alpha Levels|256|
+^ ::: | ::: |Screen buffered|true|
+^ ::: |//Canvas//|Font Default Height|16|
+^ ::: | ::: |Font Small Height|15|
+^ ::: | ::: |Font Small Bold Height|15|
+^ ::: | ::: |Font Medium Height|16|
+^ ::: | ::: |Font Medium Bold Height|16|
+^ ::: | ::: |Font Large Height|21|
+^ ::: | ::: |Font Large Bold Height|21|
+^ ::: |//Mobile Media//|JSR-135 MMAPI supported|true|
+^ ::: | ::: |JSR-135 Video supported|true|
+^ ::: | ::: |Mobile Media version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |Supports mixing|false|
+^ ::: | ::: |Audio capture|true|
+^ ::: | ::: |Video capture|true|
+^ ::: | ::: |Supports recording|true|
+^ ::: | ::: |Audio encoding|<nowiki>encoding=audio/wav encoding=audio/au encoding=audio/amr encoding=audio/raw</nowiki>|
+^ ::: | ::: |Video encodings|<nowiki>encoding=video/3gpp</nowiki>|
+^ ::: | ::: |Video snapshot encodings|<nowiki>encoding=png encoding=jpeg encoding=image/png encoding=image/jpeg encoding=image/jpg encoding=image/gif encoding=image/bmp</nowiki>|
+^ ::: |//Multimedia//|Capture|<nowiki>audio/amr audio/au audio/basic audio/raw audio/wav audio/x-au audio/x-basic audio/x-wav video/3gpp</nowiki>|
+^ ::: | ::: |Device|<nowiki>audio/x-tone-seq</nowiki>|
+^ ::: | ::: |File|<nowiki>audio/x-tone-seq audio/wav audio/x-wav audio/basic audio/x-au audio/au audio/x-basic audio/amr-wb audio/amr audio/mp3 application/sdp audio/sp-midi audio/mobile-xmf audio/x-beatnik-rmf audio/x-rmf audio/rmf audio/midi audio/aac audio/mpeg audio/3gpp audio/mp4 audio/3gpp2 video/mp4 video/mpeg4 video/3gpp application/vnd.rn-realmedia</nowiki>|
+^ ::: | ::: |HTTP|<nowiki>audio/x-tone-seq audio/wav audio/x-wav audio/basic audio/x-au audio/au audio/x-basic audio/amr-wb audio/amr audio/mp3 application/sdp audio/sp-midi audio/mobile-xmf audio/x-beatnik-rmf audio/x-rmf audio/rmf audio/midi audio/aac audio/mpeg audio/3gpp audio/mp4 audio/3gpp2 video/mp4 video/mpeg4 video/3gpp application/vnd.rn-realmedia</nowiki>|
+^ ::: | ::: |HTTPS|<nowiki>audio/x-tone-seq audio/wav audio/x-wav audio/basic audio/x-au audio/au audio/x-basic audio/amr-wb audio/amr audio/mp3 application/sdp audio/sp-midi audio/mobile-xmf audio/x-beatnik-rmf audio/x-rmf audio/rmf audio/midi audio/aac audio/mpeg audio/3gpp audio/mp4 audio/3gpp2 video/mp4 video/mpeg4 video/3gpp application/vnd.rn-realmedia</nowiki>|
+^ ::: |//3D Graphics//|JSR-184 supported|true|
+^ ::: | ::: |M3G version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |3D - m3g Release|<nowiki>04_wk49</nowiki>|
+^ ::: | ::: |3D - max Lights|8|
+^ ::: | ::: |3D - max Sprite Crop Dimension|256|
+^ ::: | ::: |3D - max Texture Dimension|256|
+^ ::: | ::: |3D - max Transforms Per Vertex|2|
+^ ::: | ::: |3D - max Viewport Dimension|1024|
+^ ::: | ::: |3D - num Texture Units|2|
+^ ::: | ::: |3D - support Antialiasing|false|
+^ ::: | ::: |3D - support Dithering|false|
+^ ::: | ::: |3D - support Local Camera Lighting|false|
+^ ::: | ::: |3D - support Mipmapping|true|
+^ ::: | ::: |3D - support Perspective Correction|true|
+^ ::: | ::: |3D - support TrueColor|false|
+^Comms|//Wireless Messaging//|JSR-120 (Messaging 1.1) supported|true|
+^ ::: | ::: |JSR-205 (Messaging 2.0) supported|false|
+^ ::: | ::: |SMSC Address|9|
+^ ::: |//Bluetooth//|JSR-082 Bluetooth supported|true|
+^ ::: | ::: |JSR-082 OBEX supported|false|
+^ ::: | ::: |Bluetooth version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |The maximum ReceiveMTU size|672|
+^ ::: | ::: |The maximum number of connected devices|7|
+^ ::: | ::: |Is inquiry allowed during a connection|false|
+^ ::: | ::: |Is paging allowed during a connection|false|
+^ ::: | ::: |Is inquiry scanning allowed during a connection|false|
+^ ::: | ::: |Is page scanning allowed during a connection|false|
+^ ::: | ::: |Is master/slave switch allowed|false|
+^ ::: | ::: |Max number of concurrent service discovery transactions|1|
+^ ::: | ::: |Max number of service attributes to be retrieved per service record|65535|
+^ ::: |//SIP//|JSR-180 supported|false|
+^Personal Information|//PIM & File//|JSR-075 Filesystem supported|true|
+^ ::: | ::: |JSR-075 PIM supported|true|
+^ ::: | ::: |PIM version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |FileConnection version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |File Separator|<nowiki>/</nowiki>|
+^ ::: | ::: |Directory of photos name|<nowiki>Foto</nowiki>|
+^ ::: | ::: |Directory of photos path|<nowiki>file:///C:/Nokia/Images/</nowiki>|
+^ ::: | ::: |Directory of videos name|<nowiki>Clip video</nowiki>|
+^ ::: | ::: |Directory of videos path|<nowiki>file:///C:/Nokia/Videos/</nowiki>|
+^ ::: | ::: |Directory of graphics name|<nowiki>Immagini</nowiki>|
+^ ::: | ::: |Directory of graphics path|<nowiki>file:///C:/Nokia/Images/Pictures/</nowiki>|
+^ ::: | ::: |Directory of tones name|<nowiki>Toni</nowiki>|
+^ ::: | ::: |Directory of tones path|<nowiki>file:///C:/Nokia/Sounds/</nowiki>|
+^ ::: | ::: |Directory of music name|<nowiki>Brani</nowiki>|
+^ ::: | ::: |Directory of music path|<nowiki>file:///C:/Nokia/Sounds/</nowiki>|
+^ ::: | ::: |Directory of recordings name|<nowiki>Clip audio</nowiki>|
+^ ::: | ::: |Directory of recordings path|<nowiki>file:///C:/Nokia/Sounds/Digital/</nowiki>|
+^ ::: | ::: |Directory of private name|<nowiki>Privati</nowiki>|
+^ ::: | ::: |Directory of private path|<nowiki>file:///E:/System/MIDlets/[10153af4]/scratch/</nowiki>|
+^ ::: | ::: |Directory of memorycard name|<nowiki>Memory card</nowiki>|
+^ ::: | ::: |Directory of memorycard path|<nowiki>file:///E:/</nowiki>|
+^ ::: |//Location//|JSR-179 supported|false|
+^Application connectivity|//Web Services//|JSR-172 supported|false|
+^Security & Commerce|//Security & Trust Services//|JSR-177 supported|false|
+^API|//Other//|Motorola - RC|false|
+^ ::: | ::: |Nokia - Graphics|true|
+^ ::: | ::: |Nokia - Sound|true|
+^ ::: | ::: |Nokia - UI|true|
+^ ::: | ::: |Samsung - Acceleration|false|
+^ ::: | ::: |Samsung - Vibration|false|
+^ ::: | ::: |Siemens - graphics|false|
+^ ::: | ::: |Siemens - UI|false|
+^ ::: | ::: |JTWI version|<nowiki>1.0</nowiki>|
+^Platform|//Control//|Has key-held events|true|
+^ ::: | ::: |Has motion events|false|
+^ ::: | ::: |Has pointer events|false|
+^ ::: |//Keyboard//|Key DOWN|<nowiki>Tasto spostam. giï¿½</nowiki>|
+^ ::: | ::: |Key FIRE|5|
+^ ::: | ::: |Key GAME A|7|
+^ ::: | ::: |Key GAME B|9|
+^ ::: | ::: |Key GAME C|<nowiki>*</nowiki>|
+^ ::: | ::: |Key GAME D|<nowiki>#</nowiki>|
+^ ::: | ::: |Key LEFT|<nowiki>Tasto spostamento sx</nowiki>|
+^ ::: | ::: |Key RIGHT|<nowiki>Tasto spostamento dx</nowiki>|
+^ ::: | ::: |Key UP|<nowiki>Tasto spostamento su</nowiki>|
+^ ::: |//Settings//|Available Time Zone|<nowiki>GMT UTC</nowiki>|
+^ ::: | ::: |Default Time Zone|<nowiki>GMT 01:00</nowiki>|
+^ ::: | ::: |Default Timezone (java)|<nowiki>GMT 01</nowiki>|
+^Benchmark|//Math//|Math Add array|2297|
+^ ::: | ::: |Math Add local|1484|
+^ ::: | ::: |Math Add instance|2094|
+^ ::: | ::: |Math Add static|1000|
+^ ::: | ::: |Math Div array|3078|
+^ ::: | ::: |Math Div local|2547|
+^ ::: | ::: |Math Div instance|2546|
+^ ::: | ::: |Math Div static|2625|
+^ ::: | ::: |Math Mul array|2250|
+^ ::: | ::: |Math Mul local|406|
+^ ::: | ::: |Math Mul instance|703|
+^ ::: | ::: |Math Mul static|563|
+^ ::: |//Timer//|Sleep precision|47|
+

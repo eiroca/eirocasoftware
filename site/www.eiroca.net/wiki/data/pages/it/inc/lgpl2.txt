@@ -1,0 +1,14 @@
+@Author@
+
+Questa libreria è software **libero**, è possibile ridistribuirla e/o modificarla secondo i termini della [[http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html|GNU Lesser General Public License]] pubblicata dalla [[http://www.fsf.org/|Free Software Foundation]], nella versione 2.1 o (a vostra scelta) qualunque versione successiva.
+
+**Questo programma è distribuito nella speranza che possa essere utile, ma SENZA ALCUNA GARANZIA implicita o esplicita di COMMERCIABILITÀ o IDONEITÀ PER UN PARTICOLARE SCOPO**. Vedere la [[http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html|GNU Lesser General Public License]] per maggiori dettagli.
+
+Insieme alla libreria ci dovrebbe essere una copia della GNU Lesser General Public License, se no, scrivere per ottenerla a:\\
+
+''
+Free Software Foundation, Inc.\\
+51 Franklin St, Fifth Floor,\\
+Boston, MA\\
+02111-1307 USA\\
+''

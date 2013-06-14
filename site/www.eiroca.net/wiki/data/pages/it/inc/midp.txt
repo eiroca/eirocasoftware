@@ -1,0 +1,1 @@
+Il gioco necessita di un cellulare compatibile con MIDP2.0. In questa [[it:Projects:Software:Mobile:compatibility|pagina]] c'è un elenco di terminali che sono stati testati.

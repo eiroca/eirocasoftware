@@ -1,0 +1,3 @@
+~~BARCODE~class=barcode_right~url=@URL@~size=M~margin=50~bgcolor=FFFFFF~~
+
+@Name@ can be downloaded in the "@Section@" section of the [[http://www.eiroca.net/mobile/module.php?s=DS|Web portal]] or via mobile [[http://www.eiroca.net/mobile/index.php?s=DS|http://www.eiroca.net/mobile/]].

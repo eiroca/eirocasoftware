@@ -1,1 +1,13 @@
-[[http://www.greenpeace.org/international/en/news/Blogs/nuclear-reaction/|{{ banner:nuclear.jpg?150x150 |Nuclear Reaction}}]]
+**[[it:start|eIrOcA]]**
+  * [[it:Index|Indice]] 
+  * [[it:About|Info su eIrOcA]]
+  * [[http://www.eiroca.net/wiki/feed.php|{{button:rss.png?80x15|Recent changes RSS feed}}]]
+<html>
+<div class="g-plusone" data-annotation="inline" data-width="300" data-href="http://www.eiroca.net"></div>
+</html>
+
+**[[it:start|Sezioni]]**
+  * [[it:projects:start|Progetti]]
+  * [[it:archive:start|Archivio]]
+  * [[it:blog:start|Blog]]
+  * [[http://www.eiroca.net/mobile|Mobile]]

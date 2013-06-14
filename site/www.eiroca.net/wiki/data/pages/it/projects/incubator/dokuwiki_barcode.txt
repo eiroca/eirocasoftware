@@ -1,0 +1,88 @@
+====== Dokuwiki Plugin - barcode ======
+Plugin [[doku>start|Dokuwiki]] per creare codici a barre 2D con diversi providers.
+
+===== Utilizzo del plugin =====
+Genera dei barcode 2D utilizzando:
+  * [[http://code.google.com/intl/it-IT/apis/chart/types.html#qrcodes|Google Charts]]
+  * [[http://qrcode.kaywa.com/|Kaywa]]
+  * [[http://www.i-nigma.com/CreateBarcodes.html|I-nigma]]
+  * [[http://qrserver.com/api/documentation/create-qr-code/|QRServer]]
+Il layout del codice a barre può essre definito con dei fogli di stile CSS.
+
+==== Sintassi ====
+  ~~BARCODE~attributo1=valore1~attributo2=valore2~~
+
+I possibili valori, opzioniali, di attributo sono:
+
+^ Nome        ^ Descrizione ^
+| **id**      |id da assegnare al tag img del barcode|
+| **class**   |class da assegnare al tag img, i valori possibili sono:|
+| :::         |barcode_left -> per allineare a sinistra il barcode |
+| :::         |barcode_right -> per allineare a destra il barcode |
+| :::         |barcode_center -> per centrare il barcode |
+| **mode**    |Valido solo per I-nigma, 0 genera di codici QR, 1 dei barcode DataMatrix |
+| **size**    |Dimensione del barcode, ammessi: S, M, L, XL |
+
+Oltre ai precedenti e necessario specificare al massimo uno dei seguenti per descrivere il contenuto del barcode:
+^ Nome         ^ Descrizione ^
+| **url**      |il barcode è un URL, es. url=http:/www.eiroca.net |
+| **sms**      |il barcode è un SMS, es. sms=+391234567890=A Message |
+| **tel**      |il barcode è un numero di telefono, es. tel=+391234567890 |
+| **contact**  |il barcode è un contatto, es. contact=Name=+123432324=my@address.com |
+| **text**     |il barcode è un testo, es. text=MAILTO:my@address.com |
+Se questo manca attributo viene generato un barcode che punta alla pagina che lo contiene.
+
+Usando **id** e **class** è possibile controllare, via CSS, il comportamento dell'immagine.
+
+Possono inoltre essere settati eventuali attributi specifici dei singoli provider, ad esempio:
+^ Nome        ^ Descrizione ^
+| **caption** |Valido solo per I-nigma, titolo da usare in basso al barcode |
+| **bgcolor** |Valido solo per QRServer, colore di sfondo del barcode |
+Vedere il sito del singolo provider la documentazione specifica.
+
+==== Esempi ====
+~~BARCODE~class=barcode_left~url=http://www.eiroca.net/dokuwiki~size=S~~
+~~BARCODE~class=barcode_right~url=http://www.eiroca.net/dokuwiki~size=S~~
+~~BARCODE~class=barcode_center~size=M~~
+
+~~CLEARFLOAT~~
+Si ottengono con il seguente codice:
+
+  ~~BARCODE~class=barcode_left~url=http://www.eiroca.net/dokuwiki~size=S~~
+  ~~BARCODE~class=barcode_right~url=http://www.eiroca.net/dokuwiki~size=S~~
+  ~~BARCODE~class=barcode_center~size=M~~
+
+===== Istallazione =====
+Scaricare e installare il plugin tramite il [[doku>plugin:plugin|Plugin Manager]] usando il seguente [[http://www.eiroca.net/apps/dokuwiki/barcode.zip|URL]]. Oppure installarlo manualmente (Vedere [[doku>Plugins]]) usando il codice, sempre aggiornato, che si ottiene dalla sezione [[..:dokuwiki#Scarica!]].
+
+==== Amministrazione ====
+Tramite il pannello di gestione Plugin è possibile configurare:
+  * Il provider da usare per generare il barcode
+  * Se mostrare un messagio che suggerisce un reader mobile per leggere il barcode
+
+I testi dei messagi puossono essere configurato modificando i file //footer.txt// presenti nella directory del plugin. Per aggiungere eventuali nuove lingue non ancora presenti occorre creare un file footer_XX.txt dove XX è il codice della nuova lingua.
+
+===== Versioni =====
+**Versione 2011/02/03**
+  * Aggiunto bottone nella toolbar di editing
+  * Supporto a DokuWiki "Anteater"
+
+**Versione 2010/04/20**
+  * Il footer è traducibile in più lingue
+  * Nuova architettura di gestione dei provider
+  * Nuovo provider (QRserver)
+  * Semplificazione amministrazione
+
+**Versione 2010/01/20**
+  * Semplificazione sintassi per generare un barcode che punta alla pagina che lo contiene
+  * Rimozione di codice superfluo
+
+**Versione 2010/01/05**
+  * Prima versione
+
+====== Licenza & Copyright ======
+{{template>it:inc:gpl3
+|Author=Copyright (c) 2010-2013 eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+
+{{tag>DokuWiki barcode QRCode PHP}}

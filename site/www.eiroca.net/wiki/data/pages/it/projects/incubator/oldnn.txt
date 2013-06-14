@@ -1,0 +1,22 @@
+====== OldNN ======
+Vecchio software per reti neurali, surclassato da [[it:Projects:Software:Desktop:eANN]].
+
+===== Requisiti =====
+Lingue supportate: {{ico:eng.png|ENG}}
+
+Sistemi operativi supportati: {{ico:win.png|Windows}}
+
+===== Scarica! =====
+{{template>it:inc:sf|Repository=eirocasoftware|}}
+
+====== Informazioni sullo sviluppo ======
+Non ancora rilasciato.
+
+{{template>it:inc:info|ID=eiroca_software_pout_pourri|Status=Working|Language=Pascal|}}
+
+====== Licenza & Copyright ======
+{{template>it:inc:gpl3
+|Author=Copyright (c) 1996-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+
+{{tag>OldNN Applicazioni Pascal Reti_neurali}}

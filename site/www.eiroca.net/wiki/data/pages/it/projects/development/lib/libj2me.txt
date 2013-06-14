@@ -1,0 +1,32 @@
+====== MobileSuite - libJ2ME ======
+Libreria J2ME.
+
+===== Requisiti =====
+La libreria richiede un cellulare compatibile con MIDP2.0.
+
+===== Scarica! =====
+{{template>it:inc:sf|Repository=mobilesuite|}}
+
+====== Informazioni sullo sviluppo ======
+===== To Do =====
+  * Moltissime cose
+
+===== Ultimi cambiamenti =====
+**Versione 1.1.0**
+  * Introdotta la classe
+  * Alcune ottimizzazioni
+  * Client HTTP 
+  * Funzionalità isClass 
+  * Funzionalità read property 
+
+**Versione 1.0.0**
+  * Prima versione
+
+{{template>it:inc:info|ID=Mobile_Suite|Status=Release|Language=Java|}}
+
+====== Licenza & Copyright ======
+{{template>it:inc:gpl2
+|Author=Copyright (c) 2002-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+
+{{tag>libJ2ME Library Java}}

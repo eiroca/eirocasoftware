@@ -1,0 +1,6 @@
+====== Viaggi ======
+Ecco i nostri viaggi!
+
+[[.:Messico:start|{{ico:messico.png|Messico}}]][[.:Messico:start|Messico]]
+
+[[.:Tunisia|{{ico:tunisia.png|Tunisia}}]][[.:Tunisia|Tunisia]]

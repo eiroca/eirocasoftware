@@ -1,0 +1,18 @@
+<embed en:template:app_new>
+  <label Name>DokuWiki</label>
+  <label Status>Working</label>
+  <label Description>
+DokuWiki is a collection of tools and plugins for Wikis in [[http://www.dokuwiki.org/|DokuWiki]] format.
+
+Plug-ins:
+  * [[.:dokuwiki:barcode|barcode]] creates 2D-Barcodes using different providers;
+  * [[.:dokuwiki:orgapp|orgapp]] draws organization charts;
+
+  </label>
+  <label Repository>eirocasoftware</label>
+  <label MetricID>eiroca_software_pout_pourri</label>
+  <label Language>PHP</label>
+  <label Copyright>Copyright (c) 1996-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)</label>
+</embed>
+
+{{tag>Wiki DokuWiki Utility}}

@@ -1,0 +1,60 @@
+====== MobileSuite - Test Suite ======
+Il TestSuite è una suite di utility a disposizione degli sviluppatori Java per la creazione di midlets per dispositivi mobili. 
+Gli strumenti consento di esplorare le capacità e le limitazioni di telefoni cellulari e altri dispositivi J2ME al fine di ottimizzare le applicazioni in base alle caratteristiche del dispositivo.
+
+===== Descrizione =====
+La sezione //Phone specs// è utile per controllare rapidamente le caratteristiche fondamentali di un nuovo device. Vengono mostrate le dimensioni dello schermo, la profondità del colore, le system properties (es. marca e modello del dispositivo), le proprietà del Canvas, la risoluzione temporale dei timer (esempio il tempo minimo di latenza di un timer) e le varie API JSR supportate dal dispositivo. 
+Questa dovrebbe essere la prima applicazione da utilizzare su un nuovo dispositivo al fine di raccoglierne le caratteristiche salienti.
+
+La sezione //Keys// è un tool iterativo per scoprire la mappatura dei tasti e le relative caratteristiche della tastiera.
+Determinare il comportamento esatto della tastiera è spesso di vitale importanza per la user expirence della maggior parte delle applicazioni, soprattutto dei giochi. 
+Questo tool consente di verificare quali eventi vengono generati dall'utilizzo dei vari tasti (ad esempio, è possibile spostarsi e sparare allo stesso tempo?), scoprire eventuali limitazioni (ad esempio non tutti i dispositivi implementano l'evento di tasto ripetuto), di stabilire le associazioni tra tasti speciali e tasti reali e ottenere i codici dei tasti non-standard presenti eventualmente sul dispositivo.
+
+La sezione //Class browser// fornisce informazioni di dettagliato sulle classi implementate dal dispositivo. Lo strumento utilizza un database di molte classi estratte dalle API Midlet (standard e non) per capire cosa è stato implementato e cosa no. È possibile navigare nella gerarchia delle classi per riuscire a verificare l'implementazione della singola classe e scoprire quali librerie, anche proprietarie, sono presenti ed eventualmente non documentate.
+
+===== Immagini =====
+{{gallery>software:testsuite }}
+
+===== Report ottentuti con Test Suite =====
+In [[it:Archive:Tech:Handset Report|questa sezione]] è possibile vedere gli output del tool su alcuni dispositivi reali.
+
+===== Requisiti =====
+{{template>it:inc:midp|ver=MIDP2.0|}}
+
+Lingue supportate: {{ico:eng.png|ENG}} {{ico:ita.png|ITA}}
+
+===== Scarica! =====
+{{template>it:inc:qrcode|Section=Applications|Name=Test Suite|URL=http://www.eiroca.net/mobile/download.php?n=0_2&c=000|}}
+\\
+{{template>it:inc:sf|Repository=mobilesuite|}}
+
+====== Informazioni sullo sviluppo ======
+===== To Do =====
+  * Migliorare l'interfaccia utente
+  * Aggiungere ulteriori test
+
+===== Ultimi cambiamenti =====
+**Versione 1.1.0**
+  * Allineato con la versione 1.1.0 di [[..:..:development:libJ2ME]]
+  * Rinominati i nomi dei singoli test
+  * Aggiornato la mappatura dei risultati
+  * Aggiunti test (proprietà specifiche per: Motorola, Samsung, Nokia, SonyEricsson)
+  * Ottimizzazione della gestione dei tasti Command
+  * Invio dei test via HTTP
+  * Invio a blocchi dei risultati dei test
+  * Aggiunti test su API opzionali
+  * Refactory della sezione di benchmark
+  * Refactory e introduzione del concetto di //Inspector//.
+
+**Versione 1.0.0**
+  * Prima versione
+
+{{template>it:inc:info|ID=mobile_suite|Status=Release|Language=Java|}}
+
+====== Licenza & Copyright ======
+{{template>it:inc:gpl2
+|Author=Copyright (c) 2004-2010 Andrew Scott & eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+Test Suite è deriva dall'applicazione [[http://mobiledevtools.sourceforge.net/|Mobile Device Tools]] scritta da Andrew Scott.
+
+{{tag>Test_Suite MobileSuite Applicazioni Java}}

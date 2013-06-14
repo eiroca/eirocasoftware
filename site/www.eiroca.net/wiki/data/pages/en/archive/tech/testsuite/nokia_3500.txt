@@ -1,0 +1,106 @@
+Back to [[..:handset_report|Test Suite]] report's page.
+
+^  Nokia 3500  ^^^^
+^TestSuite|//Version//||<nowiki>1.0.5</nowiki>|
+^System|//Platform//|Name|<nowiki>Nokia3500c/06.01</nowiki>|
+^ ::: |//Memory//|Total memory|2097152|
+^ ::: | ::: |Free memory|2028992|
+^Environment|//CLDC//|Configuration|<nowiki>CLDC-1.1</nowiki>|
+^ ::: | ::: |Char encoding|<nowiki>ISO-8859-1</nowiki>|
+^ ::: |//MIDP//|JSR-118 (MIDP2.x) supported|true|
+^ ::: | ::: |Profiles|<nowiki>MIDP-2.0</nowiki>|
+^ ::: | ::: |Locale|<nowiki>en</nowiki>|
+^ ::: | ::: |Serial ports|<nowiki>COM0</nowiki>|
+^Graphics|//Screen//|Screen (full) height|160|
+^ ::: | ::: |Screen (full) width|128|
+^ ::: | ::: |Screen (normal) height|115|
+^ ::: | ::: |Screen (normal) width|128|
+^ ::: | ::: |Is Color|true|
+^ ::: | ::: |Color Depth|16777216|
+^ ::: | ::: |Alpha Levels|256|
+^ ::: | ::: |Screen buffered|true|
+^ ::: |//Canvas//|Font Default Height|12|
+^ ::: | ::: |Font Small Height|9|
+^ ::: | ::: |Font Small Bold Height|9|
+^ ::: | ::: |Font Medium Height|12|
+^ ::: | ::: |Font Medium Bold Height|12|
+^ ::: | ::: |Font Large Height|16|
+^ ::: | ::: |Font Large Bold Height|16|
+^ ::: |//Mobile Media//|JSR-135 MMAPI supported|true|
+^ ::: | ::: |JSR-135 Video supported|true|
+^ ::: | ::: |Mobile Media version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |Supports mixing|false|
+^ ::: | ::: |Audio capture|true|
+^ ::: | ::: |Video capture|true|
+^ ::: | ::: |Supports recording|true|
+^ ::: | ::: |Audio encoding|<nowiki>encoding=audio/amr</nowiki>|
+^ ::: | ::: |Video encodings|<nowiki>encoding=video/3gpp</nowiki>|
+^ ::: | ::: |Video snapshot encodings|<nowiki>encoding=image/gif encoding=image/jpg encoding=image/jpeg encoding=image/jpeg encoding=image/jpg</nowiki>|
+^ ::: |//Multimedia//|Capture|<nowiki>radio video image audio</nowiki>|
+^ ::: | ::: |Device|<nowiki>audio/midi audio/x-tone-seq</nowiki>|
+^ ::: | ::: |File|<nowiki>audio/wav audio/x-wav audio/mpeg3 audio/mpg3 audio/mpeg audio/mp3 audio/x-mpeg audio/x-mpeg3 audio/mp4 audio/mpeg4 audio/aac audio/mp4 audio/m4a audio/3gpp audio/3gpp audio/x-ms-wma audio/amr audio/amr-wb audio/mid audio/midi audio/x-mid audio/x-midi application/x-midi audio/sp-midi audio/vnd.nokia.mobile-xmf audio/x-tone-seq image/gif image/jpg image/jpeg image/jpeg image/bmp image/x-bmp image/png image/x-png image/vnd.nokia.ota-bitmap image/x-ota-bitmap image/vnd.wap.wbmp video/3gpp application/3gp video/3gpp2 video/mp4 video/mpeg</nowiki>|
+^ ::: | ::: |HTTP|<nowiki>audio/wav audio/x-wav audio/mpeg3 audio/mpg3 audio/mpeg audio/mp3 audio/x-mpeg audio/x-mpeg3 audio/mp4</nowiki>|
+^ ::: | ::: |RTSP|<nowiki>application/octet-stream video/3gpp application/3gp video/3gpp2 video/mp4 video/mpeg</nowiki>|
+^ ::: |//3D Graphics//|JSR-184 supported|true|
+^ ::: | ::: |M3G version|<nowiki>1.1</nowiki>|
+^ ::: |//SVG//|M2G version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |SVG version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |SVG profile|<nowiki>tiny</nowiki>|
+^Comms|//Wireless Messaging//|JSR-120 (Messaging 1.1) supported|true|
+^ ::: | ::: |JSR-205 (Messaging 2.0) supported|true|
+^ ::: | ::: |SMSC Address|639180000101|
+^ ::: |//Bluetooth//|JSR-082 Bluetooth supported|true|
+^ ::: | ::: |JSR-082 OBEX supported|false|
+^ ::: |//SIP//|JSR-180 supported|false|
+^Personal Information|//PIM & File//|JSR-075 Filesystem supported|true|
+^ ::: | ::: |JSR-075 PIM supported|true|
+^ ::: | ::: |PIM version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |FileConnection version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |File Separator|<nowiki>/</nowiki>|
+^ ::: | ::: |Directory of photos name|<nowiki>/Gallery/Images/</nowiki>|
+^ ::: | ::: |Directory of photos path|<nowiki>file:///C:/predefgallery/predefphotos/</nowiki>|
+^ ::: | ::: |Directory of videos name|<nowiki>/Gallery/Video clips/</nowiki>|
+^ ::: | ::: |Directory of videos path|<nowiki>file:///C:/predefgallery/predefvideos/</nowiki>|
+^ ::: | ::: |Directory of graphics name|<nowiki>/Gallery/Graphics/</nowiki>|
+^ ::: | ::: |Directory of graphics path|<nowiki>file:///C:/predefgallery/predefgraphics/</nowiki>|
+^ ::: | ::: |Directory of tones name|<nowiki>/Gallery/Tones/</nowiki>|
+^ ::: | ::: |Directory of tones path|<nowiki>file:///C:/predefgallery/predeftones/</nowiki>|
+^ ::: | ::: |Directory of music name|<nowiki>/Gallery/Music files/</nowiki>|
+^ ::: | ::: |Directory of music path|<nowiki>file:///C:/predefgallery/predefmusic/</nowiki>|
+^ ::: | ::: |Directory of recordings name|<nowiki>/Gallery/Recordings/</nowiki>|
+^ ::: | ::: |Directory of recordings path|<nowiki>file:///C:/predefgallery/predefrecordings/</nowiki>|
+^ ::: | ::: |Directory of memorycard name|<nowiki>/Gallery/Memory card/</nowiki>|
+^ ::: | ::: |Directory of memorycard path|<nowiki>file:///E:/</nowiki>|
+^ ::: |//Location//|JSR-179 supported|false|
+^Application connectivity|//Web Services//|JSR-172 supported|true|
+^Security & Commerce|//Security & Trust Services//|JSR-177 supported|false|
+^ ::: | ::: |Smartcard slots|<nowiki>0C</nowiki>|
+^API|//Other//|Motorola - RC|false|
+^ ::: | ::: |Nokia - Graphics|true|
+^ ::: | ::: |Nokia - Sound|true|
+^ ::: | ::: |Nokia - UI|true|
+^ ::: | ::: |Samsung - Acceleration|false|
+^ ::: | ::: |Samsung - Vibration|false|
+^ ::: | ::: |Siemens - graphics|false|
+^ ::: | ::: |Siemens - UI|false|
+^ ::: | ::: |JTWI version|<nowiki>1.0</nowiki>|
+^Platform|//Control//|Has key-held events|true|
+^ ::: | ::: |Has motion events|false|
+^ ::: | ::: |Has pointer events|false|
+^ ::: |//Keyboard//|Key DOWN|8|
+^ ::: | ::: |Key FIRE|5|
+^ ::: | ::: |Key GAME A|7|
+^ ::: | ::: |Key GAME B|9|
+^ ::: | ::: |Key GAME C|<nowiki>*</nowiki>|
+^ ::: | ::: |Key GAME D|<nowiki>#</nowiki>|
+^ ::: | ::: |Key LEFT|4|
+^ ::: | ::: |Key RIGHT|6|
+^ ::: | ::: |Key UP|2|
+^ ::: |//Network//|Access type (Nokia)|<nowiki>pd</nowiki>|
+^ ::: |//Settings//|Available Time Zone|<nowiki>GMT UTC</nowiki>|
+^ ::: | ::: |Default Time Zone|<nowiki>GMT</nowiki>|
+^ ::: | ::: |Dateformat (Nokia)|<nowiki>MMM dd yyyy</nowiki>|
+^ ::: | ::: |Timeformat (Nokia)|<nowiki>hh:mm a</nowiki>|
+^Benchmark|//Math//|Math Add array|853|
+^ ::: | ::: |Math Add local|860|
+^ ::: |//Timer//|Sleep precision|166|

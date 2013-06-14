@@ -1,0 +1,2 @@
+====== Software written in Pascal ======
+{{tagtopic>en:Pascal&link&nofooter&firstsectiononly&order=title&title}} 

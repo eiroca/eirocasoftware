@@ -1,0 +1,15 @@
+~~NOTOC~~
+====== Projects ======
+This section of the site is dedicated to the projects developed by eIrOcA.
+
+====== Software ======
+[[en:projects:software|{{home:sw.png?64x64}}]]
+{{page>en:projects:Software:start&firstsectiononly&noheader&nofooter}}
+
+====== Development ======
+[[en:projects:development|{{home:tools.png?64x64}}]]
+{{page>en:projects:Development:start&firstsectiononly&noheader&nofooter}}
+
+====== Incubator ======
+[[en:projectsi:ncubator|{{home:tools.png?64x64}}]]
+{{page>en:projects:Incubator:start&firstsectiononly&noheader&nofooter}}

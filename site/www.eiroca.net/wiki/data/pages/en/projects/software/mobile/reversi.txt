@@ -1,0 +1,37 @@
+====== MobileSuite - Reversi ======
+Reversi is a simple board game also known as Othello. If you don't know the rules, just browse the web, you can find hundreds of reversi games.
+
+===== Screenshots =====
+{{gallery>software:reversi }}
+
+===== Requirements =====
+{{template>en:inc:midp|ver=MIDP2.0|}}
+
+Supported languages: {{ico:eng.png|ENG}} {{ico:ita.png|ITA}}
+
+===== Download =====
+{{template>en:inc:qrcode|Section=Games|Name=Reversi|URL=http://www.eiroca.net/mobile/download.php?n=1_4&c=000|}}
+
+{{template>en:inc:sf|Repository=mobilesuite|}}
+
+====== Development ======
+===== To Do =====
+  * Multiplayer support
+  * Better graphics
+===== Changes log =====
+**Version 1.1.0**
+  * Aligned with version 1.1.0 of [[en:Projects:Development:lib:libJ2ME|libJ2ME]]
+
+**Version 1.0.0**
+  * First public release
+  * New User Interface
+
+{{template>en:inc:info|ID=mobile_suite|Status=Release|Language=Java|}}
+
+====== Licence & Copyright ======
+{{template>en:inc:gpl2
+|Author=Copyright (c) 2002-2010 Salamon Andras & eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+Reversi is based upon [[http://j2mereversi.sourceforge.net/|jtReversi]] game written by [[http://www.jataka.hu/|Jataka Ltd]].
+
+{{tag>Reversi MobileSuite Games Java}}

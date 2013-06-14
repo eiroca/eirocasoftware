@@ -1,0 +1,27 @@
+====== eFractals ======
+Programs and library to draw fractals. Program can draw trees, landscape, DLA, ... 
+
+===== Screenshots =====
+{{gallery>software:eFractals }}
+
+===== Requirements =====
+Supported languages: {{ico:eng.png|ENG}}
+
+Supported OS: {{ico:win.png|Windows}}
+
+===== Download =====
+{{template>en:inc:sf|Repository=efractals|}}
+
+====== Development ======
+===== Changes log =====
+**Version 1.0.0**
+  * First public release
+
+{{template>en:inc:info|ID=efractals|Status=Release|Language=Pascal|}}
+
+====== Licence & Copyright ======
+{{template>en:inc:gpl3
+|Author=Copyright (c) 1996-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+
+{{tag>eFractals Software Pascal Fractals}}

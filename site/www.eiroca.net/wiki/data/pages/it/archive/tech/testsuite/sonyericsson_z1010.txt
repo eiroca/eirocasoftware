@@ -1,0 +1,88 @@
+Torna alla pagina con tutti i report della [[..:handset_report|Test Suite]].
+
+^  SonyEricsson Z1010  ^^^^
+^TestSuite|//Version//||<nowiki>1.0.5</nowiki>|
+^System|//Platform//|Name|<nowiki>SonyEricssonZ1010/R1G007</nowiki>|
+^ ::: |//IMEI//|IMEI|true|
+^ ::: |//Memory//|Total memory|524284|
+^ ::: | ::: |Free memory|431032|
+^Environment|//CLDC//|Configuration|<nowiki>CLDC-1.1</nowiki>|
+^ ::: | ::: |Char encoding|<nowiki>ISO8859-1</nowiki>|
+^ ::: |//MIDP//|JSR-118 (MIDP2.x) supported|true|
+^ ::: | ::: |Profiles|<nowiki>MIDP-1.0 MIDP-2.0</nowiki>|
+^ ::: | ::: |Locale|<nowiki>it</nowiki>|
+^Graphics|//Screen//|Screen (full) height|220|
+^ ::: | ::: |Screen (full) width|176|
+^ ::: | ::: |Screen (normal) height|182|
+^ ::: | ::: |Screen (normal) width|176|
+^ ::: | ::: |Is Color|true|
+^ ::: | ::: |Color Depth|65536|
+^ ::: | ::: |Alpha Levels|256|
+^ ::: | ::: |Screen buffered|true|
+^ ::: |//Canvas//|Font Default Height|18|
+^ ::: | ::: |Font Small Height|15|
+^ ::: | ::: |Font Small Bold Height|15|
+^ ::: | ::: |Font Medium Height|18|
+^ ::: | ::: |Font Medium Bold Height|18|
+^ ::: | ::: |Font Large Height|22|
+^ ::: | ::: |Font Large Bold Height|22|
+^ ::: |//Mobile Media//|JSR-135 MMAPI supported|true|
+^ ::: | ::: |JSR-135 Video supported|true|
+^ ::: | ::: |Mobile Media version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |Supports mixing|false|
+^ ::: | ::: |Audio capture|false|
+^ ::: | ::: |Video capture|true|
+^ ::: | ::: |Supports recording|false|
+^ ::: | ::: |Video encodings|<nowiki>encoding=JPEG&width=176&height=182encoding=JPEG&width=176&height=220</nowiki>|
+^ ::: | ::: |Video snapshot encodings|<nowiki>JPEG</nowiki>|
+^ ::: |//Multimedia//|Capture|<nowiki>image/jpeg</nowiki>|
+^ ::: | ::: |Device|<nowiki>audio/x-tone-seq</nowiki>|
+^ ::: | ::: |HTTP|<nowiki>audio/x-tone-seq audio/midi audio/sp-midi audio/imelody audio/amr audio/mpeg audio/x-wav video/mp4v-es video/h263-2000 audio/nokia_ringing_tones audio/mp4a-latm image/jpeg</nowiki>|
+^ ::: |//3D Graphics//|JSR-184 supported|false|
+^Comms|//Wireless Messaging//|JSR-120 (Messaging 1.1) supported|true|
+^ ::: | ::: |JSR-205 (Messaging 2.0) supported|false|
+^ ::: | ::: |SMSC Address|<nowiki>X</nowiki>|
+^ ::: |//Bluetooth//|JSR-082 Bluetooth supported|false|
+^ ::: | ::: |JSR-082 OBEX supported|false|
+^ ::: |//SIP//|JSR-180 supported|false|
+^Personal Information|//PIM & File//|JSR-075 Filesystem supported|false|
+^ ::: | ::: |JSR-075 PIM supported|false|
+^ ::: |//Location//|JSR-179 supported|false|
+^Application connectivity|//Web Services//|JSR-172 supported|false|
+^Security & Commerce|//Security & Trust Services//|JSR-177 supported|false|
+^API|//Other//|Motorola - RC|false|
+^ ::: | ::: |Nokia - Graphics|true|
+^ ::: | ::: |Nokia - Sound|true|
+^ ::: | ::: |Nokia - UI|true|
+^ ::: | ::: |Samsung - Acceleration|false|
+^ ::: | ::: |Samsung - Vibration|false|
+^ ::: | ::: |Siemens - graphics|false|
+^ ::: | ::: |Siemens - UI|false|
+^ ::: | ::: |JTWI version|<nowiki>1.0</nowiki>|
+^Platform|//Control//|Has key-held events|true|
+^ ::: | ::: |Has motion events|false|
+^ ::: | ::: |Has pointer events|false|
+^ ::: |//Keyboard//|Key DOWN|<nowiki>Gi�</nowiki>|
+^ ::: | ::: |Key FIRE|<nowiki>Fuoco</nowiki>|
+^ ::: | ::: |Key GAME A|7|
+^ ::: | ::: |Key GAME B|9|
+^ ::: | ::: |Key GAME C|<nowiki>*</nowiki>|
+^ ::: | ::: |Key GAME D|<nowiki>#</nowiki>|
+^ ::: | ::: |Key LEFT|<nowiki>Sinistra</nowiki>|
+^ ::: | ::: |Key RIGHT|<nowiki>Destra</nowiki>|
+^ ::: | ::: |Key UP|<nowiki>Su</nowiki>|
+^ ::: |//Settings//|Available Time Zone|<nowiki>DEFAULT GMT UTC</nowiki>|
+^ ::: | ::: |Default Time Zone|<nowiki>DEFAULT</nowiki>|
+^Benchmark|//Math//|Math Add array|15543|
+^ ::: | ::: |Math Add local|8315|
+^ ::: | ::: |Math Add instance|8617|
+^ ::: | ::: |Math Add static|8511|
+^ ::: | ::: |Math Div array|15180|
+^ ::: | ::: |Math Div local|11106|
+^ ::: | ::: |Math Div instance|12159|
+^ ::: | ::: |Math Div static|14005|
+^ ::: | ::: |Math Mul array|11490|
+^ ::: | ::: |Math Mul local|6985|
+^ ::: | ::: |Math Mul instance|7409|
+^ ::: | ::: |Math Mul static|8011|
+^ ::: |//Timer//|Sleep precision|5|

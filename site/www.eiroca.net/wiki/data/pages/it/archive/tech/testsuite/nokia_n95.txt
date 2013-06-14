@@ -1,0 +1,113 @@
+Torna alla pagina con tutti i report della [[..:handset_report|Test Suite]].
+
+^  Nokia N95  ^^^^
+^TestSuite|//Version//||<nowiki>0.1.1</nowiki>|
+^System|//Platform//|Name|<nowiki>NokiaN95-3/20.2.011</nowiki>|
+^ ::: |//Memory//|Total memory|512000|
+^ ::: | ::: |Free memory|124776|
+^Environment|//CLDC//|Configuration|<nowiki>CLDC-1.1</nowiki>|
+^ ::: | ::: |Char encoding|<nowiki>ISO-8859-1</nowiki>|
+^ ::: |//MIDP//|JSR-118 (MIDP2.x) supported|true|
+^ ::: | ::: |Profiles|<nowiki>MIDP-2.0</nowiki>|
+^ ::: | ::: |Locale|<nowiki>en-US</nowiki>|
+^ ::: | ::: |Hostname|<nowiki>localhost</nowiki>|
+^ ::: | ::: |Serial ports|<nowiki>USB0,COM0,IR0,BT0..BT63</nowiki>|
+^Graphics|//Screen//|Screen (full) height|235|
+^ ::: | ::: |Screen (full) width|240|
+^ ::: | ::: |Screen (normal) height|235|
+^ ::: | ::: |Screen (normal) width|240|
+^ ::: | ::: |Is Color|true|
+^ ::: | ::: |Color Depth|16777216|
+^ ::: | ::: |Screen buffered|true|
+^ ::: |//Canvas//|Font Default Height|21|
+^ ::: | ::: |Font Small Height|19|
+^ ::: | ::: |Font Small Bold Height|19|
+^ ::: | ::: |Font Medium Height|21|
+^ ::: | ::: |Font Medium Bold Height|21|
+^ ::: | ::: |Font Large Height|24|
+^ ::: | ::: |Font Large Bold Height|24|
+^ ::: |//Mobile Media//|JSR-135 MMAPI supported|true|
+^ ::: | ::: |JSR-135 Video supported|true|
+^ ::: | ::: |Mobile Media version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |Supports mixing|true|
+^ ::: | ::: |Audio capture|true|
+^ ::: | ::: |Video capture|true|
+^ ::: | ::: |Supports recording|true|
+^ ::: | ::: |Audio encoding|<nowiki>encoding=audio/amr encoding=audio/basic encoding=audio/x-au encoding=audio/au encoding=audio/x-basic encoding=audio/wav encoding=audio/x-wav encoding=pcm encoding=ulaw encoding=gsm</nowiki>|
+^ ::: | ::: |Video encodings|<nowiki>encoding=video/3gpp2 encoding=video/mp4 encoding=video/3gpp</nowiki>|
+^ ::: | ::: |Video snapshot encodings|<nowiki>encoding=png encoding=jpeg encoding=image/png encoding=image/jpeg encoding=image/jpg encoding=image/gif encoding=image/bmp</nowiki>|
+^ ::: |//3D Graphics//|JSR-184 supported|true|
+^ ::: | ::: |M3G version|<nowiki>1.1</nowiki>|
+^ ::: |//SVG//|M2G version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |SVG version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |SVG profile|<nowiki>tiny</nowiki>|
+^Comms|//Wireless Messaging//|JSR-120 (Messaging 1.1) supported|true|
+^ ::: | ::: |JSR-205 (Messaging 2.0) supported|true|
+^ ::: | ::: |MMSC Address|<nowiki>http://mmsc.cingular.com</nowiki>|
+^ ::: | ::: |SMSC Address|13123149810|
+^ ::: |//Bluetooth//|JSR-082 Bluetooth supported|true|
+^ ::: | ::: |JSR-082 OBEX supported|true|
+^ ::: |//SIP//|JSR-180 supported|true|
+^ ::: | ::: |SIP version|<nowiki>1.0.1</nowiki>|
+^Personal Information|//PIM & File//|JSR-075 Filesystem supported|true|
+^ ::: | ::: |JSR-075 PIM supported|true|
+^ ::: | ::: |PIM version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |FileConnection version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |File Separator|<nowiki>/</nowiki>|
+^ ::: | ::: |Directory of photos name|<nowiki>Images</nowiki>|
+^ ::: | ::: |Directory of photos path|<nowiki>file:///C:/Data/Images/</nowiki>|
+^ ::: | ::: |Directory of videos name|<nowiki>Video clips</nowiki>|
+^ ::: | ::: |Directory of videos path|<nowiki>file:///C:/Data/Videos/</nowiki>|
+^ ::: | ::: |Directory of graphics name|<nowiki>Graphics</nowiki>|
+^ ::: | ::: |Directory of graphics path|<nowiki>file:///C:/Data/Images/Pictures/</nowiki>|
+^ ::: | ::: |Directory of tones name|<nowiki>Tones</nowiki>|
+^ ::: | ::: |Directory of tones path|<nowiki>file:///C:/Data/Sounds/</nowiki>|
+^ ::: | ::: |Directory of music name|<nowiki>Tracks</nowiki>|
+^ ::: | ::: |Directory of music path|<nowiki>file:///C:/Data/Sounds/</nowiki>|
+^ ::: | ::: |Directory of recordings name|<nowiki>Sound clips</nowiki>|
+^ ::: | ::: |Directory of recordings path|<nowiki>file:///C:/Data/Sounds/Digital/</nowiki>|
+^ ::: | ::: |Directory of private name|<nowiki>Private</nowiki>|
+^ ::: | ::: |Directory of private path|<nowiki>file:///c:/private/102033e6/midlets/[101494b5]/scratch/</nowiki>|
+^ ::: | ::: |Directory of memorycard name|<nowiki>Memory card</nowiki>|
+^ ::: | ::: |Directory of memorycard path|<nowiki>file:///E:/</nowiki>|
+^ ::: |//Location//|JSR-179 supported|true|
+^ ::: | ::: |Location version|<nowiki>1.0</nowiki>|
+^Application connectivity|//Web Services//|JSR-172 supported|true|
+^Security & Commerce|//Security & Trust Services//|JSR-177 supported|true|
+^API|//Other//|Motorola - RC|false|
+^ ::: | ::: |Nokia - Graphics|true|
+^ ::: | ::: |Nokia - Sound|true|
+^ ::: | ::: |Nokia - UI|true|
+^ ::: | ::: |Samsung - Acceleration|false|
+^ ::: | ::: |Samsung - Vibration|false|
+^ ::: | ::: |Siemens - graphics|false|
+^ ::: | ::: |Siemens - UI|false|
+^ ::: | ::: |JTWI version|<nowiki>1.0</nowiki>|
+^Platform|//Control//|Has key-held events|true|
+^ ::: | ::: |Has motion events|false|
+^ ::: | ::: |Has pointer events|false|
+^ ::: |//Keyboard//|Key DOWN|<nowiki>Navigation key down</nowiki>|
+^ ::: | ::: |Key FIRE|<nowiki>Call key</nowiki>|
+^ ::: | ::: |Key GAME A|7|
+^ ::: | ::: |Key GAME B|9|
+^ ::: | ::: |Key GAME C|<nowiki>*</nowiki>|
+^ ::: | ::: |Key GAME D|<nowiki>#</nowiki>|
+^ ::: | ::: |Key LEFT|<nowiki>Navigation key left</nowiki>|
+^ ::: | ::: |Key RIGHT|<nowiki>Navigation key right</nowiki>|
+^ ::: | ::: |Key UP|<nowiki>Navigation key up</nowiki>|
+^ ::: |//Settings//|Available Time Zone|<nowiki>GMT UTC</nowiki>|
+^ ::: | ::: |Default Time Zone|<nowiki>GMT-07:00</nowiki>|
+^ ::: | ::: |Default Timezone (java)|<nowiki>GMT-07</nowiki>|
+^Benchmark|//Math//|Math Add array|980|
+^ ::: | ::: |Math Add local|398|
+^ ::: | ::: |Math Add instance|566|
+^ ::: | ::: |Math Add static|918|
+^ ::: | ::: |Math Div array|1974|
+^ ::: | ::: |Math Div local|1267|
+^ ::: | ::: |Math Div instance|1930|
+^ ::: | ::: |Math Div static|1543|
+^ ::: | ::: |Math Mul array|1476|
+^ ::: | ::: |Math Mul local|558|
+^ ::: | ::: |Math Mul instance|543|
+^ ::: | ::: |Math Mul static|503|
+^ ::: |//Timer//|Sleep precision|6|

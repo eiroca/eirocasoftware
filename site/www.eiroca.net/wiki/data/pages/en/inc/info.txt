@@ -1,0 +1,6 @@
+===== Project status =====
+Status: @Status@
+
+Language: @Language@
+
+[[en:projects:development:metrics#@ID@|Software metrics]].

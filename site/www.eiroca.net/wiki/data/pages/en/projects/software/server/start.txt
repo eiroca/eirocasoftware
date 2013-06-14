@@ -1,0 +1,6 @@
+===== Server Applications =====
+{{ home:server.png?120x100|Server Applications}}
+Server Applications is a collection of tools and server applications often oriented around "mobile".
+
+{{page>en:Projects:Software:Server:EPS&firstsectiononly&link&header&nofooter}}
+{{page>en:Projects:Software:Server:Assembler Proxy&nodate&firstsectiononly&link&header&nofooter}}

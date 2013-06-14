@@ -1,0 +1,16 @@
+====== eIrOca Software ======
+Software produced and maintained by eIrOcA.
+  * [[#Desktop Applications]] è una raccolta di strumenti software ed applicazioni.
+  * [[#Mobile Suite]] è una raccolta di applicazioni J2ME con una user interface omogenea.
+  * [[#Server Applications]] è una raccolta di strumenti e di applicazioni server spesso orientate a tematiche "mobile".
+
+===== Desktop Applications =====
+{{page>en:projects:Software:Desktop:start&noheader&nofooter}}
+
+===== Mobile Suite =====
+{{page>en:projects:Software:Mobile:start&noheader&nofooter}}
+
+===== Server Applications =====
+{{page>en:projects:Software:Server:start&noheader&nofooter}}
+
+{{tag>Software Mobile Desktop Server}}

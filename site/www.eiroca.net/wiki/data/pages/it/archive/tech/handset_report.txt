@@ -1,0 +1,40 @@
+====== Test Suite Report ======
+
+===== LG =====
+  * [[.:testsuite:LG KP500]]
+
+===== Motorola =====
+  * [[.:testsuite:Motorola V3x]] 
+ 
+===== Nokia =====
+  * [[.:testsuite:Nokia 2700]]
+  * [[.:testsuite:Nokia 3500]]
+  * [[.:testsuite:Nokia 6300]]
+  * [[.:testsuite:Nokia 6680]]
+  * [[.:testsuite:Nokia E51]]
+  * [[.:testsuite:Nokia N70]]
+  * [[.:testsuite:Nokia N95]]
+  * [[.:testsuite:Nokia N97]]
+
+===== Panasonic =====
+  * [[.:testsuite:Panasonic VS3]]
+
+===== Philips =====
+  * [[.:testsuite:Philips X800]]
+
+===== Samsung =====
+  * [[.:testsuite:Samsug GT-S3653]]
+  * [[.:testsuite:Samsug GT-S5620]]
+
+===== SonyEricsson =====
+  * [[.:testsuite:SonyEricsson C902]]
+  * [[.:testsuite:SonyEricsson K800]]
+  * [[.:testsuite:SonyEricsson P1i]]
+  * [[.:testsuite:SonyEricsson V640i]]
+  * [[.:testsuite:SonyEricsson W595]]
+  * [[.:testsuite:SonyEricsson W800i]]
+  * [[.:testsuite:SonyEricsson W850i]]
+  * [[.:testsuite:SonyEricsson W980]]
+  * [[.:testsuite:SonyEricsson Z1010]]
+
+{{tag>Test_Suite Handset}}

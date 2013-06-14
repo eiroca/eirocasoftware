@@ -1,0 +1,109 @@
+Back to [[..:handset_report|Test Suite]] report's page.
+
+^  SonyEricsson W800i  ^^^^
+^TestSuite|//Version//||<nowiki>1.0.5</nowiki>|
+^System|//Platform//|Name|<nowiki>SonyEricssonW800i/R1L</nowiki>|
+^ ::: |//Memory//|Total memory|4550656|
+^ ::: | ::: |Free memory|3335568|
+^Environment|//CLDC//|Configuration|<nowiki>CLDC-1.1</nowiki>|
+^ ::: | ::: |Char encoding|<nowiki>ISO8859_1</nowiki>|
+^ ::: |//MIDP//|JSR-118 (MIDP2.x) supported|true|
+^ ::: | ::: |Profiles|<nowiki>MIDP-2.0</nowiki>|
+^ ::: | ::: |Locale|<nowiki>en-US</nowiki>|
+^ ::: | ::: |Serial ports|0|
+^Graphics|//Screen//|Screen (full) height|400|
+^ ::: | ::: |Screen (full) width|240|
+^ ::: | ::: |Screen (normal) height|350|
+^ ::: | ::: |Screen (normal) width|240|
+^ ::: | ::: |Is Color|true|
+^ ::: | ::: |Color Depth|65536|
+^ ::: | ::: |Alpha Levels|16|
+^ ::: | ::: |Screen buffered|true|
+^ ::: |//Canvas//|Font Default Height|28|
+^ ::: | ::: |Font Small Height|21|
+^ ::: | ::: |Font Small Bold Height|21|
+^ ::: | ::: |Font Medium Height|28|
+^ ::: | ::: |Font Medium Bold Height|28|
+^ ::: | ::: |Font Large Height|31|
+^ ::: | ::: |Font Large Bold Height|31|
+^ ::: |//Mobile Media//|JSR-135 MMAPI supported|true|
+^ ::: | ::: |JSR-135 Video supported|true|
+^ ::: | ::: |Mobile Media version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |Supports mixing|true|
+^ ::: | ::: |Audio capture|true|
+^ ::: | ::: |Video capture|false|
+^ ::: | ::: |Supports recording|true|
+^ ::: | ::: |Audio encoding|<nowiki>encoding=audio/wav encoding=audio/amr encoding=audio/amr-wb</nowiki>|
+^ ::: | ::: |Video snapshot encodings|<nowiki>encoding=jpeg</nowiki>|
+^ ::: |//Multimedia//|Capture|<nowiki>audio/x-wav audio/amr audio/amr-wb image/jpeg</nowiki>|
+^ ::: | ::: |Device|<nowiki>audio/x-tone-seq audio/midi</nowiki>|
+^ ::: | ::: |File|<nowiki>audio/x-tone-seq audio/x-wav audio/midi audio/sp-midi audio/imelody audio/amr audio/amr-wb audio/mpeg audio/aac audio/m4a image/gif audio/mp2</nowiki>|
+^ ::: | ::: |HTTP|<nowiki>audio/x-tone-seq audio/x-wav audio/midi audio/sp-midi audio/imelody audio/amr audio/amr-wb audio/mpeg audio/aac audio/m4a image/gif audio/mp2</nowiki>|
+^ ::: |//3D Graphics//|JSR-184 supported|false|
+^ ::: | ::: |M3G version|<nowiki>1.1</nowiki>|
+^Comms|//Wireless Messaging//|JSR-120 (Messaging 1.1) supported|true|
+^ ::: | ::: |JSR-205 (Messaging 2.0) supported|true|
+^ ::: |//Bluetooth//|JSR-082 Bluetooth supported|false|
+^ ::: | ::: |JSR-082 OBEX supported|false|
+^ ::: |//SIP//|JSR-180 supported|false|
+^Personal Information|//PIM & File//|JSR-075 Filesystem supported|true|
+^ ::: | ::: |JSR-075 PIM supported|true|
+^ ::: | ::: |PIM version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |FileConnection version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |File Separator|<nowiki>/</nowiki>|
+^ ::: | ::: |Directory of photos name|<nowiki>Images/</nowiki>|
+^ ::: | ::: |Directory of photos path|<nowiki>file:///C:/Images/</nowiki>|
+^ ::: | ::: |Directory of videos name|<nowiki>Videos/</nowiki>|
+^ ::: | ::: |Directory of videos path|<nowiki>file:///C:/Videos/</nowiki>|
+^ ::: | ::: |Directory of graphics name|<nowiki>Graphics/</nowiki>|
+^ ::: | ::: |Directory of graphics path|<nowiki>file:///C:/Graphics/</nowiki>|
+^ ::: | ::: |Directory of tones name|<nowiki>Tones/</nowiki>|
+^ ::: | ::: |Directory of tones path|<nowiki>file:///C:/Tones/</nowiki>|
+^ ::: | ::: |Directory of music name|<nowiki>Audio/</nowiki>|
+^ ::: | ::: |Directory of music path|<nowiki>file:///C:/Audio/</nowiki>|
+^ ::: | ::: |Directory of recordings name|<nowiki>Recordings/</nowiki>|
+^ ::: | ::: |Directory of recordings path|<nowiki>file:///C:/Recordings/</nowiki>|
+^ ::: | ::: |Directory of private name|<nowiki>Private/</nowiki>|
+^ ::: | ::: |Directory of private path|<nowiki>file:///E:/@Java/00000021_/</nowiki>|
+^ ::: | ::: |Directory of memorycard path|<nowiki>file:///E:/</nowiki>|
+^ ::: | ::: |Directory of roots names|<nowiki>Memory card:/;Phone:/</nowiki>|
+^ ::: |//Location//|JSR-179 supported|false|
+^Application connectivity|//Web Services//|JSR-172 supported|false|
+^Security & Commerce|//Security & Trust Services//|JSR-177 supported|false|
+^API|//Other//|Motorola - RC|false|
+^ ::: | ::: |Nokia - Graphics|true|
+^ ::: | ::: |Nokia - Sound|false|
+^ ::: | ::: |Nokia - UI|true|
+^ ::: | ::: |Samsung - Acceleration|false|
+^ ::: | ::: |Samsung - Vibration|false|
+^ ::: | ::: |Siemens - graphics|false|
+^ ::: | ::: |Siemens - UI|false|
+^ ::: | ::: |JTWI version|<nowiki>1.0</nowiki>|
+^Platform|//Control//|Has key-held events|true|
+^ ::: | ::: |Has motion events|true|
+^ ::: | ::: |Has pointer events|true|
+^ ::: |//Keyboard//|Key DOWN|<nowiki>DOWN</nowiki>|
+^ ::: | ::: |Key FIRE|<nowiki>SELECT</nowiki>|
+^ ::: | ::: |Key GAME A|1|
+^ ::: | ::: |Key GAME B|3|
+^ ::: | ::: |Key GAME C|7|
+^ ::: | ::: |Key GAME D|9|
+^ ::: | ::: |Key LEFT|<nowiki>LEFT</nowiki>|
+^ ::: | ::: |Key RIGHT|<nowiki>RIGHT</nowiki>|
+^ ::: | ::: |Key UP|<nowiki>UP</nowiki>|
+^ ::: |//Settings//|Available Time Zone|<nowiki>GMT UTC Buenos Aires</nowiki>|
+^ ::: | ::: |Default Time Zone|<nowiki>Buenos Aires</nowiki>|
+^Benchmark|//Math//|Math Add array|1357|
+^ ::: | ::: |Math Add local|503|
+^ ::: | ::: |Math Add instance|535|
+^ ::: | ::: |Math Add static|600|
+^ ::: | ::: |Math Div array|3342|
+^ ::: | ::: |Math Div local|3290|
+^ ::: | ::: |Math Div instance|2031|
+^ ::: | ::: |Math Div static|2340|
+^ ::: | ::: |Math Mul array|951|
+^ ::: | ::: |Math Mul local|535|
+^ ::: | ::: |Math Mul instance|586|
+^ ::: | ::: |Math Mul static|632|
+^ ::: |//Timer//|Sleep precision|23|
+

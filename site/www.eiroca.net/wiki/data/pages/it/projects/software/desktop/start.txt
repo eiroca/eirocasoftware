@@ -1,0 +1,9 @@
+====== Desktop Applications ======
+{{ home:desk.png?120x100|Desktop Applications}} 
+Desktop Applications è una raccolta di strumenti software ed applicazioni.
+
+{{page>it:projects:Software:Desktop:OrgApp&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Software:Desktop:eANN&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Software:Desktop:eUtilities&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Software:Desktop:eFractals&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Software:Desktop:Apple2 Graphic&firstsectiononly&link&header&nofooter}}

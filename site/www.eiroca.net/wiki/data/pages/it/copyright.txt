@@ -1,6 +1,6 @@
 Il sito è stato realizzato usando [[http://wiki.splitbrain.org/wiki:dokuwiki|DokuWiki]], 2004-2009 (c) Andreas Gohr.
 
-La versione mobile e parte del sito Web è stato realizzato usando [[it:software:eps|EPS - "eIrOcA Portal System"]], sistema di generazione portali rilasciato sotto licenza GPL che utilizza [[http://wurfl.sourceforge.net/|WURFL]] per la device detection.
+La versione mobile e parte del sito Web è stato realizzato usando [[it:Projects:Software:Server:EPS|EPS - "eIrOcA Portal System"]], sistema di generazione portali rilasciato sotto licenza GPL che utilizza [[http://wurfl.sourceforge.net/|WURFL]] per la device detection.
 
 Porzioni di codice:
   * [[http://image-toolbox.sourceforge.net/|Image_Toolbox]] - Copyright (c) 2003 Martin Theimer
@@ -10,10 +10,10 @@ Porzioni di codice:
 
 Alcune icone appartengono al progetto [[http://tango.freedesktop.org/Tango_Desktop_Project|Tango!]] con licenza [[http://creativecommons.org/licenses/by-sa/2.5/"|Creative Commons Attribution Share-Alike license]].
 
-Tutti i contenuti sono Copyright (c) 2002-2010 by Enrico Croce & Simona Burzio a meno di menzioni differenti.
+Tutti i contenuti sono Copyright (c) 2002-2013 by Enrico Croce & Simona Burzio a meno di menzioni differenti.
 
-[[http://wiki.splitbrain.org/wiki:dokuwiki|{{button:dw.png?80x15|Driven by DokuWiki}}]]
-[[http://www.mozilla.org/firefox/|{{button:firefox.png?80x15|Do yourself a favour and use a real browser - get FireFox!}}]]
-[[http://jigsaw.w3.org/css-validator/check/referer|{{button:css.png?80x15|Valid CSS}}]]
-[[http://validator.w3.org/check/referer|{{button:xhtml.png?80x15|Valid XHTML 1.0}}]]
+[[http://dokuwiki.org/|{{button:dw.png?80x15|Driven by DokuWiki}}]]
+[[http://www.php.net/|{{button:php.png?80x15|Powered by PHP}}]]
+[[http://validator.w3.org/check/referer|{{button:html5.png?80x15|Valid HTML5}}]]
+[[http://jigsaw.w3.org/css-validator/check/referer?profile=css3|{{button:css.png?80x15|Valid CSS}}]]
 [[http://www.ohloh.net|{{button:ohloh.png?80x15|Code Stats by Ohloh}}]]

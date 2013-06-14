@@ -1,0 +1,26 @@
+====== Mexico City (Saturday 25/08/07) ======
+//
+Welcome to Mexico City, capital of the country, considered as the largest city in the world with its approximately 23 million inhabitants, all is well positioned at a high altitude, 2240m above sea level, this means that even in warmer periods in Mexico City the temperatures are very mild.
+//
+
+===== Città del Messico =====
+[{{viaggi:messico:Citta_del_Messico.jpg?400 |**Mexico City**}}]
+<color navy>
+During the pre-Hispanic times, this marsh city was the capital of the "Aztec" or "Mexican" empire.\\
+
+Founded in 1321 with the name of "Tenochtitlan" by the priest "Tenoch", Tenochtitlan in the indigenous Nahuatl language means "the city of Tenoch". After the Spanish conquest, will retain its role of capital, to become today the largest urban concentration in the world. Mexico D.F. (Federal District) is the administrative, political, economic and social country; all is centralized in the capital, even if the government tries to create local agencies.\\
+
+With its 23 million people in this enormous city knows the real problems of circulation, sanitation, insecurity and above all pollution. However Mexico City remains a beautiful city with an history immensely rich.\\
+</color>
+~~CLEARFLOAT~~
+//
+After 12 grueling hours of flight, we arrived at the airport, collected our luggage and took the car (unfortunately with automatic gear), then we settled into the hotel. 
+
+To drive the car is better to know "something" for driving in Mexico ([[.:start#Recommendations for driving|recommendations for driving]]).
+//
+----
+<= [[.:start|Faces of Mexico]] 
+
+=> [[.:giorno 2|Day 2: Mexico City]]
+
+{{tag>Travels Mexico Mexico_City}}

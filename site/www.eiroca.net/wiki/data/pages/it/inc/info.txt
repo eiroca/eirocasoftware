@@ -1,0 +1,6 @@
+===== Stato progetto =====
+Statot: @Status@
+
+Linguaggio: @Language@
+
+[[it:projects:development:metrics#@ID@|Metriche software di questa applicazione]].

@@ -1,0 +1,32 @@
+====== eUtilities ======
+Set of utilites. Find duplicated (or missing) files in directories. Remove duplicated files in a directory. ConvertForm delphi DFM files form/to text files. Download a set of URLs. Rename all the files in a directory with the scheme group_sequenceNumber.
+
+===== Description =====
+^ Name ^ Lang. ^ Description ^
+^ConvertForm | {{ico:eng.png|ENG}} |Converter for delphi DFM files form/to text files |
+^Find        | {{ico:eng.png|ENG}} |Find duplicated (or missing) files in two directories |
+^HTTPGet     | {{ico:eng.png|ENG}} |HTTPGet downloads a set of URLs |
+^Purge       | {{ico:eng.png|ENG}} |Remove duplicated files in a directory tree |
+^Rename      | {{ico:eng.png|ENG}} |Rename all the files in a directory with the scheme group_sequenceNumber, where group is a set of files with a pattern groupid_other|
+
+===== Requirements =====
+Supported languages: {{ico:eng.png|ENG}}
+
+Supported OS: {{ico:win.png|Windows}}
+
+===== Download =====
+{{template>en:inc:sf|Repository=eutilities|}}
+
+====== Development ======
+===== Changes log =====
+**Version 1.0.0**
+  * First public release
+
+{{template>en:inc:info|ID=eutilities|Status=Release|Language=Pascal|}}
+
+====== Licence & Copyright ======
+{{template>en:inc:gpl3
+|Author=Copyright (c) 1996-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+
+{{tag>Software Utility Pascal}}

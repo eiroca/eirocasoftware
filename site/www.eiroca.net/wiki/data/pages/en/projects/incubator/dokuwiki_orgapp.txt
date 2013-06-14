@@ -1,0 +1,84 @@
+====== Dokuwiki Plugin - OrgApp ======
+[[doku>start|Dokuwiki]] plugin to draw organization charts.
+
+===== Plugin usage =====
+Generates charts using the applet [[en:Projects:Software:Desktop:OrgApp]].
+
+==== Syntax ====
+  <orgapp attribute="value" attribute="value" ...>
+   chart definition
+  </orgapp>
+
+Possible optional attributes:
+
+^ Name        ^ Description ^
+| **width**   |Width of the chart|
+| **height**  |Height of the chart|
+| **name**    |Name of the applet|
+| **code**    |Main class of the OrgApp applet|
+| **archive** |Archive (URL) location of the OrgApp applet|
+| **target**  |Dafault link target|
+| **type**    |Type of the chart definition (0=SOF), see [[..:orgapp]] for more details|
+| **url**     |Location (URL) of the organization chart definition|
+
+The chart can be defined either directly in the Wiki page or in an external file. In the first case is sufficient to include the definition within the tag **orgapp**, in the second case you should use the attribute //**url**// to define the URL of the definition.
+
+==== Examples ====
+
+The following code shows how to define an organization chart directly in the wiki page:
+
+  <orgapp>
+   <organigram>
+    <unit name="eIrOcA" >
+     <unit name="eNrIcO" />
+     <unit name="sImOnA" />
+    </unit>
+   </organigram>
+  </orgapp>
+
+generates the following result:
+
+<orgapp target="_blank" >
+ <organigram>
+  <unit name="eIrOcA" >
+   <unit name="eNrIcO" />
+   <unit name="sImOnA" />
+  </unit>
+ </organigram>
+</orgapp>
+
+The following code shows how to draw an organization defined in an external file and changing the default width:
+
+  <orgapp width="100%" url="/apps/orgapp/data2.xml"></orgapp>
+
+generates the following result:
+
+<orgapp width="100%" url="/apps/orgapp/data2.xml"></orgapp>
+
+===== Installation =====
+Download and install the plugin using the [[doku>plugin:plugin|Plugin Manager]] using the following [[http://www.eiroca.net/apps/dokuwiki/orgapp.zip|URL]]. Refer to [[doku>Plugins]] on how to install plugins manually using code donwload [[..:dokuwiki#download|here]] that is always up to date.
+
+==== Administration ====
+The default values used in  the generation of the organization chart can be changed from the control panel.
+
+It is advisable, but not necessary, move the OrgApplet.jar file in the Web server directory serving static resources and change the URL in the field //**Archive**// of the administration panel.
+
+**WARNING** if the applet does not load, you should control:
+  * [[http://java.com/it/download/index.jsp|Java runtime]] is properly installed in the PC (version 6 or higher)
+  * that //**Archive**// field contains the correct URL of the file //OrgApplet.jar//
+  * to have disabled the nice URL dokuwiki feature. If you want to use nice URL you need to move the //OrgApplet.jar// file to a static resources folder outside the control of dokuwiki rewrite rules.
+
+===== History =====
+**Version 2011/02/03**
+  * Added button in the edit toolbar
+  * Support for DokuWiki "Anteater"
+
+**Version 2010/04/19**
+  * First version
+
+====== Licence & Copyright ======
+{{template>en:inc:gpl3
+|Author=Copyright (c) 2010-2013 eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+
+{{tag>DokuWiki Organization_chart PHP}}

@@ -1,0 +1,32 @@
+====== WikiHelper ======
+WikiHelper is a collection of tools for managing the Wiki.
+
+Supports the following formats:
+  * Wikimedia
+
+Features implemented:
+  * batch creation of pages
+  * replace strings over multiple pages
+  * export to PowerPoint PPT of one or more pages
+  * export of Table of contents in PowerPoint format according to pages in a category
+  * converting wiki pages in CSV compatible with Outlook contacts import
+
+===== Requirements =====
+Supported languages: {{ico:eng.png|ENG}}
+
+Supported OS: {{ico:win.png|Windows}}
+
+===== Download =====
+{{template>en:inc:sf|Repository=eirocasoftware|}}
+
+====== Development ======
+Beta available.
+
+{{template>en:inc:info|ID=eiroca_software_pout_pourri|Status=Beta|Language=CSharp|}}
+
+====== Licence & Copyright ======
+{{template>en:inc:gpl3
+|Author=Copyright (c) 1996-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+
+{{tag>WikiHelper Wiki WikiMedia Utility}}

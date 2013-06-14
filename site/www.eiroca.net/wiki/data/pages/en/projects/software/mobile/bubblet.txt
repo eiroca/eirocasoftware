@@ -1,0 +1,37 @@
+====== MobileSuite - Bubblet ======
+Bubblet is a small puzzle game. You can move a cursor across the screen and dissolve fields that have at least one neighbouring field with the same colour. If you dissolve fields, all fields above that position will fall down. However, there is a Highscore. For two contiguous fields the Score is 2, for 3 it's 9, for 4 it's 16 - you get the idea. If there are no more neighbouring fields the game is over and your high score is saved.
+
+===== Screenshots =====
+{{gallery>software:bubblet }}
+  
+===== Requirements =====
+{{template>en:inc:midp|ver=MIDP2.0|}}
+
+Supported languages: {{ico:eng.png|ENG}} {{ico:ita.png|ITA}}
+
+===== Download =====
+{{template>en:inc:qrcode|Section=Games|Name=Bubblet|URL=http://www.eiroca.net/mobile/download.php?n=1_0&c=000|}}
+\\
+{{template>en:inc:sf|Repository=mobilesuite|}}
+
+====== Development ======
+===== To Do =====
+  * Multiplayer support
+  * Scoring based upon space released
+
+===== Changes log =====
+**Version 1.1.0**
+  * Aligned with version 1.1.0 of [[en:Projects:Development:lib:libJ2ME|libJ2ME]]
+
+**Version 1.0.0**
+  * First public release
+
+{{template>en:inc:info|ID=mobile_suite|Status=Release|Language=Java|}}
+
+====== Licence & Copyright ======
+{{template>en:inc:gpl2
+|Author=Copyright (c) 2004-2010 Juan Antonio Agudo & eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+Bubblet is based upon [[http://keyboardsamurais.de/?s=bubblet|Bubblet]] game written by Juan Antonio Agudo.
+
+{{tag>Bubblet MobileSuite Games Java}}

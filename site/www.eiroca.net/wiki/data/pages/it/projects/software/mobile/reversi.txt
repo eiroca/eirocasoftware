@@ -1,0 +1,37 @@
+====== MobileSuite - Reversi ======
+Reversi è un gioco da tavolo anche noto con il nome di Othello.
+
+===== Immagini =====
+{{gallery>software:reversi }}
+
+===== Requisiti =====
+{{template>it:inc:midp|ver=MIDP2.0|}}
+
+Lingue supportate: {{ico:eng.png|ENG}} {{ico:ita.png|ITA}}
+
+===== Scarica! =====
+{{template>it:inc:qrcode|Section=Games|Name=Reversi|URL=http://www.eiroca.net/mobile/download.php?n=1_4&c=000|}}
+
+{{template>it:inc:sf|Repository=mobilesuite|}}
+
+====== Informazioni sullo sviluppo ======
+===== To Do =====
+  * Supporto multigiocatore
+  * Migliorare la grafica
+
+===== Ultimi cambiamenti =====
+**Versione 1.1.0**
+  * Allineato con la versione 1.1.0 di [[it:Projects:Development:lib:libJ2ME|libJ2ME]]
+
+**Versione 1.0.0**
+  * Prima versione
+
+{{template>it:inc:info|ID=mobile_suite|Status=Release|Language=Java|}}
+
+====== Licenza & Copyright ======
+{{template>it:inc:gpl2
+|Author=Copyright (c) 2002-2010 Salamon Andras & eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+Reversi deriva da [[http://j2mereversi.sourceforge.net/|jtReversi]] scritto da [[http://www.jataka.hu/|Jataka Ltd]].
+
+{{tag>Reversi MobileSuite Giochi Java}}

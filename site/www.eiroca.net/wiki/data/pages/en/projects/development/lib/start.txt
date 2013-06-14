@@ -1,0 +1,6 @@
+===== Programming library =====
+
+{{page>en:projects:Software:Desktop:eANN&firstsectiononly&link&header&nofooter}}
+{{page>en:projects:Development:lib:libj2me&firstsectiononly&link&header&nofooter}}
+{{page>en:projects:Development:lib:elib&firstsectiononly&link&header&nofooter}}
+{{page>en:projects:Development:lib:Delphi Library&firstsectiononly&link&header&nofooter}}

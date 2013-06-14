@@ -1,0 +1,27 @@
+====== Apple ][ Graphic ======
+Programs and library to draw old Apple ][ graphics formats. Support for HGR, DHGR and Apple 2 GS $C1 format with export to BMP. Support also for apple shape.
+
+===== Screenshots =====
+{{gallery>software:apple2graphic }}
+
+===== Requirements =====
+Supported languages: {{ico:eng.png|ENG}}
+
+Supported OS: {{ico:win.png|Windows}}
+
+===== Download =====
+{{template>en:inc:sf|Repository=apple2graphic|}}
+
+====== Development ======
+===== Changes log =====
+**Version 1.0.0**
+  * First public release
+
+{{template>en:inc:info|ID=Apple][ Graphic|Status=Release|Language=Pascal|}}
+
+====== Licence & Copyright ======
+{{template>en:inc:gpl3
+|Author=Copyright (c) 1996-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+
+{{tag>Apple2_Graphic Software Pascal Apple2}}

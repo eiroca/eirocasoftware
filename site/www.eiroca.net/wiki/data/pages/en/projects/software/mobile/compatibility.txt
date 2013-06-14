@@ -1,0 +1,12 @@
+====== Handset Compatibility ======
+^ Application ^^ Motorola RAZR V3 ^ Panasonic VS3 ^ SonyEricsson W850i ^ SonyEricsson P1i ^ SonyEricsson V640i ^ SonyEricsson Z1010 ^ Nokia 6230 ^
+^[[Bubblet]]      | 1.0.0 | Y | Y | Y | N | Y | Y | Y |
+^[[Mebis]]        | 1.0.0 | Y | Y | Y | N | Y | Y | Y |
+^[[PacMan]]       | 1.0.0 | Y | Y | Y | N | Y | Y | Y |
+^[[Mine Sweeper]] | 1.0.0 | Y | N | Y | N | Y | N | P |
+^[[Reversi]]      | 1.0.0 | Y | Y | Y | N | Y | Y | Y |
+^[[News Reader]]  | 1.0.0 | Y | Y | Y | N | Y | Y | Y |
+^[[Secure SMS]]   | 1.0.0 | Y | Y | Y | Y | Y | Y | Y |
+^[[Test Suite]]   | 1.0.0 | Y | Y | Y | P | Y | Y | Y |
+
+{{tag>MobileSuite}}

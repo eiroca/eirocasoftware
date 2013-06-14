@@ -1,0 +1,23 @@
+====== Development ======
+Programming tools and libraries produced and maintained by eIrOcA. 
+  * [[#Programming library]]
+  * [[#Development tools]]
+
+===== Programming library =====
+[[en:projects:Development:lib:start|{{ home:lib.png|Library}}]]
+{{page>en:projects:Development:lib:start&noheader&nofooter}}
+
+===== Development tools =====
+[[en:projects:Development:tool:start|{{ home:tools.png|Tools}}]]
+{{page>en:projects:Development:tool:start&noheader&nofooter}}
+
+===== Software =====
+Developed software for programming environment:
+  * [[.:Pascal|Delphi & FreePascal]]
+  * [[.:PHP   |PHP]]
+  * [[.:Java  |Java]]
+  * [[.:CSharp|C#]]
+
+[[.:Metrics|Metrics]] of eIrOcA software provided by Ohloh.
+
+{{tag>Development Programming}}

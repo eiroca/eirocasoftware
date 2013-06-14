@@ -1,20 +1,18 @@
 <html>
-<table><tr>
-<td class="COL1"><b>E</b></td>
-<td class="COL2"><b>N</b></td>
-<td class="COL1"><b>R</b></td>
-<td class="COL2"><b>I</b></td>
-<td class="COL1"><b>C</b></td>
-<td class="COL2"><b>O</b></td>
-</tr>
-<tr>
-<td class="COL2"><b>S</b></td>
-<td class="COL1"><b>I</b></td>
-<td class="COL2"><b>M</b></td>
-<td class="COL1"><b>O</b></td>
-<td class="COL2"><b>N</b></td>
-<td class="COL1"><b>A</b></td>
-</tr>
-</table>
+<div>
+<span class="COL1"><b>e</b></span>
+<span class="COL2"><b>n</b></span>
+<span class="COL1"><b>r</b></span>
+<span class="COL2"><b>i</b></span>
+<span class="COL1"><b>c</b></span>
+<span class="COL2"><b>o</b></span>
+</div>
+<div>
+<span class="COL2"><b>S</b></span>
+<span class="COL1"><b>I</b></span>
+<span class="COL2"><b>M</b></span>
+<span class="COL1"><b>O</b></span>
+<span class="COL2"><b>N</b></span>
+<span class="COL1"><b>A</b></span>
+</div>
 </html>
-

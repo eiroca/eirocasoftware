@@ -1,0 +1,4 @@
+[[http://sourceforge.net/projects/@Repository@|{{ ico:sf.png|SourceForge Logo}}]]
+La distribuzione completa dell'applicativo, incluso il codice sorgente, è disponibile [[http://sourceforge.net/projects/@Repository@/files/|qui]].
+  
+Informazioni e risorse addizionali si possono trovare presso [[http://sourceforge.net/projects/@Repository@|Source Forge]].

@@ -1,0 +1,27 @@
+====== Apple ][ Graphic ======
+Apple][ Graphic è un programma (e delle librerie di programmazione) per disegnare immagini nei vecchi formati supportati dall'Apple ][. Sono supportati i formati: HGR, DHGR, il formato $C1 dell'Apple 2GS ed inotre il formato “shape”. Le immagini possono essere esportate nel formato BMP.
+
+===== Immagini =====
+{{gallery>software:apple2graphic }}
+
+===== Requisiti =====
+Lingue supportate: {{ico:eng.png|ENG}}
+
+Sistemi operativi supportati: {{ico:win.png|Windows}}
+
+===== Scarica! =====
+{{template>it:inc:sf|Repository=apple2graphic|}}
+
+====== Informazioni sullo sviluppo ======
+===== Ultimi cambiamenti =====
+**Versione 1.0.0**
+  * Prima versione
+
+{{template>it:inc:info|ID=Apple][ Graphic|Status=Release|Language=Pascal|}}
+
+====== Licenza & Copyright ======
+{{template>it:inc:gpl3
+|Author=Copyright (c) 1996-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+
+{{tag>Apple2_Graphic Applicazioni Pascal Apple2}}

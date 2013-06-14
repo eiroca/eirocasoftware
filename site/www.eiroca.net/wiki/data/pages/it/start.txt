@@ -1,14 +1,22 @@
 ~~NOTOC~~
+====== In evidenza ====== 
+[[it:projects:start|{{home:apps.png?64x64|Progetti}}]]
 
-|<90% 33% 33% ->|
-^  [[Viaggi|{{ home:bag.png?120x110 |Viaggi}}]]  ^  [[Software|{{ home:apps.png?120x110 |Software}}]]  ^  [[http://www.eiroca.net/mobile|{{ home:mobile.png?120x110 |Mobile}}]]  ^
-|I [[Viaggi|viaggi]] di eIrOcA: \\ [[it:Viaggi:Messico|{{ico:messico.png?32x32|Messico}}]][[it:Viaggi:Messico]] \\ [[it:Viaggi:Tunisia|{{ico:tunisia.png?32x32|Tunisia}}]][[it:Viaggi:Tunisia]] |Accedi alla sezione: \\ {{home:tools.png?32x32}}[[Software|applicazioni]] \\ {{home:sw.png?32x32}} [[Development|sviluppo]]|eIrOcA è disponibile anche in versione ottimizzata per dispotivi mobili (cellulari, PDA, ...) all'indirizzo \\ http://www.eiroca.net/mobile/|
-
+[[it:projects:start|Progetti]] {{page>it:projects:start&firstsectiononly&noheader&nofooter}}
 \\
+[[it:archive:start|Archivio]] {{page>it:archive:start&firstsectiononly&noheader&nofooter}}
+\\
+[[it:blog:start|Blog di eIrOcA]]
 
-**Supporta anche tu:**
+====== Mobile   ======
+[[http://www.eiroca.net/mobile|{{home:mobile.png?120x110|Mobile}}]]
 
-|  [[http://www.legambiente.eu|{{banner:legambiente.png?160x222|Legambiente}}]] | [[http://www.greenpeace.org/italy|{{banner:greenpeace.png?160x120|Greenpeace Italia}}]] | [[http://www.wwf.it/|{{banner:wwf.png?160x120|WWF}}]] |
-| ::: | [[http://wikimediafoundation.org/wiki/Support_Wikipedia/it|{{banner:wikipedia.png?160x120|Wikipedia Affiliate Button}}]] | [[http://boincstats.com/|{{banner:boinc.png?155x119|Boinc Stats}}]] |
+eIrOcA è disponibile anche in versione ottimizzata per dispotivi mobili (cellulari, PDA, ...) all'indirizzo \\ http://www.eiroca.net/mobile/
 
-~~CLEARFLOAT~~
+===== Supporta anche tu =====
+[[http://www.legambiente.eu|{{banner:legambiente.png?160x222|Legambiente}}]]
+[[http://www.greenpeace.org/italy|{{banner:greenpeace.png?160x120|Greenpeace Italia}}]]
+[[http://www.wwf.it/|{{banner:wwf.png?160x120|WWF}}]]
+[[http://wikimediafoundation.org/wiki/Support_Wikipedia/it|{{banner:wikipedia.png?160x120|Wikipedia Affiliate Button}}]]
+
+UA-3895374-1

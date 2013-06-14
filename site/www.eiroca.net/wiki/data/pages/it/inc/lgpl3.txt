@@ -1,0 +1,7 @@
+@Author@
+
+{{banner:lgplv3-88x31.png }} Questo programma è software **libero**, è possibile ridistribuirlo e/o modificarlo secondo i termini della [[http://www.gnu.org/licenses/lgpl-3.0.html|GNU Lesser General Public License]] pubblicata dalla [[http://www.fsf.org/|Free Software Foundation]]; nella versione 3 o (a propria scelta) qualunque versione successiva.
+
+**Questo programma è distribuito nella speranza che possa essere utile, ma SENZA ALCUNA GARANZIA implicita o esplicita di COMMERCIABILITÀ o IDONEITÀ PER UN PARTICOLARE SCOPO**. Vedere la [[http://www.gnu.org/licenses/lgpl-3.0.html|GNU Lesser General Public License]] per maggiori dettagli.
+
+Insieme al programma ci dovrebbe essere una copia della GNU Lesser General Public License, se no, scaricala da http://www.gnu.org/licenses/. 

@@ -1,0 +1,6 @@
+====== Librerie software ======
+
+{{page>it:projects:Software:Desktop:eANN&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Development:lib:libj2me&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Development:lib:elib&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Development:lib:Delphi Library&firstsectiononly&link&header&nofooter}}

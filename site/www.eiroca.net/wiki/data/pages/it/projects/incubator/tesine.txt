@@ -1,0 +1,24 @@
+====== Tesine ======
+Centralino: Semplice centalino ISDN.
+
+Negozio: Semplice sito e-commerce.
+
+===== Requisiti =====
+Lingue supportate: {{ico:ita.png|ITA}}
+
+Sistemi operativi supportati: {{ico:win.png|Windows}}
+
+===== Scarica! =====
+{{template>it:inc:sf|Repository=eirocasoftware|}}
+
+====== Informazioni sullo sviluppo ======
+Non ancora rilasciato.
+
+{{template>it:inc:info|ID=eiroca_software_pout_pourri|Status=Development|Language=Vari|}}
+
+====== Licenza & Copyright ======
+{{template>it:inc:gpl3
+|Author=Copyright (c) 1996-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+
+{{tag>Tesine}}

@@ -1,0 +1,84 @@
+====== Dokuwiki Plugin - OrgApp ======
+Plugin [[doku>start|Dokuwiki]] per disegnare organigrammi.
+
+===== Utilizzo del plugin =====
+Genera degli organigrammi utilizzando l'applet [[it:Projects:Software:Desktop:OrgApp]].
+
+==== Sintassi ====
+  <orgapp attributo="valore" attributo="valore" ...>
+   Definizione organigramma
+  </orgapp>
+
+I possibili valori, tutti opzioniali, degli attributi sono:
+
+^ Nome        ^ Descrizione ^
+| **width**   |Larghezza organigramma|
+| **height**  |Altezza organigramma|
+| **name**    |Nome da dare all'applet dell'applet|
+| **code**    |Classe principale dell'applet|
+| **archive** |Locazione (URL) dell'archivio dell'applet|
+| **target**  |Valore predefinito dell'attributo target dei link|
+| **type**    |Tipo di organigramma (0=SOF), vedere [[..:orgapp]] per ulteriori dettagli|
+| **url**     |Locazione (URL) della definizione dell'organigramma|
+
+L'organigramma può essere definito sia direttamente nella pagina Wiki, sia utilizzando un file esterno. Nel primo caso è sufficiente inserire la definizione all'interno del tag **orgapp**, nel secondo caso occorre valorizzare l'attributo //**url**// con l'URL da cui reperire la definizione.
+
+==== Esempi ====
+
+Il codice seguente mostra come definire un organigramma direttamente nella pagina wiki:
+
+  <orgapp>
+   <organigram>
+    <unit name="eIrOcA" >
+     <unit name="eNrIcO" />
+     <unit name="sImOnA" />
+    </unit>
+   </organigram>
+  </orgapp>
+
+genera il seguente risultato:
+
+<orgapp target="_blank" >
+ <organigram>
+  <unit name="eIrOcA" >
+   <unit name="eNrIcO" />
+   <unit name="sImOnA" />
+  </unit>
+ </organigram>
+</orgapp>
+
+Il codice seguente mostra come disegnare un organigramma definito in un file esterno cambiandone la larghezza predefinita dall'amministratore:
+
+  <orgapp width="100%" url="/apps/orgapp/data2.xml"></orgapp>
+
+genera il seguente risultato:
+
+<orgapp width="100%" url="/apps/orgapp/data2.xml"></orgapp>
+
+===== Istallazione =====
+Scaricare e installare il plugin tramite il [[doku>plugin:plugin|Plugin Manager]] usando il seguente [[http://www.eiroca.net/apps/dokuwiki/orgapp.zip|URL]]. Oppure installarlo manualmente (Vedere [[doku>Plugins]]) usando il codice, sempre aggiornato, che si ottiene dalla sezione [[..:dokuwiki#Scarica!]].
+
+==== Amministrazione ====
+I valori di default della generazione dell'organigramma possono essere cambiati da pannello di controllo. 
+
+E' consigliabile, ma non necessario, spostare il file OrgApplet.jar in una cartella del Web dedicata a servire risorse statiche e modificare la relativa URL nel campo //**Archive**// del pannello di amministrazione. 
+
+**ATTENZIONE** se l'applet non si carica controllare:
+  * che sul PC sia stato installato correttamente un [[http://java.com/it/download/index.jsp|runtime java]] (versione 6 preferibile)
+  * che il parametro //**Archive**// contenga l'URL corretto del file //OrgApplet.jar//
+  * di non aver attivato la funzionalità nice URL di dokuwiki. Se si vuole utilizzare tale funzionalità occorre spostare il file //OrgApplet.jar// in una cartella di risorse statiche esterna alla parte di sito gestita da dokuwiki.
+
+===== Versioni =====
+**Versione 2011/02/03**
+  * Aggiunto bottone nella toolbar di editing
+  * Supporto a DokuWiki "Anteater"
+
+**Versione 2010/04/19**
+  * Prima versione
+
+====== Licenza & Copyright ======
+{{template>it:inc:gpl3
+|Author=Copyright (c) 2010-2013 eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+
+{{tag>DokuWiki Organigrammi PHP}}

@@ -1,0 +1,73 @@
+====== eIrOcA Portal System ======
+eIrOcA Portal System (EPS) è un framework Model-Delegate per servizi e portali ottimizzato per client mobile (WAP, XHTML, …). L'infrastruttura EPS gira su un qualunque server [[wp>XAMPP]] ed include un framework in grado di gestire la diversità dei terminali (utilizza [[http://wurfl.sourceforge.net/|WURFL]] per conoscere le capacità dei singoli client). 
+
+Sono incluse alcune applicazioni/servizi, tra cui:
+  * libreria gestione Handset 
+  * HP - Portale
+  * AFO - Barzellette, aforismi, ...
+  * DS - Download Server
+  * NEWS - serviozio pubblicazione notizie
+  * PG - Picture Gallery 
+  * RSS - lettore feed RSS 
+  * USR - Gestione login/logout
+  * ...
+  
+===== Demo =====
+Una demo? basta visitare il sito [[http://www.eiroca.net/mobile/|eIrOcA mobile]] che è stato fatto usando EPS.
+
+===== Requisiti =====
+Per far funzionare EPS è necessario un sistema su cui sia installato (e sia funzionante) Apache 2.x ed un inteprete PHP (versione 4.x o 5.x).
+L'interprete PHP deve avere l'estensione GD abilitata.
+
+===== Scarica! =====
+{{template>it:inc:sf|Repository=serverapps|}}
+
+====== Informazioni sullo sviluppo ======
+===== Installazione =====
+L'installazione è molto semplice, basta copiare i contenuti dello zip file nella cartella htdocs di Apache.
+
+Terminata la copia basta aprire un browser e accedere a http://apache_domain/lib/eps/setup.php, si dovrebbe ottenere qualcosa del genere:
+
+    Checking...
+    GD Library ... OK v. 2
+    testing directory ...
+    Portal found(s):
+    test_mobile
+    test_web
+  
+A questo punto l'installazione è finita e non resta che testare il funzionamento dei singoli protali di test, quello Web http://apache_domain/test_web/ e quello mobile http://apache_domain/test_mobile/.
+
+===== Sviluppare un portale =====
+Putroppo la documentazione non è ancora disponibile :-(
+
+Per avere un'idea basta guardare le cartelle test_xxx per vedere come funziona il framework. 
+
+Per i portali Web basta ricordarsi che ogni pagina è una sottocartella all'interno della cartella "pages" e che dopo averne aggiunta (o tolta) una occorre rieseguire setup.php (o in alternativa cancellare il file portal/data/index.ini).
+
+===== Suggerimenti =====
+In un portale reale occorre cambiare la configurazione del file eps_config.inc in modo da rendere isolati i file di log e le altre cartelle temporanee. Inoltre occorre rendere le cartelle /lib e quelle dei dati, dei log, ... non accessibili (ad esempio cambiando opportunamente i permessi all'interno del file .htaccess).
+
+===== Ultimi cambiamenti =====
+**Versione 0.5.0**
+  * Export della SiteMap 
+  * Aggiornato lo script di setup
+  * Aggiunto il supporto a sajax
+
+**Versione 0.4.0**
+  * Prima versione
+
+{{template>it:inc:info|ID=Server Apps|Status=Release|Language=PHP|}}
+
+====== Licenza & Copyright ======
+{{template>it:inc:gpl3
+|Author=Copyright (c) 2006-2010 eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+
+EPS include:
+  * Image_Toolbox - Copyright (c) 2003 Martin Theimer
+  * Smarty - Copyright (c) 2001-2005 New Digital Group, Inc.
+  * Snoopy - Copyright (c): 1999-2000 ispi, all rights reserved
+  * MagpieRSS - Kellan Elliott-McCrea
+  * SAJAX - http://www.modernmethod.com/sajax/
+
+{{tag>EPS Applicazione_Server PHP Portali WURFL mobile}}

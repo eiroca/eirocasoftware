@@ -1,0 +1,6 @@
+<html>
+  <div>
+    <span><script type="text/javascript" src="http://www.ohloh.net/projects/@ID@/widgets/project_basic_stats"></script></span>
+    <span><script type="text/javascript" src="http://www.ohloh.net/projects/@ID@/widgets/project_cocomo"></script></span>
+  </div>    
+</html>

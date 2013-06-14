@@ -1,0 +1,37 @@
+====== eIrOcA Pout Pourri ======
+eIrOcA Software pout pourri è una raccolta che funge da incubatore per i progetti non ancora rilasciati, i progetti possono variare da dei semplici concept a delle applicazioni perfettamente funzionanti (ma non ancora rilasciate come progetto a se stante).
+
+===== Artificial Neural Networks =====
+{{page>it:projects:Incubator:OldNN&firstsectiononly&link&header&nofooter}}
+
+===== Apple ][ =====
+{{page>it:projects:Incubator:ProDisk&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Incubator:ProDiskGUI&firstsectiononly&link&header&nofooter}}
+
+===== Gestionali =====
+{{page>it:projects:Incubator:Artik&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Incubator:ConTab&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Incubator:ConTatti&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Incubator:eicShell&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Incubator:TabaC&firstsectiononly&link&header&nofooter}}
+
+===== Finanziari =====
+{{page>it:projects:Incubator:Mutui&firstsectiononly&link&header&nofooter}}
+
+===== Giochi =====
+{{page>it:projects:Incubator:WinCorp&firstsectiononly&link&header&nofooter}}
+
+===== Misc =====
+{{page>it:projects:Incubator:Bioritmi&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Incubator:eMelody&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Incubator:Agents&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Incubator:Tesine&firstsectiononly&link&header&nofooter}}
+
+===== Wiki =====
+{{page>it:projects:Incubator:WikiHelper&firstsectiononly&link&header&nofooter}}
+
+===== DokuWiki =====
+Una raccolta di tool e plugin per i Wiki in formato [[doku>start|DokuWiki]].
+
+{{page>it:projects:Incubator:DokuWiki_Barcode&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Incubator:DokuWiki_OrgApp&firstsectiononly&link&header&nofooter}}

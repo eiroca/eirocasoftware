@@ -1,0 +1,3 @@
+~~BARCODE~class=barcode_right~url=@URL@~size=M~margin=40~bgcolor=FFFFF~~
+
+L'applicazione @Name@ può essere scaricata nella sezione "@Section@" del [[http://www.eiroca.net/mobile/module.php?s=DS|portale Web]] o via celluare all'indirizzo [[http://www.eiroca.net/mobile/index.php?s=DS|http://www.eiroca.net/mobile/]].

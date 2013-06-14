@@ -1,0 +1,39 @@
+====== MobileSuite - PacMan ======
+A simple Pac Man clone.
+
+===== Screenshots =====
+{{gallery>software:pacman }}
+
+===== Requirements =====
+{{template>en:inc:midp|ver=MIDP2.0|}}
+
+Supported languages: {{ico:eng.png|ENG}} {{ico:ita.png|ITA}}
+
+===== Download =====
+{{template>en:inc:qrcode|Section=Games|Name=Pac Man|URL=http://www.eiroca.net/mobile/download.php?n=1_3&c=000|}}
+
+{{template>en:inc:sf|Repository=mobilesuite|}}
+
+====== Development ======
+===== To Do =====
+  * New levels
+  * Better graphics
+  * Better ghost logic
+  * Music and sound effects
+
+===== Changes log =====
+**Version 1.1.0**
+  * Aligned with version 1.1.0 of [[en:Projects:Development:lib:libJ2ME|libJ2ME]]
+
+**Version 1.0.0**
+  * First public release
+
+{{template>en:inc:info|ID=mobile_suite|Status=Release|Language=Java|}}
+
+====== Licence & Copyright ======
+{{template>en:inc:gpl2
+|Author=Copyright (c) 2006-2010 Marius Rieder & eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+PacMan is based upon Nokia PacMan game written by Marius Rieder.
+
+{{tag>PacMan MobileSuite Games Java}}

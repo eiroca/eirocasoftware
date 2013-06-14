@@ -1,0 +1,4 @@
+===== Development tools =====
+
+{{page>en:Projects:Development:tool:Test Suite&firstsectiononly&link&header&nofooter}}
+{{page>en:Projects:Development:tool:WURFL2PHP&firstsectiononly&link&header&nofooter}}

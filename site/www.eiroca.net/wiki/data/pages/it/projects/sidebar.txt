@@ -1,0 +1,16 @@
+**[[it:start|eIrOcA]]**
+  * [[it:Index|Indice]] 
+  * [[it:About|Info su eIrOcA]]
+  * [[http://www.eiroca.net/wiki/feed.php|{{button:rss.png?80x15|Recent changes RSS feed}}]]
+<html>
+<div class="g-plusone" data-annotation="inline" data-width="300" data-href="http://www.eiroca.net"></div>
+</html>
+
+**[[it:start|Sezioni]]**
+  * [[it:Projects:start|Progetti]]
+    * [[it:Projects:Software:start|Applicazioni]]
+    * [[it:Projects:Development:start|Sviluppo]]
+    * [[it:Projects:Incubator:start|In incubazione]]
+  * [[it:Archive:start|Archivio]]
+  * [[it:Blog:start|Blog]]
+  * [[http://www.eiroca.net/mobile|Mobile]]

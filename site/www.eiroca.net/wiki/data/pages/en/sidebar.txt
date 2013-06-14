@@ -1,9 +1,13 @@
-  * [[start|eIrOcA]]
-  * [[Viaggi|Travels]]
-  * [[http://www.eiroca.net/mobile/module.php|Mobile version]]
-  * [[Software]]
-  * [[Development]]
-  * [[Tag|Map of contents]] 
-  * [[About|About eIrOcA]]
+**[[en:start|eIrOcA]]**
+  * [[en:Index|Index]] 
+  * [[en:About|About eIrOcA]]
+  * [[http://www.eiroca.net/wiki/feed.php|{{button:rss.png?80x15|Recent changes}}]]
+<html>
+<div class="g-plusone" data-annotation="inline" data-width="300" data-href="http://www.eiroca.net"></div>
+</html>
 
-[[http://www.eiroca.net/wiki/feed.php|{{button:rss.png?80x15|Recent changes RSS feed}}]]
+**[[en:start|Section]]**
+  * [[en:projects:start|Projects]]
+  * [[en:archive:start|Archive]]
+  * [[en:blog:start|Blog]]
+  * [[http://www.eiroca.net/mobile|Mobile]]

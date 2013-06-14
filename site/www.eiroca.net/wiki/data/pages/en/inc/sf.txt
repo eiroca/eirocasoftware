@@ -1,0 +1,4 @@
+[[http://sourceforge.net/projects/@Repository@|{{ico:sf.png|SourceForge Logo}}]]
+The full distribution, including source code, can be downloaded [[http://sourceforge.net/projects/@Repository@/files/|here]].
+
+Additional project resources are hosted in a [[http://sourceforge.net/projects/@Repository@|Source Forge Repository]].

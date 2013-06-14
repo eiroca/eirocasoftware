@@ -1,0 +1,146 @@
+Torna alla pagina con tutti i report della [[..:handset_report|Test Suite]].
+
+^  Samsung GT-3653  ^^^^
+^TestSuite|//Version//||<nowiki>1.0.5</nowiki>|
+^System|//Platform//|Name|<nowiki>SAMSUNG-GT-S3653/S365MDDIJ1</nowiki>|
+^ ::: | ::: |Device Model|<nowiki>GT-S3653</nowiki>|
+^ ::: |//IMEI//|IMEI|true|
+^ ::: |//Memory//|Total memory|6764160|
+^ ::: | ::: |Free memory|3208908|
+^Environment|//CLDC//|Configuration|<nowiki>CLDC-1.1</nowiki>|
+^ ::: | ::: |Char encoding|<nowiki>ISO8859_1</nowiki>|
+^ ::: |//MIDP//|JSR-118 (MIDP2.x) supported|true|
+^ ::: | ::: |Profiles|<nowiki>MIDP-2.1</nowiki>|
+^ ::: | ::: |Locale|<nowiki>en-IN</nowiki>|
+^ ::: | ::: |Serial ports|<nowiki>COM1,USB</nowiki>|
+^ ::: |//Mobile i18n//|i18n version|<nowiki>1.0</nowiki>|
+^Graphics|//Screen//|Screen (full) height|260|
+^ ::: | ::: |Screen (full) width|240|
+^ ::: | ::: |Screen (normal) height|204|
+^ ::: | ::: |Screen (normal) width|240|
+^ ::: | ::: |Is Color|true|
+^ ::: | ::: |Color Depth|65536|
+^ ::: | ::: |Alpha Levels|256|
+^ ::: | ::: |Screen buffered|true|
+^ ::: |//Canvas//|Font Default Height|18|
+^ ::: | ::: |Font Small Height|16|
+^ ::: | ::: |Font Small Bold Height|16|
+^ ::: | ::: |Font Medium Height|18|
+^ ::: | ::: |Font Medium Bold Height|18|
+^ ::: | ::: |Font Large Height|20|
+^ ::: | ::: |Font Large Bold Height|20|
+^ ::: |//Mobile Media//|JSR-135 MMAPI supported|true|
+^ ::: | ::: |JSR-135 Video supported|true|
+^ ::: | ::: |Mobile Media version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |Supports mixing|false|
+^ ::: | ::: |Audio capture|true|
+^ ::: | ::: |Video capture|true|
+^ ::: | ::: |Supports recording|true|
+^ ::: | ::: |Audio encoding|<nowiki>encoding=audio/amr</nowiki>|
+^ ::: | ::: |Video encodings|<nowiki>encoding=jpeg</nowiki>|
+^ ::: | ::: |Video snapshot encodings|<nowiki>encoding=jpeg</nowiki>|
+^ ::: | ::: |Streamable contents|<nowiki>video/mpeg</nowiki>|
+^ ::: |//Multimedia//|Capture|<nowiki>audio/amr audio/x-amr image/jpeg</nowiki>|
+^ ::: | ::: |Device|<nowiki>audio/x-tone-seq audio/midi</nowiki>|
+^ ::: | ::: |File|<nowiki>audio/x-tone-seq audio/amr audio/x-amr audio/midi audio/mid audio/sp-midi audio/x-midi audio/mmf audio/x-mmf audio/smaf audio/x-smaf application/x-smaf audio/x-wav audio/wav audio/mpeg audio/mp3 audio/mpg audio/x-mpg audio/mp4 audio/mp4a-latm audio/m4a audio/qcelp audio/vnd.qcelp audio/aac audio/apl audio/x-aac audio/adpcm audio/wma audio/x-ms-wma audio/3gpp audio/3gpp2 audio/3gp video/3gpp video/3gpp2 video/3gp video/H263 video/H264 video/mpeg video/mp4 video/x-ms-wmv image/gif application/sdp application/vnd.oma.drm.dcf application/vnd.oma.drm.roap-trigger xml audio/vnd.rn-realaudio audio/x-pn-realaudio audio/x-pn-multirate-realaudio audio/x-pn-multirate-realaudio-live video/vnd.rn-realvideo video/vnd.rn-realmedia video/x-pn-realvideo video/x-pn-multimrate-realvideo application/ram</nowiki>|
+^ ::: | ::: |HTTP|<nowiki>audio/x-tone-seq audio/amr audio/x-amr audio/midi audio/mid audio/sp-midi audio/x-midi audio/mmf audio/x-mmf audio/smaf audio/x-smaf application/x-smaf audio/x-wav audio/wav audio/mpeg audio/mp3 audio/mpg audio/x-mpg audio/mp4 audio/mp4a-latm audio/m4a audio/qcelp audio/vnd.qcelp audio/aac audio/apl audio/x-aac audio/adpcm audio/wma audio/x-ms-wma audio/3gpp audio/3gpp2 audio/3gp video/3gpp video/3gpp2 video/3gp video/H263 video/H264 video/mpeg video/mp4 video/x-ms-wmv image/gif application/sdp application/vnd.oma.drm.dcf application/vnd.oma.drm.roap-trigger xml audio/vnd.rn-realaudio audio/x-pn-realaudio audio/x-pn-multirate-realaudio audio/x-pn-multirate-realaudio-live video/vnd.rn-realvideo video/vnd.rn-realmedia video/x-pn-realvideo video/x-pn-multimrate-realvideo application/ram</nowiki>|
+^ ::: | ::: |RTSP|<nowiki>audio/amr audio/x-amr audio/mpeg audio/mp3 audio/mpg audio/x-mpg audio/mp4 audio/mp4a-latm audio/m4a audio/aac audio/apl audio/x-aac audio/wma audio/x-ms-wma audio/3gpp audio/3gpp2 audio/3gp video/3gpp video/3gpp2 video/3gp video/H263 video/H264 video/mpeg video/mp4 video/x-ms-wmv audio/vnd.rn-realaudio audio/x-pn-realaudio audio/x-pn-multirate-realaudio audio/x-pn-multirate-realaudio-live video/vnd.rn-realvideo video/vnd.rn-realmedia video/x-pn-realvideo video/x-pn-multimrate-realvideo application/ram</nowiki>|
+^ ::: |//3D Graphics//|JSR-184 supported|true|
+^ ::: | ::: |M3G version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |3D - max Lights|256|
+^ ::: | ::: |3D - max Sprite Crop Dimension|1024|
+^ ::: | ::: |3D - max Texture Dimension|1024|
+^ ::: | ::: |3D - max Transforms Per Vertex|2|
+^ ::: | ::: |3D - max Viewport Dimension|1024|
+^ ::: | ::: |3D - max Viewport Height|1024|
+^ ::: | ::: |3D - max Viewport Width|1024|
+^ ::: | ::: |3D - num Texture Units|2|
+^ ::: | ::: |3D - support Antialiasing|false|
+^ ::: | ::: |3D - support Dithering|false|
+^ ::: | ::: |3D - support Local Camera Lighting|true|
+^ ::: | ::: |3D - support Mipmapping|false|
+^ ::: | ::: |3D - support Perspective Correction|true|
+^ ::: | ::: |3D - support TrueColor|false|
+^ ::: |//SVG//|M2G version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |SVG version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |SVG profile|<nowiki>tiny</nowiki>|
+^Comms|//Wireless Messaging//|JSR-120 (Messaging 1.1) supported|true|
+^ ::: | ::: |JSR-205 (Messaging 2.0) supported|true|
+^ ::: | ::: |MMSC Address|<nowiki>http://mmsc.rcom.co.in/mms/</nowiki>|
+^ ::: | ::: |SMSC Address|919021000500|
+^ ::: |//Bluetooth//|JSR-082 Bluetooth supported|true|
+^ ::: | ::: |JSR-082 OBEX supported|true|
+^ ::: | ::: |Bluetooth version|<nowiki>1.1</nowiki>|
+^ ::: | ::: |The maximum ReceiveMTU size|672|
+^ ::: | ::: |The maximum number of connected devices|4|
+^ ::: | ::: |Is inquiry allowed during a connection|true|
+^ ::: | ::: |Is paging allowed during a connection|false|
+^ ::: | ::: |Is inquiry scanning allowed during a connection|false|
+^ ::: | ::: |Is page scanning allowed during a connection|false|
+^ ::: | ::: |Is master/slave switch allowed|true|
+^ ::: | ::: |Max number of concurrent service discovery transactions|1|
+^ ::: | ::: |Max number of service attributes to be retrieved per service record|16|
+^ ::: |//SIP//|JSR-180 supported|false|
+^Personal Information|//PIM & File//|JSR-075 Filesystem supported|true|
+^ ::: | ::: |JSR-075 PIM supported|true|
+^ ::: | ::: |PIM version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |FileConnection version|<nowiki>1.0</nowiki>|
+^ ::: | ::: |File Separator|<nowiki>/</nowiki>|
+^ ::: | ::: |Directory of photos name|<nowiki>My Photo</nowiki>|
+^ ::: | ::: |Directory of photos path|<nowiki>file:///Photo/</nowiki>|
+^ ::: | ::: |Directory of videos name|<nowiki>My Video</nowiki>|
+^ ::: | ::: |Directory of videos path|<nowiki>file:///Video/</nowiki>|
+^ ::: | ::: |Directory of graphics name|<nowiki>My Graphics</nowiki>|
+^ ::: | ::: |Directory of graphics path|<nowiki>file:///Graphics/</nowiki>|
+^ ::: | ::: |Directory of tones name|<nowiki>My Tones</nowiki>|
+^ ::: | ::: |Directory of tones path|<nowiki>file:///Tones/</nowiki>|
+^ ::: | ::: |Directory of music name|<nowiki>My Music</nowiki>|
+^ ::: | ::: |Directory of music path|<nowiki>file:///Music/</nowiki>|
+^ ::: | ::: |Directory of recordings name|<nowiki>My Record</nowiki>|
+^ ::: | ::: |Directory of recordings path|<nowiki>file:///Record/</nowiki>|
+^ ::: | ::: |Directory of private name|<nowiki>My Private</nowiki>|
+^ ::: | ::: |Directory of private path|<nowiki>file:///filesystem/</nowiki>|
+^ ::: | ::: |Directory of memorycard path|<nowiki>file:///Mmc/</nowiki>|
+^ ::: | ::: |Directory of roots names|<nowiki>My Private;My Photo;My Video;My Graphics;My Tones;My Music;My Record;My Memorycard;</nowiki>|
+^ ::: |//Location//|JSR-179 supported|false|
+^Application connectivity|//Web Services//|JSR-172 supported|true|
+^ ::: |//Content Handler//|Content Handler version|<nowiki>1.0</nowiki>|
+^Security & Commerce|//Security & Trust Services//|JSR-177 supported|false|
+^API|//Other//|Motorola - RC|false|
+^ ::: | ::: |Nokia - Graphics|false|
+^ ::: | ::: |Nokia - Sound|false|
+^ ::: | ::: |Nokia - UI|false|
+^ ::: | ::: |Samsung - Acceleration|false|
+^ ::: | ::: |Samsung - Vibration|true|
+^ ::: | ::: |Siemens - graphics|false|
+^ ::: | ::: |Siemens - UI|false|
+^ ::: | ::: |JTWI version|<nowiki>1.0</nowiki>|
+^Platform|//Control//|Has key-held events|true|
+^ ::: | ::: |Has motion events|true|
+^ ::: | ::: |Has pointer events|true|
+^ ::: |//Keyboard//|Key DOWN|<nowiki>Down</nowiki>|
+^ ::: | ::: |Key FIRE|<nowiki>Select</nowiki>|
+^ ::: | ::: |Key GAME A|1|
+^ ::: | ::: |Key GAME B|3|
+^ ::: | ::: |Key GAME C|7|
+^ ::: | ::: |Key GAME D|9|
+^ ::: | ::: |Key LEFT|<nowiki>Left</nowiki>|
+^ ::: | ::: |Key RIGHT|<nowiki>Right</nowiki>|
+^ ::: | ::: |Key UP|<nowiki>Up</nowiki>|
+^ ::: |//Carrier//|IMSI|true|
+^ ::: |//Network//|Cell ID|true|
+^ ::: |//Settings//|Available Time Zone|<nowiki>GMT UTC</nowiki>|
+^ ::: | ::: |Default Time Zone|<nowiki>GMT 05:30</nowiki>|
+^Benchmark|//Math//|Math Add array|2781|
+^ ::: | ::: |Math Add local|5365|
+^ ::: | ::: |Math Add instance|3925|
+^ ::: | ::: |Math Add static|4644|
+^ ::: | ::: |Math Div array|7290|
+^ ::: | ::: |Math Div local|2851|
+^ ::: | ::: |Math Div instance|2530|
+^ ::: | ::: |Math Div static|6068|
+^ ::: | ::: |Math Mul array|7596|
+^ ::: | ::: |Math Mul local|4964|
+^ ::: | ::: |Math Mul instance|1065|
+^ ::: | ::: |Math Mul static|938|
+^ ::: |//Timer//|Sleep precision|45|
