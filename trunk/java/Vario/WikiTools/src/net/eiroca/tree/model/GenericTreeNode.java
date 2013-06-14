@@ -66,27 +66,11 @@ public class GenericTreeNode<T extends TreeNode> implements TreeNode, Iterable<T
     }
   }
 
-  /**
-   * Gets the parent.
-   * 
-   * @return the parent
-   */
-  public T getParent() {
-    return parent;
-  }
-
-  /**
-   * Gets the owner.
-   * 
-   * @return the owner
-   */
-  public Tree<T> getOwner() {
-    return owner;
-  }
-
-  /* (non-Javadoc)
+  /*
+   * (non-Javadoc)
    * @see net.eiroca.tree.model.TreeNode#addChild(net.eiroca.tree.model.TreeNode)
    */
+  @Override
   @SuppressWarnings("unchecked")
   public void addChild(final TreeNode child) {
     final T aChild = (T) child;
@@ -94,99 +78,40 @@ public class GenericTreeNode<T extends TreeNode> implements TreeNode, Iterable<T
     child.setParent(this);
   }
 
-  /*
-   * (non-Javadoc)
-   *
-   * @see java.lang.Iterable#iterator()
-   */
-  public Iterator<T> iterator() {
-    return children.iterator();
-  }
-
   /**
-   * Checks for children.
+   * Builds the id.
    * 
-   * @return true, if successful
+   * @param prefix the prefix
+   * @param pos the pos
    */
-  public boolean hasChildren() {
-    return !children.isEmpty();
-  }
-
-  /* (non-Javadoc)
-   * @see net.eiroca.tree.model.TreeNode#getChildren(int)
-   */
-  public T getChildren(final int index) {
-    return children.get(index);
-  }
-
-  /**
-   * Gets the children count.
-   * 
-   * @return the children count
-   */
-  public int getChildrenCount() {
-    return children.size();
-  }
-
-  /**
-   * Sets the parent.
-   * 
-   * @param parent the new parent
-   */
-  @SuppressWarnings("unchecked")
-  public void setParent(final TreeNode parent) {
-    this.parent = (T) parent;
-  }
-
-  /*
-   * (non-Javadoc)
-   *
-   * @see net.eiroca.node.model.MetaDataCollector#setMeta(java.lang.String,
-   *      java.lang.String)
-   */
-  public void setMeta(final String name, final String val) {
-    if (val == null) {
-      meta.remove(name);
-    }
-    else {
-      meta.put(name, val);
+  @Override
+  public void buildID(final String prefix, final int pos) {
+    final String myId = prefix + Integer.toString(pos, Character.MAX_RADIX);
+    setID(myId);
+    int cnt = 0;
+    for (final TreeNode u : this) {
+      cnt++;
+      u.buildID(myId + ".", cnt);
     }
   }
 
-  /*
-   * (non-Javadoc)
-   *
-   * @see net.eiroca.node.model.MetaDataCollector#getMeta(java.lang.String)
-   */
-  public String getMeta(final String name) {
-    return meta.get(name);
-  }
-
   /**
-   * Gets the meta.
+   * Execute.
    * 
-   * @return the meta
+   * @param action the action
+   * @param nodeFirst the node first
    */
-  public Map<String, String> getMeta() {
-    return meta;
-  }
-
-  /**
-   * Gets the iD.
-   * 
-   * @return the iD
-   */
-  public String getID() {
-    return nodeID;
-  }
-
-  /**
-   * Sets the iD.
-   * 
-   * @param aID the new iD
-   */
-  public void setID(final String aID) {
-    nodeID = aID;
+  @Override
+  public void execute(final NodeTraversal action, final boolean nodeFirst) {
+    if (nodeFirst) {
+      action.process(this);
+    }
+    for (final TreeNode u : this) {
+      u.execute(action, nodeFirst);
+    }
+    if (!nodeFirst) {
+      action.process(this);
+    }
   }
 
   /**
@@ -197,6 +122,7 @@ public class GenericTreeNode<T extends TreeNode> implements TreeNode, Iterable<T
    * 
    * @return the tree node
    */
+  @Override
   public TreeNode findByID(final String aID, final boolean exact) {
     TreeNode res = (exact ? null : this);
     if (aID.equals(getID())) {
@@ -215,9 +141,97 @@ public class GenericTreeNode<T extends TreeNode> implements TreeNode, Iterable<T
     return res;
   }
 
+  /*
+   * (non-Javadoc)
+   * @see net.eiroca.tree.model.TreeNode#getChildren(int)
+   */
+  @Override
+  public T getChildren(final int index) {
+    return children.get(index);
+  }
+
+  /**
+   * Gets the children count.
+   * 
+   * @return the children count
+   */
+  @Override
+  public int getChildrenCount() {
+    return children.size();
+  }
+
+  /**
+   * Gets the iD.
+   * 
+   * @return the iD
+   */
+  @Override
+  public String getID() {
+    return nodeID;
+  }
+
+  /**
+   * Gets the meta.
+   * 
+   * @return the meta
+   */
+  @Override
+  public Map<String, String> getMeta() {
+    return meta;
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see net.eiroca.node.model.MetaDataCollector#getMeta(java.lang.String)
+   */
+  @Override
+  public String getMeta(final String name) {
+    return meta.get(name);
+  }
+
+  /**
+   * Gets the owner.
+   * 
+   * @return the owner
+   */
+  @Override
+  public Tree<T> getOwner() {
+    return owner;
+  }
+
+  /**
+   * Gets the parent.
+   * 
+   * @return the parent
+   */
+  @Override
+  public T getParent() {
+    return parent;
+  }
+
+  /**
+   * Checks for children.
+   * 
+   * @return true, if successful
+   */
+  @Override
+  public boolean hasChildren() {
+    return !children.isEmpty();
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see java.lang.Iterable#iterator()
+   */
+  @Override
+  public Iterator<T> iterator() {
+    return children.iterator();
+  }
+
   /**
    * Removes the id.
    */
+  @Override
   public void removeID() {
     setID(null);
     for (final TreeNode u : this) {
@@ -226,37 +240,38 @@ public class GenericTreeNode<T extends TreeNode> implements TreeNode, Iterable<T
   }
 
   /**
-   * Builds the id.
+   * Sets the iD.
    * 
-   * @param prefix the prefix
-   * @param pos the pos
+   * @param aID the new iD
    */
-  public void buildID(final String prefix, final int pos) {
-    final String myId = prefix + Integer.toString(pos, Character.MAX_RADIX);
-    setID(myId);
-    int cnt = 0;
-    for (final TreeNode u : this) {
-      cnt++;
-      u.buildID(myId + ".", cnt);
+  @Override
+  public void setID(final String aID) {
+    nodeID = aID;
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see net.eiroca.node.model.MetaDataCollector#setMeta(java.lang.String, java.lang.String)
+   */
+  @Override
+  public void setMeta(final String name, final String val) {
+    if (val == null) {
+      meta.remove(name);
+    }
+    else {
+      meta.put(name, val);
     }
   }
 
   /**
-   * Execute.
+   * Sets the parent.
    * 
-   * @param action the action
-   * @param nodeFirst the node first
+   * @param parent the new parent
    */
-  public void execute(final NodeTraversal action, final boolean nodeFirst) {
-    if (nodeFirst) {
-      action.process(this);
-    }
-    for (final TreeNode u : this) {
-      u.execute(action, nodeFirst);
-    }
-    if (!nodeFirst) {
-      action.process(this);
-    }
+  @Override
+  @SuppressWarnings("unchecked")
+  public void setParent(final TreeNode parent) {
+    this.parent = (T) parent;
   }
 
 }

@@ -41,9 +41,16 @@ public class NodeProcessor extends TAGMeta<MMReader> {
 
   /*
    * (non-Javadoc)
-   *
-   * @see net.eiroca.node.io.TAG#start(net.eiroca.node.io.TreeReader,
-   *      org.xml.sax.Attributes)
+   * @see net.eiroca.node.io.TAG#end(net.eiroca.node.io.TreeReader)
+   */
+  @Override
+  public void end(final MMReader reader) {
+    reader.newNode = reader.parentNodes.pop();
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see net.eiroca.node.io.TAG#start(net.eiroca.node.io.TreeReader, org.xml.sax.Attributes)
    */
   @Override
   public void start(final MMReader reader, final Attributes attribs) {
@@ -60,16 +67,6 @@ public class NodeProcessor extends TAGMeta<MMReader> {
     readMeta(node, attribs);
     node.setID(node.getMeta(ATR_ID));
     node.setMeta(ATR_ID, null);
-  }
-
-  /*
-   * (non-Javadoc)
-   *
-   * @see net.eiroca.node.io.TAG#end(net.eiroca.node.io.TreeReader)
-   */
-  @Override
-  public void end(final MMReader reader) {
-    reader.newNode = reader.parentNodes.pop();
   }
 
 }

@@ -47,6 +47,22 @@ public class TAGMeta<TR extends TreeReader<?>> extends TAG<TR> {
   }
 
   /**
+   * Read meta.
+   * 
+   * @param meta the meta
+   * @param attribs the attribs
+   */
+  public void readMeta(final MetaDataCollector meta, final Attributes attribs) {
+    String name;
+    String value;
+    for (int i = 0; i < attribs.getLength(); i++) {
+      name = attribs.getQName(i);
+      value = attribs.getValue(i);
+      meta.setMeta(name, value);
+    }
+  }
+
+  /**
    * Write meta.
    * 
    * @param buf the buffer
@@ -93,22 +109,6 @@ public class TAGMeta<TR extends TreeReader<?>> extends TAG<TR> {
     }
     close(buf, compact);
     return true;
-  }
-
-  /**
-   * Read meta.
-   * 
-   * @param meta the meta
-   * @param attribs the attribs
-   */
-  public void readMeta(final MetaDataCollector meta, final Attributes attribs) {
-    String name;
-    String value;
-    for (int i = 0; i < attribs.getLength(); i++) {
-      name = attribs.getQName(i);
-      value = attribs.getValue(i);
-      meta.setMeta(name, value);
-    }
   }
 
 }

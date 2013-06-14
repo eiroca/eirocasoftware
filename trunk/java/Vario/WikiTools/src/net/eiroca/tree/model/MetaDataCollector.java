@@ -23,14 +23,6 @@ package net.eiroca.tree.model;
 public interface MetaDataCollector {
 
   /**
-   * Sets the meta.
-   * 
-   * @param name the name
-   * @param value the value
-   */
-  void setMeta(String name, String value);
-
-  /**
    * Gets the meta.
    * 
    * @param name the name
@@ -38,5 +30,13 @@ public interface MetaDataCollector {
    * @return the meta
    */
   String getMeta(String name);
+
+  /**
+   * Sets the meta.
+   * 
+   * @param name the name
+   * @param value the value
+   */
+  void setMeta(String name, String value);
 
 }

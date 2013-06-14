@@ -92,12 +92,11 @@ public class WikiWriter implements TreeWriter<Page> {
     return true;
   }
 
-  /*t
-   * (non-Javadoc)
-   *
-   * @see net.eiroca.node.io.TreeWriter#writeTree(net.eiroca.node.model.Tree,
-   *      boolean)
+  /*
+   * t (non-Javadoc)
+   * @see net.eiroca.node.io.TreeWriter#writeTree(net.eiroca.node.model.Tree, boolean)
    */
+  @Override
   public String writeTree(final Page tree, final boolean compact) {
     final StringBuffer buf = new StringBuffer(1024);
     writeNode(buf, tree.getRoot(), !compact, 0);

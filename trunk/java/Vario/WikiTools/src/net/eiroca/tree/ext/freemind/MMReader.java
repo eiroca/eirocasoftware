@@ -41,7 +41,6 @@ public class MMReader extends XMLHandler<Map> {
 
   /*
    * (non-Javadoc)
-   *
    * @see net.eiroca.node.io.XMLHandler#readTree(java.net.URL)
    */
   @Override

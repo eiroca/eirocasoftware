@@ -35,26 +35,23 @@ public class MapProcessor extends TAGMeta<MMReader> {
 
   /*
    * (non-Javadoc)
-   *
-   * @see net.eiroca.node.io.TAG#start(net.eiroca.node.io.TreeReader,
-   *      org.xml.sax.Attributes)
-   */
-  @Override
-  public void start(final MMReader reader, final Attributes attribs) {
-    final Map tree = new Map();
-    reader.setTree(tree);
-    readMeta(tree, attribs);
-  }
-
-  /*
-   * (non-Javadoc)
-   *
    * @see net.eiroca.node.io.TAG#end(net.eiroca.node.io.TreeReader)
    */
   @Override
   public void end(final MMReader reader) {
     final Tree<Node> tree = reader.getTree();
     tree.setRoot(reader.rootNode);
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see net.eiroca.node.io.TAG#start(net.eiroca.node.io.TreeReader, org.xml.sax.Attributes)
+   */
+  @Override
+  public void start(final MMReader reader, final Attributes attribs) {
+    final Map tree = new Map();
+    reader.setTree(tree);
+    readMeta(tree, attribs);
   }
 
 }

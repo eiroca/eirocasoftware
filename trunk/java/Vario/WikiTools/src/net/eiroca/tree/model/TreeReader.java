@@ -26,13 +26,11 @@ import java.util.Map;
 public interface TreeReader<TR extends Tree<?>> {
 
   /**
-   * Read tree.
+   * Gets the data.
    * 
-   * @param path the path
-   * 
-   * @return the tree< t n>
+   * @return the data
    */
-  TR readTree(URL path);
+  Map<String, String> getData();
 
   /**
    * Gets the tree.
@@ -42,17 +40,19 @@ public interface TreeReader<TR extends Tree<?>> {
   TR getTree();
 
   /**
+   * Read tree.
+   * 
+   * @param path the path
+   * 
+   * @return the tree< t n>
+   */
+  TR readTree(URL path);
+
+  /**
    * Sets the tree.
    * 
    * @param tree the new tree
    */
   void setTree(TR tree);
-
-  /**
-   * Gets the data.
-   * 
-   * @return the data
-   */
-  Map<String, String> getData();
 
 }
