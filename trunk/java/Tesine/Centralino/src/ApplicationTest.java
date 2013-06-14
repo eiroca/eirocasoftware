@@ -23,9 +23,21 @@ import javax.swing.plaf.metal.MetalLookAndFeel;
 
 public class ApplicationTest {
 
-  boolean packFrame = false;
+  public static void main(final String[] args) {
+    try {
+      UIManager.setLookAndFeel(new MetalLookAndFeel());
+    }
+    catch (final Exception e) {
+      e.printStackTrace();
+    }
+    new ApplicationTest();
+  }
 
   // Construct the application
+
+  boolean packFrame = false;
+
+  // Main method
 
   public ApplicationTest() {
     final frMain frame = new frMain();
@@ -48,17 +60,5 @@ public class ApplicationTest {
     }
     frame.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
     frame.setVisible(true);
-  }
-
-  // Main method
-
-  public static void main(final String[] args) {
-    try {
-      UIManager.setLookAndFeel(new MetalLookAndFeel());
-    }
-    catch (final Exception e) {
-      e.printStackTrace();
-    }
-    new ApplicationTest();
   }
 }
