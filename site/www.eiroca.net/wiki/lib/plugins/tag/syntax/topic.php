@@ -11,29 +11,42 @@ if (!defined('DOKU_INC')) die();
 
 if (!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
 
-require_once(DOKU_PLUGIN.'syntax.php');
-
+/**
+ * Topic syntax, displays links to all wiki pages with a certain tag
+ */
 class syntax_plugin_tag_topic extends DokuWiki_Syntax_Plugin {
 
-    function getInfo() {
-        return array(
-                'author' => 'Gina Häußge, Michael Klier, Esther Brunner',
-                'email'  => 'dokuwiki@chimeric.de',
-                'date'   => @file_get_contents(DOKU_PLUGIN.'tag/VERSION'),
-                'name'   => 'Tag Plugin (topic component)',
-                'desc'   => 'Displays a list of wiki pages with a given category tag',
-                'url'    => 'http://www.dokuwiki.org/plugin:tag',
-                );
-    }
-
+    /**
+     * @return string Syntax type
+     */
     function getType() { return 'substition'; }
-    function getPType() { return 'block'; }
-    function getSort() { return 306; }
 
+    /**
+     * @return string Paragraph type
+     */
+    function getPType() { return 'block'; }
+
+    /**
+     * @return int Sort order
+     */
+    function getSort() { return 295; }
+
+    /**
+     * @param string $mode Parser mode
+     */
     function connectTo($mode) {
         $this->Lexer->addSpecialPattern('\{\{topic>.+?\}\}',$mode,'plugin_tag_topic');
     }
 
+    /**
+     * Handle matches of the topic syntax
+     *
+     * @param string $match The match of the syntax
+     * @param int    $state The state of the handler
+     * @param int    $pos The position in the document
+     * @param Doku_Handler    $handler The handler
+     * @return array Data for the renderer
+     */
     function handle($match, $state, $pos, &$handler) {
         global $ID;
 
@@ -54,23 +67,41 @@ class syntax_plugin_tag_topic extends DokuWiki_Syntax_Plugin {
         return array($ns, trim($tag), $flags);
     }
 
+    /**
+     * Render xhtml output or metadata
+     *
+     * @param string         $mode      Renderer mode (supported modes: xhtml and metadata)
+     * @param Doku_Renderer  $renderer  The renderer
+     * @param array          $data      The data from the handler function
+     * @return bool If rendering was successful.
+     */
     function render($mode, &$renderer, $data) {
         list($ns, $tag, $flags) = $data;
 
+        /* @var helper_plugin_tag $my */
         if ($my =& plugin_load('helper', 'tag')) $pages = $my->getTopic($ns, '', $tag);
-        if (!$pages) return true; // nothing to display
+        if (!isset($pages) || !$pages) return true; // nothing to display
 
         if ($mode == 'xhtml') {
+            /* @var Doku_Renderer_xhtml $renderer */
 
             // prevent caching to ensure content is always fresh
             $renderer->info['cache'] = false;
 
+            /* @var helper_plugin_pagelist $pagelist */
             // let Pagelist Plugin do the work for us
             if (plugin_isdisabled('pagelist')
                     || (!$pagelist = plugin_load('helper', 'pagelist'))) {
                 msg($this->getLang('missing_pagelistplugin'), -1);
                 return false;
             }
+
+            $configflags = explode(',', str_replace(" ", "", $this->getConf('pagelist_flags')));
+           	$flags = array_merge($configflags, $flags);	
+           	foreach($flags as $key => $flag) {
+           		if($flag == "")	unset($flags[$key]);
+           	}     
+
             $pagelist->setFlags($flags);
             $pagelist->startList();
             foreach ($pages as $page) {
@@ -80,14 +111,14 @@ class syntax_plugin_tag_topic extends DokuWiki_Syntax_Plugin {
             return true;
 
         // for metadata renderer
-        } elseif ($mode == 'metadata') {
+/*        } elseif ($mode == 'metadata') {
             foreach ($pages as $page) {
                 $renderer->meta['relation']['references'][$page['id']] = true;
             }
 
-            return true;
+            return true;*/ // causes issues with backlinks
         }
         return false;
     }
 }
-// vim:ts=4:sw=4:et:enc=utf-8: 
+// vim:ts=4:sw=4:et: 

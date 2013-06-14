@@ -17,13 +17,6 @@ require_once(DOKU_INC.'inc/JpegMeta.php');
 class syntax_plugin_gallery extends DokuWiki_Syntax_Plugin {
 
     /**
-     * return some info
-     */
-    function getInfo(){
-        return confToHash(dirname(__FILE__).'/info.txt');
-    }
-
-    /**
      * What kind of syntax are we?
      */
     function getType(){
@@ -94,6 +87,7 @@ class syntax_plugin_gallery extends DokuWiki_Syntax_Plugin {
         $data['random']   = false;
         $data['cache']    = true;
         $data['crop']     = false;
+        $data['recursive']= true;
         $data['sort']     = $this->getConf('sort');
         $data['limit']    = 0;
         $data['offset']   = 0;
@@ -208,8 +202,8 @@ class syntax_plugin_gallery extends DokuWiki_Syntax_Plugin {
                     'isimg'  => true,
                     'file'   => basename($ilink),
                     // decode to avoid later double encoding
-                    'title'  => SimplePie_Misc::htmlspecialchars_decode($enclosure->get_title(),ENT_COMPAT),
-                    'desc'   => strip_tags(SimplePie_Misc::htmlspecialchars_decode($enclosure->get_description(),ENT_COMPAT)),
+                    'title'  => htmlspecialchars_decode($enclosure->get_title(),ENT_COMPAT),
+                    'desc'   => strip_tags(htmlspecialchars_decode($enclosure->get_description(),ENT_COMPAT)),
                     'width'  => $enclosure->get_width(),
                     'height' => $enclosure->get_height(),
                     'mtime'  => $item->get_date('U'),
@@ -246,7 +240,12 @@ class syntax_plugin_gallery extends DokuWiki_Syntax_Plugin {
                 );
                 $data['_single'] = true;
             }else{
-                search($files,$conf['mediadir'],'search_media',array(),$dir);
+                $depth = $data['recursive'] ? 0 : 1;
+                search($files,
+                       $conf['mediadir'],
+                       'search_media',
+                       array('depth'=>$depth),
+                       $dir);
                 $data['_single'] = false;
             }
         }
@@ -465,9 +464,9 @@ class syntax_plugin_gallery extends DokuWiki_Syntax_Plugin {
         // pagination links
         $pgret = '';
         if($page){
-            $pgret .= '<div class="gallery_pages">';
+            $pgret .= '<div class="gallery_pages"><span>'.$this->getLang('pages').' </span>';
             for($j=1; $j<=$page; $j++){
-                $pgret .= '<a href="#gallery__'.$data['galid'].'_'.$j.'" class="gallery_pgsel">'.$j.'</a> ';
+                $pgret .= '<a href="#gallery__'.$data['galid'].'_'.$j.'" class="gallery_pgsel button">'.$j.'</a> ';
             }
             $pgret .= '</div>';
         }
@@ -532,7 +531,7 @@ class syntax_plugin_gallery extends DokuWiki_Syntax_Plugin {
         if($data['lightbox']){
             $href   = ml($img['id'],$dim_lightbox);
             $a['class'] = "lightbox JSnocheck";
-            $a['rel']   = "lightbox";
+            $a['rel']   = 'lightbox[gal-'.substr(md5($ID),4).']'; //unique ID for the gallery
         }elseif($img['detail'] && !$data['direct']){
             $href   = $img['detail'];
         }else{
