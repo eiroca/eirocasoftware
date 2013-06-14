@@ -63,74 +63,6 @@ public class CentralinoISDN {
     startChannels();
   }
 
-  public void setupNumbers() {
-    int i;
-    validNumber = new boolean[CentralinoISDN.MAX_UTENTI];
-    busyNumber = new boolean[CentralinoISDN.MAX_UTENTI];
-    for (i = 0; i < CentralinoISDN.MAX_UTENTI; i++) {
-      validNumber[i] = true;
-      busyNumber[i] = false;
-    }
-  }
-
-  public void setupLines() {
-    connections = new ConnectionData[maxLines];
-    for (int i = 0; i < maxLines; i++) {
-      connections[i] = null;
-    }
-  }
-
-  public void setupChannels(final int numChannels) {
-    channels = new Vector<ChannelListener>(numChannels);
-    for (int i = 0; i < numChannels; i++) {
-      channels.addElement(new ChannelListener(this, i + 1));
-    }
-  }
-
-  public void startChannels() {
-    // Inizia ad ascoltare le linee
-    for (int i = 0; i < channels.size(); i++) {
-      (channels.elementAt(i)).start();
-    }
-  }
-
-  public void stopChannels() {
-    // Termina di ascoltare le linee
-    for (int i = 0; i < channels.size(); i++) {
-      (channels.elementAt(i)).stop();
-    }
-  }
-
-  public synchronized boolean isBusy(final int interno) {
-    return busyNumber[interno - 1];
-  }
-
-  public synchronized void unlockInterno(final int interno) {
-    busyNumber[interno - 1] = false;
-  }
-
-  public synchronized boolean lockInterno(final int interno) {
-    boolean busy = busyNumber[interno - 1];
-    if (!busy) {
-      busyNumber[interno - 1] = true;
-    }
-    return !busy;
-  }
-
-  public synchronized int lockLine(final int chan, final int interno) {
-    for (int i = 0; i < maxLines; i++) {
-      if (connections[i] == null) {
-        connections[i] = new ConnectionData(chan, i, interno);
-        return i + 1;
-      }
-    }
-    return CentralinoISDN.LINES_BUSY;
-  }
-
-  public synchronized void unlockLine(final int line) {
-    connections[line - 1] = null;
-  }
-
   public synchronized void closingCall(final int aChan) {
     for (int line = 0; line < maxLines; line++) {
       if (connections[line].chan == aChan) {
@@ -148,15 +80,6 @@ public class CentralinoISDN {
       }
     }
     ISDNService.HangUp(aChan);
-  }
-
-  public synchronized void startSegreteria(final int aChan, final int line) {
-    final Segreteria segr = new Segreteria(line);
-    connections[line - 1].interno = CentralinoISDN.USER_ST;
-    connections[line - 1].segr = segr;
-    ISDNService.Answer(aChan); // risponde
-    ISDNService.Route(aChan, line); // inoltra la chiamata
-    segr.start();
   }
 
   public synchronized void incomingCall(final int aChan) {
@@ -212,10 +135,87 @@ public class CentralinoISDN {
     Log(msg);
   }
 
+  public synchronized boolean isBusy(final int interno) {
+    return busyNumber[interno - 1];
+  }
+
+  public synchronized boolean lockInterno(final int interno) {
+    final boolean busy = busyNumber[interno - 1];
+    if (!busy) {
+      busyNumber[interno - 1] = true;
+    }
+    return !busy;
+  }
+
+  public synchronized int lockLine(final int chan, final int interno) {
+    for (int i = 0; i < maxLines; i++) {
+      if (connections[i] == null) {
+        connections[i] = new ConnectionData(chan, i, interno);
+        return i + 1;
+      }
+    }
+    return CentralinoISDN.LINES_BUSY;
+  }
+
   public synchronized void Log(final String msg) {
     if (logFile != null) {
       logFile.println(msg);
       logFile.flush();
     }
+  }
+
+  public void setupChannels(final int numChannels) {
+    channels = new Vector<ChannelListener>(numChannels);
+    for (int i = 0; i < numChannels; i++) {
+      channels.addElement(new ChannelListener(this, i + 1));
+    }
+  }
+
+  public void setupLines() {
+    connections = new ConnectionData[maxLines];
+    for (int i = 0; i < maxLines; i++) {
+      connections[i] = null;
+    }
+  }
+
+  public void setupNumbers() {
+    int i;
+    validNumber = new boolean[CentralinoISDN.MAX_UTENTI];
+    busyNumber = new boolean[CentralinoISDN.MAX_UTENTI];
+    for (i = 0; i < CentralinoISDN.MAX_UTENTI; i++) {
+      validNumber[i] = true;
+      busyNumber[i] = false;
+    }
+  }
+
+  public void startChannels() {
+    // Inizia ad ascoltare le linee
+    for (int i = 0; i < channels.size(); i++) {
+      (channels.elementAt(i)).start();
+    }
+  }
+
+  public synchronized void startSegreteria(final int aChan, final int line) {
+    final Segreteria segr = new Segreteria(line);
+    connections[line - 1].interno = CentralinoISDN.USER_ST;
+    connections[line - 1].segr = segr;
+    ISDNService.Answer(aChan); // risponde
+    ISDNService.Route(aChan, line); // inoltra la chiamata
+    segr.start();
+  }
+
+  public void stopChannels() {
+    // Termina di ascoltare le linee
+    for (int i = 0; i < channels.size(); i++) {
+      (channels.elementAt(i)).stop();
+    }
+  }
+
+  public synchronized void unlockInterno(final int interno) {
+    busyNumber[interno - 1] = false;
+  }
+
+  public synchronized void unlockLine(final int line) {
+    connections[line - 1] = null;
   }
 }

@@ -76,6 +76,17 @@ public class frMain_AboutBox extends Dialog implements ActionListener {
     pack();
   }
 
+  @Override
+  public void actionPerformed(final ActionEvent e) {
+    if (e.getSource() == button1) {
+      cancel();
+    }
+  }
+
+  void cancel() {
+    dispose();
+  }
+
   private void jbInit() throws Exception {
     // imageIcon = new ImageIcon(getClass().getResource("your image name goes here"));
     setTitle("About");
@@ -115,15 +126,5 @@ public class frMain_AboutBox extends Dialog implements ActionListener {
       cancel();
     }
     super.processWindowEvent(e);
-  }
-
-  void cancel() {
-    dispose();
-  }
-
-  public void actionPerformed(final ActionEvent e) {
-    if (e.getSource() == button1) {
-      cancel();
-    }
   }
 }

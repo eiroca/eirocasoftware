@@ -87,6 +87,33 @@ public class frMain extends JFrame {
 
   // Component initialization
 
+  void btAbout_actionPerformed(final ActionEvent e) {
+    final frMain_AboutBox frame = new frMain_AboutBox(null);
+    // Center the window
+    final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    final Dimension frameSize = frame.getSize();
+    if (frameSize.height > screenSize.height) {
+      frameSize.height = screenSize.height;
+    }
+    if (frameSize.width > screenSize.width) {
+      frameSize.width = screenSize.width;
+    }
+    frame.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
+    frame.setModal(true);
+    frame.setVisible(true);
+  }
+
+  // Overriden so we can exit on System Close
+
+  void cbChan01_actionPerformed(final ActionEvent e) {
+    if (cbChan01.isSelected()) {
+      centralino.incomingCall(1);
+    }
+    else {
+      centralino.closingCall(1);
+    }
+  }
+
   private void jbInit() throws Exception {
     this.setSize(new Dimension(400, 250));
     gridLayout1.setRows(10);
@@ -94,6 +121,7 @@ public class frMain extends JFrame {
     cbChan01.setText("01");
     cbChan01.addActionListener(new java.awt.event.ActionListener() {
 
+      @Override
       public void actionPerformed(final ActionEvent e) {
         cbChan01_actionPerformed(e);
       }
@@ -170,38 +198,11 @@ public class frMain extends JFrame {
     centralino = new CentralinoISDN(30, 20, "275");
   }
 
-  // Overriden so we can exit on System Close
-
   @Override
   protected void processWindowEvent(final WindowEvent e) {
     super.processWindowEvent(e);
     if (e.getID() == WindowEvent.WINDOW_CLOSING) {
       System.exit(0);
-    }
-  }
-
-  void btAbout_actionPerformed(final ActionEvent e) {
-    final frMain_AboutBox frame = new frMain_AboutBox(null);
-    // Center the window
-    final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    final Dimension frameSize = frame.getSize();
-    if (frameSize.height > screenSize.height) {
-      frameSize.height = screenSize.height;
-    }
-    if (frameSize.width > screenSize.width) {
-      frameSize.width = screenSize.width;
-    }
-    frame.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
-    frame.setModal(true);
-    frame.setVisible(true);
-  }
-
-  void cbChan01_actionPerformed(final ActionEvent e) {
-    if (cbChan01.isSelected()) {
-      centralino.incomingCall(1);
-    }
-    else {
-      centralino.closingCall(1);
     }
   }
 }
