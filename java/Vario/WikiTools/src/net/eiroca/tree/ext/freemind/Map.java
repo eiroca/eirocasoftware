@@ -25,7 +25,8 @@ import net.eiroca.tree.model.TreeNode;
  */
 public class Map extends Tree<Node> {
 
-  /* (non-Javadoc)
+  /*
+   * (non-Javadoc)
    * @see net.eiroca.tree.model.Tree#newNode(int, net.eiroca.tree.model.TreeNode)
    */
   @Override

@@ -46,15 +46,6 @@ public class Line extends GenericTreeNode<Line> {
   }
 
   /**
-   * Gets the text.
-   * 
-   * @return the text
-   */
-  public String getText() {
-    return getMeta("TEXT");
-  }
-
-  /**
    * Gets the link.
    * 
    * @return the link
@@ -64,12 +55,12 @@ public class Line extends GenericTreeNode<Line> {
   }
 
   /**
-   * Sets the text.
+   * Gets the text.
    * 
-   * @param text the new text
+   * @return the text
    */
-  public void setText(final String text) {
-    setMeta("TEXT", text);
+  public String getText() {
+    return getMeta("TEXT");
   }
 
   /**
@@ -79,6 +70,15 @@ public class Line extends GenericTreeNode<Line> {
    */
   public void setLink(final String link) {
     setMeta("LINK", link);
+  }
+
+  /**
+   * Sets the text.
+   * 
+   * @param text the new text
+   */
+  public void setText(final String text) {
+    setMeta("TEXT", text);
   }
 
 }

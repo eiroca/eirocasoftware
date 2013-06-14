@@ -26,10 +26,9 @@ public class MMWriter implements TreeWriter<Map> {
 
   /*
    * (non-Javadoc)
-   *
-   * @see net.eiroca.node.io.TreeWriter#writeTree(net.eiroca.node.model.Tree,
-   *      boolean)
+   * @see net.eiroca.node.io.TreeWriter#writeTree(net.eiroca.node.model.Tree, boolean)
    */
+  @Override
   public String writeTree(final Map tree, final boolean compact) {
     final StringBuffer buf = new StringBuffer(1024);
     buf.append("<?xml version=\"1.0\"?>");

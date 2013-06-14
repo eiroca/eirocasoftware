@@ -26,113 +26,6 @@ import org.xml.sax.Attributes;
  */
 public class TAG<TR extends TreeReader<?>> implements TagProcessor<TR> {
 
-  /** The tag name. */
-  private String tagName;
-
-  /** The buf. */
-  protected StringBuffer buf;
-
-  /**
-   * Instantiates a new tAG.
-   * 
-   * @param name the name
-   */
-  @SuppressWarnings("unchecked")
-  public TAG(final String name) {
-    tagName = name;
-    TagFactory.register((TagProcessor<TreeReader<?>>) this);
-  }
-
-  /*
-   * (non-Javadoc)
-   *
-   * @see net.eiroca.node.io.TagProcessor#getName()
-   */
-  public String getName() {
-    return tagName;
-  }
-
-  /**
-   * Sets the name.
-   * 
-   * @param name the new name
-   */
-  public void setName(final String name) {
-    tagName = name;
-  }
-
-  /*
-   * (non-Javadoc)
-   *
-   * @see net.eiroca.node.io.TagProcessor#start(net.eiroca.node.io.TreeReader,
-   *      org.xml.sax.Attributes)
-   */
-  public void start(final TR reader, final Attributes attribs) {
-    buf = new StringBuffer(200);
-  }
-
-  /*
-   * (non-Javadoc)
-   *
-   * @see net.eiroca.node.io.TagProcessor#characters(net.eiroca.node.io.TreeReader,
-   *      char[], int, int)
-   */
-  public void characters(final TR reader, final char[] chr, final int start, final int length) {
-    final String str = new String(chr, start, length);
-    if (buf != null) {
-      buf.append(str);
-    }
-  }
-
-  /*
-   * (non-Javadoc)
-   *
-   * @see net.eiroca.node.io.TagProcessor#end(net.eiroca.node.io.TreeReader)
-   */
-  public void end(final TR reader) {
-    if (buf != null) {
-      final Map<String, String> data = reader.getData();
-      final Map<String, String> info = data;
-      final String val = buf.toString();
-      info.put(tagName, val.length() == 0 ? null : val);
-    }
-  }
-
-  /**
-   * Open.
-   * 
-   * @param buf the buf
-   * @param open the open
-   */
-  public void open(final StringBuffer buf, final boolean open) {
-    buf.append('<');
-    buf.append(tagName);
-    if (!open) {
-      buf.append('>');
-    }
-  }
-
-  /**
-   * Open close.
-   * 
-   * @param buf the buf
-   */
-  public void openClose(final StringBuffer buf) {
-    buf.append('>');
-  }
-
-  /**
-   * Write c data.
-   * 
-   * @param buf the buf
-   * @param data the data
-   */
-  public void writeCData(final StringBuffer buf, final String data) {
-    if (data != null) {
-      TAG.encode(buf, data);
-    }
-  }
-
   /**
    * Encode.
    * 
@@ -161,6 +54,118 @@ public class TAG<TR extends TreeReader<?>> implements TagProcessor<TR> {
     }
   }
 
+  /** The tag name. */
+  private String tagName;
+
+  /** The buf. */
+  protected StringBuffer buf;
+
+  /**
+   * Instantiates a new tAG.
+   * 
+   * @param name the name
+   */
+  @SuppressWarnings("unchecked")
+  public TAG(final String name) {
+    tagName = name;
+    TagFactory.register((TagProcessor<TreeReader<?>>) this);
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see net.eiroca.node.io.TagProcessor#characters(net.eiroca.node.io.TreeReader, char[], int,
+   * int)
+   */
+  @Override
+  public void characters(final TR reader, final char[] chr, final int start, final int length) {
+    final String str = new String(chr, start, length);
+    if (buf != null) {
+      buf.append(str);
+    }
+  }
+
+  /**
+   * Close.
+   * 
+   * @param buf the buf
+   * @param compact the compact
+   */
+  public void close(final StringBuffer buf, final boolean compact) {
+    if (compact) {
+      buf.append("/>");
+    }
+    else {
+      buf.append("</");
+      buf.append(tagName);
+      buf.append('>');
+    }
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see net.eiroca.node.io.TagProcessor#end(net.eiroca.node.io.TreeReader)
+   */
+  @Override
+  public void end(final TR reader) {
+    if (buf != null) {
+      final Map<String, String> data = reader.getData();
+      final Map<String, String> info = data;
+      final String val = buf.toString();
+      info.put(tagName, val.length() == 0 ? null : val);
+    }
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see net.eiroca.node.io.TagProcessor#getName()
+   */
+  @Override
+  public String getName() {
+    return tagName;
+  }
+
+  /**
+   * Open.
+   * 
+   * @param buf the buf
+   * @param open the open
+   */
+  public void open(final StringBuffer buf, final boolean open) {
+    buf.append('<');
+    buf.append(tagName);
+    if (!open) {
+      buf.append('>');
+    }
+  }
+
+  /**
+   * Open close.
+   * 
+   * @param buf the buf
+   */
+  public void openClose(final StringBuffer buf) {
+    buf.append('>');
+  }
+
+  /**
+   * Sets the name.
+   * 
+   * @param name the new name
+   */
+  public void setName(final String name) {
+    tagName = name;
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see net.eiroca.node.io.TagProcessor#start(net.eiroca.node.io.TreeReader,
+   * org.xml.sax.Attributes)
+   */
+  @Override
+  public void start(final TR reader, final Attributes attribs) {
+    buf = new StringBuffer(200);
+  }
+
   /**
    * Write attribute.
    * 
@@ -181,19 +186,14 @@ public class TAG<TR extends TreeReader<?>> implements TagProcessor<TR> {
   }
 
   /**
-   * Close.
+   * Write c data.
    * 
    * @param buf the buf
-   * @param compact the compact
+   * @param data the data
    */
-  public void close(final StringBuffer buf, final boolean compact) {
-    if (compact) {
-      buf.append("/>");
-    }
-    else {
-      buf.append("</");
-      buf.append(tagName);
-      buf.append('>');
+  public void writeCData(final StringBuffer buf, final String data) {
+    if (data != null) {
+      TAG.encode(buf, data);
     }
   }
 

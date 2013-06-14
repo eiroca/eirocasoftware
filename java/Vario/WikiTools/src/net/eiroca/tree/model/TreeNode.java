@@ -25,84 +25,11 @@ import java.util.Map;
 public interface TreeNode extends MetaDataCollector {
 
   /**
-   * Gets the owner.
-   * 
-   * @return the owner
-   */
-  Tree<? extends TreeNode> getOwner();
-
-  /**
-   * Gets the iD.
-   * 
-   * @return the iD
-   */
-  String getID();
-
-  /**
-   * Sets the iD.
-   * 
-   * @param aID the new iD
-   */
-  void setID(final String aID);
-
-  /**
-   * Gets the parent.
-   * 
-   * @return the parent
-   */
-  TreeNode getParent();
-
-  /**
-   * Sets the parent.
-   * 
-   * @param parent the new parent
-   */
-  void setParent(TreeNode parent);
-
-  /**
-   * Checks for children.
-   * 
-   * @return true, if successful
-   */
-  boolean hasChildren();
-
-  /**
-   * Gets the children count.
-   * 
-   * @return the children count
-   */
-  int getChildrenCount();
-
-  /**
    * Adds the child.
    * 
    * @param child the child
    */
   void addChild(TreeNode child);
-
-  /**
-   * Gets the children.
-   * 
-   * @param index the index
-   * 
-   * @return the children
-   */
-  TreeNode getChildren(int index);
-
-  /**
-   * Find by id.
-   * 
-   * @param aID the a id
-   * @param exact the exact
-   * 
-   * @return the tree node
-   */
-  TreeNode findByID(final String aID, final boolean exact);
-
-  /**
-   * Removes the id.
-   */
-  void removeID();
 
   /**
    * Builds the id.
@@ -121,10 +48,83 @@ public interface TreeNode extends MetaDataCollector {
   void execute(final NodeTraversal action, final boolean nodeFirst);
 
   /**
+   * Find by id.
+   * 
+   * @param aID the a id
+   * @param exact the exact
+   * 
+   * @return the tree node
+   */
+  TreeNode findByID(final String aID, final boolean exact);
+
+  /**
+   * Gets the children.
+   * 
+   * @param index the index
+   * 
+   * @return the children
+   */
+  TreeNode getChildren(int index);
+
+  /**
+   * Gets the children count.
+   * 
+   * @return the children count
+   */
+  int getChildrenCount();
+
+  /**
+   * Gets the iD.
+   * 
+   * @return the iD
+   */
+  String getID();
+
+  /**
    * Gets the meta.
    * 
    * @return the meta
    */
   Map<String, String> getMeta();
+
+  /**
+   * Gets the owner.
+   * 
+   * @return the owner
+   */
+  Tree<? extends TreeNode> getOwner();
+
+  /**
+   * Gets the parent.
+   * 
+   * @return the parent
+   */
+  TreeNode getParent();
+
+  /**
+   * Checks for children.
+   * 
+   * @return true, if successful
+   */
+  boolean hasChildren();
+
+  /**
+   * Removes the id.
+   */
+  void removeID();
+
+  /**
+   * Sets the iD.
+   * 
+   * @param aID the new iD
+   */
+  void setID(final String aID);
+
+  /**
+   * Sets the parent.
+   * 
+   * @param parent the new parent
+   */
+  void setParent(TreeNode parent);
 
 }

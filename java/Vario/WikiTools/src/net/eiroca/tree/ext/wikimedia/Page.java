@@ -25,7 +25,8 @@ import net.eiroca.tree.model.TreeNode;
  */
 public class Page extends Tree<Line> {
 
-  /* (non-Javadoc)
+  /*
+   * (non-Javadoc)
    * @see net.eiroca.tree.model.Tree#newNode(int, net.eiroca.tree.model.TreeNode)
    */
   @Override

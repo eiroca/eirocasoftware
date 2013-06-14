@@ -38,88 +38,11 @@ public abstract class Tree<TN extends TreeNode> implements MetaDataCollector {
     //
   }
 
-  /*
-   * (non-Javadoc)
-   *
-   * @see net.eiroca.node.model.MetaDataCollector#setMeta(java.lang.String,
-   *      java.lang.String)
-   */
-  public void setMeta(final String name, final String value) {
-    meta.put(name, value);
-  }
-
-  /*
-   * (non-Javadoc)
-   *
-   * @see net.eiroca.node.model.MetaDataCollector#getMeta(java.lang.String)
-   */
-  public String getMeta(final String name) {
-    return meta.get(name);
-  }
-
-  /**
-   * Gets the meta.
-   * 
-   * @return the meta
-   */
-  public Map<String, String> getMeta() {
-    return meta;
-  }
-
-  /**
-   * Gets the root.
-   * 
-   * @return the root
-   */
-  public TN getRoot() {
-    return root;
-  }
-
-  /**
-   * Sets the root.
-   * 
-   * @param root the new root
-   */
-  public void setRoot(final TN root) {
-    this.root = root;
-  }
-
-  /**
-   * Find by id.
-   * 
-   * @param theID the the id
-   * @param exact the exact
-   * 
-   * @return the tree node
-   */
-  @SuppressWarnings("unchecked")
-  public TN findByID(final String theID, final boolean exact) {
-    final TN node = (TN) root.findByID(theID, exact);
-    return (node == null ? root : node);
-  }
-
-  /**
-   * Removes the id.
-   */
-  public void removeID() {
-    root.removeID();
-  }
-
   /**
    * Buid id.
    */
   public void buidID() {
     root.buildID("", 0);
-  }
-
-  /**
-   * Execute.
-   * 
-   * @param action the action
-   * @param nodeFirst the node first
-   */
-  public void execute(final NodeTraversal action, final boolean nodeFirst) {
-    root.execute(action, nodeFirst);
   }
 
   /**
@@ -139,6 +62,57 @@ public abstract class Tree<TN extends TreeNode> implements MetaDataCollector {
         cloneChilds(level, newChild, child);
       }
     }
+  }
+
+  /**
+   * Execute.
+   * 
+   * @param action the action
+   * @param nodeFirst the node first
+   */
+  public void execute(final NodeTraversal action, final boolean nodeFirst) {
+    root.execute(action, nodeFirst);
+  }
+
+  /**
+   * Find by id.
+   * 
+   * @param theID the the id
+   * @param exact the exact
+   * 
+   * @return the tree node
+   */
+  @SuppressWarnings("unchecked")
+  public TN findByID(final String theID, final boolean exact) {
+    final TN node = (TN) root.findByID(theID, exact);
+    return (node == null ? root : node);
+  }
+
+  /**
+   * Gets the meta.
+   * 
+   * @return the meta
+   */
+  public Map<String, String> getMeta() {
+    return meta;
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see net.eiroca.node.model.MetaDataCollector#getMeta(java.lang.String)
+   */
+  @Override
+  public String getMeta(final String name) {
+    return meta.get(name);
+  }
+
+  /**
+   * Gets the root.
+   * 
+   * @return the root
+   */
+  public TN getRoot() {
+    return root;
   }
 
   /**
@@ -167,5 +141,30 @@ public abstract class Tree<TN extends TreeNode> implements MetaDataCollector {
    * @return the tN
    */
   abstract public TN newNode(int level, TreeNode source);
+
+  /**
+   * Removes the id.
+   */
+  public void removeID() {
+    root.removeID();
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see net.eiroca.node.model.MetaDataCollector#setMeta(java.lang.String, java.lang.String)
+   */
+  @Override
+  public void setMeta(final String name, final String value) {
+    meta.put(name, value);
+  }
+
+  /**
+   * Sets the root.
+   * 
+   * @param root the new root
+   */
+  public void setRoot(final TN root) {
+    this.root = root;
+  }
 
 }

@@ -26,21 +26,6 @@ import org.xml.sax.Attributes;
 public interface TagProcessor<TR extends TreeReader<?>> {
 
   /**
-   * Gets the name.
-   * 
-   * @return the name
-   */
-  String getName();
-
-  /**
-   * Start.
-   * 
-   * @param reader the reader
-   * @param attribs the attribs
-   */
-  void start(TR reader, Attributes attribs);
-
-  /**
    * Characters.
    * 
    * @param reader the reader
@@ -56,5 +41,20 @@ public interface TagProcessor<TR extends TreeReader<?>> {
    * @param reader the reader
    */
   void end(TR reader);
+
+  /**
+   * Gets the name.
+   * 
+   * @return the name
+   */
+  String getName();
+
+  /**
+   * Start.
+   * 
+   * @param reader the reader
+   * @param attribs the attribs
+   */
+  void start(TR reader, Attributes attribs);
 
 }

@@ -30,10 +30,14 @@ public class TagFactory {
   static Map<String, TagProcessor<TreeReader<?>>> registry = new HashMap<String, TagProcessor<TreeReader<?>>>();
 
   /**
-   * Instantiates a new tag factory.
+   * Gets the processor.
+   * 
+   * @param tagName the tag name
+   * 
+   * @return the processor
    */
-  private TagFactory() {
-    super();
+  public static TagProcessor<TreeReader<?>> getProcessor(final String tagName) {
+    return TagFactory.registry.get(tagName);
   }
 
   /**
@@ -46,14 +50,10 @@ public class TagFactory {
   }
 
   /**
-   * Gets the processor.
-   * 
-   * @param tagName the tag name
-   * 
-   * @return the processor
+   * Instantiates a new tag factory.
    */
-  public static TagProcessor<TreeReader<?>> getProcessor(final String tagName) {
-    return TagFactory.registry.get(tagName);
+  private TagFactory() {
+    super();
   }
 
 }
