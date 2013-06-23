@@ -1,3 +1,3 @@
 ====== Tecnologia ======
-  * [[.:Technology cross]] E' un modello per comparare software o tecnologie.
+  * [[.:Technology cross]] è un modello per comparare software o tecnologie.
   * [[.:Handset Report|Report]] di terminali ottenuti con [[it:projects:Development:tool:Test Suite|MobileSuite - Test Suite]].

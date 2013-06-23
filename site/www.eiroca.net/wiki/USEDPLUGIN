@@ -16,7 +16,9 @@ Plugin:
 - ClearFloat			()
 - Color					()
 - Config				()
-
+- Blog					(nonavigation flag)
+- Discussion			()
+- Avatar				()
 
 
 NOT USED (and removed)

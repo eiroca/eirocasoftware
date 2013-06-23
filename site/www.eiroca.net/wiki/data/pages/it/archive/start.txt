@@ -1,6 +1,8 @@
 ~~NOTOC~~
 ====== Archivio ======
-Questa sezione del sito è dedicata ai all'archivio di documenti prodotti da eIrOcA.
+Questa sezione del sito è dedicata ai all'archivio di documenti prodotti da eIrOcA, in particolare a:
+  * alla sezione [[#Viaggi|viaggi]]
+  * e alla sezione [[#Tecnologia|tecnologia]]
 
 ====== Viaggi ======
 {{page>.:Travel:start&firstsectiononly&noheader&nofooter}}

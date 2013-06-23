@@ -1,15 +1,18 @@
-~~NOTOC~~
-====== In evidenza ====== 
-[[it:projects:start|{{home:apps.png?64x64|Progetti}}]]
+======  ====== 
 
-[[it:projects:start|Progetti]] {{page>it:projects:start&firstsectiononly&noheader&nofooter}}
-\\
-[[it:archive:start|Archivio]] {{page>it:archive:start&firstsectiononly&noheader&nofooter}}
-\\
-[[it:blog:start|Blog di eIrOcA]]
+====== Progetti ======
+{{page>it:projects:start&firstsectiononly&noheader&nofooter}}
+
+====== Archivio ======
+{{page>it:archive:start&firstsectiononly&noheader&nofooter}}
+
+====== Blog  ======
+Leggi tutti gli [[it:Blog:start|articoli]]. Ecco un estratto:
+
+{{blog>it:blog:article?3&rsort&noform&firstsectiononly&nonav&nofooter}}
 
 ====== Mobile   ======
-[[http://www.eiroca.net/mobile|{{home:mobile.png?120x110|Mobile}}]]
+[[http://www.eiroca.net/mobile|{{home:mobile.png?96x96|Mobile}}]]
 
 eIrOcA è disponibile anche in versione ottimizzata per dispotivi mobili (cellulari, PDA, ...) all'indirizzo \\ http://www.eiroca.net/mobile/
 
@@ -18,5 +21,6 @@ eIrOcA è disponibile anche in versione ottimizzata per dispotivi mobili (cellul
 [[http://www.greenpeace.org/italy|{{banner:greenpeace.png?160x120|Greenpeace Italia}}]]
 [[http://www.wwf.it/|{{banner:wwf.png?160x120|WWF}}]]
 [[http://wikimediafoundation.org/wiki/Support_Wikipedia/it|{{banner:wikipedia.png?160x120|Wikipedia Affiliate Button}}]]
+
 
 UA-3895374-1

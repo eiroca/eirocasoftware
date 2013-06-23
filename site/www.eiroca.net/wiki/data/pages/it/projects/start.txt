@@ -1,7 +1,12 @@
 ~~NOTOC~~
 ====== Progetti ======
-Questa sezione del sito è dedicata ai progetti sviluppati da eIrOcA.
+[[it:projects:start|{{home:apps.png?96x96|Progetti}}]]
 
+Questa sezione del sito è dedicata ai progetti sviluppati da eIrOcA, suddivise per:
+  * [[#Applicazioni|applicazioni]] da utilizzare su PC, dispositivi mobili o in ambito server-side
+  * strumenti dedicati allo [[#Sviluppo|sviluppo]] di applicazioni
+  * sezione dedicata all'[[#In incubazione|incubazione]] di nuove applicazioni
+  
 ====== Applicazioni ======
 [[it:projects:Software:start|{{home:sw.png?64x64}}]]
 {{page>it:projects:Software:start&firstsectiononly&noheader&nofooter}}

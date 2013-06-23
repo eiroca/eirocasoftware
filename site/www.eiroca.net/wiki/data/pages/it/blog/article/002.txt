@@ -1,0 +1,35 @@
+~~DISCUSSION~~
+====== Una nuova veste grafica ======
+Estate tempo di cambiamenti (almeno grafici).
+
+===== Il nuovo look'n'feel =====
+
+[{{ blog:eiroca_screenshot.png?320|Vecchio sito}}] Addio vecchio sito, è tempo di cambiamenti.
+
+In questo giro il restyling è stato veramente drastico e nasce dalla volontà di rendere il sito [[wp>Responsive_Web_Design|responsive]] e maggiormente orientato ai contenuti.   
+
+Dopo quasi venti anni di onorato servizio il vecchio template a ferro di cavallo è andato in pensione a favore di un layout a "foglio di carta" in cui gli elementi secondari sono stati spostati in posizioni di secondo piano. 
+La sidebar è stata notevolmente alleggerita (e spostata a destra) compensando l'alleggerimento con l'introduzione di una nuova barra di navigazione e un footer "fisso" con i comandi di amministrazione della wiki. Anche nella composizione del testo ho cercato di avvicinarsi di più al modello della carta stampata introducendo alcuni elementi tipici (testo giustificato, interlinee, ...) non molto comuni all'interno dei siti Web.
+
+Anche lo schema dei colori è cambiato, dopo il nero, il verde, il viola è la volta del bianco/arancione; questa volta lo schema dei colori può vantare un maggiore numero di [[http://www.1stwebdesigner.com/design/colors-in-web-design-make-websites-successful/|utilizzatori]]. 
+Addio anche al vecchio logo e alla sua grafica in stile home computer della fine anni 80... 
+
+I lavori non sono ancora finiti, la barra di ricerca/traduzione non mi convince, le spaziature hanno ancora bisogno di ritocchi, l'adattamento alle varie risoluzioni è solo abbozzato e la versione per i display dei cellulari ha ancora bisogno di un bel po' di lavoro per riuscire a passare da "si vede" al veramente usabile. 
+
+Il sito [[http://www.eiroca.net/mobile|mobile]] è restato invariato, il suo destino è legato all'evoluzione di [[it:projects:software:server:eps]] e mi sa che nell'immediato resterà così com'è...
+
+===== Il template DokuWiki =====
+Tecnicamente il restyling ha richiesto la creazione di un nuovo template per [[doku>start|DokuWiki]] e il rinnovamento delle mie maledizioni verso CSS e JavaScript, come rimpiango la prima versione del sito dove era motivo di orgoglio la scritta "No JavaScript" (e i CSS non esistevano ancora :)
+
+Essendo passato molto tempo dalla scrittura del primo template di eIrOcA ho pensato che fosse meglio ripartire dal nuovo template di [[doku>template:dokuwiki|default]], piuttosto che far evolvere il vecchio template. 
+Sulla carta i vantaggi erano tanti, il template è responsive, è allineato alle nuove versioni, non fa uso di tabelle per il layout dei testi, ... ovviamente iniziando a lavorarci su sono emerse tutte le limitazioni. Il template è ha una naming sulle classi/id non proprio intuitivo e la struttura dei div e CSS è un fragile castello di carta che crolla non appena si tenta di introdurre qualche stravolgimento (ma qui sono i CSS a metterci molto del loro).   
+
+Dopo un giorno di progressi quasi nulli è arrivato il tempo di cambiare rotta e riscrivere il layout da zero. Qui all'inizio i progressi sono stati eclatanti, finalmente non era più necessario cercare di capire in che file fossero i frammenti di CSS che impattavano il layout di qualche sezione, i problemi sono arrivati dopo, quando in funzioni secondarie della wiki o in qualche plugin si faceva riferimento a un naming/struttura non più esistente (e in questo senso direi che i lavori non sono ancora finiti).
+
+Inutile dire che chi usa delle (vecchie) versioni di explorer avrà sicuramente dei problemi nella visualizzazione di alcune parti del sito, ma i dati di accesso da parte di questi browser non giustificano l'accanimento terapeutico...
+
+Non appena sarò riuscito a fare un po' di testing su tutte le funzionalità (anche quello non usate all'interno del sito di eIrOcA) cercherò di rilasciare il template all'interno del repositori ufficiale di [[doku>template|DokuWiki]], fino ad allora la versione in sviluppo è disponibile all'interno del code repository di [[http://sourceforge.net/p/eirocasoftware/code/HEAD/tree/trunk/php/Wiki/DokuWiki/template/|SourceForge]].  
+
+Per ora è tutto, buona navigazione.
+
+{{tag>blog dokuwiki eiroca}}

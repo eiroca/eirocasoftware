@@ -48,7 +48,7 @@ L'ultimo settore **C** verrà riempito con le alternative per il quale sarà pos
  </tr>
  <tr valign="top">
   <td bgcolor="#CCFFCC">&nbsp;</td>
-  <td bgcolor="#CCFFCC">Miglio prodotto innovativo</td>
+  <td bgcolor="#CCFFCC">Miglior prodotto innovativo</td>
   <td bgcolor="#CCFFCC">Alternativa 1</td>
  </tr>
  <tr valign="top">

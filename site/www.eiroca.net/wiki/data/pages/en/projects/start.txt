@@ -1,7 +1,12 @@
 ~~NOTOC~~
 ====== Projects ======
-This section of the site is dedicated to the projects developed by eIrOcA.
+[[en:Projects:start|{{home:apps.png?96x96|Projects}}]]
 
+This section of the site is dedicated to the projects developed by eIrOcA, in particular to:
+   * [[#Software|software]] to be used on PCs, mobile devices, or server-side
+   * Tools dedicated to the [[#Development|development]] of applications
+   * Section dedicated to [[#Incubator|new]] applications under development
+   
 ====== Software ======
 [[en:projects:software|{{home:sw.png?64x64}}]]
 {{page>en:projects:Software:start&firstsectiononly&noheader&nofooter}}

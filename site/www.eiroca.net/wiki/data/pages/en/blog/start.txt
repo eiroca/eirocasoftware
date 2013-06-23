@@ -1,4 +1,2 @@
 ====== eIrOcA's Blog ======
-
-===== Latest post =====
-{{blog>en:Blog:Article}}
+{{blog>en:blog:article?5&rsort}}

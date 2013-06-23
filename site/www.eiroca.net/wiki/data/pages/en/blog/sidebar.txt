@@ -1,1 +1,16 @@
-{{autoarchive>en:Blog:Article}}
+**[[en:start|eIrOcA]]**
+  * [[en:Index|Index]] 
+  * [[en:About|About eIrOcA]]
+  * [[http://www.eiroca.net/wiki/feed.php|{{button:rss.png?80x15|Recent changes}}]]
+<html>
+<div class="g-plusone" data-annotation="inline" data-width="300" data-href="http://www.eiroca.net"></div>
+</html>
+
+**[[en:start|Section]]**
+  * [[en:Projects:start|Projects]]
+  * [[en:Archive:start|Archive]]
+  * [[en:Blog:start|Blog]]
+    * [[en:Blog:thread|Threads]]
+    * [[en:Blog:archive|All the posts]]
+  * [[http://www.eiroca.net/mobile|Mobile]]
+  

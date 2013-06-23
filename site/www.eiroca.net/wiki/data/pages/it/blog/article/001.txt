@@ -1,0 +1,14 @@
+~~DISCUSSION~~
+====== Nasce il blog ======
+Il primo post del blog. 
+
+===== Il blog =====
+Anche se non se ne sentiva minimamente la necessità ho iniziato questa nuova sezione del sito. La speranza è quella di riuscire ad avere un’area dove mettere dei frammenti di pensiero che non era facile far confluire dentro una pagina tradizionale del sito. 
+
+Inutile dire che le riflessioni prima di iniziare a scrivere questo post sono durate un po’; la riflessione principale è sicuramente stata se riuscirò mai ad aggiornare i post con un minimo di regolarità, i precedenti sull’aggiornamento del sito non sono incoraggianti, ma la formula di parole in libertà potrebbe adattarsi meglio alla scrittura durante dei momenti di pausa. Inutile dire che se non riuscirò ad avere un minimo di regolarità questa sezione potrebbe venire chiusa. Probabilmente anche la doppia versione italiano/inglese non sarà praticabile e alcuni (se non la maggior parte) dei post saranno scritti solo in una lingua sola.
+
+La seconda riflessione è stata quale strumento tecnologico utilizzare per iniziare a scrivere questo blog. La scelta è stata quella di usare DokuWiki e il plugin dedicato al blogging. Probabilmente non è la scelta  tecnologica ottimale se comparato alle funzionalità che hanno le piattaforme ottimizzate al blogging, ma  il grosso vantaggio è quello di essere integrabile facilmente con tutto il resto del sito.  Le funzionalità base di gestione del blog ci sono e, non sapendo come evolverà il tutto, mi sono sembrate più che sufficienti. In  particolare ho provato anche ad inserire la sezione di commenti (altrimenti che blog è?), all’inizio saranno moderati, in base a come andrà (interesse a commentare, attacchi di spam, tempo necessario alla moderazione, …) sarà sicuramente la prima sezione a vedere una revisione.
+
+Avendo superato le 256 parole, direi che per questo primo post è tutto :-)
+
+{{tag>blog eiroca}}

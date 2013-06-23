@@ -1,0 +1,33 @@
+~~DISCUSSION~~
+====== A new layout ======
+Summer time for changes (at least graphical).
+
+===== The new look'n'feel =====
+
+[{{ blog:eiroca_screenshot.png?320|Old site}}] Goodbye old site, it's time to change.
+
+In this round the restyling was really drastic and stems from the desire to make the site [[wp>Responsive_Web_Design|responsive]] and more oriented to content.
+
+After almost twenty years of honorable service the old horseshoe template retired in favor of a "paper" layout in which the not essentials elements were moved into secondary positions.
+The sidebar has been significantly lightened (and shifted to the right) offsetting the reduction with the introduction of a new navigation bar and a "fixed" footer with the Wiki commands. Even in the composition of the text I tried to get closer to the printed paper model introducing some typical typographic elements (justified text, line spacing, ...) not very common within Web sites.
+
+Even the color scheme is changed, after the black, green, purple is the turn of the white/orange, this time the color scheme can boast a greater number of [[http://www.1stwebdesigner.com/design/colors-in-web-design-make-websites-successful/|adopters]]. 
+Goodbye also to the old logo that remebered to much the graphic of home computers of the late 80s...
+
+The work is not yet finished, the search bar/translation buttons do not convince me, spacing still need to be touched up, adaptation to various resolutions is only sketched and the version for mobile phone displays still needs a lot of work to switch from "visible" to really "usable".
+
+The [[http://www.eiroca.net/mobile|mobile site]] remained unchanged, its fate is linked to the evolution of [[en:projects:software:server:eps]] and I think  that will remain as it is for a while...
+
+===== The DokuWiki template =====
+Technically, the restyling has required the creation of a new template for [[doku>start|DokuWiki]] and to renew my curses towards CSS and JavaScript, how I miss the first version of the site where I was proud of the words "No JavaScript" (and the CSS didn't exist yet :)
+
+As the first eIrOcA template is very old, I thought it was best to start from the new [[doku>template:dokuwiki|default]] template  rather than to evolve the old template.
+On paper, the advantages were many, the template is responsive and compliant with the new versions, does not use tables for layout of text, ... obviously starting to work on it the limitations are emerged. The template has a naming of the classes/id not completly intuitive and the structure of divs and CSS is a fragile house of cards that collapses as soon as you try to introduce some upset (but here the CSS are the main cause).
+
+After a day of zero progresses  the time has come to change course and rewrite the layout from scratch. Here, at the beginning, progress has been striking, finally it was no time spent to discover the files that cointain the CSS fragments impacted by the layout change, the problems came later, when the secondary functions of the wiki, or some plugins,  reference to naming/structure that no longer exists (and in this sense I would say that the work is not yet finished).
+
+As soon as I do some testing on all of the features (although the ones not used within the eIrOcA site) I will try to release the template in the [[doku>template|DokuWiki]] repositories, until then, the development version is available within the code repository at [[http://sourceforge.net/p/eirocasoftware/code/HEAD/tree/trunk/php/Wiki/DokuWiki/template/|SourceForge]].
+
+That’s all, good navigation.
+
+{{tag>blog dokuwiki eiroca}}

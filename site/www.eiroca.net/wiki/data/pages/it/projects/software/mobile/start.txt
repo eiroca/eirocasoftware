@@ -5,6 +5,8 @@ Un'altro beneficio di aver unificato varie applicazione è stato quello di riusc
 
 Le applicazioni sono inoltre state testate su device reali, alla pagina [[.:compatibility|compatibilità]] c'è il rapporto sul funzionamento delle applicazioni su vari telefoni.
 
+~~CLEARFLOAT~~
+
 ===== Giochi =====
 {{page>it:projects:Software:Mobile:Bubblet&firstsectiononly&link&header&nofooter}}
 {{page>it:projects:Software:Mobile:MeBis&firstsectiononly&link&header&nofooter}}

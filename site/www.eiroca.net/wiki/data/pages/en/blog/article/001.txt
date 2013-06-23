@@ -1,0 +1,14 @@
+~~DISCUSSION~~
+====== Blog is open ======
+This is the first post of the blog.
+
+===== The blog =====
+Even if there was no real good reasons I started this new section of the site. The hope is to be able to have an area where to archive fragments of thought that was not easy to insert into the traditional pages of the site.
+
+Needless to say, the incubation of the idea has required time, main reflection is definitely if I was ever able to update the blog with a minimum of regularity, the previous experience updating the site is not encouraging, but the formula of free speech could better adapt to writing during the breaks. If I will not able to have a minimum of regularity this section may be closed. Probably the dual Italian/English version will be impractical and some of the posts will be written in only one language.
+
+The second thought was what tool to use in writing this blog. The choice was to use the DokuWiki plugin dedicated to blogging. Probably it is not the best technology choice if compared to the features that are present in optimized blogging platforms, but the big advantage is that it is integrated out-of-the box with the rest of the site. However the basic functions of blog management are present, and not knowing how to evolve the blog, seemed to me more than enough. In particular, I tried to insert the comments section (otherwise "blog" is meaningless), at the beginning comments will be moderated and depending on how it goes (interest to comment, spam attacks, time required for moderation, ...) will definitely be the first section to see a review.
+
+Having exceeded 256 words, I would say that’s all :-)
+
+{{tag>blog eiroca}}

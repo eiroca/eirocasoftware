@@ -15,4 +15,5 @@ $conf['histogram_height'] = 50;       // height of the histogram in pixels
 
 $conf['excluded_pages'] = '!^blog:\d{4}(:\d{2})?$!'; // regex for pages to exclude from bloglisting
 
+$conf['navigationlink'] = true;           // show next/prev link
 // vim:ts=4:sw=4:et:enc=utf-8:

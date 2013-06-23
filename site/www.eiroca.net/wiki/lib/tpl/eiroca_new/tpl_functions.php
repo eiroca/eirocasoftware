@@ -70,7 +70,7 @@ function tpl_WikiTitle() {
 function tpl_WikiMessages() {
  global $MSG;
  if(isset($MSG)) {
-  echo '<div class="message container smooth_border desktop-only">';
+  echo '<div class="message container">';
   html_msgarea();
   echo'</div>'.NL;
  }
@@ -79,7 +79,7 @@ function tpl_WikiMessages() {
 function tpl_WikiLogo() {
  // get logo either out of the template images folder or data/media folder
  $logoSize = array();
- $logo = tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'res/logo.png'), false, $logoSize);
+ $logo = tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'images/logo.png'), false, $logoSize);
  // display logo and wiki title in a link to the home page
  echo '<span class="logo_img">';
  tpl_link(tpl_homepage(false), '<img src="'.$logo.'" '.$logoSize[3].' alt="'.tpl_WikiName(false).'" />', 'accesskey="h" title="[H]"');
@@ -134,7 +134,11 @@ function tpl_WikiMenu() {
  $start = $conf['start'];
  $start_len = strlen($start);
  $me = wl($ID);
- echo '<span class="menu">';
+
+ $logoSize = array();
+ $menuLink = tpl_getMediaFile(array(':wiki:menuLink.png', ':menuLink.png', 'images/menuLink.png'), false, $logoSize);
+ echo '<span id="menuLink" class="menuLink"><a href="#menu"><img src="'.$menuLink.'" '.$logoSize[3].' alt="Menu link"></a></span>';
+ echo '<span id="menuBar" class="menuBar">';
  foreach($links as $item) {
   if (count($item)===4) {
    $url = $item[1];
@@ -148,7 +152,7 @@ function tpl_WikiMenu() {
    else {
     $class = '';
    }
-   echo '<span class="menu item"'.$class.'><a href="'.$item[1].'"'.$class.' title="'.$item[2].'" rel="nofollow">'.$item[3].'</a></span>';
+   echo '<span class="menuItem"'.$class.'><a href="'.$item[1].'"'.$class.' title="'.$item[2].'" rel="nofollow">'.$item[3].'</a></span>';
    $class="";
   }
  }
@@ -220,4 +224,15 @@ function tpl_WikiLicence() {
  echo' <span class="licence">';
  tpl_pagelink($__lang."copyright", "Copyright (c) eIrOcA 2001-2013");
  echo '</span>'.NL;
+}
+
+function tpl_WikiTranslate() {
+ $translation_plugin = &plugin_load('syntax','translation');
+ if ( $translation_plugin ) {
+  if ( !plugin_isdisabled($translation_plugin->getPluginName() ) ) {
+   echo '<span class="translate">';
+   print $translation_plugin->_showTranslations();
+   echo '</span>';
+  }
+ }
 }

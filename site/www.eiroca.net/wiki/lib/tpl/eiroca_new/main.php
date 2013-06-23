@@ -21,7 +21,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
  <!--[if lte IE 7 ]><div id="IE7"><![endif]-->
  <!--[if IE 8 ]><div id="IE8"><![endif]-->
  <?php tpl_WikiMessages() ?>
- <div id="dokuwiki__top" class="page container dokuwiki">
+ <div id="dokuwiki__top" class="docPage container dokuwiki StdCol NoBorder">
   <div class="header container">
    <?php tpl_A11Y('skip_to_content') ?>
    <div class="logo">
@@ -29,9 +29,12 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
     <?php tpl_WikiTagLine() ?>
     <?php tpl_WikiDocID() ?>
    </div>
-   <div class="navigation smooth_border">
-    <?php tpl_WikiMenu() ?>
+   <div class="navigation AltCol">
+    <?php tpl_WikiTranslate() ?>
     <?php tpl_WikiSearch() ?>
+   </div>
+   <div class="navigation NeuCol">
+    <?php tpl_WikiMenu() ?>
    </div>
    <?php tpl_A11Y() ?>
   </div>
@@ -41,14 +44,13 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
     <?php tpl_WikiDocData() ?>
    </div>
    <?php tpl_A11Y() ?>
-   <div class="sidebar smooth_border">
-    <div class="translate"><?php $translation_plugin = &plugin_load('syntax','translation'); if ( $translation_plugin ) { if ( !plugin_isdisabled($translation_plugin->getPluginName() ) ) { print $translation_plugin->_showTranslations(); }} ?></div>
-   <?php tpl_WikiSidebar() ?>
+   <div class="sidebar AltCol">
+    <?php tpl_WikiSidebar() ?>
     <?php tpl_WikiTOC() ?>
    </div>
   </div>
  </div>
- <div class="footer container">
+ <div class="footer container NeuCol NoBorder">
   <?php tpl_A11Y('site_tools') ?>
   <?php tpl_WikiTools() ?>
   <?php tpl_WikiDocInfo() ?>
@@ -59,11 +61,11 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
   <?php tpl_A11Y() ?>
  </div>
  <!--[if ( lte IE 7 | IE 8 ) ]></div><![endif]-->
- <div class="no">
+ <div class="hidden">
   <?php tpl_indexerWebBug() ?>
  </div>
- <div id="screen__mode" class="no"></div>
-<!-- 
+ <div id="screen__mode" class="hidden"></div>
+ <!-- 
  <script type="text/javascript">
   window.___gcfg = {lang: 'it'};
   (function() {
@@ -73,5 +75,5 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
   })();
  </script>
  -->
- </body>
+</body>
 </html>

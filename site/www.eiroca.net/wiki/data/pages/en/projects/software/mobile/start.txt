@@ -5,6 +5,8 @@ Another benefits is that all the applications will share the same “core” lib
 
 See [[.:compatibility|compatibility]] with real devices.
 
+~~CLEARFLOAT~~
+
 ===== Giochi =====
 {{page>en:Projects:Software:Mobile:Bubblet&firstsectiononly&link&header&nofooter}}
 {{page>en:Projects:Software:Mobile:MeBis&firstsectiononly&link&header&nofooter}}
