@@ -1,0 +1,19 @@
+<html>
+<table style="width:100%;border-collapse:collapse;border:1px solid #FBA818;">
+ <tr valign="top">
+  <td style="width:33%;border:0px;">&nbsp;</td>
+  <td style="width:33%;border:0px;background:#F8F8F8;">@A@</td>
+  <td style="width:33%;border:0px;">&nbsp;</td>
+ </tr>
+ <tr valign="top">
+  <td style="width:33%;border:0px;background:#F8F8F8;">@B@</td>
+  <td style="width:33%;border:0px;background:#F8F8F8;text-align:center;"><b>@Product@</b></td>
+  <td style="width:33%;border:0px;background:#F8F8F8;">@C@</td>
+ </tr>
+ <tr valign="top">
+  <td style="width:33%;border:0px;">&nbsp;</td>
+  <td style="width:33%;border:0px;background:#F8F8F8;">@D@</td>
+  <td style="width:33%;border:0px;">&nbsp;</td>
+ </tr>
+</table>
+</html>

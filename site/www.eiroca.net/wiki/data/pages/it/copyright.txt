@@ -1,6 +1,6 @@
-Il sito è stato realizzato usando [[http://wiki.splitbrain.org/wiki:dokuwiki|DokuWiki]], 2004-2009 (c) Andreas Gohr.
+Il sito è stato realizzato usando [[doku>start|DokuWiki]].
 
-La versione mobile e parte del sito Web è stato realizzato usando [[it:Projects:Software:Server:EPS|EPS - "eIrOcA Portal System"]], sistema di generazione portali rilasciato sotto licenza GPL che utilizza [[http://wurfl.sourceforge.net/|WURFL]] per la device detection.
+La versione mobile è stato realizzato usando [[it:Projects:Software:Server:EPS|EPS - "eIrOcA Portal System"]], sistema di generazione portali rilasciato sotto licenza GPL che utilizza [[http://wurfl.sourceforge.net/|WURFL]] per la device detection.
 
 Porzioni di codice:
   * [[http://image-toolbox.sourceforge.net/|Image_Toolbox]] - Copyright (c) 2003 Martin Theimer

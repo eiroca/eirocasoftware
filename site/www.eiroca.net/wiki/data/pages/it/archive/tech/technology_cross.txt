@@ -9,26 +9,14 @@ Dato uno scenario di confronto la //croce// è riempito ponendo al centro il pro
 Ai lati ci sono le alternative, che significa diverse tecnologie in grado di fare la stessa cosa o una funzione analoga (ad esempio un disco on-line potrebbe essere un'alternativa ad un backup online) sulla sinistra le alternative migliori, a destra quelle peggiori.
 
 Si otterrà quindi un disegno simile a questo:
-<html>
-<a name="0.1_table01"></a>
-<table width="60%">
- <tr valign="top">
-  <td height="42" width="33%">&nbsp;</td>
-  <td bgcolor="#CCFFCC">A - prodtti non peggiori</td>
-  <td width="33%">&nbsp;</td>
- </tr>
- <tr valign="top">
-  <td bgcolor="#CCFFCC" height="42">B - alternative migliori</td>
-  <td bgcolor="#CCFFCC"><b>Prodotto analizzato</b></td>
-  <td bgcolor="#CCFFCC">C - alternative peggiori</td>
- </tr>
- <tr valign="top">
-  <td height="42">&nbsp;</td>
-  <td bgcolor="#CCFFCC">D - prodotti peggiori</td>
-  <td>&nbsp;</td>
- </tr>
-</table>
-</html>
+
+{{template>it:inc:tcross
+|Product=Prodotto analizzato|
+|A=A - prodtti non peggiori|
+|B=B - alternative migliori|
+|C=C - alternative peggiori|
+|D=D - prodotti peggiori|
+}}
 
 Formalmente, se il confronto viene fatto su una serie di requisiti (criteri), il settore **A** è pieno di tutti i prodotti che hanno una valutazione non peggio su che criteri (rispetto al prodotto di riferimento), il settore **D** con i prodotti con una valutazione peggiore.
 
@@ -38,122 +26,39 @@ L'ultimo settore **C** verrà riempito con le alternative per il quale sarà pos
 
 ===== Esempi =====
 ==== Un prodotto innovativo vincente ====
-
-<html>
-<table width="60%">
- <tr valign="top">
-  <td width="33%">&nbsp;</td>
-  <td bgcolor="#CCFFCC">&nbsp;</td>
-  <td width="33%">&nbsp;</td>
- </tr>
- <tr valign="top">
-  <td bgcolor="#CCFFCC">&nbsp;</td>
-  <td bgcolor="#CCFFCC">Miglior prodotto innovativo</td>
-  <td bgcolor="#CCFFCC">Alternativa 1</td>
- </tr>
- <tr valign="top">
-  <td>&nbsp;</td>
-  <td bgcolor="#CCFFCC">
-  Prodotto 1<br/>
-  Prodotto 2<br/>
-  Prodotto 3<br/>
-  Prodotto 4<br/>
-  Prodotto 5<br/>
-  Prodotto 6<br/>
-  Prodotto 7<br/>
-  </td>
-  <td>&nbsp;</td>
- </tr>
-</table>
-</html>
+{{template>it:inc:tcross
+|Product=Miglior prodotto innovativo|
+|A=|
+|B=|
+|C=Alternativa 1|
+|D=Prodotto 1<br/>Prodotto 2<br/>Prodotto 3<br/>Prodotto 4<br/>Prodotto 5<br/>Prodotto 6<br/>Prodotto 7|
+}}
 
 ==== Un prodotto vincente ====
-<html>
-<table width="60%">
- <tr valign="top">
-  <td width="33%">&nbsp;</td>
-  <td bgcolor="#CCFFCC">Prodotto a</td>
-  <td width="33%">&nbsp;</td>
- </tr>
- <tr valign="top">
-  <td bgcolor="#CCFFCC">Alternativa a</td>
-  <td bgcolor="#CCFFCC">Prodotto vincente</td>
-  <td bgcolor="#CCFFCC">Alternativa 1</td>
- </tr>
- <tr valign="top">
-  <td>&nbsp;</td>
-  <td bgcolor="#CCFFCC">
-  Prodotto 1<br/>
-  Prodotto 2<br/>
-  Prodotto 3<br/>
-  Prodotto 4<br/>
-  Prodotto 5<br/>
-  Prodotto 6<br/>
-  </td>
-  <td>&nbsp;</td>
- </tr>
-</table>
-</html>
+{{template>it:inc:tcross
+|Product=Prodotto vincente|
+|A=Prodotto a|
+|B=Alternativa a|
+|C=Alternativa 1|
+|D=Prodotto 1<br/>Prodotto 2<br/>Prodotto 3<br/>Prodotto 4<br/>Prodotto 5<br/>Prodotto 6|
+}}
 
 ==== Un prodotto perdente ====
-<html>
-<table width="60%">
- <tr valign="top">
-  <td width="33%">&nbsp;</td>
-  <td bgcolor="#CCFFCC">
-   Prodotto a<br/>
-   Prodotto b<br/>
-   Prodotto c<br/>
-   Prodotto d<br/>
-   Prodotto e<br/>
-   Prodotto f<br/>
-  </td>
-  <td width="33%">&nbsp;</td>
- </tr>
- <tr valign="top">
-  <td bgcolor="#CCFFCC">Alternativa a</td>
-  <td bgcolor="#CCFFCC">Prodotto perdente</td>
-  <td bgcolor="#CCFFCC">Alternativa 1</td>
- </tr>
- <tr valign="top">
-  <td>&nbsp;</td>
-  <td bgcolor="#CCFFCC">
-  Prodotto 1<br/>
-  </td>
-  <td>&nbsp;</td>
- </tr>
-</table>
-</html>
+{{template>it:inc:tcross
+|Product=Prodotto perdente|
+|A=Prodotto a<br/>Prodotto b<br/>Prodotto c<br/>Prodotto d<br/>Prodotto e<br/>Prodotto f|
+|B=Alternativa a|
+|C=Alternativa 1|
+|D=Prodotto 1|
+}}
 
 ==== Un prodotto vecchio stile ====
-<html>
-<table width="60%">
- <tr valign="top">
-  <td width="33%">&nbsp;</td>
-  <td bgcolor="#CCFFCC">
-   Prodotto a<br/>
-  </td>
-  <td width="33%">&nbsp;</td>
- </tr>
- <tr valign="top">
-  <td bgcolor="#CCFFCC">
-   Alternativa a<br/>
-   Alternativa b<br/>
-   Alternativa c<br/>
-   Alternativa d<br/>
-   Alternativa e<br/>
-  </td>
-  <td bgcolor="#CCFFCC">Prodotto vecchio stile</td>
-  <td bgcolor="#CCFFCC">&nbsp;</td>
- </tr>
- <tr valign="top">
-  <td>&nbsp;</td>
-  <td bgcolor="#CCFFCC">
-  Prodotto 1<br/>
-  </td>
-  <td>&nbsp;</td>
- </tr>
-</table>
-</html>
+{{template>it:inc:tcross
+|Product=Prodotto vecchio stile|
+|A=Prodotto a
+|B=Alternativa a<br/>Alternativa b<br/>Alternativa c<br/>Alternativa d<br/>Alternativa e<br/>Alternativa f|
+|C=Alternativa 1|
+|D=Prodotto 1|
+}}
 
 {{tag>Technology_cross}}

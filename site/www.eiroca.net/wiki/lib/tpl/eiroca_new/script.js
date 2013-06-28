@@ -135,5 +135,6 @@ jQuery(function() {
   menuLink.onclick = function(e) {
     e.preventDefault();
     toggleClass(menu, 'open');
+    toggleClass(menuLink, 'open');
   };
 });

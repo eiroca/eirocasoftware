@@ -1,6 +1,5 @@
 ===== Programming library =====
-
-{{page>en:projects:Software:Desktop:eANN&firstsectiononly&link&header&nofooter}}
-{{page>en:projects:Development:lib:libj2me&firstsectiononly&link&header&nofooter}}
-{{page>en:projects:Development:lib:elib&firstsectiononly&link&header&nofooter}}
-{{page>en:projects:Development:lib:Delphi Library&firstsectiononly&link&header&nofooter}}
+{{page>en:projects:Software:Desktop:eANN&firstsectiononly&header&nofooter}}
+{{page>en:projects:Development:lib:libj2me&firstsectiononly&header&nofooter}}
+{{page>en:projects:Development:lib:elib&firstsectiononly&header&nofooter}}
+{{page>en:projects:Development:lib:Delphi Library&firstsectiononly&header&nofooter}}

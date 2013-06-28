@@ -1,5 +1,5 @@
 ====== Technology ======
+[[.:start|{{ il2:tech.png?128x128|Technology}}]]
+
   * [[.:Technology cross]] is a model to compare different software or technologies.
   * [[.:Handset Report|Handset reports]] produced by [[en:projects:Development:tool:Test Suite|MobileSuite - Test Suite]]
-
-  

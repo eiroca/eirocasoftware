@@ -1,8 +1,6 @@
 ~~DISCUSSION~~
 ====== Blog is open ======
-This is the first post of the blog.
-
-===== The blog =====
+[[.:001|{{blog:paint.png?128x128|Blog}}]]
 Even if there was no real good reasons I started this new section of the site. The hope is to be able to have an area where to archive fragments of thought that was not easy to insert into the traditional pages of the site.
 
 Needless to say, the incubation of the idea has required time, main reflection is definitely if I was ever able to update the blog with a minimum of regularity, the previous experience updating the site is not encouraging, but the formula of free speech could better adapt to writing during the breaks. If I will not able to have a minimum of regularity this section may be closed. Probably the dual Italian/English version will be impractical and some of the posts will be written in only one language.

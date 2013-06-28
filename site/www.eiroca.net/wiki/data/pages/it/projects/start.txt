@@ -1,20 +1,17 @@
 ~~NOTOC~~
 ====== Progetti ======
-[[it:projects:start|{{home:apps.png?96x96|Progetti}}]]
+[[.:start|{{il1:projects.png?128x128|Progetti}}]]
 
 Questa sezione del sito è dedicata ai progetti sviluppati da eIrOcA, suddivise per:
-  * [[#Applicazioni|applicazioni]] da utilizzare su PC, dispositivi mobili o in ambito server-side
-  * strumenti dedicati allo [[#Sviluppo|sviluppo]] di applicazioni
-  * sezione dedicata all'[[#In incubazione|incubazione]] di nuove applicazioni
+  * [[.:Software:start|applicazioni]] da utilizzare su PC, dispositivi mobili o in ambito server-side
+  * strumenti dedicati allo [[.:Development:start|sviluppo]] di applicazioni
+  * sezione dedicata all'[[.:Incubator:start|incubazione]] di nuove applicazioni
   
-====== Applicazioni ======
-[[it:projects:Software:start|{{home:sw.png?64x64}}]]
+===== Software =====
 {{page>it:projects:Software:start&firstsectiononly&noheader&nofooter}}
 
-====== Sviluppo ======
-[[it:projects:Development:start|{{home:tools.png?64x64}}]]
+===== Programmazione ===== 
 {{page>it:projects:Development:start&firstsectiononly&noheader&nofooter}}
 
-====== In incubazione ======
-[[it:projects:Incubator:start|{{home:tools.png?64x64}}]]
+===== eIrOcA Pout Pourri ===== 
 {{page>it:projects:Incubator:start&firstsectiononly&noheader&nofooter}}

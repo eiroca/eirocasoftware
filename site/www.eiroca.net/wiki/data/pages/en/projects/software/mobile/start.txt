@@ -1,5 +1,5 @@
 ====== Mobile Suite ======
-{{ home:mobile.png?120x100|Mobile Suite}} 
+[[.:start|{{ il3:mobile.png?128x128|Mobile Suite}}]]
 One of the reasons of the projects is that there are a lot of J2ME projects that are ”death” and the authors are not more intentioned to keep the midlet updates (e.g. SecureMessenger, jtReversi, …) or add common functionalities (e.g. internazionalization support). 
 Another benefits is that all the applications will share the same “core” libraries in order to keep the size/resource limited (especially in midlet suite bundle) and are tested on real devices.
 
@@ -7,13 +7,13 @@ See [[.:compatibility|compatibility]] with real devices.
 
 ~~CLEARFLOAT~~
 
-===== Giochi =====
-{{page>en:Projects:Software:Mobile:Bubblet&firstsectiononly&link&header&nofooter}}
-{{page>en:Projects:Software:Mobile:MeBis&firstsectiononly&link&header&nofooter}}
-{{page>en:Projects:Software:Mobile:Mine Sweeper&firstsectiononly&link&header&nofooter}}
-{{page>en:Projects:Software:Mobile:PacMan&firstsectiononly&link&header&nofooter}}
-{{page>en:Projects:Software:Mobile:Reversi&firstsectiononly&link&header&nofooter}}
+===== Games =====
+{{page>en:Projects:Software:Mobile:Bubblet&firstsectiononly&nofooter}}
+{{page>en:Projects:Software:Mobile:MeBis&firstsectiononly&nofooter}}
+{{page>en:Projects:Software:Mobile:Mine Sweeper&firstsectiononly&nofooter}}
+{{page>en:Projects:Software:Mobile:PacMan&firstsectiononly&nofooter}}
+{{page>en:Projects:Software:Mobile:Reversi&firstsectiononly&nofooter}}
 
-===== Applicazioni =====
-{{page>en:Projects:Software:Mobile:News Reader&firstsectiononly&link&header&nofooter}}
-{{page>en:Projects:Software:Mobile:Secure SMS&firstsectiononly&link&header&nofooter}}
+===== Applications =====
+{{page>en:Projects:Software:Mobile:News Reader&firstsectiononly&nofooter}}
+{{page>en:Projects:Software:Mobile:Secure SMS&firstsectiononly&nofooter}}

@@ -1,8 +1,5 @@
 ~~DISCUSSION~~
-====== Una nuova veste grafica ======
-Estate tempo di cambiamenti (almeno grafici).
-
-===== Il nuovo look'n'feel =====
+====== Il nuovo look'n'feel ======
 
 [{{ blog:eiroca_screenshot.png?320|Vecchio sito}}] Addio vecchio sito, è tempo di cambiamenti.
 

@@ -1,14 +1,13 @@
 ====== Development ======
+[[.:start|{{ il2:development.png?128x128|Development}}]]
 Programming tools and libraries produced and maintained by eIrOcA. 
   * [[#Programming library]]
   * [[#Development tools]]
 
 ===== Programming library =====
-[[en:projects:Development:lib:start|{{ home:lib.png|Library}}]]
 {{page>en:projects:Development:lib:start&noheader&nofooter}}
 
 ===== Development tools =====
-[[en:projects:Development:tool:start|{{ home:tools.png|Tools}}]]
 {{page>en:projects:Development:tool:start&noheader&nofooter}}
 
 ===== Software =====

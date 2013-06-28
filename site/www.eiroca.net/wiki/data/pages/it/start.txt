@@ -1,5 +1,4 @@
-======  ====== 
-
+~~NOTOC~~
 ====== Progetti ======
 {{page>it:projects:start&firstsectiononly&noheader&nofooter}}
 
@@ -7,17 +6,18 @@
 {{page>it:archive:start&firstsectiononly&noheader&nofooter}}
 
 ====== Blog  ======
-Leggi tutti gli [[it:Blog:start|articoli]]. Ecco un estratto:
+[[.:Blog:start|{{il1:blog.png?128x128|Blog}}]]
+Leggi tutti gli [[it:Blog:start|articoli]]. Ecco gli ultimi:
 
-{{blog>it:blog:article?3&rsort&noform&firstsectiononly&nonav&nofooter}}
+{{blog>it:blog:article?3&rsort&noform&linkonly&nonav&nofooter}}
 
 ====== Mobile   ======
-[[http://www.eiroca.net/mobile|{{home:mobile.png?96x96|Mobile}}]]
+[[http://www.eiroca.net/mobile|{{il1:mobile.png?128x128|Mobile}}]]
 
 eIrOcA è disponibile anche in versione ottimizzata per dispotivi mobili (cellulari, PDA, ...) all'indirizzo \\ http://www.eiroca.net/mobile/
 
 ===== Supporta anche tu =====
-[[http://www.legambiente.eu|{{banner:legambiente.png?160x222|Legambiente}}]]
+[[http://www.legambiente.eu|{{banner:legambiente.png?160x120|Legambiente}}]]
 [[http://www.greenpeace.org/italy|{{banner:greenpeace.png?160x120|Greenpeace Italia}}]]
 [[http://www.wwf.it/|{{banner:wwf.png?160x120|WWF}}]]
 [[http://wikimediafoundation.org/wiki/Support_Wikipedia/it|{{banner:wikipedia.png?160x120|Wikipedia Affiliate Button}}]]

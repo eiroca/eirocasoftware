@@ -7,13 +7,12 @@ if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
 require_once(dirname(__FILE__).'/tpl_functions.php');
 ?>
 <?php tpl_WikiHeader() ?>
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article# place: http://ogp.me/ns/place#">
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
-<?php echo tpl_favicon(array('favicon', 'mobile', 'generic')) ?>
-<?php tpl_metaheaders() ?>
+<?php tpl_WikiMetaHeaders() ?>
 <title><?php tpl_WikiTitle() ?></title>
 <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
 </head>
@@ -33,7 +32,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
     <?php tpl_WikiTranslate() ?>
     <?php tpl_WikiSearch() ?>
    </div>
-   <div class="navigation menu NeuCol">
+   <div class="navigation NeuCol">
     <?php tpl_WikiMenu() ?>
    </div>
    <?php tpl_A11Y() ?>

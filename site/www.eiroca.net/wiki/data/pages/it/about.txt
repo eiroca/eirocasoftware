@@ -1,5 +1,7 @@
-===== eIrOcA =====
+====== eIrOcA ======
+[[:|{{viaggi:messico:eiroca.jpg?256 |eIrOcA}}]]
 <html>
+<div style="margin:20px;">
 <div>
 <span class="COL1"><b>e</b></span>
 <span class="COL2"><b>n</b></span>
@@ -15,6 +17,7 @@
 <span class="COL1"><b>O</b></span>
 <span class="COL2"><b>N</b></span>
 <span class="COL1"><b>A</b></span>
+</div>
 </div>
 </html>
 {{tag>eiroca}}

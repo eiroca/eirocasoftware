@@ -1,4 +1,5 @@
 ====== Viaggi ======
+[[.:start|{{ il2:travels.png?128x128|Viaggi}}]]
 Ecco i nostri viaggi!
 
 [[.:Messico:start|{{ico:messico.png|Messico}}]][[.:Messico:start|Messico]]

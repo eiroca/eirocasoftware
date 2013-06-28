@@ -1,6 +1,6 @@
-The site uses [[http://wiki.splitbrain.org/wiki:dokuwiki|DokuWiki]], 2004-2009 (c) Andreas Gohr.
+The site uses [[doku>start|DokuWiki]].
 
-Mobile site and part of the Web one use [[en:Projects:Software:Server:EPS|EPS - "eIrOcA Portal System"]], a GPL library to build portal optimized for mobile devices that uses [[http://wurfl.sourceforge.net/|WURFL]] for the device detection.
+Mobile site uses [[en:Projects:Software:Server:EPS|EPS - "eIrOcA Portal System"]], a GPL library to build portal optimized for mobile devices that uses [[http://wurfl.sourceforge.net/|WURFL]] for the device detection.
 
 Portion of code:
   * [[http://image-toolbox.sourceforge.net/|Image_Toolbox]] - Copyright (c) 2003 Martin Theimer

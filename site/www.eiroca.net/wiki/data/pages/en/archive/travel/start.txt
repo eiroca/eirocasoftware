@@ -1,4 +1,5 @@
 ====== Travels ======
+[[.:start|{{ il2:travels.png?128x128|Travels}}]]
 eIrOcA's travels:
 
 [[.:Messico:start|{{ico:messico.png|Mexico}}]][[.:Messico:start|Mexico]]

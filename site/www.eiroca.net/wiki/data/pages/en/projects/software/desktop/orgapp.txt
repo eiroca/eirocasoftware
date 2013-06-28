@@ -1,5 +1,6 @@
 ====== OrgApp ======
-{{:ico:orgapp.png |}}OrgApp is a Java library to handle and draw organization charts (organigrams).
+[[.:orgapp|{{ :ico:orgapp.png|OrgApp}}]]
+OrgApp is a Java library to handle and draw organization charts (organigrams).
 
 The library has also an applet and a Swing Java client able to view an organization chart read from a file, in different formats (one of them based upon XML).
 

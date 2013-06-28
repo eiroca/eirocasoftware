@@ -1,5 +1,5 @@
 ====== Mobile Suite ======
-{{ home:mobile.png?120x100|Mobile Suite}} 
+[[.:start|{{ il3:mobile.png?128x128|Mobile Suite}}]]
 Una delle ragioni di questo progetto è che ci sono parecchi progetti J2ME in uno stato "//dormiente//" i cui autori originari non sono più interessati a mantenere l'applicazione aggiornata (es. SecureMessenger, jtReversi, ...) o a rendere le applicazioni omogenee tra di loro (es. supporto multilingua, UI simile, ...). 
 Un'altro beneficio di aver unificato varie applicazione è stato quello di riuscire ad avere un insieme base di funzionalità e librerie base ottimizzate per l'ambiente J2ME che consentono, soprattuto quando ci sono più applicazioni raggruppate in un unica distribuzione, una notevole riduzione di memoria occupata. 
 
@@ -8,12 +8,12 @@ Le applicazioni sono inoltre state testate su device reali, alla pagina [[.:comp
 ~~CLEARFLOAT~~
 
 ===== Giochi =====
-{{page>it:projects:Software:Mobile:Bubblet&firstsectiononly&link&header&nofooter}}
-{{page>it:projects:Software:Mobile:MeBis&firstsectiononly&link&header&nofooter}}
-{{page>it:projects:Software:Mobile:Mine Sweeper&firstsectiononly&link&header&nofooter}}
-{{page>it:projects:Software:Mobile:PacMan&firstsectiononly&link&header&nofooter}}
-{{page>it:projects:Software:Mobile:Reversi&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Software:Mobile:Bubblet&firstsectiononly&nofooter}}
+{{page>it:projects:Software:Mobile:MeBis&firstsectiononly&nofooter}}
+{{page>it:projects:Software:Mobile:Mine Sweeper&firstsectiononly&nofooter}}
+{{page>it:projects:Software:Mobile:PacMan&firstsectiononly&nofooter}}
+{{page>it:projects:Software:Mobile:Reversi&firstsectiononly&nofooter}}
 
 ===== Applicazioni =====
-{{page>it:projects:Software:Mobile:News Reader&firstsectiononly&link&header&nofooter}}
-{{page>it:projects:Software:Mobile:Secure SMS&firstsectiononly&link&header&nofooter}}
+{{page>it:projects:Software:Mobile:News Reader&firstsectiononly&nofooter}}
+{{page>it:projects:Software:Mobile:Secure SMS&firstsectiononly&nofooter}}

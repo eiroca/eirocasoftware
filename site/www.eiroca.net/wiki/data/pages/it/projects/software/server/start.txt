@@ -1,6 +1,11 @@
-===== Server Applications =====
-{{ home:server.png?120x100|Server Applications}}
+====== Server Applications ======
+[[.:start|{{ il3:server.png?128x128|Server Applications}}]]
 Server Applications è una raccolta di strumenti e di applicazioni server spesso orientate a tematiche "mobile".
 
-{{page>it:projects:Software:Server:EPS&firstsectiononly&link&header&nofooter}}
-{{page>it:projects:Software:Server:Assembler Proxy&nodate&firstsectiononly&link&header&nofooter}}
+~~CLEARFLOAT~~
+
+===== eIrOcA Portal System =====
+{{page>it:projects:Software:Server:EPS&firstsectiononly&noheader&nofooter}}
+
+===== Assembler Proxy =====
+{{page>it:projects:Software:Server:Assembler Proxy&nodate&firstsectiononly&noheader&nofooter}}

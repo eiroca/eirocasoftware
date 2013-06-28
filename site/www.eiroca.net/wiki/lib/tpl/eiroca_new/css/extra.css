@@ -365,3 +365,8 @@ div.dokuwiki div.comment_form {
 .content .sidebar #dw__toc ul ul {
  padding-left: 0.5em;
 }
+
+.licence p {
+ padding: 0;
+ margin: 0;
+}

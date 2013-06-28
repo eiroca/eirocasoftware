@@ -1,11 +1,20 @@
 ====== Desktop Applications ======
-{{ home:desk.png?120x100|Desktop Applications}} 
+[[.:start|{{ il3:desktop.png?128x128|Desktop Applications}}]]
 Desktop Applications è una raccolta di strumenti software ed applicazioni.
 
 ~~CLEARFLOAT~~
 
-{{page>it:projects:Software:Desktop:OrgApp&firstsectiononly&link&header&nofooter}}
-{{page>it:projects:Software:Desktop:eANN&firstsectiononly&link&header&nofooter}}
-{{page>it:projects:Software:Desktop:eUtilities&firstsectiononly&link&header&nofooter}}
-{{page>it:projects:Software:Desktop:eFractals&firstsectiononly&link&header&nofooter}}
-{{page>it:projects:Software:Desktop:Apple2 Graphic&firstsectiononly&link&header&nofooter}}
+===== OrgApp =====
+{{page>it:projects:Software:Desktop:OrgApp&firstsectiononly&noheader&nofooter}}
+
+===== eANN =====
+{{page>it:projects:Software:Desktop:eANN&firstsectiononly&noheader&nofooter}}
+
+===== eUtilities =====
+{{page>it:projects:Software:Desktop:eUtilities&firstsectiononly&noheader&nofooter}}
+
+===== eFractals =====
+{{page>it:projects:Software:Desktop:eFractals&firstsectiononly&noheader&nofooter}}
+
+===== Apple ][ Graphic =====
+{{page>it:projects:Software:Desktop:Apple2 Graphic&firstsectiononly&noheader&nofooter}}

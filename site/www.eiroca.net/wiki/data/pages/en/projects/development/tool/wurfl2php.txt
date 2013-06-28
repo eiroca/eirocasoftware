@@ -1,5 +1,5 @@
 ====== WURFL2PHP ======
-WURF2PHP converts a wurfl.xml into a set of PHP classes. PHP classes are faster to parse than the xml as only the strict needed data will be load and executed by PHP interpreter. No database is needed. In order to run PHP classes you need [[eps|EPS framework]].
+WURF2PHP converts a wurfl.xml into a set of PHP classes. PHP classes are faster to parse than the xml as only the strict needed data will be load and executed by PHP interpreter. No database is needed. In order to run PHP classes you need [[en:projects:Software:server:EPS|EPS framework]].
 
 ===== Requirements =====
 PHP classes generated need [[en:projects:Software:server:EPS|EPS framework]] in order to run. 

@@ -1,9 +1,5 @@
 ~~DISCUSSION~~
 ====== A new layout ======
-Summer time for changes (at least graphical).
-
-===== The new look'n'feel =====
-
 [{{ blog:eiroca_screenshot.png?320|Old site}}] Goodbye old site, it's time to change.
 
 In this round the restyling was really drastic and stems from the desire to make the site [[wp>Responsive_Web_Design|responsive]] and more oriented to content.

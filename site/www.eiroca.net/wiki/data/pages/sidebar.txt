@@ -2,9 +2,8 @@
   * [[it:Index|Indice]] 
   * [[it:About|Info su eIrOcA]]
   * [[http://www.eiroca.net/wiki/feed.php|{{button:rss.png?80x15|Recent changes RSS feed}}]]
-<html>
-<div class="g-plusone" data-annotation="inline" data-width="300" data-href="http://www.eiroca.net"></div>
-</html>
+
+~~GPLUSONE~~
 
 **[[it:start|Sezioni]]**
   * [[it:projects:start|Progetti]]

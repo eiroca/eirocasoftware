@@ -1,5 +1,6 @@
 ====== OrgApp ======
-{{:ico:orgapp.png |}}OrgApp è una libreria Java per gestire e disegnare degli organigrammi.
+[[.:orgapp|{{ :ico:orgapp.png|OrgApp}}]]
+OrgApp è una libreria Java per gestire e disegnare degli organigrammi.
 
 La libreria include un'applet e un'applicazione Swing in grado di disegnare l'organigramma in base a una definizione letta da un file XML, da un file di testo o da un file che segue lo standard sitemap.xml.
 

@@ -8,6 +8,12 @@
 if (!defined('DOKU_INC')) die();
 if (!defined('NL')) define('NL',"\n");
 
+global $translation_plugin;
+$translation_plugin = &plugin_load('helper','translation');
+if (($translation_plugin) && (plugin_isdisabled($translation_plugin->getPluginName()))) {
+ $translation_plugin=null;
+}
+
 function startsWith($haystack,$needle,$case=true) {
  if($case) return strpos($haystack, $needle, 0) === 0;
  return stripos($haystack, $needle, 0) === 0;
@@ -19,14 +25,31 @@ function endsWith($haystack,$needle,$case=true) {
  return strripos($haystack, $needle, 0) === $expectedPosition;
 }
 
-function tpl_homepage($print=true) {
+function tpl_A11Y($section=null) {
+ global $lang;
+ tpl_flush();
+ if ($section!=null){
+  echo '<ul class="a11y skip"><li><a href="#dokuwiki__content">'.$lang[$section].'</a></li></ul>'.NL;
+ }
+ else{
+  echo '<hr class="a11y" />'.NL;
+ }
+}
+function tpl_WikiMetaHeaders() {
+ echo tpl_favicon(array('favicon', 'mobile', 'generic'));
+ tpl_metaheaders();
+}
+
+function tpl_WikiStart($print=true) {
  global $ID;
- $path  = explode(':', $ID);
- if ((count($path)>1) && ($path[0]!=='tag')) {
-  $home=wl($path[0].":start");
+ global $translation_plugin;
+ global $conf;
+ $start = $conf['start'];
+ if ($translation_plugin) {
+  $home = wl($translation_plugin->getLangPart($ID).':'.$start);
  }
  else {
-  $home=wl("start");
+  $home = wl($start);
  }
  if ($print) echo $home;
  return $home;
@@ -82,7 +105,7 @@ function tpl_WikiLogo() {
  $logo = tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'images/logo.png'), false, $logoSize);
  // display logo and wiki title in a link to the home page
  echo '<span class="logo_img">';
- tpl_link(tpl_homepage(false), '<img src="'.$logo.'" '.$logoSize[3].' alt="'.tpl_WikiName(false).'" />', 'accesskey="h" title="[H]"');
+ tpl_link(tpl_WikiStart(false), '<img src="'.$logo.'" '.$logoSize[3].' alt="'.tpl_WikiName(false).'" />', 'accesskey="h" title="[H]"');
  echo '</span>'.NL;
 }
 
@@ -134,10 +157,7 @@ function tpl_WikiMenu() {
  $start = $conf['start'];
  $start_len = strlen($start);
  $me = wl($ID);
-
- $logoSize = array();
- $menuLink = tpl_getMediaFile(array(':wiki:menuLink.png', ':menuLink.png', 'images/menuLink.png'), false, $logoSize);
- echo '<span id="menuLink" class="menuLink"><a href="#menu"><img src="'.$menuLink.'" '.$logoSize[3].' alt="Menu link"></a></span>';
+ echo '<span id="menuLink" class="menuLink"><a href="#menu"></a></span>';
  echo '<span id="menuBar" class="menuBar">';
  foreach($links as $item) {
   if (count($item)===4) {
@@ -162,17 +182,6 @@ function tpl_WikiSearch() {
  echo '<span class="search">';
  tpl_searchform();
  echo '</span>'.NL;
-}
-
-function tpl_A11Y($section=null) {
- global $lang;
- tpl_flush();
- if ($section!=null){
-  echo '<ul class="a11y skip"><li><a href="#dokuwiki__content">'.$lang[$section].'</a></li></ul>'.NL;
- }
- else{
-  echo '<hr class="a11y" />'.NL;
- }
 }
 
 function tpl_WikiSidebar(){
@@ -220,19 +229,19 @@ function tpl_WikiTools() {
 }
 
 function tpl_WikiLicence() {
- global $__lang;
- echo' <span class="licence">';
- tpl_pagelink($__lang."copyright", "Copyright (c) eIrOcA 2001-2013");
- echo '</span>'.NL;
+ global $conf;
+ if ($conf['licence_id']) {
+  echo' <span class="licence">';
+  echo tpl_include_page($conf['licence_id'], false, true);
+  echo '</span>'.NL;
+ }
 }
 
 function tpl_WikiTranslate() {
- $translation_plugin = &plugin_load('syntax','translation');
- if ( $translation_plugin ) {
-  if ( !plugin_isdisabled($translation_plugin->getPluginName() ) ) {
-   echo '<span class="translate">';
-   print $translation_plugin->_showTranslations();
-   echo '</span>';
-  }
+ global $translation_plugin;
+ if ($translation_plugin) {
+  echo '<span class="translate">';
+  print $translation_plugin->showTranslations();
+  echo '</span>';
  }
 }

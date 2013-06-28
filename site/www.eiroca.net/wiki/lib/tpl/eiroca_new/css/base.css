@@ -178,7 +178,7 @@ span.search {
  float: right;
  width: auto;
  text-align: right;
- padding: 0.2em 1em 0.2em 0.5em;
+ padding: 0.3em 1em 0.2em 0.5em;
  vertical-align: middle;
 }
 
@@ -444,22 +444,22 @@ ol ol ol ol ol {
 
 .menuLink {
  display: none;
+ background-image: url(images/menuLink1.png);
+ width: 32px;
+ height: 32px;
+ position: fixed;
+ top: 0px;
+ left: 0px;
+ z-index: 999;
+}
+
+.menuLink.open {
+ background-image: url(images/menuLink2.png);
 }
 
 @media only screen and (max-width: __phone_width__) {
  .menuLink {
   display: block;
-  background: __background_neu__;
-  -webkit-border-radius: .5em;
-  -moz-border-radius: .5em;
-  border-radius: .5em;
-  position: fixed;
-  top: 5px;
-  left: 0px;
-  z-index: 999;
-  -webkit-border-radius: .5em;
-  -moz-border-radius: .5em;
-  border-radius: .5em;
  }
  .menuBar {
   display: none;
@@ -468,11 +468,11 @@ ol ol ol ol ol {
   font-size: 1.2em;
   display: block;
   position: fixed;
-  top: 12px;
-  left: 40px;
+  top: 24px;
+  left: 0px;
   width: 200;
   background: __background_neu__;
-  z-index: 999;
+  z-index: 998;
   -webkit-border-radius: .5em;
   -moz-border-radius: .5em;
   border-radius: .5em;

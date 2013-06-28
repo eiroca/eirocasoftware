@@ -1,37 +1,38 @@
 ====== eIrOcA Pout Pourri ======
+[[.:start|{{ il2:incubator.png?128x128|eIrOcA Pout Pourri}}]]
 eIrOcA Software pout pourri is an incubator of projects that are in concept, alpha, beta, ... state.
 
 ===== Artificial Neural Networks =====
-{{page>en:projects:Incubator:OldNN&firstsectiononly&link&header&nofooter}}
+{{page>en:projects:Incubator:OldNN&firstsectiononly&header&nofooter}}
 
 ===== Apple ][ =====
-{{page>en:projects:Incubator:ProDisk&firstsectiononly&link&header&nofooter}}
-{{page>en:projects:Incubator:ProDiskGUI&firstsectiononly&link&header&nofooter}}
+{{page>en:projects:Incubator:ProDisk&firstsectiononly&header&nofooter}}
+{{page>en:projects:Incubator:ProDiskGUI&firstsectiononly&header&nofooter}}
 
 ===== ERP =====
-{{page>en:projects:Incubator:Artik&firstsectiononly&link&header&nofooter}}
-{{page>en:projects:Incubator:ConTab&firstsectiononly&link&header&nofooter}}
-{{page>en:projects:Incubator:ConTatti&firstsectiononly&link&header&nofooter}}
-{{page>en:projects:Incubator:eicShell&firstsectiononly&link&header&nofooter}}
-{{page>en:projects:Incubator:TabaC&firstsectiononly&link&header&nofooter}}
+{{page>en:projects:Incubator:Artik&firstsectiononly&header&nofooter}}
+{{page>en:projects:Incubator:ConTab&firstsectiononly&header&nofooter}}
+{{page>en:projects:Incubator:ConTatti&firstsectiononly&header&nofooter}}
+{{page>en:projects:Incubator:eicShell&firstsectiononly&header&nofooter}}
+{{page>en:projects:Incubator:TabaC&firstsectiononly&header&nofooter}}
 
 ===== Finance =====
-{{page>en:projects:Incubator:Mutui&firstsectiononly&link&header&nofooter}}
+{{page>en:projects:Incubator:Mutui&firstsectiononly&header&nofooter}}
 
 ===== Games =====
-{{page>en:projects:Incubator:WinCorp&firstsectiononly&link&header&nofooter}}
+{{page>en:projects:Incubator:WinCorp&firstsectiononly&header&nofooter}}
 
 ===== Misc =====
-{{page>en:projects:Incubator:Bioritmi&firstsectiononly&link&header&nofooter}}
-{{page>en:projects:Incubator:eMelody&firstsectiononly&link&header&nofooter}}
-{{page>en:projects:Incubator:Agents&firstsectiononly&link&header&nofooter}}
-{{page>en:projects:Incubator:Tesine&firstsectiononly&link&header&nofooter}}
+{{page>en:projects:Incubator:Bioritmi&firstsectiononly&header&nofooter}}
+{{page>en:projects:Incubator:eMelody&firstsectiononly&header&nofooter}}
+{{page>en:projects:Incubator:Agents&firstsectiononly&header&nofooter}}
+{{page>en:projects:Incubator:Tesine&firstsectiononly&header&nofooter}}
 
 ===== Wiki =====
-{{page>en:projects:Incubator:WikiHelper&firstsectiononly&link&header&nofooter}}
+{{page>en:projects:Incubator:WikiHelper&firstsectiononly&header&nofooter}}
 
 ===== DokuWki =====
 A collection of tools and plugins for Wiki in [[doku>start|DokuWiki format]].
 
-{{page>en:projects:Incubator:DokuWiki_Barcode&firstsectiononly&link&header&nofooter}}
-{{page>en:projects:Incubator:DokuWiki_OrgApp&firstsectiononly&link&header&nofooter}}
+{{page>en:projects:Incubator:DokuWiki_Barcode&firstsectiononly&header&nofooter}}
+{{page>en:projects:Incubator:DokuWiki_OrgApp&firstsectiononly&header&nofooter}}
