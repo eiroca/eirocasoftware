@@ -1,4 +1,4 @@
 <?php
 $conf['showfooter'] = false;
-$conf['provider'] = "google";
+$conf['provider'] = 'google';
 ?>

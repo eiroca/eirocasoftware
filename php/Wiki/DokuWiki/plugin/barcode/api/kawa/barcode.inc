@@ -16,22 +16,22 @@ class QR_kawa extends QRProvider {
 		$resultStr=	'http://qrcode.kaywa.com/img.php?';
 		switch($size) {
 			case 'S':
-				$resultStr .= $this->addParam($first, "s=4");
+				$resultStr .= $this->addParam($first, 's=4');
 				break;
 			case 'M':
-				$resultStr .= $this->addParam($first, "s=6");
+				$resultStr .= $this->addParam($first, 's=6');
 				break;
 			case 'L':
-				$resultStr .= $this->addParam($first, "s=8");
+				$resultStr .= $this->addParam($first, 's=8');
 				break;
 			case 'XL':
-				$resultStr .= $this->addParam($first, "s=10");
+				$resultStr .= $this->addParam($first, 's=10');
 				break;
 			default:
-				$resultStr .= $this->addParam($first, "s=15");
+				$resultStr .= $this->addParam($first, 's=15');
 				break;
 		}
-		$resultStr .= $this->addParam($first, "d=".urlencode($text));
+		$resultStr .= $this->addParam($first, 'd='.urlencode($text));
 		return $this->_IMG($resultStr, $p['id'], $p['class']);
 	}
 }

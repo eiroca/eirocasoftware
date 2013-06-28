@@ -13,16 +13,24 @@ if (!defined('DOKU_PLUGIN_BARCODE')) define('DOKU_PLUGIN_BARCODE',DOKU_PLUGIN.'b
 require_once (DOKU_PLUGIN.'syntax.php');
 require_once (DOKU_PLUGIN_BARCODE.'api/barcode.inc');
 class syntax_plugin_barcode extends DokuWiki_Syntax_Plugin {
-	function getType() { return 'substition'; }
-	function getPType() { return 'normal'; }
-	function getSort() { return 999; }
-	function connectTo($mode) { $this->Lexer->addSpecialPattern('~~BARCODE.*?~~', $mode, 'plugin_barcode'); }
+	function getType() {
+		return 'substition';
+	}
+	function getPType() {
+		return 'normal';
+	}
+	function getSort() {
+		return 999;
+	}
+	function connectTo($mode) {
+		$this->Lexer->addSpecialPattern('~~BARCODE.*?~~', $mode, 'plugin_barcode');
+	}
 	function handle($match, $state, $pos, &$handler) {
 		global $conf;
 		global $ID;
 		$paramsArr = explode('~', $match);
 		$p['mode'] = 0;
-		$p['size']  = "M";
+		$p['size']  = 'M';
 		$p['text']  = wl($ID, '', true);
 		$last = count($paramsArr);
 		for ($i = 3; $i < $last; $i++) {
@@ -35,13 +43,13 @@ class syntax_plugin_barcode extends DokuWiki_Syntax_Plugin {
 					$p['text'] = substr($currentParam,4);
 					break;
 				case 'tel':
-					$p['text'] = "TEL:".substr($currentParam,4);
+					$p['text'] = 'TEL:'.substr($currentParam,4);
 					break;
 				case 'sms':
-					$p['text'] = "SMSTO:".$param[1].":".$param[2];
+					$p['text'] = 'SMSTO:'.$param[1].':'.$param[2];
 					break;
 				case 'contact':
-					$p['text'] = "BEGIN:VCARD\nN:".$param[1]."\nTEL:".$param[2]."\nEMAIL:".$param[3]."\nEND:VCARD";
+					$p['text'] = 'BEGIN:VCARD\nN:'.$param[1].'\nTEL:'.$param[2].'\nEMAIL:'.$param[3].'\nEND:VCARD';
 					break;
 				case 'text':
 					$p['text'] = substr($currentParam,5);
@@ -56,17 +64,20 @@ class syntax_plugin_barcode extends DokuWiki_Syntax_Plugin {
 		$out .= $service->render($p);
 		return $out;
 	}
-	/**
-	 * Create output
-	 */
 	function render($mode, &$renderer, $data) {
 		global $conf;
+		global $ID;
 		if ($mode == 'xhtml') {
 			$renderer->doc .= $data;
 			if ($this->getConf('showfooter')) {
-				$lang = $conf["lang"];
-				$fn = DOKU_PLUGIN_BARCODE."footer_".$lang.".txt";
-				if (!file_exists($fn)) $fn = DOKU_PLUGIN_BARCODE."footer.txt";
+				if (plugin_isdisabled('translation') || (!$translation = plugin_load('helper', 'translation'))) {
+					$lang = $conf['lang'];
+				}
+				else {
+					$lang = $translation->getLangPart($ID);
+				}
+				$fn = DOKU_PLUGIN_BARCODE.'footer_'.$lang.'.txt';
+				if (!file_exists($fn)) $fn = DOKU_PLUGIN_BARCODE.'footer.txt';
 				$renderer->doc .= @file_get_contents($fn);
 			}
 			return true;

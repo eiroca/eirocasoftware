@@ -13,27 +13,27 @@ class QR_qrserver extends QRProvider {
 		$first= true;
 		$size = $p['size'];
 		$text = $p['text'];
-		$resultStr = "http://api.qrserver.com/v1/create-qr-code/?";
+		$resultStr = 'http://api.qrserver.com/v1/create-qr-code/?';
 		switch($size) {
 			case 'S':
-				$resultStr .= $this->addParam($first, "size=120x120");
+				$resultStr .= $this->addParam($first, 'size=120x120');
 				break;
 			case 'M':
-				$resultStr .= $this->addParam($first, "size=240x240");
+				$resultStr .= $this->addParam($first, 'size=240x240');
 				break;
 			case 'L':
-				$resultStr .= $this->addParam($first, "size=350x350");
+				$resultStr .= $this->addParam($first, 'size=350x350');
 				break;
 			case 'XL':
-				$resultStr .= $this->addParam($first, "size=500x500");
+				$resultStr .= $this->addParam($first, 'size=500x500');
 				break;
 			default:
-				$resultStr .= $this->addParam($first, "size=240x240");
+				$resultStr .= $this->addParam($first, 'size=240x240');
 				break;
 		}
-		$resultStr .= $this->addParam($first, "data=".urlencode($text));
-		foreach(array("charset-source", "charset-target", "ecc", "color", "bgcolor", "margin", "qzone") as $optional) {
-			if ($p[$optional]) $resultStr .= $this->addParam($first, $optional."=".$p[$optional]);
+		$resultStr .= $this->addParam($first, 'data='.urlencode($text));
+		foreach(array('charset-source', 'charset-target', 'ecc', 'color', 'bgcolor', 'margin', 'qzone') as $optional) {
+			if ($p[$optional]) $resultStr .= $this->addParam($first, $optional.'='.$p[$optional]);
 		}
 		return $this->_IMG($resultStr, $p['id'], $p['class']);
 	}
