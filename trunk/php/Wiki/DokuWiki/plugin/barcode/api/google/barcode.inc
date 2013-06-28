@@ -14,26 +14,26 @@ class QR_google extends QRProvider {
 		$size = $p['size'];
 		$text = $p['text'];
 		$caption = $p['caption'];
-		$resultStr = "http://chart.apis.google.com/chart?";
-		$resultStr .= $this->addParam($first, "cht=qr");
+		$resultStr = 'http://chart.apis.google.com/chart?';
+		$resultStr .= $this->addParam($first, 'cht=qr');
 		switch($size) {
 			case 'S':
-				$resultStr .= $this->addParam($first, "chs=120x120");
+				$resultStr .= $this->addParam($first, 'chs=120x120');
 				break;
 			case 'M':
-				$resultStr .= $this->addParam($first, "chs=240x240");
+				$resultStr .= $this->addParam($first, 'chs=240x240');
 				break;
 			case 'L':
-				$resultStr .= $this->addParam($first, "chs=350x350");
+				$resultStr .= $this->addParam($first, 'chs=350x350');
 				break;
 			case 'XL':
-				$resultStr .= $this->addParam($first, "chs=500x500");
+				$resultStr .= $this->addParam($first, 'chs=500x500');
 				break;
 			default:
-				$resultStr .= $this->addParam($first, "chs=240x240");
+				$resultStr .= $this->addParam($first, 'chs=240x240');
 				break;
 		}
-		$resultStr .= $this->addParam($first, "chl=".urlencode($text));
+		$resultStr .= $this->addParam($first, 'chl='.urlencode($text));
 		return $this->_IMG($resultStr, $p['id'], $p['class']);
 	}
 }
