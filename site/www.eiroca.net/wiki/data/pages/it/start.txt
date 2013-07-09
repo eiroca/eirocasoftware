@@ -22,6 +22,3 @@ eIrOcA è disponibile anche in versione ottimizzata per dispotivi mobili (cellul
 [[http://www.greenpeace.org/italy|{{banner:greenpeace.png?160x120|Greenpeace Italia}}]]
 [[http://www.wwf.it/|{{banner:wwf.png?160x120|WWF}}]]
 [[http://wikimediafoundation.org/wiki/Support_Wikipedia/it|{{banner:wikipedia.png?160x120|Wikipedia Affiliate Button}}]]
-
-
-UA-3895374-1
