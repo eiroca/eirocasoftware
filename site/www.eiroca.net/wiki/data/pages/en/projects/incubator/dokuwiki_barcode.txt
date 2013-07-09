@@ -25,7 +25,7 @@ Possible optional attributes:
 
 The payload is described by one, and only one, of theese attributes:
 ^ Name         ^ Description ^
-| **url**      |payload is an URL, e.g. url=http:/www.eiroca.net |
+| **url**      |payload is an URL, e.g. url=http://www.eiroca.net |
 | **sms**      |payload is a SMS, e.g. sms=+391234567890=A Message |
 | **tel**      |payload is an telephone number, e.g. tel=+391234567890 |
 | **contact**  |payload is a contact, e.g. contact=Name=+123432324=my@address.com |
@@ -53,16 +53,22 @@ Here the code:
   ~~BARCODE~class=barcode_center~size=M~~
 
 ===== Installation =====
-Download and install the plugin using the [[doku>plugin:plugin|Plugin Manager]] using the following [[http://www.eiroca.net/apps/dokuwiki/barcode.zip|URL]]. Refer to [[doku>Plugins]] on how to install plugins manually using code donwload [[..:dokuwiki#download|here]] that is always up to date.
+Download and install the plugin using the [[doku>plugin:plugin|Plugin Manager]] using the following [[http://www.eiroca.net/apps/dokuwiki/barcode.zip]]. 
+Refer to [[doku>plugins]] on how to install plugins manually. [[http://sourceforge.net/p/eirocasoftware/code/|Code]] at Sourceforge is always up to date.
 
 ==== Administration ====
 Inside dokuwiki plugin administration is possible to configure:
   * The provider of the barcode generator
   * If a hint to suggest the download of a mobile barcode reader has to be displayed
 
-The hint messages can be configured changingin the files //footer.txt// inside the barcode plugin directory. To add a new languages, not currently present, you should create a file footer_XX.txt where XX is the code of the language.
+The hint messages can be configured changingin the files //footer.txt// inside the barcode plugin directory. 
+To add a new languages, not currently present, you should create a file footer_XX.txt where XX is the code of the language.
+The language is determined using [[doku>plugin:translation|plugin translation]], if the plugin is not installed the default language of the wiki is used //($conf['lang'])//.
 
 ===== History =====
+**Version 2013/06/29**
+  * Added support fol translation plugin
+
 **Version 2011/02/03**
   * Added button in the edit toolbar
   * Support for DokuWiki "Anteater"

@@ -18,7 +18,7 @@ I possibili valori, tutti opzioniali, degli attributi sono:
 | **code**    |Classe principale dell'applet|
 | **archive** |Locazione (URL) dell'archivio dell'applet|
 | **target**  |Valore predefinito dell'attributo target dei link|
-| **type**    |Tipo di organigramma (0=SOF), vedere [[..:orgapp]] per ulteriori dettagli|
+| **type**    |Tipo di organigramma (0=SOF), vedere [[it:Projects:Software:Desktop:OrgApp]] per ulteriori dettagli|
 | **url**     |Locazione (URL) della definizione dell'organigramma|
 
 L'organigramma può essere definito sia direttamente nella pagina Wiki, sia utilizzando un file esterno. Nel primo caso è sufficiente inserire la definizione all'interno del tag **orgapp**, nel secondo caso occorre valorizzare l'attributo //**url**// con l'URL da cui reperire la definizione.
@@ -56,7 +56,8 @@ genera il seguente risultato:
 <orgapp width="100%" url="/apps/orgapp/data2.xml"></orgapp>
 
 ===== Istallazione =====
-Scaricare e installare il plugin tramite il [[doku>plugin:plugin|Plugin Manager]] usando il seguente [[http://www.eiroca.net/apps/dokuwiki/orgapp.zip|URL]]. Oppure installarlo manualmente (Vedere [[doku>Plugins]]) usando il codice, sempre aggiornato, che si ottiene dalla sezione [[..:dokuwiki#Scarica!]].
+Scaricare e installare il plugin tramite il [[doku>plugin:plugin|Plugin Manager]] usando il seguente [[http://www.eiroca.net/apps/dokuwiki/orgapp.zip]]. 
+Oppure installarlo manualmente (vedere [[doku>plugins]]) usando il codice, sempre aggiornato, che si ottiene dalla sezione [[http://sourceforge.net/p/eirocasoftware/code/|Code]] di SourceForge.
 
 ==== Amministrazione ====
 I valori di default della generazione dell'organigramma possono essere cambiati da pannello di controllo. 
@@ -69,6 +70,9 @@ E' consigliabile, ma non necessario, spostare il file OrgApplet.jar in una carte
   * di non aver attivato la funzionalità nice URL di dokuwiki. Se si vuole utilizzare tale funzionalità occorre spostare il file //OrgApplet.jar// in una cartella di risorse statiche esterna alla parte di sito gestita da dokuwiki.
 
 ===== Versioni =====
+**Version 2013/06/29**
+  * Aggiornata con l'ultima versione dell'applet
+
 **Versione 2011/02/03**
   * Aggiunto bottone nella toolbar di editing
   * Supporto a DokuWiki "Anteater"

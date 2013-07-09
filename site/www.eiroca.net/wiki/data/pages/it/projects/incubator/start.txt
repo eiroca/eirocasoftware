@@ -36,3 +36,4 @@ Una raccolta di tool e plugin per i Wiki in formato [[doku>start|DokuWiki]].
 
 {{page>it:projects:Incubator:DokuWiki_Barcode&firstsectiononly&header&nofooter}}
 {{page>it:projects:Incubator:DokuWiki_OrgApp&firstsectiononly&header&nofooter}}
+{{page>it:projects:Incubator:DokuWiki_GPlusOne&firstsectiononly&header&nofooter}}

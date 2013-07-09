@@ -1,0 +1,34 @@
+====== Dokuwiki Plugin - GPlusOne ======
+Plugin [[doku>start|Dokuwiki]] per aggiungere il pulsane "+1" di Google.
+
+===== Utilizzo del plugin =====
+Genera il bottone "+1" usando le [[https://developers.google.com/+/web/+1button/|API di Google]].
+
+==== Sintassi ====
+  ~~GPLUSONE~attributo1=valore1~attributo2=valore2~~
+
+I possibili valori, tutti opzionali, sono quelli presenti nella documentazione di Google. Se assenti vengono presi i valori di default amministrabili da interfaccia di amministrazione.
+
+==== Esempi ====
+  ~~GPLUSONE~annotation=bubble~size=tall~~
+
+genera il seguente risultato:
+~~GPLUSONE~annotation=bubble~size=tall~~
+
+===== Istallazione =====
+Scaricare e installare il plugin tramite il [[doku>plugin:plugin|Plugin Manager]] usando il seguente URL [[http://www.eiroca.net/apps/dokuwiki/gplusone.zip]]. 
+Oppure installarlo manualmente (vedere [[doku>plugins]]) usando il codice, sempre aggiornato, che si ottiene dalla sezione [[http://sourceforge.net/p/eirocasoftware/code/|Code]] di SourceForge.
+
+==== Amministrazione ====
+I valori di default della generazione bottone "+1" essere cambiati da pannello di controllo. 
+
+===== Versioni =====
+**Versione 2013/06/29**
+  * Prima versione
+
+====== Licenza & Copyright ======
+{{template>it:inc:gpl3
+|Author=Copyright (c) 2013 eIrOcA (eNrIcO Croce & sImOnA Burzio)|
+}}
+
+{{tag>DokuWiki Google PHP}}

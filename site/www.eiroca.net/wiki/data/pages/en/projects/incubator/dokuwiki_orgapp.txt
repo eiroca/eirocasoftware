@@ -18,7 +18,7 @@ Possible optional attributes:
 | **code**    |Main class of the OrgApp applet|
 | **archive** |Archive (URL) location of the OrgApp applet|
 | **target**  |Dafault link target|
-| **type**    |Type of the chart definition (0=SOF), see [[..:orgapp]] for more details|
+| **type**    |Type of the chart definition (0=SOF), see [[en:Projects:Software:Desktop:OrgApp]] for more details|
 | **url**     |Location (URL) of the organization chart definition|
 
 The chart can be defined either directly in the Wiki page or in an external file. In the first case is sufficient to include the definition within the tag **orgapp**, in the second case you should use the attribute //**url**// to define the URL of the definition.
@@ -56,7 +56,8 @@ generates the following result:
 <orgapp width="100%" url="/apps/orgapp/data2.xml"></orgapp>
 
 ===== Installation =====
-Download and install the plugin using the [[doku>plugin:plugin|Plugin Manager]] using the following [[http://www.eiroca.net/apps/dokuwiki/orgapp.zip|URL]]. Refer to [[doku>Plugins]] on how to install plugins manually using code donwload [[..:dokuwiki#download|here]] that is always up to date.
+Download and install the plugin using the [[doku>plugin:plugin|Plugin Manager]] using the following [[http://www.eiroca.net/apps/dokuwiki/orgapp.zip]].
+Refer to [[doku>plugins]] on how to install plugins manually. [[http://sourceforge.net/p/eirocasoftware/code/|Code]] at Sourceforge is always up to date.
 
 ==== Administration ====
 The default values used in  the generation of the organization chart can be changed from the control panel.
@@ -69,6 +70,9 @@ It is advisable, but not necessary, move the OrgApplet.jar file in the Web serve
   * to have disabled the nice URL dokuwiki feature. If you want to use nice URL you need to move the //OrgApplet.jar// file to a static resources folder outside the control of dokuwiki rewrite rules.
 
 ===== History =====
+**Version 2013/06/29**
+  * Updated with the newest applet
+
 **Version 2011/02/03**
   * Added button in the edit toolbar
   * Support for DokuWiki "Anteater"

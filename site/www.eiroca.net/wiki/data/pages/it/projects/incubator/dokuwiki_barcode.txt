@@ -25,7 +25,7 @@ I possibili valori, opzioniali, di attributo sono:
 
 Oltre ai precedenti e necessario specificare al massimo uno dei seguenti per descrivere il contenuto del barcode:
 ^ Nome         ^ Descrizione ^
-| **url**      |il barcode è un URL, es. url=http:/www.eiroca.net |
+| **url**      |il barcode è un URL, es. url=http://www.eiroca.net |
 | **sms**      |il barcode è un SMS, es. sms=+391234567890=A Message |
 | **tel**      |il barcode è un numero di telefono, es. tel=+391234567890 |
 | **contact**  |il barcode è un contatto, es. contact=Name=+123432324=my@address.com |
@@ -53,16 +53,22 @@ Si ottengono con il seguente codice:
   ~~BARCODE~class=barcode_center~size=M~~
 
 ===== Istallazione =====
-Scaricare e installare il plugin tramite il [[doku>plugin:plugin|Plugin Manager]] usando il seguente [[http://www.eiroca.net/apps/dokuwiki/barcode.zip|URL]]. Oppure installarlo manualmente (Vedere [[doku>Plugins]]) usando il codice, sempre aggiornato, che si ottiene dalla sezione [[..:dokuwiki#Scarica!]].
+Scaricare e installare il plugin tramite il [[doku>plugin:plugin|Plugin Manager]] usando il seguente [[http://www.eiroca.net/apps/dokuwiki/barcode.zip]. 
+Oppure installarlo manualmente (vedere [[doku>plugins]]) usando il codice, sempre aggiornato, che si ottiene dalla sezione [[http://sourceforge.net/p/eirocasoftware/code/|Code]] di SourceForge.
 
 ==== Amministrazione ====
 Tramite il pannello di gestione Plugin è possibile configurare:
   * Il provider da usare per generare il barcode
   * Se mostrare un messagio che suggerisce un reader mobile per leggere il barcode
 
-I testi dei messagi puossono essere configurato modificando i file //footer.txt// presenti nella directory del plugin. Per aggiungere eventuali nuove lingue non ancora presenti occorre creare un file footer_XX.txt dove XX è il codice della nuova lingua.
+I testi dei messagi puossono essere configurato modificando i file //footer.txt// presenti nella directory del plugin. 
+Per aggiungere eventuali nuove lingue non ancora presenti occorre creare un file footer_XX.txt dove XX è il codice della nuova lingua.
+La lingua viene determinata tramite l'utilizzo del [[doku>plugin:translation|plugin translation]], se non è installato tramite la lingua di default della wiki //($conf['lang'])//.
 
 ===== Versioni =====
+**Version 2013/06/29**
+  * Aggiunto il supporto al plugin translation
+
 **Versione 2011/02/03**
   * Aggiunto bottone nella toolbar di editing
   * Supporto a DokuWiki "Anteater"
