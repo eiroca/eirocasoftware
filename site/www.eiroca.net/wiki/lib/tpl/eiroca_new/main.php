@@ -32,7 +32,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
     <?php tpl_WikiTranslate() ?>
     <?php tpl_WikiSearch() ?>
    </div>
-   <div class="navigation NeuCol">
+   <div id="menu" class="navigation NeuCol">
     <?php tpl_WikiMenu() ?>
    </div>
    <?php tpl_A11Y() ?>

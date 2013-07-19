@@ -32,6 +32,14 @@ function tpl_dokuwiki_mobile() {
       $toc[0].setState(1);
     }
   }
+  var $page = jQuery('.docPage');
+  var $foot = jQuery('.footer');
+  if (device_class.match(/phone/)) {
+    $page.css('margin-bottom', 10);
+  }
+  else {
+    $page.css('margin-bottom', $foot.height() + 20);
+  }
   if (device_class.match(/mobile/)) {
     if ($toc.length) {
       $toc[0].setState(-1);
@@ -53,9 +61,6 @@ jQuery(function() {
     var $content = jQuery('#dokuwiki__content div.docData');
     $content.css('min-height', $sidebar.height());
   }
-  var $page = jQuery('.docPage');
-  var $foot = jQuery('.footer');
-  $page.css('margin-bottom', $foot.height() + 20);
   jQuery(window).bind('resize', function() {
     if (resizeTimer) clearTimeout(resizeTimer);
     resizeTimer = setTimeout(tpl_dokuwiki_mobile, 200);

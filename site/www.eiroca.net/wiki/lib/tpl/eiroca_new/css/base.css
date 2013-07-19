@@ -135,7 +135,7 @@ h3,h4,h5,h6 {
  width: 95%;
  float: none;
  overflow: hidden;
- padding: 0.5em 1em 1em 1em;
+ padding: 0.5em 1em 0.5em 1em;
  -moz-box-shadow: 0 0 5px 5px __site_background__;
  -webkit-box-shadow: 0 0 5px 5px __site_background__;
  box-shadow: 0 0 5px 5px __site_background__;
@@ -450,34 +450,9 @@ ol ol ol ol ol {
  position: fixed;
  top: 0px;
  left: 0px;
- z-index: 999;
+ z-index: 9999;
 }
 
 .menuLink.open {
  background-image: url(images/menuLink2.png);
-}
-
-@media only screen and (max-width: __phone_width__) {
- .menuLink {
-  display: block;
- }
- .menuBar {
-  display: none;
- }
- .menuBar.open {
-  font-size: 1.2em;
-  display: block;
-  position: fixed;
-  top: 24px;
-  left: 0px;
-  width: 200;
-  background: __background_neu__;
-  z-index: 998;
-  -webkit-border-radius: .5em;
-  -moz-border-radius: .5em;
-  border-radius: .5em;
- }
- .menuItem {
-  display: block;
- }
 }
