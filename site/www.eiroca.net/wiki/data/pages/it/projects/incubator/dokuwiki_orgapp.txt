@@ -49,15 +49,15 @@ genera il seguente risultato:
 
 Il codice seguente mostra come disegnare un organigramma definito in un file esterno cambiandone la larghezza predefinita dall'amministratore:
 
-  <orgapp width="100%" url="/apps/orgapp/data2.xml"></orgapp>
+  <orgapp width="100%" url="/apps/orgapp/data2.sof"></orgapp>
 
 genera il seguente risultato:
 
-<orgapp width="100%" url="/apps/orgapp/data2.xml"></orgapp>
+<orgapp width="100%" url="/apps/orgapp/data2.sof"></orgapp>
 
 ===== Istallazione =====
 Scaricare e installare il plugin tramite il [[doku>plugin:plugin|Plugin Manager]] usando il seguente [[http://www.eiroca.net/apps/dokuwiki/orgapp.zip]]. 
-Oppure installarlo manualmente (vedere [[doku>plugins]]) usando il codice, sempre aggiornato, che si ottiene dalla sezione [[http://sourceforge.net/p/eirocasoftware/code/|Code]] di SourceForge.
+Oppure installarlo manualmente (vedere [[doku>plugins]]) usando il codice, sempre aggiornato, che si ottiene dalla sezione [[http://sourceforge.net/projects/eirocasoftware|eIrOcA Software]] di SourceForge.
 
 ==== Amministrazione ====
 I valori di default della generazione dell'organigramma possono essere cambiati da pannello di controllo. 

@@ -17,7 +17,7 @@ genera il seguente risultato:
 
 ===== Istallazione =====
 Scaricare e installare il plugin tramite il [[doku>plugin:plugin|Plugin Manager]] usando il seguente URL [[http://www.eiroca.net/apps/dokuwiki/gplusone.zip]]. 
-Oppure installarlo manualmente (vedere [[doku>plugins]]) usando il codice, sempre aggiornato, che si ottiene dalla sezione [[http://sourceforge.net/p/eirocasoftware/code/|Code]] di SourceForge.
+Oppure installarlo manualmente (vedere [[doku>plugins]]) usando il codice, sempre aggiornato, che si ottiene dalla sezione [[http://sourceforge.net/projects/eirocasoftware|eIrOcA Software]] di SourceForge.
 
 ==== Amministrazione ====
 I valori di default della generazione bottone "+1" essere cambiati da pannello di controllo. 

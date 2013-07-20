@@ -54,7 +54,7 @@ Here the code:
 
 ===== Installation =====
 Download and install the plugin using the [[doku>plugin:plugin|Plugin Manager]] using the following [[http://www.eiroca.net/apps/dokuwiki/barcode.zip]]. 
-Refer to [[doku>plugins]] on how to install plugins manually. [[http://sourceforge.net/p/eirocasoftware/code/|Code]] at Sourceforge is always up to date.
+Refer to [[doku>plugins]] on how to install plugins manually. [[http://sourceforge.net/projects/eirocasoftware|eIrOcA Software]] project at Sourceforge is always up to date.
 
 ==== Administration ====
 Inside dokuwiki plugin administration is possible to configure:

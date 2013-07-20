@@ -53,8 +53,8 @@ Si ottengono con il seguente codice:
   ~~BARCODE~class=barcode_center~size=M~~
 
 ===== Istallazione =====
-Scaricare e installare il plugin tramite il [[doku>plugin:plugin|Plugin Manager]] usando il seguente [[http://www.eiroca.net/apps/dokuwiki/barcode.zip]. 
-Oppure installarlo manualmente (vedere [[doku>plugins]]) usando il codice, sempre aggiornato, che si ottiene dalla sezione [[http://sourceforge.net/p/eirocasoftware/code/|Code]] di SourceForge.
+Scaricare e installare il plugin tramite il [[doku>plugin:plugin|Plugin Manager]] usando il seguente [[http://www.eiroca.net/apps/dokuwiki/barcode.zip]]. 
+Oppure installarlo manualmente (vedere [[doku>plugins]]) usando il codice, sempre aggiornato, che si ottiene dalla sezione [[http://sourceforge.net/projects/eirocasoftware|eIrOcA Software]] di SourceForge.
 
 ==== Amministrazione ====
 Tramite il pannello di gestione Plugin è possibile configurare:

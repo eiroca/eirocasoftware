@@ -49,15 +49,15 @@ generates the following result:
 
 The following code shows how to draw an organization defined in an external file and changing the default width:
 
-  <orgapp width="100%" url="/apps/orgapp/data2.xml"></orgapp>
+  <orgapp width="100%" url="/apps/orgapp/data2.sof"></orgapp>
 
 generates the following result:
 
-<orgapp width="100%" url="/apps/orgapp/data2.xml"></orgapp>
+<orgapp width="100%" url="/apps/orgapp/data2.sof"></orgapp>
 
 ===== Installation =====
 Download and install the plugin using the [[doku>plugin:plugin|Plugin Manager]] using the following [[http://www.eiroca.net/apps/dokuwiki/orgapp.zip]].
-Refer to [[doku>plugins]] on how to install plugins manually. [[http://sourceforge.net/p/eirocasoftware/code/|Code]] at Sourceforge is always up to date.
+Refer to [[doku>plugins]] on how to install plugins manually. [[http://sourceforge.net/projects/eirocasoftware|eIrOcA Software]] project at Sourceforge is always up to date.
 
 ==== Administration ====
 The default values used in  the generation of the organization chart can be changed from the control panel.
