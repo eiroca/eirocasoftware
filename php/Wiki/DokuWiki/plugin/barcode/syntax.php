@@ -2,10 +2,10 @@
 /**
  * Plugin barcode: 2D-Barcode Implementation
  * @author Enrico Croce & Simona Burzio (staff@eiroca.net)
- * @copyright Copyright (C) 2009-2011 eIrOcA - Enrico Croce & Simona Burzio
+ * @copyright Copyright (C) 2009-2013 eIrOcA - Enrico Croce & Simona Burzio
  * @license GPL >=3 (http://www.gnu.org/licenses/)
- * @version 1.0.2
- * @link http://www.eiroca.net
+ * @version 1.0.3
+ * @link http://www.eiroca.net/doku_barcode
  */
 if (!defined('DOKU_INC')) die();
 if (!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');

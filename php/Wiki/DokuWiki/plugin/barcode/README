@@ -10,4 +10,4 @@ Barcode generates 2D barcodes using different providers, currently:
 
 Layout of the barcode can be definited by CSS styles.
 
-Complete documentation here: http://www.eiroca.net/wiki/doku.php?id=en:software:dokuwiki:barcode
+Complete documentation here: http://www.eiroca.net/doku_barcode
