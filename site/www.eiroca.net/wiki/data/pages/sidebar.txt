@@ -1,7 +1,7 @@
 **[[it:start|eIrOcA]]**
   * [[it:Index|Indice]] 
   * [[it:About|Info su eIrOcA]]
-  * [[http://www.eiroca.net/wiki/feed.php|{{button:rss.png?80x15|Recent changes RSS feed}}]]
+  * [[http://www.eiroca.net/wiki/feed.php?ns=en|{{button:rss.png?80x15|Recent changes RSS feed}}]]
 
 ~~GPLUSONE~~
 

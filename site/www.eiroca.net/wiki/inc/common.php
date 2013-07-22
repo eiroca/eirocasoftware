@@ -1515,7 +1515,7 @@ function send_redirect($url) {
     ) {
         header('Refresh: 0;url='.$url);
     } else {
-        header('Location: '.$url);
+        header('Location: '.$url,TRUE,301);
     }
     exit;
 }
