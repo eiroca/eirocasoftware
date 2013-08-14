@@ -101,7 +101,6 @@
   position: fixed;
   top: 24px;
   left: 0px;
-  width: 200;
   background: __background_neu__;
   z-index: 8888;
   -webkit-border-radius: .5em;

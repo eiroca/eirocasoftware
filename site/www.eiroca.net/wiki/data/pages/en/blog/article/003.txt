@@ -1,0 +1,14 @@
+======  Google+1 Plug-in  ======
+I just released the [[en:projects:incubator:dokuwiki_gplusone]] for the management of the "+1" Google button within the [[doku>start|Dokuwiki]] wiki sites.
+
+The existing http://www.dokuwiki.org/plugin:googleplusone plugin doesn't meet my requirements: the button position is fixed, it is supported only German, you cannot customize the look of the button, ... hence the need to put the hands on the source code.
+
+The choice was to write a new plugin, I don't like the jQuery approach used by the original plugin and completely it lacks of any administration / integration with the editor. Obviously starting from scratch means "recycle" the template already used for other plugins...
+
+On this occasion have been updated the other two plugins that I have written. To the plugin for [[en:projects:incubator:dokuwiki_barcode|barcode]] was added the support to the [[doku>plugin:translation|translation]] plugin. If it is installed will be used to detect the language for barcode messages. The [[it:projects:incubator:dokuwiki_barcode|organization chart]] plugin has been updated with the last version of the applet, there are now more options to draw more compact organization chart (e.g. by reversing the orientation of the last level of leaves).
+
+Good use! m(
+
+{{tag>Blog DokuWiki}}
+
+~~DISCUSSION~~

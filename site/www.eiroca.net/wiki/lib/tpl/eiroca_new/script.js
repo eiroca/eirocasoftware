@@ -67,6 +67,35 @@ jQuery(function() {
   });
 });
 
+
+jQuery(function() {
+  var menu = document.getElementById('menuBar');
+  var menuLink = document.getElementById('menuLink');
+
+  toggleClass = function(element, className) {
+    var classes = element.className.split(/\s+/);
+    var length = classes.length;
+    var i = 0;
+    while (i < length) {
+      if (classes[i] === className) {
+        classes.splice(i, 1);
+        break;
+      }
+      i++;
+    }
+    if (length === classes.length) {
+      classes.push(className);
+    }
+    element.className = classes.join(' ');
+  };
+
+  menuLink.onclick = function(e) {
+    e.preventDefault();
+    toggleClass(menu, 'open');
+    toggleClass(menuLink, 'open');
+  };
+});
+
 // Disable right click
 var message = "Right click disabled.";
 function clickIE() {
@@ -115,31 +144,3 @@ function Resize(id, w, h) {
     img.height = h;
   }
 }
-
-jQuery(function() {
-  var menu = document.getElementById('menuBar');
-  var menuLink = document.getElementById('menuLink');
-
-  toggleClass = function(element, className) {
-    var classes = element.className.split(/\s+/);
-    var length = classes.length;
-    var i = 0;
-    while (i < length) {
-      if (classes[i] === className) {
-        classes.splice(i, 1);
-        break;
-      }
-      i++;
-    }
-    if (length === classes.length) {
-      classes.push(className);
-    }
-    element.className = classes.join(' ');
-  };
-
-  menuLink.onclick = function(e) {
-    e.preventDefault();
-    toggleClass(menu, 'open');
-    toggleClass(menuLink, 'open');
-  };
-});

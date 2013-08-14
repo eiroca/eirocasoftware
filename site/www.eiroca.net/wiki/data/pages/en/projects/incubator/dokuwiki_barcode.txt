@@ -34,7 +34,7 @@ If no payload attribute is given a barcode that points to the cointaner page is 
 
 Using **id** and **class** it's possible to control, via CSS, the behavior of the rendered image.
 
-It is possible ti set any specific attributes of individual providers, such as:
+It is possible to set any specific attributes of individual providers, such as:
 ^ Name         ^ Description ^
 | **caption** |Valid only for I-nigma, caption to be used on the bottom of the barcode |
 | **bgcolor** |Valid only for QRServer, background color of the barcode |
