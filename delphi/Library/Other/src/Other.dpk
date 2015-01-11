@@ -43,7 +43,8 @@ requires
   Jcl,
   JvCore,
   JvStdCtrls,
-  eComp;
+  eCompBDEPackage,
+  eCompPackage;
 
 contains
   eIP in 'lib\eIP.pas',

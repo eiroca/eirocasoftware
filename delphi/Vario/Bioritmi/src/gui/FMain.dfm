@@ -92,6 +92,7 @@ object fmMain: TfmMain
       Width = 101
       Height = 21
       NumGlyphs = 2
+      ShowNullDate = False
       WeekendColor = clHighlight
       TabOrder = 0
       OnButtonClick = iOggiChange
@@ -141,6 +142,7 @@ object fmMain: TfmMain
     Height = 21
     DefaultToday = True
     NumGlyphs = 2
+    ShowNullDate = False
     TabOrder = 0
     OnButtonClick = iOggiChange
     OnChange = iOggiChange
@@ -207,6 +209,7 @@ object fmMain: TfmMain
       Width = 111
       Height = 21
       NumGlyphs = 2
+      ShowNullDate = False
       TabOrder = 0
       OnButtonClick = iOggiChange
       OnChange = iOggiChange
@@ -321,7 +324,7 @@ object fmMain: TfmMain
   end
   object fsMain: TJvFormStorage
     AppStorage = apStorage
-    AppStoragePath = '%FORM_NAME%'
+    AppStoragePath = '%FORM_NAME%\'
     StoredProps.Strings = (
       'iData1.Text'
       'iData2.Text')

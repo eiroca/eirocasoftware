@@ -27,7 +27,7 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   eLibMath, eLibCore,
-  DBTables, Db, eDB, eReport;
+  DBTables, Db, eLibDB, eReport, eBDE;
 
 const
   MaxTipi = 1000;
@@ -321,7 +321,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLibDB, UOpzioni;
+  UOpzioni;
 
 function LastData(Dt: TStringList): string;
 var

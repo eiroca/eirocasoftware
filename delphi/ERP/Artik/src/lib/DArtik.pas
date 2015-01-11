@@ -23,7 +23,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Db, DBTables, eDB;
+  Db, DBTables, eLibDB, eBDE;
 
 const
   LEN_CODALF   =  3;
@@ -158,7 +158,7 @@ implementation
 {$R *.DFM}
 
 uses
-  Costanti, UOpzioni, eLibDB, eLibCore;
+  Costanti, UOpzioni, eLibCore;
 
 constructor EArticoli.Create(const aCodAlf: string; const aCodNum: integer);
 begin

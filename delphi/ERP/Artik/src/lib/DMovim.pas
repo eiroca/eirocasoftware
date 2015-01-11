@@ -23,7 +23,7 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, DB, DBTables, eDB;
+  Forms, Dialogs, DB, DBTables, eLibDB, eBDE;
 
 type
   TdmMovim = class(TDataModule)

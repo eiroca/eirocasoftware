@@ -128,7 +128,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLibCore, FAboutGPL, FDBPack, uOpzioni, MakeDB,
+  eLibCore, eLibVCL, FDBPack, uOpzioni, MakeDB,
   DTabaC, FInfo, FValorizzazione,
   FStatCalc,
   FTabaEdit, FTabaFind,

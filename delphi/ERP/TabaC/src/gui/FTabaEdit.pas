@@ -27,7 +27,6 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   StdCtrls, Forms, Dialogs, DB, DBTables, DBLookup, DBCtrls, Mask, 
-  eWait,
   Buttons, ExtCtrls, RgNav, RgNavDB, JvExControls, JvSpin;
 
 type
@@ -122,7 +121,8 @@ implementation
 {$R *.DFM}
 
 uses
-  eLibCore, eLibDB, FTabaFind, DTabaC, FStampaTabacchi;
+  eLibCore, eLibVCL, eLibDB,
+  FTabaFind, DTabaC, FStampaTabacchi;
 
 procedure TfmTabaEdit.FormShow(Sender: TObject);
 begin

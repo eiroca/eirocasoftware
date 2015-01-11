@@ -66,7 +66,8 @@ implementation
 
 {$R *.DFM}
 uses
-  FGame, FLetter, FMarketReport, FResult, MessageStr, FHelp, FAboutGPL;
+  eLibVCL,
+  FGame, FLetter, FMarketReport, FResult, MessageStr, FHelp;
 
 procedure TfmMain.FormShow(Sender: TObject);
 begin

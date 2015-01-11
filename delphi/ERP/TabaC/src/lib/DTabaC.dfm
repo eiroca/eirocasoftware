@@ -440,7 +440,6 @@ object dmTaba: TdmTaba
     Top = 10
   end
   object DB: TeDataBase
-    Connected = True
     DatabaseName = 'DB'
     DriverName = 'STANDARD'
     Params.Strings = (

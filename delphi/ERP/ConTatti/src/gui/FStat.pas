@@ -24,7 +24,7 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, Grids, ExtCtrls,
-  CWXTab, JvComponentBase, JvFormPlacement;
+  eBDEXTab, JvComponentBase, JvFormPlacement;
 
 type
   TfmStatistiche = class(TForm)

@@ -23,7 +23,7 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, Grids, DBGrids, DB, DBTables, Menus, eDB, JvExDBGrids,
+  Forms, Dialogs, Grids, DBGrids, DB, DBTables, Menus, eBDE, JvExDBGrids,
   JvDBGrid;
 
 type

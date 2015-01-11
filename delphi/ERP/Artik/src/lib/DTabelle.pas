@@ -23,7 +23,7 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, DB, DBTables, eDB;
+  Forms, Dialogs, DB, DBTables, eLibDB, eBDE;
 
 function _CalcIVA(Imp: double; IVA: double): double;
 
@@ -74,7 +74,7 @@ implementation
 {$R *.DFM}
 
 uses
-  Costanti, UOpzioni, eLibDB, DArtik;
+  Costanti, UOpzioni, DArtik;
 
 function _CalcIVA(Imp: double; IVA: double): double;
 var
