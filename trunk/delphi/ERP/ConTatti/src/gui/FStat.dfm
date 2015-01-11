@@ -196,7 +196,6 @@ object fmStatistiche: TfmStatistiche
     end
   end
   object fsStat: TJvFormStorage
-    AppStorage = fmMain.apStorage
     AppStoragePath = '%FORM_NAME%\'
     StoredValues = <>
     Left = 60

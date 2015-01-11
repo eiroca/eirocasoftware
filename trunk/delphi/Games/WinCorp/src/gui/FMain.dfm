@@ -348,7 +348,7 @@ object fmMain: TfmMain
   object lbCopyright: TLabel
     Left = 5
     Top = 295
-    Width = 242
+    Width = 241
     Height = 15
     Caption = 'WinCorp. 1.1.1  (c) 1997-2008 by Enrico Croce'
     Transparent = True

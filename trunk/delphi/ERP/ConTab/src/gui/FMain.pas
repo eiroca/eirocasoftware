@@ -63,10 +63,10 @@ implementation
 {$R *.DFM}
 
 uses
-  eLibDB, Costanti,
+  eLibVCL, eLibDB, Costanti,
   DContabilita, uOpzioni,
   FEditConConti, FEditConSchemiBilancio, FEditConBilanci, FEditConGiornale,
-  FAboutGPL, FEditAdmUtenti;
+  FEditAdmUtenti;
 
 procedure TfmMain.miExitClick(Sender: TObject);
 begin

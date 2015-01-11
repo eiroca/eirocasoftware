@@ -64,7 +64,7 @@ implementation
 {$R *.DFM}
 
 uses
-  FAboutGPL, uMortgage, FNewMutuo, FViewMutuo;
+  eLibVCL, uMortgage, FNewMutuo, FViewMutuo;
 
 procedure TfmMain.miMutuiNewClick(Sender: TObject);
 var

@@ -62,6 +62,8 @@ object fmContatti: TfmContatti
       Left = 0
       Top = 0
       Caption = 'Contatti'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object pnContat: TPanel
         Left = 0
         Top = 0
@@ -212,7 +214,6 @@ object fmContatti: TfmContatti
           Height = 21
           DataField = 'Tipo'
           DataSource = dsContat
-          ItemHeight = 13
           Items.Strings = (
             'Persona'
             'Azienda')
@@ -377,6 +378,8 @@ object fmContatti: TfmContatti
       Left = 0
       Top = 0
       Caption = 'Indirizzi'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object pnIndir: TPanel
         Left = 0
         Top = 0
@@ -568,7 +571,6 @@ object fmContatti: TfmContatti
           Height = 21
           DataField = 'Tipo'
           DataSource = dsIndir
-          ItemHeight = 13
           Items.Strings = (
             'Tradizionale'
             'Elettronico')
@@ -598,6 +600,8 @@ object fmContatti: TfmContatti
       Left = 0
       Top = 0
       Caption = 'Telefoni'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object pnTelef: TPanel
         Left = 0
         Top = 0
@@ -725,7 +729,6 @@ object fmContatti: TfmContatti
           Height = 21
           DataField = 'Tipo'
           DataSource = dsTelef
-          ItemHeight = 13
           Items.Strings = (
             'Normale'
             'Fax'
@@ -786,6 +789,8 @@ object fmContatti: TfmContatti
       Left = 0
       Top = 0
       Caption = 'Date Importanti'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object pnDateImpo: TPanel
         Left = 0
         Top = 0
@@ -860,6 +865,8 @@ object fmContatti: TfmContatti
       Left = 0
       Top = 0
       Caption = 'Referenti'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object pnRefer: TPanel
         Left = 0
         Top = 0
@@ -991,6 +998,8 @@ object fmContatti: TfmContatti
       Left = 0
       Top = 0
       Caption = 'Comunicazioni'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object pnComunic: TPanel
         Left = 0
         Top = 0
@@ -1131,6 +1140,7 @@ object fmContatti: TfmContatti
           DataSource = dsConnessi
           DefaultToday = True
           NumGlyphs = 2
+          ShowNullDate = False
           TabOrder = 2
         end
         object RxDBGrid2: TJvDBGrid
@@ -1160,7 +1170,6 @@ object fmContatti: TfmContatti
           Height = 21
           DataField = 'Tipo'
           DataSource = dsConnessi
-          ItemHeight = 13
           Items.Strings = (
             'Comunicazione'
             'Risorsa locale'
@@ -1289,6 +1298,8 @@ object fmContatti: TfmContatti
       Left = 0
       Top = 0
       Caption = 'Gruppi'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object pnGruppi: TPanel
         Left = 0
         Top = 0
@@ -1365,6 +1376,8 @@ object fmContatti: TfmContatti
       Left = 0
       Top = 0
       Caption = 'Dati Azienda'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object pnAziend: TPanel
         Left = 0
         Top = 0
@@ -1497,6 +1510,7 @@ object fmContatti: TfmContatti
           DataField = 'FirstContact'
           DataSource = dsAziende
           NumGlyphs = 2
+          ShowNullDate = False
           TabOrder = 1
         end
         object DBEdit6: TDBEdit
@@ -1533,7 +1547,6 @@ object fmContatti: TfmContatti
           Height = 21
           DataField = 'Tipo'
           DataSource = dsAziende
-          ItemHeight = 13
           Items.Strings = (
             'Contatto'
             'Fornitore'
@@ -1995,8 +2008,7 @@ object fmContatti: TfmContatti
     end
   end
   object fpContat: TJvFormPlacement
-    AppStorage = fmMain.apStorage
-    AppStoragePath = '%FORM_NAME%'
+    AppStoragePath = '%FORM_NAME%\'
     Left = 90
     Top = 51
   end

@@ -24,7 +24,8 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls, Dialogs,
   Forms, Menus, DB, DBTables,
-  StdCtrls, ShellServ, eDB, PrevInstance, JvBaseDlg, JvLoginForm,
+  eBDE,
+  StdCtrls, ShellServ, PrevInstance, JvBaseDlg, JvLoginForm,
   JvBDESecurity, JvComponentBase, JvAppStorage, JvAppIniStorage;
 
 type

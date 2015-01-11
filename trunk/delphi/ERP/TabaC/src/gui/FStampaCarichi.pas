@@ -26,7 +26,7 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  DTabaC, eWait,
+  DTabaC,
   Forms, Dialogs, DBTables, DB, StdCtrls, Buttons, Grids,
   DBGrids, Mask, eReport, JvExMask, JvToolEdit;
 
@@ -83,7 +83,8 @@ implementation
 {$R *.DFM}
 
 uses
-  eLibCore, uOpzioni;
+  eLibCore, eLibVCL,
+  uOpzioni;
 
 procedure StampaCarichi;
 var

@@ -23,10 +23,11 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, DContat,                                    
-JvDBCombobox, JvDBGrid,
+  Forms, Dialogs, DContat,
+  eBDe,
+  JvDBCombobox, JvDBGrid,
   Menus, DBTables, DB, StdCtrls, Buttons, Grids, DBGrids, DBCtrls, Mask, RgNav,
-  RgNavDB, ExtCtrls, Tabs, eDB, JvBDEFilter, JvComponentBase, JvFormPlacement,
+  RgNavDB, ExtCtrls, Tabs, eLibDB, JvBDEFilter, JvComponentBase, JvFormPlacement,
   JvExMask, JvToolEdit, JvDBControls, JvExControls, JvDBLookup, JvExDBGrids,
   JvExStdCtrls, JvCombobox, JvSpeedButton;
 
@@ -364,7 +365,7 @@ implementation
 {$R *.DFM}
 
 uses
-  uOpzioni, eLibCore, ContComm, eLibDB, FPreview, eLibSystem;
+  uOpzioni, eLibCore, ContComm, FPreview, eLibSystem;
 
 var
   fmContatti: TfmContatti;

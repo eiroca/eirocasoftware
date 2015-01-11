@@ -22,8 +22,8 @@ unit DContat;
 interface
 
 uses
-  SysUtils, Classes, Dialogs, IceLock, eDB, DB, DBTables, eReport, uOpzioni,
-  Forms;
+  SysUtils, Classes, Dialogs, IceLock, eLibDB, DB, DBTables, eReport, uOpzioni,
+  Forms, eBDE;
 
 const
   CC_REFRESH   = 0;
@@ -83,7 +83,7 @@ implementation
 {$R *.dfm}
 
 uses
-  Costanti, eLibDB, eLibCore, ContComm, MakePrIn, eLibSystem,
+  Costanti, eLibCore, ContComm, MakePrIn, eLibSystem,
   FChkUsr, FRegist;
 
 procedure TdmContatti.DataModuleCreate(Sender: TObject);

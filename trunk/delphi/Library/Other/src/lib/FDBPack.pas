@@ -23,7 +23,7 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, eDB, ExtCtrls, DBTables, JvExControls, JvLabel;
+  Forms, Dialogs, eBDE, ExtCtrls, DBTables, JvExControls, JvLabel;
 
 type
   MakeProcedure = procedure (dbDatabase: TDatabase);

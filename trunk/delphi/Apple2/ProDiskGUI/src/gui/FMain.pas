@@ -89,7 +89,7 @@ implementation
 {$R *.dfm}
 
 uses
-  FAboutGPL, FProDosDisk;
+  eLibVCL, FProDosDisk;
 
 procedure TMainForm.CreateMDIChild(const Name: string);
 var

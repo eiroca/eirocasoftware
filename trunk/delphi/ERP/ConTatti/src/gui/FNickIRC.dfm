@@ -220,8 +220,6 @@ object fmNick4IRC: TfmNick4IRC
       Height = 26
       Hint = 'Chiude la finestra'
       Caption = 'Chiude '
-      TabOrder = 3
-      OnClick = BitBtn1Click
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000130B0000130B00001000000000000000000000000000
@@ -238,6 +236,8 @@ object fmNick4IRC: TfmNick4IRC
       Margin = 5
       NumGlyphs = 2
       Spacing = -1
+      TabOrder = 3
+      OnClick = BitBtn1Click
     end
     object BitBtn2: TBitBtn
       Left = 190
@@ -245,7 +245,6 @@ object fmNick4IRC: TfmNick4IRC
       Width = 89
       Height = 26
       Caption = '&Aiuto'
-      TabOrder = 4
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000120B0000120B00001000000000000000000000000000
@@ -262,6 +261,7 @@ object fmNick4IRC: TfmNick4IRC
       Margin = 5
       NumGlyphs = 2
       Spacing = -1
+      TabOrder = 4
     end
     object btConnect: TBitBtn
       Left = 233
@@ -271,8 +271,6 @@ object fmNick4IRC: TfmNick4IRC
       Hint = 
         'Attiva il gestore associato all'#39'indirizzo'#13#10'(ad es. il programma ' +
         'per la posta elettronica)'
-      TabOrder = 5
-      OnClick = btConnectClick
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000120B0000120B00001000000000000000000000000000
@@ -287,6 +285,8 @@ object fmNick4IRC: TfmNick4IRC
         BBB73373333377F37F3737333777BB777B9B3733333377F337F7333333777B77
         77BB3333333337333377333333333777337B3333333333333337}
       NumGlyphs = 2
+      TabOrder = 5
+      OnClick = btConnectClick
     end
   end
   object tbIndir: TTable

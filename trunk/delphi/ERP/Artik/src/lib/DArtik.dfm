@@ -153,7 +153,6 @@ object dmArticoli: TdmArticoli
     end
   end
   object DB: TeDataBase
-    Connected = True
     DatabaseName = 'DB'
     DriverName = 'STANDARD'
     Params.Strings = (

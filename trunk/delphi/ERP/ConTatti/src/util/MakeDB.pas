@@ -31,7 +31,8 @@ procedure MakeAllTables (dbDatabase: TDatabase);
 Implementation
 
 uses
-  Costanti;
+  Costanti, eLibBDE;
+
 Type
   StoredTables = (Contat,Aziende,Connessi,Dateimpo,Gruppi,Indiriz,
                   Ingruppo,Nickname,Referent,Telef);

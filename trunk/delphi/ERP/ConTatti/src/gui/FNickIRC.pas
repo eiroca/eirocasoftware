@@ -24,7 +24,7 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   Forms, Dialogs, StdCtrls, Buttons, ExtCtrls, RgNav, RgNavDB, DBCtrls, DB,
-  DBTables, Mask, Grids, DBGrids, eDB;
+  DBTables, Mask, Grids, DBGrids, eBDE;
 
 type
   TfmNick4IRC = class(TForm)

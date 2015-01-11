@@ -24,7 +24,7 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls, Forms,
   Dialogs, Menus, ExtCtrls, Grids,
-  DB, DBTables, eDB, PrevInstance, JvAppStorage, JvAppIniStorage, JvAppEvent,
+  DB, DBTables, eBDE, PrevInstance, JvAppStorage, JvAppIniStorage, JvAppEvent,
   JvComponentBase, JvFormPlacement, JvSpeedbar, JvExExtCtrls, JvExtComponent;
 
 type

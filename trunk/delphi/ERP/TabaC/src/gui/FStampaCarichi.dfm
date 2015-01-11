@@ -141,6 +141,7 @@ object fmStampaCarichi: TfmStampaCarichi
     Width = 111
     Height = 21
     NumGlyphs = 2
+    ShowNullDate = False
     TabOrder = 5
   end
   object iDataF: TJvDateEdit
@@ -149,6 +150,7 @@ object fmStampaCarichi: TfmStampaCarichi
     Width = 111
     Height = 21
     NumGlyphs = 2
+    ShowNullDate = False
     TabOrder = 6
   end
   object Report: TeLineReport
