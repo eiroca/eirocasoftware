@@ -55,7 +55,7 @@ implementation
 {$R *.DFM}
 
 uses
-  FMain;
+  System.UITypes, FMain;
 
 procedure TfmViewMutuo.SetMortgage(aMortgage: TMortgage);
 begin

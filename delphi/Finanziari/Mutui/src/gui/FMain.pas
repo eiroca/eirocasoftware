@@ -64,7 +64,9 @@ implementation
 {$R *.DFM}
 
 uses
-  eLibVCL, uMortgage, FNewMutuo, FViewMutuo;
+  System.UITypes,
+  eLibVCL,
+  uMortgage, FNewMutuo, FViewMutuo;
 
 procedure TfmMain.miMutuiNewClick(Sender: TObject);
 var
