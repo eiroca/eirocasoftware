@@ -22,8 +22,8 @@ object fmMain: TfmMain
     Panels = <>
   end
   object MainMenu1: TMainMenu
-    Left = 144
-    Top = 128
+    Left = 128
+    Top = 24
     object File1: TMenuItem
       Caption = '&File'
       object Exit1: TMenuItem
@@ -131,7 +131,7 @@ object fmMain: TfmMain
   end
   object ApplicationEvents1: TApplicationEvents
     OnHint = ApplicationEvents1Hint
-    Left = 16
-    Top = 152
+    Left = 32
+    Top = 24
   end
 end
