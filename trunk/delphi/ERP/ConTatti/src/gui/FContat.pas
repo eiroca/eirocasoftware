@@ -24,12 +24,12 @@ interface
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   Forms, Dialogs, DContat,
-  eBDe,
+  eLibBDE,
   JvDBCombobox, JvDBGrid,
   Menus, DBTables, DB, StdCtrls, Buttons, Grids, DBGrids, DBCtrls, Mask, RgNav,
   RgNavDB, ExtCtrls, Tabs, eLibDB, JvBDEFilter, JvComponentBase, JvFormPlacement,
   JvExMask, JvToolEdit, JvDBControls, JvExControls, JvDBLookup, JvExDBGrids,
-  JvExStdCtrls, JvCombobox, JvSpeedButton;
+  JvExStdCtrls, JvCombobox, JvSpeedButton, eBDE;
 
 { IFDEF FREEONCLOSE}  
 
@@ -980,7 +980,7 @@ end;
 
 procedure TfmContatti.dgNickNameEnter(Sender: TObject);
 begin
-  DBUtil._PostMaster(tbContat);
+  DBEUtil._PostMaster(tbContat);
 end;
 
 initialization
