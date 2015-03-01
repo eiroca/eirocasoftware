@@ -99,7 +99,7 @@ const
   af_Read   =   1;
 
 const
-  ProDosExt: array[0..255] of string[3] = (
+  ProDosExt: array[0..255] of string = (
     '$$$', 'BAD', '$02', '$03', 'TXT', '$05', 'BIN', '$07',
     '$08', '$09', '$0A', '$0B', '$0C', '$0D', '$0E', 'DIR',
     '$10', '$11', '$12', '$13', '$14', '$15', '$16', '$17',

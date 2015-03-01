@@ -23,7 +23,7 @@ interface
 
 uses Windows, SysUtils, Classes, Graphics, Forms, Controls, Menus,
   StdCtrls, Dialogs, Buttons, Messages, ExtCtrls, ComCtrls, StdActns,
-  ActnList, ToolWin, ImgList;
+  ActnList, ToolWin, ImgList, System.Actions;
 
 type
   TMainForm = class(TForm)

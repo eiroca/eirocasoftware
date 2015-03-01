@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{39C02701-DD42-4E40-B928-6B110B0B4BA0}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ProDisk\src\ProDisk.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ProDiskGUI\src\ProDiskGUI.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ProDisk">
+        <MSBuild Projects="ProDisk\src\ProDisk.dproj"/>
+    </Target>
+    <Target Name="ProDisk:Clean">
+        <MSBuild Projects="ProDisk\src\ProDisk.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProDisk:Make">
+        <MSBuild Projects="ProDisk\src\ProDisk.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ProDiskGUI">
+        <MSBuild Projects="ProDiskGUI\src\ProDiskGUI.dproj"/>
+    </Target>
+    <Target Name="ProDiskGUI:Clean">
+        <MSBuild Projects="ProDiskGUI\src\ProDiskGUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProDiskGUI:Make">
+        <MSBuild Projects="ProDiskGUI\src\ProDiskGUI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ProDisk;ProDiskGUI"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ProDisk:Clean;ProDiskGUI:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ProDisk:Make;ProDiskGUI:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
