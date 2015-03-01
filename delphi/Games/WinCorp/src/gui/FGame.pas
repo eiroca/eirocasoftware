@@ -111,6 +111,7 @@ implementation
 {$R *.DFM}
 
 uses
+  System.UITypes,
   FMain, FLetter, FMarketReport, FResult, MessageStr;
 
 procedure TfmGame.FormShow(Sender: TObject);
