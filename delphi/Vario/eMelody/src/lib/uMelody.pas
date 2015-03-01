@@ -21,7 +21,8 @@ unit uMelody;
 
 interface
 
-uses SysUtils, Classes;
+uses
+  SysUtils, Classes;
 
 type
   TNota = class
