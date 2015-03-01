@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{39C02701-DD42-4E40-B928-6B110B0B4BA0}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Agents\src\Agents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Bioritmi\src\Bioritmi.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="eMelody\src\eMelCheck.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="eMelody\src\MelodyConverter.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Agents">
+        <MSBuild Projects="Agents\src\Agents.dproj"/>
+    </Target>
+    <Target Name="Agents:Clean">
+        <MSBuild Projects="Agents\src\Agents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Agents:Make">
+        <MSBuild Projects="Agents\src\Agents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Bioritmi">
+        <MSBuild Projects="Bioritmi\src\Bioritmi.dproj"/>
+    </Target>
+    <Target Name="Bioritmi:Clean">
+        <MSBuild Projects="Bioritmi\src\Bioritmi.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Bioritmi:Make">
+        <MSBuild Projects="Bioritmi\src\Bioritmi.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="eMelCheck">
+        <MSBuild Projects="eMelody\src\eMelCheck.dproj"/>
+    </Target>
+    <Target Name="eMelCheck:Clean">
+        <MSBuild Projects="eMelody\src\eMelCheck.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="eMelCheck:Make">
+        <MSBuild Projects="eMelody\src\eMelCheck.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MelodyConverter">
+        <MSBuild Projects="eMelody\src\MelodyConverter.dproj"/>
+    </Target>
+    <Target Name="MelodyConverter:Clean">
+        <MSBuild Projects="eMelody\src\MelodyConverter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MelodyConverter:Make">
+        <MSBuild Projects="eMelody\src\MelodyConverter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Agents;Bioritmi;eMelCheck;MelodyConverter"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Agents:Clean;Bioritmi:Clean;eMelCheck:Clean;MelodyConverter:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Agents:Make;Bioritmi:Make;eMelCheck:Make;MelodyConverter:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
