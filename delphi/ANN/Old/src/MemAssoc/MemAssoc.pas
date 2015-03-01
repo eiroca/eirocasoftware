@@ -60,7 +60,6 @@ var
   norm: single;
 begin
   norm := 1 / sqrt(keydim);
-  soglia := 0;
   if (corr * 32767 >= 32767) then soglia := 32767
   else soglia := round(corr * 32767);
   for i := 0 to keydim-1 do begin
