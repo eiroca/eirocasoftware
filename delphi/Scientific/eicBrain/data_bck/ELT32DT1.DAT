@@ -1,0 +1,13 @@
+Esempio di una matrice
+
+Scrivere commenti ma non usare i due punti che devono essere usati solo dove
+sono presenti in questo file!
+
+Righe: 5
+Colonne: 5
+
+0.00 0.25 0.89 0.16 0.28
+0.82 0.00 0.95 0.56 0.69
+0.85 0.23 0.00 0.15 0.26
+0.86 0.55 0.89 0.00 0.65
+0.94 0.67 0.95 0.57 0.00

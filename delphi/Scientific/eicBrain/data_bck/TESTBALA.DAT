@@ -1,0 +1,20 @@
+Esercizio #1 pagina 119
+
+Variabili: 5
+x1
+x2
+x3
+x4
+x5
+
+Funzione: z
+
+Obiettivo: Max
+
+Termine costante: 0
+
+Costi: 4 6 4 6 13
+
+Numero Vincoli: 2
+-3 -6  6 12  7 <= 8
+ 6 12 -3 -6  7 <= 8
