@@ -1,0 +1,16 @@
+Esempio di una matrice di valutazione di criteri
+
+Righe = numero dei criteri
+Colonne = numero di azione + 2
+
+ultima Colonna = verso di preferenza (1 verso l'alto, -1 verso il basso)
+Prima  Colonna = peso da assumere per il criterio 
+
+Posizione (0,0) valore qualunque
+
+Righe: 3
+Colonne: 6
+
+ 4      5 3 1 5    1
+ 2      8 2 6 2    1
+ 4      6 8 6 2    1
