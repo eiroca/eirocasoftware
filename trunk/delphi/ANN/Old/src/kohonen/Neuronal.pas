@@ -22,7 +22,7 @@ type
 
 var
   inpattern, outpesi: text;
-  file_in, file_out: string[12];
+  file_in, file_out: string;
   maxitera: integer;
   maxriga, maxcolonna, maxnpeso: integer;
   maxpattern, maxattributi: integer;
