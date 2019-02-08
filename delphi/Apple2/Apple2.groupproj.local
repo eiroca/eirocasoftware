@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject>
-	<Default.Personality>
-		<Projects ActiveProject="S:\Sviluppo\develop\Projects\Delphi\shared\Apple2\ProDiskGUI\src\ProDiskGUI.dproj"/>
-	</Default.Personality>  <Transactions>
-    <Transaction>2015/03/01 21:12:32.186,S:\Sviluppo\develop\Projects\Delphi\shared\Apple2\Appl2.groupproj=S:\Sviluppo\develop\Projects\Delphi\shared\Shared.groupproj</Transaction>
-    <Transaction>2015/03/01 21:13:02.490,S:\Sviluppo\develop\Projects\Delphi\shared\Apple2\Apple2.groupproj=S:\Sviluppo\develop\Projects\Delphi\shared\Apple2\Appl2.groupproj</Transaction>
-  </Transactions>
-</BorlandProject>
