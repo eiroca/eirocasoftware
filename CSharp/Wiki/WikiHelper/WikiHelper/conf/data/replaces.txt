@@ -1,3 +1,0 @@
-{{Template:Firm_Head	{{Template:Obj
-{{Template:Prodotto	{{Template:Obj
-[|]type=prodotto	|type=product

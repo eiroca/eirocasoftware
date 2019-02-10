@@ -1,3 +1,0 @@
-Extracts first and "See also" sections
-0	Info section
-See also	See also section
