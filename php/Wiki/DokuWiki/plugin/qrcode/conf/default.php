@@ -1,2 +1,0 @@
-<?php
-$conf['qrcodeshowfooter'] = false;
