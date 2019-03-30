@@ -23,8 +23,7 @@ interface
 
 uses
   SysUtils, Windows, Messages, Classes, Graphics, Controls,
-  StdCtrls, Forms, DBCtrls, DB, DBGrids, Grids, Mask, ExtCtrls, RgNav,
-  RgNavDB;
+  StdCtrls, Forms, DBCtrls, DB, DBGrids, Grids, Mask, ExtCtrls, JvDBControls;
 
 type
   TfmEditConSchemiBilancio = class(TForm)
@@ -41,7 +40,7 @@ type
     Panel1: TPanel;
     Panel2: TPanel;
     Panel3: TPanel;
-    navSchema: TRGNavigator;
+    navSchema: TJvDBNavigator;
     Splitter1: TSplitter;
     procedure DBGrid1Enter(Sender: TObject);
     procedure DBGrid1Exit(Sender: TObject);

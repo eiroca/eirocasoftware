@@ -23,8 +23,7 @@ interface
 
 uses
   SysUtils, Windows, Messages, Classes, Graphics, Controls,
-  StdCtrls, Forms, DBCtrls, DB, DBGrids, Grids, Mask, ExtCtrls, RgNav,
-  RgNavDB, JvDBControls, JvExMask, JvToolEdit;
+  StdCtrls, Forms, DBCtrls, DB, DBGrids, Grids, Mask, ExtCtrls, JvDBControls, JvExMask, JvToolEdit;
 
 type
   TfmEditConGiornale = class(TForm)
@@ -37,7 +36,7 @@ type
     Panel1: TPanel;
     Panel2: TPanel;
     Panel3: TPanel;
-    navSchema: TRGNavigator;
+    navSchema: TJvDBNavigator;
     DBCheckBox1: TDBCheckBox;
     Splitter1: TSplitter;
     DBDateEdit1: TJvDBDateEdit;

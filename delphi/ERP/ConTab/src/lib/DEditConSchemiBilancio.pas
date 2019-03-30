@@ -23,7 +23,7 @@ interface
 
 uses
   SysUtils, Windows, Classes, Graphics, Controls,
-  Forms, Dialogs, DB, DBTables, ADODB, ZAbstractRODataset, ZAbstractDataset,
+  Forms, Dialogs, DB,  ADODB, ZAbstractRODataset, ZAbstractDataset,
   ZAbstractTable, ZDataset;
 
 type

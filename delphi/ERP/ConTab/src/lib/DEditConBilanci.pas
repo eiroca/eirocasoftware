@@ -19,11 +19,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *)
 unit DEditConBilanci;
 
-interface           
+interface
 
 uses
   SysUtils, Windows, Classes, Graphics, Controls,
-  Forms, Dialogs, DB, DBTables, ADODB, ZAbstractRODataset, ZAbstractDataset,
+  Forms, Dialogs, DB,  ADODB, ZAbstractRODataset, ZAbstractDataset,
   ZAbstractTable, ZDataset;
 
 type
@@ -43,7 +43,7 @@ type
     tbConBilanciUfficiale: TBooleanField;
     tbConBilanciDettCodBil: TIntegerField;
     tbConBilanciDettCodCon: TIntegerField;
-    tbConBilanciDettSaldo: TFloatField;
+    tbConBilanciDettSaldo: TCurrencyField;
     tbConBilanciCodSchDett: TStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);

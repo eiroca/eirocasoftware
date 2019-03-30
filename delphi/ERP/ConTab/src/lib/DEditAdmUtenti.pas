@@ -23,8 +23,8 @@ interface
 
 uses
   SysUtils, Windows, Classes, Graphics, Controls,
-  Forms, Dialogs, DB, DBTables, DContabilita, ADODB,
-  ZAbstractRODataset, ZAbstractDataset, ZAbstractTable, ZDataset;
+  Forms, Dialogs, DB,  DContabilita, ADODB, ZAbstractRODataset,
+  ZAbstractDataset, ZAbstractTable, ZDataset;
 
 type
   TdmEditAdmUtenti = class(TDataModule)

@@ -23,7 +23,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  DBTables, DB, ADODB, ZAbstractConnection, ZConnection;
+DB, ADODB, ZAbstractConnection, ZConnection;
 
 type
   TdmContabilita = class(TDataModule)

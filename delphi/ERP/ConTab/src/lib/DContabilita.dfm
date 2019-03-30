@@ -3,12 +3,17 @@ object dmContabilita: TdmContabilita
   Height = 150
   Width = 215
   object dbContabilita: TZConnection
-    Connected = True
-    Protocol = 'ado'
+    ControlsCodePage = cCP_UTF16
+    Catalog = ''
+    HostName = ''
+    Port = 0
     Database = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=S:\Sviluppo\develop' +
-      '\projects\DelphiXE2\shared\ERP\ConTab\bin\contabilita.mdb;Persis' +
-      't Security Info=False'
+      'Provider=Microsoft.ACE.OLEDB.12.0;Data Source=S:\develop\project' +
+      's\public\other\eirocasoftware-legacy\delphi\ERP\ConTab\db\contab' +
+      'ilita.accdb;Persist Security Info=False'
+    User = ''
+    Password = ''
+    Protocol = 'ado'
     Left = 17
     Top = 8
   end

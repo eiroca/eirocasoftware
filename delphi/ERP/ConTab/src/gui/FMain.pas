@@ -25,7 +25,7 @@ uses
   eLibCore,
   Windows, Messages, Graphics, Controls, Forms, Dialogs,
   SysUtils, Classes,
-  Menus, StdCtrls, ExtCtrls, Db, DBTables,
+  Menus, StdCtrls, ExtCtrls, Db,
    JvComponentBase, JvAppEvent;
 
 type
@@ -63,7 +63,7 @@ implementation
 {$R *.DFM}
 
 uses
-  eLibVCL, eLibDB, Costanti,
+  eLibVCL, eLibDB, Costanti, FAboutGPL,
   DContabilita, uOpzioni,
   FEditConConti, FEditConSchemiBilancio, FEditConBilanci, FEditConGiornale,
   FEditAdmUtenti;
@@ -75,7 +75,7 @@ end;
 
 procedure TfmMain.Informazionisu1Click(Sender: TObject);
 begin
-  AboutGPL(Application.Title);
+   AboutGPL(Application.Title);
 end;
 
 procedure TfmMain.Pianodeiconti1Click(Sender: TObject);

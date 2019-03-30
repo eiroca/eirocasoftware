@@ -23,7 +23,7 @@ interface
 
 uses
   SysUtils, Windows, Classes, Graphics, Controls,
-  Forms, Dialogs, DB, DBTables, ADODB, ZDataset, ZAbstractRODataset,
+  Forms, Dialogs, DB, ADODB, ZDataset, ZAbstractRODataset,
   ZAbstractDataset, ZAbstractTable;
 
 type
@@ -41,7 +41,7 @@ type
     tbConGiornaleUfficiale: TBooleanField;
     tbConGiornaleDettCodScr: TIntegerField;
     tbConGiornaleDettCodCon: TIntegerField;
-    tbConGiornaleDettImporto: TFloatField;
+    tbConGiornaleDettImporto: TCurrencyField;
     tbConContiCodCon: TIntegerField;
     tbConContiAlias: TWideStringField;
     tbConContiDesc: TWideStringField;

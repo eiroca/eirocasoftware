@@ -6,6 +6,7 @@ object dmEditConGiornale: TdmEditConGiornale
   Width = 353
   object tbConGiornale: TZTable
     Connection = dmContabilita.dbContabilita
+    Active = True
     TableName = 'ConGiornale'
     Left = 40
     Top = 5
@@ -15,29 +16,29 @@ object dmEditConGiornale: TdmEditConGiornale
     end
     object tbConGiornaleDataScr: TDateField
       FieldName = 'DataScr'
-      ReadOnly = True
+      Required = True
     end
     object tbConGiornaleDataOpe: TDateField
       FieldName = 'DataOpe'
-      ReadOnly = True
+      Required = True
     end
     object tbConGiornaleDesc: TWideStringField
       FieldName = 'Desc'
-      ReadOnly = True
+      Required = True
       Size = 40
     end
     object tbConGiornaleTipoScr: TSmallintField
       FieldName = 'TipoScr'
-      ReadOnly = True
     end
     object tbConGiornaleUfficiale: TBooleanField
       FieldName = 'Ufficiale'
-      ReadOnly = True
+      Required = True
     end
   end
   object tbConGiornaleDett: TZTable
     Connection = dmContabilita.dbContabilita
     SortedFields = 'CodScr'
+    Active = True
     TableName = 'ConGiornaleDett'
     MasterFields = 'CodScr'
     MasterSource = dsConGiornale
@@ -46,15 +47,15 @@ object dmEditConGiornale: TdmEditConGiornale
     Top = 55
     object tbConGiornaleDettCodScr: TIntegerField
       FieldName = 'CodScr'
-      ReadOnly = True
+      Required = True
     end
     object tbConGiornaleDettCodCon: TIntegerField
       FieldName = 'CodCon'
-      ReadOnly = True
+      Required = True
     end
-    object tbConGiornaleDettImporto: TFloatField
+    object tbConGiornaleDettImporto: TCurrencyField
       FieldName = 'Importo'
-      ReadOnly = True
+      Required = True
     end
   end
   object dsConGiornale: TDataSource
@@ -69,6 +70,7 @@ object dmEditConGiornale: TdmEditConGiornale
   end
   object tbConConti: TZTable
     Connection = dmContabilita.dbContabilita
+    Active = True
     TableName = 'ConConti'
     Left = 40
     Top = 115
@@ -78,29 +80,28 @@ object dmEditConGiornale: TdmEditConGiornale
     end
     object tbConContiAlias: TWideStringField
       FieldName = 'Alias'
-      ReadOnly = True
+      Required = True
       Size = 12
     end
     object tbConContiDesc: TWideStringField
       FieldName = 'Desc'
-      ReadOnly = True
+      Required = True
       Size = 30
     end
     object tbConContiGruppo: TBooleanField
       FieldName = 'Gruppo'
-      ReadOnly = True
+      Required = True
     end
     object tbConContiTipiMovi: TSmallintField
       FieldName = 'TipiMovi'
-      ReadOnly = True
+      Required = True
     end
     object tbConContiLivDett: TSmallintField
       FieldName = 'LivDett'
-      ReadOnly = True
+      Required = True
     end
     object tbConContiNote: TWideMemoField
       FieldName = 'Note'
-      ReadOnly = True
       BlobType = ftWideMemo
     end
   end

@@ -6,6 +6,7 @@ object dmEditAdmUtenti: TdmEditAdmUtenti
   Width = 232
   object tbAdmUtenti: TZTable
     Connection = dmContabilita.dbContabilita
+    Active = True
     TableName = 'AdmUtenti'
     Left = 27
     Top = 15

@@ -26,22 +26,13 @@ object fmEditConGiornale: TfmEditConGiornale
     Height = 41
     Align = alTop
     TabOrder = 0
-    object navSchema: TRGNavigator
+    object navSchema: TJvDBNavigator
       Left = 10
       Top = 10
-      Width = 345
+      Width = 340
       Height = 25
-      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbKey, nbRefresh, nbInsert, nbDelete, nbEdit]
-      TabOrder = 0
-      ColorScroll = ncBlack
-      ColorFunc = ncBlack
-      ColorCtrl = ncBlack
-      ColorTool = ncBlack
-      SizeOfKey = X4
-      CaptionExtra1 = 'Extra1'
-      CaptionExtra2 = 'Extra2'
-      CaptionExtra3 = 'Extra3'
       DataSource = dmEditConGiornale.dsConGiornale
+      TabOrder = 0
     end
   end
   object Panel2: TPanel
@@ -131,8 +122,6 @@ object fmEditConGiornale: TfmEditConGiornale
         DataField = 'Ufficiale'
         DataSource = dmEditConGiornale.dsConGiornale
         TabOrder = 4
-        ValueChecked = 'True'
-        ValueUnchecked = 'False'
       end
       object DBDateEdit1: TJvDBDateEdit
         Left = 97
@@ -142,6 +131,7 @@ object fmEditConGiornale: TfmEditConGiornale
         DataField = 'DataScr'
         DataSource = dmEditConGiornale.dsConGiornale
         NumGlyphs = 2
+        ShowNullDate = False
         TabOrder = 2
       end
       object DBDateEdit2: TJvDBDateEdit
@@ -152,6 +142,7 @@ object fmEditConGiornale: TfmEditConGiornale
         DataField = 'DataOpe'
         DataSource = dmEditConGiornale.dsConGiornale
         NumGlyphs = 2
+        ShowNullDate = False
         TabOrder = 3
       end
     end

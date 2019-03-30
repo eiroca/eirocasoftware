@@ -30,22 +30,13 @@ object fmEditConConti: TfmEditConConti
         BevelOuter = bvNone
         Caption = ' '
         TabOrder = 0
-        object RGNavigator1: TRGNavigator
+        object RGNavigator1: TJvDBNavigator
           Left = 5
           Top = 5
-          Width = 371
+          Width = 370
           Height = 25
-          VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbKey, nbRefresh, nbInsert, nbDelete, nbEdit]
-          TabOrder = 0
-          ColorScroll = ncBlack
-          ColorFunc = ncBlack
-          ColorCtrl = ncBlack
-          ColorTool = ncBlack
-          SizeOfKey = X4
-          CaptionExtra1 = 'Extra1'
-          CaptionExtra2 = 'Extra2'
-          CaptionExtra3 = 'Extra3'
           DataSource = dmEditConConti.dsConConti
+          TabOrder = 0
         end
       end
       object Panel2: TPanel
@@ -171,8 +162,6 @@ object fmEditConConti: TfmEditConConti
             DataField = 'Gruppo'
             DataSource = dmEditConConti.dsConConti
             TabOrder = 3
-            ValueChecked = 'True'
-            ValueUnchecked = 'False'
           end
           object DBLookupComboBox1: TDBLookupComboBox
             Left = 95
@@ -206,15 +195,11 @@ object fmEditConConti: TfmEditConConti
     end
     object tsElenco: TTabSheet
       Caption = 'Elenco'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object DBGrid1: TDBGrid
         Left = 0
         Top = 0
         Width = 385
-        Height = 259
+        Height = 261
         Align = alClient
         DataSource = dmEditConConti.dsConConti
         TabOrder = 0
@@ -234,12 +219,14 @@ object fmEditConConti: TfmEditConConti
             Expanded = False
             FieldName = 'Desc'
             Title.Alignment = taCenter
+            Width = 64
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'Gruppo'
             Title.Alignment = taCenter
+            Width = 64
             Visible = True
           end
           item

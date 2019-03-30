@@ -21,6 +21,10 @@ object fmEditAdmUtenti: TfmEditAdmUtenti
     TabOrder = 0
     object tsDettaglio: TTabSheet
       Caption = 'Dettaglio'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel1: TPanel
         Left = 0
         Top = 0
@@ -30,22 +34,13 @@ object fmEditAdmUtenti: TfmEditAdmUtenti
         BevelOuter = bvNone
         Caption = ' '
         TabOrder = 0
-        object RGNavigator1: TRGNavigator
+        object RGNavigator1: TJvDBNavigator
           Left = 5
           Top = 5
-          Width = 371
+          Width = 370
           Height = 25
-          VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbKey, nbRefresh, nbInsert, nbDelete, nbEdit]
-          TabOrder = 0
-          ColorScroll = ncBlack
-          ColorFunc = ncBlack
-          ColorCtrl = ncBlack
-          ColorTool = ncBlack
-          SizeOfKey = X4
-          CaptionExtra1 = 'Extra1'
-          CaptionExtra2 = 'Extra2'
-          CaptionExtra3 = 'Extra3'
           DataSource = dmEditAdmUtenti.dsAdmUtenti
+          TabOrder = 0
         end
       end
       object Panel2: TPanel
@@ -135,8 +130,6 @@ object fmEditAdmUtenti: TfmEditAdmUtenti
             DataField = 'SuperUser'
             DataSource = dmEditAdmUtenti.dsAdmUtenti
             TabOrder = 2
-            ValueChecked = 'True'
-            ValueUnchecked = 'False'
           end
           object DBEdit1: TDBEdit
             Left = 94
@@ -159,8 +152,8 @@ object fmEditAdmUtenti: TfmEditAdmUtenti
       object DBGrid1: TDBGrid
         Left = 0
         Top = 0
-        Width = 385
-        Height = 259
+        Width = 381
+        Height = 151
         Align = alClient
         DataSource = dmEditAdmUtenti.dsAdmUtenti
         TabOrder = 0

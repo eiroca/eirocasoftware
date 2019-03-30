@@ -6,6 +6,7 @@ object dmEditConSchemiBilancio: TdmEditConSchemiBilancio
   Width = 353
   object tbConSchemiBilancio: TZTable
     Connection = dmContabilita.dbContabilita
+    Active = True
     TableName = 'ConSchemiBilancio'
     Left = 40
     Top = 5
@@ -32,6 +33,7 @@ object dmEditConSchemiBilancio: TdmEditConSchemiBilancio
   object tbConSchemiBilancioDett: TZTable
     Connection = dmContabilita.dbContabilita
     SortedFields = 'CodSch'
+    Active = True
     TableName = 'ConSchemiBilancioDett'
     MasterFields = 'CodSch'
     MasterSource = dsConSchemiBilancio
@@ -71,12 +73,14 @@ object dmEditConSchemiBilancio: TdmEditConSchemiBilancio
   end
   object tbConConti: TZTable
     Connection = dmContabilita.dbContabilita
+    Active = True
     TableName = 'ConConti'
     Left = 40
     Top = 165
   end
   object tbSysCon_Posizione: TZTable
     Connection = dmContabilita.dbContabilita
+    Active = True
     TableName = 'SysCon_Posizione'
     Left = 40
     Top = 115

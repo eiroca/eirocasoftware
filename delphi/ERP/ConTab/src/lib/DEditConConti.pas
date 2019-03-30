@@ -23,7 +23,7 @@ interface
 
 uses
   SysUtils, Windows, Classes, Graphics, Controls,
-  Forms, Dialogs, DB, DBTables, ADODB, ZAbstractRODataset, ZAbstractDataset,
+  Forms, Dialogs, DB, ADODB, ZAbstractRODataset, ZAbstractDataset,
   ZAbstractTable, ZDataset;
 
 type
@@ -39,8 +39,8 @@ type
     tbConContiTipiMovi: TSmallintField;
     tbConContiLivDett: TSmallintField;
     tbConContiNote: TWideMemoField;
-    tbConContiTipiMoviDesc: TStringField;
     tbConContiLivDettDesc: TStringField;
+    tbConContiTipiMoviDesc: TStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private

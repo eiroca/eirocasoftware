@@ -6,6 +6,7 @@ object dmEditConBilanci: TdmEditConBilanci
   Width = 353
   object tbConBilanci: TZTable
     Connection = dmContabilita.dbContabilita
+    Active = True
     TableName = 'ConBilanci'
     Left = 40
     Top = 5
@@ -15,30 +16,29 @@ object dmEditConBilanci: TdmEditConBilanci
     end
     object tbConBilanciCodSch: TIntegerField
       FieldName = 'CodSch'
-      ReadOnly = True
+      Required = True
     end
     object tbConBilanciAlias: TWideStringField
       FieldName = 'Alias'
-      ReadOnly = True
+      Required = True
       Size = 12
     end
     object tbConBilanciDesc: TWideStringField
       FieldName = 'Desc'
-      ReadOnly = True
+      Required = True
       Size = 30
     end
     object tbConBilanciData: TDateField
       FieldName = 'Data'
-      ReadOnly = True
+      Required = True
     end
     object tbConBilanciNote: TWideMemoField
       FieldName = 'Note'
-      ReadOnly = True
       BlobType = ftWideMemo
     end
     object tbConBilanciUfficiale: TBooleanField
       FieldName = 'Ufficiale'
-      ReadOnly = True
+      Required = True
     end
     object tbConBilanciCodSchDett: TStringField
       FieldKind = fkLookup
@@ -53,6 +53,7 @@ object dmEditConBilanci: TdmEditConBilanci
   object tbConBilanciDett: TZTable
     Connection = dmContabilita.dbContabilita
     SortedFields = 'CodBil'
+    Active = True
     TableName = 'ConBilanciDett'
     MasterFields = 'CodBil'
     MasterSource = dsConBilanci
@@ -61,15 +62,15 @@ object dmEditConBilanci: TdmEditConBilanci
     Top = 55
     object tbConBilanciDettCodBil: TIntegerField
       FieldName = 'CodBil'
-      ReadOnly = True
+      Required = True
     end
     object tbConBilanciDettCodCon: TIntegerField
       FieldName = 'CodCon'
-      ReadOnly = True
+      Required = True
     end
-    object tbConBilanciDettSaldo: TFloatField
+    object tbConBilanciDettSaldo: TCurrencyField
       FieldName = 'Saldo'
-      ReadOnly = True
+      Required = True
     end
   end
   object dsConBilanci: TDataSource
@@ -84,12 +85,14 @@ object dmEditConBilanci: TdmEditConBilanci
   end
   object tbConConti: TZTable
     Connection = dmContabilita.dbContabilita
+    Active = True
     TableName = 'ConConti'
     Left = 40
     Top = 115
   end
   object tbConSchemiBilancio: TZTable
     Connection = dmContabilita.dbContabilita
+    Active = True
     TableName = 'ConSchemiBilancio'
     Left = 40
     Top = 175

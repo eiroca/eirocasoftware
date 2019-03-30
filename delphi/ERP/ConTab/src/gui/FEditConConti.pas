@@ -24,7 +24,7 @@ interface
 uses
   SysUtils, Windows, Messages, Classes, Graphics, Controls,
   StdCtrls, Forms, DBCtrls, DB, Mask, ExtCtrls, Grids, DBGrids, ComCtrls,
-  RgNav, RgNavDB;
+  JvDBControls;
 
 type
   TfmEditConConti = class(TForm)
@@ -47,7 +47,7 @@ type
     CheckBoxGruppo: TDBCheckBox;
     DBLookupComboBox1: TDBLookupComboBox;
     DBLookupComboBox2: TDBLookupComboBox;
-    RGNavigator1: TRGNavigator;
+    RGNavigator1: TJvDBNavigator;
     Label7: TLabel;
     DBMemo1: TDBMemo;
     procedure FormCreate(Sender: TObject);
